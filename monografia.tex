@@ -13,6 +13,14 @@
 \addbibresource{library.bib}
 \usepackage{csquotes}
 
+% TODO NOTES
+\usepackage{xargs}                      % Use more than one optional parameter in a new
+\usepackage[pdftex,dvipsnames]{xcolor}  % Coloured text etc.
+\input{todoCode}
+
+% Color Additions
+\input{colorCode}
+
 %
 %
 
@@ -33,6 +41,7 @@
 \newtheorem{example}{Example}[section]
 \newtheorem{definition}[example]{Definition}
 \newtheorem{theorem}[example]{Theorem}
+\newtheorem{proposition}[example]{Proposition}
 \newtheorem{corollary}[example]{Corollary}
 \newtheorem{notation}[example]{Notation}
 
@@ -43,6 +52,9 @@
 \DeclareMathOperator{\re}{Re}
 \DeclareMathOperator{\Span}{span}
 \DeclareMathOperator{\id}{id}
+
+\DeclareMathOperator{\comp}{\circ}
+\newcommand{\algeb}[1]{\mathfrak{#1}}
 
 \allowdisplaybreaks
 
@@ -132,17 +144,6 @@ Hola
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Basic Lie Algebroid Theory}\label{chp:basicLie}
-\section{Basic Definitions}
-\subsection{Representation of a Lie Algebroid}
-\subsection{The Atiyah Lie Algebroid of a Principal Bundle}
-\subsection{The Derivations Algebroid of a Vector Bundle}
-
-\section{Transitive Lie Algebroids and LABs}
-
-\section{Local Description of Transitive Lie Algebroids}
-
-\section{Actions of Lie Algebroids?}
-
 \input{chapters/basicLie}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
