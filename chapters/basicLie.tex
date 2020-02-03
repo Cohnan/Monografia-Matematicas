@@ -103,17 +103,61 @@ $\frac{P \times \algeb g}{G}$ is a vector bundle over $M$, and $\Gamma \left(\fr
 Let $w:TP \to P \times \algeb g$ be a principal connection form. Every element $\mathfrak{Y}_q$ in the orbit of $\mathfrak{X}_p$, i.e. $\mathfrak{Y}_q = R_{g*} \mathfrak{X}_p$ for some $g\in G$ satisfies $w(\mathfrak{Y}_p) = \mathfrak{X}_p \cdot g$.
 \end{proposition}
 
-Finally, the next two theorems show that \rtxt{all the information that a principal connection form has, including the meaning of ``horizontal'', can be encapsulated in a map $\omega: \frac{TP}{G} \to \frac{P \times \algeb g}{G}$, which makes use of this minimal infinitesimal version of the principal bundle and its adjoint bundle}.
+Finally, the next theorem is our first step to show that \ytxt{all the information that a principal connection form has, including the meaning of ``horizontal'', can be encapsulated in a map $\omega: \frac{TP}{G} \to \frac{P \times \algeb g}{G}$, which makes use of this minimal infinitesimal version of the principal bundle and its adjoint bundle}.
 
 \begin{theorem}
 Let $w:TP \to P \times \algeb g$ be a principal connection form. The map $\omega: \frac{TP}{G} \to \frac{P \times \algeb g}{G}$, $\omega(<\mathfrak{X}_p>) = <w(\mathfrak{X}_p)>$ is a well defined vector bundle morphism. It can be seen as a $C^\infty(M)-$module morphism $\omega: \Gamma(\frac{TP}{G}) \to \Gamma(\frac{P \times \algeb g}{G})$, i.e. a $\frac{P \times \algeb g}{G}$-valued one form $\omega \in \Omega^1(\frac{TP}{G}, \frac{P \times \algeb g}{G})$.
 \end{theorem}
 
+\lgtxt{However, we can not yet say that a connection reform and a principal connection form are equivalent yet, as there is another defininig property of a principal connection, which we will now formulate this in the language we are currently developing.}
+
+\begin{definition}
+Let $P(\pi, M, G)$. Given $A \in \algeb g$, we define \emph{the fundamental tangent vector associated to $A$ at $p$}, denoted by $A_p^P$, as the tangent vector $ \frac{d}{dt}|_{t = 0} p \cdot exp(tA) \in T_pP$. The \emph{fundamental vector field associated to $A$} is the vector field in $P$, denoted by $A^P$, defined pointwise as the fundamental tangent vector.\improvement{why is it indeed a smooth or $C^n$ section?}
+\end{definition}
+
+The following theorem allows us to see that the adjoint Lie algebroid of an Atiyah Lie algebroid are related via the fundamental tangent vectors.
+
+\begin{lemma}
+The map $i:\frac{P \times \algeb g}{G} \to \frac{TP}{G}$, $<p, A> \mapsto <A_p^P>$ is an injective vector bundle morphism that respects the Lie bracket. Inclusion  map.
+\end{lemma}
+
+The following apparently useless definition will, nonetheless, be seen as an important property when talking about Lie algebroids.
+
+\begin{definition}
+The anchor of $\frac{P \times \algeb g}{G}$, defined by $a:\frac{P \times \algeb g}{G} \to TM$, $<p, A> \mapsto 0_{\pi(p)}$.
+\end{definition}
+
+\begin{proposition}
+The anchor of $\frac{P \times \algeb g}{G}$ is a vector bundle morphism which respects the brackets and commutes with the anchors.
+\end{proposition}
+
+Now we can see the full extent of the inclusion map.
+
 \begin{theorem}
-A $\frac{P \times \algeb g}{G}$-valued one form $\omega \in \Omega^1(\frac{TP}{G}, \frac{P \times \algeb g}{G})$ induced naturally a principal connection form in $P$.
+The inclusion map $i:\frac{P \times \algeb g}{G} \to \frac{TP}{G}$ is a vector bundle morphism that respects the brackets and commutes with the anchor maps.
 \end{theorem}
 
+Finally we can formulate completely the full definition of a principal connection form in the current language. any $A \in \algeb g$.
+
+\begin{proposition}
+Let $A \in \algeb g$, and $w:TP \to P \times \algeb g$ be a principal connection form. The property $w(A^P_p) = (p, A)$ of the connection form induces the following property of the induced map $\omega:\frac{TP}{G} \to \frac{P \times \algeb g}{G}$: $\omega \comp i = Id_{\frac{P \times \algeb g}{G}}$.
+\end{proposition}
+
+\begin{definition} [Connection Reform]
+A vector bundle morphism $\omega:\frac{TP}{G} \to \frac{P \times \algeb g}{G}$ that satisfies $\omega \comp i = Id_{\frac{P \times \algeb g}{G}}$ is called \emph{a connection reform}.
+\end{definition}
+
+\rtxt{Finally}
+
+\begin{theorem}
+A principal connection form in $P$ induces naturally a connection reform in $\frac{TP}{G}$. Conversely, any connection reform in $\frac{TP}{G}$ induces naturally a principal connection form.
+\end{theorem}
+
+
 \subsubsection{Covariant Derivatives}
+
+As all the information of a principal connection is incorporated in the connection reform, the usual covariant derivates defined on the associated vector bundles of the principal bundle. ALTHOUGH I MAY USE THIS OPPORTUNITY TO SEE THE CONNECTION AS EQUIVALENT TO THE TM -> TP/G MAP THAT APPEARS IN THE DEFINITION OF COVARIANT DERIVATIVES AND THAT WILL BE USED AS THE INITIAL DEFINITION OF A CONNECTION IN AN ATIYAH LIE ALGEBROID
+
 
 The gauge potentials, and so the covariant derivatives WHERE can also be formulate in this infinitesimal language. \complete{Otra razon alternativa a path lifting}
 
@@ -137,7 +181,7 @@ Anchor
 $\frac{P \times \algeb g}{G}$ corresponds to the kernel of the anchor.
 \end{proposition}
 
-De alguna manera debo motivar \complete{De alguna manera debo motivar la introduccion del corchete en ambos lados: difeomorfismos?}
+De alguna manera debo motivar \complete{De alguna manera debo motivar la introduccion del corchete en ambos lados: difeomorfismos? Algebra de Lie?}
 
 \begin{definition}
 Corchete en $\frac{TP}{P}$
