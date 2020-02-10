@@ -1,17 +1,54 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+INTRODUCTION
+
+
+Throughout this section, $M$ will be a smooth manifold.
+
 \section{Basic Definitions}
 
-\begin{definition} [Lie Algebroid on $M$]
+\begin{definition} [Lie Algebroid over $M$]
+A \emph{Lie algebroid over $M$} is a triple $(q:A \to M, a, [\cdot, \cdot ])$, where $q:A \to M$ is a vector bundle, $a:A \to TM$ is a vector bundle morphism called \emph{the anchor of $A$}, and \emph{the bracket of $A$} $[\cdot, \cdot ]: \Gamma(A) \times \Gamma(A) \to \Gamma(A)$ is a Lie algebra structure on the $\RR$-vector space $\Gamma(A)$ (i.e. an $\RR$-bilinear alternating map) which satisfy:
 
+\begin{enumerate}
+    \item The map by $a$ on the sections, $a:\Gamma(A) \to \Gamma(TM)$ is a \emph{Lie algebra morphism}, that is, for any $\mathfrak X, \mathfrak Y \in \Gamma(A)$ \[ a([\mathfrak X, \mathfrak Y])  = [a(\mathfrak X), a(\mathfrak Y)] \in  \Gamma(TM)\]
+    
+    \item (Leibniz identity) For any $\mathfrak X, \mathfrak Y \in \Gamma(A)$, $f \in C^\infty (M)$: \[ [\mathfrak X, f\mathfrak Y] = f[\mathfrak X, \mathfrak Y] + a(\mathfrak X)(f)\, \mathfrak Y \] where $a(\mathfrak X)(f)$ means the action, or Lie derivative, of an element of $\Gamma(TM)$ on a function.
+\end{enumerate}
 \end{definition}
+
+$\Gamma A$ is a $C^\infty(M)$-module.
 
 \begin{definition} [(Base preserving) morphism of Lie algebroids]
 
 \end{definition}
 
 \begin{definition} [Extension of Lie algebroids over $M$]
-Let $A, A', A''$ be Lie algebroids over $M$. \emph{An extension of Lie algebroids over $M$} is a sequence of Lie algebroids over $M$ \[ 0 \to A' \to A \to A'' \to 0 \] which is exact as sequence of vector bundles over $M$.
+Let $A, A', A''$ be Lie algebroids over $M$. \emph{An extension of Lie algebroids over $M$} is a sequence of Lie algebroids over $M$ \[ 0 \to A' \to A \to A'' \to 0 \] which is exact as sequence of vector bundles over $M$. 
+\end{definition}
+\hline
+
+\begin{definition}[Direct sum of Lie algebroids]
+Let $A, A'$ be Lie algebroids over $M$. 
+\end{definition}
+
+\begin{definition}[Restriction of $A$ to $U$]
+
+\end{definition}
+
+\begin{definition}[General Morphisms]
+
+\end{definition}
+
+\begin{definition}[Direct products]
+
+\end{definition}
+
+\begin{definition}[Pullbacks]
+
+\end{definition}
+
+\begin{definition}[Quotients]
 
 \end{definition}
 
@@ -43,11 +80,20 @@ Homogeneous
 
 Extensions
 
+Coming from Lie groupoids
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Representations}
 
+Adjoint representatioin
+
+Equivariant
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{LABs and Transitive Lie Algebroids}
+
+Definitions comming from Lie algebra theory semisimple, nilpotent, abelian, reductive.
+
+If $A$ is regular, the image of the anchor defines a foliation of the base manifold, \emph{the characteristic foliation of $A$}, which is transitive over each leaf of the foliation.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Local Description of Transitive Lie Algebroids}
