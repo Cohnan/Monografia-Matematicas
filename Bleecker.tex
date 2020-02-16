@@ -20,7 +20,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Prologe}
+\chapter*{Prologe}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{High Level Summary}
 
@@ -88,6 +88,10 @@
 
 \begin{itemize}
     \item Locally, \lbbox{the field strength associated to $\omega_u$} is the local curvature (the pullback through the local section).
+    
+    \item The curvature is the covariant derivative of the connection $1$-form with respect to itself.
+    
+    \item In EM, the structure group is the abelian $U(1)$, the $field strength$ is the same for every local trivialization as $F_V = \Omega_V = g^{-1}_{UV}\Omega_U g_{UV} = \Omega_u = F_U$ 
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -98,21 +102,55 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{More Detailed Summary}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Commentaries}
+\begin{itemize}
+    \item The Algebra of $\mathfrak g-$valued differential forms on $N$ is a gradded Lie algebra ($\Lambda(N, \mathfrak g)$).
+    
+    \item Given a connection 1-form $w$, the covariant derivative of $g$ valued $k$-forms, $D^\omega: \Lambda^k(P, \mathfrak g) \to \Lambda^{k+1}(P, \mathfrak g)$ is defined by $D^\omega \phi = (d\phi)^H$
+    
+    \item The curvature $\Omega^\omega$ of a connection $\omega$ is its covariant derivative with respect to itself.
+    
+    \item Structural equation $\Omega^\omega = D^\omega \omega = d\omega + \frac{1}{2}[\omega, \omega]$. If $G$ is a matrix Lie group, it may also be written as $\Omega\omega = d\omega + \omega \wedge \omega$ (and the wedge is simply matrix multiplication where the pointwise multiplication is the wedge).
+    
+    \item Bianchi Identity/Homogeneous Field equation: $D^\omega \Omega = 0$.
+    
+    \item Locally the curvature, called the \lbbox{field strength} associated to the gauge potential $\omega_u$ / \lbbox{local field strength} is the pullback by the local section. It can be written by the Structural equation (or its alternative if matrix group) applied to the local gauge potentials $\omega_U$
+    
+    \item The curvature transforms locally by $\Omega_V = ad_{g_{UV}^-1} \Omega_U$, if $G$ is matrix group: $\Omega_V = g^{-1}_{UV}\Omega_U g_{UV}$
+    
+\end{itemize}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Doubts}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{3}
+\chapter{Particle Fields, Lagrangians, Gauge Invariance}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{High Level Summary}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Very Important Facts}
+\begin{itemize}
+    \item A particle field can be regarded as a section of a vector bundle associated to some PFB / as a vector-valued function on $P$ equivariant under the action of $G$.
+    
+    \item Examples include the Schrodinger wave function, the Klein-Gordon field, and the Dirac electron field.
+    
+    \item The ``correct'' particle field obeys differential equations given by minimum action.
+    
+    \item An action density $\mathfrak L_0(\psi)$ is obtained from a $G$-invariant Lagrangian $L(\psi, d\psi)$, but for it to be gauge invariant it is necessary to \lbbox{minimally couple} \rtext{the particle fields with the gauge fields}: changing the derivatives by Covariant derivatives. So, a good action density needs a connection and is of the form $\mathfrak L(\psi, \omega)(x) = L(p, \psi(p), D^\omega \psi_p)$
+    
+    \item The group of gauge transformations $GA(P)$ of a PFG is the subset of automorphisms of $P$ that keep you in the fiber and are equivariant. The action can be seen as a pointwise multiplicative action of $C(P, G) = \Gamma(\frac{P}{G}/G)$ (adjoint action of $G$ on $G$). $GA(P)$ and $GA(P)$ are antisomorphic as groups.
+    
+    \item $C(P, \mathfrak g) \equiv \frac{P \times \mathfrak g}{G}$ can be regarded as the Lie algebra of the Lie algebra of the gauge group. There is an exponential map that takes you from $C(P, \mathfrak g)$ to $C(P, G) = GA(P)$: \rtext{for $H \in C(P, \mathfrak g)$, $f = exp(tH) \in GA(P)$}. It is called \lbbox{the gauge algebra of a PFB},  or \lbbox{the algebra of infinitesimal gauge transformations}.
+    
+    \item We can explicitly the action of the gauge group (the pullback) on a connection and on its curvature (basic form). They are still connections and curvatures (basic form).
+    
+    \item Similarly, the infinitesimal gauge algebra acts on the connection and on the curvature, but this time taking the curvature to its ``tangent plane'': 
+    \begin{itemize}
+        \item The action of $H \in C(P, \mathfrak g)$ on a connection $\omega$ is $dH + [\omega, H] = D^\omega H$ $\in \bar \Lambda^1(P, \mathfrak g)$ (basic form)
+        
+        \item The action of $H \in C(P, \mathfrak g)$ on a basic $v$ valued $k-$form $\phi$ is $-H \cdot \phi(\cdot, \cdot) \in \Lambda^k(P, V)$.
+    \end{itemize}
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Medium Importance Facts}
