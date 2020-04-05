@@ -1,5 +1,74 @@
 \section{Ordinary Gauge Theory}
-\subsection{Motivation: Magnetic Monopole}
+
+\subsection{Motivation 1: Schrodinger equation and Dirac Equation}
+
+Link: \href{https://quantummechanics.ucsd.edu/ph130a/130_notes/node296.html}{Gauge symmetry in Schrodinger}
+
+In this section we present a heuristic and non-formal motivation to the main ingredients of gauge theories: principal bundles, associated bundles and connections.
+
+\subsection{Why Principal Bundles?}
+
+(one answer: encode ``internal'' (which I still don't know if it can always be considered nonphysical or nonobservable) symmetry for ALL associated vector bundles... although the theories I know seem to care only about 1 matter field?)
+
+Many physical theories have at its core a differential equations that must be satisfied by a set of ``functions'' in spacetime, or fields. 
+
+For example, 
+
+\begin{itemize}
+    \item In classical electrodynamics electric charges generate electric and magnetic fields, which in turn dictate the movement of the charges. Thus, given a source of electric charge described by its scalar field of charge density $\rho$ and its current vector field $\vec J$, the vector fields $\vec E$ and $\vec B$ must satisfy Maxwell Equations, and the charge density changes according to Newton's second law underlying the Lorent'z force \[f = \rho E + J \times B\]: these are a total of $4$ first order and $1$ second order coupled partial differential equations involving all $4$ fields. These equations can be written in terms of the field $A$, in which case $E = \partial A$, $B = \times A$. Now they become second order.
+    
+    \item In Quantum Mechanics: Schrodinger's equation for the ``wave function''.
+    
+    \item In Quantum Electrodynamics, the electromagnetic $4$-vector field $A$ must satisfy the Yang-Mills equations \[\partial_\nu F^{\nu \mu} = e \bar \psi \gamma^\mu \psi\], and the electron field $\psi$ satisfies Dirac's equation \[i \gamma^\mu \partial_\mu \psi - m\psi = e \gamma^\mu (A_\mu + B\mu) \psi\]\complete{that is only lorentz force, per unit volume I believe, I'm not sure which is the equation of motion}. These are, again, coupled second order partial differential equations.
+    
+    \item Electroweak Theory. 
+\end{itemize}
+
+Some ``physical fields'', i.e. satisfying a set of equations proposed in physics, can be transformed globally by the action of a group and the resulting field is, once again, a physical field. For example, if a field $\psi$ were to satisfy the Schrodinger's equation/Dirac equation (a possible special-relativistic version of Schrodinger's equation) $i \hbar \gamma^\mu \partial_\mu \psi - mc \psi = 0$, then the field $\psi ' = e^{i \theta} \psi$ also satisfies this equation. This corresponds to the action of an element in $U(1)$ on $\psi$. However, this equation is no longer satisfied by the transformed field if we allow $\theta$ to depend on spacetime, because derivatives of $\theta$ now appear as unwanted terms. However, quantum theory (talking about Schrodinger's equation) tells us that physical observables like position, linear and angular momentum and energy only depend on the induced probability density $f(x) = |\psi(x)|^2$, so not only a a globally gauge transformed wave equation produces the same experimental results, but also the locally gauge transformed one, which changes the phase of the wave equation in a position dependent way, should be a ``physical field'' as it has the same physical content. \unsure{I think it is not true that we can not differentiate one field from the other once the $A$ fields appear, so I'm confused} Alternative: However, physical theories like QED or in general the Standard Model of Particles can be seen to arise mathematically if we force this kind of ``local gauge transformation'' to produce physical fields. In these theories, ``gauge theories'', the solution comes from changing slightly the differential equations by adding new fields that ``interact minimally'' with the matter fields and which have to obey certain gauge transformation rules in order to cancel the unwanted extra terms \unsure{how thorough should I be with this? Should I deduce the transformation properties? Here? Perhaps do it in full detail with QED?}. In our example of Dirac's equation we \complete{example: QED} \dbtext{Can Classical EM and the EM field $A$ arise from this procedure: start with equation satisfied by }
+ (\dbtext{how can this be seen in the equations for Schrodinger? why is the physical thing the probability density, which isn't what appears in the ``equation of motion'': Schrodingers equation?})
+
+This liberty to change (smoothly) at every point the value of the matter field and still getting a physical matter field may be understood as changing an ``internal'' coordinate or degree of freedom of the field with value in the pointwise acting group. This denomination of ``internal'' to this additional degree of freedom is justified in the relevant physical theories by the interesting property that no ``observable'' property of these matter fields is affected by its pointwise value, in other words, the physical content of a matter field and any of its gauge transformations is exactly the same, so, in some sense, we can not have access to the value of this degree of freedom \dbtext{later this internality is also observed in the ``field strength'' or curvature} \unsure{is this (the invisibility in both $\psi$ and $F$, or really in what is physical, of this degree of freedom) true for any gauge theory, or only for abelian gauge theories}. 
+
+ AQUI VOY
+ 
+ Furthermore, implicit coordinate choice... principal bundle.
+ 
+ Matter field as associated vector bundle section because group acts on it pointwise in an equivariant way.
+ 
+ Additional terms can be seen to arise from modifying derivatives -> covariant derivative induced from connection in principal bundle. Why covariant in this case? THis gauge transformation can be understood as a mere \rbox{``change of coordinates''}, so the covariant derivative asserts that changing coordinates doesn't change the fact that this field is a physical one.
+ 
+
+``Real'' motion occurs in total space, but its projection into spacetime is all we can see?
+
+If that is not taken into account -> Path lifting -> Connection
+
+Locally this connection appears as fields. IN FACT SOME OF THE FUNDAMENTAL FIELDS ARISE PRECISELY AS CONNECTIONS.
+
+Examples:
+\begin{itemize}
+    \item $E$, $B$ are first derivatives of the connection $A$.
+    
+    \item Photons in QED are the connection
+    
+    \item Z and W bosons are the connection
+\end{itemize}
+
+\dbbox{What guarantees that the emerging $A$ field has as equation of motion of lagrangian the EM one.} i.e. where does the equation of motion come from
+
+\subsection{Why Associated Bundles?}
+
+Principal connections are important to tell us a way to define covariant derivatives in EVERY associated vector bundle, whose sections are matter fields.
+
+\subsection{Why Connections?}
+
+The previous sections shows us that:
+
+Connections arise in a physical setting when, once a vector valued field satisfies a desired physical equation, it is imposed that a position dependent transformation by a group $G$ of this field generates also a physical field. This is achieved by replacing the coordinate directional derivatives by ``covariant derivatives'' to guarantee that this ``change of coordinates'' doesn't affect the underlying physics. However, the introduction of covariant derivatives imply the introduction of ``fields with certain transformation properties'', which can be seen to be precisely the transformation properties of a principal bundle connection.
+
+
+\dbbox{What suggests that the lagrangian of this new conenction field should be $tr(F^2)?$} Perhaps something more than ``that's how it is for classical EM''.
+
+\subsection{Motivation 2: Magnetic Monopole}
 
 \subsection{Space of Local Symmetries}
 
@@ -16,11 +85,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{How to think/Why (transitive) Lie Algebroids?}
 
+
+
+
+\subsection{Why Lie Algebroids?}
+Throughout this section $P$ or $P(\pi, M, G)$ will be a principal bundle, with a principal connection form $w : TP \to P \times \algeb g$. \unsure{Forma correcta de llamar a este mapa, pues no es realmente una forma}\unsure{Estoy motivando la noción de algebroides de Lie y curvatura desde el concepto de levantamiento de caminos, a pesar de que esta noción de levantar caminos dejará de ser posible con la generalización de conexión propuesta en los artículos de Lazzarini, Fournel, et. al.} 
+
 So far we have seen that principal bundles over the base space $M$ and their associated vector bundles are a way to formalize gauge theory, where the additional internal degrees of freedom necessary to have a full description of the physical phenomena and their consequences can be seen in bigger spaces, called fibrations, over the base space $M$. To extrapolate what is happenning in the total spaces based on what we can see, a principal connection has been used. 
 
 To motivate the concept of Lie algebroids we will \rtext{develop the Atiyah sequence of a principal bundle as an infinitesimal version of the principal bundle which is minimal, in some sense, to talk about connections and path lifting, hence allowing covariant derivatives for ``matter fields'', i.e. sections of associated vector bundles}. Although important definitions naturally arise here, they will be presented once again in chapter \ref{chp:basicLie} in the general setting of Lie algebroid theory.
 
-Throughout this section $P$ or $P(\pi, M, G)$ will be a principal bundle, with a principal connection form $w : TP \to P \times \algeb g$. \unsure{Forma correcta de llamar a este mapa, pues no es realmente una forma}\unsure{Estoy motivando la noción de algebroides de Lie y curvatura desde el concepto de levantamiento de caminos, a pesar de que esta noción de levantar caminos dejará de ser posible con la generalización de conexión propuesta en los artículos de Lazzarini, Fournel, et. al.} 
 
 \subsubsection{Path Lifting}
 
@@ -176,7 +250,7 @@ A principal connection form in $P$ induces naturally a connection reform in $\fr
 As all the information of a principal connection is incorporated in the connection reform, the usual covariant derivates defined on the associated vector bundles of the principal bundle. ALTHOUGH I MAY USE THIS OPPORTUNITY TO SEE THE CONNECTION AS EQUIVALENT TO THE TM -> TP/G MAP THAT APPEARS IN THE DEFINITION OF COVARIANT DERIVATIVES AND THAT WILL BE USED AS THE INITIAL DEFINITION OF A CONNECTION IN AN ATIYAH LIE ALGEBROID
 
 
-The gauge potentials, and so the covariant derivatives WHERE can also be formulate in this infinitesimal language. \complete{Otra razon alternativa a path lifting}
+The gauge potentials, and so the covariant derivatives WHERE (RTA: in every associated bundle) can also be formulate in this infinitesimal language. \complete{Otra razon alternativa a path lifting}
 
 Intuition: trivial principal bundle
 
@@ -209,6 +283,7 @@ Corchete en $\frac{P \times \algeb g}{G}$
 \begin{proposition}
 El corchete conmuta con la inclusion.
 \end{proposition}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -47,13 +47,15 @@
         \end{itemize}
     \end{itemize}
     
-    \item \rtext{Yang Mills equations: differential equations that have to be satisfied BY THE GAUGE POTENTIAl, perhaps when it is in interaction with a matter/source field: they are part or the Euler-Lagrange equations for some action which depends on both the matter field AND the connection}: differential equation for the \rbox{correct connection}; other part of the Euler-Lagrange equations give the equations of motion of the particle field, e.g. Dirac equation, Schrodinger, Klein-Gordon, etc.
+    \item \rtext{Yang Mills equations: differential equations that have to be satisfied BY THE GAUGE POTENTIAl, perhaps when it is in interaction with a matter/source field: they are part (\rbox{variation with respect to the connection} EDIT: I now think this isn't correct. More like a \rbox{RESTRICTION} that must be satisfied by the connection) of the Euler-Lagrange equations for some action which depends on both the matter field AND the connection}: differential equation for the \rbox{correct connection}; other part of the Euler-Lagrange equations give the equations of motion of the particle field, e.g. Dirac equation, Schrodinger, Klein-Gordon, etc. (with the modification of covariant derivatives instead of normal derivatives)
     \begin{itemize}
-        \item The original Yang-Mills equations: group $SU(2)$, equations for the vector potential $b_\mu$ of \emph{isotopic spin} in \emph{interaction with} a field $\psi$ of isotopic spin $1/2$.
+        \item The original Yang-Mills equations: group $SU(2)$, equations for the vector potential $b_\mu$ of \emph{isotopic spin} in \emph{interaction with} a field $\psi$ of isotopic spin $1/2$ \[\partial_\nu F_{\mu \nu} + 2 \epsilon [B_\nu, F_{\mu \nu}] = -J_\mu\] \rbox{or in a more suggestive way}:\[D^\nu F_{\mu \nu} = -J_\mu\] 
         
         \item \dbbox{They were not seen useful immediately as they predicted massless gauge partiles}.
         
-        \item \rtext{The Yang-Mills equations may be thought of as a matrix-valued generalization of the equations for the classical vector potential of Maxwell theory}. (In that case we get the wave equation/Klein gordon equatio form $m=0$ if source free, or $\square A = \mu_0 J$ if coupled with matter field)
+        \item \rtext{The Yang-Mills equations may be thought of as a matrix-valued generalization of the equations for the classical vector potential of Maxwell theory}. (In that case we get the wave equation/Klein gordon equation for $m=0$ if source free, or $\square A = \mu_0 J$ if coupled with matter field) OJO: this is different to the continuity equation, which is satisfied by the source.
+        
+        \item In Classical EM, the Bianchi equation gives the 2 Maxwell equations where $j = (\rho, \vec J)$ doesn't appear, and the \textbf{Yang-Mills equations} $\delta F = j$ gives the other 2 Maxwell equations ($\nabla \dot E = \rho$, $\nabla \times B = \partial_t E + J$). The continuity equation is $\delta^2 F = 0$
     \end{itemize}
     
     \item There is not yet a generally acceptedmathematical theory of quantiation of gauge fields.

@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-INTRODUCTION
+INTRODUCTION \complete{ Hacer la introducción. Quizá ver pequeños comentrios de Mackenzie y de Lazzarini} In \ref{chp:intro} we saw how the basic elements in a gauge theory are a principal bundle, encoding the 
 
 
 Throughout this section, $M$ will be a smooth manifold.
@@ -11,32 +11,55 @@ Throughout this section, $M$ will be a smooth manifold.
 A \emph{Lie algebroid over $M$} is a triple $(q:A \to M, a, [\cdot, \cdot ])$, where $q:A \to M$ is a vector bundle, $a:A \to TM$ is a vector bundle morphism called \emph{the anchor of $A$}, and \emph{the bracket of $A$} $[\cdot, \cdot ]: \Gamma(A) \times \Gamma(A) \to \Gamma(A)$ is a Lie algebra structure on the $\RR$-vector space $\Gamma(A)$ (i.e. an $\RR$-bilinear alternating map) which satisfy:
 
 \begin{enumerate}
-    \item The map by $a$ on the sections, $a:\Gamma(A) \to \Gamma(TM)$ is a \emph{Lie algebra morphism}, that is, for any $\mathfrak X, \mathfrak Y \in \Gamma(A)$ \[ a([\mathfrak X, \mathfrak Y])  = [a(\mathfrak X), a(\mathfrak Y)] \in  \Gamma(TM)\]
+    \item The map induced by $a$ on the sections, which we call by the same name, $a:\Gamma(A) \to \Gamma(TM)$ is a \emph{Lie algebra morphism}, that is, for any $\mathfrak X, \mathfrak Y \in \Gamma(A)$ \[ a([\mathfrak X, \mathfrak Y])  = [a(\mathfrak X), a(\mathfrak Y)] \in  \Gamma(TM)\]
     
     \item (Leibniz identity) For any $\mathfrak X, \mathfrak Y \in \Gamma(A)$, $f \in C^\infty (M)$: \[ [\mathfrak X, f\mathfrak Y] = f[\mathfrak X, \mathfrak Y] + a(\mathfrak X)(f)\, \mathfrak Y \] where $a(\mathfrak X)(f)$ means the action, or Lie derivative, of an element of $\Gamma(TM)$ on a function.
 \end{enumerate}
 \end{definition}
 
-$\Gamma A$ is a $C^\infty(M)$-module.
+As it is usual, to simplify notation we will often say instead that \emph{$A$ is a Lie algebroid over the manifold $M$ with anchor $a$}, and the brackets will be denoted simply by $[,]$ for all Lie algebroids.
 
-\begin{definition} [(Base preserving) morphism of Lie algebroids]
+\begin{proposition}
+$\Gamma A$ is a finite projective module over $M$. Furthermore, the map $a: \Gamma(A) \to \Gamma(TM)$ is $C^\infty(M)$-linear.
+\end{proposition}
+\begin{proof}
+\begin{itemize}
+    \item It is $C^\infty(M)$ module:
+\end{itemize}
+\end{proof}
 
+The previous result remarks the algebraic perspective which may also be used to study this topic, in contrast to the topological perspective that has been taken in this document. However, this perspective is sometimes useful and will be used whenever clarity may be gained by its use.
+
+For the rest of the chapter $A$ will refer to a Lie algebroid over a manifold $M$ with anchor $a$, unless otherwise stated.
+
+\begin{definition} [(Base preserving) morphism of Lie algebroids] 
+Given two algebroids over the manifold $M$, $A$ with anchor $a$ and $A'$ with anchor $a'$, \emph{a base preserving Lie algebroid morphism} $\phi: A \to A'$ is a vector bundle morphism such that $a' \comp \phi = a $, and such that $\phi[\mathfrak X, \mathfrak Y] = [\phi(\mathfrak X), \phi(\mathfrak Y)]$ for all $\mathfrak X, \mathfrak Y \in \Gamma(A)$. 
 \end{definition}
 
 \begin{definition} [Extension of Lie algebroids over $M$]
-Let $A, A', A''$ be Lie algebroids over $M$. \emph{An extension of Lie algebroids over $M$} is a sequence of Lie algebroids over $M$ \[ 0 \to A' \to A \to A'' \to 0 \] which is exact as sequence of vector bundles over $M$. 
+Let $A, A', A''$ be Lie algebroids over $M$. \emph{An extension of Lie algebroids over $M$} is a sequence of Lie algebroids over $M$ \[ 0 \to A' \to A \to A'' \to 0 \] which is exact as sequence of vector bundles over $M$.
 \end{definition}
+
 \rule{10cm}{1mm}
 
 \begin{definition}[Direct sum of Lie algebroids]
 Let $A, A'$ be Lie algebroids over $M$. 
 \end{definition}
 
-\begin{definition}[Restriction of $A$ to $U$]
+\begin{proposition}
+Given an open subset $U$ of $M$, and given $\mathfrak X, \mathfrak Y : M \to A$ sections of the vector bundle $A$, the restriction to $U$ of $[\mathfrak X, \mathfrak Y] \in \Gamma(A)$ depends only on the restrictions of $\mathfrak X$ and $\mathfrak Y$ to $U$.
+\end{proposition}
+\begin{proof}
 
+\end{proof}
+
+The previous result allows us to restrict the Lie bracket of $A$ to the restriction vector bundle of $A$ to $U$, $A_U$.
+
+\begin{definition}
+Let $(q:A \to M, a: A \to M, [,]:\Gamma(A)\times \Gamma(A) \to \Gamma(A))$ be a Lie algebroid. The restriction of the Lie algebroid $A$ to $U \subset M$, is the restriction vector bundle $A$ to $U$ $A_U$ with projection map $q_U: A_U \to U$, together with the anchor $a_U:A_U \to TU$ and bracket $[,]:\Gamma(A_U)\times \Gamma(A_U) \to \Gamma(A_U)$ that result from the restrictions to $U$ of the anchor and bracket of $A$.
 \end{definition}
 
-\begin{definition}[General Morphisms]
+\begin{definition}[General Morphism]
 
 \end{definition}
 
@@ -60,6 +83,12 @@ Let $A, A'$ be Lie algebroids over $M$.
 \subsection{Trivial Lie Algebroid}
 
 Compatibility map
+
+Let $M$ be a manifold, and $\mathfrak g$ a (real) Lie algebra with Lie bracket $[,]$. 
+
+Consider $p_1: M \times \mathfrak g \to M$, $(m, \eta) \mapsto m$ as the trivial vector bundle with fiber $\mathfrak g$ and base $M$. To refer to an element of this bundle we will usually use greek letters like $\eta, \theta, \kappa, \dots$, and to emphasize that such an element belongs to the fiber of $m \in M$ we will use subscripts, so $\eta_m \in M \times \mathfrak g$ is such that $p_1(\eta_m) = m$. A section of this bundle will be denoted by capital greek letters like $H, \Theta, K, \dots$ and their image in the fiber of $m \in M$ will once again be denoted by the subscript $m$, so $H \in \Gamma(M \times \mathfrak g)$ and $H_m \in p_1^{-1}(m)$. $X(H)$, $H$ corresponds canonically to a function $M \to g$.
+
+Now consider the internal direct sum over $M$ of the vector bundles $TM$ and $M \times \mathfrak g$; we write an element of this vector bundle as $X \oplus \eta$, where $X \in \pi^{-1}(m)$ and $\eta \in p_1^{-1}(m)$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Atiyah Lie Algebroid of a Principal Bundle}
@@ -85,7 +114,9 @@ Coming from Lie groupoids
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Representations}
 
-Adjoint representatioin
+This is a generalization of associated vector bundles of a principal bundle. It is in representation lie algebroids where connections of this bundle induce covariant derivatives, just as principal bundle connections induce covariant derivatives in associated vector bundles.
+
+Adjoint representation
 
 Equivariant
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
