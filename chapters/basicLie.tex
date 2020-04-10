@@ -12,7 +12,7 @@ A \emph{Lie algebroid over $M$} is a triple $(q:A \to M, a, [\cdot, \cdot ])$, w
 \begin{itemize}
     \item $a:A \to TM$ is a vector bundle morphism called \emph{the anchor of $A$}, and
     \item \emph{the bracket of $A$} $[\cdot, \cdot ]: \Gamma(A) \times \Gamma(A) \to \Gamma(A)$ is a Lie algebra structure on the $\RR$-vector space $\Gamma(A)$ (an $\RR$-bilinear alternating map) \info{The bracket doesn't need to exist fiberwwise as a metric. e.g. the bracket of vector fields doesn't}
-\end{itemize}  which satisfy (mejor escribirlo en terminos del bundle, como se hace con una metrica o un producto interno: en efecto implican tal estructura en el espaci ovectorial de secciones, pero pues ese es otro lenguaje):
+\end{itemize}  which satisfy the following compatibility conditions:
 
 \begin{enumerate}
     \item The map induced by $a$ on the sections, which we call by the same name, $a:\Gamma(A) \to \Gamma(TM)$ is a \emph{Lie algebra morphism}, that is, for any $\oid X, \oid Y \in \Gamma(A)$ \[ a([\oid X, \oid Y])  = [a(\oid X), a(\oid Y)] \in  \Gamma(TM)\]
@@ -107,21 +107,55 @@ Now consider the internal direct sum over $M$ of the vector bundles $TM$ and $M 
     \[
         [X \oplus H, Y \oplus \Theta] = [X, Y] \oplus \{X(\Theta) - Y(H) + [H, \Theta]\}
     \]
-    for all $X, Y \in \Gamma(TM)$, $H, Y \in \Gamma(M \times \algeb g)$. Notice that in the above formula the symbols $[,]$ are used in $3$ different instances, each one referring to the brackets of $3$ different spaces. $X(\Theta)$ makes reference to the derivative in direction of $X$ of the vector valued function $M \to \algeb g$ associated to $\Theta$, or, simply, to the Lie derivative of the section $\Theta \in \Gamma(M \times \algeb g)$, $\mathcal L_X \Theta$.
+    for all $X, Y \in \Gamma(TM)$, $H, Y \in \Gamma(M \times \algeb g)$. Notice that in the above formula the symbols $[,]$ are used in $3$ different instances, each one referring to the brackets of $3$ different spaces. $X(\Theta)$ makes reference to the derivative in direction of $X$ of the vector valued function $M \to \algeb g$ associated to $\Theta$, or, simply, to the Lie derivative of the section $\Theta \in \Gamma(M \times \algeb g)$, $\mathcal L_X \Theta$. Veamos que esto es una estructura de Lie en $\Gamma(TM \times (M \times \algeb g))$:
+    \begin{itemize}
+        \item Alternating:
+        \item Leibniz:
+        \item Jacobi:
+    \end{itemize}
 \end{itemize}
+
+Let's check that the compatibility conditions between the anchor and the bracket are satisfied; let $X \oplus H, Y \oplus \Theta \in \Gamma(TM \oplus (M \times \algeb g))$, $f \in C^\infty(M)$:
+
+\begin{itemize}
+    \item $a([X \oplus H, Y \oplus \Theta]) = a(\, [X, Y] \oplus \{X(\Theta) - Y(H) + [H, \Theta] \,) = [X, Y] = [a(X \oplus H), a(Y \oplus \Theta)]$
+    
+    \item 
+    \begin{align*}
+        [X \oplus H, &f\cdot (Y \oplus \Theta)] =\\
+        &= [X \oplus H, fY \oplus f\Theta] \\
+        &=  [X, fY] \oplus \{X(f\Theta) - fY(H) + [H, f\Theta]\} \\
+        &= (f[X, Y] + X(f)\,Y) \oplus \{X(f)\,\Theta + f\,X(\Theta) - fY(H) + f[H, \Theta]\} \\
+        &=f([X, Y] \oplus \{ X(\Theta) -Y(H) + [H, \Theta]\} ) + (X(f) Y \oplus X(f)\Theta) \\
+        &= f[X \oplus H, Y \oplus \Theta] + a(X \oplus H)f \, (Y \oplus \Theta)
+    \end{align*}
+\end{itemize}
+
+The vector bundle $TM \times (M \times \algeb g)$ together with the previously defined anchor and bracket is called \emph{the trivial Lie algebroid on $M$ with structure algebra $\algeb g$}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Atiyah Lie Algebroid of a Principal Bundle}
 
 Can be viewed as G-invariant P->g functions, TP 
 
+$TP$ is a vector bundle over $P$, $G$ acts to the right. (+ $G$ acts by v.b. isomorphism + $TP$ is covered by equivariant charts i.e. the action of $g$ doesn't affect the vector in which $p$ or $pg$ correspond). By proposition 3.1.1. of Mackenzie 
+\begin{itemize}
+    \item $TP/G$ is a vector bundle over $M$,
+    %\item the projection $TP \to TP/G$ is a surjective bundle morphism (and submersion)
+    %\item and $TP$ is a pullback of $TP/G$ by the projection $\pi:P \to M$
+\end{itemize}  
+
+\subsubsection{Trivial Principal Bundle and its Atiyah Lie Algebroid}
+
+I hope to see that this motivates the Lie algebroid bracket.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Derivations Algebroid of a Vector Bundle}
 
-Summary in Ch 3.3 Liner vector fields
+Summary in the beginning Ch 3.3 Liner vector fields
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Additional Examples}
+\subsection{Other Examples}
 
 Foliations
 
