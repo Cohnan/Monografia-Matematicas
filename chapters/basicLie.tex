@@ -7,13 +7,17 @@ Throughout this section, $M$ will be a smooth manifold.
 
 \section{Basic Definitions}
 
-\begin{definition} [Lie Algebroid over $M$]
-A \emph{Lie algebroid over $M$} is a triple $(q:A \to M, a, [\cdot, \cdot ])$, where $q:A \to M$ is a vector bundle, $a:A \to TM$ is a vector bundle morphism called \emph{the anchor of $A$}, and \emph{the bracket of $A$} $[\cdot, \cdot ]: \Gamma(A) \times \Gamma(A) \to \Gamma(A)$ is a Lie algebra structure on the $\RR$-vector space $\Gamma(A)$ (i.e. an $\RR$-bilinear alternating map) which satisfy:
+\begin{definition} [Lie Algebroid over $M$]\label{defnLieAlgoid}
+A \emph{Lie algebroid over $M$} is a triple $(q:A \to M, a, [\cdot, \cdot ])$, where $q:A \to M$ is a vector bundle, 
+\begin{itemize}
+    \item $a:A \to TM$ is a vector bundle morphism called \emph{the anchor of $A$}, and
+    \item \emph{the bracket of $A$} $[\cdot, \cdot ]: \Gamma(A) \times \Gamma(A) \to \Gamma(A)$ is a Lie algebra structure on the $\RR$-vector space $\Gamma(A)$ (an $\RR$-bilinear alternating map) \info{The bracket doesn't need to exist fiberwwise as a metric. e.g. the bracket of vector fields doesn't}
+\end{itemize}  which satisfy (mejor escribirlo en terminos del bundle, como se hace con una metrica o un producto interno: en efecto implican tal estructura en el espaci ovectorial de secciones, pero pues ese es otro lenguaje):
 
 \begin{enumerate}
-    \item The map induced by $a$ on the sections, which we call by the same name, $a:\Gamma(A) \to \Gamma(TM)$ is a \emph{Lie algebra morphism}, that is, for any $\mathfrak X, \mathfrak Y \in \Gamma(A)$ \[ a([\mathfrak X, \mathfrak Y])  = [a(\mathfrak X), a(\mathfrak Y)] \in  \Gamma(TM)\]
+    \item The map induced by $a$ on the sections, which we call by the same name, $a:\Gamma(A) \to \Gamma(TM)$ is a \emph{Lie algebra morphism}, that is, for any $\oid X, \oid Y \in \Gamma(A)$ \[ a([\oid X, \oid Y])  = [a(\oid X), a(\oid Y)] \in  \Gamma(TM)\]
     
-    \item (Leibniz identity) For any $\mathfrak X, \mathfrak Y \in \Gamma(A)$, $f \in C^\infty (M)$: \[ [\mathfrak X, f\mathfrak Y] = f[\mathfrak X, \mathfrak Y] + a(\mathfrak X)(f)\, \mathfrak Y \] where $a(\mathfrak X)(f)$ means the action, or Lie derivative, of an element of $\Gamma(TM)$ on a function.
+    \item (Leibniz identity) For any $\oid X, \oid Y \in \Gamma(A)$, $f \in C^\infty (M)$: \[ [\oid X, f\oid Y] = f[\oid X, \oid Y] + a(\oid X)(f)\, \oid Y \] where $a(\oid X)(f)$ means the usual derivative of an element of a function on $M$ in the direction of $a(\oid X) \in \Gamma(TM)$.
 \end{enumerate}
 \end{definition}
 
@@ -33,7 +37,7 @@ The previous result remarks the algebraic perspective which may also be used to 
 For the rest of the chapter $A$ will refer to a Lie algebroid over a manifold $M$ with anchor $a$, unless otherwise stated.
 
 \begin{definition} [(Base preserving) morphism of Lie algebroids] 
-Given two algebroids over the manifold $M$, $A$ with anchor $a$ and $A'$ with anchor $a'$, \emph{a base preserving Lie algebroid morphism} $\phi: A \to A'$ is a vector bundle morphism such that $a' \comp \phi = a $, and such that $\phi[\mathfrak X, \mathfrak Y] = [\phi(\mathfrak X), \phi(\mathfrak Y)]$ for all $\mathfrak X, \mathfrak Y \in \Gamma(A)$. 
+Given two algebroids over the manifold $M$, $A$ with anchor $a$ and $A'$ with anchor $a'$, \emph{a base preserving Lie algebroid morphism} $\phi: A \to A'$ is a vector bundle morphism such that $a' \comp \phi = a $, and such that $\phi[\oid X, \oid Y] = [\phi(\oid X), \phi(\oid Y)]$ for all $\oid X, \oid Y \in \Gamma(A)$. 
 \end{definition}
 
 \begin{definition} [Extension of Lie algebroids over $M$]
@@ -47,7 +51,7 @@ Let $A, A'$ be Lie algebroids over $M$.
 \end{definition}
 
 \begin{proposition}
-Given an open subset $U$ of $M$, and given $\mathfrak X, \mathfrak Y : M \to A$ sections of the vector bundle $A$, the restriction to $U$ of $[\mathfrak X, \mathfrak Y] \in \Gamma(A)$ depends only on the restrictions of $\mathfrak X$ and $\mathfrak Y$ to $U$.
+Given an open subset $U$ of $M$, and given $\oid X, \oid Y : M \to A$ sections of the vector bundle $A$, the restriction to $U$ of $[\oid X, \oid Y] \in \Gamma(A)$ depends only on the restrictions of $\oid X$ and $\oid Y$ to $U$.
 \end{proposition}
 \begin{proof}
 
@@ -79,16 +83,32 @@ Let $(q:A \to M, a: A \to M, [,]:\Gamma(A)\times \Gamma(A) \to \Gamma(A))$ be a 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Examples}
 
+\subsection{The Tangent Bundle}
+
+For any manifold $M$, its tangent bundle $TM$ with its projection $\pi:TM \to M$ and the commutator $[,]: \Gamma(TM)\times \Gamma(TM) \to \Gamma(TM)$ as bracket, together with the identity of $TM$ as anchor make $TM$ a Lie algebroid over $M$.
+
+\complete{Come up with a way to refer to sections that differs from element of TM, or perhaps but mentioning it as notation}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Trivial Lie Algebroid}
 
 Compatibility map
 
-Let $M$ be a manifold, and $\mathfrak g$ a (real) Lie algebra with Lie bracket $[,]$. 
+Let $M$ be a manifold, and $\algeb g$ a (real) Lie algebra with Lie bracket $[,]: \algeb g \times \algeb g$. 
 
-Consider $p_1: M \times \mathfrak g \to M$, $(m, \eta) \mapsto m$ as the trivial vector bundle with fiber $\mathfrak g$ and base $M$. To refer to an element of this bundle we will usually use greek letters like $\eta, \theta, \kappa, \dots$, and to emphasize that such an element belongs to the fiber of $m \in M$ we will use subscripts, so $\eta_m \in M \times \mathfrak g$ is such that $p_1(\eta_m) = m$. A section of this bundle will be denoted by capital greek letters like $H, \Theta, K, \dots$ and their image in the fiber of $m \in M$ will once again be denoted by the subscript $m$, so $H \in \Gamma(M \times \mathfrak g)$ and $H_m \in p_1^{-1}(m)$. $X(H)$, $H$ corresponds canonically to a function $M \to g$.
+Consider $p_1: M \times \algeb g \to M$, $(m, \eta) \mapsto m$ as the trivial vector bundle with fiber $\algeb g$ and base $M$. To refer to an element of this bundle we will usually use greek letters like $\eta, \theta, \kappa, \dots$, and to emphasize that such an element belongs to the fiber of $m \in M$ we will use subscripts, so $\eta_m \in M \times \algeb g$ is such that $p_1(\eta_m) = m$; . A section of this bundle will be denoted by capital greek letters like $H, \Theta, K, \dots$ and their image in the fiber of $m \in M$ will once again be denoted by the subscript $m$, so $H \in \Gamma(M \times \algeb g)$ and $H_m \in p_1^{-1}(m)$. $X(H)$, $H$ corresponds canonically to a function $M \to g$. (The sections of/This vector bundle) has a natural Lie structure given by the fiberwise Lie bracket of the Lie algebra $\algeb g$.
 
-Now consider the internal direct sum over $M$ of the vector bundles $TM$ and $M \times \mathfrak g$; we write an element of this vector bundle as $X \oplus \eta$, where $X \in \pi^{-1}(m)$ and $\eta \in p_1^{-1}(m)$.
+Now consider the internal direct sum over $M$ of the vector bundles $TM$ and $M \times \algeb g$; recall \unsure{Here I'm being explicit with basic stuff of vector bundle theory on purpose, but I'm not sure if this will stay} that the underlying set of this bundle is simply the subset of the cartesian product $TM \times (M \times \algeb g)$ given by $TM \oplus (M \times \algeb g) = \set{(X, \eta) \in TM \times (M \times \algeb g) \st \pi(X) = p_1(\eta)}$; we will call the projection of this vector bundle $\pi: X \oplus \eta \mapsto \pi(X) = p_1(\eta)$, abusing the notation; we write an element of this vector bundle as $X \oplus \eta$, where $X \in \pi^{-1}(m)$ and $\eta \in p_1^{-1}(m)$.
+
+\begin{itemize}
+    \item The anchor is given by the projection $a: TM \times (M \times \algeb g) \to TM$, $X \oplus \eta \mapsto X$. This map is a vector bundle map as it clearly respects the fibers and, on the fiber over each $m\in M$ it restricts to  a projection map $a_x:T_x M \times (\set{m}\times \algeb g)$ of vector spaces, which is a linear map.
+    
+    \item The bracket is given by 
+    \[
+        [X \oplus H, Y \oplus \Theta] = [X, Y] \oplus \{X(\Theta) - Y(H) + [H, \Theta]\}
+    \]
+    for all $X, Y \in \Gamma(TM)$, $H, Y \in \Gamma(M \times \algeb g)$. Notice that in the above formula the symbols $[,]$ are used in $3$ different instances, each one referring to the brackets of $3$ different spaces. $X(\Theta)$ makes reference to the derivative in direction of $X$ of the vector valued function $M \to \algeb g$ associated to $\Theta$, or, simply, to the Lie derivative of the section $\Theta \in \Gamma(M \times \algeb g)$, $\mathcal L_X \Theta$.
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Atiyah Lie Algebroid of a Principal Bundle}
