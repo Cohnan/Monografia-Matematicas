@@ -9,10 +9,10 @@ Throughout this section, $M$ will be a smooth manifold.
 
 \begin{definition} [Lie Algebroid over $M$]\label{defnLieAlgoid}
 A \emph{Lie algebroid over $M$} is a triple $(q:A \to M, a, [\cdot, \cdot ])$, where $q:A \to M$ is a vector bundle, 
-\begin{itemize}
+    \begin{itemize}
     \item $a:A \to TM$ is a vector bundle morphism called \emph{the anchor of $A$}, and
     \item \emph{the bracket of $A$} $[\cdot, \cdot ]: \Gamma(A) \times \Gamma(A) \to \Gamma(A)$ is a Lie algebra structure on the $\RR$-vector space $\Gamma(A)$ (an $\RR$-bilinear alternating map) \info{The bracket doesn't need to exist fiberwwise as a metric. e.g. the bracket of vector fields doesn't}
-\end{itemize}  which satisfy the following compatibility conditions:
+    \end{itemize}  which satisfy the following compatibility conditions:
 
 \begin{enumerate}
     \item The map induced by $a$ on the sections, which we call by the same name, $a:\Gamma(A) \to \Gamma(TM)$ is a \emph{Lie algebra morphism}, that is, for any $\oid X, \oid Y \in \Gamma(A)$ \[ a([\oid X, \oid Y])  = [a(\oid X), a(\oid Y)] \in  \Gamma(TM)\]
@@ -27,9 +27,9 @@ As it is usual, to simplify notation we will often say instead that \emph{$A$ is
 $\Gamma A$ is a finite projective module over $M$. Furthermore, the map $a: \Gamma(A) \to \Gamma(TM)$ is $C^\infty(M)$-linear.
 \end{proposition}
 \begin{proof}
-\begin{itemize}
+    \begin{itemize}
     \item It is $C^\infty(M)$ module:
-\end{itemize}
+    \end{itemize}
 \end{proof}
 
 The previous result remarks the algebraic perspective which may also be used to study this topic, in contrast to the topological perspective that has been taken in this document. However, this perspective is sometimes useful and will be used whenever clarity may be gained by its use.
@@ -87,55 +87,65 @@ Let $(q:A \to M, a: A \to M, [,]:\Gamma(A)\times \Gamma(A) \to \Gamma(A))$ be a 
 
 For any manifold $M$, its tangent bundle $TM$ with its projection $\pi:TM \to M$ and the commutator $[,]: \Gamma(TM)\times \Gamma(TM) \to \Gamma(TM)$ as bracket, together with the identity of $TM$ as anchor make $TM$ a Lie algebroid over $M$.
 
+Hola
+    \begin{itemize}
+    \item hola1
+    \item hola2
+    \end{itemize}
+holafin
+
+
 \complete{Come up with a way to refer to sections that differs from element of TM, or perhaps but mentioning it as notation}
 
 \subsubsection{Explicit Examples}
 
 The following are manifolds and their tangent bundles which we will use regularly.
 
-\begin{itemize}
-    \item $\RR^n$. Its tangent vectors may be expressed both as derivatives of paths, or simply as vectors that are associated to a specific fiber.
     \begin{itemize}
+    \item $\RR^n$. Its tangent vectors may be expressed both as derivatives of paths, or simply as vectors that are associated to a specific fiber.
+        \begin{itemize}
         \item $\CC^2$
         \item $\HH^2$
-    \end{itemize}
+        \end{itemize}
     \item $S^1$. Its tangent vectors are:
     \item $S^2$. Some of its tangent vectors are: . A set of basis vectors is...
     \item $S^3$ / $\HH^*$. Some of its tangent vectors are: . A set of basis vectors is...
-\end{itemize}
+    \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Atiyah Lie Algebroid of a Principal Bundle}
 
 Can be viewed as G-invariant P->g functions, TP 
 
+Makes reasonable undrestanding of Lie algebroids as sets of directions that are consistent with the shadow (TM) directions
+
 In \ref{} we motivated the use of $TP/G$ as a natural place to talk about connections of $P$, and why that was important, and we also claimed in \ref{} that it was a vector bundle over $M$, that it inherited a well defined bracket, and that the quotient map of the pushforward of the projection was vector bundle morphism into $TM$.
 
-\begin{itemize}
+    \begin{itemize}
     \item Alternative 1: 
         \item $TP$ is a vector bundle over $P$, $G$ acts to the right. (+ $G$ acts by v.b. isomorphism + $TP$ is covered by equivariant charts i.e. the action of $g$ doesn't affect the vector in which $p$ or $pg$ correspond). By proposition 3.1.1. of Mackenzie 
-        \begin{itemize}
+            \begin{itemize}
             \item $TP/G$ is a vector bundle over $M$,
             %\item the projection $TP \to TP/G$ is a surjective bundle morphism (and submersion)
             %\item and $TP$ is a pullback of $TP/G$ by the projection $\pi:P \to M$
-        \end{itemize}  
+            \end{itemize}  
         \item The bracket is well defined
     \item Alternative 2:
-    \begin{itemize}
+        \begin{itemize}
         \item $TP/G \to M$ is a ($C^\infty(M)$) vector bundle over $M$ (3.1.1 gives a more general procedure for this)
         \item Anchor: easy
         \item $\Gamma(TP/G)$ has a Lie bracket. Steps:
-        \begin{itemize}
+            \begin{itemize}
             \item $C^\infty(M)$-module isomorphic to $\Gamma_G(TP)$
             \item $[\oid X, \oid Y]$ for $\oid X, \oid Y \in \Gamma_G(TP)$ is also in $\Gamma_G(TP)$
             \item Has Lie bracket: should be easy: pullback of the Lie bracket of the isomorphism
-        \end{itemize}
+            \end{itemize}
         
         \item Compatibility Cond 1: Not sure. Perhaps using, for $f \in C^\infty(M)$ the corresponding $\tilde f \in C_G^\infty(P)$ (the smoothness can be shown easily with for every local trivialization using the smoothness of $f$)
         
         \item Compatibility COnd. 2: Not sure, but it should end up proving that $\oid X (\tilde f) = \Tilde{X(f)}$
+        \end{itemize}
     \end{itemize}
-\end{itemize}
 
 
 Now we check the compatibility conditions:
@@ -158,7 +168,7 @@ Consider $p_1: M \times \algeb g \to M$, $(m, \eta) \mapsto m$ as the trivial ve
 
 Now consider the internal direct sum over $M$ of the vector bundles $TM$ and $M \times \algeb g$; recall \unsure{Here I'm being explicit with basic stuff of vector bundle theory on purpose, but I'm not sure if this will stay} that the underlying set of this bundle is simply the subset of the cartesian product $TM \times (M \times \algeb g)$ given by $TM \oplus (M \times \algeb g) = \set{(X, \eta) \in TM \times (M \times \algeb g) \st \pi(X) = p_1(\eta)}$; we will call the projection of this vector bundle $\pi: X \oplus \eta \mapsto \pi(X) = p_1(\eta)$, abusing the notation; we write an element of this vector bundle as $X \oplus \eta$, where $X \in \pi^{-1}(m)$ and $\eta \in p_1^{-1}(m)$.
 
-\begin{itemize}
+    \begin{itemize}
     \item The anchor is given by the projection $a: TM \times (M \times \algeb g) \to TM$, $X \oplus \eta \mapsto X$. This map is a vector bundle map as it clearly respects the fibers and, on the fiber over each $m\in M$ it restricts to  a projection map $a_x:T_x M \times (\set{m}\times \algeb g)$ of vector spaces, which is a linear map.
     
     \item The bracket is given by 
@@ -166,16 +176,16 @@ Now consider the internal direct sum over $M$ of the vector bundles $TM$ and $M 
         [X \oplus H, Y \oplus \Theta] = [X, Y] \oplus \{X(\Theta) - Y(H) + [H, \Theta]\}
     \]
     for all $X, Y \in \Gamma(TM)$, $H, Y \in \Gamma(M \times \algeb g)$. Notice that in the above formula the symbols $[,]$ are used in $3$ different instances, each one referring to the brackets of $3$ different spaces. $X(\Theta)$ makes reference to the derivative in direction of $X$ of the vector valued function $M \to \algeb g$ associated to $\Theta$, or, simply, to the Lie derivative of the section $\Theta \in \Gamma(M \times \algeb g)$, $\mathcal L_X \Theta$. Veamos que esto es una estructura de Lie en $\Gamma(TM \times (M \times \algeb g))$:
-    \begin{itemize}
+        \begin{itemize}
         \item Alternating:
         \item Leibniz:
         \item Jacobi:
+        \end{itemize}
     \end{itemize}
-\end{itemize}
 
 Let's check that the compatibility conditions between the anchor and the bracket are satisfied; let $X \oplus H, Y \oplus \Theta \in \Gamma(TM \oplus (M \times \algeb g))$, $f \in C^\infty(M)$:
 
-\begin{itemize}
+    \begin{itemize}
     \item $a([X \oplus H, Y \oplus \Theta]) = a(\, [X, Y] \oplus \{X(\Theta) - Y(H) + [H, \Theta] \,) = [X, Y] = [a(X \oplus H), a(Y \oplus \Theta)]$
     
     \item 
@@ -187,7 +197,7 @@ Let's check that the compatibility conditions between the anchor and the bracket
         &=f([X, Y] \oplus \{ X(\Theta) -Y(H) + [H, \Theta]\} ) + (X(f) Y \oplus X(f)\Theta) \\
         &= f[X \oplus H, Y \oplus \Theta] + a(X \oplus H)f \, (Y \oplus \Theta)
     \end{align*}
-\end{itemize}
+    \end{itemize}
 
 The vector bundle $TM \times (M \times \algeb g)$ together with the previously defined anchor and bracket is called \emph{the trivial Lie algebroid on $M$ with structure algebra $\algeb g$}.
 
@@ -200,10 +210,10 @@ The vector bundle $TM \times (M \times \algeb g)$ together with the previously d
 
 Or more generally $B \times \algeb g / G$ for a bundle $B$ in which $G$ acts to the right.
 
-The subfamily of examples we will be most interested in is the family of $P \times \algeb g/G$ where $P$ is a principal bundle over a manifold $M$ with structure (Lie) group $G$, whose Lie  algebra is $\algeb g$. This bundle may be thought of as follows: given a point $p \in P$, a lie group element $A$ may be thought of as an infinitesimal direction in which we may move from $p$, as $A$ is an infinitesimal group element which prompts an infinitesimal movement in $P$ by the group action\improvement{Improve: I think ``infinitesimal action'' is a standard thing. The infinitesimal word may need a revision or change.} We will also see that, furthermore, any vertifical infinitesimal direction of movement can be encoded by an element of $P \times \algeb g$. Additionally, we had seen in \ref{} how a connection form is equivalent to a  a v.b. map $TP/G \to P \times \algeb g/G$ which is a section of the inclusion map (we called this maps connection reforms). \dbbox{REWRITE NICE ALL OF THIS, BUT INCORPORTATE IT}.
+The subfamily of examples we will be most interested in is the family of $P \times \algeb g/G$ where $P$ is a principal bundle over a manifold $M$ with structure (Lie) group $G$, whose Lie  algebra is $\algeb g$. This bundle may be thought of as follows: given a point $p \in P$, a lie group element $A$ may be thought of as an infinitesimal direction in which we may move from $p$, as $A$ is an infinitesimal group element which prompts an infinitesimal movement in $P$ by the group action\improvement{Improve: I think ``infinitesimal action'' is a standard thing. The infinitesimal word may need a revision or change.} We will also see that, furthermore, any vertifical infinitesimal direction of movement can be encoded by an element of $P \times \algeb g$. Additionally, we had seen in \ref{} how a connection form is equivalent to a  a v.b. map $TP/G \to P \times \algeb g/G$ which is a section of the inclusion map (we called this maps connection reforms). \dbbox{REWRITE NICELY ALL OF THIS, BUT INCORPORTATE IT}.
 
 
-\begin{itemize}
+    \begin{itemize}
     \item $P \times \algeb g/G$ is a ($C^\infty(M)$) vector bundle over $M$ (The same 3.1.1. proposition that may be used to prove that $TP/G$ is so can be used to prove this)
     
     \item Anchor: $0$ anchor works trivially
@@ -215,15 +225,15 @@ The subfamily of examples we will be most interested in is the family of $P \tim
     \item Compatibility 2: trivial
     
     \item $P \times \algeb g/ G \to TP / G$ is a ($C\infty(M)$) vector bundle morphism over $M$ (this is also proved generally by proposition 3.1.2.). Furthermore:
-    \begin{itemize}
+        \begin{itemize}
         \item It is injective... It is a submersion?
         \item It respects the brackets on both sides
         \item Respects, trivially, the anchor.
-        \item All of this allows us to see that $P \times g/G$ corresponds to the vertical infinitesimal directions.
-    \end{itemize}
+        \item All of this allows us to see that $P \times \algeb g/G$ corresponds to the vertical infinitesimal directions.
+        \end{itemize}
     
     \item So we may regard $P \times \algeb g / G = ker a$, and not only as a vector bundle map, but, thanks to the respect for the anchor and, specially, the Lie bracket, we may regard $P \times \algeb g/G$ as a sub Lie algebroid of $TP/G$.
-\end{itemize}
+    \end{itemize}
 
 \subsubsection{Explicit Examples}
 
@@ -231,6 +241,8 @@ The subfamily of examples we will be most interested in is the family of $P \tim
 \subsection{The Derivations Algebroid of a Vector Bundle}
 
 Summary in the beginning Ch 3.3 Liner vector fields
+
+Makes reasonable, not only the understanding of Lie algebroids as generalized directions, but also of the 2nd compatibility condition.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Other (Families of) Examples}
