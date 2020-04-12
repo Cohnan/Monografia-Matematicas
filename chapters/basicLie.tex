@@ -150,6 +150,20 @@ In \ref{} we motivated the use of $TP/G$ as a natural place to talk about connec
         \end{itemize}  
         \item The bracket is well defined
     \item Alternative 2:
+    \begin{itemize}
+        \item $TP/G \to M$ is a ($C^\infty(M)$) vector bundle over $M$ (3.1.1 gives a more general procedure for this)
+        \item Anchor: easy
+        \item $\Gamma(TP/G)$ has a Lie bracket. Steps:
+        \begin{itemize}
+            \item $C^\infty(M)$-module isomorphic to $\Gamma_G(TP)$
+            \item $[\oid X, \oid Y]$ for $\oid X, \oid Y \in \Gamma_G(TP)$ is also in $\Gamma_G(TP)$
+            \item Has Lie bracket: should be easy: pullback of the Lie bracket of the isomorphism
+        \end{itemize}
+        
+        \item Compatibility Cond 1: Not sure. Perhaps using, for $f \in C^\infty(M)$ the corresponding $\tilde f \in C_G^\infty(P)$ (the smoothness can be shown easily with for every local trivialization using the smoothness of $f$)
+        
+        \item Compatibility COnd. 2: Not sure, but it should end up proving that $\oid X (\tilde f) = \Tilde{X(f)}$
+    \end{itemize}
 \end{itemize}
 
 
@@ -158,6 +172,31 @@ Now we check the compatibility conditions:
 \subsubsection{Trivial Principal Bundle and its Atiyah Lie Algebroid}
 
 I hope to see that this motivates the Lie algebroid bracket.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The Adjoint Bundle of a Principal Bundle}
+
+Or more generally $B \times \algeb g / G$ for a bundle $B$ in which $G$ acts to the right.
+
+\begin{itemize}
+    \item $P \times \algeb g/G$ is a ($C^\infty(M)$) vector bundle over $M$ (The same 3.1.1. proposition that may be used to prove that $TP/G$ is so can be used to prove this)
+    
+    \item Anchor: $0$ anchor works trivially
+    
+    \item Lie Bracket: fiberwise structure: the fiberwise (over $P$) bracket of $P \times \algeb g$, and it is easily seen (at least in the matrix Lie algebras, although it shouldn't be difficult to prove that $ad$ commutes with $[,]$ which allows to prove this well definition for any Lie algebra)
+    
+    \item Compatibility 1: trivial
+    
+    \item Compatibility 2: trivial
+    
+    \item $P \times \algeb g/ G \to TP / G$ is a ($C\infty(M)$) vector bundle morphism over $M$ (this is also proved generally by proposition 3.1.2.). Furthermore:
+    \begin{itemize}
+        \item It is injective... It is a submersion?
+        \item It respects the brackets on both sides
+    \end{itemize}
+    
+    \item Respects, trivially, the anchor, so we may regard $P \times \algeb g / G = ker a$
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Derivations Algebroid of a Vector Bundle}
