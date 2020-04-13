@@ -113,52 +113,9 @@ The following are manifolds and their tangent bundles which we will use regularl
     \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{The Atiyah Lie Algebroid of a Principal Bundle}
-
-Can be viewed as G-invariant P->g functions, TP 
-
-Makes reasonable undrestanding of Lie algebroids as sets of directions that are consistent with the shadow (TM) directions
-
-In \ref{} we motivated the use of $TP/G$ as a natural place to talk about connections of $P$, and why that was important, and we also claimed in \ref{} that it was a vector bundle over $M$, that it inherited a well defined bracket, and that the quotient map of the pushforward of the projection was vector bundle morphism into $TM$.
-
-    \begin{itemize}
-    \item Alternative 1: 
-        \item $TP$ is a vector bundle over $P$, $G$ acts to the right. (+ $G$ acts by v.b. isomorphism + $TP$ is covered by equivariant charts i.e. the action of $g$ doesn't affect the vector in which $p$ or $pg$ correspond). By proposition 3.1.1. of Mackenzie 
-            \begin{itemize}
-            \item $TP/G$ is a vector bundle over $M$,
-            %\item the projection $TP \to TP/G$ is a surjective bundle morphism (and submersion)
-            %\item and $TP$ is a pullback of $TP/G$ by the projection $\pi:P \to M$
-            \end{itemize}  
-        \item The bracket is well defined
-    \item Alternative 2:
-        \begin{itemize}
-        \item $TP/G \to M$ is a ($C^\infty(M)$) vector bundle over $M$ (3.1.1 gives a more general procedure for this)
-        \item Anchor: easy
-        \item $\Gamma(TP/G)$ has a Lie bracket. Steps:
-            \begin{itemize}
-            \item $C^\infty(M)$-module isomorphic to $\Gamma_G(TP)$
-            \item $[\oid X, \oid Y]$ for $\oid X, \oid Y \in \Gamma_G(TP)$ is also in $\Gamma_G(TP)$
-            \item Has Lie bracket: should be easy: pullback of the Lie bracket of the isomorphism
-            \end{itemize}
-        
-        \item Compatibility Cond 1: Not sure. Perhaps using, for $f \in C^\infty(M)$ the corresponding $\tilde f \in C_G^\infty(P)$ (the smoothness can be shown easily with for every local trivialization using the smoothness of $f$)
-        
-        \item Compatibility COnd. 2: Not sure, but it should end up proving that $\oid X (\tilde f) = \Tilde{X(f)}$
-        \end{itemize}
-    \end{itemize}
-
-
-Now we check the compatibility conditions:
-
-\subsubsection{Trivial Principal Bundle and its Atiyah Lie Algebroid}
-
-I hope to see that this motivates the Lie algebroid bracket.
-
-\subsubsection{Explicit Examples}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Trivial Lie Algebroid}
+
+The trivial Lie algebroid makes explicit the understanding of Lie algebroids as spaces of generalized tangent directions for their base manifolds, as it is simply the combination of both the usual tangent directions of the manifold, together with Lie algebra directions added by hand. This understanding of Lie algebroids is further supported by the fact, proven in \ref{}, that any transitive Lie algebroid has this form locally. The transitive part, as we will see, simply means that the anchor/shadow map for each $m \in M$ covers all vectors tangent to $x$, so the interpretation of Lie algebroids doesn't lose force by this additional requirement, as it may very well be that the Lie algebroid doesn't cover all directions tangent to $x$, but only some.
 
 Compatibility map
 
@@ -200,6 +157,52 @@ Let's check that the compatibility conditions between the anchor and the bracket
     \end{itemize}
 
 The vector bundle $TM \times (M \times \algeb g)$ together with the previously defined anchor and bracket is called \emph{the trivial Lie algebroid on $M$ with structure algebra $\algeb g$}.
+
+\subsubsection{Explicit Examples}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The Atiyah Lie Algebroid of a Principal Bundle}
+
+Can be viewed as G-invariant P->g functions, TP 
+
+Makes reasonable undrestanding of Lie algebroids as sets of directions that are consistent with the shadow (TM) directions
+
+In \ref{} we motivated the use of $TP/G$ as a natural place to talk about connections of $P$, and why that was important, and we also claimed in \ref{} that it was a vector bundle over $M$, that it inherited a well defined bracket, and that the quotient map of the pushforward of the projection was vector bundle morphism into $TM$.
+
+    \begin{itemize}
+    \item Alternative 1: 
+        \item $TP$ is a vector bundle over $P$, $G$ acts to the right. (+ $G$ acts by v.b. isomorphism + $TP$ is covered by equivariant charts i.e. the action of $g$ doesn't affect the vector in which $p$ or $pg$ correspond). By proposition 3.1.1. of Mackenzie 
+            \begin{itemize}
+            \item $TP/G$ is a vector bundle over $M$,
+            %\item the projection $TP \to TP/G$ is a surjective bundle morphism (and submersion)
+            %\item and $TP$ is a pullback of $TP/G$ by the projection $\pi:P \to M$
+            \end{itemize}  
+        \item The bracket is well defined
+    \item Alternative 2:
+        \begin{itemize}
+        \item $TP/G \to M$ is a ($C^\infty(M)$) vector bundle over $M$ (3.1.1 gives a more general procedure for this)
+        \item Anchor: easy
+        \item $\Gamma(TP/G)$ has a Lie bracket. Steps:
+            \begin{itemize}
+            \item $C^\infty(M)$-module isomorphic to $\Gamma_G(TP)$
+            \item $[\oid X, \oid Y]$ for $\oid X, \oid Y \in \Gamma_G(TP)$ is also in $\Gamma_G(TP)$
+            \item Has Lie bracket: should be easy: pullback of the Lie bracket of the isomorphism
+            \end{itemize}
+        
+        \item Compatibility Cond 1: Not sure. Perhaps using, for $f \in C^\infty(M)$ the corresponding $\tilde f \in C_G^\infty(P)$ (the smoothness can be shown easily with for every local trivialization using the smoothness of $f$)
+        
+        \item Compatibility COnd. 2: Not sure, but it should end up proving that $\oid X (\tilde f) = \Tilde{X(f)}$
+        \end{itemize}
+    \end{itemize}
+
+
+Now we check the compatibility conditions:
+
+\subsubsection{Trivial Principal Bundle and its Atiyah Lie Algebroid}
+
+I hope to see that this motivates the Lie algebroid bracket.
 
 \subsubsection{Explicit Examples}
 
@@ -258,7 +261,7 @@ Coming from Lie groupoids
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Representations}
 
-This is a generalization of associated vector bundles of a principal bundle. It is in representation lie algebroids where connections of this bundle induce covariant derivatives, just as principal bundle connections induce covariant derivatives in associated vector bundles.
+This is a generalization of associated vector bundles of a principal bundle. In the bundle theory, sections of associated vector bundles are equivalent to $G$-equivariant functions $P \to V$, so $G$-invariant vector fields $\oid X \in \Gamma(P)$ are derivatives/derivations of this functions: $\Gamma(E) \to \Gamma(E)$ satisfying Leibniz for $G$-invariant functions of $P$ (equivalent to functions in $M$). FurtherIt is in representation lie algebroids where connections of this bundle induce covariant derivatives, just as principal bundle connections induce covariant derivatives in associated vector bundles.
 
 Adjoint representation
 
