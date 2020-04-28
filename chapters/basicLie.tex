@@ -32,9 +32,9 @@ $\Gamma A$ is a finite projective module over $M$. Furthermore, the map $a: \Gam
     \end{itemize}
 \end{proof}
 
-The previous result remarks the algebraic perspective which may also be used to study this topic, in contrast to the topological perspective that has been taken in this document. However, this perspective is sometimes useful and will be used whenever clarity may be gained by its use.
+The previous result remarks the algebraic perspective which may also be used to study this topic, in contrast to the topological perspective that has been adopted in this document. However, this perspective is sometimes useful and will be used whenever clarity may be gained by its use.
 
-For the rest of the chapter $A$ will refer to a Lie algebroid over a manifold $M$ with anchor $a$, unless otherwise stated.
+\ptext{For the rest of the chapter $A$ will refer to a Lie algebroid over a manifold $M$ with anchor $a$, unless otherwise stated.}
 
 \begin{definition} [(Base preserving) morphism of Lie algebroids] 
 Given two algebroids over the manifold $M$, $A$ with anchor $a$ and $A'$ with anchor $a'$, \emph{a base preserving Lie algebroid morphism} $\phi: A \to A'$ is a vector bundle morphism such that $a' \comp \phi = a $, and such that $\phi[\oid X, \oid Y] = [\phi(\oid X), \phi(\oid Y)]$ for all $\oid X, \oid Y \in \Gamma(A)$. 
@@ -82,20 +82,14 @@ Let $(q:A \to M, a: A \to M, [,]:\Gamma(A)\times \Gamma(A) \to \Gamma(A))$ be a 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Examples}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Tangent Bundle}
 
-For any manifold $M$, its tangent bundle $TM$ with its projection $\pi:TM \to M$ and the commutator $[,]: \Gamma(TM)\times \Gamma(TM) \to \Gamma(TM)$ as bracket, together with the identity of $TM$ as anchor make $TM$ a Lie algebroid over $M$.
+The tangent bundle of a manifold $M$ is the most basic example of a Lie algebroid, as it should be if we want to understand Lie algebroids on $M$ as generalized directions on $M$.
 
-Hola
-    \begin{itemize}
-    \item hola1
-    \item hola2
-    \end{itemize}
-holafin
+For any manifold $M$, its tangent bundle $TM$ with its projection $\pi:TM \to M$ and the vector field commutator $[,]: \Gamma(TM)\times \Gamma(TM) \to \Gamma(TM)$ as bracket, together with the identity of $TM$ as anchor make $TM$ a Lie algebroid over $M$.
 
-
-\complete{Come up with a way to refer to sections that differs from element of TM, or perhaps but mentioning it as notation}
+We will denote by capital letters near the end of the alphabet like $X, Y$ to refer both to elements of $TM$ and of $\Gamma(TM)$, and $X_m$ if we want to emphasize that it is in the fiber of $m \in M$\complete{Come up with a way to refer to sections that differs from element of TM, or perhaps but mentioning it as notation}
 
 \subsubsection{Explicit Examples}
 
@@ -111,6 +105,59 @@ The following are manifolds and their tangent bundles which we will use regularl
     \item $S^2$. Some of its tangent vectors are: . A set of basis vectors is...
     \item $S^3$ / $\HH^*$. Some of its tangent vectors are: . A set of basis vectors is...
     \end{itemize}
+
+
+\subsubsection{Pullback of Regular submanifolds}
+
+Another example that shows the arising of Lie algebroids is when we restrict $TM$ to the regular submanifold $N$, in which case we not only have the tangent directions to $N$, but also some additional ``perpendicular'' directions.
+
+Let $N$ topological subspace of $M$ be a regular submanifold of $M$ (i.e. $N$ may be described locally by the vanishing of some of the coordinates of a chart of $M$; alternatively, the inclusion $N \to M$ is an immersion). Let $T\bar N = \pi^{-1} M$; it is easy to see\complete{I believe that in Mackenzie 2.1 or 2.2 something about pullbacks is said, perhaps allowing me to prove that this is true} that this vector bundle is homeomorphic to the pullback of $TM$ under the inclusion of $N$ in $M$. Let anchor $a = i^*\pi: T \bar N \to TN$ 
+
+Again using a compatible adapted atlas of $M$ relative to $N$, we may prove that 
+\begin{itemize}
+\item The vector bundle $TN$ is embedded in $T \bar N$
+\item The bracket of $TM$ restricts correctly to $T \bar N$
+\item See that $T \bar N = TN \oplus T^\perp N$
+\item See that $a(T^\perp N) = 0$.
+\end{itemize}
+ 
+AAaaah, tal vez no puedo pegar los [X, Y] locales para hacer una seccion de $T \bar N$... por otro lado está la cuestión de si puedo extender cualquier sección $T \bar N$ a una seccion de $TM$... estas 2 cosas no me permiten ver si en efecto $T \bar N$ es algebroide de Lie \todo{Can I see that the local definition of the commutator transforms as a vector field?}
+
+Si este ejemplo funciona, is it always the sum of the tangent bundle and the ``normal bundle''?\todo{What is the normal bundle?} That is ``obvious'' in local coordinates.
+
+
+
+
+Explicit examples:
+\begin{itemize}
+\item If $N = \RR^2$ as a regular submanifold $\RR^3$, seen as the hyperplane $z = 0$, our Lie algebroid $T \bar {\RR^2}$ not only contains the span of $\partial_x$ and $\partial_y$, but also allows vectors with perpendicular components: in the direction of $\partial_y$. We may see this Lie algebroid as the direct sum of $T \RR^2$ with 
+\item If $N = S^2$ as a regular submanifold of $\RR^3$, using spherical coordinates we see that $T \bar {S^2}$ is not only $TS^2 = span\set{\partial_\theta, \partial_\phi}$, but also $T^\perp S^2 = span\set{\partial_r}$ 
+\item Let $N = \RR^2$ seen as the regular submanifold of $\RR^n$ determined by $x_3 = x_4 = \dots = 0$. In this case the original tangent direction to $N$ are spanned by $\partial_1, \partial_2$, but we have $n-2$ additional directions, all of which have $0$ as their anchor or horizontal component.
+\end{itemize}
+
+\subsubsection{Involutive Distributions/Foliations}
+
+In the previous example we saw a family of examples of Lie algebroids which contained directions additional to the tangent directions of the manifold. However, the opposite may also occur.
+
+\begin{definition} {Foliation of $M$}
+Let $\mathcal F = \set{L_\alpha}_{\alpha \in A}$ for some indexing set $A$ be a collection of disjoint connected regular submanifolds of $M$ whose union is all of $M$. $\mathcal F$ is called \emph{a $p$-dimensional (smooth) foliation of $M$} if every $m \in M$ is an element of a chart\todo{does it have to be a chart?}  $(U, \phi:U \to \RR^n)$ for which the coordinates of any $L_\alpha \in \mathcal F$ that intersects with $U$, $U \cap L_\alpha$ is described in the chart by the equations $x^{p+1} = c^{p+1}, \cdots , x^{n} = c^{n} $ for constants $c^{p+1}, \dots c^n \in \RR$. The elements $L_\alpha \in \mathcal F$ are called \emph{the leaves of the foliation $\mathcal F$}
+\end{definition}
+
+\begin{definition}{Distribution on $M$}
+\emph{An $q$-dimensional distribution on $M$} is a subbundle of $TM$ of rank $q$.
+\end{definition}
+
+Let $\mathcal F = \set{L\alpha}_{\alpha \in A}$ be a $p$-dimensional foliation of $M$. Each leaf is a regular submanifold of $M$, therefore $T L_\alpha$ is embedded in $TM$, so we see $T L_\alpha$ as a submanifold \todo{is it?} of $TM$, and so the disjoint union $E = \bigcup_{\alpha \in A} T L_\alpha$ is also a submanifold of $TM$. Additionally, we see that $E$ has vector bundle structure over $M$ of rank $p$, because each $m \in M$ is an element of a unique leaf $L$ and $T_m L \subset E$ is a vector space of dimension $p$; TL can be given a nice atlas?
+
+Integrable distribution
+
+The converse is called Frobenius theorem:
+
+Explicit examples:
+
+\begin{itemize}
+    \item Foliation in integral lines iff 1 dimensional distribution
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Trivial Lie Algebroid}
