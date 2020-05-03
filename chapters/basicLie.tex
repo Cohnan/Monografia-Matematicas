@@ -23,6 +23,9 @@ A \emph{Lie algebroid over $M$} is a triple $(q:A \to M, a, [\cdot, \cdot ])$, w
 
 As it is usual, to simplify notation we will often say instead that \emph{$A$ is a Lie algebroid over the manifold $M$ with anchor $a$}, and the brackets will be denoted simply by $[,]$ for all Lie algebroids.
 
+Recall that, when talking about $C^r-$differentiable vector fields, a vector-bundle chart, or simply a chart, will make reference to a local trivialization $\psi: U \times V \to E|_U$ which is $C^r$-differentiable.
+
+
 \begin{proposition}
 $\Gamma A$ is a finite projective module over $M$. Furthermore, the map $a: \Gamma(A) \to \Gamma(TM)$ is $C^\infty(M)$-linear.
 \end{proposition}
@@ -147,7 +150,7 @@ Let $\mathcal F = \set{L_\alpha}_{\alpha \in A}$ for some indexing set $A$ be a 
 \emph{An $q$-dimensional distribution on $M$} is a subbundle of $TM$ of rank $q$.
 \end{definition}
 
-Let $\mathcal F = \set{L\alpha}_{\alpha \in A}$ be a $p$-dimensional foliation of $M$. Each leaf is a regular submanifold of $M$, therefore $T L_\alpha$ is embedded in $TM$, so we see $T L_\alpha$ as a submanifold \todo{is it?} of $TM$, and so the disjoint union $E = \bigcup_{\alpha \in A} T L_\alpha$ is also a submanifold of $TM$. Additionally, we see that $E$ has vector bundle structure over $M$ of rank $p$, because each $m \in M$ is an element of a unique leaf $L$ and $T_m L \subset E$ is a vector space of dimension $p$; TL can be given a nice atlas?
+Let $\mathcal F = \set{L_\alpha}_{\alpha \in A}$ be a $p$-dimensional foliation of $M$. Each leaf is a regular submanifold of $M$, therefore $T L_\alpha$ is embedded in $TM$, so we see $T L_\alpha$ as a submanifold \todo{is it?} of $TM$, and so the disjoint union $E = \bigcup_{\alpha \in A} T L_\alpha$ is also a submanifold of $TM$. Additionally, we see that $E$ has vector bundle structure over $M$ of rank $p$, because each $m \in M$ is an element of a unique leaf $L$ and $T_m L \subset E$ is a vector space of dimension $p$; TL can be given a nice atlas?
 
 Integrable distribution
 
@@ -157,6 +160,7 @@ Explicit examples:
 
 \begin{itemize}
     \item Foliation in integral lines iff 1 dimensional distribution
+    \item Second class? First class?
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -247,8 +251,66 @@ In \ref{} we motivated the use of $TP/G$ as a natural place to talk about connec
 
 Now we check the compatibility conditions:
 
+Alternative 3:%%%%%%%%%%%%%%%%%%%%%%
+
+What is necessary:
+
+\begin{itemize}
+    \item $E/G$ is a smooth manifold
+    \item The chosen charts are also local trivializations that make $E/G$ a vector bundle.
+    \item $\natural$ is a surjective submersion -> to prove 3.1.2
+\end{itemize}
+
 \subsubsection{Trivial Principal Bundle and its Atiyah Lie Algebroid}
 
+The main purpose of the next propositions is to allow us to give a smooth structure to $TP/G$, to show that certain important maps are also smooth, and to understand the brackets that will arise for $\Gamma(TP/G)$, among other things related to the adjoint bundle $P\times \algeb g/G$.
+
+\begin{proposition}
+Let $E$ be a (smooth) vector bundle over $P$ with projection map $p^E: E \to P$. Suppose that $G$ acts (smoothly) to the right on $E$ in such a way that:
+
+\begin{enumerate}
+    \item Each $g \in G$ acts by vector bundle isomorphism over the right translation map $R_g: P \to P$.
+    
+    \item $E$ is covered by $G$-equivariant $\pi$-saturated charts. That is, for each $p_0 \in P$ there is a chart of E $\psi: \mathcal U \times V \to E|_{\mathcal U}$, where $p_0 \in \mathcal U = \pi^{-1}(U)$ for some open $U \subset M$, that satisfies $\psi(p, v)g = \psi(pg, v)$ for all $p \in \mathcal U$, $v \in V$, $g \in G$.
+\end{enumerate}
+
+Then the quotient space $E/G$ has a (smooth) vector bundle structure over $M$ which is unique in the sense that:
+
+\begin{itemize}
+    \item $E/G$ has the unique manifold structure that makes the quotient map $\natural: E \to E/G$ a surjective submersion.
+    \item $E/G$ has the unique vector bundle structure that makes the quotient map $\natural$ linear over $\pi: P \to M$.
+\end{itemize}
+
+We will denote by $\langle \mu \rangle \in E/G$ the orbit of $\mu \in E$, and by $p:E/G \to M$ the projection map; this map satisfies $p \circ \natural = \pi \circ p^E$.
+
+\end{proposition}
+
+\begin{proof}
+Notice that conditions (1) and (2) tell us that, locally, the exact point in the fiber $\pi^{-1}(x) \in P$ that we choose is not important to determine the vector space $V$ nor the representing vector $v \in V$, therefore it should make sense to mod out that redundancy, obtained by the group action, to make charts $U \times V \to E/G|_U$. This is what we will now formalize.
+
+Let $p: E/G \to M$, $\langle \mu \rangle \mapsto \pi(p^E(\mu))$; this function is well defined because, by (1), $p^E(\mu g)$ and $p^E(\mu)$ are in the same fiber of $P$, for all $g \in G$. (Notice that condition (1) implies that $p^E(\mu g) = p^E(\mu) g$ for $\mu$ and $g$ arbitrary).
+
+For $x \in M$, let $\psi: \mathcal U \times V \to E|_{\mathcal U}$, $x \in U$, be a chart of $E$ as in condition (2); we may further assume that $U$ is a trivializing neighborhood of $P$ (by intersecting one such neighborhood of $x$ with $U$ if necessary), so that there exists a local section of $\pi$, $\sigma: U \to \mathcal U \subset P$ such that the local trivialization of $P$ is described by $U\times G \to \mathcal U$, $(y, g) \mapsto \sigma(y)g$.
+
+We'll now see that $E/G|_x$ may be given vector space structure, which turns out to be isomorphic to $V$. 
+\begin{itemize}
+    \item First, to define $\langle \mu \rangle + \langle \nu \rangle$ for $\langle \mu \rangle, \langle \nu \rangle \in E/G|_x$ arbitrary, let $g \in G$ be such that $p^E(\nu g) = p^E(\mu)$, which exists because of condition (1). This means that both $\mu$ and $\nu g$ belong to the same vector space $E_{p^E(\mu)}$, so we may define $\langle \mu \rangle + \langle \nu \rangle := \langle \mu + \nu g \rangle$. To see that this is well defined it suffices to show that the result doesn't change if another representative of, say, the class of $\langle \nu \rangle$ is chosen: let $\nu' \in \langle \nu \rangle$, thus there is element $g_\nu \in G$ such that $\nu = \nu' g_\nu$; now let $g' \in G$ be such that $p^E(\nu' g') = p^E(\mu)$, therefore $p^E(\nu g_\nu g') = p^E(\nu) g_\nu g' = p^E(\mu) \in P$ where the last equality follows from condition (1), which allows us to conclude that $g_\nu g' = g$ as $G$ acts 
+\end{itemize}
+
+Let 
+
+\[
+    \psi^{/G}: U \times V \to E/G|_{U}, (y, v) \mapsto \langle \psi(\sigma(y), v) \rangle
+\]
+
+Notice that this definition is independent of which local section is chosen, in the sense that if $\sigma'$ is another local section around $x \in M$, in the intersection of the domains of $\sigma$ and $\sigma'$, condition (2) implies that $\langle \psi(\sigma(y), v) \rangle  = \langle \psi(\sigma'(y), v) \rangle$.
+
+\end{proof}
+
+
+
+
+%%%%%%%%%
 I hope to see that this motivates the Lie algebroid bracket.
 
 \subsubsection{Explicit Examples}
