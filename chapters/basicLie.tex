@@ -1,7 +1,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-INTRODUCTION \complete{ Hacer la introducción. Quizá ver pequeños comentrios de Mackenzie y de Lazzarini} In \ref{chp:intro} we saw how the basic elements in a gauge theory are a principal bundle, encoding the 
+INTRODUCTION \complete{ Hacer la introducción. Quizá ver pequeños comentrios de Mackenzie y de Lazzarini} In \ref{chp:intro} we saw how the basic elements in a gauge theory are a principal bundle, encoding the..., their associated bundles, which represent the matter fields which have certain symmetry with respecto the group action, and connections, that allow a formalization of the statement that $TM$ is the horizontal part of $TP$ ... and, therefore, to talk about covariant derivatives of matter fields. In this chapter we first realize how it is more natural to talk in the language of the Atiyah lie algebroid of $P$ instead of $P$, as it is here where the connections acquire a more natural meaning, where any redundancy present in $TP$ is removed, and where the structure is no more than the sum of the horizontal directions $TM$ and some vertical directions spanned by $Lie(G)$. But, \rtext{once this language is adopted, we notice how that which is relevant to us may be abstracted in the concepts of Lie algebroid, Lie algebroid connection, and representations of Lie algebroids which naturally generalize the main ingredients of gauge theories mentioned above}. \todo{No se esto realmente donde va}
 
+Lie bracket allow us to think of the elements as directions at a point; anchor may be seen as a tangent or horizontal projection. The vertical directions at each point are (always?\todo{es cierto?}) a Lie algebra (this question requires to see first if the bracket, when restricted to the kernel, can be defined fiberwise instead of requiring a neighborhood).
 
 Throughout this section, $M$ will be a smooth manifold.
 
@@ -23,7 +24,7 @@ A \emph{Lie algebroid over $M$} is a triple $(q:A \to M, a, [\cdot, \cdot ])$, w
 
 As it is usual, to simplify notation we will often say instead that \emph{$A$ is a Lie algebroid over the manifold $M$ with anchor $a$}, and the brackets will be denoted simply by $[,]$ for all Lie algebroids.
 
-Recall that, when talking about $C^r-$differentiable vector fields, a vector-bundle chart, or simply a chart, will make reference to a local trivialization $\psi: U \times V \to E|_U$ which is $C^r$-differentiable.
+Recall that, when talking about $C^r-$differentiable vector fields, a vector-bundle chart, or simply a chart, will make reference to a local trivialization $\psi: U \times V \to E|_U$ which is $C^r$-differentiable (and a vector bundle isomorphism, by definition of local trivialization).
 
 
 \begin{proposition}
@@ -110,9 +111,9 @@ The following are manifolds and their tangent bundles which we will use regularl
     \end{itemize}
 
 
-\subsubsection{Pullback of Regular submanifolds}
+\subsection{Pullbacks of Regular Submanifolds and Involutive Distributions}
 
-Another example that shows the arising of Lie algebroids is when we restrict $TM$ to the regular submanifold $N$, in which case we not only have the tangent directions to $N$, but also some additional ``perpendicular'' directions.
+A family of related examples that show the arising of Lie algebroids is the restrict $TM$ to the regular submanifold $N$, in which case we not only have the tangent directions to $N$, but also some additional ``vertical'' or ``perpendicular'' directions.
 
 Let $N$ topological subspace of $M$ be a regular submanifold of $M$ (i.e. $N$ may be described locally by the vanishing of some of the coordinates of a chart of $M$; alternatively, the inclusion $N \to M$ is an immersion). Let $T\bar N = \pi^{-1} M$; it is easy to see\complete{I believe that in Mackenzie 2.1 or 2.2 something about pullbacks is said, perhaps allowing me to prove that this is true} that this vector bundle is homeomorphic to the pullback of $TM$ under the inclusion of $N$ in $M$. Let anchor $a = i^*\pi: T \bar N \to TN$ 
 
@@ -124,7 +125,7 @@ Again using a compatible adapted atlas of $M$ relative to $N$, we may prove that
 \item See that $a(T^\perp N) = 0$.
 \end{itemize}
  
-AAaaah, tal vez no puedo pegar los [X, Y] locales para hacer una seccion de $T \bar N$... por otro lado está la cuestión de si puedo extender cualquier sección $T \bar N$ a una seccion de $TM$... estas 2 cosas no me permiten ver si en efecto $T \bar N$ es algebroide de Lie \todo{Can I see that the local definition of the commutator transforms as a vector field?}
+AAaaah, tal vez no puedo pegar los [X, Y] locales para hacer una seccion de $T \bar N$... por otro lado está la cuestión de si puedo extender cualquier sección $T \bar N$ a una seccion de $TM$... estas 2 cosas no me permiten ver si en efecto $T \bar N$ es algebroide de Lie \todo{Can I see that the local definition of the commutator transforms as a vector field?} Tal vez esto puede ser probado basandose en el hecho de que foliaciones regulares generan algebroide, si e... o al menos una subfamilia de estos ejemplos, en el que los submnanifold son hojas de una foliacion regular, deberia poderse probar a partir de ahi.
 
 Si este ejemplo funciona, is it always the sum of the tangent bundle and the ``normal bundle''?\todo{What is the normal bundle?} That is ``obvious'' in local coordinates.
 
@@ -166,9 +167,9 @@ Explicit examples:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Trivial Lie Algebroid}
 
-The trivial Lie algebroid makes explicit the understanding of Lie algebroids as spaces of generalized tangent directions for their base manifolds, as it is simply the combination of both the usual tangent directions of the manifold, together with Lie algebra directions added by hand. This understanding of Lie algebroids is further supported by the fact, proven in \ref{}, that any transitive Lie algebroid has this form locally. The transitive part, as we will see, simply means that the anchor/shadow map for each $m \in M$ covers all vectors tangent to $x$, so the interpretation of Lie algebroids doesn't lose force by this additional requirement, as it may very well be that the Lie algebroid doesn't cover all directions tangent to $x$, but only some.
+The trivial Lie algebroid makes explicit the understanding of Lie algebroids as spaces of generalized tangent directions for their base manifolds, as it is simply the combination of both the usual tangent directions of the manifold, together with Lie algebra directions added by hand. This understanding of Lie algebroids is further supported by the fact, proven later in \ref{}, that any transitive Lie algebroid has this form locally. The transitive part, as we will see, simply means that the anchor/shadow map for each $m \in M$ covers all vectors tangent to $x$, so the interpretation of Lie algebroids doesn't lose force by this additional requirement, as it may very well be that the Lie algebroid doesn't cover all directions tangent to $x$, but only some of them, in which case the trivial lie algebroid is no longer a good description.
 
-Compatibility map
+Compatibility map for morphisms between Lie algebroids
 
 Let $M$ be a manifold, and $\algeb g$ a (real) Lie algebra with Lie bracket $[,]: \algeb g \times \algeb g$. 
 
@@ -176,6 +177,7 @@ Consider $p_1: M \times \algeb g \to M$, $(m, \eta) \mapsto m$ as the trivial ve
 
 Now consider the internal direct sum over $M$ of the vector bundles $TM$ and $M \times \algeb g$; recall \unsure{Here I'm being explicit with basic stuff of vector bundle theory on purpose, but I'm not sure if this will stay} that the underlying set of this bundle is simply the subset of the cartesian product $TM \times (M \times \algeb g)$ given by $TM \oplus (M \times \algeb g) = \set{(X, \eta) \in TM \times (M \times \algeb g) \st \pi(X) = p_1(\eta)}$; we will call the projection of this vector bundle $\pi: X \oplus \eta \mapsto \pi(X) = p_1(\eta)$, abusing the notation; we write an element of this vector bundle as $X \oplus \eta$, where $X \in \pi^{-1}(m)$ and $\eta \in p_1^{-1}(m)$.
 
+We now define the main ingredients of the Lie algebroid we are building:
     \begin{itemize}
     \item The anchor is given by the projection $a: TM \times (M \times \algeb g) \to TM$, $X \oplus \eta \mapsto X$. This map is a vector bundle map as it clearly respects the fibers and, on the fiber over each $m\in M$ it restricts to  a projection map $a_x:T_x M \times (\set{m}\times \algeb g)$ of vector spaces, which is a linear map.
     
@@ -183,7 +185,7 @@ Now consider the internal direct sum over $M$ of the vector bundles $TM$ and $M 
     \[
         [X \oplus H, Y \oplus \Theta] = [X, Y] \oplus \{X(\Theta) - Y(H) + [H, \Theta]\}
     \]
-    for all $X, Y \in \Gamma(TM)$, $H, Y \in \Gamma(M \times \algeb g)$. Notice that in the above formula the symbols $[,]$ are used in $3$ different instances, each one referring to the brackets of $3$ different spaces. $X(\Theta)$ makes reference to the derivative in direction of $X$ of the vector valued function $M \to \algeb g$ associated to $\Theta$, or, simply, to the Lie derivative of the section $\Theta \in \Gamma(M \times \algeb g)$, $\mathcal L_X \Theta$. Veamos que esto es una estructura de Lie en $\Gamma(TM \times (M \times \algeb g))$:
+    for all $X, Y \in \Gamma(TM)$, $H, Y \in \Gamma(M \times \algeb g)$. This definition will be motivated in the example of the Atiyah lie algebroid \ref{}, but for now we restrict ourselves to see that it works. Notice that in the above formula the symbols $[,]$ are used in $3$ different instances, each one referring to the brackets of $3$ different spaces. $X(\Theta)$ makes reference to the derivative in direction of $X$ of the vector valued function $M \to \algeb g$ associated to $\Theta$, or, simply, to the Lie derivative of the section $\Theta \in \Gamma(M \times \algeb g)$, $\mathcal L_X \Theta$. Veamos que esto es una estructura de Lie en $\Gamma(TM \times (M \times \algeb g))$:
         \begin{itemize}
         \item Alternating:
         \item Leibniz:
@@ -216,52 +218,42 @@ The vector bundle $TM \times (M \times \algeb g)$ together with the previously d
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Atiyah Lie Algebroid of a Principal Bundle}
 
-Can be viewed as G-invariant P->g functions, TP 
+Can be viewed as G-invariant $P-> g$ functions, TP 
 
 Makes reasonable undrestanding of Lie algebroids as sets of directions that are consistent with the shadow (TM) directions
 
 In \ref{} we motivated the use of $TP/G$ as a natural place to talk about connections of $P$, and why that was important, and we also claimed in \ref{} that it was a vector bundle over $M$, that it inherited a well defined bracket, and that the quotient map of the pushforward of the projection was vector bundle morphism into $TM$.
 
-    \begin{itemize}
-    \item Alternative 1: 
-        \item $TP$ is a vector bundle over $P$, $G$ acts to the right. (+ $G$ acts by v.b. isomorphism + $TP$ is covered by equivariant charts i.e. the action of $g$ doesn't affect the vector in which $p$ or $pg$ correspond). By proposition 3.1.1. of Mackenzie 
-            \begin{itemize}
-            \item $TP/G$ is a vector bundle over $M$,
-            %\item the projection $TP \to TP/G$ is a surjective bundle morphism (and submersion)
-            %\item and $TP$ is a pullback of $TP/G$ by the projection $\pi:P \to M$
-            \end{itemize}  
-        \item The bracket is well defined
-    \item Alternative 2:
-        \begin{itemize}
-        \item $TP/G \to M$ is a ($C^\infty(M)$) vector bundle over $M$ (3.1.1 gives a more general procedure for this)
-        \item Anchor: easy
-        \item $\Gamma(TP/G)$ has a Lie bracket. Steps:
-            \begin{itemize}
-            \item $C^\infty(M)$-module isomorphic to $\Gamma_G(TP)$
-            \item $[\oid X, \oid Y]$ for $\oid X, \oid Y \in \Gamma_G(TP)$ is also in $\Gamma_G(TP)$
-            \item Has Lie bracket: should be easy: pullback of the Lie bracket of the isomorphism
-            \end{itemize}
+%    \begin{itemize}
+%    \item Alternative 1: 
+%        \item $TP$ is a vector bundle over $P$, $G$ acts to the right. (+ $G$ acts by v.b. isomorphism + $TP$ is covered by equivariant charts i.e. the action of $g$ doesn't affect the vector in which $p$ or $pg$ correspond). By proposition 3.1.1. of Mackenzie 
+%            \begin{itemize}
+%            \item $TP/G$ is a vector bundle over $M$,
+%            %\item the projection $TP \to TP/G$ is a surjective bundle morphism (and submersion)
+%            %\item and $TP$ is a pullback of $TP/G$ by the projection $\pi:P \to M$
+%            \end{itemize}  
+%        \item The bracket is well defined
+%    \item Alternative 2:
+%        \begin{itemize}
+%        \item $TP/G \to M$ is a ($C^\infty(M)$) vector bundle over $M$ (3.1.1 gives a more general procedure for this)
+%        \item Anchor: easy
+%        \item $\Gamma(TP/G)$ has a Lie bracket. Steps:
+%            \begin{itemize}
+%            \item $C^\infty(M)$-module isomorphic to $\Gamma_G(TP)$
+%            \item $[\oid X, \oid Y]$ for $\oid X, \oid Y \in \Gamma_G(TP)$ is also in $\Gamma_G(TP)$
+%            \item Has Lie bracket: should be easy: pullback of the Lie bracket of the isomorphism
+%            \end{itemize}
         
-        \item Compatibility Cond 1: Not sure. Perhaps using, for $f \in C^\infty(M)$ the corresponding $\tilde f \in C_G^\infty(P)$ (the smoothness can be shown easily with for every local trivialization using the smoothness of $f$)
+%        \item Compatibility Cond 1: Not sure. Perhaps using, for $f \in C^\infty(M)$ the corresponding $\tilde f \in C_G^\infty(P)$ (the smoothness can be shown easily with for every local trivialization using the smoothness of $f$)
         
-        \item Compatibility COnd. 2: Not sure, but it should end up proving that $\oid X (\tilde f) = \Tilde{X(f)}$
-        \end{itemize}
-    \end{itemize}
+%        \item Compatibility COnd. 2: Not sure, but it should end up proving that $\oid X (\tilde f) = \Tilde{X(f)}$
+%        \end{itemize}
+%    \end{itemize}
 
 
-Now we check the compatibility conditions:
+%Now we check the compatibility conditions:
 
-Alternative 3:%%%%%%%%%%%%%%%%%%%%%%
-
-What is necessary:
-
-\begin{itemize}
-    \item $E/G$ is a smooth manifold
-    \item The chosen charts are also local trivializations that make $E/G$ a vector bundle.
-    \item $\natural$ is a surjective submersion -> to prove 3.1.2
-\end{itemize}
-
-\subsubsection{Trivial Principal Bundle and its Atiyah Lie Algebroid}
+%Alternative 3:%%%%%%%%%%%%%%%%%%%%%%
 
 The main purpose of the next propositions is to allow us to give a smooth structure to $TP/G$, to show that certain important maps are also smooth, and to understand the brackets that will arise for $\Gamma(TP/G)$, among other things related to the adjoint bundle $P\times \algeb g/G$.
 
@@ -290,28 +282,41 @@ Notice that conditions (1) and (2) tell us that, locally, the exact point in the
 
 Let $p: E/G \to M$, $\langle \mu \rangle \mapsto \pi(p^E(\mu))$; this function is well defined because, by (1), $p^E(\mu g)$ and $p^E(\mu)$ are in the same fiber of $P$, for all $g \in G$. (Notice that condition (1) implies that $p^E(\mu g) = p^E(\mu) g$ for $\mu$ and $g$ arbitrary).
 
-For $x \in M$, let $\psi: \mathcal U \times V \to E|_{\mathcal U}$, $x \in U$, be a chart of $E$ as in condition (2); we may further assume that $U$ is a trivializing neighborhood of $P$ (by intersecting one such neighborhood of $x$ with $U$ if necessary), so that there exists a local section of $\pi$, $\sigma: U \to \mathcal U \subset P$ such that the local trivialization of $P$ is described by $U\times G \to \mathcal U$, $(y, g) \mapsto \sigma(y)g$.
+For $x \in M$, let $\psi: \mathcal U \times V \to E|_{\mathcal U}$, $x \in U$, be a chart of $E$ as in condition (2); we may further assume that $U$ is a trivializing neighborhood of $P$ (by intersecting one such neighborhood of $x$ with $U$ if necessary), so that there exists a local section of $\pi$, $\sigma: U \to \mathcal U \subset P$ such that the local trivialization of $P$ is described by $\phi: U\times G \to \mathcal U$, $(y, g) \mapsto \sigma(y)g$.
 
 We'll now see that $E/G|_x$ may be given vector space structure, which turns out to be isomorphic to $V$. 
 \begin{itemize}
-    \item First, to define $\langle \mu \rangle + \langle \nu \rangle$ for $\langle \mu \rangle, \langle \nu \rangle \in E/G|_x$ arbitrary, let $g \in G$ be such that $p^E(\nu g) = p^E(\mu)$, which exists because of condition (1). This means that both $\mu$ and $\nu g$ belong to the same vector space $E_{p^E(\mu)}$, so we may define $\langle \mu \rangle + \langle \nu \rangle := \langle \mu + \nu g \rangle$. To see that this is well defined it suffices to show that the result doesn't change if another representative of, say, the class of $\langle \nu \rangle$ is chosen: let $\nu' \in \langle \nu \rangle$, thus there is element $g_\nu \in G$ such that $\nu = \nu' g_\nu$; now let $g' \in G$ be such that $p^E(\nu' g') = p^E(\mu)$, therefore $p^E(\nu g_\nu g') = p^E(\nu) g_\nu g' = p^E(\mu) \in P$ where the last equality follows from condition (1), which allows us to conclude that $g_\nu g' = g$ as $G$ acts 
+    \item To define $\langle \mu \rangle + \langle \nu \rangle$ for $\langle \mu \rangle, \langle \nu \rangle \in E/G|_x$ arbitrary, let $g \in G$ be such that $p^E(\nu g) = p^E(\mu)$, which exists because of condition (1). This means that both $\mu$ and $\nu g$ belong to the same vector space $E_{p^E(\mu)}$, so we may define $\langle \mu \rangle + \langle \nu \rangle := \langle \mu + \nu g \rangle$. To see that this is well defined it suffices to show that the result doesn't change if another representative of, say, the class of $\langle \nu \rangle$ is chosen: let $\nu' \in \langle \nu \rangle$, thus there is element $g_\nu \in G$ such that $\nu = \nu' g_\nu$; now let $g' \in G$ be such that $p^E(\nu' g') = p^E(\mu)$, therefore by (1) $p^E(\nu) g_\nu g' = p^E(\nu g_\nu g') = p^E(\mu) \in P$, which allows us to conclude that $g_\nu g' = g$ as it is also true that $p^E(\mu) = p^E(\nu)g$ and $G$ acts freely on $P$.
+    
+    \item We define $t\langle\mu\rangle := \langle t \mu\rangle$, for any $t \in \RR$, $\langle\mu\rangle \in E/G$. This is well defined as, by condition (1), $G$ acts by vector bundle isomorphism, in particular it restricts to linear maps between fibers. It is now clear that these operations make $E/G|_x$ a vector space.
+    
+    \item To see that $E/G|_x$ is isomorphic to $V$, we prove instead that it is isomorphic to $E_p$ for any $p \in \pi^{-1}(x) \subset \mathcal U$, each of which is isomorphic to $V$ by the restriction of the chart to the fiber of $p \in \mathcal U$, $\psi_p: V \to E_p$ which is a vector space isomorphism by definition. So, for any $p \in \pi^{-1}(x)$ the restriction of $\natural$ to its fiber, $\natural_p:E_p \to E/G|_x$ can easily be seen to be linear; it is clearly surjective, and it is also injective as, if $\mu, \nu \in E_p$ are such that $\natural_p(\mu) = \langle\mu\rangle = \langle\nu\rangle = \natural_p(\nu)$, then there exists a $g \in G$ such that $\mu = \nu g$, but that means that $p = p^E(\mu) = p^E(\nu g) = p^E(\nu)g = pg$ which can only happen if $g = e$, i.e. if $\mu = \nu \in E_p$.
 \end{itemize}
 
-Let 
+To define the vector bundle charts of $E/G$, we first notice that the vector bundle chart $\psi:\mathcal U \times V \to E_\mathcal U$ and the principal bundle trivialization $\phi: U \times G \to P_U$ allow us to make, around $x\in M$ the diffeomorphism $U \times G \times V \to E_\mathcal U$, $(y, g, v) \mapsto \psi(\sigma(y)g, v)$; if we make $G$ act to the right on $U \times G \times V$ by $(y, g, v)g' := (y, gg', v)$ it is clear that the quotient topological space $U \times G \times V / G$ is homeomorphic to $U \times V$, and so, taking quotients by $G$ on both sides we obtain the \emph{continuous} homeomorphism:
 
 \[
     \psi^{/G}: U \times V \to E/G|_{U}, (y, v) \mapsto \langle \psi(\sigma(y), v) \rangle
 \]
 
-Notice that this definition is independent of which local section is chosen, in the sense that if $\sigma'$ is another local section around $x \in M$, in the intersection of the domains of $\sigma$ and $\sigma'$, condition (2) implies that $\langle \psi(\sigma(y), v) \rangle  = \langle \psi(\sigma'(y), v) \rangle$.
+Notice that this definition is independent of which local section is chosen, in the sense that if $\sigma'$ is another local section around $x \in M$, in the intersection of the domains of $\sigma$ and $\sigma'$, condition (2) implies that $\langle \psi(\sigma(y), v) \rangle  = \langle \psi(\sigma'(y), v) \rangle$, because $\sigma(y) = \sigma(y')g$ for some $g \in G$. This map is, fiberwise, a vector space isomorphism sa can be seen by rewritting of isomorphisms $\natural_{\sigma(x)} \circ \psi_{\sigma(x)}: V \to E_{\sigma(x)} \to E/G|_x$, so we can give $E/G$ a topological vector bundle structure over $M$ by saying that the $\psi^G:U \times V \to E/G|_U$ maps constructed above are local trivializations.
+
+To give a smooth manifold structure to $E/G$ we notice that the transition function between this trivialization and any other local trivialization around $x$ is smooth in their common domain. Let $\psi'^G:U' \times V \to E/G|_{U'}$ with $x \in U'$, constructed as above (coming from an equivariant chart of E $\psi': \mathcal U' \times V \to E_{\mathcal U'}$) with respect to a local section $\sigma'$ of $P$; the transition function between this two charts of $E$ $\tr: \mathcal U \cap \mathcal U' \to GL(V)$, $p \mapsto \psi^{-1}_p \circ \psi'_p$ is smooth, so its precomposition with $\sigma: U \cap U' \to \mathcal U \cap \mathcal U'$ is also smooth, but by condition (2) we obtain the same map if precompose with $\sigma'$ instead, and so we see that this smooth map is precisely the transition function of $E/G$ $tr^{G}: U \cap U' \to GL(V)$, $y \mapsto (\psi_y^{/G})^{-1} \circ \psi_y'^G$, which, therefore, might be written by the formula $tr^G_y = \psi^{-1}_{\sigma(y)} \circ \psi'_{\sigma(y)}$. Finally, the charts $\set{\psi^{/G}:U \times V \to E/G|_U}$ with smooth transition functions give a unique smooth structure to the topological vector bundle $E/G$.
+%because $(\psi^{/G})^{-1} \circ \psi'^G (y, v) = (\psi^{/G})^{-1} (\langle\psi'(\sigma'(y), v)\rangle) = (\psi^{/G})^{-1} (\langle\psi'(\sigma(y), v)\rangle) $.
+%because for each $y \in U \cap U'$, $(\psi_y^{/G})^{-1} \circ \psi_y'^G(v) = (\psi_y^{/G})^{-1}(\langle\psi'(\sigma'(y), v)\rangle)$
+
+We now prove that the (surjective) quotient map $\natural : E \to E/G$ is also smooth and a submersion. Let $\psi: \mathcal U \times V \to E_{\mathcal U}$ be an equivariant chart of $E$ with $U = \pi(\mathcal U)$ trivializing for $P$, as above. Notice that the restriction of $\natural$ to $U$ may be written as $\natural_U = \psi^{/G} \circ \pi \times id_V \circ \psi^{-1}: E_{\mathcal U} \to E/G|_U$, where $\psi$ and $\psi^{/G}$ are diffeomorphisms: this equates to the formula $\natural_U \circ \psi = \psi^{/G} \circ \pi \times id_V: \mathcal U \times V \to E/G|_U$, which for $(p, v) \in \mathcal U \times V$, in the LHS gives us $\natural_U \circ \psi(p, v) = \langle\psi(p, v)\rangle$, and for the RHS $\psi^{/G} \circ \pi \times id_V (p, v) = \psi^{/G}(\pi(x), v) := \langle\psi(\sigma(\pi(x)), v)\rangle$ which coincide because $p = \sigma(\pi(p))g$ for some $g \in G$. This formula for $\natural_U$ implies that it inherits the properties of $\pi \times id_V$, which is clearly smooth, and also a submersion as both $\pi$ and $id_V$ are submersions, so the pushforward of $\pi \times id_V$, diffeomorphic to the product of the pushforwards, is surjective.
+
+The uniqueness assertions follow from the fact that there is at most one manifold structure in the image of a surjection which makes it a submersion, and at most one topological vector bundle structure in the image of a surjection which makes the map linear.
 
 \end{proof}
 
+\subsubsection{Trivial Principal Bundle and its Atiyah Lie Algebroid}
 
+We will now see how, locally, the Atiyah lie algebroid of a principal bundle is a trivial lie algebroid. This, on one hand, allows us to motivate the definition for the bracket given of these algebroids given in \ref{}, and on the other hand, shows us how an Atiyah lie algebroid is indeed a way to paste a collection of generalized directions (trivial Lie algebroids), but also lets us intuir how there may be other ways to paste this local Lie algebroids to obtain a more general collection of generalized directions which isn't necessarily associated to a principal bundle, which is the notion of transitive Lie algebroids.
 
+Let $G$ be a Lie group. Then $M \times G$ is a trivial principal bundle; every principal bundle is, by definition, locally of this form. The Atiyah lie algebroid associated to it is $TG/G$, so first we need a good description of $TG$ and of the right action of $G$ on it. Every direction of $TG$ can be seen as an element of the range of a right-invariant vector field, i.e. an element in $T_g G$ may be written as $\frac{d}{dt}|_{t=0}e^{tA}g$ for some $A \in \algeb g$; this is known to give a diffeomorphism between $TG$ and $G \times \algeb g$. 
 
-%%%%%%%%%
-I hope to see that this motivates the Lie algebroid bracket.
 
 \subsubsection{Explicit Examples}
 
