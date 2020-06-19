@@ -3,15 +3,14 @@
 \usepackage[utf8]{inputenc}
 \usepackage[spanish, english]{babel}
 \usepackage{graphicx}
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{hyperref}
+\usepackage{amssymb, amsmath, amsthm}
+\usepackage{hyperref} % Para poder tener hyperlinks
 \usepackage{enumerate}
-\usepackage{calligra}
+\usepackage{calligra} % Para dedicacion
 \usepackage[sorting=none]{biblatex}
 \addbibresource{library.bib}
 \usepackage{csquotes}
+
 
 % TODO NOTES
 \usepackage{xargs}                      % Use more than one optional parameter in a new
@@ -21,8 +20,14 @@
 % Color Additions
 \input{colorCode}
 
+\usepackage{tikz-cd} %To do commutative diagrams
 %
 %
+
+
+
+
+\renewcommand{\theequation}{\thechapter.\arabic{equation}} % To label Ch 0 equations as 0.1, 0.2, etc
 
 \newenvironment{dedication}
   {\clearpage           % we want a new page
@@ -118,17 +123,18 @@ Hola
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Yet to Undertand}
-\input{chapters/porEntender}
+\chapter*{Yet to Undertand}
+\input{chapters/porEntender} \label{chp:understand}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Final Remarks and Further Work}
-\input{chapters/remarks}
+\chapter*{Final Remarks and Further Work}
+\input{chapters/remarks} \label{chp:remarks}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{chapter}{-1}
 \chapter{Introduction}\label{chp:intro}
 \input{chapters/introduction}
 

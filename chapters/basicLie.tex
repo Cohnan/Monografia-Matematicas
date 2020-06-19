@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-INTRODUCTION \complete{ Hacer la introducción. Quizá ver pequeños comentrios de Mackenzie y de Lazzarini} In \ref{chp:intro} we saw how the basic elements in a gauge theory are a principal bundle, encoding the..., their associated bundles, which represent the matter fields which have certain symmetry with respecto the group action, and connections, that allow a formalization of the statement that $TM$ is the horizontal part of $TP$ ... and, therefore, to talk about covariant derivatives of matter fields. In this chapter we first realize how it is more natural to talk in the language of the Atiyah lie algebroid of $P$ instead of $P$, as it is here where the connections acquire a more natural meaning, where any redundancy present in $TP$ is removed, and where the structure is no more than the sum of the horizontal directions $TM$ and some vertical directions spanned by $Lie(G)$. But, \rtext{once this language is adopted, we notice how that which is relevant to us may be abstracted in the concepts of Lie algebroid, Lie algebroid connection, and representations of Lie algebroids which naturally generalize the main ingredients of gauge theories mentioned above}. \todo{No se esto realmente donde va}
+INTRODUCTION \complete{ Hacer la introducción. Quizá ver pequeños comentrios de Mackenzie y de Lazzarini} In \ref{chp:intro} we saw how the basic elements in a gauge theory are a principal bundle, a fibration over spacetime whose fibers encode inner degrees of freedom associated to a symmetry, their associated bundles, which represent the matter fields which have certain symmetry with respect to the group action, and connections on the principal bundle, that allow a formalization of the statement that $T_x M$ is the horizontal part of $T_p P$ for each $p \in \pi^{-1}(x)$, finally allowing to talk about covariant derivatives in tangent directions of matter fields. However, at the end of chapter \ref{chp:intro} it was remarked that the a natural language to talk about principal bundle connections is that of the Atiyah lie algebroid $TP/G$ of $P$, as this is a space where the fiber of each point $x$ in the base manifold $M$ is a set of directions over $x$ some of which are vertical to $TM$, thefore removing the redundancy present in $TP$ where an arbitrary point $p$ in the fiber in $P$ of $x$ had to be chosen first to see $T_p P$ as the set of generalized directions over $x$ where paths could be lifted. \rtext{Once this language is adopted, it is easy to see how the core concepts of gauge theories mentioned above may be abstracted in the concepts of Lie algebroid, Lie algebroid connection, and representations of Lie algebroids}. \todo{No se esto realmente donde va}
 
 Lie bracket allow us to think of the elements as directions at a point; anchor may be seen as a tangent or horizontal projection. The vertical directions at each point are (always?\todo{es cierto?}) a Lie algebra (this question requires to see first if the bracket, when restricted to the kernel, can be defined fiberwise instead of requiring a neighborhood).
 
@@ -257,7 +257,7 @@ In \ref{} we motivated the use of $TP/G$ as a natural place to talk about connec
 
 The main purpose of the next propositions is to allow us to give a smooth structure to $TP/G$, to show that certain important maps are also smooth, and to understand the brackets that will arise for $\Gamma(TP/G)$, among other things related to the adjoint bundle $P\times \algeb g/G$.
 
-\begin{proposition}
+\begin{proposition} \label{3.1.1}
 Let $E$ be a (smooth) vector bundle over $P$ with projection map $p^E: E \to P$. Suppose that $G$ acts (smoothly) to the right on $E$ in such a way that:
 
 \begin{enumerate}
@@ -308,6 +308,40 @@ To give a smooth manifold structure to $E/G$ we notice that the transition funct
 We now prove that the (surjective) quotient map $\natural : E \to E/G$ is also smooth and a submersion. Let $\psi: \mathcal U \times V \to E_{\mathcal U}$ be an equivariant chart of $E$ with $U = \pi(\mathcal U)$ trivializing for $P$, as above. Notice that the restriction of $\natural$ to $U$ may be written as $\natural_U = \psi^{/G} \circ \pi \times id_V \circ \psi^{-1}: E_{\mathcal U} \to E/G|_U$, where $\psi$ and $\psi^{/G}$ are diffeomorphisms: this equates to the formula $\natural_U \circ \psi = \psi^{/G} \circ \pi \times id_V: \mathcal U \times V \to E/G|_U$, which for $(p, v) \in \mathcal U \times V$, in the LHS gives us $\natural_U \circ \psi(p, v) = \langle\psi(p, v)\rangle$, and for the RHS $\psi^{/G} \circ \pi \times id_V (p, v) = \psi^{/G}(\pi(x), v) := \langle\psi(\sigma(\pi(x)), v)\rangle$ which coincide because $p = \sigma(\pi(p))g$ for some $g \in G$. This formula for $\natural_U$ implies that it inherits the properties of $\pi \times id_V$, which is clearly smooth, and also a submersion as both $\pi$ and $id_V$ are submersions, so the pushforward of $\pi \times id_V$, diffeomorphic to the product of the pushforwards, is surjective.
 
 The uniqueness assertions follow from the fact that there is at most one manifold structure in the image of a surjection which makes it a submersion, and at most one topological vector bundle structure in the image of a surjection which makes the map linear.
+
+\end{proof}
+
+The following proposition and its corollary allow us to that maps certain maps between some relevant algebroids are well defined.
+
+\begin{proposition}
+Let $(E, p^E, P)$ and $(E, p^{E'}, P')$ be vector bundles over principal bundles $P(M, G)$ and $P'(M', G')$, respectively. Let $G$ and $G'$ act on $E$ and $E'$ respectively satisfying the conditions of \ref{3.1.1}. Let $\Phi: E \to E'$ be a vector bundle morphism over a principal bundle morphism $F(f, \phi)$ that satisfies $\Phi(\mu g) = \Phi(\mu) \phi(g)$ for all $\mu \in E$, $g \in G$. Then there exists a unique (smooth) vector bundle morphism $\Phi^{/G}: E/G \to E'/G'$ over $f: M \to M'$ such that $\Phi^{/G} \circ \natural = \natural' \circ \Phi$, where obvious notation from \ref{3.1.1} has been used.
+
+\[
+\begin{tikzcd}
+    E   \arrow[r, \Phi"]     \arrow[d,, "\natural"] &   E'  \arrow[d,, "\natural'"] \\
+    E/G \arrow[r,, "\Phi^{/G}] \arrow[d,, "p^{E/G}"]  & E'/G' \arrow[d,, "p^{E'/G'}"] \\
+    M \arrow[r, "f"] & M'
+\end{tikzcd}
+\]
+\end{proposition}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{corollary}
+Let $(E, p^E, P)$ be a vector bundle over principal bundles $P(M, G)$, and let $G$ act on $E$ satisfying the conditions of \ref{3.1.1}. Let $(E, p^{E'}, M')$ be another vector bundle. Let $\Phi: E \to E'$ be a vector bundle morphism over a map $f: P \to M'$ that satisfies $\Phi(\mu g) = \Phi(\mu)$ and $f(pg) = f(p)$ for all $\mu \in E$, $p \in P$ and $g \in G$. Then there exists a unique (smooth) vector bundle morphism $\Phi^{/G}: E/G \to E'$ over a map $f^{/G}: M \to M'$, $f^{/g}$ such that $f = f^{/g} \circ \pi$, that safiesfies $\Phi^{/G} \circ \natural = \Phi$ and $ $, where obvious notation from \ref{3.1.1} has been used.
+\end{corollary}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{proposition}
+The (smooth) sections of $E/G$ is $C^\infty(M)$-module isomorphic to the $G$-invariant sections of $E$.
+\end{proposition}
+
+\begin{proof}
 
 \end{proof}
 
