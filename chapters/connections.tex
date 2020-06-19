@@ -1,9 +1,78 @@
+Recall:
+    \begin{itemize}
+    
+    \item Lifting of Paths gives lifting of Vector fields
+    
+    \item Sections of associated vector bundles are really $G$-equivariant $\psi(pg) = g^{-1} \psi(p)$ functions $P \to V$. In general, \dbtext{forms $\Omega^n(TM, E)$ are $V$ valued equivariant forms $\Omega_G(P, V)$?}, 
+    
+    and this may? be the same as considering the associated vector bundle with fiber $\bigwedge^n V$, but I don't think it matters to me right now.
+    
+        \begin{itemize}
+        
+        \item The action of $G$ on $V$ determines uniquely the associated vector bundle
+        
+        \item ``Conversely'', at least up to what I did by hand, having a single section of a vector bundle, and having a representation of $G$ on the fiber determines the cocycles, which in turns determines the principal bundle, so: ``the vector bundle $E$ with fiber $V$ + the representation of a group $\Longrightarrow$ determines the Principal Bundle''... so, \textbf{even if I start simply with a vector bundle and a group that acts in the fiber, I obtain a principal bundle}, and so I may see a seciton as an equivariant function $:P \to V$.
+        
+        \item This is interpreted as locally choosing a ``frame'' or local trivialization, so that I may, locally, consider the section as simply $:U \subset M \to V$, as it is perceived ``physically''.
+            
+        \end{itemize}
+    
+    \item \textbf{I want a ``covariant'' derivative of sections of $E$ to be something that sends $G$-equivariant funtions $:P \to V$ to $G$-equivariant functions},  given only $X \in TM$, because it is the manifold we see, on which $E$ is based. (In GR covariant means sending a tensor field to a tensor field)
+    
+    \item \textbf{This last point explains the $G$-equivariance of the principal connections!!} (see my example).
+    
+    \end{itemize}
+
+
+---
+The classical setting for Covariant derivate: 
+
+    \begin{itemize}
+    
+    \item Given a vector bundle $E$ over $M$ and
+    
+    \item a (Lie algebroid) connection $\nabla: TM \to \mathcal D(E)$ 
+        
+        \begin{itemize}
+        
+        \item weaker than a Lie algebroid representation because it is not required to be a Lie algebra morphism in the sections, unless the curvature is $0$
+        
+        \end{itemize}
+    
+    \item the Covariant Derivative \emph{of vector (bundle) valued forms} $\Omega^n(TM, E)$, $D^\nabla: \Omega^\cdot \to \Omega^{\cdot+1}$, e.g. $0$-forms, which are precisely $\Gamma(E)$, the matter fields. (The covariant is satisfied by definition, at least in the sense of GR, where it means to send a tensor field into a tensor field)
+    
+    \item is given precisely by the formula of the formula of the exterior derivative: Koszul formula
+    
+    Take into account that instead of having a representation of $TM$ in $E$ (which would define an exterior derivative) we have a connection.
+    \end{itemize}
+    
+In summary, a covariant derivative 
+    \begin{itemize}
+    
+    \item Is something defined on vector bundle valued forms, just like the exterior derivative $d$ (as defined in Lazzarini, at least).
+    
+    \item Is coarser than a $d$ by only requiring a (Lie algebroid) connection, instead of a representation (so no Lie algebra morphism in the sections)
+    
+    \item Is finer than a $d$ by requiring as starting vector bundle $TM$, instead of any Lie algebroid $A$.
+    
+    \end{itemize}
+
+-----
+
+
 
 \section{Ordinary Connections and Curvature in Transtive Lie Algebroids}
 
 They always exist.
 
 If the algebroid is regular.
+
+The ordinary curvature is (see descriptions in \ref{chp:understand}, in \ref{ordinaryCurvatureIs}). It satisfies \ref{BianchiandInhomogeneous}. It gives sense of horizontality \ref{ordinaryHorizontality}.
+
+Is our notion of curvature somehow redundant? \ref{curvatureRedundant}
+
+What meaning may be given to \ref{whatMeaning}
+
 
 \subsection{Equivalence for Atiyah Lie Algebroid to Principal Bundle Theory}
 \subsection{Local Description of connection and curvature and ``Change of Gauge''}
@@ -24,11 +93,7 @@ Horizontal lift of $\mathfrak{X}$ in $e\in E$? Linear vector field associated to
 
 Do they give rise to good ``covariant derivatives''? (In associated bundles) \ref{trulyCovariant}
 
-The ordinary curvature is (see descriptions in \ref{chp:understand}, in \ref{ordinaryCurvatureIs}). It satisfies \ref{BianchiandInhomogeneous}. It gives sense of horizontality \ref{ordinaryHorizontality}.
 
-Is our notion of curvature somehow redundant? \ref{curvatureRedundant}
-
-What meaning may be given to \ref{whatMeaning}:
 
 %\subsection{Infinitesimal Gauge Action}
 \subsection{Local Description}
