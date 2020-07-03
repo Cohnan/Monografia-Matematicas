@@ -1,0 +1,32 @@
+%Version of October 8, 2016
+
+%\usepackage{amsthm}
+
+\theoremstyle{definition} %To avoid the annoying italics all the time, and to not sloppily redefine all of them 
+
+\newtheorem{theo}{Theorem}[section]  %numbered according to section environment, so in section to it restarts as 2.1 
+\newtheorem{prop}{Proposition}[section]  %numbered according to section environment, so in section to it restarts as 2.1 
+\newtheorem{lemma}[theo]{Lemma}     %numbering shared with theorem 
+\newtheorem{defn}{Definition}[section]   
+\newtheorem{coro}{Corollary}[theo]
+
+
+\theoremstyle{remark} 
+\newtheorem*{remark}{Remark} 
+ 
+%\let\oldtheo\theo 
+%\renewcommand{\theo}{\oldtheo\normalfont}  
+%  
+%\let\olddefn\defn  
+%\renewcommand{\defn}{\olddefn\normalfont}  
+%  
+%\let\oldlemma\lemma  
+%\renewcommand{\lemma}{\oldlemma\normalfont}  
+%  
+%\let\oldcoro\coro  
+%\renewcommand{\coro}{\oldcoro\normalfont}
+
+%%%%%%%% ``Example'' environment, very basic, doesnt work with itemize
+\theoremstyle{definition}
+
+\newtheorem*{exmp}{Example}

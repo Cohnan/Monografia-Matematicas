@@ -1,0 +1,95 @@
+\chapter{\rtext{Theory of Fields, I: Classical}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Physical Background}
+
+\subsection{Important Facts}
+\begin{itemize}
+    \item The principal theoretical tools for studying elementary particles and their interactios are probided by (quantum) gauge theories. Apparently Ch 7 discusses problem of quantization
+    
+    \item \rtext{Maxwell's EM theory} is the simples example of a gauge theory: $U(1)$ gauge theory over Minkowski, trivial principal bundle. No need to talk about matter fields yet.
+    \begin{itemize}
+        \item The possible vector potentials are obtained from one another by a gauge transformation by a $\psi \in C^\infty(M)$: \[A \mapsto A^\psi = A + d\psi\]: the infinitesimal change $d\psi$ corresponds to a local change of scale: this is the origin of the term \emph{gauge invariance} introduced by Weyl.
+        \begin{itemize}
+            \item Weyl sought to incorportate the EM field into the geometric structures associated to the space-time manifold (so not just introducing $F$ by hand to a spacetime manifold) AS arising from local scale invariance.
+        \end{itemize}
+        
+        \item However, the correct\improvement{what is incorrect about it} way to interpret this invariance is as a gauge transformation by a $g_\psi = e^{i \psi} \in  C^\infty(M, U(1))$: \[iA \mapsto iA^g = g^{-1} (iA) g + g^{-1} dg.\]
+        \begin{itemize}
+            \item This doesn't achieve the greatness desired by Weyl of giving rise naturally to a unification of EM and gravitation, but does allow to see \emph{Classical EM theory as a Gauge theory}.
+        \end{itemize}
+    \end{itemize}
+    
+    \item \rtext{Yang Mills equations: differential equations that have to be satisfied BY THE GAUGE POTENTIAl, perhaps when it is in interaction with a matter/source field: they are part (\rbox{variation with respect to the connection} EDIT: I now think this isn't correct. More like a \rbox{RESTRICTION} that must be satisfied by the connection) of the Euler-Lagrange equations for some action which depends on both the matter field AND the connection}: differential equation for the \rbox{correct connection}; other part of the Euler-Lagrange equations give the equations of motion of the particle field, e.g. Dirac equation, Schrodinger, Klein-Gordon, etc. (with the modification of covariant derivatives instead of normal derivatives)
+    \begin{itemize}
+        \item The original Yang-Mills equations: group $SU(2)$, equations for the vector potential $b_\mu$ of \emph{isotopic spin} in \emph{interaction with} a field $\psi$ of isotopic spin $1/2$ \[\partial_\nu F_{\mu \nu} + 2 \epsilon [B_\nu, F_{\mu \nu}] = -J_\mu\] \rbox{or in a more suggestive way}:\[D^\nu F_{\mu \nu} = -J_\mu\] 
+        
+        \item \dbbox{They were not seen useful immediately as they predicted massless gauge partiles}.
+        
+        \item \rtext{The Yang-Mills equations may be thought of as a matrix-valued generalization of the equations for the classical vector potential of Maxwell theory}. (In that case we get the wave equation/Klein gordon equation for $m=0$ if source free, or $\square A = \mu_0 J$ if coupled with matter field) OJO: this is different to the continuity equation, which is satisfied by the source.
+        
+        \item In Classical EM, the Bianchi equation gives the 2 Maxwell equations where $j = (\rho, \vec J)$ doesn't appear, and the \textbf{Yang-Mills equations} $\delta F = j$ gives the other 2 Maxwell equations ($\nabla \dot E = \rho$, $\nabla \times B = \partial_t E + J$). The continuity equation is $\delta^2 F = 0$
+    \end{itemize}
+    
+    \item There is not yet a generally acceptedmathematical theory of quantiation of gauge fields.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Medium Important Details}
+\begin{itemize}
+    \item Another approach toa  unified treatment of EM and gravitatioanl fields leads to the Kaluza-Klein theory
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Gauge Fields}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Important Facts}
+\begin{itemize}
+    \item The Dirac monopole quantization condition corresponds to the classification of principal $U(1)$-bundles over $S^2$.
+    
+    \item A suitable Sobolev completion of the gauge group $\mathcal G$ is a Hilbert Lie group, whose Lie algebra is a Sobolev completion of $\mathcal{LG}$, which is a Banach Lie algebra.
+    \begin{itemize}
+        \item The Lie group has $3$ equivalent formulations: base preserving, equivariant automorphisms of $P$; equivariant funtions on $P$ to $G$; sections of $P \times G / G = Ad P$ under adjoint action.
+        
+        \item The gauge algebra is isomorphic as a Lie algebra to the equivariant sections on $ad P = P \times \mathfrak g / G$.
+    \end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The Space of Gauge Potentials}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Important Facts}
+\begin{itemize}
+    \item \emph{The topology and geometry of the space of gauge connections has significance for all physical theories and especially for the problem of quantization of gauge theories}.
+    
+    \item The space of connections $\mathcal A$ is an affine space with associated vector space $\Lambda^1(M, ad P)$ (basic?), thus the tangent space at each $\omega \in \mathcal A$ is isomorphic to $\Lambda^1(M, ad P)$.
+    
+    \item \lbtext{Moduli space of gauge potentials}: space of connections modulo the action of the gauge group: $\mathcal O := \mathcal{A/G}$
+    
+    
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Medium Important Details}
+\begin{itemize}
+    \item .Many fibrations are introduced similar to the the fibration of the moduli space over.... Their topology is studied.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Gribov Ambiguity}
+
+\subsection{Important Facts}
+\begin{itemize}
+    \item \rtext{In the Feynman integral approach to quantization, one must integrate these gauge invariant functions over the orbit/moduli space $\mathcal O$ to avoid the infinite contributions coming form gauge equivalent fields}.
+    \begin{itemize}
+        \item Gauge fixing: the procedure of choosing one connection in $\mathcal A$ for each equivalence class in $\mathcal O$. ``Faddeev-Popov approach''
+        
+        \item \lbbox{The Gribov ambiguity} is the problem of the non-existence of a global gauge/not being able to gauge fix. \rtext{It is present in all physically relevant cases}.
+        
+        \item However ways around it are defined, like constructing local gauges and weigting them to define the path integral.
+    \end{itemize}
+\end{itemize}

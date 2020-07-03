@@ -1,0 +1,98 @@
+
+%\usepackage{amssymb,amsmath,amsthm}
+%\usepackage{xparse}
+
+%%% Common symbols redifined
+\let\oldepsilon\epsilon
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\varepsilon}{\oldepsilon}
+
+\let\oldphi\phi
+\renewcommand{\phi}{\varphi}
+\renewcommand{\varphi}{\oldphi}
+
+\newcommand{\emty}{\varnothing}
+\newcommand{\varempty}{\nothing}
+
+%%% Common Sets
+\newcommand{\bb}[1]{\ensuremath{\mathbb{#1}} }
+\newcommand{\ZZ}{\ensuremath{\mathbb{Z}} }
+\newcommand{\NN}{\ensuremath{\mathbb{N}} }
+\newcommand{\QQ}{\ensuremath{\mathbb{Q}} }
+\newcommand{\RR}{\ensuremath{\mathbb{R}} }
+\newcommand{\CC}{\ensuremath{\mathbb{C}} }
+
+
+\newcommand{\iss}{\cong}  % Isomorphism symbol, here it is the one with a tilde
+
+%%%%%%%%%%%%%% Sets
+
+\newcommand{\set}[1]{\ensuremath{\left\{ #1 \right\}}} % Set function, simply puts nice left and right braces
+\newcommand{\st}{\ensuremath{\ |\ }} % Such that symbol, TODO improve
+
+\newcommand{\psubset}{\ensuremath{\subset}}
+\renewcommand{\subset}{\ensuremath{\subseteq}} % Subset symbol, in this case it is the subset or equal to symbol
+
+\newcommand{\bunion}{\bigcup}
+%\newcommand{\biun}{\bun^{\infty}}
+%\newcommand{\bfun}[3][n]{\bun_{#1 = #2}^{#3}}
+\newcommand{\union}{\cup}
+%\newcommand{\siun}{\sun^{\infty}}
+%\newcommand{\sfun}[3][n]{\sun_{#1 = #2}^{#3}}
+
+\newcommand{\binter}{\bigcap}
+%\newcommand{\biinter}{\binter^{\infty}}
+%\newcommand{\bfifter}[3][n]{\binter_{#1 = #2}^{#3}}
+\newcommand{\inter}{\cap}
+%\newcommand{\sininter}{\sinter^{\infty}}
+%\newcommand{\sfinter}[3][n]{\sinter_{#1 = #2}^{#3}}
+
+%%%%%% Calculus
+
+% Integrals
+
+%% Single Integrals
+\NewDocumentCommand \integ {s O{} O{} m o}
+{
+	\IfBooleanTF{#1}{\oint}{\int}_{#2}^{#3} #4 %
+	\IfNoValueF {#5} {\mathrm{d} #5}
+}
+
+%% Derivatives
+
+% Normal derivative
+% Example: \der[n]{f}{x}[x_0]
+\NewDocumentCommand \der {O{} m m o}
+{
+	\frac{\mathrm{d}^{#1} #2}{\mathrm{d} {#3}^{#1}}%
+	\IfNoValueF{#4} {\biggr|_{#4}}
+}
+
+%% Partial Derivatives
+
+% With respect to one variable
+% Example: \pder[n]{f}{y}[\pthvars[x_0][y_0][z_0]][(x, z)
+\NewDocumentCommand \pder {O{} m m O{} o}
+{
+    \ensuremath{
+	\IfNoValueTF {#5}
+	{
+		\frac{\partial^{#1} #2}{\partial {#3}^{#1}} #4
+	}
+	{
+		\left(%
+		\frac{\partial^{#1} #2}{\partial {#3}^{#1}}%
+		\right)_{#5}  #4
+	}
+	}
+}
+
+% With respecto to two variables
+% Example: \twpder{g}{y}{x}[(x_0, y_0)]
+\NewDocumentCommand \twpder {m m m O{}}
+{
+	\frac{\partial^2 #1}{\partial #2 \partial #3} #4
+}
+
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
