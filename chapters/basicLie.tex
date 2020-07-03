@@ -1,11 +1,13 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 INTRODUCTION \complete{ Hacer la introducción. Quizá ver pequeños comentrios de Mackenzie y de Lazzarini} In \ref{chp:intro} we saw how the basic elements in a gauge theory are a principal bundle, a fibration over spacetime whose fibers encode inner degrees of freedom associated to a symmetry, their associated bundles, which represent the matter fields which have certain symmetry with respect to the group action, and connections on the principal bundle, that allow a formalization of the statement that $T_x M$ is the horizontal part of $T_p P$ for each $p \in \pi^{-1}(x)$, finally allowing to talk about covariant derivatives in tangent directions of matter fields. However, at the end of chapter \ref{chp:intro} it was remarked that the a natural language to talk about principal bundle connections is that of the Atiyah lie algebroid $TP/G$ of $P$, as this is a space where the fiber of each point $x$ in the base manifold $M$ is a set of directions over $x$ some of which are vertical to $TM$, thefore removing the redundancy present in $TP$ where an arbitrary point $p$ in the fiber in $P$ of $x$ had to be chosen first to see $T_p P$ as the set of generalized directions over $x$ where paths could be lifted. \rtext{Once this language is adopted, it is easy to see how the core concepts of gauge theories mentioned above may be abstracted in the concepts of Lie algebroid, Lie algebroid connection, and representations of Lie algebroids}. \todo{No se esto realmente donde va}
 
-Lie bracket allow us to think of the elements as directions at a point; anchor may be seen as a tangent or horizontal projection. The vertical directions at each point are (always?\todo{es cierto?}) a Lie algebra (this question requires to see first if the bracket, when restricted to the kernel, can be defined fiberwise instead of requiring a neighborhood).
+Anchor may be seen as a tangent or horizontal projection; Leibniz allows us to think of $[\oid X, \cdot]$ as a derivative; Lie bracket allow us to think of the elements as directions at a point, and so (it is a kind of a Poisson bracket) we can think of $[\oid X, \cdot]$ as a \emph{directional} derivative; The vertical directions at each point are (always?\todo{es cierto?}) a Lie algebra (this question requires to see first if the bracket, when restricted to the kernel, can be defined fiberwise instead of requiring a neighborhood... Update: I think this is the case, as Ch 7 of Tu says something about the equivalence between $C^\infty$ linearity and pointwise definition, and, by Leibniz restricted to the kernel, the bracket is $C^infty(M)$ linear in both entries).
 
 Throughout this section, $M$ will be a smooth manifold.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Basic Definitions}
 
 \begin{definition} [Lie Algebroid over $M$]\label{defnLieAlgoid}
@@ -48,7 +50,7 @@ Given two algebroids over the manifold $M$, $A$ with anchor $a$ and $A'$ with an
 Let $A, A', A''$ be Lie algebroids over $M$. \emph{An extension of Lie algebroids over $M$} is a sequence of Lie algebroids over $M$ \[ 0 \to A' \to A \to A'' \to 0 \] which is exact as sequence of vector bundles over $M$.
 \end{definition}
 
-\rule{10cm}{1mm}
+\linea
 
 \begin{definition}[Direct sum of Lie algebroids]
 Let $A, A'$ be Lie algebroids over $M$. 
@@ -58,7 +60,7 @@ Let $A, A'$ be Lie algebroids over $M$.
 Given an open subset $U$ of $M$, and given $\oid X, \oid Y : M \to A$ sections of the vector bundle $A$, the restriction to $U$ of $[\oid X, \oid Y] \in \Gamma(A)$ depends only on the restrictions of $\oid X$ and $\oid Y$ to $U$.
 \end{proposition}
 \begin{proof}
-
+Leibniz implies that the Lie bracket is a local operator (See Tu, Ch 7).
 \end{proof}
 
 The previous result allows us to restrict the Lie bracket of $A$ to the restriction vector bundle of $A$ to $U$, $A_U$.
@@ -85,7 +87,11 @@ Let $(q:A \to M, a: A \to M, [,]:\Gamma(A)\times \Gamma(A) \to \Gamma(A))$ be a 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Examples}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Tangent Bundle}
 
@@ -95,6 +101,7 @@ For any manifold $M$, its tangent bundle $TM$ with its projection $\pi:TM \to M$
 
 We will denote by capital letters near the end of the alphabet like $X, Y$ to refer both to elements of $TM$ and of $\Gamma(TM)$, and $X_m$ if we want to emphasize that it is in the fiber of $m \in M$\complete{Come up with a way to refer to sections that differs from element of TM, or perhaps but mentioning it as notation}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Explicit Examples}
 
 The following are manifolds and their tangent bundles which we will use regularly.
@@ -110,7 +117,20 @@ The following are manifolds and their tangent bundles which we will use regularl
     \item $S^3$ / $\HH^*$. Some of its tangent vectors are: . A set of basis vectors is...
     \end{itemize}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Lie Algebroid Bundles}
 
+\begin{definition}[Lie Algebroid Bundle]
+$M \times \algeb g$
+\end{definition}
+
+The anchor is defined as $0$.
+
+In contrast to the Lie algebroid $TM$, this Lie algebroid consists only of ``vectical directions'' .
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Pullbacks of Regular Submanifolds and Involutive Distributions}
 
 A family of related examples that show the arising of Lie algebroids is the restrict $TM$ to the regular submanifold $N$, in which case we not only have the tangent directions to $N$, but also some additional ``vertical'' or ``perpendicular'' directions.
@@ -139,6 +159,7 @@ Explicit examples:
 \item Let $N = \RR^2$ seen as the regular submanifold of $\RR^n$ determined by $x_3 = x_4 = \dots = 0$. In this case the original tangent direction to $N$ are spanned by $\partial_1, \partial_2$, but we have $n-2$ additional directions, all of which have $0$ as their anchor or horizontal component.
 \end{itemize}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Involutive Distributions/Foliations}
 
 In the previous example we saw a family of examples of Lie algebroids which contained directions additional to the tangent directions of the manifold. However, the opposite may also occur.
@@ -165,6 +186,7 @@ Explicit examples:
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Trivial Lie Algebroid}
 
 The trivial Lie algebroid makes explicit the understanding of Lie algebroids as spaces of generalized tangent directions for their base manifolds, as it is simply the combination of both the usual tangent directions of the manifold, together with Lie algebra directions added by hand. This understanding of Lie algebroids is further supported by the fact, proven later in \ref{}, that any transitive Lie algebroid has this form locally. The transitive part, as we will see, simply means that the anchor/shadow map for each $m \in M$ covers all vectors tangent to $x$, so the interpretation of Lie algebroids doesn't lose force by this additional requirement, as it may very well be that the Lie algebroid doesn't cover all directions tangent to $x$, but only some of them, in which case the trivial lie algebroid is no longer a good description.
@@ -185,7 +207,7 @@ We now define the main ingredients of the Lie algebroid we are building:
     \[
         [X \oplus H, Y \oplus \Theta] = [X, Y] \oplus \{X(\Theta) - Y(H) + [H, \Theta]\}
     \]
-    for all $X, Y \in \Gamma(TM)$, $H, Y \in \Gamma(M \times \algeb g)$. This definition will be motivated in the example of the Atiyah lie algebroid \ref{}, but for now we restrict ourselves to see that it works. Notice that in the above formula the symbols $[,]$ are used in $3$ different instances, each one referring to the brackets of $3$ different spaces. $X(\Theta)$ makes reference to the derivative in direction of $X$ of the vector valued function $M \to \algeb g$ associated to $\Theta$, or, simply, to the Lie derivative of the section $\Theta \in \Gamma(M \times \algeb g)$, $\mathcal L_X \Theta$. Veamos que esto es una estructura de Lie en $\Gamma(TM \times (M \times \algeb g))$:
+    for all $X, Y \in \Gamma(TM)$, $H, Y \in \Gamma(M \times \algeb g)$. \sout{This definition will be motivated in the example of the Atiyah lie algebroid \ref{}, but for now we restrict ourselves to see that it works} Notice that this definition, by linearity, is equivalent to saying that $[X, \Theta] = X(\Theta)$ and $[H, Y] = - [Y, H] = -Y(H)$, i.e. to say that the bracket IS the Lie derivative (of sections of vector bundles over $M$). Notice that in the above formula the symbols $[,]$ are used in $3$ different instances, each one referring to the brackets of $3$ different spaces. $X(\Theta)$ makes reference to the derivative in direction of $X$ of the vector valued function $M \to \algeb g$ associated to $\Theta$, or, simply, to the Lie derivative of the section $\Theta \in \Gamma(M \times \algeb g)$, $\mathcal L_X \Theta$. Veamos que esto es una estructura de Lie en $\Gamma(TM \times (M \times \algeb g))$:
         \begin{itemize}
         \item Alternating:
         \item Leibniz:
@@ -211,10 +233,12 @@ Let's check that the compatibility conditions between the anchor and the bracket
 
 The vector bundle $TM \times (M \times \algeb g)$ together with the previously defined anchor and bracket is called \emph{the trivial Lie algebroid on $M$ with structure algebra $\algeb g$}.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Explicit Examples}
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Atiyah Lie Algebroid of a Principal Bundle}
 
@@ -318,9 +342,9 @@ Let $(E, p^E, P)$ and $(E, p^{E'}, P')$ be vector bundles over principal bundles
 
 \[
 \begin{tikzcd}
-    E   \arrow{r}{\Phi}     \arrow{d}{\natural} &   E'  \arrow{d}{\natural'} \\
-    E/G \arrow{r}{\Phi^{/G}} \arrow{d}{p^{E/G}}  & E'/G' \arrow{d}{p^{E'/G'}} \\
-    M \arrow{r}{f} & M'
+    E   \ar{r}{\Phi}     \ar{d}{\natural} &   E'  \ar{d}{\natural'} \\
+    E/G \ar{r}{\Phi^{/G}} \ar{d}{p^{E/G}}  & E'/G' \ar{d}{p^{E'/G'}} \\
+    M \ar{r}{f} & M'
 \end{tikzcd}
 \]
 \end{proposition}
@@ -345,6 +369,9 @@ The (smooth) sections of $E/G$ is $C^\infty(M)$-module isomorphic to the $G$-inv
 
 \end{proof}
 
+Bracket
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Trivial Principal Bundle and its Atiyah Lie Algebroid}
 
 We will now see how, locally, the Atiyah lie algebroid of a principal bundle is a trivial lie algebroid. This, on one hand, allows us to motivate the definition for the bracket of these algebroids given in \ref{}, and, on the other hand, shows us how even though the Atiyah lie algebroid is indeed a way to paste a collection of generalized directions (trivial Lie algebroids), but also lets us intuir how there may be other ways to paste this local Lie algebroids to obtain a more general collection of generalized directions which isn't necessarily associated to a principal bundle, which is the notion of transitive Lie algebroids.
@@ -359,12 +386,16 @@ The vector bundle $T(M \times G)/G$ over $M$ is diffeomorphic to the vector bund
 Every direction of $TG$ can be seen as an element of the range of a right-invariant vector field, i.e. an element in $T_g G$ may be written as $A_g :=\frac{d}{dt}|_{t=0}e^{tA}g$ for some $A \in \algeb g$; this is known to give a diffeomorphism $TG \diffeo G \times \algeb g$. Now, $T(M \times G) \diffeo TM \boxplus TG \diffeo TM \boxplus (G \times \algeb g)$\footnote{$V \boxplus W$ denotes the external Whitney sum of the vector bundles $V$, over a base manifold $X$, and $W$, over a base manifold $Y$ This is a vector bundle over $X \times Y$ and has $V \times W$ as underlying manifold.}; an element of $T(M \times G)$ may, thus, be written as $X \boxplus A_g = \frac{d}{dt}|_{t = 0}(\gamma(t), e^{tA}g)$ where $X = \gamma'(0) \in T_x M$ for some $x \in M$ and $A \in \algeb g$, which may also be interpreted as the element $(X, g, A) \in TM \boxplus (M \times \algeb g)$. The (right) action of $h \in G$ on the element $(x, g) \in M\times G$ is $(x, g)h = (x, gh)$, so the right action on $X \boxplus A_g \in T(M \times G)$ is $(X \boxplus A_g)h = \frac{d}{dt}|_{t=0}[(\gamma(t), e^{tA}g)h] = \frac{d}{dt}|_{t=0}[(\gamma(t), e^{tA}gh)] = X \boxplus A_{gh}$, which may also be written as $(X, g, A)h = (X, gh, A)$; this allows us to easily see (formally proven in the context of transitive Lie algebroids in \ref{}) that $T(M \times G)/G \diffeo TM \oplus (M \oplus \algeb g)$, where the orbit of the element $X \boxplus A_g \in T(M \times G)$ is sent to the element $(X, A) = X \oplus A \in TM \oplus (M \times \algeb g)$.
 \end{proof}
 
+Bracket:
+
 To continue our exploration of the Atiyah lie algebroid of the trivial principal bundle $M \times G$, we now translate its bracket to the language of the vector bundle $TM \oplus (M \times \algeb g)$. 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Explicit Examples}
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Adjoint Bundle of a Principal Bundle}
 
@@ -395,8 +426,10 @@ The subfamily of examples we will be most interested in is the family of $P \tim
     \item So we may regard $P \times \algeb g / G = ker a$, and not only as a vector bundle map, but, thanks to the respect for the anchor and, specially, the Lie bracket, we may regard $P \times \algeb g/G$ as a sub Lie algebroid of $TP/G$.
     \end{itemize}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Explicit Examples}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Derivations Algebroid of a Vector Bundle}
 
@@ -406,6 +439,7 @@ Makes reasonable, not only the understanding of Lie algebroids as generalized di
 
 By the main result of Ch 7 of Tu, a $0$-diferential operator (i.e. a $C^\infty(M)$ map)
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Other (Families of) Examples}
 
@@ -418,6 +452,9 @@ Extensions
 Coming from Lie groupoids
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Representations}
 
 This is a generalization of associated vector bundles of a principal bundle. In the bundle theory, sections of associated vector bundles are equivalent to $G$-equivariant functions $P \to V$, so $G$-invariant vector fields $\oid X \in \Gamma(P)$ are derivatives/derivations of this functions: $\Gamma(E) \to \Gamma(E)$ satisfying Leibniz for $G$-invariant functions of $P$ (equivalent to functions in $M$). FurtherIt is in representation lie algebroids where connections of this bundle induce covariant derivatives, just as principal bundle connections induce covariant derivatives in associated vector bundles.
@@ -425,6 +462,10 @@ This is a generalization of associated vector bundles of a principal bundle. In 
 Adjoint representation
 
 Equivariant
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{LABs and Transitive Lie Algebroids}
 
@@ -432,8 +473,24 @@ Definitions comming from Lie algebra theory semisimple, nilpotent, abelian, redu
 
 If $A$ is regular, the image of the anchor defines a foliation of the base manifold, \emph{the characteristic foliation of $A$}, which is transitive over each leaf of the foliation.
 
+The kernel of the anchor is a Lie algebroid, I think, and each of its fibers is a Lie algebra due to the $C^\infty$ linearity of the bracket, I think. 
+
+Theorem: The adjoint bundle of a TLA is a LAB. Proved, I think, at the very beginning of Ch 6, or of a section of Ch 6.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Local Description of Transitive Lie Algebroids}
 
+Theorem: A TLA is locally trivial.
+
+Proof: At least show that it follows from Theorem 8.2.1 (TLA over contractible $M$ admits a flat connection; this theorem is analogous to ``every ppal bundle over a contractible space has a global section'', and so requires top. algebra: cohomology theory of Ch 7 in this case). The proof I mention I should do is, I think, in page 317
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Actions of Lie Algebroids?}\subsection{Trivial Lie Algebroid}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Actions of Lie Algebroids?}
+
+

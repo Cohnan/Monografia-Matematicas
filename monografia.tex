@@ -20,15 +20,14 @@
 % Color Additions
 \input{tools/colorCode}
 
-\usepackage{tikz-cd} %To do commutative diagrams
-%
-%
+\usepackage{tikz-cd} %To do Commutative Diagrams
 
-
-
-
+% Extras
+\newcommand{\linea}{\rule{10cm}{1mm}}
+\usepackage{ulem}
 \renewcommand{\theequation}{\thechapter.\arabic{equation}} % To label Ch 0 equations as 0.1, 0.2, etc
 
+%%%%%%%
 \newenvironment{dedication}
   {\clearpage           % we want a new page
    \thispagestyle{empty}% no header and footer
@@ -40,8 +39,10 @@
    \clearpage           % finish off the page
   }
 
+%%%%%%%
 \graphicspath{ {images/} }
 
+%%%%%%%
 \theoremstyle{definition}
 \newtheorem{example}{Example}[section]
 \newtheorem{definition}[example]{Definition}
@@ -51,6 +52,7 @@
 \newtheorem{corollary}[example]{Corollary}
 \newtheorem{notation}[example]{Notation}
 
+%%%%%%%
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\Aut}{Aut}
 \DeclareMathOperator{\ev}{ev}
@@ -71,7 +73,9 @@
 \DeclareMathOperator{\comp}{\circ}
 \newcommand{\algeb}[1]{\mathfrak{#1}}
 
+%%%%%%%
 \allowdisplaybreaks
+\setlength{\parskip}{0.5em} % PARECE QUE NO ES USUAL DEJAR ESTE ESPACIO
 
 \interfootnotelinepenalty=10000
 
@@ -83,6 +87,11 @@
 	{\includegraphics[width = 0.6\textwidth]{logo.png}}	
 }
 \author{Sebastian Camilo Puerto Galindo\\[1cm]{\small Advised by: Prof. Alexander Cardona Guio}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
