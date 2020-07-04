@@ -279,7 +279,7 @@ In \ref{} we motivated the use of $TP/G$ as a natural place to talk about connec
 
 %Alternative 3:%%%%%%%%%%%%%%%%%%%%%%
 
-The main purpose of the next propositions is to allow us to give a smooth structure to $TP/G$, to show that certain important maps are also smooth, and to understand the brackets that will arise for $\Gamma(TP/G)$, among other things related to the adjoint bundle $P\times \algeb g/G$.
+The main purpose of the next propositions is to allow us to give a smooth vector bundle structure to $TP/G$, to show that certain important maps are also smooth, and to understand the brackets that will arise for $\Gamma(TP/G)$, among other things related to the adjoint bundle $P\times \algeb g/G$.
 
 \begin{proposition} \label{3.1.1}
 Let $E$ be a (smooth) vector bundle over $P$ with projection map $p^E: E \to P$. Suppose that $G$ acts (smoothly) to the right on $E$ in such a way that:
@@ -290,7 +290,7 @@ Let $E$ be a (smooth) vector bundle over $P$ with projection map $p^E: E \to P$.
     \item $E$ is covered by $G$-equivariant $\pi$-saturated charts. That is, for each $p_0 \in P$ there is a chart of E $\psi: \mathcal U \times V \to E|_{\mathcal U}$, where $p_0 \in \mathcal U = \pi^{-1}(U)$ for some open $U \subset M$, that satisfies $\psi(p, v)g = \psi(pg, v)$ for all $p \in \mathcal U$, $v \in V$, $g \in G$.
 \end{enumerate}
 
-Then the quotient space $E/G$ has a (smooth) vector bundle structure over $M$ which is unique in the sense that:
+Then \emph{the quotient space $E/G$ has a (smooth) vector bundle structure over $M$ which is unique} in the sense that:
 
 \begin{itemize}
     \item $E/G$ has the unique manifold structure that makes the quotient map $\natural: E \to E/G$ a surjective submersion.
@@ -338,7 +338,8 @@ The uniqueness assertions follow from the fact that there is at most one manifol
 The following proposition and its corollary allow us to that maps certain maps between some relevant algebroids are well defined.
 
 \begin{proposition}
-Let $(E, p^E, P)$ and $(E, p^{E'}, P')$ be vector bundles over principal bundles $P(M, G)$ and $P'(M', G')$, respectively. Let $G$ and $G'$ act on $E$ and $E'$ respectively satisfying the conditions of \ref{3.1.1}. Let $\Phi: E \to E'$ be a vector bundle morphism over a principal bundle morphism $F(f, \phi)$ that satisfies $\Phi(\mu g) = \Phi(\mu) \phi(g)$ for all $\mu \in E$, $g \in G$. Then there exists a unique (smooth) vector bundle morphism $\Phi^{/G}: E/G \to E'/G'$ over $f: M \to M'$ such that $\Phi^{/G} \circ \natural = \natural' \circ \Phi$, where obvious notation from \ref{3.1.1} has been used.
+Let $(E, p^E, P)$ and $(E, p^{E'}, P')$ be vector bundles over principal bundles $P(M, G)$ and $P'(M', G')$, respectively. Let $G$ and $G'$ act on $E$ and $E'$ respectively satisfying the conditions of \ref{3.1.1}. Let $\Phi: E \to E'$ be a vector bundle morphism, over the principal bundle morphism $F(f, \phi)$ where $f:M\to M'$ and $\phi:G \to G'$, that satisfies $\Phi(\mu g) = \Phi(\mu) \phi(g)$ for all $\mu \in E$, $g \in G$, i.e. \emph{$\Phi$ is $G$-equivariant}.\\
+Then, there exists a unique (smooth) vector bundle morphism $\Phi^{/G}: E/G \to E'/G'$ over $f: M \to M'$ such that $\Phi^{/G} \circ \natural = \natural' \circ \Phi$, where obvious notation from \ref{3.1.1} has been used.
 
 \[
 \begin{tikzcd}
@@ -350,6 +351,14 @@ Let $(E, p^E, P)$ and $(E, p^{E'}, P')$ be vector bundles over principal bundles
 \end{proposition}
 
 \begin{proof}
+Define $\Phi^{/G}(\langle \mu \rangle) := \langle \Phi(\mu) \rangle$.
+
+This map is well defined thanks to the $G$-equivariance of $\Phi$. 
+
+It is fiberwise linear: for $\langle \mu \rangle, \langle \nu \rangle \in E/G$, let $g \in G$ be such that $\mu$ and $\nu g$ are in the same vector fiber of $E$; notice that this also means that $\Phi(\mu)$ and $\Phi(\nu \phi(g)) = \Phi(\nu) \phi(g)$ are in the same vector fiber of $E'$ because $\Phi:E \to E'$ is fiber preserving. 
+Then $\Phi^{/G}(\langle \mu \rangle + t\langle \nu \rangle) = \Phi^{/G}(\langle \mu  + t \nu g \rangle)  = \langle \Phi(\mu + t \nu g ) \rangle = \langle \Phi(\mu) + t \Phi(\nu)\phi(g) \rangle = \langle \Phi(\mu) \rangle + t \langle \Phi(\nu) \rangle = \Phi^{/G}(\langle \mu \rangle) + t\Phi^{/G}(\langle \nu \rangle)$.
+
+
 
 \end{proof}
 
