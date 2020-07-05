@@ -337,9 +337,8 @@ The uniqueness assertions follow from the fact that there is at most one manifol
 
 The following proposition and its corollary allow us to that maps certain maps between some relevant algebroids are well defined.
 
-\begin{proposition}
-Let $(E, p^E, P)$ and $(E, p^{E'}, P')$ be vector bundles over principal bundles $P(M, G)$ and $P'(M', G')$, respectively. Let $G$ and $G'$ act on $E$ and $E'$ respectively satisfying the conditions of \ref{3.1.1}. Let $\Phi: E \to E'$ be a vector bundle morphism, over the principal bundle morphism $F(f, \phi)$ where $f:M\to M'$ and $\phi:G \to G'$, that satisfies $\Phi(\mu g) = \Phi(\mu) \phi(g)$ for all $\mu \in E$, $g \in G$, i.e. \emph{$\Phi$ is $G$-equivariant}.\\
-Then, there exists a unique (smooth) vector bundle morphism $\Phi^{/G}: E/G \to E'/G'$ over $f: M \to M'$ such that $\Phi^{/G} \circ \natural = \natural' \circ \Phi$, where obvious notation from \ref{3.1.1} has been used.
+\begin{proposition} \label{3.1.2}
+Let $(E, p^E, P)$ and $(E, p^{E'}, P')$ be vector bundles over principal bundles $P(M, G)$ and $P'(M', G')$, respectively. Let $G$ and $G'$ act on $E$ and $E'$ respectively satisfying the conditions of \ref{3.1.1}. Let $\Phi: E \to E'$ be a vector bundle morphism, over the principal bundle morphism $F(f, \phi)$ where $f:M\to M'$ and $\phi:G \to G'$, that satisfies \[\Phi(\mu g) = \Phi(\mu) \phi(g)\] for all $\mu \in E$, $g \in G$, i.e. \emph{$\Phi$ is $G$-equivariant}. Then, there \emph{exists a unique (smooth) vector bundle morphism} $\Phi^{/G}: E/G \to E'/G'$ over $f: M \to M'$ such that $\Phi^{/G} \circ \natural = \natural' \circ \Phi$, where obvious notation from \ref{3.1.1} has been used. In particular, the following diagram commutes:
 
 \[
 \begin{tikzcd}
@@ -351,23 +350,33 @@ Then, there exists a unique (smooth) vector bundle morphism $\Phi^{/G}: E/G \to 
 \end{proposition}
 
 \begin{proof}
-Define $\Phi^{/G}(\langle \mu \rangle) := \langle \Phi(\mu) \rangle$.
+The top square of the above diagram imply that $\Phi^{/G}$ is uniquely defined by $\Phi^{/G}(\langle \mu \rangle) := \langle \Phi(\mu) \rangle$. This map is well defined thanks to the $G$-equivariance of $\Phi$.
 
-This map is well defined thanks to the $G$-equivariance of $\Phi$. 
-
-It is fiberwise linear: for $\langle \mu \rangle, \langle \nu \rangle \in E/G$, let $g \in G$ be such that $\mu$ and $\nu g$ are in the same vector fiber of $E$; notice that this also means that $\Phi(\mu)$ and $\Phi(\nu \phi(g)) = \Phi(\nu) \phi(g)$ are in the same vector fiber of $E'$ because $\Phi:E \to E'$ is fiber preserving. 
+It is fiberwise linear: for $\langle \mu \rangle, \langle \nu \rangle \in E/G$, let $g \in G$ be such that $\mu$ and $\nu g$ are in the same vector fiber of $E$; notice that this also means that $\Phi(\mu)$ and $\Phi(\nu g) = \Phi(\nu) \phi(g)$ are in the same vector fiber of $E'$ because $\Phi:E \to E'$ is fiber preserving. 
 Then $\Phi^{/G}(\langle \mu \rangle + t\langle \nu \rangle) = \Phi^{/G}(\langle \mu  + t \nu g \rangle)  = \langle \Phi(\mu + t \nu g ) \rangle = \langle \Phi(\mu) + t \Phi(\nu)\phi(g) \rangle = \langle \Phi(\mu) \rangle + t \langle \Phi(\nu) \rangle = \Phi^{/G}(\langle \mu \rangle) + t\Phi^{/G}(\langle \nu \rangle)$.
 
+$\Phi^{/G}$ is smooth: Given that $F := \Phi^{/G} \circ \natural = \natural' \circ \Phi : E \to E'/G'$ is a smooth mapping and that $\natural$ is a surjective submersion, the Submersion theorem allows us to see the local smoothness of $\Phi^{/G}$, and therefore conclude that $\Phi^{/G}$ is smooth: due to the submersion theorem for any $\mu \in E$, there exist a chart $(\mathcal U, \Psi: \mathcal U \to \RR^N)$ of $E$ near $\mu$, a chart $(U, \psi: U \to \RR^n)$ of $E/G$ near $\langle \mu \rangle$, and a chart $(U', \psi': U' \to \RR^m)$ of $E'/G'$ near $\Phi^{/G}(\langle e \rangle)$where $n \leq N$, such that: %$\psi \circ \natural \circ \Psi^{-1}(x_1, \dots, x_N) = (x_1, \dots, x_n)$, $\psi' \circ (\Phi^{/G} \circ \natural) \circ \Psi^{-1}(x_1, \dots, x_N) = (F^1(x_1), \dots, F^m(x_n)$
 
+\[
+\begin{tikzcd}
+    (x_1, \dots, x_N) \arrow[mapsto]{rd}{\psi' \circ (\natural' \circ \Phi) \circ \Psi^{-1} } \arrow[mapsto]{d}{\psi \circ \natural \circ \Psi^{-1}} & \\
+    (x_1, \dots, x_n) \arrow[mapsto]{rd}[below, near start]{\psi' \circ \Phi^{/G} \circ \psi^{-1}} & (\tilde F^1(x_1, \dots, x_N), \dots, \tilde F^m(x_1, \dots, x_N)) \arrow[equal]{d}\\
+    & (\tilde{\Phi^{/G}}^1(x_1, \dots, x_n), \dots, \tilde{\Phi^{/G}}^m(x_1, \dots, x_n))
+\end{tikzcd}
+\]
+
+the smoothness of $F$ imply that the functions $F^i:\Psi(\mathcal U) \to \psi'(U')$ are smooth, but $\tilde F^i(x_1, \dots, x_N) = \tilde{\Phi^{/G}}^i(x_1, \dots, x_n)$, so the functions $\tilde{\Phi^{/G}}^i:\psi(U) \to \psi'(U')$ that localize $\Psi^{/G}$ are smooth, therefore so is $\Phi^{/G}$. 
+
+Finally, $\Phi^{/G}$ is a smooth vector bundle morphism over $f:M \to M'$ since $p^{E'/G'} \circ \Phi^{/G}(\langle \mu \rangle) = p^{E'/G'}(\langle \Phi(\mu) \rangle) = p^{E'}(\Phi(\mu)) = f \circ p^E (\mu) = f \circ p^{E/G} (\langle \mu \rangle)$.
 
 \end{proof}
 
 \begin{corollary}
-Let $(E, p^E, P)$ be a vector bundle over principal bundles $P(M, G)$, and let $G$ act on $E$ satisfying the conditions of \ref{3.1.1}. Let $(E, p^{E'}, M')$ be another vector bundle. Let $\Phi: E \to E'$ be a vector bundle morphism over a map $f: P \to M'$ that satisfies $\Phi(\mu g) = \Phi(\mu)$ and $f(pg) = f(p)$ for all $\mu \in E$, $p \in P$ and $g \in G$. Then there exists a unique (smooth) vector bundle morphism $\Phi^{/G}: E/G \to E'$ over a map $f^{/G}: M \to M'$, $f^{/g}$ such that $f = f^{/g} \circ \pi$, that safiesfies $\Phi^{/G} \circ \natural = \Phi$ and $ $, where obvious notation from \ref{3.1.1} has been used.
+Let $(E, p^E, P)$ be a vector bundle over the principal bundle $P(M, G)$, and let $G$ act on $E$ satisfying the conditions of \ref{3.1.1}. Let $(E, p^{E'}, M')$ be another vector bundle. Let $\Phi: E \to E'$ be a vector bundle morphism over a map $f: P \to M'$ that satisfies $\Phi(\mu g) = \Phi(\mu)$ and $f(pg) = f(p)$ for all $\mu \in E$, $p \in P$ and $g \in G$. Then there exists a unique (smooth) vector bundle morphism $\Phi^{/G}: E/G \to E'$ over a map $f^{/G}: M \to M'$, $f^{/g}$ such that $f = f^{/g} \circ \pi$, that safiesfies $\Phi^{/G} \circ \natural = \Phi$ and $ $, where obvious notation from \ref{3.1.1} has been used.
 \end{corollary}
 
 \begin{proof}
-
+Consider $M'$ as the principal bundle $P(M', \set{1})$, let $\phi:G \to \set{1}$ be trivial and apply \ref{3.1.2}.
 \end{proof}
 
 \begin{proposition}
