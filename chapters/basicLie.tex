@@ -442,17 +442,46 @@ We will denote by $\pi^{/G}:TP/G \to M$ the projection map of the quotient vecto
 \begin{proof}
 Condition (1) is satisfied since, for any $g \in G$, the map $R_{g*}:TP \to TP$ is a fiberwise linear map over $R_g$ with inverse $R_{g^{-1} *}$.
 
-Given $p_0 \in P$, to construct an equivariant $\pi$-saturated chart near $p$ we will start with a chart $\phi:U \times G \to \mathcal U = \pi^{-1}(U)$ for $P$ where $U$ is the range of a chart $\theta:\RR^n \to U$ for $M$. The desired chart $\Phi: \mathcal U \times (\RR^n \oplus \alg g) \to TP|_{\mathcal U}$ for $TP$ will be, basically, $\phi^*$, after we correctly identify 
-
+Given $p_0 \in P$, to construct an equivariant $\pi$-saturated chart near $p$ we will start with a chart $\phi:U \times G \to \mathcal U = \pi^{-1}(U)$ for $P$ where $U$ is the range of a chart $\theta:\RR^n \to U$ for $M$. The desired chart $\Phi: \mathcal U \times (\RR^n \oplus \alg g) \to TP|_{\mathcal U}$ for $TP$ will be, basically, $\phi^*$, after we identify (via smooth maps) 
     \begin{itemize}
     
-    \item $T(U)$ with $U \times \RR^n$ via $\theta_*$,  
+    \item $U \times \RR^n$ with $TU$ by the map $\theta_{*}: \RR^n \times \RR^n \to T_m U$,  
     
-    \item $T(G)$ with $G \times \alg g$ via $R_{g*}$,
+    \item $G \times \alg g$ with $TG$ via $R_{\cdot *, 1}: G \times \alg g \to T G$,
     
-    \item and, therefore, the vector bundle $T(U \times G) \cong T(U) \boxplus T(G)$ with $\mathcal U \times (\RR^n \oplus \alg g) (U \times \RR^n) \boxplus (G \times \alg g)$ 
-        
+    \item and, therefore, the vector bundle $T(U \times G)$, understood as $T(U) \boxplus T(G)$, with $(U \times \RR^n) \boxplus (G \times \alg g)$ and so with $\mathcal U \times (\RR^n \oplus \alg g)$ via $\phi_*: TU \boxplus TG \to TP|_{\mathcal U}$.
+    
     \end{itemize}
+
+Concretely, let
+\begin{align*}
+    \tilde \Phi :& (U \times G) \times (\RR^n \oplus \alg g) & \to^{\cong} & TP|_{\mathcal U} \\    
+                 & (m, g, v, \eta) & \mapsto & \phi_{*, (m, g)}(\theta_{*, \theta^{-1}(m)} v, R_{g*, 1} \eta) 
+\end{align*}
+now, define $\Phi : \mathcal U \times (\RR^n \oplus \alg g)  \to  T_{\mathcal U}P$ by $\Psi = \phi^{-1} \times id_{\RR^n \oplus \alg g}$. %The isomorphisms mentioned above mean that Given any $p \in P$ %and $X_m \in T_m M$ where $m = \pi(p)$, it is always possible to write $p = \phi(m, g)$ and $X_m = \theta_{*, \theta^{-1}(m)} v$ for some $g \in G, v \in \RR^n$; in this case
+
+\[
+    \Phi(p, v \oplus \eta) = \phi_{*, (m, g)}(\theta_{*, \theta^{-1}(m)} v, R_{g*, 1} \eta)
+\]
+
+The equivariance of this chart%, it is enough to show check the $G$-equivariance or $\tilde \Phi$, where $G$ acts on $(U \times G) \times (\RR^n \oplus \alg g)$ as induced by $\phi$, i.e. $(m, g, v, \eta)g' = (m, gg', v, \eta)$ for any $g' \in G$, so we need to see  that 
+%\begin{align*}
+%    \Phi(m, g, v, \eta) g' &=R_{g'*, \phi(m,g)} \circ \phi_{*, (m, g)}(\theta_{*, \theta^{-1}(m)} v, R_{g*, 1} \eta)\\
+%    &= \phi_{*, (m, gg')}(\theta_{*, \theta^{-1}(m)} v, R_{gg'*, 1} \eta) = \Phi(m, gg', v, \eta).
+%\end{align*}
+ means that for any $p \in \mathcal U$, which can be written as $p = \phi(m, g)$,
+\begin{align*}
+    \Phi(p, v, \eta) g' &=R_{g'*, p} \circ \phi_{*, p}(X_m, R_{g*, 1} \eta)\\
+    &= \phi_{*, (m, gg')}(X_m, R_{gg'*, 1} \eta) = \Phi(m, gg', v, \eta).
+\end{align*} where $X_m = \theta_{*, \theta^{-1}(m)} v \in T_m M$.
+
+This follows from the identity $\phi(m, g) g' = \phi(m, gg')$, when it is expressed as the equality of the functions $R_{g'} \circ \phi = \phi \circ (Id_U \times R_{g'}) : U \times G \to TP|_{\mathcal U}$. Deriving each formula at $(m, g)$ using the chain rule and equating them we get the desired equation.%The left hand side is the derivative at $(m,g)$ of the map $F: U \times G \to TP|_{\mathcal U}$, $F =  R_{g'}\circ \phi$ applying the chain rule, and the right side is the same thing, but evaluating the derivative when $F$ is expressed as the composition map $(m, g) \mapsto (m, R_{g'}(g)) \mapsto \phi(m, gg')$; the equality of this formulas for $F$ is nothing more than the statement that the coordinate map $\phi:U \times G \to TP|_{\mathcal U}$ satisfies .
+
+%since  let $g' \in G$, and let $\phi(m, g) = p$, then % = R_{g'*,\phi(m, g)} \circ \phi_{*, (m, g)} (\theta_{*, \theta^{-1}(m)} v, R_{g*, 1} \eta)
+%\begin{multline*}
+%    \Phi(pg', v \oplus \eta) = \tilde \Phi(\phi^{-1}(pg'), v \oplus \eta) = \tilde \Phi(\phi^{-1}(p)g', v \oplus \eta) = \tilde \Phi(m, gg', v, \eta) = \phi_{*, (m, gg')}(\theta_{*, \theta^{-1}(m)} v, R_{gg'*, 1} \eta)
+%\end{multline*}
+
 \end{proof}
 
 The following proposition and its corollary allow us to define smooth vector bundle maps that start in quotient vector bundles. In particular, it will allow us to define the anchor $a:TP/G \to TM$ of what will be the Atiyah Lie algebroid.
@@ -531,6 +560,8 @@ It is important to realize that:
     
     \item the second map, which might also be denoted by $\cl{\sect \mu} \in \Gamma(E/G)$\todo{I might opt for the original notation, and remove this awkward one entirely}, can not be extended to general sections $\mu \in \Gamma(E)$ because it is not, in general, the case that $\cl{\sect \mu(p)} = \cl{\sect \mu(p')}$ even when $p, p' \in \pi^{-1}(m)$.
 \end{itemize}
+
+In general, given a section $\mu \Gamma(E)$ of a vector bundle $E$ over a base space $B$, the value of the section at $b\in B$ will usually be denoted by $\mu_b \in E_b$ instead of $\mu(b)$.
 
 \begin{proof}
 Before we show that the sections defined by above formulas are indeed smooth sections, we will remark a couple of things. The $G$-invariance of the map $\sectoid \mu \mapsto \upsect{\sectoid \mu}$ is inherited from the $G$-invariance of $\pi$. The map $\sect \mu \mapsto \downsect{\sect \mu}$ is well defined due to the $G$-invariance of $\sect \mu \in \Gamma^G(E)$, hence $\cl{X(pg)} = \cl{X(p)g} = \cl{X(p)}$. These two functions as defined by the formulas above are inverses of each other since, (REMEMBERING THAT $\cl{...}$ is $\natural_p$ might simplify this part)\\
