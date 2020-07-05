@@ -475,7 +475,7 @@ The equivariance of this chart%, it is enough to show check the $G$-equivariance
     &= \phi_{*, (m, gg')}(X_m, R_{gg'*, 1} \eta) = \Phi(m, gg', v, \eta).
 \end{align*} where $X_m = \theta_{*, \theta^{-1}(m)} v \in T_m M$.
 
-This follows from the identity $\phi(m, g) g' = \phi(m, gg')$, when it is expressed as the equality of the functions $R_{g'} \circ \phi = \phi \circ (Id_U \times R_{g'}) : U \times G \to TP|_{\mathcal U}$. Deriving each formula at $(m, g)$ using the chain rule and equating them we get the desired equation.%The left hand side is the derivative at $(m,g)$ of the map $F: U \times G \to TP|_{\mathcal U}$, $F =  R_{g'}\circ \phi$ applying the chain rule, and the right side is the same thing, but evaluating the derivative when $F$ is expressed as the composition map $(m, g) \mapsto (m, R_{g'}(g)) \mapsto \phi(m, gg')$; the equality of this formulas for $F$ is nothing more than the statement that the coordinate map $\phi:U \times G \to TP|_{\mathcal U}$ satisfies .
+This follows from the identity $\phi(m, g) g' = \phi(m, gg')$, when it is expressed as the equality of the functions $R_{g'} \circ \phi = \phi \circ (Id_U \times R_{g'}) : U \times G \to TP|_{\mathcal U}$. Deriving each formula at $(m, g)$ using the chain rule and the equality $R_g \circ R_{g'} = R_{gg'}$ we get the desired equation.%The left hand side is the derivative at $(m,g)$ of the map $F: U \times G \to TP|_{\mathcal U}$, $F =  R_{g'}\circ \phi$ applying the chain rule, and the right side is the same thing, but evaluating the derivative when $F$ is expressed as the composition map $(m, g) \mapsto (m, R_{g'}(g)) \mapsto \phi(m, gg')$; the equality of this formulas for $F$ is nothing more than the statement that the coordinate map $\phi:U \times G \to TP|_{\mathcal U}$ satisfies .
 
 %since  let $g' \in G$, and let $\phi(m, g) = p$, then % = R_{g'*,\phi(m, g)} \circ \phi_{*, (m, g)} (\theta_{*, \theta^{-1}(m)} v, R_{g*, 1} \eta)
 %\begin{multline*}
@@ -487,12 +487,12 @@ This follows from the identity $\phi(m, g) g' = \phi(m, gg')$, when it is expres
 The following proposition and its corollary allow us to define smooth vector bundle maps that start in quotient vector bundles. In particular, it will allow us to define the anchor $a:TP/G \to TM$ of what will be the Atiyah Lie algebroid.
 
 \begin{proposition} \label{3.1.2}
-Let $(E, p^E, P)$ and $(E, p^{E'}, P')$ be vector bundles over principal bundles $P(M, G)$ and $P'(M', G')$, respectively. Let $G$ and $G'$ act on $E$ and $E'$ respectively satisfying the conditions of \ref{3.1.1}. Let $\Phi: E \to E'$ be a vector bundle morphism, over the principal bundle morphism $F(f, \phi)$ where $f:M\to M'$ and $\phi:G \to G'$, that satisfies \[\Phi(\mu g) = \Phi(\mu) \phi(g)\] for all $\mu \in E$, $g \in G$, i.e. \emph{$\Phi$ is $G$-equivariant}. Then, there \emph{exists a unique (smooth) vector bundle morphism} $\Phi^{/G}: E/G \to E'/G'$ over $f: M \to M'$ such that $\Phi^{/G} \circ \natural = \natural' \circ \Phi$, where obvious notation from \ref{3.1.1} has been used. In particular, the following diagram commutes:
+Let $(E, p^E, P)$ and $(E, p^{E'}, P')$ be vector bundles over principal bundles $P(M, G)$ and $P'(M', G')$, respectively. Let $G$ and $G'$ act on $E$ and $E'$ respectively satisfying the conditions of \ref{3.1.1}. Let $\Phi: E \to E'$ be a vector bundle morphism, over the principal bundle morphism $F(f, \phi)$ where $f:M\to M'$ and $\phi:G \to G'$, that satisfies \[\Phi(\mu g) = \Phi(\mu) \phi(g)\] for all $\mu \in E$, $g \in G$, i.e. \emph{$\Phi$ is $G$-equivariant}. Then, there \emph{exists a unique (smooth) vector bundle morphism} $\Phi^{/G}: E/G \to E'/G'$ over $f: M \to M'$ such that $\Phi^{/G} \circ \natural = \natural' \circ \Phi$, where notation from \ref{3.1.1} has been used. In particular, the following diagram commutes:
 
 \begin{equation}
 \begin{tikzcd}
     E   \ar{r}{\Phi}     \ar{d}{\natural} &   E'  \ar{d}{\natural'} \\
-    E/G \ar{r}{\Phi^{/G}} \ar{d}{p^{E/G}}  & E'/G' \ar{d}{p^{E'/G'}} \\
+    E/G \ar[dashed]{r}{\Phi^{/G}} \ar{d}{p^{E/G}}  & E'/G' \ar{d}{p^{E'/G'}} \\
     M \ar{r}{f} & M'
 \end{tikzcd}
 \end{equation}
@@ -521,14 +521,29 @@ Finally, $\Phi^{/G}$ is a smooth vector bundle morphism over $f:M \to M'$ since 
 \end{proof}
 
 \begin{corollary}
-Let $(E, p^E, P)$ be a vector bundle over the principal bundle $P(M, G)$, and let $G$ act on $E$ satisfying the conditions of \ref{3.1.1}. Let $(E, p^{E'}, M')$ be another vector bundle. Let $\Phi: E \to E'$ be a vector bundle morphism over a map $f: P \to M'$ that satisfies $\Phi(\mu g) = \Phi(\mu)$ and $f(pg) = f(p)$ for all $\mu \in E$, $p \in P$ and $g \in G$. Then there exists a unique (smooth) vector bundle morphism $\Phi^{/G}: E/G \to E'$ over a map $f^{/G}: M \to M'$, $f^{/g}$ such that $f = f^{/g} \circ \pi$, that safiesfies $\Phi^{/G} \circ \natural = \Phi$ and $ $, where obvious notation from \ref{3.1.1} has been used.
+Let $(E, p^E, P)$ be a vector bundle over the principal bundle $P(M, G)$, and let $G$ act on $E$ satisfying the conditions of \ref{3.1.1}. Let $(E, p^{E'}, M')$ be another vector bundle. Let $\Phi: E \to E'$ be a vector bundle morphism over a map $f: P \to M'$ that satisfies $\Phi(\mu g) = \Phi(\mu)$ and $f(pg) = f(p)$ for all $\mu \in E$, $p \in P$ and $g \in G$. Then there exists a unique (smooth) vector bundle morphism $\Phi^{/G}: E/G \to E'$ over a map $f^{/G}: M \to M'$, $f^{/g}$ such that $f = f^{/g} \circ \pi$, that safiesfies $\Phi^{/G} \circ \natural = \Phi$ and $ $, where notation from \ref{3.1.1} has been used.
 \end{corollary}
 
 \begin{proof}
 Consider $M'$ as the principal bundle $P(M', \set{1})$, let $\phi:G \to \set{1}$ be trivial and apply \ref{3.1.2}.
 \end{proof}
 
-Finally, the following proposition allows a description of the sections of the vector bundle $E/G$ from \ref{3.1.1}.
+Applying the previous corollary to $\pi_*: TP \to TM$ gives us immediately the following theorem.
+
+\begin{theorem}\label{anchorAtiyah}
+There \emph{exists a unique (smooth) vector bundle morphism} $a  \Phi^{/G}: TP/G \to TM$ over $M$ such that the following diagram commutes:
+\begin{equation}
+    \begin{tikzcd}
+    TP \arrow[]{d}{\natural} \arrow[]{dr}{\pi_*}& \\
+    TP/G \arrow[dashed]{r}{a} \arrow[]{d}{\pi^{/G}}& TM \arrow[]{d}{\pi} \\
+    M \arrow[]{r}{id_M} & M
+    \end{tikzcd}
+\end{equation}
+
+We call the vector bundle morphism $a:TP/G \to TM$ \emph{the anchor of the Atiyah Lie algebroid of $P$}.
+\end{theorem}
+
+Now, the following proposition allows a description of the sections of the vector bundle $E/G$ from \ref{3.1.1}.
 
 \begin{proposition}
 Let $(E, p^E, P)$ be as in \ref{3.1.1}. The space of (smooth) sections of $E/G$ is $C^\infty(M)$-module isomorphic to the $G$-invariant sections of $E$ 
