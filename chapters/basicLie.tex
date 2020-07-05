@@ -1,6 +1,6 @@
 INTRODUCTION \complete{ Hacer la introducción. Quizá ver pequeños comentrios de Mackenzie y de Lazzarini} In \ref{chp:intro} we saw how the basic elements in a gauge theory are a principal bundle, a fibration over spacetime whose fibers encode inner degrees of freedom associated to a symmetry, their associated bundles, which represent the matter fields which have certain symmetry with respect to the group action, and connections on the principal bundle, that allow a formalization of the statement that $T_x M$ is the horizontal part of $T_p P$ for each $p \in \pi^{-1}(x)$, finally allowing to talk about covariant derivatives in tangent directions of matter fields. However, at the end of chapter \ref{chp:intro} it was remarked that the a natural language to talk about principal bundle connections is that of the Atiyah lie algebroid $TP/G$ of $P$, as this is a space where the fiber of each point $x$ in the base manifold $M$ is a set of directions over $x$ some of which are vertical to $TM$, thefore removing the redundancy present in $TP$ where an arbitrary point $p$ in the fiber in $P$ of $x$ had to be chosen first to see $T_p P$ as the set of generalized directions over $x$ where paths could be lifted. \rtext{Once this language is adopted, it is easy to see how the core concepts of gauge theories mentioned above may be abstracted in the concepts of Lie algebroid, Lie algebroid connection, and representations of Lie algebroids}. \todo{No se esto realmente donde va}
 
-Anchor may be seen as a tangent or horizontal projection; Leibniz allows us to think of $[\oid X, \cdot]$ as a derivative; Lie bracket allow us to think of the elements as directions at a point, and so (it is a kind of a Poisson bracket) we can think of $[\oid X, \cdot]$ as a \emph{directional} derivative; The vertical directions at each point are (always?\todo{es cierto?}) a Lie algebra (this question requires to see first if the bracket, when restricted to the kernel, can be defined fiberwise instead of requiring a neighborhood... Update: I think this is the case, as Ch 7 of Tu says something about the equivalence between $C^\infty$ linearity and pointwise definition, and, by Leibniz restricted to the kernel, the bracket is $C^infty(M)$ linear in both entries).
+Anchor may be seen as a tangent or horizontal projection; Leibniz allows us to think of $[\sect{\oid X}, \cdot]$ as a derivative; Lie bracket allow us to think of the elements as directions at a point, and so (it is a kind of a Poisson bracket) we can think of $[\sect{\oid X}, \cdot]$ as a \emph{directional} derivative; The vertical directions at each point are (always?\todo{es cierto?}) a Lie algebra (this question requires to see first if the bracket, when restricted to the kernel, can be defined fiberwise instead of requiring a neighborhood... Update: I think this is the case, as Ch 7 of Tu says something about the equivalence between $C^\infty$ linearity and pointwise definition, and, by Leibniz restricted to the kernel, the bracket is $C^infty(M)$ linear in both entries).
 
 Throughout this section, $M$ will be a smooth manifold.
 
@@ -18,9 +18,9 @@ A \emph{Lie algebroid over $M$} is a triple $(q:A \to M, a, [\cdot, \cdot ])$, w
     \end{itemize}  which satisfy the following compatibility conditions:
 
 \begin{enumerate}
-    \item The map induced by $a$ on the sections, which we call by the same name, $a:\Gamma(A) \to \Gamma(TM)$ is a \emph{Lie algebra morphism}, that is, for any $\oid X, \oid Y \in \Gamma(A)$ \[ a([\oid X, \oid Y])  = [a(\oid X), a(\oid Y)] \in  \Gamma(TM)\]
+    \item The map induced by $a$ on the sections, which we call by the same name, $a:\Gamma(A) \to \Gamma(TM)$ is a \emph{Lie algebra morphism}, that is, for any $\sectoid X, \sectoid Y \in \Gamma(A)$ \[ a([\sect{\oid X}, \sect{\oid Y}])  = [a(\sect{\oid X}), a(\sect{\oid Y})] \in  \Gamma(TM)\]
     
-    \item (Leibniz identity) For any $\oid X, \oid Y \in \Gamma(A)$, $f \in C^\infty (M)$: \[ [\oid X, f\oid Y] = f[\oid X, \oid Y] + a(\oid X)(f)\, \oid Y \] where $a(\oid X)(f)$ means the usual derivative of an element of a function on $M$ in the direction of $a(\oid X) \in \Gamma(TM)$.
+    \item (Leibniz identity) For any $\sectoid X, \sectoid Y \in \Gamma(A)$, $f \in C^\infty (M)$: \[ [\sect{\oid X}, f\sect{\oid Y}] = f[\sect{\oid X}, \sect{\oid Y}] + a(\sect{\oid X})(f)\, \oid Y \] where $a(\sect{\oid X})(f)$ means the usual derivative of an element of a function on $M$ in the direction of $a(\sect{\oid X}) \in \Gamma(TM)$.
 \end{enumerate}
 \end{definition}
 
@@ -43,7 +43,7 @@ The previous result remarks the algebraic perspective which may also be used to 
 \ptext{For the rest of the chapter $A$ will refer to a Lie algebroid over a manifold $M$ with anchor $a$, unless otherwise stated.}
 
 \begin{definition} [(Base preserving) morphism of Lie algebroids] 
-Given two algebroids over the manifold $M$, $A$ with anchor $a$ and $A'$ with anchor $a'$, \emph{a base preserving Lie algebroid morphism} $\phi: A \to A'$ is a vector bundle morphism such that $a' \comp \phi = a $, and such that $\phi[\oid X, \oid Y] = [\phi(\oid X), \phi(\oid Y)]$ for all $\oid X, \oid Y \in \Gamma(A)$. 
+Given two algebroids over the manifold $M$, $A$ with anchor $a$ and $A'$ with anchor $a'$, \emph{a base preserving Lie algebroid morphism} $\phi: A \to A'$ is a vector bundle morphism such that $a' \comp \phi = a $, and such that $\phi[\sect{\oid X}, \sect{\oid Y}] = [\phi(\oid X), \phi(\oid Y)]$ for all $\sectoid X, \sectoid Y \in \Gamma(A)$. 
 \end{definition}
 
 \begin{definition} [Extension of Lie algebroids over $M$]
@@ -57,7 +57,7 @@ Let $A, A'$ be Lie algebroids over $M$.
 \end{definition}
 
 \begin{proposition}
-Given an open subset $U$ of $M$, and given $\oid X, \oid Y : M \to A$ sections of the vector bundle $A$, the restriction to $U$ of $[\oid X, \oid Y] \in \Gamma(A)$ depends only on the restrictions of $\oid X$ and $\oid Y$ to $U$.
+Given an open subset $U$ of $M$, and given $\oid X, \oid Y : M \to A$ sections of the vector bundle $A$, the restriction to $U$ of $[\sect{\oid X}, \sect{\oid Y}] \in \Gamma(A)$ depends only on the restrictions of $\oid X$ and $\oid Y$ to $U$.
 \end{proposition}
 \begin{proof}
 Leibniz implies that the Lie bracket is a local operator (See Tu, Ch 7).
@@ -264,7 +264,7 @@ In \ref{} we motivated the use of $TP/G$ as a natural place to talk about connec
 %        \item $\Gamma(TP/G)$ has a Lie bracket. Steps:
 %            \begin{itemize}
 %            \item $C^\infty(M)$-module isomorphic to $\Gamma_G(TP)$
-%            \item $[\oid X, \oid Y]$ for $\oid X, \oid Y \in \Gamma_G(TP)$ is also in $\Gamma_G(TP)$
+%            \item $[\sect{\oid X}, \sect{\oid Y}]$ for $\sectoid X, \sectoid Y \in \Gamma_G(TP)$ is also in $\Gamma_G(TP)$
 %            \item Has Lie bracket: should be easy: pullback of the Lie bracket of the isomorphism
 %            \end{itemize}
         
@@ -379,13 +379,27 @@ Let $(E, p^E, P)$ be a vector bundle over the principal bundle $P(M, G)$, and le
 Consider $M'$ as the principal bundle $P(M', \set{1})$, let $\phi:G \to \set{1}$ be trivial and apply \ref{3.1.2}.
 \end{proof}
 
+Finally, the following proposition allows a description of the sections of the vector bundle $E/G$ from \ref{3.1.1}.
+
 \begin{proposition}
-The (smooth) sections of $E/G$ is $C^\infty(M)$-module isomorphic to the $G$-invariant sections of $E$.
+Let $(E, p^E, P)$ be as in \ref{3.1.1}. The space of (smooth) sections of $E/G$ is $C^\infty(M)$-module isomorphic to the $G$-equivariant sections of $E$ 
+
+\[ 
+    \Gamma^G(E) = \set{\sect{\mu} \in \Gamma(E) \st \forall p \in P, \forall g \in G:\, \sect \mu(pg) = \sect \mu(p)g}
+\] 
+
+where $f \sect \mu (p) := (f \circ \pi)(p) \sect \mu(p)$ for any $\sect \mu \in \Gamma^G(E)$, $p \in P$, via the map $\Gamma(E/G) \to \Gamma^G(E)$, $\sect \mu \mapsto \overline{\sect \mu}$ defined by 
+\[
+    \overline{\oid {\sect \mu}}(p)
+\]
+
 \end{proposition}
 
 \begin{proof}
 
 \end{proof}
+
+\linea
 
 Bracket
 

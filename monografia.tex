@@ -4,6 +4,7 @@
 \usepackage[spanish, english]{babel}
 \usepackage{graphicx}
 \usepackage{amssymb, amsmath, amsthm}
+\usepackage{bm} % For boldface greek letters
 \usepackage{hyperref} % Para poder tener hyperlinks
 \usepackage{enumerate}
 \usepackage{calligra} % Para dedicacion
@@ -12,13 +13,27 @@
 \usepackage{csquotes}
 
 
-% TODO NOTES
-\usepackage{xargs}                      % Use more than one optional parameter in a new
-\usepackage[pdftex,dvipsnames]{xcolor}  % Coloured text etc.
+%%%%%% Mis Codigos
+
+% TODO notes package
+\usepackage{xargs}                  % Use more than one optional parameter in a new command
+\usepackage[pdftex,dvipsnames]{xcolor}
 \input{tools/todoCode}
 
-% Color Additions
+% Colored text and boxes with my color conventions for highlighting
+\usepackage[dvipsnames]{xcolor}
 \input{tools/colorCode}
+
+% Math symbols
+\usepackage{xparse}
+\input{tools/common_math_symbols}
+
+% Physics symbols (vectors, units)
+%\usepackage{tikz}
+%\input{tools/physics_macros}
+
+% Theorem environments
+%\input{tools/theorem_definitions}
 
 \usepackage{tikz-cd} %To do Commutative Diagrams
 
@@ -53,25 +68,25 @@
 \newtheorem{notation}[example]{Notation}
 
 %%%%%%%
-\DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\Aut}{Aut}
-\DeclareMathOperator{\ev}{ev}
-\DeclareMathOperator{\im}{Im}
-\DeclareMathOperator{\re}{Re}
-\DeclareMathOperator{\Span}{span}
-\DeclareMathOperator{\id}{id}
 
-\DeclareMathOperator{\RR}{\mathbb{R}}
-\DeclareMathOperator{\CC}{\mathbb{C}}
-\DeclareMathOperator{\HH}{\mathbb{H}}
-\DeclareMathOperator{\st}{\,|\,}
+\DeclareMathOperator{\HH}{\bb H}
 \DeclareMathOperator{\diffeo}{\cong}
-\newcommand{\oid}[1]{\mathfrak{#1}}
-\DeclareMathOperator{\set}{\{\}}
-\renewcommand{\set}[1]{\{#1\}}
+\DeclareMathOperator{\tr}{tr}
+
+
+\newcommand{\algeb}[1]{\mathfrak{#1}}
+\newcommand{\alg}[1]{\mathfrak{#1}}
+\newcommand{\oid}[1]{\ensuremath{\mathfrak{#1}}}
+\newcommand{\ppal}[1]{\ensuremath{\mathcal{#1}}}
+
+\newcommand{\sect}[1]{\ensuremath{\bm{#1}}} % Boldface that affects greek letters
+\newcommand{\sectalg}[1]{\sect{\alg{#1}}}
+\newcommand{\sectoid}[1]{\sect{\oid{#1}}}
+\newcommand{\sectppal}[1]{\sect{\ppal{#1}}}
+
+\newcommand{\cl}[1]{\ensuremath{\langle #1 \rangle}}
 
 \DeclareMathOperator{\comp}{\circ}
-\newcommand{\algeb}[1]{\mathfrak{#1}}
 
 %%%%%%%
 \allowdisplaybreaks
