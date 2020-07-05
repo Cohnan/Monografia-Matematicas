@@ -393,7 +393,7 @@ Consider $M'$ as the principal bundle $P(M', \set{1})$, let $\phi:G \to \set{1}$
 Finally, the following proposition allows a description of the sections of the vector bundle $E/G$ from \ref{3.1.1}.
 
 \begin{proposition}
-Let $(E, p^E, P)$ be as in \ref{3.1.1}. The space of (smooth) sections of $E/G$ is $C^\infty(M)$-module isomorphic to the $G$-equivariant sections of $E$ 
+Let $(E, p^E, P)$ be as in \ref{3.1.1}. The space of (smooth) sections of $E/G$ is $C^\infty(M)$-module isomorphic to the $G$-invariant sections of $E$ 
 
 \[ 
     \Gamma^G(E) = \set{\sect{\mu} \in \Gamma(E) \st \forall p \in P, \forall g \in G:\, \sect \mu(pg) = \sect \mu(p)g}
@@ -402,19 +402,29 @@ Let $(E, p^E, P)$ be as in \ref{3.1.1}. The space of (smooth) sections of $E/G$ 
 where $f \sect \mu (p) := (f \circ \pi)(p) \sect \mu(p)$ for any $\sect \mu \in \Gamma^G(E)$, $p \in P$, via the map $\Gamma(E/G) \to \Gamma^G(E)$, $\sectoid \mu \mapsto \upsect{\sectoid \mu}$ defined by 
 \[
     \upsect{\sectoid \mu}(p) := \natural_p^{-1}(\sectoid \mu(\pi p))
-\]
+\] % this definition can't be used to "lift" a vector of E/G to E because it is not clear what $p$ should be chosen
 
 which has as inverse the map $\Gamma^G(E) \to \Gamma(E/G)$, $\sect \mu \mapsto \downsect{\sect \mu}$ defined, for $m \in M$, by
 
 \[
-    \downsect{\sect \mu}(m) := \cl{\sect \mu(p)}
+    \downsect{\sect \mu}(m) := \cl{\sect \mu(p)} = \natural_p(\sect{\mu}(p))
 \]
 
 where $p \in P$ is any point in the fiber of $m$.
 \end{proposition}
 
+Notice that this allows us to write any $\sectoid \mu \in \Gamma(E/G)$ as \[\sectoid \mu = \cl{\upsect{\sectoid \mu}} \circ \pi.\] 
+
+It is important to realize that:
+
+\begin{itemize}
+    \item the first map can not be extended to elements $\oid \mu \in E/G_m$ to return elements of $E/G$ because there is not a canonical choice of $p \in \pi^{-1}(m)$ where ``$\,\upsect{\oid \mu}\,$'' should belong to;
+    
+    \item the second map, which might also be denoted by $\cl{\sect \mu} \in \Gamma(E/G)$\todo{I might opt for the original notation, and remove this awkward one entirely}, can not be extended to general sections $\mu \in \Gamma(E)$ because it is not, in general, the case that $\cl{\sect \mu(p)} = \cl{\sect \mu(p')}$ even when $p, p' \in \pi^{-1}(m)$.
+\end{itemize}
+
 \begin{proof}
-Before we show that the sections defined by above formulas are indeed smooth sections, notice the following. The $G$-invariance of the map $\sectoid \mu \mapsto \upsect{\sectoid \mu}$ is inherited from the $G$-invariance of $\pi$. The map $\sect \mu \mapsto \downsect{\sect \mu}$ is well defined due to the $G$-equivariance of $\sect \mu \in \Gamma^G(E)$, hence $\cl{X(pg)} = \cl{X(p)g} = \cl{X(p)}$. These two functions as defined by the formulas above are inverses of each other since, \\
+Before we show that the sections defined by above formulas are indeed smooth sections, we will remark a couple of things. The $G$-invariance of the map $\sectoid \mu \mapsto \upsect{\sectoid \mu}$ is inherited from the $G$-invariance of $\pi$. The map $\sect \mu \mapsto \downsect{\sect \mu}$ is well defined due to the $G$-invariance of $\sect \mu \in \Gamma^G(E)$, hence $\cl{X(pg)} = \cl{X(p)g} = \cl{X(p)}$. These two functions as defined by the formulas above are inverses of each other since, (REMEMBERING THAT $\cl{...}$ is $\natural_p$ might simplify this part)\\
 for $\sectoid \mu \in \Gamma(E/G)$ and $m \in M$, $\downsect{(\upsect{\sectoid \mu})}(m) = \cl{\upsect{\sectoid \mu} (p)} = \cl{ \natural_p^{-1}(\sectoid \mu(m)) } = \natural \circ \natural_p^{-1}(\sectoid \mu(m)) = \sectoid \mu(m)$ where $p$ is any in $\pi^{-1}(m)$ \\
 for $\sect \mu \in \Gamma^G(E)$ and $p \in P$ with $m = \pi(p)$, $\upsect{(\downsect{\sect \mu})}(p) = \natural_p^{-1}(\downsect{\sect \mu}(m)) = \natural_p^{-1}(\cl{\sect \mu(p')}) = \natural_p^{-1} \circ \natural (\sect \mu(pg)) = \natural_p^{-1} \circ \natural (\sect \mu(p)) = \sect \mu(p)$ for any $p' \in \pi^{-1}(m)$.
 
