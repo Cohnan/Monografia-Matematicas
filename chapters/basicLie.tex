@@ -365,6 +365,9 @@ In \ref{} we motivated the use of $TP/G$ as a natural place to talk about connec
 %Now we check the compatibility conditions:
 
 %Alternative 3:%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{The Vector Bundle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The main purpose of the next propositions is to allow us to give a smooth vector bundle structure to $TP/G$, to show that certain important maps are also smooth, and to understand the brackets that will arise for $\Gamma(TP/G)$, among other things related to the adjoint bundle $P\times \alg g/G$.
 
@@ -430,14 +433,14 @@ We now prove that the (surjective) quotient map $\natural : E \to E/G$ is also s
 
 The uniqueness assertions follow from the fact that there is at most one manifold structure in the image of a surjection which makes it a submersion, and at most one topological vector bundle structure in the image of a surjection which makes the map linear.
 
-The pullback bundle $\pi^*E/G$ can be characterized by it being locally isomorphic to the product bundle $p_1: \pi^{-1}(U) \times V \to \pi^{-1}(U)$ for some coordinate chart $U$ of $M$. Therefore, we see that $E$ is isomorphic to the pullback bundle due to condition (2).
+A pullback bundle $\pi^*E/G$ can be characterized by the fact that it is locally isomorphic to the product bundle $p_1: \pi^{-1}(U) \times V \to \pi^{-1}(U)$ for some coordinate chart $U$ of $M$. Therefore, we see that $E$ is isomorphic to the pullback bundle due to condition (2).
 \end{proof}
 
 \begin{theorem}
 The vector bundle $\pi_*:TP \to P$ over the principal bundle $P$, on which $g \in G$ acts to the right by the push-forward of the right translation map $R_g: P \to P$ on $P$, satisfies the conditions of (\ref{3.1.1}).
 \end{theorem}
 
-We will denote by $\pi^{/G}:TP/G \to M$ the projection map of the quotient vector bundle of $(TP, \pi, P)$ under the action of $G$.
+We will denote by $\pi^{/G}:TP/G \to M$ the projection map of the quotient vector bundle of $(TP, \pi, P)$ under the action of $G$, and we will call it \emph{the vector bundle of the Atiyah Lie algebroid of the principal bundle $P$}.
 
 \begin{proof}
 Condition (1) is satisfied since, for any $g \in G$, the map $R_{g*}:TP \to TP$ is a fiberwise linear map over $R_g$ with inverse $R_{g^{-1} *}$.
@@ -483,6 +486,10 @@ This follows from the identity $\phi(m, g) g' = \phi(m, gg')$, when it is expres
 %\end{multline*}
 
 \end{proof}
+
+\subsection{The Anchor}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The following proposition and its corollary allow us to define smooth vector bundle maps that start in quotient vector bundles. In particular, it will allow us to define the anchor $a:TP/G \to TM$ of what will be the Atiyah Lie algebroid.
 
@@ -540,12 +547,17 @@ There \emph{exists a unique (smooth) vector bundle morphism} $a  \Phi^{/G}: TP/G
     \end{tikzcd}
 \end{equation}
 
+
 We call the vector bundle morphism $a:TP/G \to TM$ \emph{the anchor of the Atiyah Lie algebroid of $P$}.
 \end{theorem}
 
+\subsection{The Space of Sections}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 Now, the following proposition allows a description of the sections of the vector bundle $E/G$ from \ref{3.1.1}.
 
-\begin{proposition}
+\begin{proposition}\label{3.1.3}
 Let $(E, p^E, P)$ be as in \ref{3.1.1}. The space of (smooth) sections of $E/G$ is $C^\infty(M)$-module isomorphic to the $G$-invariant sections of $E$ 
 
 \[ 
@@ -589,11 +601,13 @@ Finally, the $\RR$-linearity of the pointwise vector space isomorphism $\natural
 
 \end{proof}
 
-\linea
+\subsection{The Bracket}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Bracket
+As we saw in \ref{3.1.3}, the space of sections of $TP/G$
 
-\section{Representations}
+\secP/Gtion{Representations}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
