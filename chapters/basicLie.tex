@@ -18,7 +18,7 @@ A \emph{Lie algebroid over $M$} is a triple $(q:A \to M, a, [\cdot, \cdot ])$, w
     \end{itemize}  which satisfy the following compatibility conditions:
 
 \begin{enumerate}
-    \item The map induced by $a$ on the sections, which we call by the same name, $a:\Gamma(A) \to \Gamma(TM)$ is a \emph{Lie algebra morphism}, that is, for any $\sectoid X, \sectoid Y \in \Gamma(A)$ \[ a([\sect{\oid X}, \sect{\oid Y}])  = [a(\sect{\oid X}), a(\sect{\oid Y})] \in  \Gamma(TM)\]
+    \item The map induced by $a$ on the sections $\sectoid X \mapsto (m \mapsto a(\sectoid X(m)))$, which we call by the same name $a:\Gamma(A) \to \Gamma(TM)$, is a \emph{Lie algebra morphism}, that is, for any $\sectoid X, \sectoid Y \in \Gamma(A)$ \[ a([\sect{\oid X}, \sect{\oid Y}])  = [a(\sect{\oid X}), a(\sect{\oid Y})] \in  \Gamma(TM)\]
     
     \item (Leibniz identity) For any $\sectoid X, \sectoid Y \in \Gamma(A)$, $f \in C^\infty (M)$: \[ [\sect{\oid X}, f\sect{\oid Y}] = f[\sect{\oid X}, \sect{\oid Y}] + a(\sect{\oid X})(f)\, \oid Y \] where $a(\sect{\oid X})(f)$ means the usual derivative of an element of a function on $M$ in the direction of $a(\sect{\oid X}) \in \Gamma(TM)$.
 \end{enumerate}
@@ -528,7 +528,15 @@ Finally, $\Phi^{/G}$ is a smooth vector bundle morphism over $f:M \to M'$ since 
 \end{proof}
 
 \begin{corollary}
-Let $(E, p^E, P)$ be a vector bundle over the principal bundle $P(M, G)$, and let $G$ act on $E$ satisfying the conditions of \ref{3.1.1}. Let $(E, p^{E'}, M')$ be another vector bundle. Let $\Phi: E \to E'$ be a vector bundle morphism over a map $f: P \to M'$ that satisfies $\Phi(\mu g) = \Phi(\mu)$ and $f(pg) = f(p)$ for all $\mu \in E$, $p \in P$ and $g \in G$. Then there exists a unique (smooth) vector bundle morphism $\Phi^{/G}: E/G \to E'$ over a map $f^{/G}: M \to M'$, $f^{/g}$ such that $f = f^{/g} \circ \pi$, that safiesfies $\Phi^{/G} \circ \natural = \Phi$ and $ $, where notation from \ref{3.1.1} has been used.
+Let $(E, p^E, P)$ be a vector bundle over the principal bundle $P(M, G)$, and let $G$ act on $E$ satisfying the conditions of \ref{3.1.1}. Let $(E, p^{E'}, M')$ be another vector bundle. Let $\Phi: E \to E'$ be a vector bundle morphism over a map $f: P \to M'$ that satisfies $\Phi(\mu g) = \Phi(\mu)$ and $f(pg) = f(p)$ for all $\mu \in E$, $p \in P$ and $g \in G$. Then there exists a unique (smooth) vector bundle morphism $\Phi^{/G}: E/G \to E'$ over a map $f^{/G}: M \to M'$, $f^{/g}$ such that $f = f^{/g} \circ \pi$, that safiesfies $\Phi^{/G} \circ \natural = \Phi$, where notation from \ref{3.1.1} has been used. In particular, the following diagram commutes
+
+\begin{equation} \label{anchorDiagram}
+    \begin{tikzcd}
+    E \arrow[]{d}{\natural} \arrow[]{dr}{\Phi}& \\
+    E/G \arrow[dashed]{r}{\Phi^{/G}} \arrow[]{d}{p^{E/G}}& E' \arrow[]{d}{p^{E'}} \\
+    M \arrow[]{r}{f^{/G}} & M'
+    \end{tikzcd}
+\end{equation}
 \end{corollary}
 
 \begin{proof}
@@ -539,7 +547,7 @@ Applying the previous corollary to $\pi_*: TP \to TM$ gives us immediately the f
 
 \begin{theorem}\label{anchorAtiyah}
 There \emph{exists a unique (smooth) vector bundle morphism} $a  \Phi^{/G}: TP/G \to TM$ over $M$ such that the following diagram commutes:
-\begin{equation}
+\begin{equation} \label{anchorDiagram}
     \begin{tikzcd}
     TP \arrow[]{d}{\natural} \arrow[]{dr}{\pi_*}& \\
     TP/G \arrow[dashed]{r}{a} \arrow[]{d}{\pi^{/G}}& TM \arrow[]{d}{\pi} \\
@@ -577,8 +585,10 @@ which has as inverse the map $\Gamma^G(E) \to \Gamma(E/G)$, $\sect \mu \mapsto \
 
 where $p \in P$ is any point in the fiber of $m$.
 \end{proposition}
-
-Notice that this allows us to write any $\sectoid \mu \in \Gamma(E/G)$ as \[\sectoid \mu = \cl{\upsect{\sectoid \mu}} \circ \pi.\] 
+%allows us to write any $\sectoid \mu \in \Gamma(E/G)$ as 
+%\begin{equation}\label{sectoidFormula}
+%\sectoid \mu = \cl{\upsect{\sectoid \mu}} \circ \pi
+%\end{equation}
 
 It is important to realize that:
 
@@ -588,7 +598,7 @@ It is important to realize that:
     \item the second map, which might also be denoted by $\cl{\sect \mu} \in \Gamma(E/G)$\todo{I might opt for the original notation, and remove this awkward one entirely}, can not be extended to general sections $\mu \in \Gamma(E)$ because it is not, in general, the case that $\cl{\sect \mu(p)} = \cl{\sect \mu(p')}$ even when $p, p' \in \pi^{-1}(m)$.
 \end{itemize}
 
-In general, given a section $\mu \Gamma(E)$ of a vector bundle $E$ over a base space $B$, the value of the section at $b\in B$ will usually be denoted by $\mu_b \in E_b$ instead of $\mu(b)$.
+In general, given a section $\sect \mu \in \Gamma(E)$ of a vector bundle $E$ over a base space $B$, the value of the section at $b\in B$ will usually be denoted by $\mu_b \in E_b$ instead of $\mu(b)$.
 
 \begin{proof}
 Before we show that the sections defined by above formulas are indeed smooth sections, we will remark a couple of things. The $G$-invariance of the map $\sectoid \mu \mapsto \upsect{\sectoid \mu}$ is inherited from the $G$-invariance of $\pi$. The map $\sect \mu \mapsto \downsect{\sect \mu}$ is well defined due to the $G$-invariance of $\sect \mu \in \Gamma^G(E)$, hence $\cl{X(pg)} = \cl{X(p)g} = \cl{X(p)}$. These two functions as defined by the formulas above are inverses of each other since, (REMEMBERING THAT $\cl{...}$ is $\natural_p$ might simplify this part)\\
@@ -601,13 +611,118 @@ Finally, the $\RR$-linearity of the pointwise vector space isomorphism $\natural
 
 \end{proof}
 
+The following will be useful to define $\Phi^{/G}: E/G \to E'/G'$, in particular the anchor of the Atiyah Lie algebroid, among other things. 
+
+\begin{definition}\label{relatedProjectable}
+Let $(E, p^E, B)$ and $(E', p^{E'}, B')$ be vector bundles and $F: E \to E'$ be a vector bundle morphism over $f: B \to B'$ Let $\sect \mu \in \Gamma(E)$ and $\sect \nu' \in \Gamma(E')$ , then
+    \begin{itemize}
+        
+    \item \emph{$\sect \mu$ is $F$-related to $\sect \nu'$} if, for all $b \in B$, $F(\sect \mu_b) = \sect \nu'_{f(b)}$,
+    
+    \item \emph{$\sect \mu$ is $F$-projectable} if there exists $\sect \nu' \in \Gamma(E')$ such that $\sect \mu$ is $F$-related to $\sect \nu'$.
+    
+    \end{itemize}
+    
+If $f:B \to B'$ is surjective, and $\sect \mu \in \Gamma(E)$ is $F$-projectable, define $F(\sect \mu)$ to be the section of $E'$ such that, for any $b' \in B$
+\begin{equation} \label{funOfSection}
+    F(\sect \mu)_{b'} := F(\sect \mu_b)
+\end{equation} where $b$ is any element in $f^{-1}(b')$, and this is equal to \[F(\sect \mu)_{b'} = \sect \nu'_{b'}\] for any $\sect \nu' \in \Gamma(E')$ to which $\sect \mu$ is $F$-related.
+
+Notice that whenever $f: B \to B'$ is bijective, e.g. the identity map, then every $\sect \mu \in \Gamma(E)$ is $F$-projectable.
+
+\end{definition}
+
+\begin{theorem} \label{theoAnchorUpsect}
+Let $\sectoid X \in \Gamma(TP/G)$. $\sectoid X$ is projectable over the surjective map $a: TP/G \to TM$, $\upsect{\sectoid X} \in \Gamma^G(TP)$ is projectable over the surjective map $\pi_*: TP \to TM$ and
+\begin{equation} \label{theoAnchorUpsectEqn}
+    a(\sectoid X) = \pi_*(\upsect{\sectoid X}) \in \Gamma(TM)
+\end{equation} where $\pi_*: TP \to TG$
+\end{theorem}
+
+\begin{proof}
+Notice that the last statement makes sense thanks to the first part of the theorem, which allows the maps $a$ and $\pi_*$ to be extended to sections.% since because the sections are projectable for surjective vector bundles, so the base space maps are surjective and so the vector bundle maps may be extended to sections.
+
+$\sectoid X$ is $a$-projectable since the corresponding base space map is the bijective map $Id_M: M \to M$. 
+
+The following calculation proves the remaining statements. Let $m \in M$ and $p \in \pi^{-1}(m)$, so any other element $p' \in P$ such that $m = \pi(p)$ may be written as $p' = pg$ for some $g \in G$. Now %$\upsect{\sectoid X} \in \Gamma^G(TP)$ is $\pi_*$-projectable since 
+$\pi_*(\upsect{\sectoid X}_{pg}) = \pi_*(\natural^{-1}_{pg}(\sectoid X_{\pi(pg)})) = a(\natural \circ \natural^{-1}_{pg}(\sectoid X_{m})) = a(\sectoid X_{m})$, where the second to last equality is the defining property of $a$, as seen in the Diagram (\ref{anchorDiagram}). 
+
+\end{proof}
+
 \subsection{The Bracket}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-As we saw in \ref{3.1.3}, the space of sections of $TP/G$
+As we saw in \ref{3.1.3}, the space of sections of $TP/G$ can be identified as the subset of $G$-invariant sections of $TP$, so we may use the bracket of $\Gamma(TP)$ to induce a bracket in $\Gamma(TP/G)$.
 
-\secP/Gtion{Representations}
+\begin{proposition}
+Let $(E, p^E, P)$ be a vector bundle over the principal bundle $P(M, G)$. For $\sect \mu, \sect \nu \in \Gamma^G(E)$, $[\sect \mu, \sect \nu] \in \Gamma^G(E)$.
+\end{proposition}
+
+\begin{proof}
+The invariance of a section $\sect \mu \in \Gamma^G(E) \subset \Gamma(E)$ means that for $f \in C^\infty(P)$, $g \in G$ and $p \in P$,  
+\begin{equation} \label{secInv1}
+\sect \mu_{pg} (f) = \sect \mu_p(f \circ R_g)\end{equation} 
+because $\sect \mu_{pg} = R_{g*} \sect \mu_p$ by the definition of $\Gamma^G(E)$. It also means that 
+\begin{equation}\label{secInv2}
+(\sect \mu (f)) \circ R_g = \sect \mu(f \circ R_g)
+\end{equation}
+since $((\sect \mu f) \circ R_g)(p) = \sect \mu f(pg) = \sect \mu_{pg} f = \sect \mu_p(f \circ R_g) = (\sect \mu(f \circ R_g))(p)$, where the second to last equation follows from the invariance of $\sect \mu$.
+    
+So, for $\sect \mu, \sect \nu \in \Gamma^G(E)$, $p \in P$, $g \in G$ arbitrary,
+\begin{align*}
+    [\sect \mu, \sect \nu]_{pg}(f)
+        =& \sect \mu_{pg}(\sect \nu(f)) - \sect \nu_{pg}(\sect \mu (f))\\
+        =& \sect \mu_{p}(\sect \nu(f) \circ R_g) - \sect \nu_{p}(\sect \mu (f) \circ R_g) & \textrm{by } (\ref{secInv1})\\
+    [\sect \mu, \sect \nu]_p (f \circ R_g) =& \sect \mu_p(\sect \nu(f \circ R_g)) - \sect \nu_p(\sect \mu(f \circ R_g)) & \textrm{by } (\ref{secInv2})
+\end{align*}
+from which the $G$-invariance of $[\sect \mu, \sect \nu]$ follows by (\ref{secInv1}).
+\end{proof}
+
+The previous proposition shows that the following is a good definition.
+
+\begin{definition}\label{AtiyahBracket}
+For any $\sectoid X, \sectoid Y \in \Gamma(TP/G)$, define 
+\begin{equation} \label{bracketDefn}
+    [\sectoid X, \sectoid Y] := \downsect{[\upsect{\sectoid X}, \upsect{\sectoid Y}]} \in \Gamma(TP/G).
+\end{equation}
+This is a Lie algebra structure on $\Gamma(E/G)$ called \emph{the Lie bracket of the Atiyah Lie algebroid of the principal bundle $P$}.
+\end{definition}
+
+This bracket inherits the $\RR-linearity$, the Jacobi identity and the alternating property from the bracket in $\Gamma(TP/G)$, that is why it is a Lie algebra structure.
+
+\begin{theorem}
+The vector bundle $TP/G$ with anchor $a:TP/G \to TM$ of Definition (\ref{anchorAtiyah}) and bracket of Definition (\ref{AtiyahBracket}) is a Lie algebroid over $M$, called \emph{the Atiyah Lie algebroid of the principal bundle $P$}.
+\end{theorem}
+
+\begin{proof}
+All what is left to see is that this definitions of the anchor and the bracket of the Lie algebroid satisfy the $2$ compatibility conditions of Definition (\ref{defnLieAlgoid}). Let $\sectoid X, Y \in \Gamma(TP/G)$ and let $f \in C^{\infty}(M)$:
+
+    \begin{enumerate}
+    
+    \item Since (\ref{theoAnchorUpsect}) tells us that $\upsect{\sectoid X}, \upsect{\sectoid Y}$ are $\pi_*$-related to $a(\sectoid X), a(\sectoid Y)$ respectively, then $[\upsect{\sectoid X}, \upsect{\sectoid Y}]$ is $\pi_*$-related to $[a(\sectoid X), a(\sectoid Y)]$
+    \begin{align*}
+        a([\sectoid X, \sectoid Y])_m &= \pi_*(\upsect{[\sectoid X, \sectoid Y]}_p) & \textrm{by (\ref{theoAnchorUpsect})} \\
+                                    &= \pi_*([\upsect{\sectoid X}, \upsect{ \sectoid Y}]_p) & \textrm{by the definition of $[\cdot, \cdot]$} \\
+                                    &= [a(\sectoid X), a(\sectoid Y)]_m 
+    \end{align*}
+    
+    \item When equation (\ref{theoAnchorUpsectEqn}) is applied to $f \in C^\infty(M)$, at $m\in M$ we conclude that $a(\sectoid X)_mf = \pi_*(\upsect{\sectoid X})_m f = \upsect{\sectoid{X}}_p(f \circ \pi)$ for any $p \in \pi^{-1}(m)$, so $\upsect{\sectoid{X}}(f \circ \pi) = a(\sectoid X) \circ \pi \in C^\infty(P)$, therefore
+    \begin{multline*}
+        \upsect{[\sectoid X, f \sectoid Y]} 
+        =[\upsect{\sectoid X}, (f \circ \pi) \upsect{\sectoid Y}] \\
+        = (f \circ \pi)[\upsect{\sectoid X}, \upsect{\sectoid Y}] + \upsect{\sectoid X}(f \circ \pi) \upsect{\sectoid Y} = 
+        (f \circ \pi)[\upsect{\sectoid X}, \upsect{\sectoid Y}] + (a(\sectoid X) \circ \pi) \upsect{\sectoid Y}
+    \end{multline*} so 
+    \[
+        [\sectoid X, f \sectoid Y] = \downsect{[\upsect{\sectoid X}, (f \circ \pi) \upsect{\sectoid Y}]} = f[\sectoid X, \sectoid Y] + a(\sectoid X) \sectoid Y
+    \]
+    
+    \end{enumerate}
+
+\end{proof}
+
+\section{Representations}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
