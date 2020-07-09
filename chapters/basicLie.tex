@@ -26,8 +26,29 @@ A \emph{Lie algebroid over $M$} is a triple $(q:A \to M, a, [\cdot, \cdot ])$, w
 
 As it is usual, to simplify notation we will often say instead that \emph{$A$ is a Lie algebroid over the manifold $M$ with anchor $a$}, and the brackets will be denoted simply by $[,]$ for all Lie algebroids.
 
-Recall that, when talking about $C^r-$differentiable vector fields, a vector-bundle chart, or simply a chart, will make reference to a local trivialization $\psi: U \times V \to E|_U$ which is $C^r$-differentiable (and a vector bundle isomorphism, by definition of local trivialization).
+When talking about $C^r-$differentiable vector fields, a vector-bundle chart, or simply a chart, will make reference to a local trivialization $\phi: U \times V \to E|_U$ which is $C^r$-differentiable (and a vector bundle isomorphism, by definition of local trivialization).
 
+\ptext{For the rest of the chapter $A$ will refer to a Lie algebroid over a manifold $M$ with anchor $a$, unless otherwise stated.}
+
+\begin{lemma}\label{lemmaSectionLocal}
+The bracket is a local operator. In particular, a unique bracket on local sections induced.
+\end{lemma}
+
+\begin{proof}
+By section 7 of Tu. The formula for the local bracket is... \complete{just rewrite what's in Tu Ch 7}
+\end{proof}
+
+The following theorem gives us insight on the structure of Lie algebroids, specifically on its ``vertical'' part, i.e. the kernel of the anchor map.
+
+\begin{theorem} \label{theoFiberLie}
+Let $A$ be a Lie algebroid over the manifold $M$ with anchor $a$, and suppose $ker(a)$ is a vector subbundle of $A$. Then $ker(a)$ is a Lie algebroid over $M$ with trivial anchor, i.e. $ a = 0$, and the bracket on the sections of $ker(a)$ restrict to a Lie bracket on the fibers, making \emph{each fiber of $ker(a)$ a Lie algebra}.
+\end{theorem}
+
+\begin{proof}
+To see: sections of $ker(a)$ are sections of $A$... in that case the 1st condition tells us that the bracket restricts to a bracket on $ker(a)$/
+
+The 2nd condition, becomes the statement of the $C^\infty(M)$ bilinearity of the bracket, which imply Tu Ch 7, that the bracket is a point operator, and so the result follows.\complete{minor rewriting needed}
+\end{proof}
 
 \begin{proposition}
 $\Gamma A$ is a finite projective module over $M$. Furthermore, the map $a: \Gamma(A) \to \Gamma(TM)$ is $C^\infty(M)$-linear.
@@ -39,8 +60,6 @@ $\Gamma A$ is a finite projective module over $M$. Furthermore, the map $a: \Gam
 \end{proof}
 
 The previous result remarks the algebraic perspective which may also be used to study this topic, in contrast to the topological perspective that has been adopted in this document. However, this perspective is sometimes useful and will be used whenever clarity may be gained by its use.
-
-\ptext{For the rest of the chapter $A$ will refer to a Lie algebroid over a manifold $M$ with anchor $a$, unless otherwise stated.}
 
 \begin{definition} [(Base preserving) morphism of Lie algebroids] 
 Given two algebroids over the manifold $M$, $A$ with anchor $a$ and $A'$ with anchor $a'$, \emph{a base preserving Lie algebroid morphism} $\phi: A \to A'$ is a vector bundle morphism such that $a' \comp \phi = a $, and such that $\phi[\sect{\oid X}, \sect{\oid Y}] = [\phi(\oid X), \phi(\oid Y)]$ for all $\sectoid X, \sectoid Y \in \Gamma(A)$. 
@@ -401,7 +420,7 @@ We will denote by $\langle \mu \rangle \in E/G$ the orbit of $\mu \in E$, and by
 
 \end{proposition}
 
-\begin{proof}
+\begin{proof}\todo{change notation to $\Phi$ instead of $\psi$}
 Notice that conditions (1) and (2) tell us that, locally, the exact point in the fiber $\pi^{-1}(x) \in P$ that we choose is not important to determine the vector space $V$ nor the representing vector $v \in V$, therefore it should make sense to mod out that redundancy, obtained by the group action, to make charts $U \times V \to E/G|_U$. This is what we will now formalize.
 
 Let $p: E/G \to M$, $\langle \mu \rangle \mapsto \pi(p^E(\mu))$; this function is well defined because, by (1), $p^E(\mu g)$ and $p^E(\mu)$ are in the same fiber of $P$, for all $g \in G$. (Notice that condition (1) implies that $p^E(\mu g) = p^E(\mu) g$ for $\mu$ and $g$ arbitrary).
@@ -433,7 +452,7 @@ We now prove that the (surjective) quotient map $\natural : E \to E/G$ is also s
 
 The uniqueness assertions follow from the fact that there is at most one manifold structure in the image of a surjection which makes it a submersion, and at most one topological vector bundle structure in the image of a surjection which makes the map linear.
 
-A pullback bundle $\pi^*E/G$ can be characterized by the fact that it is locally isomorphic to the product bundle $p_1: \pi^{-1}(U) \times V \to \pi^{-1}(U)$ for some coordinate chart $U$ of $M$. Therefore, we see that $E$ is isomorphic to the pullback bundle due to condition (2).
+A pullback bundle $\pi^*E/G$ can be characterized \todo{something else is missing, AT LEAST showing that there is a bijective map between the regular pullback and $E$} by the fact that it is locally isomorphic to the product bundle $p_1: \pi^{-1}(U) \times V \to \pi^{-1}(U)$ for some coordinate chart $U$ of $M$. Therefore, we see that $E$ is isomorphic to the pullback bundle due to condition (2).
 \end{proof}
 
 \begin{theorem}
@@ -566,24 +585,24 @@ We call the vector bundle morphism $a:TP/G \to TM$ \emph{the anchor of the Atiya
 Now, the following proposition allows a description of the sections of the vector bundle $E/G$ from \ref{3.1.1}.
 
 \begin{proposition}\label{3.1.3}
-Let $(E, p^E, P)$ be as in \ref{3.1.1}. The space of (smooth) sections of $E/G$ is $C^\infty(M)$-module isomorphic to the $G$-invariant sections of $E$ 
+Let $(E, p^E, P)$ be as in \ref{3.1.1}. Let $U \subset M$ be open and $\mathcal U = \pi^{-1}(U)$ open in $P$. The space of (smooth) local sections of $E/G$ on $U$ is $C^\infty(U)$-module isomorphic to the $G$-invariant local sections of $E$ on $\mathcal U$.
 
 \[ 
-    \Gamma^G(E) = \set{\sect{\mu} \in \Gamma(E) \st \forall p \in P, \forall g \in G:\, \sect \mu(pg) = \sect \mu(p)g}
+    \Gamma_{\mathcal U}^G(E) = \set{\sect{\mu} \in \Gamma_{\mathcal U}(E) \st \forall p \in P, \forall g \in G:\, \sect \mu(pg) = \sect \mu(p)g}
 \] 
 
-where $f \sect \mu (p) := (f \circ \pi)(p) \sect \mu(p)$ for any $\sect \mu \in \Gamma^G(E)$, $p \in P$, via the map $\Gamma(E/G) \to \Gamma^G(E)$, $\sectoid \mu \mapsto \upsect{\sectoid \mu}$ defined by 
+where $f \sect \mu (p) := (f \circ \pi)(p) \sect \mu(p)$ for any $\sect \mu \in \Gamma_{\mathcal U}^G(E)$, $p \in \mathcal U$, via the map $\Gamma_U(E/G) \to \Gamma_{\mathcal U}^G(E)$, $\sectoid \mu \mapsto \upsect{\sectoid \mu}$ defined by 
 \[
     \upsect{\sectoid \mu}(p) := \natural_p^{-1}(\sectoid \mu(\pi p))
 \] % this definition can't be used to "lift" a vector of E/G to E because it is not clear what $p$ should be chosen
 
-which has as inverse the map $\Gamma^G(E) \to \Gamma(E/G)$, $\sect \mu \mapsto \downsect{\sect \mu}$ defined, for $m \in M$, by
+which has as inverse the map $\Gamma_{\mathcal U}^G(E) \to \Gamma_U(E/G)$, $\sect \mu \mapsto \downsect{\sect \mu}$ defined, for $m \in M$, by
 
 \[
     \downsect{\sect \mu}(m) := \cl{\sect \mu(p)} = \natural_p(\sect{\mu}(p))
 \]
 
-where $p \in P$ is any point in the fiber of $m$.
+where $p \in P$ is any point in the fiber of $m \in U$.
 \end{proposition}
 %allows us to write any $\sectoid \mu \in \Gamma(E/G)$ as 
 %\begin{equation}\label{sectoidFormula}
@@ -600,8 +619,8 @@ It is important to realize that:
 
 In general, given a section $\sect \mu \in \Gamma(E)$ of a vector bundle $E$ over a base space $B$, the value of the section at $b\in B$ will usually be denoted by $\mu_b \in E_b$ instead of $\mu(b)$.
 
-\begin{proof}
-Before we show that the sections defined by above formulas are indeed smooth sections, we will remark a couple of things. The $G$-invariance of the map $\sectoid \mu \mapsto \upsect{\sectoid \mu}$ is inherited from the $G$-invariance of $\pi$. The map $\sect \mu \mapsto \downsect{\sect \mu}$ is well defined due to the $G$-invariance of $\sect \mu \in \Gamma^G(E)$, hence $\cl{X(pg)} = \cl{X(p)g} = \cl{X(p)}$. These two functions as defined by the formulas above are inverses of each other since, (REMEMBERING THAT $\cl{...}$ is $\natural_p$ might simplify this part)\\
+\begin{proof}\complete{small adaptations to accomodate $U$ and $\mathcal U$}
+Before we show that the sections defined by above formulas are indeed smooth sections, we will remark a couple of things. The $G$-invariance of the map $\sectoid \mu \mapsto \upsect{\sectoid \mu}$ is inherited from the $G$-invariance of $\pi$. The map $\sect \mu \mapsto \downsect{\sect \mu}$ is well defined due to the $G$-invariance of $\sect \mu \in \Gamma^G(E)$, hence $\cl{X(pg)} = \cl{X(p)g} = \cl{X(p)}$. These two functions as defined by the formulas above are inverses of each other since, \improvement{REMEMBERING THAT $\cl{...}$ is $\natural_p$ might simplify this part}\\
 for $\sectoid \mu \in \Gamma(E/G)$ and $m \in M$, $\downsect{(\upsect{\sectoid \mu})}(m) = \cl{\upsect{\sectoid \mu} (p)} = \cl{ \natural_p^{-1}(\sectoid \mu(m)) } = \natural \circ \natural_p^{-1}(\sectoid \mu(m)) = \sectoid \mu(m)$ where $p$ is any in $\pi^{-1}(m)$ \\
 for $\sect \mu \in \Gamma^G(E)$ and $p \in P$ with $m = \pi(p)$, $\upsect{(\downsect{\sect \mu})}(p) = \natural_p^{-1}(\downsect{\sect \mu}(m)) = \natural_p^{-1}(\cl{\sect \mu(p')}) = \natural_p^{-1} \circ \natural (\sect \mu(pg)) = \natural_p^{-1} \circ \natural (\sect \mu(p)) = \sect \mu(p)$ for any $p' \in \pi^{-1}(m)$.
 
@@ -613,11 +632,11 @@ Finally, the $\RR$-linearity of the pointwise vector space isomorphism $\natural
 
 The following will be useful to define $\Phi^{/G}: E/G \to E'/G'$, in particular the anchor of the Atiyah Lie algebroid, among other things. 
 
-\begin{definition}\label{relatedProjectable}
+\begin{definition}\label{defnRelatedProjectable}
 Let $(E, p^E, B)$ and $(E', p^{E'}, B')$ be vector bundles and $F: E \to E'$ be a vector bundle morphism over $f: B \to B'$ Let $\sect \mu \in \Gamma(E)$ and $\sect \nu' \in \Gamma(E')$ , then
     \begin{itemize}
         
-    \item \emph{$\sect \mu$ is $F$-related to $\sect \nu'$} if, for all $b \in B$, $F(\sect \mu_b) = \sect \nu'_{f(b)}$,
+    \item \emph{$\sect \mu$ is $F$-related to $\sect \nu'$} if, for all $b \in B$, $F(\sect \mu_b) = \sect \nu'_{f(b)}$
     
     \item \emph{$\sect \mu$ is $F$-projectable} if there exists $\sect \nu' \in \Gamma(E')$ such that $\sect \mu$ is $F$-related to $\sect \nu'$.
     
@@ -757,6 +776,10 @@ Theorem: The adjoint bundle of a TLA is a LAB. Proved, I think, at the very begi
 Theorem: A TLA is locally trivial.
 
 Proof: At least show that it follows from Theorem 8.2.1 (TLA over contractible $M$ admits a flat connection; this theorem is analogous to ``every ppal bundle over a contractible space has a global section'', and so requires top. algebra: cohomology theory of Ch 7 in this case). The proof I mention I should do is, I think, in page 317
+
+Recall Lemma \ref{lemmaSectionLocal}
+
+Proposition: structure of Lie algebroid morphisms between Trivial Lie algebroids: relevant for intersections.
 
 \section{Actions of Lie Algebroids?}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
