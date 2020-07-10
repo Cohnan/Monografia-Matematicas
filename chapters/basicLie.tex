@@ -907,26 +907,55 @@ It can be easily proven that the right-hand bracket $[\cdot, \cdot]^R$ on $\alg 
 
 \begin{theorem}\label{theoBracketAdjoint}
 The Lie algebra structure induced on $P \times \alg g/G$ by its isomorphism through $j: P \times \alg g/G \to T^\pi P/G$ and the Lie bracket previously defined on $T^\pi P/G$ by
-\begin{align}
+\begin{align} \label{eqnBraIndTpi}
     j[\sect{\cl{p, \eta}}, \sect{\cl{q, \theta}}] := [j\sect{\cl{p, \eta}}, j\sect{\cl{q, \theta}}] \in \Gamma(T^\pi P/G) && \sect{\cl{p, \eta}}, \sect{\cl{q, \theta}} \in \Gamma(P \times \alg g/G); p \in P
 \end{align}
 coincides with the Lie algebra structure induced by the right-hand bracket of $\alg g$, namely
-\begin{align}
+\begin{align} \label{eqnBraIndg}
     [\sect{\cl{p, \eta}}, \sect{\cl{p, \theta}}]^R_m := \cl{p, [\eta, \theta]^R} \in P \times \alg g/G|_m && \textrm{for any } m \in M, p \in \pi^{-1}(m).
 \end{align}
 \end{theorem}
 
 \begin{proof}
 An alternative description of the bracket induced by the bracket of $\alg g$ is in terms of elements of $C^\infty_G(P, \alg g)$, the space of $G$-equivariant functions $P \to \alg g$. Since $\Gamma(P \times \alg g/G)$ is isomorphic to $\Gamma^G(P \times \alg g)$ and this, in turn, is isomorphic to the module $C^\infty_G(P, \alg g)$, to any $\sectoid X \in \Gamma^G(P \times \alg g/G)$ corresponds an equivariant function $\Tilde{\sectoid X} \in C^\infty_G(P, \alg g)$ such that
-\begin{equation}
+\begin{equation} \label{wigly1}
     \cl{p, \tilde{\sectoid X}(p)} = \sectoid X_{\pi(p)} 
 \end{equation}
 for any $p \in P$, or, equivalently,
-\begin{equation}
-    (p, \tilde{\sectoid X}(p)) = \upsect{\sectoid X}_{p}
-\end{equation}; the smoothness of $\tilde{\sectoid X}$ is easily seen from this last formula.
+\begin{equation}\label{wigly2}
+    (p, \tilde{\sectoid X}(p)) = \upsect{\sectoid X}_{p};
+\end{equation} the smoothness of $\tilde{\sectoid X}$ is easily seen from this last formula.
 
-Formulita of []
+First notice that a section on $P \times \alg g$ is $j$-projectable since the base map of the vector bundle morphism $j$ is the identity in $M$, and so $j$ may be extended to $\Gamma(P \times \alg g/G) \to \Gamma(TP/G)$. Now, given $\sect \mu \in \Gamma(P)$, for $m \in M$ and $p \in \pi^{-1}(m)$ $j(\sect \mu)_m := j(\sect \mu_m) = j(\cl{p, \tilde{\sect \mu}(p)})$ by equation (\ref{wigly1}), so $j(\sect \mu)_m = \cl{m_{p*, 1}(\tilde{\sect \mu}(p))}$ by equation (\ref{formulaJ}), and so
+\begin{equation}
+    \upsect{j(\sect \mu)}_p = \natural_p^{-1}(j(\sect{\mu}_{\pi(p)})) = m_{p*,1}(\tilde{\sect \mu}(p)) = \frac{d}{dt}_{t=0} p \exp{(t \tilde{\sect \mu}(p))}.
+\end{equation}
+Furthermore, for any section $\sect \mu \in \Gamma(P \times \alg g/G)$, $\upsect{j(\sect \mu)}$ has global flow $\phi_t(p) = p \exp{(t \tilde{\sect \mu}(p))}$ since, using the fact that $\Tilde{\sect \mu}(pg) = Ad_{g^{-1}} \Tilde{\sect \mu}(p)$ for any $g \in G$, it can be shown that $\phi_t \circ \phi_s = \phi_{t + s}$ for any $t, s \in \RR$.
+
+Therefore, for any $\sect \mu, \sect \nu \in \Gamma(P \times \alg g/ G)$
+\begin{align*}
+    [\upsect{j(\sect \mu)}, \upsect{j(\sect \nu)}]_p 
+    &= \lim_{t \to 0} \frac{\phi_{-t*}(\upsect{j(\sect \nu)}_{\phi_t(p)})  - \upsect{j(\sect \nu)}_{p} }{t}\\
+    &= - \frac{d}{dt}_{t = 0} \phi_{t*} (\upsect{j(\sect \nu)}_{\phi_{-t}(p)}) \\
+    &= - \frac{d}{dt}_{t = 0} (\phi_{t} \circ m_{\phi_{-t}(p)})_{*, 1} (\tilde{\sect \nu}(\phi_{-t}(p))) \\
+    &= (m_{p})_{*, 1} \left(- \frac{d}{dt}_{t = 0} \tilde{\sect \nu}(p \exp{(-t \tilde{\sect \mu}(p))}) \right) \\
+    &= (m_{p})_{*, 1} \left(- \frac{d}{dt}_{t = 0} Ad_{\exp{(t \tilde{\sect \mu}(p))}}\tilde{\sect \nu}(p) \right) \\
+    &= m_{p*, 1} ([\tilde{\sect \mu}(p), \tilde{\sect \nu}(p)]^R)
+\end{align*}
+
+Finally,
+
+\begin{align*}
+    j([\sect \mu, \sect \nu]^R)_m 
+    &= \cl{m_{p*, 1} ([\tilde{\sect \mu}(p), \tilde{\sect \nu}(p)]^R)} & \textrm{by definition (\ref{eqnBraIndg}) and formula (\ref{formulaJ})} \\ 
+    &= \cl{[\upsect{j(\sect \mu)}, \upsect{j(\sect \nu)}]_p}\\
+    &= \cl{\upsect{[j(\sect \mu), j(\sect \nu)]}_p} & \textrm{by definition of bracket in $TP/G$}\\
+    &= \cl{\upsect{j[\sect \mu, \sect \nu]}_p} & \textrm{by definition (\ref{eqnBraIndTpi})} \\
+    &= j([\sect \mu, \sect \nu])_m & \textrm{inverse definitions (\ref{3.1.3})}
+\end{align*}
+
+And so the two Lie algebra structures $[\cdot, \cdot]^R$ and $[\cdot, \cdot]$ defined on $P \times \alg g/G$ coincide.
+
 \end{proof}
 
 \begin{definition}\label{AtiyahSeq}
