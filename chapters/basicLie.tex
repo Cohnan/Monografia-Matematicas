@@ -348,7 +348,9 @@ Coming from Lie groupoids
 
 Can be viewed as G-invariant $P-> g$ functions, TP .
 
-$G$ is Lie group.
+$G$ is Lie group... finite dimensional?
+
+Definition of Lie group action?
 
 Makes reasonable undrestanding of Lie algebroids as sets of directions that are consistent with the shadow (TM) directions
 
@@ -755,14 +757,101 @@ A principal connection form on the principal bundle $P(M, G)$ is usually defined
 
 We will see that the $G$-equivariance of a connection suggest the use of $TP/G$ and $P \times \alg g / G$ instead of $TP$ and $\alg g$ (or $P \times \alg g$) respectively, and the first property suggests the Atiyah sequence of a principal bundle. a natural language to talk about connection forms, and the injection map of the Atiyah sequence $j: P \times \alg g/G \to TP/G$% awhere they are replaced by vector bundle maps $\omega: TP/G \to P \times \alg g / G$ such that $\omega \circ j = id_{P \times \alg g / G}$.
 
-\begin{proposition}
+\subsubsection{$T^\pi P/G$} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{lemma}
 Define $T^\pi P := ker(\pi_*) \subset TP$. $T^\pi P$ is a vector subbundle of $TP$ and the action of $G$ on $TP$ restricts to an action on $T^\pi P$.
+\end{lemma}
+
+\begin{proof}
+Constant rank: immersion, then subbundle.
+
+Easy to see that acting with $g$ makes you fall inside again.
+\end{proof}
+
+
+\begin{theorem}\label{theoTpiPGSubbundle}
+The quotient vector bundle $(T^\pi P/G, \pi^G_*, M)$ by the action of $G$ of the bundle $(T^\pi P, \pi_*|_{T^\pi P}, P)$ is well defined. The inclusion map $i: T^\pi P \to TP$ over $P$ induces the inclusion map $j: T^\pi P/G \to TP/G$ which is the unique vector bundle morphism that makes the following diagram commute:
+
+\begin{equation}
+    \begin{tikzcd}
+        T^\pi P \ar{r}{i} \ar{d} & TP \ar{d} \\
+        T^\pi P/G \ar[dashed]{r}{j} \arrow{d}{\pi_*^G} & TP/G \arrow{d}{\pi_*^G} \\
+        M \arrow{r}{id_M} & M
+    \end{tikzcd}
+\end{equation}
+where the top vectical arrows are the quotient maps, and, abusing notation, $\pi_*^G$ is also used to denote $\pi_*^G|_{T^\pi P/G}$.
+\end{theorem}
+
+\begin{proof}
+Satisfies conditions of 3.1.1. Exactly the same as $TP$
+
+$i$ satisfies conditions of 3.2: $i$ clearly $G$-equivariant, so $j$ satisfies everything except being embedding.
+
+Momentarily, let $\natural^\pi: T^\pi P \to T^\pi/G$ and $\natural: TP \to TP/G$ be the quotient maps. Then, for any $\ppal X \in T^\pi P$, $\natural^\pi(\ppal X) = \set{\ppal X \, g \st g \in G} = \natural(\ppal X)$, so \[j(\natural^\pi(\ppal X)) = \natural(\ppal X) = \natural^\pi(\ppal X)\], so $j$ is indeed an inclusion.
+\end{proof}
+
+\begin{theorem}
+The bracket of the Lie algebroid $TP/G$ induces a bracket on $T^\pi P/G$. This makes $(T^\pi P/G, \pi_*^G, M)$ an Atiyah Lie algebroid with trivial anchor.
+\end{theorem}
+
+\begin{proof}
+All we need to proof is that the bracket of $TP/G$ of sections of $T^\pi P/G$ is again a section of this kind. Let $\sectoid X, \sectoid Y \in \Gamma(T^\pi P/G) \subset \Gamma(TP/G)$, then $\pi_*^G([\sectoid X, \sectoid Y]) = [\pi_*^G (\sectoid X), \pi_*^G(\sectoid Y)] = 0$, so $([\sectoid X, \sectoid Y] \in \Gamma(T^\pi P/G)$.
+\end{proof}
+
+\subsubsection{The Atiyah Sequence}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Although we could consider the exact sequence of Atiyah Lie algebroids
+\begin{equation*}
+    0 \to T^\pi P/G \to TP/G \to TM \to 0
+\end{equation*}
+as the Atiyah sequence of the principal bundle $P(M, G)$, it will be useful to replace $T^\pi P/G$ by $P \times \alg g/P$ once we see they are isomorphic Lie algebroids.
+
+% Let $g \in G$ act on $\alg g$ by the adjoint action $Ad_g: \alg g \times \alg g$, derivative at the identity of the adjoint action of $g \in G$ on $G$ 
+% \begin{align*}
+%     AD_g: G \to G, & & h \mapsto ghg^{-1}.
+% \end{align*} 
+% When $G$ is a matrix Lie group, we know that the action on $\alg g$ becomes
+% \begin{align}
+%     Ad_g(\eta) = g \eta g^{-1} & & \eta \in \alg g.
+% \end{align}
+% When the $Ad$ map is considered as a function $Ad:G \to GL(\alg g)$, its derivative at the identity
+% \begin{align}
+%     ad: \algeb g \to \alg{gl}(\alg g) & & \eta \mapsto \left( \theta \mapsto \der{}{t}[t = 0] Ad_{}    \right)
+% \end{align}
+% gives rise to the Lie bracket of the Lie algebra $\alg g$.
+
+% \begin{definition}
+% Left and Right brackets in a Lie algebra
+% \end{definition}
+
+\begin{proposition}
+    Let $V$ be a vector space on which $G$ acts to the left. Let $g \in G$ act to the right on the trivial vector bundle $p_1 :P \times V \to P$ by $(p, v)g = (pg, g^{-1}v)$. Let $\cl{p, v}$ or $\cl{v_p}$ denote the orbit of $(p, v) \in P \times V$. The space $P \times V/G$ has a unique vector bundle structure over $M$, with projection map $p: P \times V / G \to M$, such that $p(\cl{p, v}) = \pi(p)$ for any $(p, v) \in P \times V$
+
 \end{proposition}
 
 \begin{proof}
 
 \end{proof}
 
+\begin{theorem}
+Let $g \in G$ act to the left on $\alg g$ by $Ad_g: \alg g \to \alg g$, $\eta \mapsto \frac{d}{dt}|_{t=0} g exp(t \eta) g^{-1}$ (derivative at the identity of $AD_g: G \to G$, $h \mapsto g h g^{-1}$). For any $p \in P$ let $rm_p: G \to P$, $g \mapsto gp$. The map 
+    \begin{align}
+        rm_{p*, 1}: \alg g \to T_p G,& &\eta \mapsto \frac{d}{dt}_{t = 0}p \exp{(t \eta)}
+    \end{align}
+    induces an injective vector bundle morphism $j: P \times V / G \to TP/G$ such that 
+    \begin{equation}
+        j(\cl{p, \alg \eta}) = \cl{\frac{d}{dt}_{t = 0} p \exp(t \alg \eta)} \in T^\pi P/G \subset TP/G
+    \end{equation} for any $(p, \alg \eta) \in P \times \alg g$. Furtheremore, the vector bundle $P \times \alg g/G$ is isomorphic to $T^\pi P/G$ through $j$.
+\end{theorem}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{definition}[AtiyahSequence]
+JOjo
+\end{definition}
 
 \section{Representations}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
