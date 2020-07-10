@@ -517,7 +517,7 @@ The following proposition and its corollary allow us to define smooth vector bun
 \begin{proposition} \label{3.1.2}
 Let $(E, p^E, P)$ and $(E, p^{E'}, P')$ be vector bundles over principal bundles $P(M, G)$ and $P'(M', G')$, respectively. Let $G$ and $G'$ act on $E$ and $E'$ respectively satisfying the conditions of \ref{3.1.1}. Let $\Phi: E \to E'$ be a vector bundle morphism, over the principal bundle morphism $F(f, \phi)$ where $f:M\to M'$ and $\phi:G \to G'$, that satisfies \[\Phi(\mu g) = \Phi(\mu) \phi(g)\] for all $\mu \in E$, $g \in G$, i.e. \emph{$\Phi$ is $G$-equivariant}. Then, there \emph{exists a unique (smooth) vector bundle morphism} $\Phi^{/G}: E/G \to E'/G'$ over $f: M \to M'$ such that $\Phi^{/G} \circ \natural = \natural' \circ \Phi$, where notation from \ref{3.1.1} has been used. In particular, the following diagram commutes:
 
-\begin{equation}
+\begin{equation} \label{diagramQuotientMorph}
 \begin{tikzcd}
     E   \ar{r}{\Phi}     \ar{d}{\natural} &   E'  \ar{d}{\natural'} \\
     E/G \ar[dashed]{r}{\Phi^{/G}} \ar{d}{p^{E/G}}  & E'/G' \ar{d}{p^{E'/G'}} \\
@@ -833,28 +833,57 @@ as the Atiyah sequence of the principal bundle $P(M, G)$, it will be useful to r
 % Left and Right brackets in a Lie algebra
 % \end{definition}
 
-\begin{proposition}
-    Let $V$ be a vector space on which $G$ acts to the left. Let $g \in G$ act to the right on the trivial vector bundle $p_1 :P \times V \to P$ by $(p, v)g = (pg, g^{-1}v)$. Let $\cl{p, v}$ or $\cl{v_p}$ denote the orbit of $(p, v) \in P \times V$. The space $P \times V/G$ has a unique vector bundle structure over $M$, with projection map $p: P \times V / G \to M$, such that $p(\cl{p, v}) = \pi(p)$ for any $(p, v) \in P \times V$
+\begin{proposition} \label{propAssociatedExists}
+    Let $V$ be a vector space on which $G$ acts to the left. Let $g \in G$ act to the right on the trivial vector bundle $p_1 :P \times V \to P$ by $(p, v)g = (pg, g^{-1}v)$. Let $\cl{p, v}$ or $\cl{v_p}$ denote the orbit of $(p, v) \in P \times V$. The space $P \times V/G$ has a unique vector bundle structure over $M$, with projection map $p: P \times V / G \to M$, such that \begin{equation}
+        p(\cl{p, v}) = \pi(p)
+    \end{equation} for any $(p, v) \in P \times V$.
 
 \end{proposition}
 
 \begin{proof}
+Let $\sigma: U \to P$ be a local section of $P$ and $\phi: U \times G \to \mathcal U = \pi^{-1}(U)$ be the associated chart that satisfies $\phi(m, g) = \sigma(m)g$ for $m \in M, g \in G$. Let the $\pi$-saturated chart $\Phi: \mathcal U \times V \to E_{\mathcal U}$ be defined by
+\begin{equation*}
+    \begin{tikzcd}
+        \mathcal U \times V \arrow[dashed]{r}{\Phi} & E_{\mathcal U} = \mathcal U \times V \\
+        U \times G \times V \arrow{u}{\phi \times id_V} \arrow{r}{(m, g, v) \mapsto (x, g, g^{-1}v)}    & U \times G \times V \arrow{u}{\phi \times id_V}
+    \end{tikzcd}
+\end{equation*}
+for any $m \in U$, $v \in V$, $g \in G$ which, therefore, has formula
+\[
+    \Phi(\sigma(m)g, v) = (\sigma(m)g, g^{-1}v).
+\]
 
+The $G$-equivariance of $\Phi$ follows from $\Phi(\sigma(m)g, v)g' = (\sigma(m)g, g^{-1}v)g' = (\sigma(m)gg', (gg')^{-1}v) = \Phi(\sigma(m)gg', v)$.
+
+The theorem then follows from theorem (\ref{3.1.1}).
 \end{proof}
 
 \begin{theorem}
-Let $g \in G$ act to the left on $\alg g$ by $Ad_g: \alg g \to \alg g$, $\eta \mapsto \frac{d}{dt}|_{t=0} g \exp{(t \eta)} g^{-1}$ (derivative at the identity of $AD_g: G \to G$, $h \mapsto g h g^{-1}$). For any $p \in P$ let $rm_p: G \to P$, $g \mapsto gp$. The map 
+Let $g \in G$ act to the left on $\alg g$ by $Ad_g: \alg g \to \alg g$, $\eta \mapsto \frac{d}{dt}|_{t=0} g \exp{(t \eta)} g^{-1}$ (derivative at the identity of $AD_g: G \to G$, $h \mapsto g h g^{-1}$). For any $p \in P$ let $m_p: G \to P$, $g \mapsto gp$. The map 
     \begin{align}
-        rm_{p*, 1}: \alg g \to T_p G,& &\eta \mapsto \frac{d}{dt}_{t = 0}p \exp{(t \eta)} = \eta^*_p
+        m_{p*, 1}: \alg g \to T_p G,& &\eta \mapsto \frac{d}{dt}_{t = 0}p \exp{(t \eta)} = \eta^*_p
     \end{align}
-    induces an injective vector bundle morphism $j: P \times V / G \to TP/G$ such that 
-    \begin{equation}
+    induces an injective vector bundle morphism $j: P \times \alg g / G \to TP/G$ such that 
+    \begin{equation}\label{formulaJ}
         j(\cl{p, \alg \eta}) = \cl{\frac{d}{dt}_{t = 0} p \exp{(t \alg \eta)}} \in T^\pi P/G \subset TP/G
-    \end{equation} for any $(p, \alg \eta) \in P \times \alg g$. Furtheremore, the vector bundle $P \times \alg g/G$ is isomorphic to $T^\pi P/G$ through $j$.
+    \end{equation} for any $(p, \alg \eta) \in P \times \alg g$. Furthermore, the vector bundle $P \times \alg g/G$ is isomorphic to $T^\pi P/G$ through $j$.
 \end{theorem}
 
 \begin{proof}
+Let $m: P \times G \to P$ be the Lie group action of $G$ on $P$, and identify $T(P \times G)$ with $TP \boxplus TG$. Then the map $F: P \times \alg g \to TP$, $(p, \eta) \mapsto \frac{d}{dt}_{t = 0}p \exp{(t \eta)}$ induced by $m_{p*, 1}$ may be rewritten as $F: (p, \eta) \mapsto m_{*, (p, 1)}(0_p, \eta)$, showing that $F$ is a smooth vector bundle morphism over $P$.
 
+Now, since for any $g \in G$ $p \in P$ $\eta \in \alg g$ it is true that $R_g \circ m_p = m_{pg} \circ AD_{g^{-1}} : G \to P$, then 
+\begin{multline*}
+F((p, \eta)g)
+= F(pg, Ad_{g^{-1}}\eta)
+= m_{pg*, 1}(Ad_{g^{-1}}\eta)
+= (m_{pg} \circ AD_{g^{-1}})_{*, 1}(\eta)\\
+= (R_g \circ m_{p})_{*, 1}(\eta) 
+= (m_{p*, 1}(\eta))g = F(p, \eta) g,
+\end{multline*}
+which means that $F: P \times \alg g \to TP$ is $G$-equivariant, so we may apply theorem \ref{3.1.2} to get the vector bundle morphism $j: P \times \alg g/G \to TP/G$ where the formula (\ref{formulaJ}) is nothing but the commutativity of the top square of diagram (\ref{diagramQuotientMorph}); in particular, the formula (\ref{formulaJ}) is well defined.
+
+The injectivity of $j$ in inherited from the injectivity of $F: P \times \alg g \to TP$, which, in turn, is consequence of the injectivity of each $m_{p*, 1}$. The image of $j$ is $T^\pi P/G$ because $\pi_*^G(j\cl{p, \eta}) = \pi_*^G(\cl{\frac{d}{dt}_{t = 0}p \exp{(t \eta)}}) = \pi_*(\frac{d}{dt}_{t = 0}p \exp{(t \eta)}) = \frac{d}{dt}_{t= 0} p = 0$. Finally, since the vector bundles $P \times \alg g/G$ and $im(j) = T^\pi P/G$ have the same fiber $\alg g$, $j$ being an injective vector bundle map implies that $j$ is an isomorphism in each fiber, and so $j$ is a vector bundle isomorphism between $P \times \alg g/G$ and $T^\pi P/G$.
 \end{proof}
 
 Since $P \times \alg g/G$ and $T^\pi P/G$ are isomorphic as vector bundles, we can define a bracket on $P \times \alg g/G$ by the bracket on $T^\pi P/G$, however, in $P \times \alg g/G$ we also have a natural Lie algebra structure inherited from the Lie algebra bracket of $\alg g$. Our current purpose is to conclude that they coincide except for a negative sign.
