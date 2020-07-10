@@ -457,11 +457,11 @@ The uniqueness assertions follow from the fact that there is at most one manifol
 A pullback bundle $\pi^*E/G$ can be characterized \todo{something else is missing, AT LEAST showing that there is a bijective map between the regular pullback and $E$} by the fact that it is locally isomorphic to the product bundle $p_1: \pi^{-1}(U) \times V \to \pi^{-1}(U)$ for some coordinate chart $U$ of $M$. Therefore, we see that $E$ is isomorphic to the pullback bundle due to condition (2).
 \end{proof}
 
-\begin{theorem}
+\begin{theorem}\label{theoTPGexists}
 The vector bundle $\pi_*:TP \to P$ over the principal bundle $P$, on which $g \in G$ acts to the right by the push-forward of the right translation map $R_g: P \to P$ on $P$, satisfies the conditions of (\ref{3.1.1}).
 \end{theorem}
 
-We will denote by $\pi^{/G}:TP/G \to M$ the projection map of the quotient vector bundle of $(TP, \pi, P)$ under the action of $G$, and we will call it \emph{the vector bundle of the Atiyah Lie algebroid of the principal bundle $P$}.
+We will denote by $\pi_*^G:TP/G \to M$ the projection map of the quotient vector bundle of $(TP, \pi, P)$ under the action of $G$, and we will call it \emph{the vector bundle of the Atiyah Lie algebroid of the principal bundle $P$}.
 
 \begin{proof}
 Condition (1) is satisfied since, for any $g \in G$, the map $R_{g*}:TP \to TP$ is a fiberwise linear map over $R_g$ with inverse $R_{g^{-1} *}$.
@@ -567,11 +567,11 @@ Consider $M'$ as the principal bundle $P(M', \set{1})$, let $\phi:G \to \set{1}$
 Applying the previous corollary to $\pi_*: TP \to TM$ gives us immediately the following theorem.
 
 \begin{theorem}\label{anchorAtiyah}
-There \emph{exists a unique (smooth) vector bundle morphism} $a  \Phi^{/G}: TP/G \to TM$ over $M$ such that the following diagram commutes:
+There \emph{exists a unique (smooth) vector bundle morphism} $a: TP/G \to TM$ over $M$ such that the following diagram commutes:
 \begin{equation} \label{anchorDiagram}
     \begin{tikzcd}
     TP \arrow[]{d}{\natural} \arrow[]{dr}{\pi_*}& \\
-    TP/G \arrow[dashed]{r}{a} \arrow[]{d}{\pi^{/G}}& TM \arrow[]{d}{\pi} \\
+    TP/G \arrow[dashed]{r}{a} \arrow[]{d}{\pi_*^G}& TM \arrow[]{d}{\pi} \\
     M \arrow[]{r}{id_M} & M
     \end{tikzcd}
 \end{equation}
@@ -764,9 +764,9 @@ Define $T^\pi P := ker(\pi_*) \subset TP$. $T^\pi P$ is a vector subbundle of $T
 \end{lemma}
 
 \begin{proof}
-Constant rank: immersion, then subbundle.
+The projection $\pi:P \to M$ is a submersion, since it is locally a projection map $U \times G \to U$ for $U \subset M$ open, therefore $\pi_*$ too is a submersion because it is locally the projection $TU \times TG \to TG$. This means that $\pi_*$ is of locally constant rank, and so $ker(\pi_*)$ is a subbundle.
 
-Easy to see that acting with $g$ makes you fall inside again.
+The action of $g \in G$ on $\ppal X \in T^\pi P$ falls again on $T^\pi P$ because $\pi_*(\ppal Xg) = \pi_*(R_{g*} \ppal X) = (\pi \circ R_g)_* \ppal X$, but $\pi \circ R_g = \pi$, so $\pi_*(\ppal Xg) = 0$.
 \end{proof}
 
 
@@ -780,15 +780,21 @@ The quotient vector bundle $(T^\pi P/G, \pi^G_*, M)$ by the action of $G$ of the
         M \arrow{r}{id_M} & M
     \end{tikzcd}
 \end{equation}
-where the top vectical arrows are the quotient maps, and, abusing notation, $\pi_*^G$ is also used to denote $\pi_*^G|_{T^\pi P/G}$.
+where the top vectical arrows are the quotient maps, and, abusing notation, $\pi_*^G$ is also used to denote the restriction of $\pi_*^G: TP/G \to M$ to $T^\pi P/G$.
 \end{theorem}
 
 \begin{proof}
-Satisfies conditions of 3.1.1. Exactly the same as $TP$
+$\pi_*$ is $G$-equivariant since $\pi \circ R_g = \pi$, therefore the existence of the vector bundle $TP/G$ will follow if we find $\pi$-saturated $G$-equivariant charts. Using the notation in the proof of theorem \ref{theoTPGexists}, where charts for $TP$ were built, we now construct the desired charts. Notice that $\pi_* \circ \phi_* (X, R_{g*, 1} \eta) = 0$, where $\phi_* : TU \boxplus TG \to T_{\mathcal U}$ is the isomorphism induced by the principal bundle chart $\phi: U \times G \to P_{\mathcal U}$, is equivalent to the statement $X = 0$ since $\pi \circ \phi: U \times G \to U$ is the projection to the first coordinate. Therefore, the fiber of $T^\pi P$ is only $\alg g$ and the following map is a vector bundle isomorphism:
 
-$i$ satisfies conditions of 3.2: $i$ clearly $G$-equivariant, so $j$ satisfies everything except being embedding.
+\begin{align*}
+    \tilde \Phi :& (U \times G) \times \alg g & \to^{\cong} & T^\pi P|_{\mathcal U} \\    
+                 & (m, g, \eta) & \mapsto & \phi_{*, (m, g)}(0, R_{g*, 1} \eta).
+\end{align*}
+Now, $\Phi : \mathcal U \times \alg g  \to  T_{\mathcal U}P$ by $\Psi = \phi^{-1} \times id_{\alg g}$ is the desired $G$-equivariant chart by the same arguments used in the proof of theorem \ref{theoTPGexists}.
 
-Momentarily, let $\natural^\pi: T^\pi P \to T^\pi/G$ and $\natural: TP \to TP/G$ be the quotient maps. Then, for any $\ppal X \in T^\pi P$, $\natural^\pi(\ppal X) = \set{\ppal X \, g \st g \in G} = \natural(\ppal X)$, so \[j(\natural^\pi(\ppal X)) = \natural(\ppal X) = \natural^\pi(\ppal X)\], so $j$ is indeed an inclusion.
+The existence of the vector bundle morphism $j: T^\pi P/G \to TP/G$ follows from the clear $G$-equivariance of the inclusion $i$.
+
+Momentarily, let $\natural^\pi: T^\pi P \to T^\pi/G$ and $\natural: TP \to TP/G$ be the quotient maps. Then, for any $\ppal X \in T^\pi P$, $\natural^\pi(\ppal X) = \set{\ppal X \, g \st g \in G} = \natural(\ppal X)$, so \[j(\natural^\pi(\ppal X)) = \natural(\ppal X) = \natural^\pi(\ppal X)\], so $j$ is indeed an inclusion of sets.
 \end{proof}
 
 \begin{theorem}
@@ -796,7 +802,9 @@ The bracket of the Lie algebroid $TP/G$ induces a bracket on $T^\pi P/G$. This m
 \end{theorem}
 
 \begin{proof}
-All we need to proof is that the bracket of $TP/G$ of sections of $T^\pi P/G$ is again a section of this kind. Let $\sectoid X, \sectoid Y \in \Gamma(T^\pi P/G) \subset \Gamma(TP/G)$, then $\pi_*^G([\sectoid X, \sectoid Y]) = [\pi_*^G (\sectoid X), \pi_*^G(\sectoid Y)] = 0$, so $([\sectoid X, \sectoid Y] \in \Gamma(T^\pi P/G)$.
+All we need to prove is that the bracket of $TP/G$ of sections of $T^\pi P/G$ is again a section of this kind. Let $\sectoid X, \sectoid Y \in \Gamma(T^\pi P/G) \subset \Gamma(TP/G)$, then $\pi_*^G([\sectoid X, \sectoid Y]) = [\pi_*^G (\sectoid X), \pi_*^G(\sectoid Y)] = 0$, so $([\sectoid X, \sectoid Y] \in \Gamma(T^\pi P/G)$. 
+
+The trivial anchor is inherited as the restriction of the anchor $\pi_*^G$ of $TP/G$ to $T^\pi P/G$ is the trivial $0$ map since $T^\pi P = ker(\pi_*)$, so the compatibility conditions between the bracket and the anchor are inherited from the Atiyah Lie algebroid.
 \end{proof}
 
 \subsubsection{The Atiyah Sequence}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -835,9 +843,9 @@ as the Atiyah sequence of the principal bundle $P(M, G)$, it will be useful to r
 \end{proof}
 
 \begin{theorem}
-Let $g \in G$ act to the left on $\alg g$ by $Ad_g: \alg g \to \alg g$, $\eta \mapsto \frac{d}{dt}|_{t=0} g exp(t \eta) g^{-1}$ (derivative at the identity of $AD_g: G \to G$, $h \mapsto g h g^{-1}$). For any $p \in P$ let $rm_p: G \to P$, $g \mapsto gp$. The map 
+Let $g \in G$ act to the left on $\alg g$ by $Ad_g: \alg g \to \alg g$, $\eta \mapsto \frac{d}{dt}|_{t=0} g \exp{(t \eta)} g^{-1}$ (derivative at the identity of $AD_g: G \to G$, $h \mapsto g h g^{-1}$). For any $p \in P$ let $rm_p: G \to P$, $g \mapsto gp$. The map 
     \begin{align}
-        rm_{p*, 1}: \alg g \to T_p G,& &\eta \mapsto \frac{d}{dt}_{t = 0}p \exp{(t \eta)}
+        rm_{p*, 1}: \alg g \to T_p G,& &\eta \mapsto \frac{d}{dt}_{t = 0}p \exp{(t \eta)} = \eta^*_p
     \end{align}
     induces an injective vector bundle morphism $j: P \times V / G \to TP/G$ such that 
     \begin{equation}
