@@ -31,17 +31,24 @@ When talking about $C^r-$differentiable vector fields, a vector-bundle chart, or
 \ptext{For the rest of the chapter $A$ will refer to a Lie algebroid over a manifold $M$ with anchor $a$, unless otherwise stated.}
 
 \begin{lemma}\label{lemmaSectionLocal}
-The bracket is a local operator. In particular, a unique bracket on local sections induced.
+The bracket is a local operator. In particular, a unique bracket on local sections is induced.
 \end{lemma}
 
 \begin{proof}
 By section 7 of Tu. The formula for the local bracket is... \complete{just rewrite what's in Tu Ch 7}
 \end{proof}
 
-The following theorem gives us insight on the structure of Lie algebroids, specifically on its ``vertical'' part, i.e. the kernel of the anchor map.
+The simplest examples of Lie algebroids are the tangent bundle $TM$ of a manifold $M$ with the commutator of vector fields as bracket and $id_{TM}$ as anchor, and a Lie algebra, when considered as a vector bundle over a point. The following is a straightforward generalization of the latter, which contrasts the tangent bundle in the sense that we might consider it a space of only vertical directions ``on'' $M$.
+
+\begin{definition}
+    A \emph{Lie algebra bundle} or \emph{LAB} is a vector bundle $(L, q, M)$ together with a section of the vector bundle $Alt^2(L; L)$ of alternating $2$-forms with values on $L$ such that, at any $m \in M$, $[\cdot, \cdot]_m:L_m \times L_m \to L_m$ makes $L_m$ a Lie algebra, i.e. \emph{a field of Lie algebra brackets}, such that $L$ admits an atlas $\set{\phi_i: U_i \times \alg g \to L_{U_i}}$ where each $\phi_{i, m}: \alg g \to L_m$ is a Lie algebra isomorphism.
+\end{definition}
+Any $LAB$ has a unique structure as a Lie algebroid given by $a = 0$, since the field of Lie algebra brackets if $C^\infty(M)$-linear and so the second compatibility condition leaves us with no other choice for $a$.
+
+The following theorem gives us insight on the structure of Lie algebroids, specifically on their ``vertical'' part, i.e. the kernel of the anchor map.
 
 \begin{theorem} \label{theoFiberLie}
-Let $A$ be a Lie algebroid over the manifold $M$ with anchor $a$, and suppose $ker(a)$ is a vector subbundle of $A$. Then $ker(a)$ is a Lie algebroid over $M$ with trivial anchor, i.e. $ a = 0$, and the bracket on the sections of $ker(a)$ restrict to a Lie bracket on the fibers, making \emph{each fiber of $ker(a)$ a Lie algebra}.
+Let $A$ be a Lie algebroid over the manifold $M$ with anchor $a$, and suppose $ker(a)$ is a vector subbundle of $A$. Then $ker(a)$ is a Lie algebroid over $M$ with trivial anchor, i.e. $ a = 0$, and the bracket on the sections of $ker(a)$ restrict to a Lie bracket on the fibers, making \emph{each fiber of $ker(a)$ a Lie algebra}, i.e. $ker(a)$ is a Lie algebra bundle.
 \end{theorem}
 
 \begin{proof}
@@ -49,12 +56,6 @@ To see: sections of $ker(a)$ are sections of $A$... in that case the 1st conditi
 
 The 2nd condition, becomes the statement of the $C^\infty(M)$ bilinearity of the bracket, which imply Tu Ch 7, that the bracket is a point operator, and so the result follows.\complete{minor rewriting needed}
 \end{proof}
-
-The simplest examples of Lie algebroids are the tangent bundle $TM$ of a manifold $M$ with the commutator of vector fields as bracket and $id_{TM}$ as anchor, and a Lie algebra, when considered as a vector bundle over a point. The following is a straighforward generalization.
-
-\begin{definition}
-    A \emph{Lie algebra bundle} or \emph{LAB} is a vector bundle $(L, q, M)$ together with a section of the vector bundle $Alt^2(L; L)$ of alternating $2$-forms with values on $L$ such that, at any $m \in M$, $[\cdot, \cdot]_m:L_m \times L_m \to L_m$ makes $L_m$ a Lie algebra, such that $L$ admits an atlas $\set{\phi_i: U_i \times \alg g \to L_{U_i}}$ where each $\phi_{i, m}: \alg g \to L_m$ is a Lie algebra isomorphism.
-\end{definition}
 
 \begin{proposition}
 $\Gamma A$ is a finite projective module over $M$. Furthermore, the map $a: \Gamma(A) \to \Gamma(TM)$ is $C^\infty(M)$-linear.
@@ -84,7 +85,7 @@ We now present some basic definitions.
     
 \end{definition}
 
-If $A$ is a regular Lie algebroid, the image of the anchor defines an involutive distribution on $M$ and, in consequence, a foliation of the base manifold called \emph{the characteristic foliation of $A$}. Then, the restriction of $A$ to each leaf is a transitive Lie algebroid.
+If $A$ is a regular Lie algebroid, the image of the anchor defines an involutive distribution on $M$ and, in consequence, a foliation of the base manifold called \emph{the characteristic foliation of $A$}. Then, the restriction of $A$ to each leaf is a transitive Lie algebroid. Additionally, we can apply theorem \ref{theoFiberLie} to see that, locally, a regular Lie algebroid is simply the vector bundle $U \times (V \oplus \alg g)$, where $V$ is a vector subspace of the tangent space at some $m \in U \subset M$.
 
 \begin{definition} [(Base preserving) morphism of Lie algebroids] 
 Given two algebroids over the manifold $M$, $A$ with anchor $a$ and $A'$ with anchor $a'$, \emph{a base preserving Lie algebroid morphism} $\phi: A \to A'$ is a vector bundle morphism such that $a' \comp \phi = a $, and such that $\phi[\sect{\oid X}, \sect{\oid Y}] = [\phi(\oid X), \phi(\oid Y)]$ for all $\sectoid X, \sectoid Y \in \Gamma(A)$. 
