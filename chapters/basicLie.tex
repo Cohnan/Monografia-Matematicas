@@ -50,6 +50,12 @@ To see: sections of $ker(a)$ are sections of $A$... in that case the 1st conditi
 The 2nd condition, becomes the statement of the $C^\infty(M)$ bilinearity of the bracket, which imply Tu Ch 7, that the bracket is a point operator, and so the result follows.\complete{minor rewriting needed}
 \end{proof}
 
+The simplest examples of Lie algebroids are the tangent bundle $TM$ of a manifold $M$ with the commutator of vector fields as bracket and $id_{TM}$ as anchor, and a Lie algebra, when considered as a vector bundle over a point. The following is a straighforward generalization.
+
+\begin{definition}
+    A \emph{Lie algebra bundle} or \emph{LAB} is a vector bundle $(L, q, M)$ together with a section of the vector bundle $Alt^2(L; L)$ of alternating $2$-forms with values on $L$ such that, at any $m \in M$, $[\cdot, \cdot]_m:L_m \times L_m \to L_m$ makes $L_m$ a Lie algebra, such that $L$ admits an atlas $\set{\phi_i: U_i \times \alg g \to L_{U_i}}$ where each $\phi_{i, m}: \alg g \to L_m$ is a Lie algebra isomorphism.
+\end{definition}
+
 \begin{proposition}
 $\Gamma A$ is a finite projective module over $M$. Furthermore, the map $a: \Gamma(A) \to \Gamma(TM)$ is $C^\infty(M)$-linear.
 \end{proposition}
@@ -60,6 +66,25 @@ $\Gamma A$ is a finite projective module over $M$. Furthermore, the map $a: \Gam
 \end{proof}
 
 The previous result remarks the algebraic perspective which may also be used to study this topic, in contrast to the topological perspective that has been adopted in this document. However, this perspective is sometimes useful and will be used whenever clarity may be gained by its use.
+
+We now present some basic definitions.
+
+\begin{definition}
+    Let $A$ be a Lie algebroid with anchor $a$.
+    
+    \begin{itemize}
+    
+    \item $A$ is a \emph{transitive Lie algebroid} if $a$ is fiberwise surjective anchor.
+    
+    \item $A$ is a \emph{regular Lie algebroid} if $a$ is of locally constant rank.
+    
+    \item $A$ is \emph{totally intransitive} if $a = 0$.
+    
+    \end{itemize}
+    
+\end{definition}
+
+If $A$ is a regular Lie algebroid, the image of the anchor defines an involutive distribution on $M$ and, in consequence, a foliation of the base manifold called \emph{the characteristic foliation of $A$}. Then, the restriction of $A$ to each leaf is a transitive Lie algebroid.
 
 \begin{definition} [(Base preserving) morphism of Lie algebroids] 
 Given two algebroids over the manifold $M$, $A$ with anchor $a$ and $A'$ with anchor $a'$, \emph{a base preserving Lie algebroid morphism} $\phi: A \to A'$ is a vector bundle morphism such that $a' \comp \phi = a $, and such that $\phi[\sect{\oid X}, \sect{\oid Y}] = [\phi(\oid X), \phi(\oid Y)]$ for all $\sectoid X, \sectoid Y \in \Gamma(A)$. 
@@ -431,14 +456,12 @@ Let $E$ be a (smooth) vector bundle over $P$ with projection map $p^E: E \to P$.
 \end{enumerate}
 
 Then \emph{the quotient space $E/G$ has a (smooth) vector bundle structure over $M$, called \emph{the quotient vector bundle of $(E, p^E, P)$ by the action of $G$}, which is unique} in the sense that:
-
 \begin{itemize}
     \item $E/G$ has the unique manifold structure that makes the quotient map $\natural: E \to E/G$ a surjective submersion.
     \item $E/G$ has the unique vector bundle structure that makes the quotient map $\natural$ linear over $\pi: P \to M$.
 \end{itemize}
 
 Furthermore, the diagram
-
 \begin{equation} \label{pullbackQuotient}
 \begin{tikzcd}
     E \arrow[two heads]{r}{\natural} \arrow{d}{p^E} & E/G \arrow{d}{p^{E/G}} \\
@@ -1003,6 +1026,21 @@ is called \emph{the Atiyah sequence of the principal bundle $P(M, G)$}.
 
 \end{definition}
 
+
+\section{LABs and Transitive Lie Algebroids}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Definitions comming from Lie algebra theory semisimple, nilpotent, abelian, reductive.
+
+
+
+The kernel of the anchor is a Lie algebroid, I think, and each of its fibers is a Lie algebra due to the $C^\infty$ linearity of the bracket, I think. 
+
+Theorem: The adjoint bundle of a TLA is a LAB. Proved, I think, at the very beginning of Ch 6, or of a section of Ch 6.
+
 \section{Representations}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1014,20 +1052,6 @@ This is a generalization of associated vector bundles of a principal bundle. In 
 Adjoint representation
 
 Equivariant
-
-\section{LABs and Transitive Lie Algebroids}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Definitions comming from Lie algebra theory semisimple, nilpotent, abelian, reductive.
-
-If $A$ is regular, the image of the anchor defines a foliation of the base manifold, \emph{the characteristic foliation of $A$}, which is transitive over each leaf of the foliation.
-
-The kernel of the anchor is a Lie algebroid, I think, and each of its fibers is a Lie algebra due to the $C^\infty$ linearity of the bracket, I think. 
-
-Theorem: The adjoint bundle of a TLA is a LAB. Proved, I think, at the very beginning of Ch 6, or of a section of Ch 6.
 
 \section{Local Description of Transitive Lie Algebroids}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
