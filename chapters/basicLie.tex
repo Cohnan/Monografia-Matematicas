@@ -318,15 +318,72 @@ The subfamily of examples we will be most interested in is the family of $P \tim
 \subsubsection{Explicit Examples}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{The Derivations Algebroid of a Vector Bundle}
+\subsection{The Algebroid of Derivations on a Vector Bundle}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Summary in the beginning Ch 3.3 Liner vector fields
+% Summary in the beginning Ch 3.3 Liner vector fields
 
-Makes reasonable, not only the understanding of Lie algebroids as generalized directions, but also of the 2nd compatibility condition.
+% Makes reasonable, not only the understanding of Lie algebroids as generalized directions, but also of the 2nd compatibility condition.
 
-By the main result of Ch 7 of Tu, a $0$-diferential operator (i.e. a $C^\infty(M)$ map)
+% By the main result of Ch 7 of Tu, a $0$-diferential operator (i.e. a $C^\infty(M)$ map)
+
+Let $(E, p, M)$ be a vector bundle. Its \emph{algebroid of derivations} $\alg D(E)$ is analogous to the Lie algebra of infinitesimal linear transformations $\alg{gl}(V)$ of a vector space $V$. In fact, if $E = M \times V$ is a trivial vector bundle, $\alg D(E)$ is isomorphic to the trivial Lie algebroid $TM \oplus (M \times \alg{gl}(V))$.
+
+Let $End(E)$ denote the vector bundle whose sections are vector bundle endomorphisms or $E$, which has $End(E_m)$ as fiber at $m \in M$. It is known that vector bundle morphisms over a manifold are in a bijective correspondence with $C^\infty(M)$-maps between the spaces of sections, so we may regard the sections of $End(E)$ as $C^\infty(M)$-linear maps $\Gamma(E) \to \Gamma(E)$, also called \emph{$0$th-order differential operstors on $E$}.
+
+A \emph{$1$st-order differential operator on $E$} is an $\RR$-linear map 
+\[
+    D: \Gamma(E) \to \Gamma(E)
+\]
+such that, for every $f \in C^\infty(M)$, the map
+\begin{align*}
+    F: \Gamma(E) \to \Gamma(E) && \sect \mu \mapsto D(f \sect \mu) - f D(\sect \mu)
+\end{align*}
+is a $0$-th order differential operator. It is not hard to check that these condition implies that $1$-st order differential operators are also local operators on $E$. They are sections of a vector bundle $Diff^1(E)$ on $M$, whose fiber at $m \in M$ is $\set{D_m: \Gamma(E) \to E_m \st D_p \textrm{ is $\RR$-linear}}$. Common examples include the usual partial derivatives on $E = \RR^n \times \RR$, the Lie derivative $\mathcal L_{\sect X}$ on $E = TM$ and the covariant derivatives $\nabla_{\sect X}$ on any $E$, where $\sect X$ is a vector field on $M$.
+
+Let $Hom(T^*M, End(E))$ be the vector bundle over $M$ whose sections are vector bundle morphisms between $T^* M$ and $End(E)$ over $M$ or, equivalently, $\RR$-linear maps $\Omega^1(TM) \to \Gamma(End(E))$. Define \emph{the symbol map} to be the vector bundle morphism
+\begin{align*}
+    \sigma: Diff^1(E) \to Hom(T^*M, End(E)) 
+\end{align*}
+defined by its $C^\infty(M)$-linear action on sections:
+\begin{align*}
+    \sigma(D)(fdg)(\sect \mu) := f (D(g \sect \mu) - g D(\sect \mu)); && D \in \Gamma(\alg D(E));\, f, g \in C^\infty(M);\, \sect \mu \in \Gamma(E).
+\end{align*}
+Note that the previous definitions suffices since $\sigma(D) \in \Gamma(Hom(T^*M, End(E)))$ is a local operator because it is a $C^\infty(M)$ map. $\sigma$ is a surjective submersion\todo{what allows him to say this so easily in some many opportunities?}, and its kernel is precisely $End(E)$ since $F$ is $0$ precisely here.
+
+$TM$ is embedded into $Hom(T^*M, End(E))$ via
+\begin{align*}
+    \sect X \mapsto (\omega \mapsto \omega(X) \mu)
+\end{align*}
+and $\sigma^{-1}(TM)$ may be realized as the pullback on the category of (smooth) vector bundles over $M$
+\begin{equation*}
+    \begin{tikzcd}
+        \alg D(E) \arrow[dashed]{r}{a} \arrow[dashed]{d} & TM  \arrow{d}\\
+        Diff^1(E) \arrow{r}{\sigma} & Hom(T^*M, End(E)).
+    \end{tikzcd}
+\end{equation*}
+$\alg D(E)$ can be regarded as a vector subbundle of $Diff^1(E)$ since the left vertical arrow must be an injective immersion, and $a: \alg D(E) \to TM$ is a surjective vector bundle map since the bottom arrow is so. This means that we have an exact sequence of vector bundles over $M$
+\begin{equation}
+        0 \rightarrow End(E) \rightarrow \alg D(E) \rightarrow^a TM \rightarrow 0
+\end{equation}
+
+The sections of $\alg D(E)$ are called \emph{derivations on $E$}, and they are characterized inside the $1$st-order differental operators $\Gamma(E) \to \Gamma(E)$ by: for any $D \in \Gamma(\alg D(E))$ there exists a vector field $a(D)$ on $M$ such that
+\begin{equation}
+    D(f \sect \mu) = f D(\sect \mu) + a(D)(f) \sect \mu
+\end{equation}
+for all $f \in C^\infty(M)$, $\sect \mu \in \Gamma(E)$.
+
+To complete the structure of $\alg D(E)$ as a Lie algebroid, the operator bracket
+\begin{equation*}
+    [D, D'] = D \circ D' - D' \circ D
+\end{equation*}
+is also a derivation on $E$, for any $D, D' \in \Gamma(\alg D(E))$, and it is straightforward to verify the compatibility conditions
+\begin{align}
+    a([D, D']) &= [a(D), a(D')] \\
+    [D, f D'] &= f[D, D'] + a(D)(f) D'
+\end{align}
+for all $D, D' \in \Gamma(\alg D(E)), f \in C^\infty(M)$ which allow us to, conclude that $(\alg D(E), a, [\cdot, \cdot])$ is a transitive Lie algebroid on $M$, called \emph{the Lie algebroid of Derivations on $E$}.
 
 \subsection{Other (Families of) Examples}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -337,6 +394,8 @@ Foliations
 Homogeneous
 
 Extensions
+
+TM with strange bracket
 
 Coming from Lie groupoids
 
@@ -356,37 +415,7 @@ Makes reasonable undrestanding of Lie algebroids as sets of directions that are 
 
 In \ref{} we motivated the use of $TP/G$ as a natural place to talk about connections of $P$, and why that was important, and we also claimed in \ref{} that it was a vector bundle over $M$, that it inherited a well defined bracket, and that the quotient map of the pushforward of the projection was vector bundle morphism into $TM$.
 
-%    \begin{itemize}
-%    \item Alternative 1: 
-%        \item $TP$ is a vector bundle over $P$, $G$ acts to the right. (+ $G$ acts by v.b. isomorphism + $TP$ is covered by equivariant charts i.e. the action of $g$ doesn't affect the vector in which $p$ or $pg$ correspond). By proposition 3.1.1. of Mackenzie 
-%            \begin{itemize}
-%            \item $TP/G$ is a vector bundle over $M$,
-%            %\item the projection $TP \to TP/G$ is a surjective bundle morphism (and submersion)
-%            %\item and $TP$ is a pullback of $TP/G$ by the projection $\pi:P \to M$
-%            \end{itemize}  
-%        \item The bracket is well defined
-%    \item Alternative 2:
-%        \begin{itemize}
-%        \item $TP/G \to M$ is a ($C^\infty(M)$) vector bundle over $M$ (3.1.1 gives a more general procedure for this)
-%        \item Anchor: easy
-%        \item $\Gamma(TP/G)$ has a Lie bracket. Steps:
-%            \begin{itemize}
-%            \item $C^\infty(M)$-module isomorphic to $\Gamma_G(TP)$
-%            \item $[\sect{\oid X}, \sect{\oid Y}]$ for $\sectoid X, \sectoid Y \in \Gamma_G(TP)$ is also in $\Gamma_G(TP)$
-%            \item Has Lie bracket: should be easy: pullback of the Lie bracket of the isomorphism
-%            \end{itemize}
-        
-%        \item Compatibility Cond 1: Not sure. Perhaps using, for $f \in C^\infty(M)$ the corresponding $\tilde f \in C_G^\infty(P)$ (the smoothness can be shown easily with for every local trivialization using the smoothness of $f$)
-        
-%        \item Compatibility COnd. 2: Not sure, but it should end up proving that $\oid X (\tilde f) = \Tilde{X(f)}$
-%        \end{itemize}
-%    \end{itemize}
-
-
-%Now we check the compatibility conditions:
-
-%Alternative 3:%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{The Vector Bundle}
+\subsection*{The Vector Bundle $TP/G$}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -937,8 +966,8 @@ Therefore, for any $\sect \mu, \sect \nu \in \Gamma(P \times \alg g/ G)$
     [\upsect{j(\sect \mu)}, \upsect{j(\sect \nu)}]_p 
     &= \lim_{t \to 0} \frac{\phi_{-t*}(\upsect{j(\sect \nu)}_{\phi_t(p)})  - \upsect{j(\sect \nu)}_{p} }{t}\\
     &= - \frac{d}{dt}_{t = 0} \phi_{t*} (\upsect{j(\sect \nu)}_{\phi_{-t}(p)}) \\
-    &= - \frac{d}{dt}_{t = 0} (\phi_{t} \circ m_{\phi_{-t}(p)})_{*, 1} (\tilde{\sect \nu}(\phi_{-t}(p))) \\
-    &= (m_{p})_{*, 1} \left(- \frac{d}{dt}_{t = 0} \tilde{\sect \nu}(p \exp{(-t \tilde{\sect \mu}(p))}) \right) \\
+    &= - \frac{d}{dt}_{t = 0} (\phi_{t} \circ m_{\phi_{-t}(p)})_{*, 1} (\tilde{\sect \nu}(\phi_{-t}(p)))\\
+    &= (m_{p})_{*, 1} \left(- \frac{d}{dt}_{t = 0} \tilde{\sect \nu}(p \exp{(-t \tilde{\sect \mu}(p))}) \right), \quad \phi_t \circ m_{\phi_{-t}(p)} = m_p \\
     &= (m_{p})_{*, 1} \left(- \frac{d}{dt}_{t = 0} Ad_{\exp{(t \tilde{\sect \mu}(p))}}\tilde{\sect \nu}(p) \right) \\
     &= m_{p*, 1} ([\tilde{\sect \mu}(p), \tilde{\sect \nu}(p)]^R)
 \end{align*}
