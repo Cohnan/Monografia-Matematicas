@@ -1023,7 +1023,7 @@ This can be done due to the equivalence between vector bundle maps over $M$ and 
 \end{definition}
 
 \begin{remark}
-If $A$ is a regular Lie algebroid with anchor $a$, both $im(a)$ and $ker(a)$ are vector subbundles or $A$ and $TM$ respective. By theorem \ref{kerAlgebroid} $ker(a)$ is in fact a totally intransitive Lie algebroid. The image of the anchor defines an involutive distribution on $M$ and, in consequence, a foliation of the base manifold called \emph{the characteristic foliation of $A$}. Then, the restriction of $A$ to each leaf is a transitive Lie algebroid. \todo{verify these claims}
+If $A$ is a regular Lie algebroid with anchor $a$, both $im(a)$ and $ker(a)$ are vector subbundles or $A$ and $TM$ respective. By theorem \ref{kerAlgebroid} $ker(a)$ is in fact a totally intransitive Lie algebroid. The image of the anchor defines an involutive distribution \todo{is an involutive distribution always a vector bundle?} on $M$ and, in consequence, a foliation of the base manifold called \emph{the characteristic foliation of $A$}. Then, the restriction of $A$ to each leaf is a transitive Lie algebroid. \todo{verify these claims}
 
 Additionally, we can apply theorem \ref{theoFiberLie} to see that, locally, a regular Lie algebroid is simply the vector bundle $U \times (V \oplus \alg g)$, where $V$ is a vector subspace of the tangent space at some $m \in U \subset M$.
 \end{remark}
@@ -1051,6 +1051,27 @@ Although a full proof requires knowledge on locally trivial groupoids, an almost
 Let $ad: A \to \alg D(L)$ be the adjoint representation of $A$ on $L$ and let $\gamma: TM \to A$ be a connection in $A$, which exists due to \ref{theoConnectionExists}. Denote by $\nabla = ad \circ \gamma : TM \to \alg D(L)$ the produced connection in $L$. This connection satisfies $\nabla_{\sect X}[\sect \mu, \sect \nu] = [\nabla_{\sect X} \sect \nu, \sect \mu] + [\sect \nu, \nabla_{\sect X} \sect mu]$, and the existence of such connection is equivalent to $L$ being an LAB (this may be proved with tools of path connections).
 \end{proof}
 
+\begin{definition}\label{defnPhi+}
+Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ and $0 \to L' \xrightarrow{j'} A' \xrightarrow{a'} TM \to 0$ be transitive Lie algebroids sequences over $M$. Let $\phi: A \to A'$ be a morphism of Lie algebroids. since, $a' \circ \phi = a$, $\phi$ induces a morphism of Lie algebroids denoted by
+\begin{align*}
+    \phi^+: L \to L'
+\end{align*}
+\end{definition}
+
+\begin{proposition}
+Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ and $0 \to L' \xrightarrow{j'} A' \xrightarrow{a'} TM \to 0$ be transitive Lie algebroids sequences over $M$. Let $\phi: A \to A'$ be a morphism of Lie algebroids. Then $\phi$ is a surjection, injection or bijection if and only if $\phi^+: L \to L'$ has the respective property.
+\end{proposition}
+
+\begin{proof}
+\begin{equation*}
+    \begin{tikzcd}
+        L \arrow[hook]{r}{j} \arrow{d}{\phi^+} & A \arrow[two heads]{r}{a} \arrow{d}{\phi} & TM \arrow[equal]{d} \\
+        a & a & a
+    \end{tikzcd}
+\end{equation*}
+\end{proof}
+
+Theo: locally constant rank both $\phi$ and $\phi^+$
 
 \linea
 
