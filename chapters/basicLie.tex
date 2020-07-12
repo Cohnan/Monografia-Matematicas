@@ -45,8 +45,8 @@ Let $(q:A \to M, a: A \to M, [,]:\Gamma(A)\times \Gamma(A) \to \Gamma(A))$ be a 
 
 The simplest examples of Lie algebroids are the tangent bundle $TM$ of a manifold $M$ with the commutator of vector fields as bracket and $id_{TM}$ as anchor, and a Lie algebra, when considered as a vector bundle over a point. The following is a straightforward generalization of the latter, which contrasts the tangent bundle in the sense that we might consider it a space of only vertical directions ``on'' $M$.
 
-\begin{definition}
-    Let $\alg g$ be a Lie algebra. A \emph{Lie algebra bundle} or \emph{LAB} \emph{with fiber type $\alg g$} is a vector bundle $(L, q, M)$ together with a section of the vector bundle $Alt^2(L; L)$ of alternating $2$-forms with values on $L$ such that, at any $m \in M$, $[\cdot, \cdot]_m:L_m \times L_m \to L_m$ makes $L_m$ a Lie algebra i.e. \emph{a field of Lie algebra brackets}, such that $L$ admits an atlas $\set{\phi_i: U_i \times \alg g \to L_{U_i}}$ such that each $\phi_{i, m}: \alg g \to L_m$ is a Lie algebra isomorphism. 
+\begin{definition}[LAB]\label{defnLAB}
+    Let $\alg g$ be a Lie algebra. A \emph{Lie algebra bundle} or \emph{LAB} is a vector bundle $(L, q, M)$ together with a section of the vector bundle $Alt^2(L; L)$ of alternating $2$-forms with values on $L$ such that, at any $m \in M$, $[\cdot, \cdot]_m:L_m \times L_m \to L_m$ makes $L_m$ a Lie algebra i.e. \emph{$[\cdot, \cdot]:\Gamma(L) \times \Gamma(L) \to \Gamma(L)$ is a field of Lie algebra brackets}, such that $L$ admits an atlas $\set{\phi_i: U_i \times \alg g_i \to L_{U_i}}_{i \in I}$, where $\alg g_i$ is a Lie algebra and each $\phi_{i, m}: \alg g_i \to L_m$ is a Lie algebra isomorphism. A LAB is said to \emph{have fiber type $\alg g$} is there is an atlas such that $g_i = \alg g$ for all $i \in I$.
 \end{definition}
 
 Any $LAB$ on a manifold $M$ has a unique structure as a Lie algebroid on $M$ given by $a = 0$, since the field of Lie algebra brackets if $C^\infty(M)$-linear and so the second compatibility condition leaves us with no other choice for $a$.
@@ -983,29 +983,6 @@ is called \emph{the Atiyah sequence of the principal bundle $P(M, G)$}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{definition}
-    Let $A$ be a Lie algebroid with anchor $a$.
-    
-    \begin{itemize}
-    
-    \item $A$ is a \emph{transitive Lie algebroid} if $a$ is fiberwise surjective anchor.
-    
-    \item $A$ is a \emph{regular Lie algebroid} if $a$ is of locally constant rank.
-    
-    \item $A$ is \emph{totally intransitive} if $a = 0$.
-    
-    \end{itemize}
-    
-\end{definition}
-
-\begin{remark}
-If $A$ is a regular Lie algebroid, the image of the anchor defines an involutive distribution on $M$ and, in consequence, a foliation of the base manifold called \emph{the characteristic foliation of $A$}. Then, the restriction of $A$ to each leaf is a transitive Lie algebroid. Additionally, we can apply theorem \ref{theoFiberLie} to see that, locally, a regular Lie algebroid is simply the vector bundle $U \times (V \oplus \alg g)$, where $V$ is a vector subspace of the tangent space at some $m \in U \subset M$.
-\end{remark}
-
-\begin{remark}
-Any $LAB$ is a totally intransitive Lie algebroid, but the converse is not true since there might not be an adapted atlas.
-\end{remark}
-
 \begin{definition} [(Base preserving) morphism of Lie algebroids] \label{defnMorph}
 Given two algebroids over the manifold $M$, $A$ with anchor $a$ and $A'$ with anchor $a'$, \emph{a base preserving Lie algebroid morphism} or \emph{Lie algebroid morphism over $M$} 
 \[\phi: A \to A'\]
@@ -1029,6 +1006,51 @@ which is $C^\infty(M)$-linear, a Lie algebra morphism, and such that
 \end{align*}
 This can be done due to the equivalence between vector bundle maps over $M$ and $C^\infty(M)$-linear maps between sections.
 \end{remark}
+
+\begin{definition}
+    Let $A$ be a Lie algebroid with anchor $a$.
+    
+    \begin{itemize}
+    
+    \item $A$ is a \emph{transitive Lie algebroid} if $a$ is fiberwise surjective anchor.
+    
+    \item $A$ is a \emph{regular Lie algebroid} if $a$ is of locally constant rank.
+    
+    \item $A$ is \emph{totally intransitive} if $a = 0$.
+    
+    \end{itemize}
+    
+\end{definition}
+
+\begin{remark}
+If $A$ is a regular Lie algebroid with anchor $a$, both $im(a)$ and $ker(a)$ are vector subbundles or $A$ and $TM$ respective. By theorem \ref{kerAlgebroid} $ker(a)$ is in fact a totally intransitive Lie algebroid. The image of the anchor defines an involutive distribution on $M$ and, in consequence, a foliation of the base manifold called \emph{the characteristic foliation of $A$}. Then, the restriction of $A$ to each leaf is a transitive Lie algebroid. \todo{verify these claims}
+
+Additionally, we can apply theorem \ref{theoFiberLie} to see that, locally, a regular Lie algebroid is simply the vector bundle $U \times (V \oplus \alg g)$, where $V$ is a vector subspace of the tangent space at some $m \in U \subset M$.
+\end{remark}
+
+\begin{remark}
+Any $LAB$ is a totally intransitive Lie algebroid, but the converse is not true since there might not be an adapted atlas.
+\end{remark}
+
+Transitive Lie algebroids will be a main concert for us throughout this document. In this case, since the anchor is fiberwise surjective\todo{is this a satisfactory reason?} it is a surjective submersion, and, in particular, a vector bundle map of locally constant rank, so theorem \ref{kerAlgebroid} may be applied to conclude that its kernel is a Lie algebroid. However, more is true, as shown below.
+
+\begin{definition}\label{transitiveSequence}
+Let $A$ be a transitive Lie algebroid on $M$ with anchor $a$. A \emph{transitive Lie algebroid sequence of $A$} is an exact sequence of vector bundles
+\begin{align}
+    0 \to^j A \to^a TM \to 0
+\end{align}
+where $L$ is a Lie algebroid isomorphic to $ker(a)$ by a Lie algebroid morphism $j:L \to ker(a) \subset A$. The lie algebroid $L$ is called an \emph{adjoint Lie algebroid of (the transitive Lie algebroid) A}.
+\end{definition}
+Notice that an adjoint Lie algebroid of $A$ must be a totally intransitive Lie algebroid with a bracket compatible, through some $j$, with the bracket inherited by $ker(a)$ from $A$.
+
+\begin{theorem}\label{theoAdjointLAB} % Theorem 6.5.1
+Let $L \hookrightarrow^j A \twoheadrightarrow^a TM$ be an Atiyah Lie algebroid sequence of the transitive Lie algebroid $A$ over $M$. Then $L$ is a Lie algebra bundle with respect to the bracket structure on $\Gamma(L)$ induced by that on $\Gamma(A)$.
+\end{theorem}
+Although a full proof requires knowledge on locally trivial groupoids, an almost complete proof will be possible once we develop the tools of connections on Lie algebroids in chapter \ref{chp:connections}. \todo{Move this proof to a more appropriate place  in Ch 3 and reference it once written}
+\begin{proof}
+Let $ad: A \to \alg D(L)$ be the adjoint representation of $A$ on $L$ and let $\gamma: TM \to A$ be a connection in $A$, which exists due to \ref{theoConnectionExists}. Denote by $\nabla = ad \circ \gamma : TM \to \alg D(L)$ the produced connection in $L$. This connection satisfies $\nabla_{\sect X}[\sect \mu, \sect \nu] = [\nabla_{\sect X} \sect \nu, \sect \mu] + [\sect \nu, \nabla_{\sect X} \sect mu]$, and the existence of such connection is equivalent to $L$ being an LAB (this may be proved with tools of path connections).
+\end{proof}
+
 
 \linea
 
@@ -1059,15 +1081,7 @@ Let $A, A'$ be Lie algebroids over $M$.
 
 
 \linea
-
-
-Definitions comming from Lie algebra theory semisimple, nilpotent, abelian, reductive.
-
-
-
-Theorem: The adjoint bundle of a TLA is a LAB. Proved, I think, at the very beginning of Ch 6, or of a section of Ch 6.
-
-
+%Definitions comming from Lie algebra theory semisimple, nilpotent, abelian, reductive.
 
 The following concept generalizes that of associated vector bundles of a principal bundle $P(G, M)$. In the principal bundle theory, sections of an associated vector bundle with fiber $V$ are equivalent to $G$-equivariant functions $P \to V$, so $G$-invariant vector fields $\ppal X \in \Gamma(TP)$, or equivalently sections in $\Gamma(TP/G)$ as proposition \ref{3.1.3} shows, are derivations of the sections of $E$ (satisfying Leibniz for $G$-invariant functions of $P$ / to functions in $M$). Similarly, sections of a Lie algebroid $A$ act as derivations on representation vector bundles $E$. In particular, a (Lie algebroid connection) on $A$ will induce a vector bundle connection and covariant derivatives on a representation vector bundle $E$, just as principal bundle connections induce covariant derivatives in associated vector bundles.
 
@@ -1133,12 +1147,6 @@ Let $A$ be a Lie algebroid on $M$ and let $V$ be a vector space. \emph{The trivi
     \rho^0(\sectoid X)(f) := a(X)(f), && f: M \to V,\, \sectoid \in \Gamma(A)
 \end{align*}
 where $a(\sectoid X)(f)$ means the standard Lie derivative of $f$ in direction of the vector field $a(\sectoid X)$.
-\end{definition}
-
-
-
-\begin{definition}[Adjoint representation]
-
 \end{definition}
 
 
