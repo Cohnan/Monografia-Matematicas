@@ -1110,8 +1110,20 @@ It is clear that $\rho$ is $C^\infty(M)$-linear in $\sectoid X$ and $\RR$-linear
 This equation also shows us that \[a(\rho(\sectoid X)) = a(\sectoid X),\] so $\rho$ is compatible with the anchors. The fact that, by definition of the bracket on $\Gamma(TP/G)$, the map $\sectoid X \mapsto \upsect{\sectoid X}$ is a Lie algebra morphism implies the respective property for $\rho$. 
 
 All of these combined mean that $\rho: \Gamma(TP/G) \to \Gamma(\alg D(E))$ is indeed a Lie algebra representation of $TP/G$ in $E = P \times V/G$.
-
 \end{example}
+
+\begin{definition}(Adjoint representation of a transitive Lie algebroid)\label{defnAdjointAct}
+Let $A$ be a transitive Lie algebroid on $M$ with adjoint bundle $L$. \emph{The adjoint representation of $A$} is the representation on $L$
+\begin{align*}
+    ad: A \to \alg D(L), 
+\end{align*}
+such that
+\begin{align*}
+     ad(\sectoid X)(\sect \mu) = j^{-1}[\sectoid X, j(\sect \mu)]
+\end{align*}
+for all $\sectoid X \in \Gamma(A)$, $\sect \mu \in \Gamma(L)$.
+\end{definition}
+The adjoint action is well defined since the anchor commutes with the bracket.
 
 %Equivariant 1 Equivariant 2
 
