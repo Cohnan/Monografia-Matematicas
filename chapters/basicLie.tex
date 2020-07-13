@@ -456,7 +456,7 @@ A pullback bundle $\pi^*E/G$ can be characterized \todo{something else is missin
 \end{proof}
 
 \begin{theorem}\label{theoTPGexists}
-The vector bundle $\pi_*:TP \to P$ over the principal bundle $P$, on which $g \in G$ acts to the right by the push-forward of the right translation map $R_g: P \to P$ on $P$, satisfies the conditions of (\ref{3.1.1}).
+The vector bundle $\pi_*:TP \to P$ over the principal bundle $P$, on which $g \in G$ acts to the right by the push-forward of the right translation map $R_g: P \to P$ on $P$, satisfies the conditions of theorem \ref{3.1.1}.
 \end{theorem}
 
 We will denote by $\pi_*^G:TP/G \to M$ the projection map of the quotient vector bundle of $(TP, \pi, P)$ under the action of $G$, and we will call it \emph{the vector bundle of the Atiyah Lie algebroid of the principal bundle $P$}.
@@ -477,8 +477,8 @@ Given $p_0 \in P$, to construct an equivariant $\pi$-saturated chart near $p$ we
 
 Concretely, let
 \begin{align*}
-    \Tilde \Phi :& (U \times G) \times (\RR^n \oplus \alg g) & \to^{\cong} & TP|_{\mathcal U} \\    
-                 & (m, g, v, \eta) & \mapsto & \phi_{*, (m, g)}(\theta_{*, \theta^{-1}(m)} v, R_{g*, 1} \eta) 
+    \Tilde \Phi :& (U \times G) \times (\RR^n \oplus \alg g) && \to^{\cong} && TP|_{\mathcal U} \\    
+                 & (m, g, v, \eta)&& \mapsto &&\phi_{*, (m, g)}(\theta_{*, \theta^{-1}(m)} v, R_{g*, 1} \eta) 
 \end{align*}
 now, define $\Phi : \mathcal U \times (\RR^n \oplus \alg g)  \to  T_{\mathcal U}P$ by $\Psi = \phi^{-1} \times id_{\RR^n \oplus \alg g}$. %The isomorphisms mentioned above mean that Given any $p \in P$ %and $X_m \in T_m M$ where $m = \pi(p)$, it is always possible to write $p = \phi(m, g)$ and $X_m = \theta_{*, \theta^{-1}(m)} v$ for some $g \in G, v \in \RR^n$; in this case
 
@@ -786,7 +786,7 @@ $\pi_*$ is $G$-equivariant since $\pi \circ R_g = \pi$, therefore the existence 
 
 \begin{align*}
     \Tilde \Phi :& (U \times G) \times \alg g & \to^{\cong} & T^\pi P|_{\mathcal U} \\    
-                 & (m, g, \eta) & \mapsto & \phi_{*, (m, g)}(0, R_{g*, 1} \eta).
+                 & (m, g, \eta)&& \mapsto &&\phi_{*, (m, g)}(0, R_{g*, 1} \eta).
 \end{align*}
 Now, $\Phi : \mathcal U \times \alg g  \to  T_{\mathcal U}P$ by $\Psi = \phi^{-1} \times id_{\alg g}$ is the desired $G$-equivariant chart by the same arguments used in the proof of theorem \ref{theoTPGexists}.
 
@@ -1147,7 +1147,7 @@ All of these combined mean that $\rho: \Gamma(TP/G) \to \Gamma(\alg D(E))$ is in
 \begin{example}
 Let $\nabla: \Gamma(E) \to \Gamma(T^*M \otimes E)$ be a connection on a a vector bundle $E$. That statement is equivalent to: given any $\sect X \in \Gamma(TM)$,
 \begin{align*}
-    \Gamma(TM) & \to & \Gamma(\alg D(E))
+    \Gamma(TM) && \to && \Gamma(\alg D(E))
     \sec X &\mapsto& \nabla_{\sect X}
 \end{align*}
 is a $C^\infty(M)$-linear mapping from the vector fields on $M$ to the derivations on $E$. The Leibniz identity of the derivation $\nabla_{\sect X}$ implies that $a(\nabla_{\sect X}) = \sect X$. This means that a connection on $E$ is only missing the compatibility with the brackets to be a representation, but this compatibility is equivalent to the property of a connection being flat. Therefore \emph{flat} connections on the vector bundle $E$ give us a representation of $TM$ on $E$.
@@ -1165,6 +1165,17 @@ such that
 for all $\sectoid X \in \Gamma(A)$, $\sect \mu \in \Gamma(L)$.
 \end{definition}
 The adjoint action is well defined since the anchor commutes with the bracket.
+
+Perhaps\todo{complement of remove according to necessity}, if needed later: metric: representations of $\alg D(E)$ induced by frame groupoid action
+    \begin{itemize}
+    
+    \item On $Hom^n(E; M \times \RR)$, $Alt^n$, $Sum^n$
+    
+    \item On $Hom^n(E; E)$, $Alt^n$, $Sum^n$
+    
+    \item Of $\alg D(E)\oplus_{TM} \alg D(E')$ on $Hom(E; E')$
+    
+    \end{itemize}
 
 %Equivariant 1 Equivariant 2
 
@@ -1188,47 +1199,62 @@ where $a(\sectoid X)(f)$ means the standard Lie derivative of $f$ in direction o
 Recall that lemma \ref{lemmaSectionLocal} indicated that allowed us to restrict a Lie algebroid to an open subset $U$ of the base manifold. We now study how a transitive Lie algebroid is a collection of locally defined trivial Lie algebroids correctly pasted together.
 
 \begin{definition}[Lie algebroid atlas]
-Let $L \hookrightarrow^j A \twoheadrightarrow TM$ be a transitive Lie algebroid sequence, and let $\alg g$ be a Lie algebra. Given an open cover $\set{U_i}_{i \in I}$ of $M$, a \emph{a Lie algebroid atlas for $A$} is a collection $\set{U_i, \phi_i:U_i \times \alg g \to L_{U_i}, \Theta_i: TU_i \to A_{U_i}}_{i \in I}$ such that:
+Let $L \hookrightarrow^j A \twoheadrightarrow TM$ be a transitive Lie algebroid sequence, and let $\alg g$ be a Lie algebra. Given an open cover $\set{U_i}_{i \in I}$ of $M$, a \emph{a Lie algebroid atlas for $A$} is a collection $\set{U_i, \phi_i:U_i \times \alg g \to L_{U_i}, \Theta^i: TU_i \to A_{U_i}}_{i \in I}$ such that:
     \begin{itemize}
     
-    \item each $\Theta^i: TU_i \to A_{u_i}$ is Lie algebroid morphisms,
+    \item each $\Theta^i: TU_i \to A_{u_i}$ is a Lie algebroid morphism,
     
-    \item the family $\set{\phi_i}$ is a LAB atlas for the adjoint bundle 
+    \item the family $\set{\phi_i:U_i \times \alg g \to L_{U_i}}$ is a LAB atlas for the adjoint bundle 
     
-    \item 
+    \item for all $\sect X \in \Gamma(TU_i)$, $\sect \eta \in C^\infty(U_i, \alg g) \cong \Gamma(U_i \times \alg g)$
         \begin{align} \label{eqnCompLocal}
-            [\Theta_i(\sect X), j\circ \phi_i(\sect \mu)] = j\circ \phi_i(\sect X(\sect \mu))
+            [\Theta^i(\sect X), j\phi_i(\sect \eta)] = j\phi_i([\sect X \oplus 0, 0 \oplus \sect \eta]) \equiv j\phi_i(\sect X(\sect \eta)) 
         \end{align}
-    for all $\sect X \in \Gamma(TU_i)$, $\sect \mu \in C^\infty(U_i, \alg g) \cong \Gamma(U_i \times \alg g)$. Such .
     
     \end{itemize}
 \end{definition}
 
 \begin{theorem}
-Every transitive Lie algebroid is locally trivial.
+Every transitive Lie algebroid has a Lie algebroid atlas.
 \end{theorem}
 \begin{proof}
 At least show that it follows from Theorem 8.2.1 (TLA over contractible $M$ admits a flat connection; this theorem is analogous to ``every ppal bundle over a contractible space has a global section'', and so requires top. algebra: cohomology theory of Ch 7 in this case). The proof I mention I should do is, I think, in page 317
 \end{proof}
 
-For a locally trivial transitive Lie algebroid $L \hookrightarrow^j A \twoheadrightarrow TM$ with a Lie algebroid atlas $\set{U_i, \phi_i:U_i \times \alg g\to L_{U_i}, \Theta_i}_{i \in I}$, the maps:
-\begin{align}
-    S_i:& TU_i \oplus (U_i \times \alg g) &\to& A_{U_i}\\
-        & S \oplus \mu & \mapsto & \Theta_i(X) + \phi_i(\mu)
+Throughout this chapter $L \hookrightarrow^j A \twoheadrightarrow TM$ will be a Lie algebroid sequence with Lie algebroid atlas $\set{U_i, \phi_i:U_i \times \alg g\to L_{U_i}, \Theta^i}_{i \in I}$.
+
+Let
+\begin{align}\label{defnLocalIsom}
+    S_i:&& TU_i &\oplus (U_i \times \alg g) &&\to&& A_{U_i}\\
+        && X &\oplus \eta && \mapsto && \Theta^i(X) + j\phi_i(\eta).
 \end{align}
-are Lie algebroid isomorphisms thanks to equation (\ref{eqnCompLocal}) which guarantees the compatibility with the bracket. Furthermore, for each $i \in I$ 
+This vector bundle morphisms inherit the compatibility with the anchors from the respective property of the Lie algebroid morphisms $\Theta^i$, and are compatible with the bracket due to the compatibility equation (\ref{eqnCompLocal}) which is equivalent to the equation
+\begin{align*}
+    S_i[\sect X \oplus 0, 0 \oplus \sect \eta] = [S_i(X \oplus 0), S_i(0 \oplus \eta)]
+\end{align*}, thus we proved the following:
+
+\begin{theorem}
+The maps $S_i : TU_i \oplus (U_i \times \alg g) \to A_{U_i}$ defined in equation \ref{defnLocalIsom} are Lie algebroid isomorphisms between the trivial Lie algebroids $TU_i \oplus (U_i \times \alg g)$ and $A_{U_i}$.
+
+Furthermore for each $i \in I$ 
 \begin{align*}
     \phi_i = S_i^+: U_i \times \alg g \to L_{U_i}
 \end{align*} and 
 \begin{align*}
-    \Theta_i(X) = S_i(X \oplus 0)
+    \Theta^i(X) = S_i(X \oplus 0)
 \end{align*}
 for all $X \in TU_i$.
+\end{theorem}
+
+This means that for every $\oid X \in A_{U_{i}}$, let $X = a(\oid X) \in TM$ and so there is some $\eta^i \in U_i \times \alg g$ such that
+\begin{align}
+    \oid X = S(X \oplus \eta^i)
+\end{align}
 
 Now, to understand the transition between charts of a Lie algebroid atlas, let 
 \begin{align*}
-    a^i_j:& U_{ij} = U_i \inter U_j &\to& Aut(\alg g)\\
-          & m & \mapsto & \phi^{-1}_{i, m} \circ \phi_{j, m}
+    \alpha^i_j:&& U_{ij} &= U_i \inter U_j &&\to&& Aut(\alg g)\\
+               && &m && \mapsto && \phi^{-1}_{i, m} \circ \phi_{j, m}
 \end{align*} be the transition functions for $\set{\phi_i}$
 
 TODO $l_{ij}$, $\chi^i_j$
@@ -1237,7 +1263,7 @@ TODO $l_{ij}$, $\chi^i_j$
 Structure of Lie algebroid morphisms between Trivial Lie algebroids: relevant for intersections.
 \end{proposition}
 
-\section{Actions of Lie Algebroids?}
+%\section{Actions of Lie Algebroids?}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
