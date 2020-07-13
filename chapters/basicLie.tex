@@ -46,7 +46,7 @@ Let $(q:A \to M, a: A \to M, [,]:\Gamma(A)\times \Gamma(A) \to \Gamma(A))$ be a 
 The simplest examples of Lie algebroids are the tangent bundle $TM$ of a manifold $M$ with the commutator of vector fields as bracket and $id_{TM}$ as anchor, and a Lie algebra, when considered as a vector bundle over a point. The following is a straightforward generalization of the latter, which contrasts the tangent bundle in the sense that we might consider it a space of only vertical directions ``on'' $M$.
 
 \begin{definition}[LAB]\label{defnLAB}
-    Let $\alg g$ be a Lie algebra. A \emph{Lie algebra bundle} or \emph{LAB} is a vector bundle $(L, q, M)$ together with a section of the vector bundle $Alt^2(L; L)$ of alternating $2$-forms with values on $L$ such that, at any $m \in M$, $[\cdot, \cdot]_m:L_m \times L_m \to L_m$ makes $L_m$ a Lie algebra i.e. \emph{$[\cdot, \cdot]:\Gamma(L) \times \Gamma(L) \to \Gamma(L)$ is a field of Lie algebra brackets}, such that $L$ admits an atlas $\set{\phi_i: U_i \times \alg g_i \to L_{U_i}}_{i \in I}$, where $\alg g_i$ is a Lie algebra and each $\phi_{i, m}: \alg g_i \to L_m$ is a Lie algebra isomorphism. A LAB is said to \emph{have fiber type $\alg g$} is there is an atlas such that $g_i = \alg g$ for all $i \in I$.
+    Let $\alg g$ be a Lie algebra. A \emph{Lie algebra bundle} or \emph{LAB} is a vector bundle $(L, q, M)$ together with a section of the vector bundle $Alt^2(L; L)$ of alternating $2$-forms with values on $L$ such that, at any $m \in M$, $[\cdot, \cdot]_m:L_m \times L_m \to L_m$ makes $L_m$ a Lie algebra i.e. \emph{$[\cdot, \cdot]:\Gamma(L) \times \Gamma(L) \to \Gamma(L)$ is a field of Lie algebra brackets}, such that $L$ admits an atlas, called \emph{an LAB atlas}, $\set{\phi_i: U_i \times \alg g_i \to L_{U_i}}_{i \in I}$, where $\alg g_i$ is a Lie algebra and each $\phi_{i, m}: \alg g_i \to L_m$ is a Lie algebra isomorphism. A LAB is said to \emph{have fiber type $\alg g$} is there is an atlas such that $g_i = \alg g$ for all $i \in I$.
 \end{definition}
 
 Any $LAB$ on a manifold $M$ has a unique structure as a Lie algebroid on $M$ given by $a = 0$, since the field of Lie algebra brackets if $C^\infty(M)$-linear and so the second compatibility condition leaves us with no other choice for $a$.
@@ -1185,13 +1185,57 @@ where $a(\sectoid X)(f)$ means the standard Lie derivative of $f$ in direction o
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Theorem: A TLA is locally trivial.
+Recall that lemma \ref{lemmaSectionLocal} indicated that allowed us to restrict a Lie algebroid to an open subset $U$ of the base manifold. We now study how a transitive Lie algebroid is a collection of locally defined trivial Lie algebroids correctly pasted together.
 
-Proof: At least show that it follows from Theorem 8.2.1 (TLA over contractible $M$ admits a flat connection; this theorem is analogous to ``every ppal bundle over a contractible space has a global section'', and so requires top. algebra: cohomology theory of Ch 7 in this case). The proof I mention I should do is, I think, in page 317
+\begin{definition}[Lie algebroid atlas]
+Let $L \hookrightarrow^j A \twoheadrightarrow TM$ be a transitive Lie algebroid sequence, and let $\alg g$ be a Lie algebra. Given an open cover $\set{U_i}_{i \in I}$ of $M$, a \emph{a Lie algebroid atlas for $A$} is a collection $\set{U_i, \phi_i:U_i \times \alg g \to L_{U_i}, \Theta_i: TU_i \to A_{U_i}}_{i \in I}$ such that:
+    \begin{itemize}
+    
+    \item each $\Theta^i: TU_i \to A_{u_i}$ is Lie algebroid morphisms,
+    
+    \item the family $\set{\phi_i}$ is a LAB atlas for the adjoint bundle 
+    
+    \item 
+        \begin{align} \label{eqnCompLocal}
+            [\Theta_i(\sect X), j\circ \phi_i(\sect \mu)] = j\circ \phi_i(\sect X(\sect \mu))
+        \end{align}
+    for all $\sect X \in \Gamma(TU_i)$, $\sect \mu \in C^\infty(U_i, \alg g) \cong \Gamma(U_i \times \alg g)$. Such .
+    
+    \end{itemize}
+\end{definition}
 
-Recall Lemma \ref{lemmaSectionLocal}
+\begin{theorem}
+Every transitive Lie algebroid is locally trivial.
+\end{theorem}
+\begin{proof}
+At least show that it follows from Theorem 8.2.1 (TLA over contractible $M$ admits a flat connection; this theorem is analogous to ``every ppal bundle over a contractible space has a global section'', and so requires top. algebra: cohomology theory of Ch 7 in this case). The proof I mention I should do is, I think, in page 317
+\end{proof}
 
-Proposition: structure of Lie algebroid morphisms between Trivial Lie algebroids: relevant for intersections.
+For a locally trivial transitive Lie algebroid $L \hookrightarrow^j A \twoheadrightarrow TM$ with a Lie algebroid atlas $\set{U_i, \phi_i:U_i \times \alg g\to L_{U_i}, \Theta_i}_{i \in I}$, the maps:
+\begin{align}
+    S_i:& TU_i \oplus (U_i \times \alg g) &\to& A_{U_i}\\
+        & S \oplus \mu & \mapsto & \Theta_i(X) + \phi_i(\mu)
+\end{align}
+are Lie algebroid isomorphisms thanks to equation (\ref{eqnCompLocal}) which guarantees the compatibility with the bracket. Furthermore, for each $i \in I$ 
+\begin{align*}
+    \phi_i = S_i^+: U_i \times \alg g \to L_{U_i}
+\end{align*} and 
+\begin{align*}
+    \Theta_i(X) = S_i(X \oplus 0)
+\end{align*}
+for all $X \in TU_i$.
+
+Now, to understand the transition between charts of a Lie algebroid atlas, let 
+\begin{align*}
+    a^i_j:& U_{ij} = U_i \inter U_j &\to& Aut(\alg g)\\
+          & m & \mapsto & \phi^{-1}_{i, m} \circ \phi_{j, m}
+\end{align*} be the transition functions for $\set{\phi_i}$
+
+TODO $l_{ij}$, $\chi^i_j$
+
+\begin{proposition}
+Structure of Lie algebroid morphisms between Trivial Lie algebroids: relevant for intersections.
+\end{proposition}
 
 \section{Actions of Lie Algebroids?}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
