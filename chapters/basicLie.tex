@@ -1196,7 +1196,7 @@ where $a(\sectoid X)(f)$ means the standard Lie derivative of $f$ in direction o
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Recall that lemma \ref{lemmaSectionLocal} indicated that allowed us to restrict a Lie algebroid to an open subset $U$ of the base manifold. We now study how a transitive Lie algebroid is a collection of locally defined trivial Lie algebroids correctly pasted together.
+Recall that lemma \ref{lemmaSectionLocal} allowed us to restrict a Lie algebroid to an open subset $U$ of the base manifold. We now study how a transitive Lie algebroid is a collection of locally defined trivial Lie algebroids correctly pasted together.
 
 \begin{definition}[Lie algebroid atlas]
 Let $L \hookrightarrow^j A \twoheadrightarrow TM$ be a transitive Lie algebroid sequence, and let $\alg g$ be a Lie algebra. Given an open cover $\set{U_i}_{i \in I}$ of $M$, a \emph{a Lie algebroid atlas for $A$} is a collection $\set{U_i, \phi_i:U_i \times \alg g \to L_{U_i}, \Theta^i: TU_i \to A_{U_i}}_{i \in I}$ such that:
@@ -1223,7 +1223,7 @@ At least show that it follows from Theorem 8.2.1 (TLA over contractible $M$ admi
 
 Throughout this chapter $L \hookrightarrow^j A \twoheadrightarrow TM$ will be a Lie algebroid sequence with Lie algebroid atlas $\set{U_i, \phi_i:U_i \times \alg g\to L_{U_i}, \Theta^i}_{i \in I}$.
 
-Let
+In chapter \ref{chp:connections} we will see that the $\Theta^i$ are flat connections in $A_{U_i}$ and so their image gives a notion of horizontallity in $A_{U_i}$ and $ \oid X \mapsto \Theta^i(a(\oid)) \in A_{U_i}$ is the horizontal projection of $\oid X$ induced by $\Theta^i$.
 \begin{align}\label{defnLocalIsom}
     S_i:&& TU_i &\oplus (U_i \times \alg g) &&\to&& A_{U_i}\\
         && X &\oplus \eta && \mapsto && \Theta^i(X) + j\phi_i(\eta).
@@ -1248,20 +1248,77 @@ for all $X \in TU_i$.
 
 This means that for every $\oid X \in A_{U_{i}}$, let $X = a(\oid X) \in TM$ and so there is some $\eta^i \in U_i \times \alg g$ such that
 \begin{align}
-    \oid X = S(X \oplus \eta^i)
+    \oid X = S_i(X \oplus \eta^i)
 \end{align}
 
-Now, to understand the transition between charts of a Lie algebroid atlas, let 
-\begin{align*}
-    \alpha^i_j:&& U_{ij} &= U_i \inter U_j &&\to&& Aut(\alg g)\\
-               && &m && \mapsto && \phi^{-1}_{i, m} \circ \phi_{j, m}
-\end{align*} be the transition functions for $\set{\phi_i}$
-
-TODO $l_{ij}$, $\chi^i_j$
+Now, to understand the transition between charts of a Lie algebroid atlas,
 
 \begin{proposition}
 Structure of Lie algebroid morphisms between Trivial Lie algebroids: relevant for intersections.
 \end{proposition}
+
+Let 
+\begin{align*}
+    \alpha^i_j:&& U_{ij} &= U_i \inter U_j &&\to&& Aut(\alg g)\\
+               && &m && \mapsto && \alpha^i_{j, m} := \phi^{-1}_{i, m} \circ \phi_{j, m}
+\end{align*} 
+be the transition functions for $\set{\phi_i}$. Since any element $\eta \in U_i \times \alg g$ is of the form $\eta = (m, \eta_m)$ for some $m \in U_{ij}$ and $\eta_m \in \alg g$, denote also by $\alpha^i_j$ the maps
+\begin{align}
+    \alpha^i_j:&& U_{ij} \times \alg g &&\to&& U_{ij} \times \alg g\\
+               && \eta = (m, \eta_m) && \mapsto && \alpha^i_j(\eta) := \phi^{-1}_{i} \circ \phi_{j}(\eta);
+\end{align}
+notice that $\alpha^i_j(\eta) = (m, \alpha^i_{j, m}(\eta_m))$.
+
+Notice, however, that for $\oid X = S_j(X \oplus \eta^j)$ in $A_{U_{ij}}$, $\oid X \neq S_i(X \oplus \alpha^i_j(\eta^j))$ since $S_i(X \oplus \alpha^i_j(\eta^j)) = \Theta_i(X) + j\phi_i(\alpha^i_j(\eta^j)) = \Theta^i(X) + j\phi^j(\eta^j) = S_j(X \oplus \eta^j) + (\Theta^i(X) - \Theta^j(X))$. $a(S_j(X \oplus \eta^j)) = a(S_i(X \oplus \alpha^i_j(\eta^j)))$ so $\Theta^i(X) - \Theta^j(X) \in ker(a)$ and we may define the $L_{U_ij}$-valued $1$-form
+\begin{align}
+    l^i_j: TU_{ij} & \to L_{U_{ij}} \\
+            X & \mapsto j^{-1}(\Theta^j(X) - \Theta^i(X)),
+\end{align} and the $\alg g$-valued $1$-forms
+\begin{eqnsplit}
+    \chi^i_j:  TU_{ij} & \to  U_{ij} \times \alg g \\
+               X & \mapsto  \phi_i^{-1} \circ l^i_j(X)
+\end{eqnsplit} called \emph{the transition forms for the Lie algebroid atlas}.
+
+With this maps, in $A_{U_{ij}}$ the correct way to change from a local expression from another is given by
+\begin{align}
+    S_j(X \oplus \eta^j) = S_i(X \oplus [\alpha^i_j(\eta^j) + \chi^i_j(X)]).
+\end{align}
+In summary, for a Lie algebroid element that in the coordinate frame $j$ has formula $X \oplus \eta^j$ and formula $X \oplus \eta^i$ in the coordinate frame $j$, two corrections in the vertical components are need when the coordinate change from $i$ to $j$ is applied:
+\begin{itemize}
+    \item one for the distinct notions of horizontality induced by the $\Theta$'s: $\chi^i_j(X)$,
+    
+    \item another for the distinct ways the adjoint Lie algebroid $L_{U_{ij}}$ is trivialized as the bundle $U_{ij}\times \alg g$: $\alpha^i_j(\eta^j)$;
+\end{itemize} the addition of both corrections gives $\eta^i = \chi^i_j(X) + \alpha^i_j(\eta^j)$.
+
+We now present some useful formulas. Suppose $\oid X = S_i(X \oplus \eta^i) = S_j(X \oplus \eta^j) \in A_{U_{ij}}$, then 
+\begin{eqnsplit}
+    l^i_j(X) &= -j^{-1}(\Theta^i(X) - \Theta^j(X)) \\
+             &= \psi_i(\eta^i) - \psi_j(\eta^j)
+\end{eqnsplit} and
+\begin{align}
+    \chi^i_j(X) = \eta^i - \alpha^i_j(\eta^j)
+\end{align}
+
+The diagram \ref{fig:localMaps} illustrates at $m \in M$ the relation between some of the local maps introduced above.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width = \textwidth/2]{images/DiagramaMapasLocalesAlgebroide.jpg}
+    \caption{Representation of the local maps introduced to study a transitive Lie algebroid $A$. The whole space represents, roughly, the vector space $A_m$ for $m \in M$, and $\oid X$ such that $a(\oid X) = X$ is an arbitrary element in $A_m$. Understanding $j$ as an inclusion, the vertical axis represents the adjoint Lie algebroid fiber $L_m$. The horizontal axis represents the tangent space $T_m M$, but it is not part of $A_m$, since there is no canonical horizontal direction in $A_m$. The images of $\Theta^i$ and $\Theta^j$ give two distinct notions of horizontality in $A_m$.}
+    \label{fig:localMaps}
+\end{figure}
+
+\begin{theorem}
+$\chi^i_j: U_{ij} \to U_{ij} \times \alg g$ is a Maurer-Cartan form, i.e. it satisfies the Maurer-Cartan equation:
+\begin{align*}
+    d \chi^i_j(X, Y) + [\chi^i_j(X), \chi^i_j(Y)] = 0
+\end{align*} for all $X, Y \in TU_{ij}$.
+\end{theorem}
+
+\begin{proof}
+Add proof is this theorem is indeed left in the document. This reduces to the fact that the standard flat connection in $U_i \times \alg g$ is mapped through $\phi^i$ to the adjoint connection $\nabla^{\Theta^i}$ in $L_{U_i}$ induced by the flat connection $\Theta^i$ in $A_{U_i}$. 
+\end{proof}
+
 
 %\section{Actions of Lie Algebroids?}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

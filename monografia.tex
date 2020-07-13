@@ -68,6 +68,15 @@
 \newtheorem{notation}[example]{Notation}
 \newtheorem{remark}[example]{Remark}
 
+\usepackage{environ}
+
+\NewEnviron{eqnsplit}{%
+  \begin{equation}
+  \begin{split}
+    \BODY
+  \end{split}
+  \end{equation}
+}
 %%%%%%%
 
 \DeclareMathOperator{\HH}{\bb H}
