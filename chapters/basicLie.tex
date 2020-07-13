@@ -1063,12 +1063,16 @@ Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ and $0 \to L' \xrightar
 \end{proposition}
 
 \begin{proof}
-\begin{equation*}
-    \begin{tikzcd}
-        L \arrow[hook]{r}{j} \arrow{d}{\phi^+} & A \arrow[two heads]{r}{a} \arrow{d}{\phi} & TM \arrow[equal]{d} \\
-        a & a & a
-    \end{tikzcd}
-\end{equation*}
+We may think of $L$ and $L'$ as the kernels of the anchors, so $j$ and $j'$ are simply the inclusion maps and $\phi^+ = \phi_L$. Since $a' \circ \phi = a$, $ker(\phi) \subset \ker(a) = L$, and so, by linearity, $\phi$ is injective if and only if $\phi^+$ is injective.
+
+By the same property, only elements of $L$ can be mapped to $L'$ $\phi$ being surjective implies that $\phi^+$ is surjective. For the converse, we recall that the anchors are fiberwise surjective, so given any $\oid Y \in A'$ such that $a'(\oid Y) = Y \in TM$, we can find an element $\oid X_1 \in A$ with $a(\oid X) = Y$; let $\nu = \oid Y - \phi(\oid X_1)$, so $\nu \in L'$ and if $\phi^+$ is surjective there must exist $\mu \in L$ such that $\phi^+(\mu) = \nu$ and so $\oid X = \oid X_1 + \mu$ satisfies $\phi(X) = \oid Y$, which allows us to conclude that $\phi$ must also be surjective.
+
+% \begin{equation*}
+%     \begin{tikzcd}
+%         L \arrow[hook]{r}{j} \arrow{d}{\phi^+} & A \arrow[two heads]{r}{a} \arrow{d}{\phi} & TM \arrow[equal]{d} \\
+%         a & a & a
+%     \end{tikzcd}
+% \end{equation*}
 \end{proof}
 
 Theo: locally constant rank both $\phi$ and $\phi^+$
