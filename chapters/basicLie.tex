@@ -1066,16 +1066,9 @@ Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ and $0 \to L' \xrightar
 We may think of $L$ and $L'$ as the kernels of the anchors, so $j$ and $j'$ are simply the inclusion maps and $\phi^+ = \phi_L$. Since $a' \circ \phi = a$, $ker(\phi) \subset \ker(a) = L$, and so, by linearity, $\phi$ is injective if and only if $\phi^+$ is injective.
 
 By the same property, only elements of $L$ can be mapped to $L'$ $\phi$ being surjective implies that $\phi^+$ is surjective. For the converse, we recall that the anchors are fiberwise surjective, so given any $\oid Y \in A'$ such that $a'(\oid Y) = Y \in TM$, we can find an element $\oid X_1 \in A$ with $a(\oid X) = Y$; let $\nu = \oid Y - \phi(\oid X_1)$, so $\nu \in L'$ and if $\phi^+$ is surjective there must exist $\mu \in L$ such that $\phi^+(\mu) = \nu$ and so $\oid X = \oid X_1 + \mu$ satisfies $\phi(X) = \oid Y$, which allows us to conclude that $\phi$ must also be surjective.
-
-% \begin{equation*}
-%     \begin{tikzcd}
-%         L \arrow[hook]{r}{j} \arrow{d}{\phi^+} & A \arrow[two heads]{r}{a} \arrow{d}{\phi} & TM \arrow[equal]{d} \\
-%         a & a & a
-%     \end{tikzcd}
-% \end{equation*}
 \end{proof}
 
-Theo: locally constant rank both $\phi$ and $\phi^+$
+%Theo: locally constant rank both $\phi$ and $\phi^+$
 
 \linea
 
@@ -1083,26 +1076,26 @@ Theo: locally constant rank both $\phi$ and $\phi^+$
 Let $A, A', A''$ be Lie algebroids over $M$. \emph{An extension of Lie algebroids over $M$} is a sequence of Lie algebroids over $M$ \[ 0 \to A' \to A \to A'' \to 0 \] which is exact as sequence of vector bundles over $M$.
 \end{definition}
 
-\begin{definition}[Direct sum of Lie algebroids]
-Let $A, A'$ be Lie algebroids over $M$. 
-\end{definition}
+% \begin{definition}[Direct sum of Lie algebroids]
+% Let $A, A'$ be Lie algebroids over $M$. 
+% \end{definition}
 
 
-\begin{definition}[General Morphism]
+% \begin{definition}[General Morphism]
 
-\end{definition}
+% \end{definition}
 
-\begin{definition}[Direct products]
+% \begin{definition}[Direct products]
 
-\end{definition}
+% \end{definition}
 
-\begin{definition}[Pullbacks]
+% \begin{definition}[Pullbacks]
 
-\end{definition}
+% \end{definition}
 
-\begin{definition}[Quotients]
+% \begin{definition}[Quotients]
 
-\end{definition}
+% \end{definition}
 
 
 \linea
@@ -1149,6 +1142,15 @@ It is clear that $\rho$ is $C^\infty(M)$-linear in $\sectoid X$ and $\RR$-linear
 This equation also shows us that \[a(\rho(\sectoid X)) = a(\sectoid X),\] so $\rho$ is compatible with the anchors. The fact that, by definition of the bracket on $\Gamma(TP/G)$, the map $\sectoid X \mapsto \upsect{\sectoid X}$ is a Lie algebra morphism implies the respective property for $\rho$. 
 
 All of these combined mean that $\rho: \Gamma(TP/G) \to \Gamma(\alg D(E))$ is indeed a Lie algebra representation of $TP/G$ in $E = P \times V/G$.
+\end{example}
+
+\begin{example}
+Let $\nabla: \Gamma(E) \to \Gamma(T^*M \otimes E)$ be a connection on a a vector bundle $E$. That statement is equivalent to: given any $\sect X \in \Gamma(TM)$,
+\begin{align*}
+    \Gamma(TM) & \to & \Gamma(\alg D(E))
+    \sec X &\mapsto& \nabla_{\sect X}
+\end{align*}
+is a $C^\infty(M)$-linear mapping from the vector fields on $M$ to the derivations on $E$. The Leibniz identity of the derivation $\nabla_{\sect X}$ implies that $a(\nabla_{\sect X}) = \sect X$. This means that a connection on $E$ is only missing the compatibility with the brackets to be a representation, but this compatibility is equivalent to the property of a connection being flat. Therefore \emph{flat} connections on the vector bundle $E$ give us a representation of $TM$ on $E$.
 \end{example}
 
 \begin{definition}(Adjoint representation of a transitive Lie algebroid)\label{defnAdjointAct}
