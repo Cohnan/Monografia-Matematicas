@@ -18,20 +18,22 @@ A \emph{Lie algebroid over $M$} is a triple $(q:A \to M, a, [\cdot, \cdot ])$, w
     \end{itemize}  which satisfy the following compatibility conditions:
 
 \begin{enumerate}
-    \item The map induced by $a$ on the sections $\sectoid X \mapsto (m \mapsto a(\sectoid X(m)))$, which we call by the same name $a:\Gamma(A) \to \Gamma(TM)$, is a \emph{Lie algebra morphism}, that is, for any $\sectoid X, \sectoid Y \in \Gamma(A)$ \[ a([\sect{\oid X}, \sect{\oid Y}])  = [a(\sect{\oid X}), a(\sect{\oid Y})] \in  \Gamma(TM)\]
+    \item The $C^\infty(M)$ map induced by $a$ on the sections $\sectoid X \mapsto (m \mapsto a(\sectoid X(m)))$, which we call by the same name $a:\Gamma(A) \to \Gamma(TM)$, is a \emph{Lie algebra morphism}; that is, for any $\sectoid X, \sectoid Y \in \Gamma(A)$ \[ a([\sect{\oid X}, \sect{\oid Y}])  = [a(\sect{\oid X}), a(\sect{\oid Y})] \in  \Gamma(TM)\]
     
     \item (Leibniz identity) For any $\sectoid X, \sectoid Y \in \Gamma(A)$, $f \in C^\infty (M)$: \[ [\sect{\oid X}, f\sect{\oid Y}] = f[\sect{\oid X}, \sect{\oid Y}] + a(\sect{\oid X})(f)\, \oid Y \] where $a(\sect{\oid X})(f)$ means the usual derivative of an element of a function on $M$ in the direction of $a(\sect{\oid X}) \in \Gamma(TM)$.
 \end{enumerate}
 \end{definition}
 
-As it is usual, to simplify notation we will often say instead that \emph{$A$ is a Lie algebroid over the manifold $M$ with anchor $a$}, and the brackets will be denoted simply by $[,]$ for all Lie algebroids.
+As it is usual, to simplify notation we will often say instead that \emph{$A$ is a Lie algebroid over the manifold $M$ with anchor $a$}, and the brackets will be denoted simply by $[\cdot , \cdot]$ for all Lie algebroids.
 
-When talking about $C^r-$differentiable vector fields, a vector-bundle chart, or simply a chart, will make reference to a local trivialization $\phi: U \times V \to E|_U$ which is $C^r$-differentiable (and a vector bundle isomorphism, by definition of local trivialization).
+When talking about $C^r-$differentiable vector bundles, a vector-bundle chart, or simply a chart, will make reference to a local trivialization $\phi: U \times V \to E|_U$ which is $C^r$-differentiable (and a vector bundle isomorphism, by definition of local trivialization).
+
+In general, when talking about vector bundles, say $E$ over $M$, boldface letters will be used to denote sections of the vector bundle, for instance $\sect \mu \in Gamma(E)$, and its value in the fiber $m \in M$ will be denoted both by $\sect \mu(m)$ and by $\sect \mu_m$.  
 
 \ptext{For the rest of the chapter $A$ will refer to a Lie algebroid over a manifold $M$ with anchor $a$, unless otherwise stated.}
 
 \begin{proposition}
-Given an open subset $U$ of $M$, and given $\oid X, \oid Y : M \to A$ sections of the vector bundle $A$, the restriction to $U$ of $[\sect{\oid X}, \sect{\oid Y}] \in \Gamma(A)$ depends only on the restrictions of $\oid X$ and $\oid Y$ to $U$. REWRITE
+Given an open subset $U$ of $M$, and given $\sectoid X, \sectoid Y : M \to A$, the restriction to $U$ of $[\sect{\oid X}, \sect{\oid Y}] \in \Gamma(A)$ depends only on the restrictions of $\oid X$ and $\oid Y$ to $U$. REWRITE
 \end{proposition}
 \begin{proof}
 Leibniz implies that the Lie bracket is a local operator (See Tu, Ch 7).
@@ -49,13 +51,13 @@ The simplest examples of Lie algebroids are the tangent bundle $TM$ of a manifol
     Let $\alg g$ be a Lie algebra. A \emph{Lie algebra bundle} or \emph{LAB} is a vector bundle $(L, q, M)$ together with a section of the vector bundle $Alt^2(L; L)$ of alternating $2$-forms with values on $L$ such that, at any $m \in M$, $[\cdot, \cdot]_m:L_m \times L_m \to L_m$ makes $L_m$ a Lie algebra i.e. \emph{$[\cdot, \cdot]:\Gamma(L) \times \Gamma(L) \to \Gamma(L)$ is a field of Lie algebra brackets}, such that $L$ admits an atlas, called \emph{an LAB atlas}, $\set{\phi_i: U_i \times \alg g_i \to L_{U_i}}_{i \in I}$, where $\alg g_i$ is a Lie algebra and each $\phi_{i, m}: \alg g_i \to L_m$ is a Lie algebra isomorphism. A LAB is said to \emph{have fiber type $\alg g$} is there is an atlas such that $g_i = \alg g$ for all $i \in I$.
 \end{definition}
 
-Any $LAB$ on a manifold $M$ has a unique structure as a Lie algebroid on $M$ given by $a = 0$, since the field of Lie algebra brackets if $C^\infty(M)$-linear and so the second compatibility condition leaves us with no other choice for $a$.
+Any $LAB$ on a manifold $M$ has a \emph{unique structure as a Lie algebroid on $M$} given by $a = 0$, since the field of Lie algebra brackets if $C^\infty(M)$-linear and so the second compatibility condition leaves us with no other choice for $a$.
 
-The following theorem gives us insight on the structure of Lie algebroids, specifically on their ``vertical'' part, i.e. the kernel of the anchor map.
+The following theorem gives us insight on the structure of Lie algebroids, specifically on their ``vertical'' portion, i.e. the kernel of the anchor map.
 
 \begin{theorem} \label{theoFiberLie}
 Let $A$ be a Lie algebroid over the manifold $M$ with anchor $a$, and suppose $ker(a)$ is a vector subbundle of $A$. Then $ker(a)$ %is a Lie algebroid over $M$ with trivial anchor, i.e. $ a = 0$, and the bracket on the sections of $ker(a)$ restrict to a Lie bracket on the fibers, making \emph{each fiber of $ker(a)$ a Lie algebra}, i.e. $ker(a)$ 
-is a Lie algebra bundle.
+is a Lie algebra bundle, called \emph{the vertical sub-Lie algebroid of $A$}.
 \end{theorem}
 
 \begin{proof}
@@ -73,7 +75,7 @@ $\Gamma A$ is a finite projective module over $M$. Furthermore, the map $a: \Gam
     \end{itemize}
 \end{proof}
 
-The previous result remarks the algebraic perspective which may also be used to study this topic, in contrast to the topological perspective that has been adopted in this document. However, this perspective is sometimes useful and will be used whenever clarity may be gained by its use.
+The previous result remarks the algebraic perspective which may also be used to study this topic, in contrast to the topological perspective that has been adopted in this document. However, this perspective is useful and will be used whenever clarity may be gained by its use.
 
 \section{Examples}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -81,88 +83,79 @@ The previous result remarks the algebraic perspective which may also be used to 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{The Tangent Bundle}
+\subsection{Fundamental Examples: Tangent Bundles and LABs}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The tangent bundle of a manifold $M$ is the most basic example of a Lie algebroid, as it should be if we want to understand Lie algebroids on $M$ as generalized directions on $M$.
+The tangent bundle of a manifold $M$ is the most basic example of a Lie algebroid, as it should be if we want to understand Lie algebroids on $M$ as generalized directions on $M$, since $TM$ represent those directions tangent to $M$.
 
-For any manifold $M$, its tangent bundle $TM$ with its projection $\pi:TM \to M$ and the vector field commutator $[,]: \Gamma(TM)\times \Gamma(TM) \to \Gamma(TM)$ as bracket, together with the identity of $TM$ as anchor make $TM$ a Lie algebroid over $M$.
+For any manifold $M$, its tangent bundle $(TM, \pi, M)$ together with the vector field commutator $[,]: \Gamma(TM) \times \Gamma(TM) \to \Gamma(TM)$ as bracket and with the identity of $TM$ as anchor make of $TM$ a Lie algebroid over $M$. Notice how, evidently, the anchor is fiberwise surjective, meaning that every tangent direction on $M$ has a representative in this Lie algebroid. Additionally, there are no ``vertical directions'' since the vertical sub-Lie algebroid of $TM$ is the $0$ bundle on $M$.
 
-We will denote by capital letters near the end of the alphabet like $X, Y$ to refer both to elements of $TM$ and of $\Gamma(TM)$, and $X_m$ if we want to emphasize that it is in the fiber of $m \in M$\complete{Come up with a way to refer to sections that differs from element of TM, or perhaps but mentioning it as notation}
+An, in some sense, contrasting family of examples is given by Lie Algebra Bundles, or LABS, over $M$ as defined in \ref{defnLAB}. A LAB $L$ over $M$ necessarily has a trivial anchor $a = 0$, so $L$ is its own vertical sub-Lie algebroid and its elements are solely ``vertical directions'' on $M$, isomorphic in each fiber to a Lie algebra.
 
-\subsubsection{Explicit Examples}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \subsubsection{Explicit Examples}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The following are manifolds and their tangent bundles which we will use regularly.
+% The following are manifolds and their tangent bundles which we will use regularly.
 
-    \begin{itemize}
-    \item $\RR^n$. Its tangent vectors may be expressed both as derivatives of paths, or simply as vectors that are associated to a specific fiber.
-        \begin{itemize}
-        \item $\CC^2$
-        \item $\HH^2$
-        \end{itemize}
-    \item $S^1$. Its tangent vectors are:
-    \item $S^2$. Some of its tangent vectors are: . A set of basis vectors is...
-    \item $S^3$ / $\HH^*$. Some of its tangent vectors are: . A set of basis vectors is...
-    \end{itemize}
+%     \begin{itemize}
+%     \item $\RR^n$. Its tangent vectors may be expressed both as derivatives of paths, or simply as vectors that are associated to a specific fiber.
+%         \begin{itemize}
+%         \item $\CC^2$
+%         \item $\HH^2$
+%         \end{itemize}
+%     \item $S^1$. Its tangent vectors are:
+%     \item $S^2$. Some of its tangent vectors are: . A set of basis vectors is...
+%     \item $S^3$ / $\HH^*$. Some of its tangent vectors are: . A set of basis vectors is...
+%     \end{itemize}
 
-\subsection{Lie Algebroid Bundles}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{definition}[Lie Algebroid Bundle]
-$M \times \alg g$
-\end{definition}
 
-The anchor is defined as $0$.
-
-In contrast to the Lie algebroid $TM$, this Lie algebroid consists only of ``vectical directions'' .
-
-\subsection{Pullbacks of Regular Submanifolds and Involutive Distributions}
+\subsection{Involutive Distributions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-A family of related examples that show the arising of Lie algebroids is the restrict $TM$ to the regular submanifold $N$, in which case we not only have the tangent directions to $N$, but also some additional ``vertical'' or ``perpendicular'' directions.
+A family of examples that show the arising of Lie algebroids is the restrict $TM$ to a regular submanifold $N$ of $N$, in which case we not only have the tangent directions to $N$, but also some additional ``vertical'' or ``perpendicular'' directions.
 
-Let $N$ topological subspace of $M$ be a regular submanifold of $M$ (i.e. $N$ may be described locally by the vanishing of some of the coordinates of a chart of $M$; alternatively, the inclusion $N \to M$ is an immersion). Let $T\bar N = \pi^{-1} M$; it is easy to see\complete{I believe that in Mackenzie 2.1 or 2.2 something about pullbacks is said, perhaps allowing me to prove that this is true} that this vector bundle is homeomorphic to the pullback of $TM$ under the inclusion of $N$ in $M$. Let anchor $a = i^*\pi: T \bar N \to TN$ 
+% Let $N$ topological subspace of $M$ be a regular submanifold of $M$ (i.e. $N$ may be described locally by the vanishing of some of the coordinates of a chart of $M$; alternatively, the inclusion $N \to M$ is an immersion). Let $T\bar N = \pi^{-1} M$; it is easy to see\complete{I believe that in Mackenzie 2.1 or 2.2 something about pullbacks is said, perhaps allowing me to prove that this is true} that this vector bundle is homeomorphic to the pullback of $TM$ under the inclusion of $N$ in $M$. Let anchor $a = i^*\pi: T \bar N \to TN$ 
 
-Again using a compatible adapted atlas of $M$ relative to $N$, we may prove that 
-\begin{itemize}
-\item The vector bundle $TN$ is embedded in $T \bar N$
-\item The bracket of $TM$ restricts correctly to $T \bar N$
-\item See that $T \bar N = TN \oplus T^\perp N$
-\item See that $a(T^\perp N) = 0$.
-\end{itemize}
+% Again using a compatible adapted atlas of $M$ relative to $N$, we may prove that 
+% \begin{itemize}
+% \item The vector bundle $TN$ is embedded in $T \bar N$
+% \item The bracket of $TM$ restricts correctly to $T \bar N$: FALSE!!: the definition of the bracket requires vector FIELDS and there is no way to define a vector field on $TM|_N$ starting with a perpendicular vector. e.g. $S^1 \subset \RR^2, \RR^3$; even though a vector field in TM|N can be extended to a vector field in $TM$, there is no unique way to do so, and so the bracket can not be uniquely defined: not even the bracket with itself can be uniquely defined, even though it should be 0.
+% \item See that $T \bar N = TN \oplus T^\perp N$
+% \item See that $a(T^\perp N) = 0$.
+% \end{itemize}
  
-AAaaah, tal vez no puedo pegar los [X, Y] locales para hacer una seccion de $T \bar N$... por otro lado está la cuestión de si puedo extender cualquier sección $T \bar N$ a una seccion de $TM$... estas 2 cosas no me permiten ver si en efecto $T \bar N$ es algebroide de Lie \todo{Can I see that the local definition of the commutator transforms as a vector field?} Tal vez esto puede ser probado basandose en el hecho de que foliaciones regulares generan algebroide, si e... o al menos una subfamilia de estos ejemplos, en el que los submnanifold son hojas de una foliacion regular, deberia poderse probar a partir de ahi.
+% AAaaah, tal vez no puedo pegar los [X, Y] locales para hacer una seccion de $T \bar N$... por otro lado está la cuestión de si puedo extender cualquier sección $T \bar N$ a una seccion de $TM$... estas 2 cosas no me permiten ver si en efecto $T \bar N$ es algebroide de Lie \todo{Can I see that the local definition of the commutator transforms as a vector field?} Tal vez esto puede ser probado basandose en el hecho de que foliaciones regulares generan algebroide, si e... o al menos una subfamilia de estos ejemplos, en el que los submnanifold son hojas de una foliacion regular, deberia poderse probar a partir de ahi.
 
-Si este ejemplo funciona, is it always the sum of the tangent bundle and the ``normal bundle''?\todo{What is the normal bundle?} That is ``obvious'' in local coordinates.
-
-
+% Si este ejemplo funciona, is it always the sum of the tangent bundle and the ``normal bundle''?\todo{What is the normal bundle?} That is ``obvious'' in local coordinates.
 
 
-Explicit examples:
-\begin{itemize}
-\item If $N = \RR^2$ as a regular submanifold $\RR^3$, seen as the hyperplane $z = 0$, our Lie algebroid $T \bar {\RR^2}$ not only contains the span of $\partial_x$ and $\partial_y$, but also allows vectors with perpendicular components: in the direction of $\partial_y$. We may see this Lie algebroid as the direct sum of $T \RR^2$ with 
-\item If $N = S^2$ as a regular submanifold of $\RR^3$, using spherical coordinates we see that $T \bar {S^2}$ is not only $TS^2 = span\set{\partial_\theta, \partial_\phi}$, but also $T^\perp S^2 = span\set{\partial_r}$ 
-\item Let $N = \RR^2$ seen as the regular submanifold of $\RR^n$ determined by $x_3 = x_4 = \dots = 0$. In this case the original tangent direction to $N$ are spanned by $\partial_1, \partial_2$, but we have $n-2$ additional directions, all of which have $0$ as their anchor or horizontal component.
-\end{itemize}
+% Explicit examples:
+% \begin{itemize}
+% \item If $N = \RR^2$ as a regular submanifold $\RR^3$, seen as the hyperplane $z = 0$, our Lie algebroid $T \bar {\RR^2}$ not only contains the span of $\partial_x$ and $\partial_y$, but also allows vectors with perpendicular components: in the direction of $\partial_y$. We may see this Lie algebroid as the direct sum of $T \RR^2$ with 
+% \item If $N = S^2$ as a regular submanifold of $\RR^3$, using spherical coordinates we see that $T \bar {S^2}$ is not only $TS^2 = span\set{\partial_\theta, \partial_\phi}$, but also $T^\perp S^2 = span\set{\partial_r}$ 
+% \item Let $N = \RR^2$ seen as the regular submanifold of $\RR^n$ determined by $x_3 = x_4 = \dots = 0$. In this case the original tangent direction to $N$ are spanned by $\partial_1, \partial_2$, but we have $n-2$ additional directions, all of which have $0$ as their anchor or horizontal component.
+% \end{itemize}
 
 \subsubsection{Involutive Distributions/Foliations}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In the previous example we saw a family of examples of Lie algebroids which contained directions additional to the tangent directions of the manifold. However, the opposite may also occur.
+The following family of examples exemplify an intermediate case where a Lie algebroid is a space of tangent directions, but not all those directions are contained.
 
 \begin{definition} {Foliation of $M$}
-Let $\mathcal F = \set{L_\alpha}_{\alpha \in A}$ for some indexing set $A$ be a collection of disjoint connected regular submanifolds of $M$ whose union is all of $M$. $\mathcal F$ is called \emph{a $p$-dimensional (smooth) foliation of $M$} if every $m \in M$ is an element of a chart\todo{does it have to be a chart?}  $(U, \phi:U \to \RR^n)$ for which the coordinates of any $L_\alpha \in \mathcal F$ that intersects with $U$, $U \cap L_\alpha$ is described in the chart by the equations $x^{p+1} = c^{p+1}, \cdots , x^{n} = c^{n} $ for constants $c^{p+1}, \dots c^n \in \RR$. The elements $L_\alpha \in \mathcal F$ are called \emph{the leaves of the foliation $\mathcal F$}
+Let $\mathcal F = \set{L_\alpha}_{\alpha \in A}$ for some indexing set $A$ be a collection of disjoint connected regular submanifolds of $M$ whose union is all of $M$. $\mathcal F$ is called \emph{a %$p$-dimensional 
+(smooth) foliation of $M$} if every $m \in M$ is an element of a chart\todo{does it have to be a chart?}  $(U, \psi:U \to \RR^n)$ for which the coordinates of any $L_\alpha \in \mathcal F$ that intersects with $U$, $U \cap L_\alpha$ are described in the chart by the equations $x^{p+1} = c^{p+1}, \cdots , x^{n} = c^{n} $ for constants $c^{p+1}, \dots c^n \in \RR$ for some natural number $p$. The elements $L_\alpha \in \mathcal F$ are called \emph{the leaves of the foliation $\mathcal F$}.
 \end{definition}
 
 \begin{definition}{Distribution on $M$}
-\emph{An $q$-dimensional distribution on $M$} is a subbundle of $TM$ of rank $q$.
+A distribution $\Delta$ on $M$ is a vector subbundle of $TM$; it is called $q$-dimensional if $\Delta$ is a vector bundle of rank $q$.
 \end{definition}
 
-Let $\mathcal F = \set{L_\alpha}_{\alpha \in A}$ be a $p$-dimensional foliation of $M$. Each leaf is a regular submanifold of $M$, therefore $T L_\alpha$ is embedded in $TM$, so we see $T L_\alpha$ as a submanifold \todo{is it?} of $TM$, and so the disjoint union $E = \bigcup_{\alpha \in A} T L_\alpha$ is also a submanifold of $TM$. Additionally, we see that $E$ has vector bundle structure over $M$ of rank $p$, because each $m \in M$ is an element of a unique leaf $L$ and $T_m L \subset E$ is a vector space of dimension $p$; TL can be given a nice atlas?
+Let $\mathcal F = \set{L_\alpha}_{\alpha \in A}$ be a $p$-dimensional foliation of $M$. Each leaf is a regular submanifold of $M$, therefore $T L_\alpha$ is embedded\todo{is it?} in $TM$ and we may see $T L_\alpha$ as a submanifold of $TM$. The (disjoint) union $E = \bigcup_{\alpha \in A} T L_\alpha \subset TM$ can be given a (smooth) vector bundle structure: around $m \in M$ there is a chart $(U, \psi:U \to \RR^n)$ compatible with the foliation; from it we can construct a vector bundle chart $(U \times \RR^n, \phi: U \times \RR^n \to TM|_{U})$ for $TM$ which can be restricted to a chart $(U \times \RR^p, \tilde{\phi}: U \times \RR^p \to TL_{\alpha}|_{U})$ for $E$, where $E|_U = \bigcup_{\alpha: \, U \inter L_\alpha \neq \varnothing} T L_\alpha|_U$. This charts constructed around all $m\in M$ also show that $E$ is embedded in $TM$ as a vector subbundle.
+%E is also a submanifold of $TM$. Additionally, we see that $E$ has vector bundle structure over $M$ of rank $p$, because each $m \in M$ is an element of a unique leaf $L$ and $T_m L \subset E$ is a vector space of dimension $p$; TL can be given a nice atlas?
+
 
 Integrable distribution
 
@@ -540,7 +533,7 @@ $\Phi^{/G}$ is smooth: Given that $F := \Phi^{/G} \circ \natural = \natural' \ci
 \end{tikzcd}
 \]
 
-the smoothness of $F$ imply that the functions $F^i:\Psi(\mathcal U) \to \psi'(U')$ are smooth, but $\Tilde F^i(x_1, \dots, x_N) = \Tilde{\Phi^{/G}}^i(x_1, \dots, x_n)$, so the functions $\Tilde{\Phi^{/G}}^i:\psi(U) \to \psi'(U')$ that localize $\Psi^{/G}$ are smooth, therefore so is $\Phi^{/G}$. 
+the smoothness of $F$ implies that the functions $F^i:\Psi(\mathcal U) \to \psi'(U')$ are smooth, but $\Tilde F^i(x_1, \dots, x_N) = \Tilde{\Phi^{/G}}^i(x_1, \dots, x_n)$, so the functions $\Tilde{\Phi^{/G}}^i:\psi(U) \to \psi'(U')$ that localize $\Psi^{/G}$ are smooth, therefore so is $\Phi^{/G}$. 
 
 Finally, $\Phi^{/G}$ is a smooth vector bundle morphism over $f:M \to M'$ since $p^{E'/G'} \circ \Phi^{/G}(\langle \mu \rangle) = p^{E'/G'}(\langle \Phi(\mu) \rangle) = p^{E'}(\Phi(\mu)) = f \circ p^E (\mu) = f \circ p^{E/G} (\langle \mu \rangle)$.
 
