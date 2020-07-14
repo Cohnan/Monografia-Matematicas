@@ -24,11 +24,11 @@ A \emph{Lie algebroid over $M$} is a triple $(q:A \to M, a, [\cdot, \cdot ])$, w
 \end{enumerate}
 \end{definition}
 
-As it is usual, to simplify notation we will often say instead that \emph{$A$ is a Lie algebroid over the manifold $M$ with anchor $a$}, and the brackets will be denoted simply by $[\cdot , \cdot]$ for all Lie algebroids.
+\ptext{As it is usual, to simplify notation we will often say instead that \emph{$A$ is a Lie algebroid over the manifold $M$ with anchor $a$}, and the brackets will be denoted simply by $[\cdot , \cdot]$ for all Lie algebroids.}
 
-When talking about $C^r-$differentiable vector bundles, a vector-bundle chart, or simply a chart, will make reference to a local trivialization $\phi: U \times V \to E|_U$ which is $C^r$-differentiable (and a vector bundle isomorphism, by definition of local trivialization).
+\ptext{When talking about $C^r-$differentiable vector bundles, a vector-bundle chart, or simply a chart, will make reference to a local trivialization $\phi: U \times V \to E|_U$ which is $C^r$-differentiable (and a vector bundle isomorphism, by definition of local trivialization).}
 
-In general, when talking about vector bundles, say $E$ over $M$, boldface letters will be used to denote sections of the vector bundle, for instance $\sect \mu \in Gamma(E)$, and its value in the fiber $m \in M$ will be denoted both by $\sect \mu(m)$ and by $\sect \mu_m$.  
+\ptext{In general, when talking about vector bundles, say $E$ over $M$, boldface letters will be used to denote sections of the vector bundle, for instance $\sect \mu \in Gamma(E)$, and its value in the fiber $m \in M$ will be denoted both by $\sect \mu(m)$ and by $\sect \mu_m$.}
 
 \ptext{For the rest of the chapter $A$ will refer to a Lie algebroid over a manifold $M$ with anchor $a$, unless otherwise stated.}
 
@@ -42,7 +42,7 @@ Leibniz implies that the Lie bracket is a local operator (See Tu, Ch 7).
 The previous result allows us to restrict the Lie bracket of $A$ to the restriction vector bundle of $A$ to $U$, $A_U$, which will be important to justify the study of (transitive) Lie algebroids from local information.
 
 \begin{definition}[Restriction of a Lie algebroid]
-Let $(q:A \to M, a: A \to M, [,]:\Gamma(A)\times \Gamma(A) \to \Gamma(A))$ be a Lie algebroid. \emph{The restriction of the Lie algebroid $A$ to $U \subset M$} is the restriction vector bundle $A$ to $U$ $A_U$ with projection map $q_U: A_U \to U$, together with the anchor $a_U:A_U \to TU$ and bracket $[,]:\Gamma(A_U)\times \Gamma(A_U) \to \Gamma(A_U)$ that result from the restrictions to $U$ of the anchor and bracket of $A$.
+Let $(q:A \to M, a: A \to M, [\cdot , \cdot]:\Gamma(A)\times \Gamma(A) \to \Gamma(A))$ be a Lie algebroid. \emph{The restriction of the Lie algebroid $A$ to $U \subset M$} is the restriction vector bundle $A$ to $U$ $A_U$ with projection map $q_U: A_U \to U$, together with the anchor $a_U:A_U \to TU$ and bracket $[\cdot , \cdot]:\Gamma(A_U)\times \Gamma(A_U) \to \Gamma(A_U)$ that result from the restrictions to $U$ of the anchor and bracket of $A$.
 \end{definition}
 
 The simplest examples of Lie algebroids are the tangent bundle $TM$ of a manifold $M$ with the commutator of vector fields as bracket and $id_{TM}$ as anchor, and a Lie algebra, when considered as a vector bundle over a point. The following is a straightforward generalization of the latter, which contrasts the tangent bundle in the sense that we might consider it a space of only vertical directions ``on'' $M$.
@@ -89,7 +89,7 @@ The previous result remarks the algebraic perspective which may also be used to 
 
 The tangent bundle of a manifold $M$ is the most basic example of a Lie algebroid, as it should be if we want to understand Lie algebroids on $M$ as generalized directions on $M$, since $TM$ represent those directions tangent to $M$.
 
-For any manifold $M$, its tangent bundle $(TM, \pi, M)$ together with the vector field commutator $[,]: \Gamma(TM) \times \Gamma(TM) \to \Gamma(TM)$ as bracket and with the identity of $TM$ as anchor make of $TM$ a Lie algebroid over $M$. Notice how, evidently, the anchor is fiberwise surjective, meaning that every tangent direction on $M$ has a representative in this Lie algebroid. Additionally, there are no ``vertical directions'' since the vertical sub-Lie algebroid of $TM$ is the $0$ bundle on $M$.
+For any manifold $M$, its tangent bundle $(TM, \pi, M)$ together with the vector field commutator $[\cdot , \cdot]: \Gamma(TM) \times \Gamma(TM) \to \Gamma(TM)$ as bracket and with the identity of $TM$ as anchor make of $TM$ a Lie algebroid over $M$. Notice how, evidently, the anchor is fiberwise surjective, meaning that every tangent direction on $M$ has a representative in this Lie algebroid. Additionally, there are no ``vertical directions'' since the vertical sub-Lie algebroid of $TM$ is the $0$ bundle on $M$.
 
 An, in some sense, contrasting family of examples is given by Lie Algebra Bundles, or LABS, over $M$ as defined in \ref{defnLAB}. A LAB $L$ over $M$ necessarily has a trivial anchor $a = 0$, so $L$ is its own vertical sub-Lie algebroid and its elements are solely ``vertical directions'' on $M$, isomorphic in each fiber to a Lie algebra.
 
@@ -115,7 +115,7 @@ An, in some sense, contrasting family of examples is given by Lie Algebra Bundle
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-A family of examples that show the arising of Lie algebroids is the restrict $TM$ to a regular submanifold $N$ of $N$, in which case we not only have the tangent directions to $N$, but also some additional ``vertical'' or ``perpendicular'' directions.
+% A family of examples that show the arising of Lie algebroids is the restrict $TM$ to a regular submanifold $N$ of $N$, in which case we not only have the tangent directions to $N$, but also some additional ``vertical'' or ``perpendicular'' directions.
 
 % Let $N$ topological subspace of $M$ be a regular submanifold of $M$ (i.e. $N$ may be described locally by the vanishing of some of the coordinates of a chart of $M$; alternatively, the inclusion $N \to M$ is an immersion). Let $T\bar N = \pi^{-1} M$; it is easy to see\complete{I believe that in Mackenzie 2.1 or 2.2 something about pullbacks is said, perhaps allowing me to prove that this is true} that this vector bundle is homeomorphic to the pullback of $TM$ under the inclusion of $N$ in $M$. Let anchor $a = i^*\pi: T \bar N \to TN$ 
 
@@ -139,10 +139,9 @@ A family of examples that show the arising of Lie algebroids is the restrict $TM
 % \item Let $N = \RR^2$ seen as the regular submanifold of $\RR^n$ determined by $x_3 = x_4 = \dots = 0$. In this case the original tangent direction to $N$ are spanned by $\partial_1, \partial_2$, but we have $n-2$ additional directions, all of which have $0$ as their anchor or horizontal component.
 % \end{itemize}
 
-\subsubsection{Involutive Distributions/Foliations}
+%\subsubsection{Involutive Distributions/Foliations}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-The following family of examples exemplify an intermediate case where a Lie algebroid is a space of tangent directions, but not all those directions are contained.
+The following family of examples exposes Lie algebroids with trivial vertical sub-Lie algebroids, but which doesn't span all of the tangent directions of its base manifold $M$.
 
 \begin{definition} {Foliation of $M$}
 Let $\mathcal F = \set{L_\alpha}_{\alpha \in A}$ for some indexing set $A$ be a collection of disjoint connected regular submanifolds of $M$ whose union is all of $M$. $\mathcal F$ is called \emph{a %$p$-dimensional 
@@ -150,37 +149,46 @@ Let $\mathcal F = \set{L_\alpha}_{\alpha \in A}$ for some indexing set $A$ be a 
 \end{definition}
 
 \begin{definition}{Distribution on $M$}
-A distribution $\Delta$ on $M$ is a vector subbundle of $TM$; it is called $q$-dimensional if $\Delta$ is a vector bundle of rank $q$.
+\begin{itemize}
+    \item \emph{A distribution $\Delta$ on $M$} is a vector subbundle of $TM$; it is called $q$-dimensional if $\Delta$ is a vector bundle of rank $q$.
+    
+    \item A distribution $\Delta$ on $M$ is called \emph{involutive} or \emph{integrable} if it is closed under the vector field commutator, i.e. for every $\sect \mu, \sect \nu \in \Gamma(\Delta) \subset \Gamma(TM)$, $[\sect \mu, \sect \nu] \in \Gamma(\Delta)$.
+\end{itemize}
 \end{definition}
 
-Let $\mathcal F = \set{L_\alpha}_{\alpha \in A}$ be a $p$-dimensional foliation of $M$. Each leaf is a regular submanifold of $M$, therefore $T L_\alpha$ is embedded\todo{is it?} in $TM$ and we may see $T L_\alpha$ as a submanifold of $TM$. The (disjoint) union $E = \bigcup_{\alpha \in A} T L_\alpha \subset TM$ can be given a (smooth) vector bundle structure: around $m \in M$ there is a chart $(U, \psi:U \to \RR^n)$ compatible with the foliation; from it we can construct a vector bundle chart $(U \times \RR^n, \phi: U \times \RR^n \to TM|_{U})$ for $TM$ which can be restricted to a chart $(U \times \RR^p, \tilde{\phi}: U \times \RR^p \to TL_{\alpha}|_{U})$ for $E$, where $E|_U = \bigcup_{\alpha: \, U \inter L_\alpha \neq \varnothing} T L_\alpha|_U$. This charts constructed around all $m\in M$ also show that $E$ is embedded in $TM$ as a vector subbundle.
+Let $\mathcal F = \set{L_\alpha}_{\alpha \in A}$ be a foliation of $M$. Each leaf is a regular submanifold of $M$, therefore $T L_\alpha$ is embedded in $TM$ and we may see $T L_\alpha$ as a submanifold of $TM$. The (disjoint) union $\Delta = \bigcup_{\alpha \in A} T L_\alpha \subset TM$ can be given a (smooth) vector bundle structure over $M$: around $m \in M$ there is a chart $(U, \psi:U \to \RR^n)$ compatible with the foliation; from it we can construct a vector bundle chart $(U \times \RR^n, \phi: U \times \RR^n \to TM|_{U})$ for $TM$ which can be restricted to a chart $(U \times \RR^p, \tilde{\phi}: U \times \RR^p \to TL_{\alpha}|_{U})$ for $\Delta$, where $\Delta|_U = \bigcup_{\alpha: \, U \inter L_\alpha \neq \varnothing} T L_\alpha|_U$. This charts constructed around all $m\in M$ also show that $E$ is embedded in $TM$ as a vector subbundle, and so it is a distribution on $M$.
+
+Any $\sect \mu, \sect \nu \in \Gamma(\Delta)$ has each of its integral lines completely contained in a single leaf of the foliation, so they can be restricted to vector fields on any leaf $L_\alpha$, denoted by $\sect \mu|_{L_\alpha}$ and $\sect \nu|_{L_\alpha}$ respectively. They can also be considered vector fields on $M$ and so their vector field commutator at $m \in M$ has the formula $[\sect \mu, \sect \nu]_m = (\mathcal L_{\sect \mu} \sect \nu)_m = \frac{d}{dt}_{t=0} (\phi_{-t})_* \sect \nu_{\phi_t(m)} = [\sect \mu|_{L_\alpha}, \sect \nu|_{L_\alpha}]_m$, where $\phi_t(m)$ is the local flow of $\sect \mu$ at $m$ and $L_\alpha$ is the unique leaf in which $m \in M$ is contained. Therefore, $\Gamma(\Delta)$ is closed under the vector field commutator and so we may consider its restriction to $\Delta$ a Lie algebroid bracket on $\Delta$. In summary, 
+\begin{proposition}
+A foliation of the manifold $M$ gives rise to an integrable distribution $\Delta$ on $M$ which, together with the anchor $a = id_{TM}|_\Delta$, becomes a Lie algebroid.
+\end{proposition}
+Notice that, if $M$ is an $n$-dimensional manifold and $\mathcal F$ is a $p$-dimensional foliation with $p leq n$, then $\Delta$ is a $p$-dimensional and $a$ is not fiberwise surjective but it is of constant rank $p$.
 %E is also a submanifold of $TM$. Additionally, we see that $E$ has vector bundle structure over $M$ of rank $p$, because each $m \in M$ is an element of a unique leaf $L$ and $T_m L \subset E$ is a vector space of dimension $p$; TL can be given a nice atlas?
 
+The converse is also true and it is called Frobenius theorem.
 
-Integrable distribution
+\begin{proposition}
+Let $\Delta$ be a distribution in $M$. If $\Delta$ is integrable, then $\Delta$ arises from a foliation of $M$.
+\end{proposition}
 
-The converse is called Frobenius theorem:
+% Explicit examples:
 
-Explicit examples:
-
-\begin{itemize}
-    \item Foliation in integral lines iff 1 dimensional distribution
-    \item Second class? First class?
-\end{itemize}
+% \begin{itemize}
+%     \item Foliation in integral lines iff 1 dimensional distribution
+%     \item Second class? First class?
+% \end{itemize}
 
 \subsection{Trivial Lie Algebroid}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The trivial Lie algebroid makes explicit the understanding of Lie algebroids as spaces of generalized tangent directions for their base manifolds, as it is simply the combination of both the usual tangent directions of the manifold, together with Lie algebra directions added by hand. This understanding of Lie algebroids is further supported by the fact, proven later in \ref{}, that any transitive Lie algebroid has this form locally. The transitive part, as we will see, simply means that the anchor/shadow map for each $m \in M$ covers all vectors tangent to $x$, so the interpretation of Lie algebroids doesn't lose force by this additional requirement, as it may very well be that the Lie algebroid doesn't cover all directions tangent to $x$, but only some of them, in which case the trivial lie algebroid is no longer a good description.
+The trivial Lie algebroid makes explicit the understanding of Lie algebroids as spaces of generalized directions on its base manifolds, as it is simply the combination of both the usual tangent directions of the manifold and a vertical sub-Lie algebroid of Lie algebra valued directions. We will see in theorem \ref{theo} that any transitive Lie algebroid has this form locally. The transitive part, as we will see, simply means that every direction tangent to $M$ is represented in the algebroid, i.e. the anchor is fiberwise surjective, which, as seen from the example of involutive distributions isn't always the case but the interpretation of Lie algebroids as spaces of directions on $M$ is maintained.
 
-Compatibility map for morphisms between Lie algebroids
+Let $M$ be a manifold, and $\alg g$ a (real, finite dimensional) Lie algebra with Lie bracket $[\cdot , \cdot]: \alg g \times \alg g$.
 
-Let $M$ be a manifold, and $\alg g$ a (real) Lie algebra with Lie bracket $[,]: \alg g \times \alg g$. 
+Consider $p_1: M \times \alg g \to M$, $(m, \eta) \mapsto m$ as the trivial vector bundle with fiber $\alg g$ and base $M$. Greek letters like $\eta, \theta, \kappa, \dots$ will usually be used to denote both elements of a lie algebra $\alg g$, and elements of a trivial bundle $M \times \alg g$; furthermore, the subscript $m \in M$ will be used both to emphasize that such a vector bundle element belongs to the fiber of $m$, and to denote the Lie algebra element in the second coordinate of such a vector bundle element, e.g.$\eta_m \in M$ might refer to either an element $\eta_m \in \set{m} \times \alg g \subset M \times \alg g$, or to $p_2(\eta_m) \in \alg g$. %A section of this bundle will be denoted by capital greek letters like $H, \Theta, K, \dots$ and their image in the fiber of $m \in M$ will once again be denoted by the subscript $m$, so $H \in \Gamma(M \times \alg g)$ and $H_m \in p_1^{-1}(m)$. $X(H)$, $H$ corresponds canonically to a function $M \to g$. (The sections of/This vector bundle) has a natural Lie structure given by the fiberwise Lie bracket of the Lie algebra $\alg g$.
 
-Consider $p_1: M \times \alg g \to M$, $(m, \eta) \mapsto m$ as the trivial vector bundle with fiber $\alg g$ and base $M$. To refer to an element of this bundle we will usually use greek letters like $\eta, \theta, \kappa, \dots$, and to emphasize that such an element belongs to the fiber of $m \in M$ we will use subscripts, so $\eta_m \in M \times \alg g$ is such that $p_1(\eta_m) = m$; . A section of this bundle will be denoted by capital greek letters like $H, \Theta, K, \dots$ and their image in the fiber of $m \in M$ will once again be denoted by the subscript $m$, so $H \in \Gamma(M \times \alg g)$ and $H_m \in p_1^{-1}(m)$. $X(H)$, $H$ corresponds canonically to a function $M \to g$. (The sections of/This vector bundle) has a natural Lie structure given by the fiberwise Lie bracket of the Lie algebra $\alg g$.
-
-Now consider the internal direct sum over $M$ of the vector bundles $TM$ and $M \times \alg g$; -> esta definicion de la suma directa no me permite ver facilmente la estructura de variedad; Tu define distinto y prueba que la suma directa de haces vectoriales suaves es suave... pero quisiera poder ver que esta estructura es la misma estructura de variedad de $TM \times \alg g$... cambiar la definicion de la suma directa significa tambien que cambie la forma de referirme a los elementos de la suma, de tal forma que el anchor ya no es solo una proyeccion a la primera coordenada \unsure{Here I'm being explicit with basic stuff of vector bundle theory on purpose, but I'm not sure if this will stay} that the underlying manifold of this bundle is simply the NO regular submanifold of the product $TM \times (M \times \alg g)$ given by $TM \oplus (M \times \alg g) = \set{(X, \eta) \in TM \times (M \times \alg g) \st \pi(X) = p_1(\eta)}$; we will call the projection of this vector bundle $\pi: X \oplus \eta \mapsto \pi(X) = p_1(\eta)$, abusing the notation; we write an element of this vector bundle as $X \oplus \eta$, where $X \in \pi^{-1}(m)$ and $\eta \in p_1^{-1}(m)$.
+Now, consider the internal direct sum over $M$ of the vector bundles $TM$ and $M \times \alg g$; -> esta definicion de la suma directa no me permite ver facilmente la estructura de variedad; Tu define distinto y prueba que la suma directa de haces vectoriales suaves es suave... pero quisiera poder ver que esta estructura es la misma estructura de variedad de $TM \times \alg g$... cambiar la definicion de la suma directa significa tambien que cambie la forma de referirme a los elementos de la suma, de tal forma que el anchor ya no es solo una proyeccion a la primera coordenada \unsure{Here I'm being explicit with basic stuff of vector bundle theory on purpose, but I'm not sure if this will stay} that the underlying manifold of this bundle is simply the NO regular submanifold of the product $TM \times (M \times \alg g)$ given by $TM \oplus (M \times \alg g) = \set{(X, \eta) \in TM \times (M \times \alg g) \st \pi(X) = p_1(\eta)}$; we will call the projection of this vector bundle $\pi: X \oplus \eta \mapsto \pi(X) = p_1(\eta)$, abusing the notation; we write an element of this vector bundle as $X \oplus \eta$, where $X \in \pi^{-1}(m)$ and $\eta \in p_1^{-1}(m)$.
 
 We now define the main ingredients of the Lie algebroid we are building:
     \begin{itemize}
@@ -190,7 +198,7 @@ We now define the main ingredients of the Lie algebroid we are building:
     \[
         [X \oplus H, Y \oplus \Theta] = [X, Y] \oplus \{X(\Theta) - Y(H) + [H, \Theta]\}
     \]
-    for all $X, Y \in \Gamma(TM)$, $H, Y \in \Gamma(M \times \alg g)$. \sout{This definition will be motivated in the example of the Atiyah lie algebroid \ref{}, but for now we restrict ourselves to see that it works} Notice that this definition, by linearity, is equivalent to saying that $[X, \Theta] = X(\Theta)$ and $[H, Y] = - [Y, H] = -Y(H)$, i.e. to say that the bracket IS the Lie derivative (of sections of vector bundles over $M$). Notice that in the above formula the symbols $[,]$ are used in $3$ different instances, each one referring to the brackets of $3$ different spaces. $X(\Theta)$ makes reference to the derivative in direction of $X$ of the vector valued function $M \to \alg g$ associated to $\Theta$, or, simply, to the Lie derivative of the section $\Theta \in \Gamma(M \times \alg g)$, $\mathcal L_X \Theta$. Veamos que esto es una estructura de Lie en $\Gamma(TM \times (M \times \alg g))$:
+    for all $X, Y \in \Gamma(TM)$, $H, Y \in \Gamma(M \times \alg g)$. \sout{This definition will be motivated in the example of the Atiyah lie algebroid \ref{}, but for now we restrict ourselves to see that it works} Notice that this definition, by linearity, is equivalent to saying that $[X, \Theta] = X(\Theta)$ and $[H, Y] = - [Y, H] = -Y(H)$, i.e. to say that the bracket IS the Lie derivative (of sections of vector bundles over $M$). Notice that in the above formula the symbols $[\cdot , \cdot]$ are used in $3$ different instances, each one referring to the brackets of $3$ different spaces. $X(\Theta)$ makes reference to the derivative in direction of $X$ of the vector valued function $M \to \alg g$ associated to $\Theta$, or, simply, to the Lie derivative of the section $\Theta \in \Gamma(M \times \alg g)$, $\mathcal L_X \Theta$. Veamos que esto es una estructura de Lie en $\Gamma(TM \times (M \times \alg g))$:
         \begin{itemize}
         \item Alternating:
         \item Leibniz:
@@ -262,7 +270,7 @@ The subfamily of examples we will be most interested in is the family of $P \tim
     
     \item Anchor: $0$ anchor works trivially
     
-    \item Lie Bracket: fiberwise structure: the fiberwise (over $P$) bracket of $P \times \alg g$, and it is easily seen (at least in the matrix Lie algebras, although it shouldn't be difficult to prove that $ad$ commutes with $[,]$ which allows to prove this well definition for any Lie algebra)
+    \item Lie Bracket: fiberwise structure: the fiberwise (over $P$) bracket of $P \times \alg g$, and it is easily seen (at least in the matrix Lie algebras, although it shouldn't be difficult to prove that $ad$ commutes with $[\cdot , \cdot]$ which allows to prove this well definition for any Lie algebra)
     
     \item Compatibility 1: trivial
     
