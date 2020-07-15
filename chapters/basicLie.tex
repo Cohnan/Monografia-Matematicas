@@ -1,8 +1,33 @@
-INTRODUCTION \complete{ Hacer la introducción. Quizá ver pequeños comentrios de Mackenzie y de Lazzarini} In \ref{chp:intro} we saw how the basic elements in a gauge theory are a principal bundle, a fibration over spacetime whose fibers encode inner degrees of freedom associated to a symmetry, their associated bundles, which represent the matter fields which have certain symmetry with respect to the group action, and connections on the principal bundle, that allow a formalization of the statement that $T_x M$ is the horizontal part of $T_p P$ for each $p \in \pi^{-1}(x)$, finally allowing to talk about covariant derivatives in tangent directions of matter fields. However, at the end of chapter \ref{chp:intro} it was remarked that the a natural language to talk about principal bundle connections is that of the Atiyah lie algebroid $TP/G$ of $P$, as this is a space where the fiber of each point $x$ in the base manifold $M$ is a set of directions over $x$ some of which are vertical to $TM$, thefore removing the redundancy present in $TP$ where an arbitrary point $p$ in the fiber in $P$ of $x$ had to be chosen first to see $T_p P$ as the set of generalized directions over $x$ where paths could be lifted. \rtext{Once this language is adopted, it is easy to see how the core concepts of gauge theories mentioned above may be abstracted in the concepts of Lie algebroid, Lie algebroid connection, and representations of Lie algebroids}. \todo{No se esto realmente donde va}
+%INTRODUCTION \complete{ Hacer la introducción. Quizá ver pequeños comentrios de Mackenzie y de Lazzarini} 
+In \ref{chp:intro} we saw how the basic elements in a gauge theory are 
+    \begin{itemize}
+        
+    \item a principal bundle $P$, a fibration over spacetime $M$ whose fibers encode inner degrees of freedom associated to a continuous symmetry $G$,
+    
+    \item their associated vector bundles, whose sections are matter fields which have certain symmetry with respect to the group action, and which can be interpreted as equivariant vector valued functions on $P$,
+    
+    \item and connections on the principal bundle $P$, that allow a formalization of the statement that $T_m M$ is the horizontal part of $T_p P$ for each $p \in \pi^{-1}(m)$, making possible to talk about covariant derivatives of matter fields in the tangent direction of the base manifold $M$ as directional derivatives of the equivariant functions in the corresponding horizontal direction(s) of $P$;
+    
+    \end{itemize}
+it is this notion of covariant derivative for matter fields which encodes the ``principle of gauge invariance'' that characterizes gauge theories.
 
-Anchor may be seen as a tangent or horizontal projection; Leibniz allows us to think of $[\sect{\oid X}, \cdot]$ as a derivative; Lie bracket allow us to think of the elements as directions at a point, and so (it is a kind of a Poisson bracket) we can think of $[\sect{\oid X}, \cdot]$ as a \emph{directional} derivative; The vertical directions at each point are (always?\todo{es cierto?}) a Lie algebra (this question requires to see first if the bracket, when restricted to the kernel, can be defined fiberwise instead of requiring a neighborhood... Update: I think this is the case, as Ch 7 of Tu says something about the equivalence between $C^\infty$ linearity and pointwise definition, and, by Leibniz restricted to the kernel, the bracket is $C^infty(M)$ linear in both entries).
+%However, at the end of chapter \ref{chp:intro} it was remarked that 
+A natural language to talk about principal bundle connections is that of the Atiyah Lie algebroid $TP/G$ of $P$, since:
+    \begin{itemize}
 
-Throughout this section, $M$ will be a smooth manifold.
+    %\item the two defining properties of a principal connections $\omega: TP \to P \times \alg g$ are naturally as a section of the anchor $TP/G \xrightarrow{a} TM$,
+    
+    \item As we will see in \ref{}, the vector bundle $TP/G$ over $M$ is, locally, the internal direct sum of the vector bundles $TM$ and $M\times \alg g$. Due to the Lie bracket structure on $TP/G$, this can be interpreted as saying that $TP/G$ at $m \in M$ being a set of ``generalized directions at $m$'': the set of tangent directions $T_m M \cong \RR^n$ plus a set of vertical directions $\alg g$ encoding the continuous symmetry.
+    
+    \item The notion of horizontallity induced in $TP$  %this is a space where the fiber of each point $m$ of the base manifold $M$ is a set of directions over $m$ some of which are vertical to $TM$, removing the redundancy present in $TP$ where an arbitrary point $p$ in the fiber in $P$ of $m$ had to be chosen first to see $T_p P$ as the set of generalized directions over $m$ where paths could be lifted.
+    possesses a redundancy given by the action of $G$, meaning that knowing the horizontal subspace of $T_p P$ at $p$ is enough to determine the induced horizontal spaces in all of the fiber of $\pi(p)$. This redundancy is removed if the notion of horizontallity is defined instead on $TP/G$ and this, locally, means indicating for each $X \in TM$ which ``generalized direction'' $X \oplus \eta \in TM \oplus (M \times \alg)$ is the horizontal direction that corresponds to the tangent direction $X$.
+        
+    \end{itemize}
+The vector bundle $TP/G$ over $M$ is an example of a transitive Lie algebroid over $M$, but this is a whole class of vector bundles with a Lie bracket structure that are, locally, described by $TM \oplus (M \times \alg g)$ and so we may interpret as spaces of generalized directions on $M$. Once this language is adopted, the core concepts of gauge theories mentioned above may be abstracted in the concepts of Lie algebroid, Lie algebroid connection, and representations of Lie algebroids.
+
+%Anchor may be seen as a tangent or horizontal projection; Leibniz allows us to think of $[\sect{\oid X}, \cdot]$ as a derivative; Lie bracket allow us to think of the elements as directions at a point, and so (it is a kind of a Poisson bracket) we can think of $[\sect{\oid X}, \cdot]$ as a \emph{directional} derivative; The vertical directions at each point are (always?\todo{es cierto?}) a Lie algebra (this question requires to see first if the bracket, when restricted to the kernel, can be defined fiberwise instead of requiring a neighborhood... Update: I think this is the case, as Ch 7 of Tu says something about the equivalence between $C^\infty$ linearity and pointwise definition, and, by Leibniz restricted to the kernel, the bracket is $C^infty(M)$ linear in both entries).
+
+\ptext{Throughout this document every construction will occur over the category of smooth manifolds, so all vector bundles, sections of vector bundles and any other function will be smooth.}
 
 \section{Basic Definitions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -20,15 +45,13 @@ A \emph{Lie algebroid over $M$} is a triple $(q:A \to M, a, [\cdot, \cdot ])$, w
 \begin{enumerate}
     \item The $C^\infty(M)$ map induced by $a$ on the sections $\sectoid X \mapsto (m \mapsto a(\sectoid X(m)))$, which we call by the same name $a:\Gamma(A) \to \Gamma(TM)$, is a \emph{Lie algebra morphism}; that is, for any $\sectoid X, \sectoid Y \in \Gamma(A)$ \[ a([\sect{\oid X}, \sect{\oid Y}])  = [a(\sect{\oid X}), a(\sect{\oid Y})] \in  \Gamma(TM)\]
     
-    \item (Leibniz identity) For any $\sectoid X, \sectoid Y \in \Gamma(A)$, $f \in C^\infty (M)$: \[ [\sect{\oid X}, f\sect{\oid Y}] = f[\sect{\oid X}, \sect{\oid Y}] + a(\sect{\oid X})(f)\, \oid Y \] where $a(\sect{\oid X})(f)$ means the usual derivative of an element of a function on $M$ in the direction of $a(\sect{\oid X}) \in \Gamma(TM)$.
+    \item (Leibniz identity) For any $\sectoid X, \sectoid Y \in \Gamma(A)$, $f \in C^\infty (M)$: \[ [\sect{\oid X}, f\sect{\oid Y}] = f[\sect{\oid X}, \sect{\oid Y}] + a(\sect{\oid X})(f)\, \oid Y \] where $a(\sect{\oid X})(f)$ means the usual (Lie) derivative in the direction of $a(\sect{\oid X}) \in \Gamma(TM)$ of a vector valued function on $M$.
 \end{enumerate}
 \end{definition}
 
-\ptext{As it is usual, to simplify notation we will often say instead that \emph{$A$ is a Lie algebroid over the manifold $M$ with anchor $a$}, and the brackets will be denoted simply by $[\cdot , \cdot]$ for all Lie algebroids.}
+\ptext{To simplify notation we will often say instead that \emph{$A$ is a Lie algebroid over the manifold $M$ with anchor $a$}, and the brackets will be denoted simply by $[\cdot , \cdot]$ for all Lie algebroids, unless otherwise stated.}
 
-\ptext{When talking about $C^r-$differentiable vector bundles, a vector-bundle chart, or simply a chart, will make reference to a local trivialization $\phi: U \times V \to E|_U$ which is $C^r$-differentiable (and a vector bundle isomorphism, by definition of local trivialization).}
-
-\ptext{In general, when talking about vector bundles, say $E$ over $M$, boldface letters will be used to denote sections of the vector bundle, for instance $\sect \mu \in Gamma(E)$, and its value in the fiber $m \in M$ will be denoted both by $\sect \mu(m)$ and by $\sect \mu_m$.}
+\ptext{When talking about a vector bundle $E$ over a manifold $M$, a vector-bundle chart, or simply a chart, will make reference to a pair $(U, \phi: U \times V \to E|_U)$, where $U$ is an open subset of $M$ and $\phi$ is a local trivialization which is $C^\infty$-differentiable (and a vector bundle isomorphism, by definition of local trivialization). Additionally, boldface letters will be used to denote sections of the vector bundle, for instance $\sect \mu \in Gamma(E)$, and its value in the fiber $m \in M$ will be denoted both by $\sect \mu(m)$ and by $\sect \mu_m$.}
 
 \ptext{For the rest of the chapter $A$ will refer to a Lie algebroid over a manifold $M$ with anchor $a$, unless otherwise stated.}
 
