@@ -45,29 +45,35 @@ A \emph{Lie algebroid over $M$} is a triple $(q:A \to M, a, [\cdot, \cdot ])$, w
     \end{itemize}  which satisfy the following compatibility conditions:
 
 \begin{enumerate}
-    \item The $C^\infty(M)$ map induced by $a$ on the sections $\sectoid X \mapsto (m \mapsto a(\sectoid X(m)))$, which we call by the same name $a:\Gamma(A) \to \Gamma(TM)$, is a \emph{Lie algebra morphism}; that is, for any $\sectoid X, \sectoid Y \in \Gamma(A)$ \[ a([\sect{\oid X}, \sect{\oid Y}])  = [a(\sect{\oid X}), a(\sect{\oid Y})] \in  \Gamma(TM)\]
+    \item The $C^\infty(M)$ map induced by $a$ on the sections $\sectoid X \mapsto (m \mapsto a(\sectoid X(m)))$, which we call by the same name $a:\Gamma(A) \to \Gamma(TM)$, is a \emph{Lie algebra morphism}; that is, for any $\sectoid X, \sectoid Y \in \Gamma(A)$ \[ a([\sect{\oid X}, \sect{\oid Y}])  = [a(\sect{\oid X}), a(\sect{\oid Y})] \in  \Gamma(TM).\]
     
-    \item (Leibniz identity) For any $\sectoid X, \sectoid Y \in \Gamma(A)$, $f \in C^\infty (M)$: \[ [\sect{\oid X}, f\sect{\oid Y}] = f[\sect{\oid X}, \sect{\oid Y}] + a(\sect{\oid X})(f)\, \oid Y \] where $a(\sect{\oid X})(f)$ means the usual (Lie) derivative in the direction of $a(\sect{\oid X}) \in \Gamma(TM)$ of a vector valued function on $M$.
+    \item (Leibniz identity) For any $\sectoid X, \sectoid Y \in \Gamma(A)$, $f \in C^\infty (M)$: \[ [\sect{\oid X}, f\sect{\oid Y}] = f[\sect{\oid X}, \sect{\oid Y}] + a(\sect{\oid X})(f)\, \oid Y \] where $a(\sect{\oid X})(f)$ means the usual (Lie) derivative in the direction of $a(\sect{\oid X}) \in \Gamma(TM)$ of the vector valued function $f$ on $M$.
 \end{enumerate}
 \end{definition}
 
 \ptext{To simplify notation we will often say instead that \emph{$A$ is a Lie algebroid over the manifold $M$ with anchor $a$}, and the brackets will be denoted simply by $[\cdot , \cdot]$ for all Lie algebroids, unless otherwise stated.}
 
-\ptext{When talking about a vector bundle $E$ over a manifold $M$, a vector-bundle chart, or simply a chart, will make reference to a pair $(U, \phi: U \times V \to E|_U)$, where $U$ is an open subset of $M$ and $\phi$ is a local trivialization which is $C^\infty$-differentiable (and a vector bundle isomorphism, by definition of local trivialization). Additionally, boldface letters will be used to denote sections of the vector bundle, for instance $\sect \mu \in Gamma(E)$, and its value in the fiber $m \in M$ will be denoted both by $\sect \mu(m)$ and by $\sect \mu_m$.}
+\ptext{When talking about a vector bundle $E$ over a manifold $M$, a vector-bundle chart, or simply a chart, will make reference to a pair $(U, \phi: U \times V \to E|_U)$, where $U$ is an open subset of $M$ and $\phi$ is a local trivialization which is $C^\infty$-differentiable (and a vector bundle isomorphism, by definition of local trivialization). Additionally, boldface letters will be used to denote sections of the vector bundle, for instance $\sect \mu \in \Gamma(E)$, and its value in the fiber $m \in M$ will be denoted both by $\sect \mu(m)$ and by $\sect \mu_m$.}
 
 \ptext{For the rest of the chapter $A$ will refer to a Lie algebroid over a manifold $M$ with anchor $a$, unless otherwise stated.}
 
 \begin{proposition}
-Given an open subset $U$ of $M$, and given $\sectoid X, \sectoid Y : M \to A$, the restriction to $U$ of $[\sect{\oid X}, \sect{\oid Y}] \in \Gamma(A)$ depends only on the restrictions of $\oid X$ and $\oid Y$ to $U$. REWRITE
+Given $U$ open subset of $M$ and $\sectoid X, \sectoid Y$ sections of $A$, the value of $[\sectoid X, \sectoid Y] \in \Gamma(A)$ at $m \in U$ depends only on the restrictions of $\oid X$ and $\oid Y$ to $U$.
 \end{proposition}
 \begin{proof}
-Leibniz implies that the Lie bracket is a local operator (See Tu, Ch 7).
+By the alternating property of the bracket, it is enough to prove that if $\sectoid Y_1, \sectoid Y_2 \in \Gamma(A)$ coincide in $U$, then $[\sectoid X, \sectoid Y_1]_m = [\sectoid X, \sectoid Y_2]_m$. By the $\RR$-linearity of the bracket, we may prove instead that if $\sectoid Y \in \Gamma(A)$ vanishes in $U$, then $[\sectoid X, \sectoid Y]_m = 0$.
+
+Let $\sectoid Y \in \Gamma(A)$ as indicated above and $\sectoid X \in \Gamma(A)$ be any section. Let $m \in M$ and $U' \subset M$ be the intersection if $U$ with a chart neighborhood of $m$, so that $U'$ is also a chart neighborhood of $m$ where $\sectoid Y$ vanishes. Let $f \in C^\infty(M)$ be a bump function such that $f(p) = 1$ and $supp(f) \subset U'$, then $f \sectoid Y = 0 \in \Gamma(A)$. By the Leibniz property of the anchor
+\begin{align*}
+    0 = [\sectoid X, f \sectoid Y]_m = f(m) [\sectoid X, \sectoid Y]_m + a(\sectoid X)(f)(m) \sectoid Y_m = [\sectoid X, \sectoid Y]_m.
+\end{align*}
 \end{proof}
 
-The previous result allows us to restrict the Lie bracket of $A$ to the restriction vector bundle of $A$ to $U$, $A_U$, which will be important to justify the study of (transitive) Lie algebroids from local information.
+The previous result allows us to restrict the Lie bracket of $A$ to the restriction vector bundle of $A$ to $U$, $A|_U$, which will be important to justify the study of (transitive) Lie algebroids from local information.
 
 \begin{definition}[Restriction of a Lie algebroid]
-Let $(q:A \to M, a: A \to M, [\cdot , \cdot]:\Gamma(A)\times \Gamma(A) \to \Gamma(A))$ be a Lie algebroid. \emph{The restriction of the Lie algebroid $A$ to $U \subset M$} is the restriction vector bundle $A$ to $U$ $A_U$ with projection map $q_U: A_U \to U$, together with the anchor $a_U:A_U \to TU$ and bracket $[\cdot , \cdot]:\Gamma(A_U)\times \Gamma(A_U) \to \Gamma(A_U)$ that result from the restrictions to $U$ of the anchor and bracket of $A$.
+%Let $(q:A \to M, a: A \to M, [\cdot , \cdot]:\Gamma(A)\times \Gamma(A) \to \Gamma(A))$ be a Lie algebroid. 
+Let $U$ be an open subset of $M$. \emph{The restriction of the Lie algebroid $A$ to $U$} is the restriction vector bundle $A$ to $U$ $A|_U$ with projection map $q_U: A|_U \to U$, together with the anchor $a_U:A|_U \to TU$ and bracket $[\cdot , \cdot]:\Gamma(A|_U)\times \Gamma(A|_U) \to \Gamma(A|_U)$ that result from the restrictions to $U$ of the anchor and bracket of $A$.
 \end{definition}
 
 The simplest examples of Lie algebroids are the tangent bundle $TM$ of a manifold $M$ with the commutator of vector fields as bracket and $id_{TM}$ as anchor, and a Lie algebra, when considered as a vector bundle over a point. The following is a straightforward generalization of the latter, which contrasts the tangent bundle in the sense that we might consider it a space of only vertical directions ``on'' $M$.
@@ -101,6 +107,8 @@ $\Gamma A$ is a finite projective module over $M$. Furthermore, the map $a: \Gam
 \end{proof}
 
 The previous result remarks the algebraic perspective which may also be used to study this topic, in contrast to the topological perspective that has been adopted in this document. However, this perspective is useful and will be used whenever clarity may be gained by its use.
+
+Vector bundles maps eq. Cinfty maps between the sections
 
 \section{Examples}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
