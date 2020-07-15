@@ -38,7 +38,7 @@ A main component of a Lie algebroid $A$ over $M$ is the anchor map $a : A \to TM
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{definition} [Lie Algebroid over $M$]\label{defnLieAlgoid}
-A \emph{Lie algebroid over $M$} is a triple $(q:A \to M, a, [\cdot, \cdot ])$, where $q:A \to M$ is a vector bundle, 
+A \emph{Lie algebroid over $M$} is a triple $(q:A \to M, a, [\cdot, \cdot ])$, where $q:A \to M$ is a vector bundle\todo{Does this imply that the fiber is finite dimensional?}, 
     \begin{itemize}
     \item $a:A \to TM$ is a vector bundle morphism called \emph{the anchor of $A$}, and
     \item \emph{the bracket of $A$} $[\cdot, \cdot ]: \Gamma(A) \times \Gamma(A) \to \Gamma(A)$ is a Lie algebra structure on the $\RR$-vector space $\Gamma(A)$ (an $\RR$-bilinear alternating map) \info{The bracket doesn't need to exist fiberwwise as a metric. e.g. the bracket of vector fields doesn't}
@@ -63,52 +63,62 @@ Given $U$ open subset of $M$ and $\sectoid X, \sectoid Y$ sections of $A$, the v
 \begin{proof}
 By the alternating property of the bracket, it is enough to prove that if $\sectoid Y_1, \sectoid Y_2 \in \Gamma(A)$ coincide in $U$, then $[\sectoid X, \sectoid Y_1]_m = [\sectoid X, \sectoid Y_2]_m$. By the $\RR$-linearity of the bracket, we may prove instead that if $\sectoid Y \in \Gamma(A)$ vanishes in $U$, then $[\sectoid X, \sectoid Y]_m = 0$.
 
-Let $\sectoid Y \in \Gamma(A)$ as indicated above and $\sectoid X \in \Gamma(A)$ be any section. Let $m \in M$ and $U' \subset M$ be the intersection if $U$ with a chart neighborhood of $m$, so that $U'$ is also a chart neighborhood of $m$ where $\sectoid Y$ vanishes. Let $f \in C^\infty(M)$ be a bump function such that $f(p) = 1$ and $supp(f) \subset U'$, then $f \sectoid Y = 0 \in \Gamma(A)$. By the Leibniz property of the anchor
+Let $\sectoid Y \in \Gamma(A)$ as indicated above and $\sectoid X \in \Gamma(A)$ be any section. Let $m \in M$ and $U' \subset M$ be the intersection of $U$ with a chart neighborhood of $m$, so that $U'$ is also a chart neighborhood of $m$ where $\sectoid Y$ vanishes. Let $f \in C^\infty(M)$ be a bump function such that $f(p) = 1$ and $supp(f) \subset U'$, then $f \sectoid Y = 0 \in \Gamma(A)$. By the Leibniz property of the anchor
 \begin{align*}
     0 = [\sectoid X, f \sectoid Y]_m = f(m) [\sectoid X, \sectoid Y]_m + a(\sectoid X)(f)(m) \sectoid Y_m = [\sectoid X, \sectoid Y]_m.
 \end{align*}
 \end{proof}
 
-The previous result allows us to restrict the Lie bracket of $A$ to the restriction vector bundle of $A$ to $U$, $A|_U$, which will be important to justify the study of (transitive) Lie algebroids from local information.
+The previous result allows us to restrict the Lie bracket of $A$ to the restriction vector bundle of $A$ to $U$, $A|_U$, which will be important to justify the study of (transitive) Lie algebroids from local information. 
+% Every local section can be extended to a global section that coincides with the initial local section BUT in a smaller neighborhood
 
 \begin{definition}[Restriction of a Lie algebroid]
 %Let $(q:A \to M, a: A \to M, [\cdot , \cdot]:\Gamma(A)\times \Gamma(A) \to \Gamma(A))$ be a Lie algebroid. 
 Let $U$ be an open subset of $M$. \emph{The restriction of the Lie algebroid $A$ to $U$} is the restriction vector bundle $A$ to $U$ $A|_U$ with projection map $q_U: A|_U \to U$, together with the anchor $a_U:A|_U \to TU$ and bracket $[\cdot , \cdot]:\Gamma(A|_U)\times \Gamma(A|_U) \to \Gamma(A|_U)$ that result from the restrictions to $U$ of the anchor and bracket of $A$.
 \end{definition}
 
-The simplest examples of Lie algebroids are the tangent bundle $TM$ of a manifold $M$ with the commutator of vector fields as bracket and $id_{TM}$ as anchor, and a Lie algebra, when considered as a vector bundle over a point. The following is a straightforward generalization of the latter, which contrasts the tangent bundle in the sense that we might consider it a space of only vertical directions ``on'' $M$.
+\linea 
+
+The simplest examples of Lie algebroids are the tangent bundle $TM$ of a manifold $M$ with the commutator of vector fields as bracket and $id_{TM}$ as anchor, and any Lie algebra, when considered as a vector bundle over a point\todo{is $\RR^0$ a manifold?}. The following is a straightforward generalization of the latter, which contrasts the tangent bundle in the sense that we might consider it a space of only vertical directions on $M$.
 
 \begin{definition}[LAB]\label{defnLAB}
-    Let $\alg g$ be a Lie algebra. A \emph{Lie algebra bundle} or \emph{LAB} is a vector bundle $(L, q, M)$ together with a section of the vector bundle $Alt^2(L; L)$ of alternating $2$-forms with values on $L$ such that, at any $m \in M$, $[\cdot, \cdot]_m:L_m \times L_m \to L_m$ makes $L_m$ a Lie algebra i.e. \emph{$[\cdot, \cdot]:\Gamma(L) \times \Gamma(L) \to \Gamma(L)$ is a field of Lie algebra brackets}, such that $L$ admits an atlas, called \emph{an LAB atlas}, $\set{\phi_i: U_i \times \alg g_i \to L_{U_i}}_{i \in I}$, where $\alg g_i$ is a Lie algebra and each $\phi_{i, m}: \alg g_i \to L_m$ is a Lie algebra isomorphism. A LAB is said to \emph{have fiber type $\alg g$} is there is an atlas such that $g_i = \alg g$ for all $i \in I$.
+    Let $L$ be a vector bundle over $M$.
+    
+    \begin{itemize}
+    
+    \item A \emph{field of Lie algebra brackets} $[\cdot, \cdot]:\Gamma(L) \times \Gamma(L) \to \Gamma(L)$ is a section of the vector bundle $Alt^2(L; L)$ of alternating $2$-forms with values on $L$ such that, at any $m \in M$, $[\cdot, \cdot]_m:L_m \times L_m \to L_m$ makes $L_m$ a Lie algebra.
+    
+    \item $L$ together with a field of Lie brackets $[\cdot, \cdot]:\Gamma(L) \times \Gamma(L) \to \Gamma(L)$ is a \emph{Lie algebra bundle} or \emph{LAB} if $L$ admits an atlas, called \emph{an LAB atlas}, $\set{\phi_i: U_i \times \alg g_i \to L_{U_i}}_{i \in I}$, where $\alg g_i$ is a Lie algebra and each $\phi_{i, m}: \alg g_i \to L_m$ is a Lie algebra isomorphism. An LAB is said to \emph{have fiber type $\alg g$} is there is an LAB atlas such that $\alg g_i = \alg g$ for all $i \in I$.
+    
+    \end{itemize}
+    
 \end{definition}
 
-Any $LAB$ on a manifold $M$ has a \emph{unique structure as a Lie algebroid on $M$} given by $a = 0$, since the field of Lie algebra brackets if $C^\infty(M)$-linear and so the second compatibility condition leaves us with no other choice for $a$.
+Any $LAB$ on a manifold $M$ has a \emph{unique structure as a Lie algebroid on $M$} given by the anchor $a = 0$, since a field of Lie algebra brackets is $C^\infty(M)$-linear in each component and so the Leibniz identity of Lie algebroids leaves us with no other choice for $a$.
 
 The following theorem gives us insight on the structure of Lie algebroids, specifically on their ``vertical'' portion, i.e. the kernel of the anchor map.
 
 \begin{theorem} \label{theoFiberLie}
 Let $A$ be a Lie algebroid over the manifold $M$ with anchor $a$, and suppose $ker(a)$ is a vector subbundle of $A$. Then $ker(a)$ %is a Lie algebroid over $M$ with trivial anchor, i.e. $ a = 0$, and the bracket on the sections of $ker(a)$ restrict to a Lie bracket on the fibers, making \emph{each fiber of $ker(a)$ a Lie algebra}, i.e. $ker(a)$ 
-is a Lie algebra bundle, called \emph{the vertical sub-Lie algebroid of $A$}.
+is a Lie algebroid, called \emph{the vertical sub-Lie algebroid of $A$} with trivial anchor and where the bracket of $A$ restricts to a field of Lie brackets.
 \end{theorem}
 
 \begin{proof}
-To see: sections of $ker(a)$ are sections of $A$... in that case the 1st condition tells us that the bracket restricts to a bracket on $ker(a)$/
+$ker(a) \subset A$ implies that the sections of $ker(a)$ can be naturally considered sections of $A$. The first compatibility condition of Lie algebroids imply that the bracket of $A$ restricts to a bracket on $ker(a)$.
 
-The 2nd condition, becomes the statement of the $C^\infty(M)$ bilinearity of the bracket, which imply Tu Ch 7, that the bracket is a point operator, and so the result follows.\complete{minor rewriting needed}
+The second compatibility condition becomes the statement of the $C^\infty(M)$ bilinearity of the bracket, which imply that the bracket is a point operator, and so the result follows.
 \end{proof}
+
+\linea 
 
 \begin{proposition}
-$\Gamma A$ is a finite projective module over $M$. Furthermore, the map $a: \Gamma(A) \to \Gamma(TM)$ is $C^\infty(M)$-linear.
+$\Gamma(A)$ is a finitely generated projective $C^\infty(M)$-module over $M$. Furthermore the map $a: \Gamma(A) \to \Gamma(TM)$ induced by the anchor is a morphism of $C^\infty(M)$-modules.
 \end{proposition}
 \begin{proof}
-    \begin{itemize}
-    \item It is $C^\infty(M)$ module:
-    \end{itemize}
+That a vector bundle over a smooth manifold is a finitely generated projective module is known as Serre-Swan's theorem. A morphism of $C^\infty(M)$-modules is simply a $C^\infty(M)$-linear map, so this statement is guaranteed by the equivalence between morphisms of vector bundles over $M$ and $C^\infty(M)$-linear maps between their sections.
 \end{proof}
 
-The previous result remarks the algebraic perspective which may also be used to study this topic, in contrast to the topological perspective that has been adopted in this document. However, this perspective is useful and will be used whenever clarity may be gained by its use.
-
-Vector bundles maps eq. Cinfty maps between the sections
+The previous result remarks the algebraic perspective which may also be used to study this topic, in contrast to the topological perspective that has been adopted in this document. However, this perspective is useful and will be used whenever clarity may be gained by its use. An important point to have in mind when shifting from one perspective to the other is the equivalence between morphisms of vector bundles over $M$ and $C^\infty(M)$-linear maps between their sections.
 
 \section{Examples}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
