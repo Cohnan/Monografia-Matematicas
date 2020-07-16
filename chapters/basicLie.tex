@@ -40,15 +40,20 @@ A main component of a Lie algebroid $A$ over $M$ is the anchor map $a : A \to TM
 \begin{definition} [Lie Algebroid over $M$]\label{defnLieAlgoid}
 A \emph{Lie algebroid over $M$} is a triple $(q:A \to M, a, [\cdot, \cdot ])$, where $q:A \to M$ is a vector bundle\todo{Does this imply that the fiber is finite dimensional?}, 
     \begin{itemize}
+    
     \item $a:A \to TM$ is a vector bundle morphism called \emph{the anchor of $A$}, and
-    \item \emph{the bracket of $A$} $[\cdot, \cdot ]: \Gamma(A) \times \Gamma(A) \to \Gamma(A)$ is a Lie algebra structure on the $\RR$-vector space $\Gamma(A)$ (an $\RR$-bilinear alternating map) \info{The bracket doesn't need to exist fiberwwise as a metric. e.g. the bracket of vector fields doesn't}
-    \end{itemize}  which satisfy the following compatibility conditions:
-
-\begin{enumerate}
-    \item The $C^\infty(M)$ map induced by $a$ on the sections $\sectoid X \mapsto (m \mapsto a(\sectoid X(m)))$, which we call by the same name $a:\Gamma(A) \to \Gamma(TM)$, is a \emph{Lie algebra morphism}; that is, for any $\sectoid X, \sectoid Y \in \Gamma(A)$ \[ a([\sect{\oid X}, \sect{\oid Y}])  = [a(\sect{\oid X}), a(\sect{\oid Y})] \in  \Gamma(TM).\]
+    
+    \item \emph{the bracket of $A$} $[\cdot, \cdot ]: \Gamma(A) \times \Gamma(A) \to \Gamma(A)$ is a Lie algebra structure on the $\RR$-vector space $\Gamma(A)$ (i.e. an $\RR$-bilinear alternating map satisfying the Jacobi identity)
+    
+    \end{itemize}  
+which satisfy the following compatibility conditions:
+    \begin{enumerate}
+    
+    \item The $C^\infty(M)$ map induced by $a$ on the sections $\sectoid X \mapsto (m \mapsto a(\sectoid X(m)))$, also referred to as the anchor, $a:\Gamma(A) \to \Gamma(TM)$, is a \emph{Lie algebra morphism}; that is, for any $\sectoid X, \sectoid Y \in \Gamma(A)$ \[ a([\sect{\oid X}, \sect{\oid Y}])  = [a(\sect{\oid X}), a(\sect{\oid Y})] \in  \Gamma(TM).\]
     
     \item (Leibniz identity) For any $\sectoid X, \sectoid Y \in \Gamma(A)$, $f \in C^\infty (M)$: \[ [\sect{\oid X}, f\sect{\oid Y}] = f[\sect{\oid X}, \sect{\oid Y}] + a(\sect{\oid X})(f)\, \oid Y \] where $a(\sect{\oid X})(f)$ means the usual (Lie) derivative in the direction of $a(\sect{\oid X}) \in \Gamma(TM)$ of the vector valued function $f$ on $M$.
-\end{enumerate}
+    
+    \end{enumerate}
 \end{definition}
 
 \ptext{To simplify notation we will often say instead that \emph{$A$ is a Lie algebroid over the manifold $M$ with anchor $a$}, and the brackets will be denoted simply by $[\cdot , \cdot]$ for all Lie algebroids, unless otherwise stated.}
@@ -86,7 +91,7 @@ The simplest examples of Lie algebroids are the tangent bundle $TM$ of a manifol
     
     \begin{itemize}
     
-    \item A \emph{field of Lie algebra brackets} $[\cdot, \cdot]:\Gamma(L) \times \Gamma(L) \to \Gamma(L)$ is a section of the vector bundle $Alt^2(L; L)$ of alternating $2$-forms with values on $L$ such that, at any $m \in M$, $[\cdot, \cdot]_m:L_m \times L_m \to L_m$ makes $L_m$ a Lie algebra.
+    \item A \emph{field of Lie algebra brackets on $L$} $[\cdot, \cdot]:\Gamma(L) \times \Gamma(L) \to \Gamma(L)$ is a section of the vector bundle $Alt^2(L; L)$ of alternating $2$-forms with values on $L$ such that, at any $m \in M$, $[\cdot, \cdot]_m:L_m \times L_m \to L_m$ makes $L_m$ a Lie algebra.
     
     \item $L$ together with a field of Lie brackets $[\cdot, \cdot]:\Gamma(L) \times \Gamma(L) \to \Gamma(L)$ is a \emph{Lie algebra bundle} or \emph{LAB} if $L$ admits an atlas, called \emph{an LAB atlas}, $\set{\phi_i: U_i \times \alg g_i \to L_{U_i}}_{i \in I}$, where $\alg g_i$ is a Lie algebra and each $\phi_{i, m}: \alg g_i \to L_m$ is a Lie algebra isomorphism. An LAB is said to \emph{have fiber type $\alg g$} is there is an LAB atlas such that $\alg g_i = \alg g$ for all $i \in I$.
     
@@ -100,19 +105,23 @@ The following theorem gives us insight on the structure of Lie algebroids, speci
 
 \begin{theorem} \label{theoFiberLie}
 Let $A$ be a Lie algebroid over the manifold $M$ with anchor $a$, and suppose $ker(a)$ is a vector subbundle of $A$. Then $ker(a)$ %is a Lie algebroid over $M$ with trivial anchor, i.e. $ a = 0$, and the bracket on the sections of $ker(a)$ restrict to a Lie bracket on the fibers, making \emph{each fiber of $ker(a)$ a Lie algebra}, i.e. $ker(a)$ 
-is a Lie algebroid, called \emph{the vertical sub-Lie algebroid of $A$} with trivial anchor and where the bracket of $A$ restricts to a field of Lie brackets.
+is a Lie algebroid, called \emph{the vertical Lie subalgebroid of $A$} with trivial anchor, where the bracket of $A$ restricts to a field of Lie brackets on $L$, giving each fiber a Lie algebra structure.
 \end{theorem}
 
 \begin{proof}
-$ker(a) \subset A$ implies that the sections of $ker(a)$ can be naturally considered sections of $A$. The first compatibility condition of Lie algebroids imply that the bracket of $A$ restricts to a bracket on $ker(a)$.
+$ker(a) \subset A$ implies that the sections of $ker(a)$ can be naturally considered sections of $A$. The first compatibility condition of Lie algebroids, i.e. that the anchor is a Lie algebra morphism, imply that the bracket of $A$ restricts to a bracket on $ker(a)$.
 
-The second compatibility condition becomes the statement of the $C^\infty(M)$ bilinearity of the bracket, which imply that the bracket is a point operator, and so the result follows.
+The second compatibility condition, Leibniz identity, becomes the statement of the $C^\infty(M)$ bilinearity of the bracket, which imply that the bracket is a point operator, and so the result follows.
 \end{proof}
+
+\begin{remark}
+Even though the bracket in $ker(A)$, when it is a vector bundle to begin with, gives the structure of a Lie algebra to each of its fibers, $ker(A)$ is not necessarily a LAB since there might not exist an atlas of local trivializations $\phi: U \times \alg g \to ker(A)|_U$ compatible with the brackets.
+\end{remark}
 
 \linea 
 
 \begin{proposition}
-$\Gamma(A)$ is a finitely generated projective $C^\infty(M)$-module over $M$. Furthermore the map $a: \Gamma(A) \to \Gamma(TM)$ induced by the anchor is a morphism of $C^\infty(M)$-modules.
+$\Gamma(A)$ is a finitely generated projective $C^\infty(M)$-module over $M$, i.e. $A$ is a direct summand of a trivial vector bundle over $M$. Furthermore the map $a: \Gamma(A) \to \Gamma(TM)$ induced by the anchor is a morphism of $C^\infty(M)$-modules.
 \end{proposition}
 \begin{proof}
 That a vector bundle over a smooth manifold is a finitely generated projective module is known as Serre-Swan's theorem. A morphism of $C^\infty(M)$-modules is simply a $C^\infty(M)$-linear map, so this statement is guaranteed by the equivalence between morphisms of vector bundles over $M$ and $C^\infty(M)$-linear maps between their sections.
@@ -132,9 +141,9 @@ The previous result remarks the algebraic perspective which may also be used to 
 
 The tangent bundle of a manifold $M$ is the most basic example of a Lie algebroid, as it should be if we want to understand Lie algebroids on $M$ as generalized directions on $M$, since $TM$ represent those directions tangent to $M$.
 
-For any manifold $M$, its tangent bundle $(TM, \pi, M)$ together with the vector field commutator $[\cdot , \cdot]: \Gamma(TM) \times \Gamma(TM) \to \Gamma(TM)$ as bracket and with the identity of $TM$ as anchor make of $TM$ a Lie algebroid over $M$. Notice how, evidently, the anchor is fiberwise surjective, meaning that every tangent direction on $M$ has a representative in this Lie algebroid. Additionally, there are no ``vertical directions'' since the vertical sub-Lie algebroid of $TM$ is the $0$ bundle on $M$.
+For any manifold $M$, its tangent bundle $(TM, \pi, M)$ together with the vector field commutator $[\cdot , \cdot]: \Gamma(TM) \times \Gamma(TM) \to \Gamma(TM)$ as bracket and with the identity of $TM$ as anchor make of $TM$ a Lie algebroid over $M$. Notice how, evidently, the anchor is fiberwise surjective, meaning that every tangent direction on $M$ has a representative in this Lie algebroid. Additionally, there are no ``vertical directions'' since the vertical Lie subalgebroid of $TM$ is the $0$ bundle on $M$.
 
-An, in some sense, contrasting family of examples is given by Lie Algebra Bundles, or LABS, over $M$ as defined in \ref{defnLAB}. A LAB $L$ over $M$ necessarily has a trivial anchor $a = 0$, so $L$ is its own vertical sub-Lie algebroid and its elements are solely ``vertical directions'' on $M$, isomorphic in each fiber to a Lie algebra.
+An, in some sense, contrasting family of examples is given by Lie Algebra Bundles, or LABS, over $M$ as defined in \ref{defnLAB}. A LAB $L$ over $M$ necessarily has a trivial anchor $a = 0$, so $L$ is its own vertical Lie subalgebroid and its elements are solely ``vertical directions'' on $M$, isomorphic in each fiber to a Lie algebra.
 
 % \subsubsection{Explicit Examples}
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -184,7 +193,7 @@ An, in some sense, contrasting family of examples is given by Lie Algebra Bundle
 
 %\subsubsection{Involutive Distributions/Foliations}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The following family of examples exposes Lie algebroids with trivial vertical sub-Lie algebroids, but which doesn't span all of the tangent directions of its base manifold $M$.
+The following family of examples exposes Lie algebroids with trivial vertical Lie subalgebroids, but which doesn't span all of the tangent directions of its base manifold $M$.
 
 \begin{definition} {Foliation of $M$}
 Let $\mathcal F = \set{L_\alpha}_{\alpha \in A}$ for some indexing set $A$ be a collection of disjoint connected regular submanifolds of $M$ whose union is all of $M$. $\mathcal F$ is called \emph{a %$p$-dimensional 
@@ -225,7 +234,7 @@ Let $\Delta$ be a distribution in $M$. If $\Delta$ is integrable, then $\Delta$ 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The trivial Lie algebroid makes explicit the understanding of Lie algebroids as spaces of generalized directions on its base manifolds, as it is simply the combination of both the usual tangent directions of the manifold and a vertical sub-Lie algebroid of Lie algebra valued directions. We will see in theorem \ref{theo} that any transitive Lie algebroid has this form locally. The transitive part, as we will see, simply means that every direction tangent to $M$ is represented in the algebroid, i.e. the anchor is fiberwise surjective, which, as seen from the example of involutive distributions isn't always the case but the interpretation of Lie algebroids as spaces of directions on $M$ is maintained.
+The trivial Lie algebroid makes explicit the understanding of Lie algebroids as spaces of generalized directions on its base manifolds, as it is simply the combination of both the usual tangent directions of the manifold and a vertical Lie subalgebroid of Lie algebra valued directions. We will see in theorem \ref{theo} that any transitive Lie algebroid has this form locally. The transitive part, as we will see, simply means that every direction tangent to $M$ is represented in the algebroid, i.e. the anchor is fiberwise surjective, which, as seen from the example of involutive distributions isn't always the case but the interpretation of Lie algebroids as spaces of directions on $M$ is maintained.
 
 Let $M$ be a manifold, and $\alg g$ a (real, finite dimensional) Lie algebra with Lie bracket $[\cdot , \cdot]: \alg g \times \alg g$.
 
