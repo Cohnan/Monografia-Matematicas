@@ -234,44 +234,51 @@ Let $\Delta$ be a distribution in $M$. If $\Delta$ is integrable, then $\Delta$ 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The trivial Lie algebroid makes explicit the understanding of Lie algebroids as spaces of generalized directions on its base manifolds, as it is simply the combination of both the usual tangent directions of the manifold and a vertical Lie subalgebroid of Lie algebra valued directions. We will see in theorem \ref{theo} that any transitive Lie algebroid has this form locally. The transitive part, as we will see, simply means that every direction tangent to $M$ is represented in the algebroid, i.e. the anchor is fiberwise surjective, which, as seen from the example of involutive distributions isn't always the case but the interpretation of Lie algebroids as spaces of directions on $M$ is maintained.
+The trivial Lie algebroid makes explicit the understanding of Lie algebroids as spaces of generalized directions on its base manifolds, as it is simply the combination of both the usual tangent directions of the manifold and a vertical Lie subalgebroid of Lie algebra valued directions. We will see in theorem \ref{theo} that any transitive Lie algebroid has this form locally. The transitive part, as we will see, simply means that every direction tangent to $M$ is represented in the algebroid, i.e. the anchor is fiberwise surjective, which, as seen from the example of involutive distributions, isn't always the case.
 
-Let $M$ be a manifold, and $\alg g$ a (real, finite dimensional) Lie algebra with Lie bracket $[\cdot , \cdot]: \alg g \times \alg g$.
+Let $M$ be a manifold, and $\alg g$ a (real, finite dimensional) Lie algebra with Lie bracket $[\cdot , \cdot]: \alg g \times \alg g \to \alg g$.
 
-Consider $p_1: M \times \alg g \to M$, $(m, \eta) \mapsto m$ as the trivial vector bundle with fiber $\alg g$ and base $M$. Greek letters like $\eta, \theta, \kappa, \dots$ will usually be used to denote both elements of a lie algebra $\alg g$, and elements of a trivial bundle $M \times \alg g$; furthermore, the subscript $m \in M$ will be used both to emphasize that such a vector bundle element belongs to the fiber of $m$, and to denote the Lie algebra element in the second coordinate of such a vector bundle element, e.g.$\eta_m \in M$ might refer to either an element $\eta_m \in \set{m} \times \alg g \subset M \times \alg g$, or to $p_2(\eta_m) \in \alg g$. %A section of this bundle will be denoted by capital greek letters like $H, \Theta, K, \dots$ and their image in the fiber of $m \in M$ will once again be denoted by the subscript $m$, so $H \in \Gamma(M \times \alg g)$ and $H_m \in p_1^{-1}(m)$. $X(H)$, $H$ corresponds canonically to a function $M \to g$. (The sections of/This vector bundle) has a natural Lie structure given by the fiberwise Lie bracket of the Lie algebra $\alg g$.
+Consider $p_1: M \times \alg g \to M$, $(m, \eta) \mapsto m$ as the trivial vector bundle with fiber $\alg g$ and base $M$. \ptext{Greek letters like $\eta, \theta, \kappa, \dots$ will usually be used to denote both elements of a lie algebra $\alg g$, and elements of a trivial bundle $M \times \alg g$; furthermore, the subscript $m \in M$ will be used both to emphasize that such a vector bundle element belongs to the fiber of $m$, and to denote the Lie algebra element in the second coordinate of such a vector bundle element, e.g. $\eta_m$ might refer, depending on the contexto, to either an element $\eta_m \in \set{m} \times \alg g \subset M \times \alg g$, or to $p_2(\eta_m) \in \alg g$}. %A section of this bundle will be denoted by capital greek letters like $H, \Theta, K, \dots$ and their image in the fiber of $m \in M$ will once again be denoted by the subscript $m$, so $H \in \Gamma(M \times \alg g)$ and $H_m \in p_1^{-1}(m)$. $X(H)$, $H$ corresponds canonically to a function $M \to g$. (The sections of/This vector bundle) has a natural Lie structure given by the fiberwise Lie bracket of the Lie algebra $\alg g$.
 
 Now, consider the internal direct sum over $M$ of the vector bundles $TM$ and $M \times \alg g$ with projection map $\pi: TM \oplus (M \times \alg g) \to M$. %; -> esta definicion de la suma directa no me permite ver facilmente la estructura de variedad; Tu define distinto y prueba que la suma directa de haces vectoriales suaves es suave... pero quisiera poder ver que esta estructura es la misma estructura de variedad de $TM \times \alg g$... cambiar la definicion de la suma directa significa tambien que cambie la forma de referirme a los elementos de la suma, de tal forma que el anchor ya no es solo una proyeccion a la primera coordenada \unsure{Here I'm being explicit with basic stuff of vector bundle theory on purpose, but I'm not sure if this will stay} that the underlying manifold of this bundle is simply the NO regular submanifold of the product $TM \times (M \times \alg g)$ given by $TM \oplus (M \times \alg g) = \set{(X, \eta) \in TM \times (M \times \alg g) \st \pi(X) = p_1(\eta)}$; we will call the projection of this vector bundle $\pi: X \oplus \eta \mapsto \pi(X) = p_1(\eta)$, abusing the notation; we write an element of this vector bundle as $X \oplus \eta$, where $X \in \pi^{-1}(m)$ and $\eta \in p_1^{-1}(m)$.
-. $TM \oplus (M \times \alg g)$ has a vector bundle atlas $\set{(\pi^{-1}(U_i), \psi^\oplus_i: \pi^{-1}(U_i) \to U_i \times (\RR^{n_i} \oplus \alg g))}_{i \in I}$, where $n_i$ is some positive integer and $U_i$ is a chart neighborhood of $M$ that simultaneously trivializes the vector bundles $TM$ and $M \times \alg g$ through the coordinate maps $\psi^{TM}_i: TU_i \to U_i \times \RR^{n_i}$  and $\psi^\alg g = id_{U_i \times \alg g}$.
+It has a vector bundle atlas $\set{(U_i, \phi^\oplus_i: U_i \times (\RR^{n_i} \oplus \alg g) \to \pi^{-1}(U_i) )}_{i \in I}$, where $n_i$ is some positive integer and $U_i$ is a chart neighborhood of $M$ that simultaneously trivializes the vector bundles $TM$ and $M \times \alg g$ through the coordinate maps $\phi^{TM}_i: U_i \times \RR^{n_i} \to TU_i$  and $\phi^\alg g = id_{U_i \times \alg g}$.
 
 We now define the main ingredients of the trivial Lie algebroid:
     \begin{itemize}
-    \item The anchor $a: TM \oplus (M \times \alg g) \to TM$, $X \oplus \eta \mapsto X$. This map is a vector bundle map as it clearly respects the fibers and, locally on a neighborhood chart, is $\tilde a = \psi^{TM} \circ a \circ (\psi^{\oplus}_i)^{-1}: (m, (v, \eta)) \mapsto v$ which is smooth since it is simply a projection, hence $a$ is smooth.
+    \item The anchor $a: TM \oplus (M \times \alg g) \to TM$, $X \oplus \eta \mapsto X$. This map is a vector bundle map as it clearly respects the fibers and, locally on a neighborhood chart, is $\tilde a = (\phi^{TM}_i)^{-1} \circ a \circ \phi^{\oplus}_i: (m, (v, \eta)) \mapsto v$ which is smooth since it is simply a projection, hence $a$ is smooth.
     
     \item The bracket is given by 
     \[
         [\sect X \oplus \sect \eta, \sect Y \oplus \sect \theta] := [\sect X, \sect Y] \oplus \{\sect X(\sect \theta) - \sect Y(\sect \eta) + [\sect \eta, \sect \theta]\}
     \]
-    for all $\sect X, \sect Y \in \Gamma(TM)$, $\sect \eta, \sect \theta \in \Gamma(M \times \alg g)$, where $\sect X(\sect \Theta)$ and $\sect Y(\sect \eta)$ mean the Lie derivative in direction of the vector field of the $\alg g$-valued functions that $\sect \Theta$ and $\sect \eta$ encode. %\sout{This definition will be motivated in the example of the Atiyah lie algebroid \ref{}, but for now we restrict ourselves to see that it works} 
-    Notice that this definition, by linearity, is equivalent to saying that $[\sect X, \sect \theta] := \sect X(\sect \theta)$ and $[\sect \eta, \sect Y] := - [\sect Y, \sect \eta] = -\sect Y(\sect \eta)$, i.e. to say that the bracket is the Lie derivative (of sections of vector bundles over $M$). %Notice that in the above formula the symbols $[\cdot , \cdot]$ are used in $3$ different instances, each one referring to the brackets of $3$ different spaces. $X(\Theta)$ makes reference to the derivative in direction of $X$ of the vector valued function $M \to \alg g$ associated to $\Theta$, or, simply, to the Lie derivative of the section $\Theta \in \Gamma(M \times \alg g)$, $\mathcal L_X \Theta$. Veamos que esto es una estructura de Lie en $\Gamma(TM \times (M \times \alg g))$:
-    That this bracket is $\RR$-linear and alternating is clear, and to check the Jacobi identity
-    \[ [\sectoid X, [\sectoid Y, \sectoid Z]] = [[\sectoid X, \sectoid Y], \sectoid Z] + [[\sectoid X, \sectoid Z], \sectoid Y]] \] it is enough to check verify two cases: when two of the sections $\sectoid X, \sectoid Y, \sectoid Z \in \Gamma(TM \oplus (M \times \alg g))$ are sections of $TM$ and the remaining one is a section of $M \times \alg g$; where the opposite is true.
+    for all $\sect X, \sect Y \in \Gamma(TM)$, $\sect \eta, \sect \theta \in \Gamma(M \times \alg g)$, where $\sect X(\sect \Theta)$ and $\sect Y(\sect \eta)$ mean the Lie derivative in direction of the vector field of the $\alg g$-valued functions that $\sect \Theta$ and $\sect \eta \in \Gamma(M \times \alg g)$ encode. %\sout{This definition will be motivated in the example of the Atiyah lie algebroid \ref{}, but for now we restrict ourselves to see that it works} 
+    Notice that this definition, by $\RR$-linearity and alternation which are clear, is equivalent to saying that $[\sect X, \sect \theta] := \sect X(\sect \theta)$ and $[\sect \eta, \sect Y] := - [\sect Y, \sect \eta] = -\sect Y(\sect \eta)$, i.e. to say that the bracket is the Lie derivative in direction of vector fields, applied to both vector fields and vector valued functions. %Notice that in the above formula the symbols $[\cdot , \cdot]$ are used in $3$ different instances, each one referring to the brackets of $3$ different spaces. $X(\Theta)$ makes reference to the derivative in direction of $X$ of the vector valued function $M \to \alg g$ associated to $\Theta$, or, simply, to the Lie derivative of the section $\Theta \in \Gamma(M \times \alg g)$, $\mathcal L_X \Theta$. Veamos que esto es una estructura de Lie en $\Gamma(TM \times (M \times \alg g))$:
+    To check the Jacobi identity
+    \[ [\sectoid X, [\sectoid Y, \sectoid Z]] = [[\sectoid X, \sectoid Y], \sectoid Z] + [[\sectoid X, \sectoid Z], \sectoid Y]] \] it is enough to check verify two cases: when two of the sections $\sectoid X, \sectoid Y, \sectoid Z \in \Gamma(TM \oplus (M \times \alg g))$ are sections of $TM$ and the remaining one is a section of $M \times \alg g$, and, where the opposite is true.
     \end{itemize}
 
 Let's check that the compatibility conditions between the anchor and the bracket are satisfied; let $\sect X \oplus \sect \eta, \sect Y \oplus \sect \theta \in \Gamma(TM \oplus (M \times \alg g))$, $f \in C^\infty(M)$:
 
-    \begin{itemize}
-    \item $a([\sect X \oplus \sect \eta, \sect Y \oplus \sect \theta]) = a(\, [\sect X, \sect Y] \oplus \{\sect X(\sect \theta) - \sect Y(\sect \eta) + [\sect \eta, \sect \theta] \,) = [\sect X, \sect Y] = [a(\sect X \oplus \sect \eta), a(\sect Y \oplus \sect \theta)]$
+    \begin{enumerate}
+    \item $a: \Gamma(A) \to \Gamma(TM)$ is a Lie algebra morphism: 
+    \begin{multline*}
+    a([\sect X \oplus \sect \eta, \sect Y \oplus \sect \theta]) 
+    = a(\, [\sect X, \sect Y] \oplus \{\sect X(\sect \theta) - \sect Y(\sect \eta) + [\sect \eta, \sect \theta]  \}) \\
+    = [\sect X, \sect Y] 
+    = [a(\sect X \oplus \sect \eta), a(\sect Y \oplus \sect \theta)].    
+    \end{multline*}
     
-    \item 
+    
+    \item Lebniz identity: 
     \begin{align*}
-        [\sect X \oplus \sect \eta, &f\cdot (\sect Y \oplus \sect \theta)] =\\
+        [\sect X \oplus \sect \eta, &f\, (\sect Y \oplus \sect \theta)] =\\
         &= [\sect X \oplus \sect \eta, f\sect Y \oplus f\sect \theta] \\
         &=  [\sect X, f\sect Y] \oplus \{\sect X(f\sect \theta) - f\sect Y(\sect \eta) + [\sect \eta, f\sect \theta]\} \\
         &= (f[\sect X, \sect Y] + \sect X(f)\,\sect Y) \oplus \{\sect X(f)\,\sect \theta + f\,\sect X(\sect \theta) - f\sect Y(\sect \eta) + f[\sect \eta, \sect \theta]\} \\
         &=f([\sect X, \sect Y] \oplus \{ \sect X(\sect \theta) -\sect Y(\sect \eta) + [\sect \eta, \sect \theta]\} ) + (\sect X(f) \sect Y \oplus \sect X(f)\sect \theta) \\
-        &= f[\sect X \oplus \sect \eta, \sect Y \oplus \sect \theta] + a(\sect X \oplus \sect \eta)f \, (\sect Y \oplus \sect \theta)
+        &= f[\sect X \oplus \sect \eta, \sect Y \oplus \sect \theta] + a(\sect X \oplus \sect \eta)(f) \, (\sect Y \oplus \sect \theta)
     \end{align*}
-    \end{itemize}
+    \end{enumerate}
 
 The vector bundle $TM \times (M \times \alg g)$ together with the previously defined anchor and bracket is called \emph{the trivial Lie algebroid on $M$ with structure algebra $\alg g$}.
 
