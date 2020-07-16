@@ -58,7 +58,7 @@ which satisfy the following compatibility conditions:
 
 \ptext{To simplify notation we will often say instead that \emph{$A$ is a Lie algebroid over the manifold $M$ with anchor $a$}, and the brackets will be denoted simply by $[\cdot , \cdot]$ for all Lie algebroids, unless otherwise stated.}
 
-\ptext{When talking about a vector bundle $E$ over a manifold $M$, a vector-bundle chart, or simply a chart, will make reference to a pair $(U, \phi: U \times V \to E|_U)$, where $U$ is an open subset of $M$ and $\phi$ is a local trivialization which is $C^\infty$-differentiable (and a vector bundle isomorphism, by definition of local trivialization). Additionally, boldface letters will be used to denote sections of the vector bundle, for instance $\sect \mu \in \Gamma(E)$, and its value in the fiber $m \in M$ will be denoted both by $\sect \mu(m)$ and by $\sect \mu_m$.}
+\ptext{A vector bundle $E$ over a manifold $M$ will usually be denoted by its projection map $p^E:E \to M$ or by the triple $(E, p^E, M)$. A vector-bundle chart, or simply a chart, will make reference to a pair $(U \subset M, \phi: U \times V \to E|_U)$, where $U$ is an open subset of $M$ and $\phi$ is a local trivialization which is $C^\infty$-differentiable (and a vector bundle isomorphism, by definition of local trivialization). Additionally, boldface letters will be used to denote sections of the vector bundle, for instance $\sect \mu \in \Gamma(E)$, and its value in the fiber $m \in M$ will be denoted both by $\sect \mu(m)$ and by $\sect \mu_m$.}
 
 \ptext{For the rest of the chapter $A$ will refer to a Lie algebroid over a manifold $M$ with anchor $a$, unless otherwise stated.}
 
@@ -104,7 +104,7 @@ Any $LAB$ on a manifold $M$ has a \emph{unique structure as a Lie algebroid on $
 The following theorem gives us insight on the structure of Lie algebroids, specifically on their ``vertical'' portion, i.e. the kernel of the anchor map.
 
 \begin{theorem} \label{theoFiberLie}
-Let $A$ be a Lie algebroid over the manifold $M$ with anchor $a$, and suppose $ker(a)$ is a vector subbundle of $A$. Then $ker(a)$ %is a Lie algebroid over $M$ with trivial anchor, i.e. $ a = 0$, and the bracket on the sections of $ker(a)$ restrict to a Lie bracket on the fibers, making \emph{each fiber of $ker(a)$ a Lie algebra}, i.e. $ker(a)$ 
+Let $A$ be a Lie algebroid over the manifold $M$ with anchor $a$, and suppose $ker(a)$ is a vector subbundle of $A$, i.e. the inclusion map $:ker(A) \to A$ is an embedding and $ker(A)$ is a vector bundle. Then $ker(a)$ %is a Lie algebroid over $M$ with trivial anchor, i.e. $ a = 0$, and the bracket on the sections of $ker(a)$ restrict to a Lie bracket on the fibers, making \emph{each fiber of $ker(a)$ a Lie algebra}, i.e. $ker(a)$ 
 is a Lie algebroid, called \emph{the vertical Lie subalgebroid of $A$} with trivial anchor, where the bracket of $A$ restricts to a field of Lie brackets on $L$, giving each fiber a Lie algebra structure.
 \end{theorem}
 
@@ -127,7 +127,7 @@ $\Gamma(A)$ is a finitely generated projective $C^\infty(M)$-module over $M$, i.
 That a vector bundle over a smooth manifold is a finitely generated projective module is known as Serre-Swan's theorem. A morphism of $C^\infty(M)$-modules is simply a $C^\infty(M)$-linear map, so this statement is guaranteed by the equivalence between morphisms of vector bundles over $M$ and $C^\infty(M)$-linear maps between their sections.
 \end{proof}
 
-The previous result remarks the algebraic perspective which may also be used to study this topic, in contrast to the topological perspective that has been adopted in this document. However, this perspective is useful and will be used whenever clarity may be gained by its use. An important point to have in mind when shifting from one perspective to the other is the equivalence between morphisms of vector bundles over $M$ and $C^\infty(M)$-linear maps between their sections.
+The previous result remarks the algebraic perspective which may also be used to study this topic, in contrast to the topological perspective that has been primarily adopted in this document. However, this perspective is useful and will be used whenever clarity may be gained by its use. An important point to have in mind when shifting from one perspective to the other is the equivalence between morphisms of vector bundles over $M$ and $C^\infty(M)$-linear maps between their sections.
 
 \section{Examples}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -139,11 +139,11 @@ The previous result remarks the algebraic perspective which may also be used to 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The tangent bundle of a manifold $M$ is the most basic example of a Lie algebroid, as it should be if we want to understand Lie algebroids on $M$ as generalized directions on $M$, since $TM$ represent those directions tangent to $M$.
+The tangent bundle of a manifold $M$ is the most basic example of a Lie algebroid, as it should be if we want to understand Lie algebroids on $M$ as generalized directions on $M$ since $TM$ is the space of the directions tangent to $M$.
 
-For any manifold $M$, its tangent bundle $(TM, \pi, M)$ together with the vector field commutator $[\cdot , \cdot]: \Gamma(TM) \times \Gamma(TM) \to \Gamma(TM)$ as bracket and with the identity of $TM$ as anchor make of $TM$ a Lie algebroid over $M$. Notice how, evidently, the anchor is fiberwise surjective, meaning that every tangent direction on $M$ has a representative in this Lie algebroid. Additionally, there are no ``vertical directions'' since the vertical Lie subalgebroid of $TM$ is the $0$ bundle on $M$.
+For any manifold $M$, its tangent bundle $(TM, \pi, M)$ together with the vector field commutator $[\cdot , \cdot]: \Gamma(TM) \times \Gamma(TM) \to \Gamma(TM)$ as bracket and with the identity of $TM$ as anchor make of $TM$ a Lie algebroid over $M$. Notice how, evidently, the anchor is fiberwise surjective, meaning that every tangent direction on $M$ has a ``representative'' in this Lie algebroid. Additionally, there are no ``vertical directions'' since the vertical Lie subalgebroid of $TM$ is the $0$ bundle on $M$.
 
-An, in some sense, contrasting family of examples is given by Lie Algebra Bundles, or LABS, over $M$ as defined in \ref{defnLAB}. A LAB $L$ over $M$ necessarily has a trivial anchor $a = 0$, so $L$ is its own vertical Lie subalgebroid and its elements are solely ``vertical directions'' on $M$, isomorphic in each fiber to a Lie algebra.
+A contrasting family of examples is given by Lie Algebra Bundles, or LABS, over $M$ as defined in \ref{defnLAB}. A LAB $L$ over $M$ necessarily has a trivial anchor $a = 0$, so $L$ is its own vertical Lie subalgebroid and its elements are solely ``vertical directions'' on $M$, isomorphic in each fiber to a Lie algebra.
 
 % \subsubsection{Explicit Examples}
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -193,31 +193,31 @@ An, in some sense, contrasting family of examples is given by Lie Algebra Bundle
 
 %\subsubsection{Involutive Distributions/Foliations}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The following family of examples exposes Lie algebroids with trivial vertical Lie subalgebroids, but which doesn't span all of the tangent directions of its base manifold $M$.
+The following family of examples exposes Lie algebroids with trivial vertical Lie subalgebroids, but which don't necessarily span all of the tangent directions of its base manifold $M$ either.
 
 \begin{definition} {Foliation of $M$}
 Let $\mathcal F = \set{L_\alpha}_{\alpha \in A}$ for some indexing set $A$ be a collection of disjoint connected regular submanifolds of $M$ whose union is all of $M$. $\mathcal F$ is called \emph{a %$p$-dimensional 
-(smooth) foliation of $M$} if every $m \in M$ is an element of a chart\todo{does it have to be a chart?}  $(U, \psi:U \to \RR^n)$ for which the coordinates of any $L_\alpha \in \mathcal F$ that intersects with $U$, $U \cap L_\alpha$ are described in the chart by the equations $x^{p+1} = c^{p+1}, \cdots , x^{n} = c^{n} $ for constants $c^{p+1}, \dots c^n \in \RR$ for some natural number $p$. The elements $L_\alpha \in \mathcal F$ are called \emph{the leaves of the foliation $\mathcal F$}.
+(smooth) foliation of $M$} if every $m \in M$ is an element of a chart $(U, \psi:U \to \RR^n)$ for which the coordinates of any $L_\alpha \in \mathcal F$ that intersects with $U$, $U \cap L_\alpha$ are described in the chart by the equations $x^{p+1} = c^{p+1}, \cdots , x^{n} = c^{n} $ for constants $c^{p+1}, \dots, c^n \in \RR$ for some natural number $p$. The elements $L_\alpha \in \mathcal F$ are called \emph{the leaves of the foliation $\mathcal F$}.
 \end{definition}
 
 \begin{definition}{Distribution on $M$}
 \begin{itemize}
     \item \emph{A distribution $\Delta$ on $M$} is a vector subbundle of $TM$; it is called $q$-dimensional if $\Delta$ is a vector bundle of rank $q$.
     
-    \item A distribution $\Delta$ on $M$ is called \emph{involutive} or \emph{integrable} if it is closed under the vector field commutator, i.e. for every $\sect \mu, \sect \nu \in \Gamma(\Delta) \subset \Gamma(TM)$, $[\sect \mu, \sect \nu] \in \Gamma(\Delta)$.
+    \item A distribution $\Delta$ on $M$ is called \emph{involutive} or \emph{integrable} if it is closed under the vector field commutator, i.e. for every $\sect \mu, \sect \nu \in \Gamma(\Delta)$, when viewed as sections of $TM$, satisfy $[\sect \mu, \sect \nu] \in \Gamma(\Delta)$.
 \end{itemize}
 \end{definition}
 
-Let $\mathcal F = \set{L_\alpha}_{\alpha \in A}$ be a foliation of $M$. Each leaf is a regular submanifold of $M$, therefore $T L_\alpha$ is embedded in $TM$ and we may see $T L_\alpha$ as a submanifold of $TM$. The (disjoint) union $\Delta = \bigcup_{\alpha \in A} T L_\alpha \subset TM$ can be given a (smooth) vector bundle structure over $M$: around $m \in M$ there is a chart $(U, \psi:U \to \RR^n)$ compatible with the foliation; from it we can construct a vector bundle chart $(U \times \RR^n, \phi: U \times \RR^n \to TM|_{U})$ for $TM$ which can be restricted to a chart $(U \times \RR^p, \tilde{\phi}: U \times \RR^p \to TL_{\alpha}|_{U})$ for $\Delta$, where $\Delta|_U = \bigcup_{\alpha: \, U \inter L_\alpha \neq \varnothing} T L_\alpha|_U$. This charts constructed around all $m\in M$ also show that $E$ is embedded in $TM$ as a vector subbundle, and so it is a distribution on $M$.
+Let $\mathcal F = \set{L_\alpha}_{\alpha \in A}$ be a foliation of $M$. Each leaf is a regular submanifold of $M$, therefore $T L_\alpha$ is embedded in $TM$ and we may see $T L_\alpha$ as a submanifold of $TM$. The (disjoint) union $\Delta = \bigcup_{\alpha \in A} T L_\alpha \subset TM$ can be given a (smooth) vector bundle structure over $M$: around $m \in M$ there is a chart $(U, \psi:U \to \RR^n)$ compatible with the foliation; from it we can construct a vector bundle chart $(U, \phi: U \times \RR^n \to TM|_{U})$ for $TM$ which can be restricted to a chart $(U, \tilde{\phi}: U \times \RR^p \to \Delta|_{U})$ for $\Delta$, where $\Delta|_U = \bigcup_{\alpha: \, U \inter L_\alpha \neq \varnothing} T L_\alpha|_{U\inter L_\alpha}$. This charts constructed around all $m\in M$ also show that the inclusion $:\Delta \to TM$ is an embedding (since $\Delta$ can be described locally from vanishing $m-p$ coordinates of a manifold chart of $TM$), making $\Delta$ a vector subbundle of $TM$.
 
-Any $\sect \mu, \sect \nu \in \Gamma(\Delta)$ has each of its integral lines completely contained in a single leaf of the foliation, so they can be restricted to vector fields on any leaf $L_\alpha$, denoted by $\sect \mu|_{L_\alpha}$ and $\sect \nu|_{L_\alpha}$ respectively. They can also be considered vector fields on $M$ and so their vector field commutator at $m \in M$ has the formula $[\sect \mu, \sect \nu]_m = (\mathcal L_{\sect \mu} \sect \nu)_m = \frac{d}{dt}_{t=0} (\phi_{-t})_* \sect \nu_{\phi_t(m)} = [\sect \mu|_{L_\alpha}, \sect \nu|_{L_\alpha}]_m$, where $\phi_t(m)$ is the local flow of $\sect \mu$ at $m$ and $L_\alpha$ is the unique leaf in which $m \in M$ is contained. Therefore, $\Gamma(\Delta)$ is closed under the vector field commutator and so we may consider its restriction to $\Delta$ a Lie algebroid bracket on $\Delta$. In summary, 
+Furthermore, any $\sect \mu, \sect \nu \in \Gamma(\Delta)$ has each of its integral lines completely contained in a single leaf of the foliation, so they can be restricted to vector fields on any leaf $L_\alpha$, denoted by $\sect \mu|_{L_\alpha}$ and $\sect \nu|_{L_\alpha}$ respectively. They can also be considered vector fields on $M$ and so their vector field commutator at $m \in M$ has the formula $[\sect \mu, \sect \nu]_m = (\mathcal L_{\sect \mu} \sect \nu)_m = \frac{d}{dt}_{t=0} (\phi_{-t})_* \sect \nu_{\phi_t(m)} = [\sect \mu|_{L_\alpha}, \sect \nu|_{L_\alpha}]_m$, where $\phi_t(m)$ is the local flow of $\sect \mu$ at $m$ and $L_\alpha$ is the unique leaf in which $m \in M$ is contained. Therefore, $\Gamma(\Delta)$ is closed under the vector field commutator and so we may consider its restriction to $\Delta$ a Lie algebroid bracket on $\Delta$. In summary, 
 \begin{proposition}
-A foliation of the manifold $M$ gives rise to an integrable distribution $\Delta$ on $M$ which, together with the anchor $a = id_{TM}|_\Delta$, becomes a Lie algebroid.
+A foliation of the manifold $M$ gives rise to an integrable distribution $\Delta$ on $M$ which, together with the anchor $a = id_{TM}|_\Delta$, becomes a Lie algebroid over $M$.
 \end{proposition}
-Notice that, if $M$ is an $n$-dimensional manifold and $\mathcal F$ is a $p$-dimensional foliation with $p leq n$, then $\Delta$ is a $p$-dimensional and $a$ is not fiberwise surjective but it is of constant rank $p$.
+Notice that, if $M$ is an $n$-dimensional manifold and $\mathcal F$ is a $p$-dimensional foliation with $p < n$, then $\Delta$ is a $p$-dimensional distribution and $a$ is not fiberwise surjective, but it is of constant rank $p$.
 %E is also a submanifold of $TM$. Additionally, we see that $E$ has vector bundle structure over $M$ of rank $p$, because each $m \in M$ is an element of a unique leaf $L$ and $T_m L \subset E$ is a vector space of dimension $p$; TL can be given a nice atlas?
 
-The converse is also true and it is called Frobenius theorem.
+The converse is also true and is called Frobenius theorem:
 
 \begin{proposition}
 Let $\Delta$ be a distribution in $M$. If $\Delta$ is integrable, then $\Delta$ arises from a foliation of $M$.
