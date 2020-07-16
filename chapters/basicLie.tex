@@ -289,7 +289,7 @@ The vector bundle $TM \times (M \times \alg g)$ together with the previously def
 
 
 
-\subsection{Trivial Principal Bundle and its Atiyah Lie Algebroid REMOVE}
+\subsection{Trivial Principal Bundle and its Atiyah Lie Algebroid REMOVE\todo{If I don't prove that every transitive Lie algebroid is locally trivial, then perhaps at least expand for this case}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -305,11 +305,11 @@ The vector bundle $T(M \times G)/G$ over $M$ is diffeomorphic to the vector bund
 Every direction of $TG$ can be seen as an element of the range of a right-invariant vector field, i.e. an element in $T_g G$ may be written as $A_g :=\frac{d}{dt}|_{t=0}e^{tA}g$ for some $A \in \alg g$; this is known to give a diffeomorphism $TG \diffeo G \times \alg g$. Now, $T(M \times G) \diffeo TM \boxplus TG \diffeo TM \boxplus (G \times \alg g)$\footnote{$V \boxplus W$ denotes the external Whitney sum of the vector bundles $V$, over a base manifold $X$, and $W$, over a base manifold $Y$ This is a vector bundle over $X \times Y$ and has $V \times W$ as underlying manifold.}; an element of $T(M \times G)$ may, thus, be written as $X \boxplus A_g = \frac{d}{dt}|_{t = 0}(\gamma(t), e^{tA}g)$ where $X = \gamma'(0) \in T_x M$ for some $x \in M$ and $A \in \alg g$, which may also be interpreted as the element $(X, g, A) \in TM \boxplus (M \times \alg g)$. The (right) action of $h \in G$ on the element $(x, g) \in M\times G$ is $(x, g)h = (x, gh)$, so the right action on $X \boxplus A_g \in T(M \times G)$ is $(X \boxplus A_g)h = \frac{d}{dt}|_{t=0}[(\gamma(t), e^{tA}g)h] = \frac{d}{dt}|_{t=0}[(\gamma(t), e^{tA}gh)] = X \boxplus A_{gh}$, which may also be written as $(X, g, A)h = (X, gh, A)$; this allows us to easily see (formally proven in the context of transitive Lie algebroids in \ref{}) that $T(M \times G)/G \diffeo TM \oplus (M \oplus \alg g)$, where the orbit of the element $X \boxplus A_g \in T(M \times G)$ is sent to the element $(X, A) = X \oplus A \in TM \oplus (M \times \alg g)$.
 \end{proof}
 
-Bracket:
+% Bracket:
 
-To continue our exploration of the Atiyah lie algebroid of the trivial principal bundle $M \times G$, we now translate its bracket to the language of the vector bundle $TM \oplus (M \times \alg g)$. 
+% To continue our exploration of the Atiyah lie algebroid of the trivial principal bundle $M \times G$, we now translate its bracket to the language of the vector bundle $TM \oplus (M \times \alg g)$. 
 
-\subsubsection{Explicit Examples}
+%\subsubsection{Explicit Examples}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -358,9 +358,9 @@ The subfamily of examples we will be most interested in is the family of $P \tim
 
 % By the main result of Ch 7 of Tu, a $0$-diferential operator (i.e. a $C^\infty(M)$ map)
 
-Let $(E, p, M)$ be a vector bundle. Its \emph{algebroid of derivations} $\alg D(E)$ is analogous to the Lie algebra of infinitesimal linear transformations $\alg{gl}(V)$ of a vector space $V$. In fact, if $E = M \times V$ is a trivial vector bundle, $\alg D(E)$ is isomorphic to the trivial Lie algebroid $TM \oplus (M \times \alg{gl}(V))$.
+Let $(E, p, M)$ be a vector bundle. Its \emph{algebroid of derivations} $\alg D(E)$ is analogous to the Lie algebra of infinitesimal linear transformations $\alg{gl}(V)$ of a vector space $V$. In fact, if $E = M \times V$ is a trivial vector bundle, $\alg D(E)$ is isomorphic to the trivial Lie algebroid $TM \oplus (M \times \alg{gl}(V))$. This Lie algebroid will be important to define a representation of a Lie algebroid on a vector bundle, a generalized notion of associated vector bundle to a principal bundle.
 
-Let $End(E)$ denote the vector bundle whose sections are vector bundle endomorphisms or $E$, which has $End(E_m)$ as fiber at $m \in M$. It is known that vector bundle morphisms over a manifold are in a bijective correspondence with $C^\infty(M)$-maps between the spaces of sections, so we may regard the sections of $End(E)$ as $C^\infty(M)$-linear maps $\Gamma(E) \to \Gamma(E)$, also called \emph{$0$th-order differential operstors on $E$}.
+Let $End(E)$ denote the vector bundle whose sections are vector bundle endomorphisms or $E$, which has $End(E_m)$ as fiber at $m \in M$. It is known that vector bundle morphisms over a manifold are in a bijective correspondence with $C^\infty(M)$-maps between the spaces of sections, so we may regard the sections of $End(E)$ as $C^\infty(M)$-linear maps $\Gamma(E) \to \Gamma(E)$, also called \emph{$0$th-order differential operators on $E$}.
 
 A \emph{$1$st-order differential operator on $E$} is an $\RR$-linear map 
 \[
@@ -370,9 +370,9 @@ such that, for every $f \in C^\infty(M)$, the map
 \begin{align*}
     F: \Gamma(E) \to \Gamma(E) && \sect \mu \mapsto D(f \sect \mu) - f D(\sect \mu)
 \end{align*}
-is a $0$-th order differential operator. It is not hard to check that these condition implies that $1$-st order differential operators are also local operators on $E$. They are sections of a vector bundle $Diff^1(E)$ on $M$, whose fiber at $m \in M$ is $\set{D_m: \Gamma(E) \to E_m \st D_p \textrm{ is $\RR$-linear}}$. Common examples include the usual partial derivatives on $E = \RR^n \times \RR$, the Lie derivative $\mathcal L_{\sect X}$ on $E = TM$ and the covariant derivatives $\nabla_{\sect X}$ on any $E$, where $\sect X$ is a vector field on $M$.
+is a $0$-th order differential operator. It is not hard to check that these condition implies that $1$st order differential operators are local operators on $E$. They are sections of a vector bundle $Diff^1(E)$\todo{is there a general way to guarantee this? Specially the existence of a smooth vector bundle atlas?} on $M$, whose fiber at $m \in M$ is $\set{D_m: \Gamma(E) \to E_m \st D_p \textrm{ is $\RR$-linear}}$. Common examples include the usual partial derivatives of functions $:\RR^n \to \RR$ understood as sections of $E = \RR^n \times \RR$, the Lie derivative $\mathcal L_{\sect X}$ on $E = TM$, and the covariant derivatives $\nabla_{\sect X}$ on any vector bundle $E$, where $\sect X$ is a vector field on $M$.
 
-Let $Hom(T^*M, End(E))$ be the vector bundle over $M$ whose sections are vector bundle morphisms between $T^* M$ and $End(E)$ over $M$ or, equivalently, $\RR$-linear maps $\Omega^1(TM) \to \Gamma(End(E))$. Define \emph{the symbol map} to be the vector bundle morphism
+Let $Hom(T^*M, End(E))$ be the vector bundle whose sections are vector bundle morphisms between $T^* M$ and $End(E)$ over $M$ or, equivalently, $C^\infty(M)$-linear maps $:\Omega^1(M) \to \Gamma(End(E))$. Define \emph{the symbol map} to be the vector bundle morphism
 \begin{align*}
     \sigma: Diff^1(E) \to Hom(T^*M, End(E)) 
 \end{align*}
@@ -380,7 +380,7 @@ defined by its $C^\infty(M)$-linear action on sections:
 \begin{align*}
     \sigma(D)(fdg)(\sect \mu) := f (D(g \sect \mu) - g D(\sect \mu)); && D \in \Gamma(\alg D(E));\, f, g \in C^\infty(M);\, \sect \mu \in \Gamma(E).
 \end{align*}
-Note that the previous definitions suffices since $\sigma(D) \in \Gamma(Hom(T^*M, End(E)))$ is a local operator because it is a $C^\infty(M)$ map. $\sigma$ is a surjective submersion\todo{what allows him to say this so easily in some many opportunities?}, and its kernel is precisely $End(E)$ since $F$ is $0$ precisely here.
+Note that the previous definitions suffices since $\sigma(D) \in \Gamma(Hom(T^*M, End(E)))$ is a local operator because it is a $C^\infty(M)$-linear map between sections of vector bundles over $M$. $\sigma$ is a surjective submersion\todo{what allows him to say this so easily in some many opportunities? Fiberwise surjectivity suffices?}, and its kernel is precisely $End(E)$ since $F:\Gamma(E) \to \Gamma(E)$ is $0$ precisely here.
 
 $TM$ is embedded into $Hom(T^*M, End(E))$ via
 \begin{align*}
@@ -395,10 +395,10 @@ and $\sigma^{-1}(TM)$ may be realized as the pullback on the category of (smooth
 \end{equation*}
 $\alg D(E)$ can be regarded as a vector subbundle of $Diff^1(E)$ since the left vertical arrow must be an injective immersion, and $a: \alg D(E) \to TM$ is a surjective vector bundle map since the bottom arrow is so. This means that we have an exact sequence of vector bundles over $M$
 \begin{align}
-        0 \rightarrow End(E) \rightarrow \alg D(E) \rightarrow^a TM \rightarrow 0
+        0 \rightarrow End(E) \rightarrow \alg D(E) \xrightarrow{a} TM \rightarrow 0
 \end{align}
 
-The sections of $\alg D(E)$ are called \emph{derivations on $E$}, and they are characterized inside the $1$st-order differental operators $\Gamma(E) \to \Gamma(E)$ by: for any $D \in \Gamma(\alg D(E))$ there exists a vector field $a(D)$ on $M$ such that
+The sections of $\alg D(E)$ are called \emph{derivations on $E$}, and they are characterized inside the $1$st-order differental operators $:\Gamma(E) \to \Gamma(E)$ by: for any $D \in \Gamma(\alg D(E))$ there exists a vector field $a(D)$ on $M$ such that
 \begin{align}
     D(f \sect \mu) = f D(\sect \mu) + a(D)(f) \sect \mu
 \end{align}
@@ -413,7 +413,7 @@ is also a derivation on $E$, for any $D, D' \in \Gamma(\alg D(E))$, and it is st
     a([D, D']) &= [a(D), a(D')] \\
     [D, f D'] &= f[D, D'] + a(D)(f) D'
 \end{align}
-for all $D, D' \in \Gamma(\alg D(E)), f \in C^\infty(M)$ which allow us to, conclude that $(\alg D(E), a, [\cdot, \cdot])$ is a transitive Lie algebroid on $M$, called \emph{the Lie algebroid of Derivations on $E$}.
+for all $D, D' \in \Gamma(\alg D(E)), f \in C^\infty(M)$ which allow us to, conclude that $(\alg D(E), a, [\cdot, \cdot])$ is a transitive Lie algebroid on $M$, called \emph{the Lie algebroid of derivations on $E$}.
 
 \subsection{Other (Families of) Examples}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -435,9 +435,9 @@ Coming from Lie groupoids
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Let $P(M, G)$ be a principal bundle over $M$ with the finite dimensional Lie group $G$ as fiber which acts on the right by $R: G \times P \to G$.
+Let $P(M, G)$ be a principal bundle over $M$ with the finite dimensional Lie group $G$ as fiber which acts on the right by the smooth action $R: G \times P \to G$.
 
-In \ref{} we motivated the use of $TP/G$ as a natural place to talk about connections of $P$, and why that was important, and we also claimed in \ref{} that it was a vector bundle over $M$, that it inherited a well defined bracket, and that the quotient map of the pushforward of the projection was vector bundle morphism into $TM$.
+This is the (family of) Lie algebroids that arise naturally in gauge theories
 
 \subsection*{The Vector Bundle $TP/G$}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
