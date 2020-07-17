@@ -13,9 +13,113 @@ Relation between exterior derivative and usual covariant derivative:
         
     \end{itemize}
 
-\section{Differential Structures}
+Vector calculus.
+
+TODO\todo{check this}: the third ``important example'' introduced in Lazzarini is important to me? $A$ connections on $E$ are used to define finite gauge transformations, which somehow induce the infinitesimal gauge transformation definition on generalized connections?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Differential Structures and Cartan Operations}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Differential Algebras}
+
+\begin{itemize}
+
+\item Alt
+
+\item $\Omega$
+
+\item $d$
+
+\item Respect further structure... of $L$?
+
+\item Differential algebras? Differential calculi $(\Omega, d)$?
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Cartan Operations}
+
+\begin{itemize}
+
+\item $i, L$
+
+\item Horizontal, invariant and basic forms.
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Trivial Lie Algebroid}
+
+To understand better:
+\begin{itemize}
+    
+\item $(\Omega(A), \hat d_A)$ as $(\Omega(M)\otimes \bigwedge g^*, d + s)$.
+
+\item $(\Omega(A, L), \hat d)$ as $(\Omega(M)\otimes \bigwedge g^* \otimes \mathfrak g, d + s')$ : \[(\Omega_{TLA}(M, \mathfrak g), \hat d_{TLA})\]
+
+\item Generic element in $\Omega^n$, given dual basis $\theta = \set{\theta^a}$ of a basis of $\alg g$ $\set{E_a}$
+\begin{align*}
+    \omega = \sum_{p + s = n} \omega^\theta_{\mu_1 \cdots a_1 \cdots a_s} dx^{\mu_1} wedge \cdots \theta^{a_s}
+\end{align*}
+    
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Local Description of (real and $L$ valued) forms on Transitive Lie Algebroids}
+
+\begin{itemize}
+    
+\item Local trivialization of a form $\omega \mapsto \omega_{loc}$
+
+\item $d_{TLA}\omega_{loc} = (d \omega)_{loc}$
+
+\item $\hat \alpha^i_j$ for both real and $L$ valued forms.
+
+\item Respects $d$. So $\hat \alpha$ is isomorphism of differential graded algebras.
+
+\item $G^i_j$, matrix representation of $\hat \alpha^i_j$. Real valued, and $L$-valued:
+    \begin{align}
+        \omega^i_{\mu_1 \cdots a_1 \cdots a_s} &= G\cdots G \alpha^i_j(\omega^j_{\mu_1 \cdots b_1}) \\
+        \omega^i_{\mu_1 \cdots a_1 \cdots a_s} &= G\cdots G \omega^j_{\mu_1 \cdots b_1}
+    \end{align}
+
+\item For Atiyah... for example, how does $G$ look. $\omega^i_{loc} = s_i^* \hat \omega$
+    
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Gauge group, Infinitesimal Gauge transformations and Infinitesimal gauge action on forms}
+
+(Lazzarini 2012) Perhaps this is not the best place, but try, specially to understand which are definitions and which are somehow forced definitions.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Atiyah Lie Algebroid alternative Description?}
-\section{Cartan operations?}
+
+There seem to be $2$, related, alternative descriptions (Lazzarini2012):
+    
+    \begin{itemize}
+        
+    \item $(\Omega(A, L), \hat d)$ a $(\Omega_{TLA}(P, \mathfrak g)_{equ}, \hat d_{TLA})$,
+    
+    \item and $(R, Ad)$-equivariant forms in $(\Omega(P) \times \mathfrak g, d)$. Denoted by: \[ (\Omega_{Lie}(P, \mathfrak g), \hat d) \]
+        
+    \end{itemize}
 

@@ -1268,7 +1268,7 @@ Let $L \hookrightarrow^j A \twoheadrightarrow TM$ be a transitive Lie algebroid 
 \end{definition}
 
 \begin{theorem}
-Every transitive Lie algebroid has a Lie algebroid atlas.
+Every transitive Lie algebroid has a Lie algebroid atlas.\todo{Perhaps prove it completely for Atiyah Lie algebroid?}
 \end{theorem}
 \begin{proof}
 At least show that it follows from Theorem 8.2.1 (TLA over contractible $M$ admits a flat connection; this theorem is analogous to ``every ppal bundle over a contractible space has a global section'', and so requires top. algebra: cohomology theory of Ch 7 in this case). The proof I mention I should do is, I think, in page 317
@@ -1372,6 +1372,21 @@ $\chi^i_j: U_{ij} \to U_{ij} \times \alg g$ is a Maurer-Cartan form, i.e. it sat
 Add proof is this theorem is indeed left in the document. This reduces to the fact that the standard flat connection in $U_i \times \alg g$ is mapped through $\phi^i$ to the adjoint connection $\nabla^{\Theta^i}$ in $L_{U_i}$ induced by the flat connection $\Theta^i$ in $A_{U_i}$. 
 \end{proof}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Local Description of the Atiyah Lie algebroid}
+
+$\phi_i(\eta^i)(p) = Ad_{g^{-1}}\eta^i(x)$.
+
+$\Theta^i(X)_p = R_{g*, s_i(x)} s_{i*, x} X_x$
+
+If $X \oplus \eta^i$ and $X \oplus \eta^j$ are local trivializations of $\oid X$, $\sectoid X$, then
+
+\begin{align}
+    \eta^i &= g_{ij} \eta^j g_{ij}^{-1} + g_{ij} dg^{-1}_{ij}(X) \\
+    \alpha^i_j(\eta) &= g_{ij} \eta  g_{ij}^{-1} \\
+     \chi^i_j(X) &= g_{ij} dg_{ij}^{-1}(X) 
+\end{align}
 
 %\section{Actions of Lie Algebroids?}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
