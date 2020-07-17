@@ -1,0 +1,245 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+
+%%%%%% To use hyperlinks, including the formula ones
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+%%%%%% Make paragraphs start with no indentation and leave spaces between paragraphs
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+%%%%%% Math stuff
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+
+%%%%%% Mis Codigos
+
+% TODO notes package
+\usepackage{xargs}                  % Use more than one optional parameter in a new command
+\usepackage[pdftex,dvipsnames]{xcolor}
+\input{tools/todoCode}
+
+% Colored text and boxes with my color conventions for highlighting
+\usepackage[dvipsnames]{xcolor}
+\input{tools/colorCode}
+
+% Math symbols
+\usepackage{xparse}
+\input{tools/common_math_symbols}
+
+% Physics symbols (vectors, units)
+%\usepackage{tikz}
+%\input{tools/physics_macros}
+
+% Theorem environments
+\input{tools/theorem_definitions}
+
+%%%%%%
+\title{Lazzarini, Masson: Connections on Lie algebroids and on derivation-based noncommutative geometry}
+\author{Sebastian Camilo Puerto}
+\date{July 2020}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{High Level Summary}
+
+    \begin{itemize}
+
+    \item 
+    
+    \end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Very Important Facts}
+
+    \begin{itemize}
+
+    \item 
+    
+    \end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Important Facts}
+
+    \begin{itemize}
+
+    \item 
+    
+    \end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Memorize}
+
+    \begin{itemize}
+
+    \item 
+    
+    \end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Doubts}
+
+    \begin{itemize}
+
+    \item 
+    
+    \end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Detailed summary}
+
+    \begin{itemize}
+
+    \item 
+    
+    \end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Notice}
+
+    \begin{itemize}
+
+    \item 
+    
+    \end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\subsection{Yet to understand}
+
+    \begin{itemize}
+
+    \item 
+    
+    \end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction (pg. 2)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{General definitions and properties of Lie algebroids (pg. 3)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Transitive Lie algebroids (pg. 3)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Representation (pg. 4)}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Differential calculi and connections (pg. 4)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Differential structures (pg. 4)}
+
+$\Omega^p(A, E)$ defined
+
+$d$ defined
+
+3 important families of examples:
+
+    \begin{itemize}
+        
+    \item $(\Omega^\bullet(A), \hat d_A)$
+    
+    \item $(\Omega^\bullet(A, L), \hat d)$: generalized connections in $A$
+    
+    \item $(\Omega(A, \Gamma End(E)), \hat d_E)$: $A$-connections on $E$.
+        
+    \end{itemize}
+
+NOT done, but should be no problem: wedge (I think it is implicity, sinec they call this differential ALGEBRAS)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Cartan operations (pg. 6)}
+
+$\iota_{\mathfrak X}$ (an internal derivative) makes possible definition of Lie derivative, of horizontal forms, invariant forms and basic forms.
+
+Apparently this is important to characterize differential forms on Atiyah Lie algebroids in 4.2.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Gauge transformations (pg. 6)}
+
+Gauge group of a vector bundle is the group of its vector bundle automorphisms: $Aut(E)$. Usually (Bleecker), the gauge group is defined as the group of principal bundle automorphisms of the Principal bundle (so $G$-equivariant and fiber preserving), and it is in bijective correspondence to $G$ equivariant, I think, functions $C(P, G)$.
+
+An infinitesimal gauge transformation on a transitive Lie algebroid $A$ is an element $\xi$ of the adjoint bundle... if $A$ is represented in an $E$, $\xi$ acts vertically on $E$. IN THE ATIYAH Lie algebroid case, this is the usual infinitesimal gauge transformation: an element of $C(P, \mathfrak g) \equiv \Gamma(P \times \mathfrak g/G)$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Connections (pg. 7)}
+
+Ordinary connections in $A$ and curvature as forms. Covariant derivative of $L$ valued forms $\Omega(A, L)$. Infinitesimal gauge action on connectionand curvature.
+
+$A$-connection on $E$ $:A \to \mathfrak D(E)$. Curvature. It an affine space model over the vector space $\Omega^1(A, \Gamma End(E))$. As forms \[\Omega(A, \Gamma End(E))\]. Finite gauge action.
+
+Generalized connection $1$-form on $A$. Curvature. Induces $A$-connection in associated vector bundles. Infinitesimal gauge action, ``defined in a coherent way'' with the finte gauge action on $A$-connections.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Relation to ordinary geometry and noncommutative geometry (pg. 11)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Trivial Lie algebroid (pg. 11)}
+
+$(\Omega(A), \hat d_A)$ as $(\Omega(M)\otimes \bigwedge g^*, d + s)$.
+
+$(\Omega(A, L), \hat d)$ as $(\Omega(M)\otimes \bigwedge g^* \otimes \mathfrak g, d + s')$ : \[(\Omega_{TLA}(M, \mathfrak g), \hat d_{TLA})\]!!.
+
+$E$ also trivial. $(\Omega(A, \Gamma End(E)), \hat d_E)$ as $\Omega(M)\otimes \bigwedge g^* \otimes \Gamma(E)$. Denoted by \[ (\Omega_{TLA}(M, \mathfrak g, E), \hat d_{E}) \]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The Atiyah Lie algebroid of a principal bundle (pg. 13)}
+
+$(\Omega(A, L), \hat d)$ a $(\Omega_{TLA}(P, \mathfrak g)_{equ}, \hat d_{TLA})$, and mention that it is also $(R, Ad)$-equivariant forms in $(\Omega(P) \times \mathfrak g, d)$. Denoted by: \[ (\Omega_{Lie}(P, \mathfrak g), \hat d) \]
+
+How do ordinary connection and curvature forms look here.
+
+How do generalized connection $1$-forms look.
+
+$(\Omega(TP/G, \Gamma End(E)), \hat d_E)$ as $((\Omega_{TLA}(P, \mathfrak g, E)_{equ}, \hat d_{E}))$. Then $TP/G$-connections on $E$ as $1$-form in $\Omega(P, \mathfrak g, E)$.
+
+\rtext{
+\begin{align}
+    \alpha^i_j(\eta) &= g_{ij} \eta g^{-1}_{ij} \\
+    \chi^i_j(X) = g_{ij} dg^{-1}_{ij}(X)
+\end{align}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The Lie algebroid of the derivations of the endomorphism algebra (pg. 20)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions (pg. 24)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{A Brief review of some noncommutative structures (pg. 24-26)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Derivation-based differential calculus (pg. 24)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Noncommutative connections (pg. 25)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The matrix algebra (pg. 26)}
+
+\end{document}
