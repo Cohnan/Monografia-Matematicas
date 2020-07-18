@@ -58,7 +58,7 @@ which satisfy the following compatibility conditions:
 
 \ptext{To simplify notation we will often say instead that \emph{$A$ is a Lie algebroid over the manifold $M$ with anchor $a$}, and the brackets will be denoted simply by $[\cdot , \cdot]$ for all Lie algebroids, unless otherwise stated.}
 
-\ptext{A vector bundle $E$ over a manifold $M$ will usually be denoted by its projection map $p^E:E \to M$ or by the triple $(E, p^E, M)$. A vector-bundle chart, or simply a chart, will make reference to a pair $(U \subset M, \phi: U \times V \to E|_U)$, where $U$ is an open subset of $M$ and $\phi$ is a local trivialization which is $C^\infty$-differentiable (and a vector bundle isomorphism, by definition of local trivialization). Additionally, boldface letters will be used to denote sections of the vector bundle, for instance $\sect \mu \in \Gamma(E)$, and its value in the fiber $m \in M$ will be denoted both by $\sect \mu(m)$ and by $\sect \mu_m$.}
+\ptext{A vector bundle $E$ over a manifold $M$ will usually be denoted by its projection map $p^E:E \to M$ or by the triple $(E, p^E, M)$. A vector-bundle chart, or simply a chart, will make reference to a pair $(U \subset M, \psi: U \times V \to E|_U)$, where $U$ is an open subset of $M$ and $\psi$ is a local trivialization which is $C^\infty$-differentiable (and a vector bundle isomorphism, by definition of local trivialization). Additionally, boldface letters will be used to denote sections of the vector bundle, for instance $\sect \mu \in \Gamma(E)$, and its value in the fiber $m \in M$ will be denoted both by $\sect \mu(m)$ and by $\sect \mu_m$.}
 
 \ptext{For the rest of the chapter $A$ will refer to a Lie algebroid over a manifold $M$ with anchor $a$, unless otherwise stated.}
 
@@ -93,7 +93,7 @@ The simplest examples of Lie algebroids are the tangent bundle $TM$ of a manifol
     
     \item A \emph{field of Lie algebra brackets on $L$} $[\cdot, \cdot]:\Gamma(L) \times \Gamma(L) \to \Gamma(L)$ is a section of the vector bundle $Alt^2(L; L)$ of alternating $2$-forms with values on $L$ such that, at any $m \in M$, $[\cdot, \cdot]_m:L_m \times L_m \to L_m$ makes $L_m$ a Lie algebra.
     
-    \item $L$ together with a field of Lie brackets $[\cdot, \cdot]:\Gamma(L) \times \Gamma(L) \to \Gamma(L)$ is a \emph{Lie algebra bundle} or \emph{LAB} if $L$ admits an atlas, called \emph{an LAB atlas}, $\set{\phi_i: U_i \times \alg g_i \to L_{U_i}}_{i \in I}$, where $\alg g_i$ is a Lie algebra and each $\phi_{i, m}: \alg g_i \to L_m$ is a Lie algebra isomorphism. An LAB is said to \emph{have fiber type $\alg g$} is there is an LAB atlas such that $\alg g_i = \alg g$ for all $i \in I$.
+    \item $L$ together with a field of Lie brackets $[\cdot, \cdot]:\Gamma(L) \times \Gamma(L) \to \Gamma(L)$ is a \emph{Lie algebra bundle} or \emph{LAB} if $L$ admits an atlas, called \emph{an LAB atlas}, $\set{\psi_i: U_i \times \alg g_i \to L_{U_i}}_{i \in I}$, where $\alg g_i$ is a Lie algebra and each $\psi_{i, m}: \alg g_i \to L_m$ is a Lie algebra isomorphism. An LAB is said to \emph{have fiber type $\alg g$} is there is an LAB atlas such that $\alg g_i = \alg g$ for all $i \in I$.
     
     \end{itemize}
     
@@ -115,7 +115,7 @@ The second compatibility condition, Leibniz identity, becomes the statement of t
 \end{proof}
 
 \begin{remark}
-Even though the bracket in $ker(A)$, when it is a vector bundle to begin with, gives the structure of a Lie algebra to each of its fibers, $ker(A)$ is not necessarily a LAB since there might not exist an atlas of local trivializations $\phi: U \times \alg g \to ker(A)|_U$ compatible with the brackets.
+Even though the bracket in $ker(A)$, when it is a vector bundle to begin with, gives the structure of a Lie algebra to each of its fibers, $ker(A)$ is not necessarily a LAB since there might not exist an atlas of local trivializations $\psi: U \times \alg g \to ker(A)|_U$ compatible with the brackets.
 \end{remark}
 
 \linea 
@@ -187,7 +187,7 @@ A contrasting family of examples is given by Lie Algebra Bundles, or LABS, over 
 % Explicit examples:
 % \begin{itemize}
 % \item If $N = \RR^2$ as a regular submanifold $\RR^3$, seen as the hyperplane $z = 0$, our Lie algebroid $T \bar {\RR^2}$ not only contains the span of $\partial_x$ and $\partial_y$, but also allows vectors with perpendicular components: in the direction of $\partial_y$. We may see this Lie algebroid as the direct sum of $T \RR^2$ with 
-% \item If $N = S^2$ as a regular submanifold of $\RR^3$, using spherical coordinates we see that $T \bar {S^2}$ is not only $TS^2 = span\set{\partial_\theta, \partial_\phi}$, but also $T^\perp S^2 = span\set{\partial_r}$ 
+% \item If $N = S^2$ as a regular submanifold of $\RR^3$, using spherical coordinates we see that $T \bar {S^2}$ is not only $TS^2 = span\set{\partial_\theta, \partial_\psi}$, but also $T^\perp S^2 = span\set{\partial_r}$ 
 % \item Let $N = \RR^2$ seen as the regular submanifold of $\RR^n$ determined by $x_3 = x_4 = \dots = 0$. In this case the original tangent direction to $N$ are spanned by $\partial_1, \partial_2$, but we have $n-2$ additional directions, all of which have $0$ as their anchor or horizontal component.
 % \end{itemize}
 
@@ -197,7 +197,7 @@ The following family of examples exposes Lie algebroids with trivial vertical Li
 
 \begin{definition} {Foliation of $M$}
 Let $\mathcal F = \set{L_\alpha}_{\alpha \in A}$ for some indexing set $A$ be a collection of disjoint connected regular submanifolds of $M$ whose union is all of $M$. $\mathcal F$ is called \emph{a %$p$-dimensional 
-(smooth) foliation of $M$} if every $m \in M$ is an element of a chart $(U, \psi:U \to \RR^n)$ for which the coordinates of any $L_\alpha \in \mathcal F$ that intersects with $U$, $U \cap L_\alpha$ are described in the chart by the equations $x^{p+1} = c^{p+1}, \cdots , x^{n} = c^{n} $ for constants $c^{p+1}, \dots, c^n \in \RR$ for some natural number $p$. The elements $L_\alpha \in \mathcal F$ are called \emph{the leaves of the foliation $\mathcal F$}.
+(smooth) foliation of $M$} if every $m \in M$ is an element of a chart $(U, \phi:U \to \RR^n)$ for which the coordinates of any $L_\alpha \in \mathcal F$ that intersects with $U$, $U \cap L_\alpha$ are described in the chart by the equations $x^{p+1} = c^{p+1}, \cdots , x^{n} = c^{n} $ for constants $c^{p+1}, \dots, c^n \in \RR$ for some natural number $p$. The elements $L_\alpha \in \mathcal F$ are called \emph{the leaves of the foliation $\mathcal F$}.
 \end{definition}
 
 \begin{definition}{Distribution on $M$}
@@ -208,9 +208,9 @@ Let $\mathcal F = \set{L_\alpha}_{\alpha \in A}$ for some indexing set $A$ be a 
 \end{itemize}
 \end{definition}
 
-Let $\mathcal F = \set{L_\alpha}_{\alpha \in A}$ be a foliation of $M$. Each leaf is a regular submanifold of $M$, therefore $T L_\alpha$ is embedded in $TM$ and we may see $T L_\alpha$ as a submanifold of $TM$. The (disjoint) union $\Delta = \bigcup_{\alpha \in A} T L_\alpha \subset TM$ can be given a (smooth) vector bundle structure over $M$: around $m \in M$ there is a chart $(U, \psi:U \to \RR^n)$ compatible with the foliation; from it we can construct a vector bundle chart $(U, \phi: U \times \RR^n \to TM|_{U})$ for $TM$ which can be restricted to a chart $(U, \tilde{\phi}: U \times \RR^p \to \Delta|_{U})$ for $\Delta$, where $\Delta|_U = \bigcup_{\alpha: \, U \inter L_\alpha \neq \varnothing} T L_\alpha|_{U\inter L_\alpha}$. This charts constructed around all $m\in M$ also show that the inclusion $:\Delta \to TM$ is an embedding (since $\Delta$ can be described locally from vanishing $m-p$ coordinates of a manifold chart of $TM$), making $\Delta$ a vector subbundle of $TM$.
+Let $\mathcal F = \set{L_\alpha}_{\alpha \in A}$ be a foliation of $M$. Each leaf is a regular submanifold of $M$, therefore $T L_\alpha$ is embedded in $TM$ and we may see $T L_\alpha$ as a submanifold of $TM$. The (disjoint) union $\Delta = \bigcup_{\alpha \in A} T L_\alpha \subset TM$ can be given a (smooth) vector bundle structure over $M$: around $m \in M$ there is a chart $(U, \phi:U \to \RR^n)$ compatible with the foliation; from it we can construct a vector bundle chart $(U, \psi: U \times \RR^n \to TM|_{U})$ for $TM$ which can be restricted to a chart $(U, \tilde{\psi}: U \times \RR^p \to \Delta|_{U})$ for $\Delta$, where $\Delta|_U = \bigcup_{\alpha: \, U \inter L_\alpha \neq \varnothing} T L_\alpha|_{U\inter L_\alpha}$. This charts constructed around all $m\in M$ also show that the inclusion $:\Delta \to TM$ is an embedding (since $\Delta$ can be described locally from vanishing $m-p$ coordinates of a manifold chart of $TM$), making $\Delta$ a vector subbundle of $TM$.
 
-Furthermore, any $\sect \mu, \sect \nu \in \Gamma(\Delta)$ has each of its integral lines completely contained in a single leaf of the foliation, so they can be restricted to vector fields on any leaf $L_\alpha$, denoted by $\sect \mu|_{L_\alpha}$ and $\sect \nu|_{L_\alpha}$ respectively. They can also be considered vector fields on $M$ and so their vector field commutator at $m \in M$ has the formula $[\sect \mu, \sect \nu]_m = (\mathcal L_{\sect \mu} \sect \nu)_m = \frac{d}{dt}_{t=0} (\phi_{-t})_* \sect \nu_{\phi_t(m)} = [\sect \mu|_{L_\alpha}, \sect \nu|_{L_\alpha}]_m$, where $\phi_t(m)$ is the local flow of $\sect \mu$ at $m$ and $L_\alpha$ is the unique leaf in which $m \in M$ is contained. Therefore, $\Gamma(\Delta)$ is closed under the vector field commutator and so we may consider its restriction to $\Delta$ a Lie algebroid bracket on $\Delta$. In summary, 
+Furthermore, any $\sect \mu, \sect \nu \in \Gamma(\Delta)$ has each of its integral lines completely contained in a single leaf of the foliation, so they can be restricted to vector fields on any leaf $L_\alpha$, denoted by $\sect \mu|_{L_\alpha}$ and $\sect \nu|_{L_\alpha}$ respectively. They can also be considered vector fields on $M$ and so their vector field commutator at $m \in M$ has the formula $[\sect \mu, \sect \nu]_m = (\mathcal L_{\sect \mu} \sect \nu)_m = \frac{d}{dt}_{t=0} (\psi_{-t})_* \sect \nu_{\psi_t(m)} = [\sect \mu|_{L_\alpha}, \sect \nu|_{L_\alpha}]_m$, where $\psi_t(m)$ is the local flow of $\sect \mu$ at $m$ and $L_\alpha$ is the unique leaf in which $m \in M$ is contained. Therefore, $\Gamma(\Delta)$ is closed under the vector field commutator and so we may consider its restriction to $\Delta$ a Lie algebroid bracket on $\Delta$. In summary, 
 \begin{proposition}
 A foliation of the manifold $M$ gives rise to an integrable distribution $\Delta$ on $M$ which, together with the anchor $a = id_{TM}|_\Delta$, becomes a Lie algebroid over $M$.
 \end{proposition}
@@ -241,11 +241,11 @@ Let $M$ be a manifold, and $\alg g$ a (real, finite dimensional) Lie algebra wit
 Consider $p_1: M \times \alg g \to M$, $(m, \eta) \mapsto m$ as the trivial vector bundle with fiber $\alg g$ and base $M$. \ptext{Greek letters like $\eta, \theta, \kappa, \dots$ will usually be used to denote both elements of a lie algebra $\alg g$, and elements of a trivial bundle $M \times \alg g$; furthermore, the subscript $m \in M$ will be used both to emphasize that such a vector bundle element belongs to the fiber of $m$, and to denote the Lie algebra element in the second coordinate of such a vector bundle element, e.g. $\eta_m$ might refer, depending on the contexto, to either an element $\eta_m \in \set{m} \times \alg g \subset M \times \alg g$, or to $p_2(\eta_m) \in \alg g$}. %A section of this bundle will be denoted by capital greek letters like $H, \Theta, K, \dots$ and their image in the fiber of $m \in M$ will once again be denoted by the subscript $m$, so $H \in \Gamma(M \times \alg g)$ and $H_m \in p_1^{-1}(m)$. $X(H)$, $H$ corresponds canonically to a function $M \to g$. (The sections of/This vector bundle) has a natural Lie structure given by the fiberwise Lie bracket of the Lie algebra $\alg g$.
 
 Now, consider the internal direct sum over $M$ of the vector bundles $TM$ and $M \times \alg g$ with projection map $\pi: TM \oplus (M \times \alg g) \to M$. %; -> esta definicion de la suma directa no me permite ver facilmente la estructura de variedad; Tu define distinto y prueba que la suma directa de haces vectoriales suaves es suave... pero quisiera poder ver que esta estructura es la misma estructura de variedad de $TM \times \alg g$... cambiar la definicion de la suma directa significa tambien que cambie la forma de referirme a los elementos de la suma, de tal forma que el anchor ya no es solo una proyeccion a la primera coordenada \unsure{Here I'm being explicit with basic stuff of vector bundle theory on purpose, but I'm not sure if this will stay} that the underlying manifold of this bundle is simply the NO regular submanifold of the product $TM \times (M \times \alg g)$ given by $TM \oplus (M \times \alg g) = \set{(X, \eta) \in TM \times (M \times \alg g) \st \pi(X) = p_1(\eta)}$; we will call the projection of this vector bundle $\pi: X \oplus \eta \mapsto \pi(X) = p_1(\eta)$, abusing the notation; we write an element of this vector bundle as $X \oplus \eta$, where $X \in \pi^{-1}(m)$ and $\eta \in p_1^{-1}(m)$.
-It has a vector bundle atlas $\set{(U_i, \phi^\oplus_i: U_i \times (\RR^{n_i} \oplus \alg g) \to \pi^{-1}(U_i) )}_{i \in I}$, where $n_i$ is some positive integer and $U_i$ is a chart neighborhood of $M$ that simultaneously trivializes the vector bundles $TM$ and $M \times \alg g$ through the coordinate maps $\phi^{TM}_i: U_i \times \RR^{n_i} \to TU_i$  and $\phi^\alg g = id_{U_i \times \alg g}$.
+It has a vector bundle atlas $\set{(U_i, \psi^\oplus_i: U_i \times (\RR^{n_i} \oplus \alg g) \to \pi^{-1}(U_i) )}_{i \in I}$, where $n_i$ is some positive integer and $U_i$ is a chart neighborhood of $M$ that simultaneously trivializes the vector bundles $TM$ and $M \times \alg g$ through the coordinate maps $\psi^{TM}_i: U_i \times \RR^{n_i} \to TU_i$  and $\psi^\alg g = id_{U_i \times \alg g}$.
 
 We now define the main ingredients of the trivial Lie algebroid:
     \begin{itemize}
-    \item The anchor $a: TM \oplus (M \times \alg g) \to TM$, $X \oplus \eta \mapsto X$. This map is a vector bundle map as it clearly respects the fibers and, locally on a neighborhood chart, is $\tilde a = (\phi^{TM}_i)^{-1} \circ a \circ \phi^{\oplus}_i: (m, (v, \eta)) \mapsto v$ which is smooth since it is simply a projection, hence $a$ is smooth.
+    \item The anchor $a: TM \oplus (M \times \alg g) \to TM$, $X \oplus \eta \mapsto X$. This map is a vector bundle map as it clearly respects the fibers and, locally on a neighborhood chart, is $\tilde a = (\psi^{TM}_i)^{-1} \circ a \circ \psi^{\oplus}_i: (m, (v, \eta)) \mapsto v$ which is smooth since it is simply a projection, hence $a$ is smooth.
     
     \item The bracket is given by 
     \[
@@ -437,11 +437,11 @@ Coming from Lie groupoids
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Let $P(M, G)$ be a principal bundle over $M$ with the finite dimensional Lie group $G$ as fiber which acts on the right by the smooth action $R: G \times P \to G$.
+Let $P(M, G)$ be a principal bundle over $M$ with the real Lie group $G$ (a finite dimensional, smooth manifold) as fiber which acts on the right by the smooth action $R: G \times P \to G$.
 
-This is the (family of) Lie algebroids that arise naturally in traditional gauge theories, explicitly in the context of principal connections.
+This is the (family of) Lie algebroids that arise naturally in traditional gauge theories, explicitly in the context of principal connections forms.
 
-\subsection*{The Vector Bundle $TP/G$}
+\subsection{The Vector Bundle $TP/G$}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -453,7 +453,7 @@ Let $E$ be a (smooth) vector bundle over $P$ with projection map $p^E: E \to P$.
 \begin{enumerate}
     \item Each $g \in G$ acts by vector bundle isomorphism over the right translation map $R_g: P \to P$.
     
-    \item $E$ is covered by $G$-equivariant $\pi$-saturated charts. That is, for each $p_0 \in P$ there is a chart of E $\psi: \mathcal U \times V \to E|_{\mathcal U}$, where $p_0 \in \mathcal U = \pi^{-1}(U)$ for some open $U \subset M$, that satisfies $\psi(p, v)g = \psi(pg, v)$ for all $p \in \mathcal U$, $v \in V$, $g \in G$.
+    \item $E$ is covered by $G$-equivariant $\pi$-saturated charts. That is, for each $p_0 \in P$ there is a chart of E $\phi: \mathcal U \times V \to E|_{\mathcal U}$, where $p_0 \in \mathcal U = \pi^{-1}(U)$ for some open $U \subset M$, that satisfies $\phi(p, v)g = \phi(pg, v)$ for all $p \in \mathcal U$, $v \in V$, $g \in G$.
 \end{enumerate}
 
 Then \emph{the quotient space $E/G$ has a (smooth) vector bundle structure over $M$, called \emph{the quotient vector bundle of $(E, p^E, P)$ by the action of $G$}, which is unique} in the sense that:
@@ -475,12 +475,12 @@ We will denote by $\langle \mu \rangle \in E/G$ the orbit of $\mu \in E$, and by
 
 \end{proposition}
 
-\begin{proof}\todo{change notation to $\Phi$ instead of $\psi$}
+\begin{proof}\todo{change notation to $\Psi$ instead of $\phi$}
 Notice that conditions (1) and (2) tell us that, locally, the exact point in the fiber $\pi^{-1}(x) \in P$ that we choose is not important to determine the vector space $V$ nor the representing vector $v \in V$, therefore it should make sense to mod out that redundancy, obtained by the group action, to make charts $U \times V \to E/G|_U$. This is what we will now formalize.
 
 Let $p: E/G \to M$, $\langle \mu \rangle \mapsto \pi(p^E(\mu))$; this function is well defined because, by (1), $p^E(\mu g)$ and $p^E(\mu)$ are in the same fiber of $P$, for all $g \in G$. (Notice that condition (1) implies that $p^E(\mu g) = p^E(\mu) g$ for $\mu$ and $g$ arbitrary).
 
-For $x \in M$, let $\psi: \mathcal U \times V \to E|_{\mathcal U}$, $x \in U$, be a chart of $E$ as in condition (2); we may further assume that $U$ is a trivializing neighborhood of $P$ (by intersecting one such neighborhood of $x$ with $U$ if necessary), so that there exists a local section of $\pi$, $\sigma: U \to \mathcal U \subset P$ such that the local trivialization of $P$ is described by $\phi: U\times G \to \mathcal U$, $(y, g) \mapsto \sigma(y)g$.
+For $x \in M$, let $\phi: \mathcal U \times V \to E|_{\mathcal U}$, $x \in U$, be a chart of $E$ as in condition (2); we may further assume that $U$ is a trivializing neighborhood of $P$ (by intersecting one such neighborhood of $x$ with $U$ if necessary), so that there exists a local section of $\pi$, $\sigma: U \to \mathcal U \subset P$ such that the local trivialization of $P$ is described by $\psi: U\times G \to \mathcal U$, $(y, g) \mapsto \sigma(y)g$.
 
 We'll now see that $E/G|_x$ may be given vector space structure, which turns out to be isomorphic to $V$. 
 \begin{itemize}
@@ -488,22 +488,22 @@ We'll now see that $E/G|_x$ may be given vector space structure, which turns out
     
     \item We define $t\langle\mu\rangle := \langle t \mu\rangle$, for any $t \in \RR$, $\langle\mu\rangle \in E/G$. This is well defined as, by condition (1), $G$ acts by vector bundle isomorphism, in particular it restricts to linear maps between fibers. It is now clear that these operations make $E/G|_x$ a vector space.
     
-    \item To see that $E/G|_x$ is isomorphic to $V$, we prove instead that it is isomorphic to $E_p$ for any $p \in \pi^{-1}(x) \subset \mathcal U$, each of which is isomorphic to $V$ by the restriction of the chart to the fiber of $p \in \mathcal U$, $\psi_p: V \to E_p$ which is a vector space isomorphism by definition. So, for any $p \in \pi^{-1}(x)$ the restriction of $\natural$ to its fiber, $\natural_p:E_p \to E/G|_x$ can easily be seen to be linear; it is clearly surjective, and it is also injective as, if $\mu, \nu \in E_p$ are such that $\natural_p(\mu) = \langle\mu\rangle = \langle\nu\rangle = \natural_p(\nu)$, then there exists a $g \in G$ such that $\mu = \nu g$, but that means that $p = p^E(\mu) = p^E(\nu g) = p^E(\nu)g = pg$ which can only happen if $g = e$, i.e. if $\mu = \nu \in E_p$.
+    \item To see that $E/G|_x$ is isomorphic to $V$, we prove instead that it is isomorphic to $E_p$ for any $p \in \pi^{-1}(x) \subset \mathcal U$, each of which is isomorphic to $V$ by the restriction of the chart to the fiber of $p \in \mathcal U$, $\phi_p: V \to E_p$ which is a vector space isomorphism by definition. So, for any $p \in \pi^{-1}(x)$ the restriction of $\natural$ to its fiber, $\natural_p:E_p \to E/G|_x$ can easily be seen to be linear; it is clearly surjective, and it is also injective as, if $\mu, \nu \in E_p$ are such that $\natural_p(\mu) = \langle\mu\rangle = \langle\nu\rangle = \natural_p(\nu)$, then there exists a $g \in G$ such that $\mu = \nu g$, but that means that $p = p^E(\mu) = p^E(\nu g) = p^E(\nu)g = pg$ which can only happen if $g = e$, i.e. if $\mu = \nu \in E_p$.
 \end{itemize}
 
-To define the vector bundle charts of $E/G$, we first notice that the vector bundle chart $\psi:\mathcal U \times V \to E_\mathcal U$ and the principal bundle trivialization $\phi: U \times G \to P_U$ allow us to make, around $x\in M$ the diffeomorphism $U \times G \times V \to E_\mathcal U$, $(y, g, v) \mapsto \psi(\sigma(y)g, v)$; if we make $G$ act to the right on $U \times G \times V$ by $(y, g, v)g' := (y, gg', v)$ it is clear that the quotient topological space $U \times G \times V / G$ is homeomorphic to $U \times V$, and so, taking quotients by $G$ on both sides we obtain the \emph{continuous} homeomorphism:
+To define the vector bundle charts of $E/G$, we first notice that the vector bundle chart $\phi:\mathcal U \times V \to E_\mathcal U$ and the principal bundle trivialization $\psi: U \times G \to P_U$ allow us to make, around $x\in M$ the diffeomorphism $U \times G \times V \to E_\mathcal U$, $(y, g, v) \mapsto \phi(\sigma(y)g, v)$; if we make $G$ act to the right on $U \times G \times V$ by $(y, g, v)g' := (y, gg', v)$ it is clear that the quotient topological space $U \times G \times V / G$ is homeomorphic to $U \times V$, and so, taking quotients by $G$ on both sides we obtain the \emph{continuous} homeomorphism:
 
 \[
-    \psi^{/G}: U \times V \to E/G|_{U}, (y, v) \mapsto \langle \psi(\sigma(y), v) \rangle
+    \phi^{/G}: U \times V \to E/G|_{U}, (y, v) \mapsto \langle \phi(\sigma(y), v) \rangle
 \]
 
-Notice that this definition is independent of which local section is chosen, in the sense that if $\sigma'$ is another local section around $x \in M$, in the intersection of the domains of $\sigma$ and $\sigma'$, condition (2) implies that $\langle \psi(\sigma(y), v) \rangle  = \langle \psi(\sigma'(y), v) \rangle$, because $\sigma(y) = \sigma(y')g$ for some $g \in G$. This map is, fiberwise, a vector space isomorphism sa can be seen by rewritting of isomorphisms $\natural_{\sigma(x)} \circ \psi_{\sigma(x)}: V \to E_{\sigma(x)} \to E/G|_x$, so we can give $E/G$ a topological vector bundle structure over $M$ by saying that the $\psi^G:U \times V \to E/G|_U$ maps constructed above are local trivializations.
+Notice that this definition is independent of which local section is chosen, in the sense that if $\sigma'$ is another local section around $x \in M$, in the intersection of the domains of $\sigma$ and $\sigma'$, condition (2) implies that $\langle \phi(\sigma(y), v) \rangle  = \langle \phi(\sigma'(y), v) \rangle$, because $\sigma(y) = \sigma(y')g$ for some $g \in G$. This map is, fiberwise, a vector space isomorphism sa can be seen by rewritting of isomorphisms $\natural_{\sigma(x)} \circ \phi_{\sigma(x)}: V \to E_{\sigma(x)} \to E/G|_x$, so we can give $E/G$ a topological vector bundle structure over $M$ by saying that the $\phi^G:U \times V \to E/G|_U$ maps constructed above are local trivializations.
 
-To give a smooth manifold structure to $E/G$ we notice that the transition function between this trivialization and any other local trivialization around $x$ is smooth in their common domain. Let $\psi'^G:U' \times V \to E/G|_{U'}$ with $x \in U'$, constructed as above (coming from an equivariant chart of E $\psi': \mathcal U' \times V \to E_{\mathcal U'}$) with respect to a local section $\sigma'$ of $P$; the transition function between this two charts of $E$ $\tr: \mathcal U \cap \mathcal U' \to GL(V)$, $p \mapsto \psi^{-1}_p \circ \psi'_p$ is smooth, so its precomposition with $\sigma: U \cap U' \to \mathcal U \cap \mathcal U'$ is also smooth, but by condition (2) we obtain the same map if precompose with $\sigma'$ instead, and so we see that this smooth map is precisely the transition function of $E/G$ $tr^{G}: U \cap U' \to GL(V)$, $y \mapsto (\psi_y^{/G})^{-1} \circ \psi_y'^G$, which, therefore, might be written by the formula $tr^G_y = \psi^{-1}_{\sigma(y)} \circ \psi'_{\sigma(y)}$. Finally, the charts $\set{\psi^{/G}:U \times V \to E/G|_U}$ with smooth transition functions give a unique smooth structure to the topological vector bundle $E/G$.
-%because $(\psi^{/G})^{-1} \circ \psi'^G (y, v) = (\psi^{/G})^{-1} (\langle\psi'(\sigma'(y), v)\rangle) = (\psi^{/G})^{-1} (\langle\psi'(\sigma(y), v)\rangle) $.
-%because for each $y \in U \cap U'$, $(\psi_y^{/G})^{-1} \circ \psi_y'^G(v) = (\psi_y^{/G})^{-1}(\langle\psi'(\sigma'(y), v)\rangle)$
+To give a smooth manifold structure to $E/G$ we notice that the transition function between this trivialization and any other local trivialization around $x$ is smooth in their common domain. Let $\phi'^G:U' \times V \to E/G|_{U'}$ with $x \in U'$, constructed as above (coming from an equivariant chart of E $\phi': \mathcal U' \times V \to E_{\mathcal U'}$) with respect to a local section $\sigma'$ of $P$; the transition function between this two charts of $E$ $\tr: \mathcal U \cap \mathcal U' \to GL(V)$, $p \mapsto \phi^{-1}_p \circ \phi'_p$ is smooth, so its precomposition with $\sigma: U \cap U' \to \mathcal U \cap \mathcal U'$ is also smooth, but by condition (2) we obtain the same map if precompose with $\sigma'$ instead, and so we see that this smooth map is precisely the transition function of $E/G$ $tr^{G}: U \cap U' \to GL(V)$, $y \mapsto (\phi_y^{/G})^{-1} \circ \phi_y'^G$, which, therefore, might be written by the formula $tr^G_y = \phi^{-1}_{\sigma(y)} \circ \phi'_{\sigma(y)}$. Finally, the charts $\set{\phi^{/G}:U \times V \to E/G|_U}$ with smooth transition functions give a unique smooth structure to the topological vector bundle $E/G$.
+%because $(\phi^{/G})^{-1} \circ \phi'^G (y, v) = (\phi^{/G})^{-1} (\langle\phi'(\sigma'(y), v)\rangle) = (\phi^{/G})^{-1} (\langle\phi'(\sigma(y), v)\rangle) $.
+%because for each $y \in U \cap U'$, $(\phi_y^{/G})^{-1} \circ \phi_y'^G(v) = (\phi_y^{/G})^{-1}(\langle\phi'(\sigma'(y), v)\rangle)$
 
-We now prove that the (surjective) quotient map $\natural : E \to E/G$ is also smooth and a submersion. Let $\psi: \mathcal U \times V \to E_{\mathcal U}$ be an equivariant chart of $E$ with $U = \pi(\mathcal U)$ trivializing for $P$, as above. Notice that the restriction of $\natural$ to $U$ may be written as $\natural_U = \psi^{/G} \circ \pi \times id_V \circ \psi^{-1}: E_{\mathcal U} \to E/G|_U$, where $\psi$ and $\psi^{/G}$ are diffeomorphisms: this equates to the formula $\natural_U \circ \psi = \psi^{/G} \circ \pi \times id_V: \mathcal U \times V \to E/G|_U$, which for $(p, v) \in \mathcal U \times V$, in the LHS gives us $\natural_U \circ \psi(p, v) = \langle\psi(p, v)\rangle$, and for the RHS $\psi^{/G} \circ \pi \times id_V (p, v) = \psi^{/G}(\pi(x), v) := \langle\psi(\sigma(\pi(x)), v)\rangle$ which coincide because $p = \sigma(\pi(p))g$ for some $g \in G$. This formula for $\natural_U$ implies that it inherits the properties of $\pi \times id_V$, which is clearly smooth, and also a submersion as both $\pi$ and $id_V$ are submersions, so the pushforward of $\pi \times id_V$, diffeomorphic to the product of the pushforwards, is surjective.
+We now prove that the (surjective) quotient map $\natural : E \to E/G$ is also smooth and a submersion. Let $\phi: \mathcal U \times V \to E_{\mathcal U}$ be an equivariant chart of $E$ with $U = \pi(\mathcal U)$ trivializing for $P$, as above. Notice that the restriction of $\natural$ to $U$ may be written as $\natural_U = \phi^{/G} \circ \pi \times id_V \circ \phi^{-1}: E_{\mathcal U} \to E/G|_U$, where $\phi$ and $\phi^{/G}$ are diffeomorphisms: this equates to the formula $\natural_U \circ \phi = \phi^{/G} \circ \pi \times id_V: \mathcal U \times V \to E/G|_U$, which for $(p, v) \in \mathcal U \times V$, in the LHS gives us $\natural_U \circ \phi(p, v) = \langle\phi(p, v)\rangle$, and for the RHS $\phi^{/G} \circ \pi \times id_V (p, v) = \phi^{/G}(\pi(x), v) := \langle\phi(\sigma(\pi(x)), v)\rangle$ which coincide because $p = \sigma(\pi(p))g$ for some $g \in G$. This formula for $\natural_U$ implies that it inherits the properties of $\pi \times id_V$, which is clearly smooth, and also a submersion as both $\pi$ and $id_V$ are submersions, so the pushforward of $\pi \times id_V$, diffeomorphic to the product of the pushforwards, is surjective.
 
 The uniqueness assertions follow from the fact that there is at most one manifold structure in the image of a surjection which makes it a submersion, and at most one topological vector bundle structure in the image of a surjection which makes the map linear.
 
@@ -519,44 +519,44 @@ We will denote by $\pi_*^G:TP/G \to M$ the projection map of the quotient vector
 \begin{proof}
 Condition (1) is satisfied since, for any $g \in G$, the map $R_{g*}:TP \to TP$ is a fiberwise linear map over $R_g$ with inverse $R_{g^{-1} *}$.
 
-Given $p_0 \in P$, to construct an equivariant $\pi$-saturated chart near $p$ we will start with a chart $\phi:U \times G \to \mathcal U = \pi^{-1}(U)$ for $P$ where $U$ is the range of a chart $\theta:\RR^n \to U$ for $M$. The desired chart $\Phi: \mathcal U \times (\RR^n \oplus \alg g) \to TP|_{\mathcal U}$ for $TP$ will be, basically, $\phi^*$, after we identify (via smooth maps) 
+Given $p_0 \in P$, to construct an equivariant $\pi$-saturated chart near $p$ we will start with a chart $\psi:U \times G \to \mathcal U = \pi^{-1}(U)$ for $P$ where $U$ is the range of a chart $\theta:\RR^n \to U$ for $M$. The desired chart $\Psi: \mathcal U \times (\RR^n \oplus \alg g) \to TP|_{\mathcal U}$ for $TP$ will be, basically, $\psi^*$, after we identify (via smooth maps) 
     \begin{itemize}
     
     \item $U \times \RR^n$ with $TU$ by the map $\theta_{*}: \RR^n \times \RR^n \to T_m U$,  
     
     \item $G \times \alg g$ with $TG$ via $R_{\cdot *, 1}: G \times \alg g \to T G$,
     
-    \item and, therefore, the vector bundle $T(U \times G)$, understood as $T(U) \boxplus T(G)$, with $(U \times \RR^n) \boxplus (G \times \alg g)$ and so with $\mathcal U \times (\RR^n \oplus \alg g)$ via $\phi_*: TU \boxplus TG \to TP|_{\mathcal U}$.
+    \item and, therefore, the vector bundle $T(U \times G)$, understood as $T(U) \boxplus T(G)$, with $(U \times \RR^n) \boxplus (G \times \alg g)$ and so with $\mathcal U \times (\RR^n \oplus \alg g)$ via $\psi_*: TU \boxplus TG \to TP|_{\mathcal U}$.
     
     \end{itemize}
 
 Concretely, let
 \begin{align*}
-    \Tilde \Phi :& (U \times G) \times (\RR^n \oplus \alg g) && \to^{\cong} && TP|_{\mathcal U} \\    
-                 & (m, g, v, \eta)&& \mapsto &&\phi_{*, (m, g)}(\theta_{*, \theta^{-1}(m)} v, R_{g*, 1} \eta) 
+    \Tilde \Psi :& (U \times G) \times (\RR^n \oplus \alg g) && \to^{\cong} && TP|_{\mathcal U} \\    
+                 & (m, g, v, \eta)&& \mapsto &&\psi_{*, (m, g)}(\theta_{*, \theta^{-1}(m)} v, R_{g*, 1} \eta) 
 \end{align*}
-now, define $\Phi : \mathcal U \times (\RR^n \oplus \alg g)  \to  T_{\mathcal U}P$ by $\Psi = \phi^{-1} \times id_{\RR^n \oplus \alg g}$. %The isomorphisms mentioned above mean that Given any $p \in P$ %and $X_m \in T_m M$ where $m = \pi(p)$, it is always possible to write $p = \phi(m, g)$ and $X_m = \theta_{*, \theta^{-1}(m)} v$ for some $g \in G, v \in \RR^n$; in this case
+now, define $\Psi : \mathcal U \times (\RR^n \oplus \alg g)  \to  T_{\mathcal U}P$ by $\Phi = \psi^{-1} \times id_{\RR^n \oplus \alg g}$. %The isomorphisms mentioned above mean that Given any $p \in P$ %and $X_m \in T_m M$ where $m = \pi(p)$, it is always possible to write $p = \psi(m, g)$ and $X_m = \theta_{*, \theta^{-1}(m)} v$ for some $g \in G, v \in \RR^n$; in this case
 
 \[
-    \Phi(p, v \oplus \eta) = \phi_{*, (m, g)}(\theta_{*, \theta^{-1}(m)} v, R_{g*, 1} \eta)
+    \Psi(p, v \oplus \eta) = \psi_{*, (m, g)}(\theta_{*, \theta^{-1}(m)} v, R_{g*, 1} \eta)
 \]
 
-The equivariance of this chart%, it is enough to show check the $G$-equivariance or $\Tilde \Phi$, where $G$ acts on $(U \times G) \times (\RR^n \oplus \alg g)$ as induced by $\phi$, i.e. $(m, g, v, \eta)g' = (m, gg', v, \eta)$ for any $g' \in G$, so we need to see  that 
+The equivariance of this chart%, it is enough to show check the $G$-equivariance or $\Tilde \Psi$, where $G$ acts on $(U \times G) \times (\RR^n \oplus \alg g)$ as induced by $\psi$, i.e. $(m, g, v, \eta)g' = (m, gg', v, \eta)$ for any $g' \in G$, so we need to see  that 
 %\begin{align*}
-%    \Phi(m, g, v, \eta) g' &=R_{g'*, \phi(m,g)} \circ \phi_{*, (m, g)}(\theta_{*, \theta^{-1}(m)} v, R_{g*, 1} \eta)\\
-%    &= \phi_{*, (m, gg')}(\theta_{*, \theta^{-1}(m)} v, R_{gg'*, 1} \eta) = \Phi(m, gg', v, \eta).
+%    \Psi(m, g, v, \eta) g' &=R_{g'*, \psi(m,g)} \circ \psi_{*, (m, g)}(\theta_{*, \theta^{-1}(m)} v, R_{g*, 1} \eta)\\
+%    &= \psi_{*, (m, gg')}(\theta_{*, \theta^{-1}(m)} v, R_{gg'*, 1} \eta) = \Psi(m, gg', v, \eta).
 %\end{align*}
- means that for any $p \in \mathcal U$, which can be written as $p = \phi(m, g)$,
+ means that for any $p \in \mathcal U$, which can be written as $p = \psi(m, g)$,
 \begin{align*}
-    \Phi(p, v, \eta) g' &=R_{g'*, p} \circ \phi_{*, p}(X_m, R_{g*, 1} \eta)\\
-    &= \phi_{*, (m, gg')}(X_m, R_{gg'*, 1} \eta) = \Phi(m, gg', v, \eta).
+    \Psi(p, v, \eta) g' &=R_{g'*, p} \circ \psi_{*, p}(X_m, R_{g*, 1} \eta)\\
+    &= \psi_{*, (m, gg')}(X_m, R_{gg'*, 1} \eta) = \Psi(m, gg', v, \eta).
 \end{align*} where $X_m = \theta_{*, \theta^{-1}(m)} v \in T_m M$.
 
-This follows from the identity $\phi(m, g) g' = \phi(m, gg')$, when it is expressed as the equality of the functions $R_{g'} \circ \phi = \phi \circ (Id_U \times R_{g'}) : U \times G \to TP|_{\mathcal U}$. Deriving each formula at $(m, g)$ using the chain rule and the equality $R_g \circ R_{g'} = R_{gg'}$ we get the desired equation.%The left hand side is the derivative at $(m,g)$ of the map $F: U \times G \to TP|_{\mathcal U}$, $F =  R_{g'}\circ \phi$ applying the chain rule, and the right side is the same thing, but evaluating the derivative when $F$ is expressed as the composition map $(m, g) \mapsto (m, R_{g'}(g)) \mapsto \phi(m, gg')$; the equality of this formulas for $F$ is nothing more than the statement that the coordinate map $\phi:U \times G \to TP|_{\mathcal U}$ satisfies .
+This follows from the identity $\psi(m, g) g' = \psi(m, gg')$, when it is expressed as the equality of the functions $R_{g'} \circ \psi = \psi \circ (Id_U \times R_{g'}) : U \times G \to TP|_{\mathcal U}$. Deriving each formula at $(m, g)$ using the chain rule and the equality $R_g \circ R_{g'} = R_{gg'}$ we get the desired equation.%The left hand side is the derivative at $(m,g)$ of the map $F: U \times G \to TP|_{\mathcal U}$, $F =  R_{g'}\circ \psi$ applying the chain rule, and the right side is the same thing, but evaluating the derivative when $F$ is expressed as the composition map $(m, g) \mapsto (m, R_{g'}(g)) \mapsto \psi(m, gg')$; the equality of this formulas for $F$ is nothing more than the statement that the coordinate map $\psi:U \times G \to TP|_{\mathcal U}$ satisfies .
 
-%since  let $g' \in G$, and let $\phi(m, g) = p$, then % = R_{g'*,\phi(m, g)} \circ \phi_{*, (m, g)} (\theta_{*, \theta^{-1}(m)} v, R_{g*, 1} \eta)
+%since  let $g' \in G$, and let $\psi(m, g) = p$, then % = R_{g'*,\psi(m, g)} \circ \psi_{*, (m, g)} (\theta_{*, \theta^{-1}(m)} v, R_{g*, 1} \eta)
 %\begin{multline*}
-%    \Phi(pg', v \oplus \eta) = \Tilde \Phi(\phi^{-1}(pg'), v \oplus \eta) = \Tilde \Phi(\phi^{-1}(p)g', v \oplus \eta) = \Tilde \Phi(m, gg', v, \eta) = \phi_{*, (m, gg')}(\theta_{*, \theta^{-1}(m)} v, R_{gg'*, 1} \eta)
+%    \Psi(pg', v \oplus \eta) = \Tilde \Psi(\psi^{-1}(pg'), v \oplus \eta) = \Tilde \Psi(\psi^{-1}(p)g', v \oplus \eta) = \Tilde \Psi(m, gg', v, \eta) = \psi_{*, (m, gg')}(\theta_{*, \theta^{-1}(m)} v, R_{gg'*, 1} \eta)
 %\end{multline*}
 
 \end{proof}
@@ -568,53 +568,53 @@ This follows from the identity $\phi(m, g) g' = \phi(m, gg')$, when it is expres
 The following proposition and its corollary allow us to define smooth vector bundle maps that start in quotient vector bundles. In particular, it will allow us to define the anchor $a:TP/G \to TM$ of what will be the Atiyah Lie algebroid.
 
 \begin{proposition} \label{3.1.2}
-Let $(E, p^E, P)$ and $(E, p^{E'}, P')$ be vector bundles over principal bundles $P(M, G)$ and $P'(M', G')$, respectively. Let $G$ and $G'$ act on $E$ and $E'$ respectively satisfying the conditions of \ref{3.1.1}. Let $\Phi: E \to E'$ be a vector bundle morphism, over the principal bundle morphism $F(f, \phi)$ where $f:M\to M'$ and $\phi:G \to G'$, that satisfies \[\Phi(\mu g) = \Phi(\mu) \phi(g)\] for all $\mu \in E$, $g \in G$, i.e. \emph{$\Phi$ is $G$-equivariant}. Then, there \emph{exists a unique (smooth) vector bundle morphism} $\Phi^{/G}: E/G \to E'/G'$ over $f: M \to M'$ such that $\Phi^{/G} \circ \natural = \natural' \circ \Phi$, where notation from \ref{3.1.1} has been used. In particular, the following diagram commutes:
+Let $(E, p^E, P)$ and $(E, p^{E'}, P')$ be vector bundles over principal bundles $P(M, G)$ and $P'(M', G')$, respectively. Let $G$ and $G'$ act on $E$ and $E'$ respectively satisfying the conditions of \ref{3.1.1}. Let $\Psi: E \to E'$ be a vector bundle morphism, over the principal bundle morphism $F(f, \psi)$ where $f:M\to M'$ and $\psi:G \to G'$, that satisfies \[\Psi(\mu g) = \Psi(\mu) \psi(g)\] for all $\mu \in E$, $g \in G$, i.e. \emph{$\Psi$ is $G$-equivariant}. Then, there \emph{exists a unique (smooth) vector bundle morphism} $\Psi^{/G}: E/G \to E'/G'$ over $f: M \to M'$ such that $\Psi^{/G} \circ \natural = \natural' \circ \Psi$, where notation from \ref{3.1.1} has been used. In particular, the following diagram commutes:
 
 \begin{equation} \label{diagramQuotientMorph}
 \begin{tikzcd}
-    E   \ar{r}{\Phi}     \ar{d}{\natural} &   E'  \ar{d}{\natural'} \\
-    E/G \ar[dashed]{r}{\Phi^{/G}} \ar{d}{p^{E/G}}  & E'/G' \ar{d}{p^{E'/G'}} \\
+    E   \ar{r}{\Psi}     \ar{d}{\natural} &   E'  \ar{d}{\natural'} \\
+    E/G \ar[dashed]{r}{\Psi^{/G}} \ar{d}{p^{E/G}}  & E'/G' \ar{d}{p^{E'/G'}} \\
     M \ar{r}{f} & M'
 \end{tikzcd}
 \end{equation}
 \end{proposition}
 
 \begin{proof}
-The top square of the above diagram imply that $\Phi^{/G}$ is uniquely defined by $\Phi^{/G}(\langle \mu \rangle) := \langle \Phi(\mu) \rangle$. This map is well defined thanks to the $G$-equivariance of $\Phi$.
+The top square of the above diagram imply that $\Psi^{/G}$ is uniquely defined by $\Psi^{/G}(\langle \mu \rangle) := \langle \Psi(\mu) \rangle$. This map is well defined thanks to the $G$-equivariance of $\Psi$.
 
-It is fiberwise linear: for $\langle \mu \rangle, \langle \nu \rangle \in E/G$, let $g \in G$ be such that $\mu$ and $\nu g$ are in the same vector fiber of $E$; notice that this also means that $\Phi(\mu)$ and $\Phi(\nu g) = \Phi(\nu) \phi(g)$ are in the same vector fiber of $E'$ because $\Phi:E \to E'$ is fiber preserving. 
-Then $\Phi^{/G}(\langle \mu \rangle + t\langle \nu \rangle) = \Phi^{/G}(\langle \mu  + t \nu g \rangle)  = \langle \Phi(\mu + t \nu g ) \rangle = \langle \Phi(\mu) + t \Phi(\nu)\phi(g) \rangle = \langle \Phi(\mu) \rangle + t \langle \Phi(\nu) \rangle = \Phi^{/G}(\langle \mu \rangle) + t\Phi^{/G}(\langle \nu \rangle)$.
+It is fiberwise linear: for $\langle \mu \rangle, \langle \nu \rangle \in E/G$, let $g \in G$ be such that $\mu$ and $\nu g$ are in the same vector fiber of $E$; notice that this also means that $\Psi(\mu)$ and $\Psi(\nu g) = \Psi(\nu) \psi(g)$ are in the same vector fiber of $E'$ because $\Psi:E \to E'$ is fiber preserving. 
+Then $\Psi^{/G}(\langle \mu \rangle + t\langle \nu \rangle) = \Psi^{/G}(\langle \mu  + t \nu g \rangle)  = \langle \Psi(\mu + t \nu g ) \rangle = \langle \Psi(\mu) + t \Psi(\nu)\psi(g) \rangle = \langle \Psi(\mu) \rangle + t \langle \Psi(\nu) \rangle = \Psi^{/G}(\langle \mu \rangle) + t\Psi^{/G}(\langle \nu \rangle)$.
 
-$\Phi^{/G}$ is smooth: Given that $F := \Phi^{/G} \circ \natural = \natural' \circ \Phi : E \to E'/G'$ is a smooth mapping and that $\natural$ is a surjective submersion, the Submersion theorem allows us to see the local smoothness of $\Phi^{/G}$, and therefore conclude that $\Phi^{/G}$ is smooth: due to the submersion theorem for any $\mu \in E$, there exist manifold charts $(\mathcal U, \Psi: \mathcal U \to \RR^N)$ of $E$ near $\mu$, $(U, \psi: U \to \RR^n)$ of $E/G$ near $\langle \mu \rangle$, and $(U', \psi': U' \to \RR^m)$ of $E'/G'$ near $\Phi^{/G}(\langle e \rangle)$where $n \leq N$, such that: %$\psi \circ \natural \circ \Psi^{-1}(x_1, \dots, x_N) = (x_1, \dots, x_n)$, $\psi' \circ (\Phi^{/G} \circ \natural) \circ \Psi^{-1}(x_1, \dots, x_N) = (F^1(x_1), \dots, F^m(x_n)$
+$\Psi^{/G}$ is smooth: Given that $F := \Psi^{/G} \circ \natural = \natural' \circ \Psi : E \to E'/G'$ is a smooth mapping and that $\natural$ is a surjective submersion, the Submersion theorem allows us to see the local smoothness of $\Psi^{/G}$, and therefore conclude that $\Psi^{/G}$ is smooth: due to the submersion theorem for any $\mu \in E$, there exist manifold charts $(\mathcal U, \Phi: \mathcal U \to \RR^N)$ of $E$ near $\mu$, $(U, \phi: U \to \RR^n)$ of $E/G$ near $\langle \mu \rangle$, and $(U', \phi': U' \to \RR^m)$ of $E'/G'$ near $\Psi^{/G}(\langle e \rangle)$where $n \leq N$, such that: %$\phi \circ \natural \circ \Phi^{-1}(x_1, \dots, x_N) = (x_1, \dots, x_n)$, $\phi' \circ (\Psi^{/G} \circ \natural) \circ \Phi^{-1}(x_1, \dots, x_N) = (F^1(x_1), \dots, F^m(x_n)$
 
 \[
 \begin{tikzcd}
-    (x_1, \dots, x_N) \arrow[mapsto]{rd}{\psi' \circ (\natural' \circ \Phi) \circ \Psi^{-1} } \arrow[mapsto]{d}{\psi \circ \natural \circ \Psi^{-1}} & \\
-    (x_1, \dots, x_n) \arrow[mapsto]{rd}[below, near start]{\psi' \circ \Phi^{/G} \circ \psi^{-1}} & (\Tilde F^1(x_1, \dots, x_N), \dots, \Tilde F^m(x_1, \dots, x_N)) \arrow[equal]{d}\\
-    & (\Tilde{\Phi^{/G}}^1(x_1, \dots, x_n), \dots, \Tilde{\Phi^{/G}}^m(x_1, \dots, x_n))
+    (x_1, \dots, x_N) \arrow[mapsto]{rd}{\phi' \circ (\natural' \circ \Psi) \circ \Phi^{-1} } \arrow[mapsto]{d}{\phi \circ \natural \circ \Phi^{-1}} & \\
+    (x_1, \dots, x_n) \arrow[mapsto]{rd}[below, near start]{\phi' \circ \Psi^{/G} \circ \phi^{-1}} & (\Tilde F^1(x_1, \dots, x_N), \dots, \Tilde F^m(x_1, \dots, x_N)) \arrow[equal]{d}\\
+    & (\Tilde{\Psi^{/G}}^1(x_1, \dots, x_n), \dots, \Tilde{\Psi^{/G}}^m(x_1, \dots, x_n))
 \end{tikzcd}
 \]
 
-the smoothness of $F$ implies that the functions $F^i:\Psi(\mathcal U) \to \psi'(U')$ are smooth, but $\Tilde F^i(x_1, \dots, x_N) = \Tilde{\Phi^{/G}}^i(x_1, \dots, x_n)$, so the functions $\Tilde{\Phi^{/G}}^i:\psi(U) \to \psi'(U')$ that localize $\Psi^{/G}$ are smooth, therefore so is $\Phi^{/G}$. 
+the smoothness of $F$ implies that the functions $F^i:\Phi(\mathcal U) \to \phi'(U')$ are smooth, but $\Tilde F^i(x_1, \dots, x_N) = \Tilde{\Psi^{/G}}^i(x_1, \dots, x_n)$, so the functions $\Tilde{\Psi^{/G}}^i:\phi(U) \to \phi'(U')$ that localize $\Phi^{/G}$ are smooth, therefore so is $\Psi^{/G}$. 
 
-Finally, $\Phi^{/G}$ is a smooth vector bundle morphism over $f:M \to M'$ since $p^{E'/G'} \circ \Phi^{/G}(\langle \mu \rangle) = p^{E'/G'}(\langle \Phi(\mu) \rangle) = p^{E'}(\Phi(\mu)) = f \circ p^E (\mu) = f \circ p^{E/G} (\langle \mu \rangle)$.
+Finally, $\Psi^{/G}$ is a smooth vector bundle morphism over $f:M \to M'$ since $p^{E'/G'} \circ \Psi^{/G}(\langle \mu \rangle) = p^{E'/G'}(\langle \Psi(\mu) \rangle) = p^{E'}(\Psi(\mu)) = f \circ p^E (\mu) = f \circ p^{E/G} (\langle \mu \rangle)$.
 
 \end{proof}
 
 \begin{corollary}
-Let $(E, p^E, P)$ be a vector bundle over the principal bundle $P(M, G)$, and let $G$ act on $E$ satisfying the conditions of \ref{3.1.1}. Let $(E, p^{E'}, M')$ be another vector bundle. Let $\Phi: E \to E'$ be a vector bundle morphism over a map $f: P \to M'$ that satisfies $\Phi(\mu g) = \Phi(\mu)$ and $f(pg) = f(p)$ for all $\mu \in E$, $p \in P$ and $g \in G$. Then there exists a unique (smooth) vector bundle morphism $\Phi^{/G}: E/G \to E'$ over a map $f^{/G}: M \to M'$, $f^{/g}$ such that $f = f^{/g} \circ \pi$, that safiesfies $\Phi^{/G} \circ \natural = \Phi$, where notation from \ref{3.1.1} has been used. In particular, the following diagram commutes
+Let $(E, p^E, P)$ be a vector bundle over the principal bundle $P(M, G)$, and let $G$ act on $E$ satisfying the conditions of \ref{3.1.1}. Let $(E, p^{E'}, M')$ be another vector bundle. Let $\Psi: E \to E'$ be a vector bundle morphism over a map $f: P \to M'$ that satisfies $\Psi(\mu g) = \Psi(\mu)$ and $f(pg) = f(p)$ for all $\mu \in E$, $p \in P$ and $g \in G$. Then there exists a unique (smooth) vector bundle morphism $\Psi^{/G}: E/G \to E'$ over a map $f^{/G}: M \to M'$, $f^{/g}$ such that $f = f^{/g} \circ \pi$, that safiesfies $\Psi^{/G} \circ \natural = \Psi$, where notation from \ref{3.1.1} has been used. In particular, the following diagram commutes
 
 \begin{equation} \label{anchorDiagram}
     \begin{tikzcd}
-    E \arrow[]{d}{\natural} \arrow[]{dr}{\Phi}& \\
-    E/G \arrow[dashed]{r}{\Phi^{/G}} \arrow[]{d}{p^{E/G}}& E' \arrow[]{d}{p^{E'}} \\
+    E \arrow[]{d}{\natural} \arrow[]{dr}{\Psi}& \\
+    E/G \arrow[dashed]{r}{\Psi^{/G}} \arrow[]{d}{p^{E/G}}& E' \arrow[]{d}{p^{E'}} \\
     M \arrow[]{r}{f^{/G}} & M'
     \end{tikzcd}
 \end{equation}
 \end{corollary}
 
 \begin{proof}
-Consider $M'$ as the principal bundle $P(M', \set{1})$, let $\phi:G \to \set{1}$ be trivial and apply \ref{3.1.2}.
+Consider $M'$ as the principal bundle $P(M', \set{1})$, let $\psi:G \to \set{1}$ be trivial and apply \ref{3.1.2}.
 \end{proof}
 
 Applying the previous corollary to $\pi_*: TP \to TM$ gives us immediately the following theorem.
@@ -685,7 +685,7 @@ Finally, the $\RR$-linearity of the pointwise vector space isomorphism $\natural
 
 \end{proof}
 
-The following will be useful to define $\Phi^{/G}: E/G \to E'/G'$, in particular the anchor of the Atiyah Lie algebroid, among other things. 
+The following will be useful to define $\Psi^{/G}: E/G \to E'/G'$, in particular the anchor of the Atiyah Lie algebroid, among other things. 
 
 \begin{definition}\label{defnRelatedProjectable}
 Let $(E, p^E, B)$ and $(E', p^{E'}, B')$ be vector bundles and $F: E \to E'$ be a vector bundle morphism over $f: B \to B'$ Let $\sect \mu \in \Gamma(E)$ and $\sect \nu' \in \Gamma(E')$ , then
@@ -837,13 +837,13 @@ where the top vectical arrows are the quotient maps, and, abusing notation, $\pi
 \end{theorem}
 
 \begin{proof}
-$\pi_*$ is $G$-equivariant since $\pi \circ R_g = \pi$, therefore the existence of the vector bundle $TP/G$ will follow if we find $\pi$-saturated $G$-equivariant charts. Using the notation in the proof of theorem \ref{theoTPGexists}, where charts for $TP$ were built, we now construct the desired charts. Notice that $\pi_* \circ \phi_* (X, R_{g*, 1} \eta) = 0$, where $\phi_* : TU \boxplus TG \to T_{\mathcal U}$ is the isomorphism induced by the principal bundle chart $\phi: U \times G \to P_{\mathcal U}$, is equivalent to the statement $X = 0$ since $\pi \circ \phi: U \times G \to U$ is the projection to the first coordinate. Therefore, the fiber of $T^\pi P$ is only $\alg g$ and the following map is a vector bundle isomorphism:
+$\pi_*$ is $G$-equivariant since $\pi \circ R_g = \pi$, therefore the existence of the vector bundle $TP/G$ will follow if we find $\pi$-saturated $G$-equivariant charts. Using the notation in the proof of theorem \ref{theoTPGexists}, where charts for $TP$ were built, we now construct the desired charts. Notice that $\pi_* \circ \psi_* (X, R_{g*, 1} \eta) = 0$, where $\psi_* : TU \boxplus TG \to T_{\mathcal U}$ is the isomorphism induced by the principal bundle chart $\psi: U \times G \to P_{\mathcal U}$, is equivalent to the statement $X = 0$ since $\pi \circ \psi: U \times G \to U$ is the projection to the first coordinate. Therefore, the fiber of $T^\pi P$ is only $\alg g$ and the following map is a vector bundle isomorphism:
 
 \begin{align*}
-    \Tilde \Phi :& (U \times G) \times \alg g & \to^{\cong} & T^\pi P|_{\mathcal U} \\    
-                 & (m, g, \eta)&& \mapsto &&\phi_{*, (m, g)}(0, R_{g*, 1} \eta).
+    \Tilde \Psi :& (U \times G) \times \alg g & \to^{\cong} & T^\pi P|_{\mathcal U} \\    
+                 & (m, g, \eta)&& \mapsto &&\psi_{*, (m, g)}(0, R_{g*, 1} \eta).
 \end{align*}
-Now, $\Phi : \mathcal U \times \alg g  \to  T_{\mathcal U}P$ by $\Psi = \phi^{-1} \times id_{\alg g}$ is the desired $G$-equivariant chart by the same arguments used in the proof of theorem \ref{theoTPGexists}.
+Now, $\Psi : \mathcal U \times \alg g  \to  T_{\mathcal U}P$ by $\Phi = \psi^{-1} \times id_{\alg g}$ is the desired $G$-equivariant chart by the same arguments used in the proof of theorem \ref{theoTPGexists}.
 
 The existence of the vector bundle morphism $j: T^\pi P/G \to TP/G$ follows from the clear $G$-equivariance of the inclusion $i$.
 
@@ -860,7 +860,7 @@ We need to prove is that the bracket of $TP/G$ of sections of $T^\pi P/G$ is aga
 That $T^\pi P/G = ker(\pi_*^G)$ is clear due to top square of the commutative diagram (\ref{anchorDiagram}) that defined the anchor on $TP/G$. This implies that the anchor $\pi_*^G$ of $TP/G$ restricts to the zero map on $T^\pi P/G$ and so the compatibility conditions between the bracket and the anchor are inherited from the Atiyah Lie algebroid.
 \end{proof}
 
-\subsubsection{The Atiyah Sequence}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The Atiyah Sequence}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Although we could consider the exact sequence of Atiyah Lie algebroids
 \begin{align*}
@@ -899,19 +899,19 @@ as the Atiyah sequence of the principal bundle $P(M, G)$, it will be useful to r
 \end{proposition}
 
 \begin{proof}
-Let $\sigma: U \to P$ be a local section of $P$ and $\phi: U \times G \to \mathcal U = \pi^{-1}(U)$ be the associated chart that satisfies $\phi(m, g) = \sigma(m)g$ for $m \in M, g \in G$. Let the $\pi$-saturated chart $\Phi: \mathcal U \times V \to E_{\mathcal U}$ be defined by
+Let $\sigma: U \to P$ be a local section of $P$ and $\psi: U \times G \to \mathcal U = \pi^{-1}(U)$ be the associated chart that satisfies $\psi(m, g) = \sigma(m)g$ for $m \in M, g \in G$. Let the $\pi$-saturated chart $\Psi: \mathcal U \times V \to E_{\mathcal U}$ be defined by
 \begin{equation*}
     \begin{tikzcd}
-        \mathcal U \times V \arrow[dashed]{r}{\Phi} & E_{\mathcal U} = \mathcal U \times V \\
-        U \times G \times V \arrow{u}{\phi \times id_V} \arrow{r}{(m, g, v) \mapsto (x, g, g^{-1}v)}    & U \times G \times V \arrow{u}{\phi \times id_V}
+        \mathcal U \times V \arrow[dashed]{r}{\Psi} & E_{\mathcal U} = \mathcal U \times V \\
+        U \times G \times V \arrow{u}{\psi \times id_V} \arrow{r}{(m, g, v) \mapsto (x, g, g^{-1}v)}    & U \times G \times V \arrow{u}{\psi \times id_V}
     \end{tikzcd}
 \end{equation*}
 for any $m \in U$, $v \in V$, $g \in G$ which, therefore, has formula
 \[
-    \Phi(\sigma(m)g, v) = (\sigma(m)g, g^{-1}v).
+    \Psi(\sigma(m)g, v) = (\sigma(m)g, g^{-1}v).
 \]
 
-The $G$-equivariance of $\Phi$ follows from $\Phi(\sigma(m)g, v)g' = (\sigma(m)g, g^{-1}v)g' = (\sigma(m)gg', (gg')^{-1}v) = \Phi(\sigma(m)gg', v)$.
+The $G$-equivariance of $\Psi$ follows from $\Psi(\sigma(m)g, v)g' = (\sigma(m)g, g^{-1}v)g' = (\sigma(m)gg', (gg')^{-1}v) = \Psi(\sigma(m)gg', v)$.
 
 The theorem then follows from theorems \ref{3.1.1} and \ref{3.1.3}, noticing that $\Gamma^G(P \times V) \cong C^\infty_G(M)$ and that $\tilde{f \sect \mu} = (f \circ \pi) \tilde{\sect \mu}$.
 \end{proof}
@@ -988,15 +988,15 @@ First notice that a section on $P \times \alg g$ is $j$-projectable since the ba
 \begin{align}
     \upsect{j(\sect \mu)}_p = \natural_p^{-1}(j(\sect{\mu}_{\pi(p)})) = m_{p*,1}(\Tilde{\sect \mu}(p)) = \frac{d}{dt}_{t=0} p \exp{(t \Tilde{\sect \mu}(p))}.
 \end{align}
-Furthermore, for any section $\sect \mu \in \Gamma(P \times \alg g/G)$, $\upsect{j(\sect \mu)}$ has global flow $\phi_t(p) = p \exp{(t \Tilde{\sect \mu}(p))}$ since, using the fact that $\Tilde{\sect \mu}(pg) = Ad_{g^{-1}} \Tilde{\sect \mu}(p)$ for any $g \in G$, it can be shown that $\phi_t \circ \phi_s = \phi_{t + s}$ for any $t, s \in \RR$.
+Furthermore, for any section $\sect \mu \in \Gamma(P \times \alg g/G)$, $\upsect{j(\sect \mu)}$ has global flow $\psi_t(p) = p \exp{(t \Tilde{\sect \mu}(p))}$ since, using the fact that $\Tilde{\sect \mu}(pg) = Ad_{g^{-1}} \Tilde{\sect \mu}(p)$ for any $g \in G$, it can be shown that $\psi_t \circ \psi_s = \psi_{t + s}$ for any $t, s \in \RR$.
 
 Therefore, for any $\sect \mu, \sect \nu \in \Gamma(P \times \alg g/ G)$
 \begin{align*}
     [\upsect{j(\sect \mu)}, \upsect{j(\sect \nu)}]_p 
-    &= \lim_{t \to 0} \frac{\phi_{-t*}(\upsect{j(\sect \nu)}_{\phi_t(p)})  - \upsect{j(\sect \nu)}_{p} }{t}\\
-    &= - \frac{d}{dt}_{t = 0} \phi_{t*} (\upsect{j(\sect \nu)}_{\phi_{-t}(p)}) \\
-    &= - \frac{d}{dt}_{t = 0} (\phi_{t} \circ m_{\phi_{-t}(p)})_{*, 1} (\Tilde{\sect \nu}(\phi_{-t}(p)))\\
-    &= (m_{p})_{*, 1} \left(- \frac{d}{dt}_{t = 0} \Tilde{\sect \nu}(p \exp{(-t \Tilde{\sect \mu}(p))}) \right), \quad \phi_t \circ m_{\phi_{-t}(p)} = m_p \\
+    &= \lim_{t \to 0} \frac{\psi_{-t*}(\upsect{j(\sect \nu)}_{\psi_t(p)})  - \upsect{j(\sect \nu)}_{p} }{t}\\
+    &= - \frac{d}{dt}_{t = 0} \psi_{t*} (\upsect{j(\sect \nu)}_{\psi_{-t}(p)}) \\
+    &= - \frac{d}{dt}_{t = 0} (\psi_{t} \circ m_{\psi_{-t}(p)})_{*, 1} (\Tilde{\sect \nu}(\psi_{-t}(p)))\\
+    &= (m_{p})_{*, 1} \left(- \frac{d}{dt}_{t = 0} \Tilde{\sect \nu}(p \exp{(-t \Tilde{\sect \mu}(p))}) \right), \quad \psi_t \circ m_{\psi_{-t}(p)} = m_p \\
     &= (m_{p})_{*, 1} \left(- \frac{d}{dt}_{t = 0} Ad_{\exp{(t \Tilde{\sect \mu}(p))}}\Tilde{\sect \nu}(p) \right) \\
     &= m_{p*, 1} ([\Tilde{\sect \mu}(p), \Tilde{\sect \nu}(p)]^R)
 \end{align*}
@@ -1040,24 +1040,24 @@ is called \emph{the Atiyah sequence of the principal bundle $P(M, G)$}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{definition} [(Base preserving) morphism of Lie algebroids] \label{defnMorph}
 Given two algebroids over the manifold $M$, $A$ with anchor $a$ and $A'$ with anchor $a'$, \emph{a base preserving Lie algebroid morphism} or \emph{Lie algebroid morphism over $M$} 
-\[\phi: A \to A'\]
+\[\psi: A \to A'\]
 is a vector bundle morphism over $M$ such that 
 \begin{align}
-    a' \comp \phi = a, & : A \to TM,
+    a' \comp \psi = a, & : A \to TM,
 \end{align}
 i.e. it is compatible with the anchors, and such that 
-\[\phi[\sect{\oid X}, \sect{\oid Y}] = [\phi(\oid X), \phi(\oid Y)]\] 
+\[\psi[\sect{\oid X}, \sect{\oid Y}] = [\psi(\oid X), \psi(\oid Y)]\] 
 for all $\sectoid X, \sectoid Y \in \Gamma(A)$, i.e. it is a Lie algebra morphism when applied to sections. 
 \end{definition}
 
 \begin{remark}
 Notice that a morphism of Lie algebroids over $M$ may also be defined algebraically as a map
 \begin{align*}
-    \phi: \Gamma(A) \to \Gamma(A')
+    \psi: \Gamma(A) \to \Gamma(A')
 \end{align*}
 which is $C^\infty(M)$-linear, a Lie algebra morphism, and such that
 \begin{align*}
-    a' \comp \phi = a, & :\Gamma(A) \to \Gamma(TM)
+    a' \comp \psi = a, & :\Gamma(A) \to \Gamma(TM)
 \end{align*}
 This can be done due to the equivalence between vector bundle maps over $M$ and $C^\infty(M)$-linear maps between sections.
 \end{remark}
@@ -1107,23 +1107,23 @@ Let $ad: A \to \alg D(L)$ be the adjoint representation of $A$ on $L$ and let $\
 \end{proof}
 
 \begin{definition}\label{defnPhi+}
-Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ and $0 \to L' \xrightarrow{j'} A' \xrightarrow{a'} TM \to 0$ be transitive Lie algebroids sequences over $M$. Let $\phi: A \to A'$ be a morphism of Lie algebroids. since, $a' \circ \phi = a$, $\phi$ induces a morphism of Lie algebroids denoted by
+Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ and $0 \to L' \xrightarrow{j'} A' \xrightarrow{a'} TM \to 0$ be transitive Lie algebroids sequences over $M$. Let $\psi: A \to A'$ be a morphism of Lie algebroids. since, $a' \circ \psi = a$, $\psi$ induces a morphism of Lie algebroids denoted by
 \begin{align*}
-    \phi^+: L \to L'
+    \psi^+: L \to L'
 \end{align*}
 \end{definition}
 
 \begin{proposition}
-Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ and $0 \to L' \xrightarrow{j'} A' \xrightarrow{a'} TM \to 0$ be transitive Lie algebroids sequences over $M$. Let $\phi: A \to A'$ be a morphism of Lie algebroids. Then $\phi$ is a surjection, injection or bijection if and only if $\phi^+: L \to L'$ has the respective property.
+Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ and $0 \to L' \xrightarrow{j'} A' \xrightarrow{a'} TM \to 0$ be transitive Lie algebroids sequences over $M$. Let $\psi: A \to A'$ be a morphism of Lie algebroids. Then $\psi$ is a surjection, injection or bijection if and only if $\psi^+: L \to L'$ has the respective property.
 \end{proposition}
 
 \begin{proof}
-We may think of $L$ and $L'$ as the kernels of the anchors, so $j$ and $j'$ are simply the inclusion maps and $\phi^+ = \phi_L$. Since $a' \circ \phi = a$, $ker(\phi) \subset \ker(a) = L$, and so, by linearity, $\phi$ is injective if and only if $\phi^+$ is injective.
+We may think of $L$ and $L'$ as the kernels of the anchors, so $j$ and $j'$ are simply the inclusion maps and $\psi^+ = \psi_L$. Since $a' \circ \psi = a$, $ker(\psi) \subset \ker(a) = L$, and so, by linearity, $\psi$ is injective if and only if $\psi^+$ is injective.
 
-By the same property, only elements of $L$ can be mapped to $L'$ $\phi$ being surjective implies that $\phi^+$ is surjective. For the converse, we recall that the anchors are fiberwise surjective, so given any $\oid Y \in A'$ such that $a'(\oid Y) = Y \in TM$, we can find an element $\oid X_1 \in A$ with $a(\oid X) = Y$; let $\nu = \oid Y - \phi(\oid X_1)$, so $\nu \in L'$ and if $\phi^+$ is surjective there must exist $\mu \in L$ such that $\phi^+(\mu) = \nu$ and so $\oid X = \oid X_1 + \mu$ satisfies $\phi(X) = \oid Y$, which allows us to conclude that $\phi$ must also be surjective.
+By the same property, only elements of $L$ can be mapped to $L'$ $\psi$ being surjective implies that $\psi^+$ is surjective. For the converse, we recall that the anchors are fiberwise surjective, so given any $\oid Y \in A'$ such that $a'(\oid Y) = Y \in TM$, we can find an element $\oid X_1 \in A$ with $a(\oid X) = Y$; let $\nu = \oid Y - \psi(\oid X_1)$, so $\nu \in L'$ and if $\psi^+$ is surjective there must exist $\mu \in L$ such that $\psi^+(\mu) = \nu$ and so $\oid X = \oid X_1 + \mu$ satisfies $\psi(X) = \oid Y$, which allows us to conclude that $\psi$ must also be surjective.
 \end{proof}
 
-%Theo: locally constant rank both $\phi$ and $\phi^+$
+%Theo: locally constant rank both $\psi$ and $\psi^+$
 
 \linea
 
@@ -1254,16 +1254,16 @@ where $a(\sectoid X)(f)$ means the standard Lie derivative of $f$ in direction o
 Recall that lemma \ref{lemmaSectionLocal} allowed us to restrict a Lie algebroid to an open subset $U$ of the base manifold. We now study how a transitive Lie algebroid is a collection of locally defined trivial Lie algebroids correctly pasted together.
 
 \begin{definition}[Lie algebroid atlas]
-Let $L \hookrightarrow^j A \twoheadrightarrow TM$ be a transitive Lie algebroid sequence, and let $\alg g$ be a Lie algebra. Given an open cover $\set{U_i}_{i \in I}$ of $M$, a \emph{a Lie algebroid atlas for $A$} is a collection $\set{U_i, \phi_i:U_i \times \alg g \to L_{U_i}, \Theta^i: TU_i \to A_{U_i}}_{i \in I}$ such that:
+Let $L \hookrightarrow^j A \twoheadrightarrow TM$ be a transitive Lie algebroid sequence, and let $\alg g$ be a Lie algebra. Given an open cover $\set{U_i}_{i \in I}$ of $M$, a \emph{a Lie algebroid atlas for $A$} is a collection $\set{U_i, \psi_i:U_i \times \alg g \to L_{U_i}, \Theta^i: TU_i \to A_{U_i}}_{i \in I}$ such that:
     \begin{itemize}
     
     \item each $\Theta^i: TU_i \to A_{u_i}$ is a Lie algebroid morphism,
     
-    \item the family $\set{\phi_i:U_i \times \alg g \to L_{U_i}}$ is a LAB atlas for the adjoint bundle 
+    \item the family $\set{\psi_i:U_i \times \alg g \to L_{U_i}}$ is a LAB atlas for the adjoint bundle 
     
     \item for all $\sect X \in \Gamma(TU_i)$, $\sect \eta \in C^\infty(U_i, \alg g) \cong \Gamma(U_i \times \alg g)$
         \begin{align} \label{eqnCompLocal}
-            [\Theta^i(\sect X), j\phi_i(\sect \eta)] = j\phi_i([\sect X \oplus 0, 0 \oplus \sect \eta]) \equiv j\phi_i(\sect X(\sect \eta)) 
+            [\Theta^i(\sect X), j\psi_i(\sect \eta)] = j\psi_i([\sect X \oplus 0, 0 \oplus \sect \eta]) \equiv j\psi_i(\sect X(\sect \eta)) 
         \end{align}
     
     \end{itemize}
@@ -1276,12 +1276,12 @@ Every transitive Lie algebroid has a Lie algebroid atlas.\todo{Perhaps prove it 
 At least show that it follows from Theorem 8.2.1 (TLA over contractible $M$ admits a flat connection; this theorem is analogous to ``every ppal bundle over a contractible space has a global section'', and so requires top. algebra: cohomology theory of Ch 7 in this case). The proof I mention I should do is, I think, in page 317
 \end{proof}
 
-Throughout this chapter $L \hookrightarrow^j A \twoheadrightarrow TM$ will be a Lie algebroid sequence with Lie algebroid atlas $\set{U_i, \phi_i:U_i \times \alg g\to L_{U_i}, \Theta^i}_{i \in I}$.
+Throughout this chapter $L \hookrightarrow^j A \twoheadrightarrow TM$ will be a Lie algebroid sequence with Lie algebroid atlas $\set{U_i, \psi_i:U_i \times \alg g\to L_{U_i}, \Theta^i}_{i \in I}$.
 
 In chapter \ref{chp:connections} we will see that the $\Theta^i$ are flat connections in $A_{U_i}$ and so their image gives a notion of horizontallity in $A_{U_i}$ and $ \oid X \mapsto \Theta^i(a(\oid)) \in A_{U_i}$ is the horizontal projection of $\oid X$ induced by $\Theta^i$.
 \begin{align}\label{defnLocalIsom}
     S_i:&& TU_i &\oplus (U_i \times \alg g) &&\to&& A_{U_i}\\
-        && X &\oplus \eta && \mapsto && \Theta^i(X) + j\phi_i(\eta).
+        && X &\oplus \eta && \mapsto && \Theta^i(X) + j\psi_i(\eta).
 \end{align}
 This vector bundle morphisms inherit the compatibility with the anchors from the respective property of the Lie algebroid morphisms $\Theta^i$, and are compatible with the bracket due to the compatibility equation (\ref{eqnCompLocal}) which is equivalent to the equation
 \begin{align*}
@@ -1293,7 +1293,7 @@ The maps $S_i : TU_i \oplus (U_i \times \alg g) \to A_{U_i}$ defined in equation
 
 Furthermore for each $i \in I$ 
 \begin{align*}
-    \phi_i = S_i^+: U_i \times \alg g \to L_{U_i}
+    \psi_i = S_i^+: U_i \times \alg g \to L_{U_i}
 \end{align*} and 
 \begin{align*}
     \Theta^i(X) = S_i(X \oplus 0)
@@ -1315,23 +1315,23 @@ Structure of Lie algebroid morphisms between Trivial Lie algebroids: relevant fo
 Let 
 \begin{align*}
     \alpha^i_j:&& U_{ij} &= U_i \inter U_j &&\to&& Aut(\alg g)\\
-               && &m && \mapsto && \alpha^i_{j, m} := \phi^{-1}_{i, m} \circ \phi_{j, m}
+               && &m && \mapsto && \alpha^i_{j, m} := \psi^{-1}_{i, m} \circ \psi_{j, m}
 \end{align*} 
-be the transition functions for $\set{\phi_i}$. Since any element $\eta \in U_i \times \alg g$ is of the form $\eta = (m, \eta_m)$ for some $m \in U_{ij}$ and $\eta_m \in \alg g$, denote also by $\alpha^i_j$ the maps
+be the transition functions for $\set{\psi_i}$. Since any element $\eta \in U_i \times \alg g$ is of the form $\eta = (m, \eta_m)$ for some $m \in U_{ij}$ and $\eta_m \in \alg g$, denote also by $\alpha^i_j$ the maps
 \begin{align}
     \alpha^i_j:&& U_{ij} \times \alg g &&\to&& U_{ij} \times \alg g\\
-               && \eta = (m, \eta_m) && \mapsto && \alpha^i_j(\eta) := \phi^{-1}_{i} \circ \phi_{j}(\eta);
+               && \eta = (m, \eta_m) && \mapsto && \alpha^i_j(\eta) := \psi^{-1}_{i} \circ \psi_{j}(\eta);
 \end{align}
 notice that $\alpha^i_j(\eta) = (m, \alpha^i_{j, m}(\eta_m))$.
 
-Notice, however, that for $\oid X = S_j(X \oplus \eta^j)$ in $A_{U_{ij}}$, $\oid X \neq S_i(X \oplus \alpha^i_j(\eta^j))$ since $S_i(X \oplus \alpha^i_j(\eta^j)) = \Theta_i(X) + j\phi_i(\alpha^i_j(\eta^j)) = \Theta^i(X) + j\phi^j(\eta^j) = S_j(X \oplus \eta^j) + (\Theta^i(X) - \Theta^j(X))$. $a(S_j(X \oplus \eta^j)) = a(S_i(X \oplus \alpha^i_j(\eta^j)))$ so $\Theta^i(X) - \Theta^j(X) \in ker(a)$ and we may define the $L_{U_ij}$-valued $1$-form
+Notice, however, that for $\oid X = S_j(X \oplus \eta^j)$ in $A_{U_{ij}}$, $\oid X \neq S_i(X \oplus \alpha^i_j(\eta^j))$ since $S_i(X \oplus \alpha^i_j(\eta^j)) = \Theta_i(X) + j\psi_i(\alpha^i_j(\eta^j)) = \Theta^i(X) + j\psi^j(\eta^j) = S_j(X \oplus \eta^j) + (\Theta^i(X) - \Theta^j(X))$. $a(S_j(X \oplus \eta^j)) = a(S_i(X \oplus \alpha^i_j(\eta^j)))$ so $\Theta^i(X) - \Theta^j(X) \in ker(a)$ and we may define the $L_{U_ij}$-valued $1$-form
 \begin{align}
     l^i_j: TU_{ij} & \to L_{U_{ij}} \\
             X & \mapsto j^{-1}(\Theta^j(X) - \Theta^i(X)),
 \end{align} and the $\alg g$-valued $1$-forms
 \begin{eqnsplit}
     \chi^i_j:  TU_{ij} & \to  U_{ij} \times \alg g \\
-               X & \mapsto  \phi_i^{-1} \circ l^i_j(X)
+               X & \mapsto  \psi_i^{-1} \circ l^i_j(X)
 \end{eqnsplit} called \emph{the transition forms for the Lie algebroid atlas}.
 
 With this maps, in $A_{U_{ij}}$ the correct way to change from a local expression from another is given by
@@ -1348,7 +1348,7 @@ In summary, for a Lie algebroid element that in the coordinate frame $j$ has for
 We now present some useful formulas. Suppose $\oid X = S_i(X \oplus \eta^i) = S_j(X \oplus \eta^j) \in A_{U_{ij}}$, then 
 \begin{eqnsplit}
     l^i_j(X) &= -j^{-1}(\Theta^i(X) - \Theta^j(X)) \\
-             &= \psi_i(\eta^i) - \psi_j(\eta^j)
+             &= \phi_i(\eta^i) - \phi_j(\eta^j)
 \end{eqnsplit} and
 \begin{align}
     \chi^i_j(X) = \eta^i - \alpha^i_j(\eta^j)
@@ -1371,14 +1371,14 @@ $\chi^i_j: U_{ij} \to U_{ij} \times \alg g$ is a Maurer-Cartan form, i.e. it sat
 \end{theorem}
 
 \begin{proof}
-Add proof is this theorem is indeed left in the document. This reduces to the fact that the standard flat connection in $U_i \times \alg g$ is mapped through $\phi^i$ to the adjoint connection $\nabla^{\Theta^i}$ in $L_{U_i}$ induced by the flat connection $\Theta^i$ in $A_{U_i}$. 
+Add proof is this theorem is indeed left in the document. This reduces to the fact that the standard flat connection in $U_i \times \alg g$ is mapped through $\psi^i$ to the adjoint connection $\nabla^{\Theta^i}$ in $L_{U_i}$ induced by the flat connection $\Theta^i$ in $A_{U_i}$. 
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Local Description of the Atiyah Lie algebroid}
 
-$\phi_i(\eta^i)(p) = Ad_{g^{-1}}\eta^i(x)$.
+$\psi_i(\eta^i)(p) = Ad_{g^{-1}}\eta^i(x)$.
 
 $\Theta^i(X)_p = R_{g*, s_i(x)} s_{i*, x} X_x$
 
