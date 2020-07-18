@@ -437,29 +437,39 @@ Coming from Lie groupoids
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Let $P(M, G)$ be a principal bundle over $M$ with the real Lie group $G$ (a finite dimensional, smooth manifold) as fiber which acts on the right by the smooth action $R: G \times P \to G$.
+Throughout this section, let $P(M, G)$ be a principal bundle over $M$ with the real Lie group $G$ (a finite dimensional, smooth manifold) as fiber which acts on the right by the smooth action $R: G \times P \to G$.
 
-This is the (family of) Lie algebroids that arise naturally in traditional gauge theories, explicitly in the context of principal connections forms.
+The Atiyah Lie algebroid sequence of principal bundles is an exact sequence of Lie algebroids that arise naturally in traditional gauge theories, explicitly in the context of principal connections forms. This exact sequence will be generalized by the Lie algebroid sequences of transitive Lie algebroids, allowing the formulation of the concept of transitive Lie algebroid connections, among other things.
+
+The main component of this sequence is the Atiyah Lie algebroid $TP/G$. Our first goal is to give a smooth vector bundle structure to $TP/G$ inherited from the corresponding structure on $TP$, and to define the smooth fiberwise linear anchor and the Lie algebra structure on $\Gamma(TP/G)$, all of which will allow us to say that $TP/G$ is indeed a Lie algebroid.
+
+Then, we will follow a similar procedure to define the Adjoint Lie algebroid $P \times \alg g/G$ of $TP/G$ and its embedding into $TP/G$ as the kernel of the anchor, concluding the Atiyah Lie algebroid sequence
+\begin{align*}
+    0 \to P \times \alg g/G \xrightarrow{j} TP/G \xrightarrow{a} TM \to 0,
+\end{align*}
+formally defined in definition \ref{AtiyahSeq}.
 
 \subsection{The Vector Bundle $TP/G$}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The main purpose of the next propositions is to allow us to give a smooth vector bundle structure to $TP/G$, to show that certain important maps are also smooth, and to understand the brackets that will arise for $\Gamma(TP/G)$, among other things related to the adjoint bundle $P\times \alg g/G$.
-
 \begin{proposition} \label{3.1.1}
-Let $E$ be a (smooth) vector bundle over $P$ with projection map $p^E: E \to P$. Suppose that $G$ acts (smoothly) to the right on $E$ in such a way that:
+Let $(E, p^E, P)$ be a (smooth) vector bundle over the principal bundle $P$. Suppose that $G$ acts (smoothly) to the right on $E$ in such a way that:
 
 \begin{enumerate}
     \item Each $g \in G$ acts by vector bundle isomorphism over the right translation map $R_g: P \to P$.
     
-    \item $E$ is covered by $G$-equivariant $\pi$-saturated charts. That is, for each $p_0 \in P$ there is a chart of E $\phi: \mathcal U \times V \to E|_{\mathcal U}$, where $p_0 \in \mathcal U = \pi^{-1}(U)$ for some open $U \subset M$, that satisfies $\phi(p, v)g = \phi(pg, v)$ for all $p \in \mathcal U$, $v \in V$, $g \in G$.
+    \item $E$ is covered by $G$-equivariant $\pi$-saturated charts. That is, for each $p_0 \in P$ there is a chart $(U, \psi: \mathcal U \times V \to E|_{\mathcal U})$ of $E$, where $p_0 \in \mathcal U = \pi^{-1}(U)$ for some open $U \subset M$, that satisfies 
+    \begin{align*}
+        \psi(p, v)g = \psi(pg, v)
+    \end{align*}
+    for all $p \in \mathcal U$, $v \in V$, $g \in G$.
 \end{enumerate}
 
 Then \emph{the quotient space $E/G$ has a (smooth) vector bundle structure over $M$, called \emph{the quotient vector bundle of $(E, p^E, P)$ by the action of $G$}, which is unique} in the sense that:
 \begin{itemize}
     \item $E/G$ has the unique manifold structure that makes the quotient map $\natural: E \to E/G$ a surjective submersion.
-    \item $E/G$ has the unique vector bundle structure that makes the quotient map $\natural$ linear over $\pi: P \to M$.
+    \item $E/G$ has the unique topological vector bundle structure that makes the quotient map $\natural$ linear over $\pi: P \to M$.
 \end{itemize}
 
 Furthermore, the diagram
@@ -469,18 +479,22 @@ Furthermore, the diagram
     P \arrow[two heads]{r}{\pi}                     & M
 \end{tikzcd}
 \end{equation}
-commutes and $E$ is a pullback vector bundle.
+commutes and $E$ is a pullback in the category of smooth vector bundles.
 
-We will denote by $\langle \mu \rangle \in E/G$ the orbit of $\mu \in E$, and by $p:E/G \to M$ the projection map; this map satisfies $p \circ \natural = \pi \circ p^E$.
+We will denote by $\langle \mu \rangle \in E/G$ the orbit of $\mu \in E$, and by $p:E/G \to M$ the projection map; the projection map of the vector bundle $E/G$ over $M$ satisfies 
+\begin{align} \label{eqnProjectionOfQuotient}
+    p^{E/G}(\cl{\mu_p}) = \pi(p^E(\mu_p)) \in M
+\end{align}
+for any $\mu_p \in E_p$, as indicated by the commutative diagram.
 
 \end{proposition}
 
-\begin{proof}\todo{change notation to $\Psi$ instead of $\phi$}
+\begin{proof}
 Notice that conditions (1) and (2) tell us that, locally, the exact point in the fiber $\pi^{-1}(x) \in P$ that we choose is not important to determine the vector space $V$ nor the representing vector $v \in V$, therefore it should make sense to mod out that redundancy, obtained by the group action, to make charts $U \times V \to E/G|_U$. This is what we will now formalize.
 
 Let $p: E/G \to M$, $\langle \mu \rangle \mapsto \pi(p^E(\mu))$; this function is well defined because, by (1), $p^E(\mu g)$ and $p^E(\mu)$ are in the same fiber of $P$, for all $g \in G$. (Notice that condition (1) implies that $p^E(\mu g) = p^E(\mu) g$ for $\mu$ and $g$ arbitrary).
 
-For $x \in M$, let $\phi: \mathcal U \times V \to E|_{\mathcal U}$, $x \in U$, be a chart of $E$ as in condition (2); we may further assume that $U$ is a trivializing neighborhood of $P$ (by intersecting one such neighborhood of $x$ with $U$ if necessary), so that there exists a local section of $\pi$, $\sigma: U \to \mathcal U \subset P$ such that the local trivialization of $P$ is described by $\psi: U\times G \to \mathcal U$, $(y, g) \mapsto \sigma(y)g$.
+For $x \in M$, let $\psi: \mathcal U \times V \to E|_{\mathcal U}$, $x \in U$, be a chart of $E$ as in condition (2); we may further assume that $U$ is a trivializing neighborhood of $P$ (by intersecting one such neighborhood of $x$ with $U$ if necessary), so that there exists a local section of $\pi$, $\sigma: U \to \mathcal U \subset P$ such that the local trivialization of $P$ is described by $\phi: U\times G \to \mathcal U$, $(y, g) \mapsto \sigma(y)g$.
 
 We'll now see that $E/G|_x$ may be given vector space structure, which turns out to be isomorphic to $V$. 
 \begin{itemize}
@@ -488,22 +502,22 @@ We'll now see that $E/G|_x$ may be given vector space structure, which turns out
     
     \item We define $t\langle\mu\rangle := \langle t \mu\rangle$, for any $t \in \RR$, $\langle\mu\rangle \in E/G$. This is well defined as, by condition (1), $G$ acts by vector bundle isomorphism, in particular it restricts to linear maps between fibers. It is now clear that these operations make $E/G|_x$ a vector space.
     
-    \item To see that $E/G|_x$ is isomorphic to $V$, we prove instead that it is isomorphic to $E_p$ for any $p \in \pi^{-1}(x) \subset \mathcal U$, each of which is isomorphic to $V$ by the restriction of the chart to the fiber of $p \in \mathcal U$, $\phi_p: V \to E_p$ which is a vector space isomorphism by definition. So, for any $p \in \pi^{-1}(x)$ the restriction of $\natural$ to its fiber, $\natural_p:E_p \to E/G|_x$ can easily be seen to be linear; it is clearly surjective, and it is also injective as, if $\mu, \nu \in E_p$ are such that $\natural_p(\mu) = \langle\mu\rangle = \langle\nu\rangle = \natural_p(\nu)$, then there exists a $g \in G$ such that $\mu = \nu g$, but that means that $p = p^E(\mu) = p^E(\nu g) = p^E(\nu)g = pg$ which can only happen if $g = e$, i.e. if $\mu = \nu \in E_p$.
+    \item To see that $E/G|_x$ is isomorphic to $V$, we prove instead that it is isomorphic to $E_p$ for any $p \in \pi^{-1}(x) \subset \mathcal U$, each of which is isomorphic to $V$ by the restriction of the chart to the fiber of $p \in \mathcal U$, $\psi_p: V \to E_p$ which is a vector space isomorphism by definition. So, for any $p \in \pi^{-1}(x)$ the restriction of $\natural$ to its fiber, $\natural_p:E_p \to E/G|_x$ can easily be seen to be linear; it is clearly surjective, and it is also injective as, if $\mu, \nu \in E_p$ are such that $\natural_p(\mu) = \langle\mu\rangle = \langle\nu\rangle = \natural_p(\nu)$, then there exists a $g \in G$ such that $\mu = \nu g$, but that means that $p = p^E(\mu) = p^E(\nu g) = p^E(\nu)g = pg$ which can only happen if $g = e$, i.e. if $\mu = \nu \in E_p$.
 \end{itemize}
 
-To define the vector bundle charts of $E/G$, we first notice that the vector bundle chart $\phi:\mathcal U \times V \to E_\mathcal U$ and the principal bundle trivialization $\psi: U \times G \to P_U$ allow us to make, around $x\in M$ the diffeomorphism $U \times G \times V \to E_\mathcal U$, $(y, g, v) \mapsto \phi(\sigma(y)g, v)$; if we make $G$ act to the right on $U \times G \times V$ by $(y, g, v)g' := (y, gg', v)$ it is clear that the quotient topological space $U \times G \times V / G$ is homeomorphic to $U \times V$, and so, taking quotients by $G$ on both sides we obtain the \emph{continuous} homeomorphism:
+To define the vector bundle charts of $E/G$, we first notice that the vector bundle chart $\psi:\mathcal U \times V \to E_\mathcal U$ and the principal bundle trivialization $\phi: U \times G \to P_U$ allow us to make, around $x\in M$ the diffeomorphism $U \times G \times V \to E_\mathcal U$, $(y, g, v) \mapsto \psi(\sigma(y)g, v)$; if we make $G$ act to the right on $U \times G \times V$ by $(y, g, v)g' := (y, gg', v)$ it is clear that the quotient topological space $U \times G \times V / G$ is homeomorphic to $U \times V$, and so, taking quotients by $G$ on both sides we obtain the \emph{continuous} homeomorphism:
 
 \[
-    \phi^{/G}: U \times V \to E/G|_{U}, (y, v) \mapsto \langle \phi(\sigma(y), v) \rangle
+    \psi^{/G}: U \times V \to E/G|_{U}, (y, v) \mapsto \langle \psi(\sigma(y), v) \rangle
 \]
 
-Notice that this definition is independent of which local section is chosen, in the sense that if $\sigma'$ is another local section around $x \in M$, in the intersection of the domains of $\sigma$ and $\sigma'$, condition (2) implies that $\langle \phi(\sigma(y), v) \rangle  = \langle \phi(\sigma'(y), v) \rangle$, because $\sigma(y) = \sigma(y')g$ for some $g \in G$. This map is, fiberwise, a vector space isomorphism sa can be seen by rewritting of isomorphisms $\natural_{\sigma(x)} \circ \phi_{\sigma(x)}: V \to E_{\sigma(x)} \to E/G|_x$, so we can give $E/G$ a topological vector bundle structure over $M$ by saying that the $\phi^G:U \times V \to E/G|_U$ maps constructed above are local trivializations.
+Notice that this definition is independent of which local section is chosen, in the sense that if $\sigma'$ is another local section around $x \in M$, in the intersection of the domains of $\sigma$ and $\sigma'$, condition (2) implies that $\langle \psi(\sigma(y), v) \rangle  = \langle \psi(\sigma'(y), v) \rangle$, because $\sigma(y) = \sigma(y')g$ for some $g \in G$. This map is, fiberwise, a vector space isomorphism sa can be seen by rewritting of isomorphisms $\natural_{\sigma(x)} \circ \psi_{\sigma(x)}: V \to E_{\sigma(x)} \to E/G|_x$, so we can give $E/G$ a topological vector bundle structure over $M$ by saying that the $\psi^G:U \times V \to E/G|_U$ maps constructed above are local trivializations.
 
-To give a smooth manifold structure to $E/G$ we notice that the transition function between this trivialization and any other local trivialization around $x$ is smooth in their common domain. Let $\phi'^G:U' \times V \to E/G|_{U'}$ with $x \in U'$, constructed as above (coming from an equivariant chart of E $\phi': \mathcal U' \times V \to E_{\mathcal U'}$) with respect to a local section $\sigma'$ of $P$; the transition function between this two charts of $E$ $\tr: \mathcal U \cap \mathcal U' \to GL(V)$, $p \mapsto \phi^{-1}_p \circ \phi'_p$ is smooth, so its precomposition with $\sigma: U \cap U' \to \mathcal U \cap \mathcal U'$ is also smooth, but by condition (2) we obtain the same map if precompose with $\sigma'$ instead, and so we see that this smooth map is precisely the transition function of $E/G$ $tr^{G}: U \cap U' \to GL(V)$, $y \mapsto (\phi_y^{/G})^{-1} \circ \phi_y'^G$, which, therefore, might be written by the formula $tr^G_y = \phi^{-1}_{\sigma(y)} \circ \phi'_{\sigma(y)}$. Finally, the charts $\set{\phi^{/G}:U \times V \to E/G|_U}$ with smooth transition functions give a unique smooth structure to the topological vector bundle $E/G$.
-%because $(\phi^{/G})^{-1} \circ \phi'^G (y, v) = (\phi^{/G})^{-1} (\langle\phi'(\sigma'(y), v)\rangle) = (\phi^{/G})^{-1} (\langle\phi'(\sigma(y), v)\rangle) $.
-%because for each $y \in U \cap U'$, $(\phi_y^{/G})^{-1} \circ \phi_y'^G(v) = (\phi_y^{/G})^{-1}(\langle\phi'(\sigma'(y), v)\rangle)$
+To give a smooth manifold structure to $E/G$ we notice that the transition function between this trivialization and any other local trivialization around $x$ is smooth in their common domain. Let $\psi'^G:U' \times V \to E/G|_{U'}$ with $x \in U'$, constructed as above (coming from an equivariant chart of E $\psi': \mathcal U' \times V \to E_{\mathcal U'}$) with respect to a local section $\sigma'$ of $P$; the transition function between this two charts of $E$ $\tr: \mathcal U \cap \mathcal U' \to GL(V)$, $p \mapsto \psi^{-1}_p \circ \psi'_p$ is smooth, so its precomposition with $\sigma: U \cap U' \to \mathcal U \cap \mathcal U'$ is also smooth, but by condition (2) we obtain the same map if precompose with $\sigma'$ instead, and so we see that this smooth map is precisely the transition function of $E/G$ $tr^{G}: U \cap U' \to GL(V)$, $y \mapsto (\psi_y^{/G})^{-1} \circ \psi_y'^G$, which, therefore, might be written by the formula $tr^G_y = \psi^{-1}_{\sigma(y)} \circ \psi'_{\sigma(y)}$. Finally, the charts $\set{\psi^{/G}:U \times V \to E/G|_U}$ with smooth transition functions give a unique smooth structure to the topological vector bundle $E/G$.
+%because $(\psi^{/G})^{-1} \circ \psi'^G (y, v) = (\psi^{/G})^{-1} (\langle\psi'(\sigma'(y), v)\rangle) = (\psi^{/G})^{-1} (\langle\psi'(\sigma(y), v)\rangle) $.
+%because for each $y \in U \cap U'$, $(\psi_y^{/G})^{-1} \circ \psi_y'^G(v) = (\psi_y^{/G})^{-1}(\langle\psi'(\sigma'(y), v)\rangle)$
 
-We now prove that the (surjective) quotient map $\natural : E \to E/G$ is also smooth and a submersion. Let $\phi: \mathcal U \times V \to E_{\mathcal U}$ be an equivariant chart of $E$ with $U = \pi(\mathcal U)$ trivializing for $P$, as above. Notice that the restriction of $\natural$ to $U$ may be written as $\natural_U = \phi^{/G} \circ \pi \times id_V \circ \phi^{-1}: E_{\mathcal U} \to E/G|_U$, where $\phi$ and $\phi^{/G}$ are diffeomorphisms: this equates to the formula $\natural_U \circ \phi = \phi^{/G} \circ \pi \times id_V: \mathcal U \times V \to E/G|_U$, which for $(p, v) \in \mathcal U \times V$, in the LHS gives us $\natural_U \circ \phi(p, v) = \langle\phi(p, v)\rangle$, and for the RHS $\phi^{/G} \circ \pi \times id_V (p, v) = \phi^{/G}(\pi(x), v) := \langle\phi(\sigma(\pi(x)), v)\rangle$ which coincide because $p = \sigma(\pi(p))g$ for some $g \in G$. This formula for $\natural_U$ implies that it inherits the properties of $\pi \times id_V$, which is clearly smooth, and also a submersion as both $\pi$ and $id_V$ are submersions, so the pushforward of $\pi \times id_V$, diffeomorphic to the product of the pushforwards, is surjective.
+We now prove that the (surjective) quotient map $\natural : E \to E/G$ is also smooth and a submersion. Let $\psi: \mathcal U \times V \to E_{\mathcal U}$ be an equivariant chart of $E$ with $U = \pi(\mathcal U)$ trivializing for $P$, as above. Notice that the restriction of $\natural$ to $U$ may be written as $\natural_U = \psi^{/G} \circ \pi \times id_V \circ \psi^{-1}: E_{\mathcal U} \to E/G|_U$, where $\psi$ and $\psi^{/G}$ are diffeomorphisms: this equates to the formula $\natural_U \circ \psi = \psi^{/G} \circ \pi \times id_V: \mathcal U \times V \to E/G|_U$, which for $(p, v) \in \mathcal U \times V$, in the LHS gives us $\natural_U \circ \psi(p, v) = \langle\psi(p, v)\rangle$, and for the RHS $\psi^{/G} \circ \pi \times id_V (p, v) = \psi^{/G}(\pi(x), v) := \langle\psi(\sigma(\pi(x)), v)\rangle$ which coincide because $p = \sigma(\pi(p))g$ for some $g \in G$. This formula for $\natural_U$ implies that it inherits the properties of $\pi \times id_V$, which is clearly smooth, and also a submersion as both $\pi$ and $id_V$ are submersions, so the pushforward of $\pi \times id_V$, diffeomorphic to the product of the pushforwards, is surjective.
 
 The uniqueness assertions follow from the fact that there is at most one manifold structure in the image of a surjection which makes it a submersion, and at most one topological vector bundle structure in the image of a surjection which makes the map linear.
 
@@ -1023,7 +1037,7 @@ And so the two Lie algebra structures $[\cdot, \cdot]^R$ and $[\cdot, \cdot]$ de
     
     \item The exact sequence of vector bundles
 \begin{align} \label{AtiyahSequence}
-    0 \to P \times \alg g/G \to TP/G \to TM \to 0
+    0 \to P \times \alg g/G \xrightarrow{j} TP/G \xrightarrow{a} TM \to 0
 \end{align}
 is called \emph{the Atiyah sequence of the principal bundle $P(M, G)$}.
     
