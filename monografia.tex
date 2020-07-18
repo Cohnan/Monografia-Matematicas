@@ -77,11 +77,23 @@
   \end{split}
   \end{equation}
 }
+
+\NewEnviron{eqnsplit*}{%
+  \begin{equation*}
+  \begin{split}
+    \BODY
+  \end{split}
+  \end{equation*}
+}
 %%%%%%%
 
 \DeclareMathOperator{\HH}{\bb H}
 \DeclareMathOperator{\diffeo}{\cong}
 \DeclareMathOperator{\tr}{tr}
+
+\DeclareMathOperator{\Diff}{\textit{Diff}}
+\DeclareMathOperator{\Hom}{\textit{Hom}}
+\DeclareMathOperator{\End}{\textit{End}}
 
 
 \newcommand{\algeb}[1]{\mathfrak{#1}}
