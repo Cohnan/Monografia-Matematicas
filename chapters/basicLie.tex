@@ -760,7 +760,7 @@ If $\sect \mu, \sect \nu \in \Gamma_{\mathcal U}^G(TP) \subset \Gamma_{\mathcal 
 \end{lemma}
 
 \begin{proof}
-The invariance of a section $\sect \mu \in \Gamma_{\mathcal U}^G(TP) \subset \Gamma_{\mathcal U}(TP)$ means that for $f \in C^\infty(P)$, $g \in G$ and $p \in P$,  
+The invariance of a section $\sect \mu \in \Gamma_{\mathcal U}^G(TP) \subset \Gamma_{\mathcal U}(TP)$ means that for $f \in C^\infty(P)$, $g \in G$ and $p \in \mathcal U$,  
 \begin{align} \label{secInv1}
 \sect \mu_{pg} (f) = \sect \mu_p(f \circ R_g)\end{align} 
 because $\sect \mu_{pg} = R_{g*} \sect \mu_p$ by the definition of $\Gamma_{\mathcal U}^G(TP)$. It also means that 
@@ -784,15 +784,15 @@ The previous proposition shows that the following is a good definition.
 \begin{definition}\label{AtiyahBracket}
 For any $\sectoid X, \sectoid Y \in \Gamma_U(TP/G)$, define 
 \begin{align} \label{bracketDefn}
-    [\sectoid X, \sectoid Y] := \downsect{[\upsect{\sectoid X}, \upsect{\sectoid Y}]} \in \Gamma_U(TP/G).
+    [\sectoid X, \sectoid Y] := \cl{[\upsect{\sectoid X}, \upsect{\sectoid Y}]} \in \Gamma_U(TP/G).
 \end{align}
-This is a Lie algebra structure on $\Gamma_U(E/G)$ called \emph{the Lie bracket of the Atiyah Lie algebroid of the principal bundle $P$}.
+This is a Lie algebra structure on $\Gamma_U(E/G)$ called \emph{the Lie bracket of the Atiyah Lie algebroid associated to the principal bundle $P$}.
 \end{definition}
 
 This bracket inherits the $\RR$-linearity, the Jacobi identity and the alternating property from the bracket in $\Gamma_U(TP/G)$, meaning that it is a Lie algebra structure on $\Gamma_U(TP/G)$.
 
 \begin{theorem}
-The vector bundle $TP/G$ with anchor $\pi_*^G:TP/G \to TM$ of Definition (\ref{anchorAtiyah}) and bracket of Definition (\ref{AtiyahBracket}) is a Lie algebroid over $M$, called \emph{the Atiyah Lie algebroid of the principal bundle $P$}.
+The vector bundle $TP/G$ with anchor $\pi_*^G:TP/G \to TM$ of Definition (\ref{anchorAtiyah}) and bracket of Definition (\ref{AtiyahBracket}) is a Lie algebroid over $M$, called \emph{the Atiyah Lie algebroid associated to the principal bundle $P$}.
 \end{theorem}
 
 \begin{proof}
@@ -815,7 +815,7 @@ All what is left to see is that this definitions of the anchor and the bracket o
         (f \circ \pi)[\upsect{\sectoid X}, \upsect{\sectoid Y}] + (\pi_*^G(\sectoid X) \circ \pi) \upsect{\sectoid Y}
     \end{multline*} so 
     \[
-        [\sectoid X, f \sectoid Y] = \downsect{[\upsect{\sectoid X}, (f \circ \pi) \upsect{\sectoid Y}]} = f[\sectoid X, \sectoid Y] + \pi_*^G(\sectoid X) \sectoid Y
+        [\sectoid X, f \sectoid Y] = \cl{[\upsect{\sectoid X}, (f \circ \pi) \upsect{\sectoid Y}]} = f[\sectoid X, \sectoid Y] + \pi_*^G(\sectoid X) \sectoid Y
     \]
     
     \end{enumerate}
@@ -1060,7 +1060,7 @@ And so the two Lie algebra structures $[\cdot, \cdot]^R$ and $[\cdot, \cdot]$ de
 \begin{definition}\label{AtiyahSeq}
     \begin{itemize}
     
-    \item With the Lie algebra structure on $P \times \alg g/G$ from theorem (\ref{theoBracketAdjoint}), denoted from now on by $[\cdot, \cdot]^R: \Gamma(P \times \alg g/G, P \times \alg g/G) \to \Gamma(P \times \alg g/G)$, and trivial anchor $a=0$, $P \times \alg g/G$ becomes a Lie algebroid called \emph{the adjoint Lie algebroid to the Atiyah Lie algebroid of the principal bundle $P$}.
+    \item With the Lie algebra structure on $P \times \alg g/G$ from theorem (\ref{theoBracketAdjoint}), denoted from now on by $[\cdot, \cdot]^R: \Gamma(P \times \alg g/G, P \times \alg g/G) \to \Gamma(P \times \alg g/G)$, and trivial anchor $a=0$, $P \times \alg g/G$ becomes a Lie algebroid called \emph{the adjoint Lie algebroid to the Atiyah Lie algebroid associated to the principal bundle $P$}.
     
     \item The exact sequence of vector bundles
 \begin{align} \label{AtiyahSequence}
