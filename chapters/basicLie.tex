@@ -807,17 +807,18 @@ All what is left to see is that this definitions of the anchor and the bracket o
                                     &= [\pi_*^G(\sectoid X), \pi_*^G(\sectoid Y)]_m 
     \end{align*}
     
-    \item When equation (\ref{theoAnchorUpsectEqn}) is applied to $f \in C^\infty(M)$, at $m\in U$ we conclude that 
-    \[\pi_*^G(\sectoid X)_mf = \pi_*(\upsect{\sectoid X})_m f = \upsect{\sectoid{X}}_p(f \circ \pi)\]
-    for any $p \in \pi^{-1}(m)$, so $\upsect{\sectoid{X}}(f \circ \pi) = a(\sectoid X) \circ \pi \in C^\infty(P)$, therefore
+    \item When equation (\ref{theoAnchorUpsectEqn}) is applied to $f \in C^\infty(U)$, at $m\in U$ we conclude that 
+    $\pi_*^G(\sectoid X)_mf = \pi_*(\upsect{\sectoid X})_m f = \upsect{\sectoid{X}}_p(f \circ \pi) \in \RR$ for any $p \in \pi^{-1}(m)$, so 
+    \[\upsect{\sectoid{X}}(f \circ \pi) = \pi_*^G(\sectoid X)(f) \circ \pi \in C^\infty(\mathcal U),\]
+    therefore
     \begin{multline*}
-        \upsect{[\sectoid X, f \sectoid Y]} 
+        \overline{[\sectoid X, f \sectoid Y]} 
         =[\upsect{\sectoid X}, (f \circ \pi) \upsect{\sectoid Y}] \\
         = (f \circ \pi)[\upsect{\sectoid X}, \upsect{\sectoid Y}] + \upsect{\sectoid X}(f \circ \pi) \upsect{\sectoid Y} = 
-        (f \circ \pi)[\upsect{\sectoid X}, \upsect{\sectoid Y}] + (\pi_*^G(\sectoid X) \circ \pi) \upsect{\sectoid Y}
+        (f \circ \pi)[\upsect{\sectoid X}, \upsect{\sectoid Y}] + (\pi_*^G(\sectoid X)(f) \circ \pi) \upsect{\sectoid Y}
     \end{multline*} so 
     \[
-        [\sectoid X, f \sectoid Y] = \cl{[\upsect{\sectoid X}, (f \circ \pi) \upsect{\sectoid Y}]} = f[\sectoid X, \sectoid Y] + \pi_*^G(\sectoid X) \sectoid Y
+        [\sectoid X, f \sectoid Y] = \cl{[\upsect{\sectoid X}, (f \circ \pi) \upsect{\sectoid Y}]} = f[\sectoid X, \sectoid Y] + \pi_*^G(\sectoid X)(f) \sectoid Y
     \]
     
     \end{enumerate}
