@@ -234,7 +234,7 @@ Let $\Delta$ be a distribution in $M$. If $\Delta$ is integrable, then $\Delta$ 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The trivial Lie algebroid makes explicit the understanding of Lie algebroids as spaces of generalized directions on its base manifolds, as it is simply the combination of both the usual tangent directions of the manifold and a vertical Lie subalgebroid of Lie algebra valued directions. We will see in theorem \ref{theo} that any transitive Lie algebroid has this form locally. The transitive part, as we will see, simply means that every direction tangent to $M$ is represented in the algebroid, i.e. the anchor is fiberwise surjective, which, as seen from the example of involutive distributions, isn't always the case.
+The trivial Lie algebroid makes explicit the understanding of Lie algebroids as spaces of generalized directions on its base manifolds, as it is simply the combination of both the usual tangent directions of the manifold and a vertical Lie subalgebroid of Lie algebra valued directions. We will see in Theorem \ref{theo} that any transitive Lie algebroid has this form locally. The transitive part, as we will see, simply means that every direction tangent to $M$ is represented in the algebroid, i.e. the anchor is fiberwise surjective, which, as seen from the example of involutive distributions, isn't always the case.
 
 Let $M$ be a manifold, and $\alg g$ a (real, finite dimensional) Lie algebra with Lie bracket $[\cdot , \cdot]: \alg g \times \alg g \to \alg g$.
 
@@ -587,7 +587,7 @@ This follows from the of the identity $\psi(m, g) g' = \psi(m, gg')$, when it is
 The following proposition and its corollary allow us to define smooth vector bundle maps between quotient vector bundles. In particular, it will allow us to define the anchor $\pi_*:TP/G \to TM$ of what will be the Atiyah Lie algebroid, and later on to define the embedding of the adjoint Lie algebroid into $TP/G$.
 
 \begin{proposition} \label{3.1.2}
-Let $(E, p^E, P)$ and $(E, p^{E'}, P')$ be vector bundles over principal bundles $P(M, G)$ and $P'(M', G')$, respectively. Let $G$ and $G'$ act on $E$ and $E'$ respectively satisfying the conditions of proposition \ref{3.1.1}. Let $\Psi: E \to E'$ be a vector bundle morphism, over the principal bundle morphism $F(f, \psi)$ where $f:M\to M'$ and $\psi:G \to G'$, that satisfies \[\Psi(\mu g) = \Psi(\mu) \psi(g)\] for all $\mu \in E$, $g \in G$, i.e. \emph{$\Psi$ is $G$-equivariant}. Then, there \emph{exists a unique (smooth) vector bundle morphism} $\Psi^{G}: E/G \to E'/G'$ over $f: M \to M'$ such that $\Psi^{G} \circ \natural = \natural' \circ \Psi$, where $\natural$ and $\natural'$ denote the quotient maps in $E$ and $E'$ respectively. In particular, the following diagram commutes:
+Let $(E, p^E, P)$ and $(E, p^{E'}, P')$ be vector bundles over principal bundles $P(M, G)$ and $P'(M', G')$, respectively. Let $G$ and $G'$ act on $E$ and $E'$ respectively satisfying the conditions of Proposition \ref{3.1.1}. Let $\Psi: E \to E'$ be a vector bundle morphism, over the principal bundle morphism $F(f, \psi)$ where $f:M\to M'$ and $\psi:G \to G'$, that satisfies \[\Psi(\mu g) = \Psi(\mu) \psi(g)\] for all $\mu \in E$, $g \in G$, i.e. \emph{$\Psi$ is $G$-equivariant}. Then, there \emph{exists a unique (smooth) vector bundle morphism} $\Psi^{G}: E/G \to E'/G'$ over $f: M \to M'$ such that $\Psi^{G} \circ \natural = \natural' \circ \Psi$, where $\natural$ and $\natural'$ denote the quotient maps in $E$ and $E'$ respectively. In particular, the following diagram commutes:
 \begin{equation} \label{diagramQuotientMorph}
 \begin{tikzcd}
     E   \ar{r}{\Psi}     \ar{d}{\natural} &   E'  \ar{d}{\natural'} \\
@@ -620,7 +620,7 @@ Finally, $\Psi^{G}$ is a smooth vector bundle morphism over $f:M \to M'$ since $
 \end{proof}
 
 \begin{corollary}
-Let $(E, p^E, P)$ be a vector bundle over the principal bundle $P(M, G)$, and let $G$ act on $E$ satisfying the conditions of proposition \ref{3.1.1}. Let $(E, p^{E'}, M')$ be another vector bundle. Let $\Psi: E \to E'$ be a vector bundle morphism over a map $f: P \to M'$ that satisfies \[\Psi(\mu g) = \Psi(\mu)\] and $f(pg) = f(p)$ for all $\mu \in E$, $p \in P$ and $g \in G$. Then there exists a unique (smooth) vector bundle morphism $\Psi^{G}: E/G \to E'$ over a map $f^{G}: M \to M'$ such that $f = f^{G} \circ \pi$, that satisfies \[\Psi^{G} \circ \natural = \Psi\], where $\natural: E \to E/G$ is the quotient map. In particular, the following diagram commutes
+Let $(E, p^E, P)$ be a vector bundle over the principal bundle $P(M, G)$, and let $G$ act on $E$ satisfying the conditions of Proposition \ref{3.1.1}. Let $(E, p^{E'}, M')$ be another vector bundle. Let $\Psi: E \to E'$ be a vector bundle morphism over a map $f: P \to M'$ that satisfies \[\Psi(\mu g) = \Psi(\mu)\] and $f(pg) = f(p)$ for all $\mu \in E$, $p \in P$ and $g \in G$. Then there exists a unique (smooth) vector bundle morphism $\Psi^{G}: E/G \to E'$ over a map $f^{G}: M \to M'$ such that $f = f^{G} \circ \pi$, that satisfies \[\Psi^{G} \circ \natural = \Psi\], where $\natural: E \to E/G$ is the quotient map. In particular, the following diagram commutes
 
 \begin{equation} \label{anchorDiagram}
     \begin{tikzcd}
@@ -632,7 +632,7 @@ Let $(E, p^E, P)$ be a vector bundle over the principal bundle $P(M, G)$, and le
 \end{corollary}
 
 \begin{proof}
-Consider $M'$ as the principal bundle $P(M', \set{1})$, let $\psi:G \to \set{1}$ be trivial and apply theorem \ref{3.1.2}.
+Consider $M'$ as the principal bundle $P(M', \set{1})$, let $\psi:G \to \set{1}$ be trivial and apply Theorem \ref{3.1.2}.
 \end{proof}
 
 Applying the previous corollary to the derivative of $\pi: P \to M$, gives us immediately the following theorem.
@@ -662,7 +662,7 @@ for any $\ppal X \in TP$.
 Now, the following proposition allows a description of the sections of the vector bundle a quotient vector bundle by a group action.
 
 \begin{proposition}\label{3.1.3}
-Let $(E, p^E, P)$ on which $G$ acts to the right satisfying the properties of proposition \ref{3.1.1}. Let $U \subset M$ be open and $\mathcal U = \pi^{-1}(U)$ open in $P$. The extension of the $\natural: E \to E/G$ map to local sections of this vector bundles is an isomorphism of $C^\infty(U)$-modules between the local sections $\Gamma_U(E/G)$ of $E$ and the $G$-invariant local sections of $E$ on $\mathcal U$
+Let $(E, p^E, P)$ on which $G$ acts to the right satisfying the properties of Proposition \ref{3.1.1}. Let $U \subset M$ be open and $\mathcal U = \pi^{-1}(U)$ open in $P$. The extension of the $\natural: E \to E/G$ map to local sections of this vector bundles is an isomorphism of $C^\infty(U)$-modules between the local sections $\Gamma_U(E/G)$ of $E$ and the $G$-invariant local sections of $E$ on $\mathcal U$
 \[ 
     \Gamma_{\mathcal U}^G(E) = \set{\sect{\mu} \in \Gamma_{\mathcal U}(E) \st \forall p \in P, \forall g \in G:\, \sect \mu_{pg} = \sect \mu_{p}g},
 \] 
@@ -721,7 +721,7 @@ Let $(E, p^E, B)$ and $(E', p^{E'}, B')$ be vector bundles and $F: E \to E'$ be 
     
     \end{itemize}
 
-Notice that whenever $f: B \to B'$ is bijective, e.g. an identity map, then every $\sect \mu \in \Gamma(E)$ is $F$-projectable. Notice that in proposition \ref{3.1.3} any section $\sect \mu \in \Gamma(E)$ is $\natural$-related to $\cl{\sect \mu}$ and the base map $\pi:P \to M$ is surjective, but the definition of $\cl{\sect \mu}$ given in that proposition coincides with the one suggested by the above definition, so the notation $\cl{\sect \mu}$ is not ambiguous.
+Notice that whenever $f: B \to B'$ is bijective, e.g. an identity map, then every $\sect \mu \in \Gamma(E)$ is $F$-projectable. Notice that in Proposition \ref{3.1.3} any section $\sect \mu \in \Gamma(E)$ is $\natural$-related to $\cl{\sect \mu}$ and the base map $\pi:P \to M$ is surjective, but the definition of $\cl{\sect \mu}$ given in that proposition coincides with the one suggested by the above definition, so the notation $\cl{\sect \mu}$ is not ambiguous.
 
 \end{definition}
 
@@ -753,7 +753,7 @@ Based on this theorem, for any $U \subset M$ open \ptext{we will usually underst
 \subsubsection{The Bracket}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-As we saw in theorem \ref{theoSectTPG}, the space of (local) sections of $TP/G$ can be identified as the subset of $G$-invariant (local) sections of $TP$, so we may use the bracket of $\Gamma(TP)$ to induce a bracket in $\Gamma(TP/G)$. Furthermore, proposition \ref{bracketIsLocal} applied to the Lie algebroid $TP$ enables the definition of the bracket on $TP/G$ only from local information without any sort of ambiguity.
+As we saw in Theorem \ref{theoSectTPG}, the space of (local) sections of $TP/G$ can be identified as the subset of $G$-invariant (local) sections of $TP$, so we may use the bracket of $\Gamma(TP)$ to induce a bracket in $\Gamma(TP/G)$. Furthermore, Proposition \ref{bracketIsLocal} applied to the Lie algebroid $TP$ enables the definition of the bracket on $TP/G$ only from local information without any sort of ambiguity.
 
 \begin{lemma}
 If $\sect \mu, \sect \nu \in \Gamma_{\mathcal U}^G(TP) \subset \Gamma_{\mathcal U}(TP)$, then $[\sect \mu, \sect \nu] \in \Gamma_{\mathcal U}^G(TP)$.
@@ -866,13 +866,13 @@ where the top vectical arrows are the quotient maps, and, abusing notation, $\pi
 \end{theorem}
 
 \begin{proof}
-$\pi_*$ is $G$-equivariant since $\pi \circ R_g = \pi$, therefore the existence of the vector bundle $TP/G$ will follow if we find $\pi$-saturated $G$-equivariant charts. Using the notation in the proof of theorem \ref{theoTPGexists}, where charts for $TP$ were built, we now construct the desired charts. Notice that $\pi_* \circ \psi_* (X, R_{g*, 1} \eta) = 0$, where $\psi_* : TU \boxplus TG \to T_{\mathcal U}$ is the isomorphism induced by the principal bundle chart $\psi: U \times G \to P_{\mathcal U}$, is equivalent to the statement $X = 0$ since $\pi \circ \psi: U \times G \to U$ is the projection to the first coordinate. Therefore, the fiber of $T^\pi P$ is only $\alg g$ and the following map is a vector bundle isomorphism:
+$\pi_*$ is $G$-equivariant since $\pi \circ R_g = \pi$, therefore the existence of the vector bundle $TP/G$ will follow if we find $\pi$-saturated $G$-equivariant charts. Using the notation in the proof of Theorem \ref{theoTPGexists}, where charts for $TP$ were built, we now construct the desired charts. Notice that $\pi_* \circ \psi_* (X, R_{g*, 1} \eta) = 0$, where $\psi_* : TU \boxplus TG \to T_{\mathcal U}$ is the isomorphism induced by the principal bundle chart $\psi: U \times G \to P_{\mathcal U}$, is equivalent to the statement $X = 0$ since $\pi \circ \psi: U \times G \to U$ is the projection to the first coordinate. Therefore, the fiber of $T^\pi P$ is only $\alg g$ and the following map is a vector bundle isomorphism:
 
 \begin{align*}
     \Tilde \Psi :& (U \times G) \times \alg g & \to^{\cong} & T^\pi P|_{\mathcal U} \\    
                  & (m, g, \eta)&& \mapsto &&\psi_{*, (m, g)}(0, R_{g*, 1} \eta).
 \end{align*}
-Now, $\Psi : \mathcal U \times \alg g  \to  T_{\mathcal U}P$ by $\Phi = \psi^{-1} \times id_{\alg g}$ is the desired $G$-equivariant chart by the same arguments used in the proof of theorem \ref{theoTPGexists}.
+Now, $\Psi : \mathcal U \times \alg g  \to  T_{\mathcal U}P$ by $\Phi = \psi^{-1} \times id_{\alg g}$ is the desired $G$-equivariant chart by the same arguments used in the proof of Theorem \ref{theoTPGexists}.
 
 The existence of the vector bundle morphism $j: T^\pi P/G \to TP/G$ follows from the clear $G$-equivariance of the inclusion $i$.
 
@@ -975,7 +975,7 @@ F((p, \eta)g)
 = (R_g \circ m_{p})_{*, 1}(\eta) 
 = (m_{p*, 1}(\eta))g = F(p, \eta) g,
 \end{multline*}
-which means that $F: P \times \alg g \to TP$ is $G$-equivariant, so we may apply theorem \ref{3.1.2} to get the vector bundle morphism $j: P \times \alg g/G \to TP/G$ where the formula (\ref{formulaJ}) is nothing but the commutativity of the top square of diagram (\ref{diagramQuotientMorph}); in particular, the formula (\ref{formulaJ}) is well defined.
+which means that $F: P \times \alg g \to TP$ is $G$-equivariant, so we may apply Theorem \ref{3.1.2} to get the vector bundle morphism $j: P \times \alg g/G \to TP/G$ where the formula (\ref{formulaJ}) is nothing but the commutativity of the top square of diagram (\ref{diagramQuotientMorph}); in particular, the formula (\ref{formulaJ}) is well defined.
 
 The injectivity of $j$ in inherited from the injectivity of $F: P \times \alg g \to TP$, which, in turn, is consequence of the injectivity of each $m_{p*, 1}$. The image of $j$ is $T^\pi P/G$ because $\pi_*^G(j\cl{p, \eta}) = \pi_*^G(\cl{\frac{d}{dt}_{t = 0}p \exp{(t \eta)}}) = \pi_*(\frac{d}{dt}_{t = 0}p \exp{(t \eta)}) = \frac{d}{dt}_{t= 0} p = 0$. Finally, since the vector bundles $P \times \alg g/G$ and $im(j) = T^\pi P/G$ have the same fiber $\alg g$, $j$ being an injective vector bundle map implies that $j$ is an isomorphism in each fiber, and so $j$ is a vector bundle isomorphism between $P \times \alg g/G$ and $T^\pi P/G$.
 \end{proof}
@@ -1119,16 +1119,16 @@ This can be done due to the equivalence between vector bundle maps over $M$ and 
 \end{definition}
 
 \begin{remark}
-If $A$ is a regular Lie algebroid with anchor $a$, both $im(a)$ and $ker(a)$ are vector subbundles or $A$ and $TM$ respective. By theorem \ref{kerAlgebroid} $ker(a)$ is in fact a totally intransitive Lie algebroid. The image of the anchor defines an involutive distribution \todo{is an involutive distribution always a vector bundle?} on $M$ and, in consequence, a foliation of the base manifold called \emph{the characteristic foliation of $A$}. Then, the restriction of $A$ to each leaf is a transitive Lie algebroid. \todo{verify these claims}
+If $A$ is a regular Lie algebroid with anchor $a$, both $im(a)$ and $ker(a)$ are vector subbundles or $A$ and $TM$ respective. By Theorem \ref{kerAlgebroid} $ker(a)$ is in fact a totally intransitive Lie algebroid. The image of the anchor defines an involutive distribution \todo{is an involutive distribution always a vector bundle?} on $M$ and, in consequence, a foliation of the base manifold called \emph{the characteristic foliation of $A$}. Then, the restriction of $A$ to each leaf is a transitive Lie algebroid. \todo{verify these claims}
 
-Additionally, we can apply theorem \ref{theoFiberLie} to see that, locally, a regular Lie algebroid is simply the vector bundle $U \times (V \oplus \alg g)$, where $V$ is a vector subspace of the tangent space at some $m \in U \subset M$.
+Additionally, we can apply Theorem \ref{theoFiberLie} to see that, locally, a regular Lie algebroid is simply the vector bundle $U \times (V \oplus \alg g)$, where $V$ is a vector subspace of the tangent space at some $m \in U \subset M$.
 \end{remark}
 
 \begin{remark}
 Any $LAB$ is a totally intransitive Lie algebroid, but the converse is not true since there might not be an adapted atlas.
 \end{remark}
 
-Transitive Lie algebroids will be a main concert for us throughout this document. In this case, since the anchor is fiberwise surjective\todo{is this a satisfactory reason?} it is a surjective submersion, and, in particular, a vector bundle map of locally constant rank, so theorem \ref{kerAlgebroid} may be applied to conclude that its kernel is a Lie algebroid. However, more is true, as shown below.
+Transitive Lie algebroids will be a main concert for us throughout this document. In this case, since the anchor is fiberwise surjective\todo{is this a satisfactory reason?} it is a surjective submersion, and, in particular, a vector bundle map of locally constant rank, so Theorem \ref{kerAlgebroid} may be applied to conclude that its kernel is a Lie algebroid. However, more is true, as shown below.
 
 \begin{definition}\label{transitiveSequence}
 Let $A$ be a transitive Lie algebroid on $M$ with anchor $a$. A \emph{transitive Lie algebroid sequence of $A$} is an exact sequence of vector bundles
@@ -1197,7 +1197,7 @@ Let $A, A', A''$ be Lie algebroids over $M$. \emph{An extension of Lie algebroid
 \linea
 %Definitions comming from Lie algebra theory semisimple, nilpotent, abelian, reductive.
 
-The following concept generalizes that of associated vector bundles of a principal bundle $P(G, M)$. In the principal bundle theory, sections of an associated vector bundle with fiber $V$ are equivalent to $G$-equivariant functions $P \to V$, so $G$-invariant vector fields $\ppal X \in \Gamma(TP)$, or equivalently sections in $\Gamma(TP/G)$ as proposition \ref{3.1.3} shows, are derivations of the sections of $E$ (satisfying Leibniz for $G$-invariant functions of $P$ / to functions in $M$). Similarly, sections of a Lie algebroid $A$ act as derivations on representation vector bundles $E$. In particular, a (Lie algebroid connection) on $A$ will induce a vector bundle connection and covariant derivatives on a representation vector bundle $E$, just as principal bundle connections induce covariant derivatives in associated vector bundles.
+The following concept generalizes that of associated vector bundles of a principal bundle $P(G, M)$. In the principal bundle theory, sections of an associated vector bundle with fiber $V$ are equivalent to $G$-equivariant functions $P \to V$, so $G$-invariant vector fields $\ppal X \in \Gamma(TP)$, or equivalently sections in $\Gamma(TP/G)$ as Proposition \ref{3.1.3} shows, are derivations of the sections of $E$ (satisfying Leibniz for $G$-invariant functions of $P$ / to functions in $M$). Similarly, sections of a Lie algebroid $A$ act as derivations on representation vector bundles $E$. In particular, a (Lie algebroid connection) on $A$ will induce a vector bundle connection and covariant derivatives on a representation vector bundle $E$, just as principal bundle connections induce covariant derivatives in associated vector bundles.
 
 \begin{definition}[Representation of a Lie algebroid]\label{defnRepr}
 Let $A$ be a Lie algebroid on $M$ and let $E$ be a vector bundle also on $M$. A \emph{representation of $A$ on $E$} is a Lie algebroid morphism over $M$,
@@ -1221,9 +1221,9 @@ or, equivalently
 \begin{align*}
     \rho: \Gamma(TP/M) \to \Gamma(\alg D(E)),
 \end{align*}
-which is best understood recalling, from proposition \ref{3.1.3}, that $\Gamma(TP/G) \cong \Gamma^G(TP)$ and $\Gamma(E) \cong \Gamma^G(P \times V) \cong C^\infty_G(P, V)$.
+which is best understood recalling, from Proposition \ref{3.1.3}, that $\Gamma(TP/G) \cong \Gamma^G(TP)$ and $\Gamma(E) \cong \Gamma^G(P \times V) \cong C^\infty_G(P, V)$.
 
-Recall the notation introduced in proposition \ref{3.1.3} and \ref{propAssociatedExists}. Given $\sectoid X \in \Gamma(TP/G)$ and $\sect \mu \in \Gamma(E) = \Gamma(P \times V/G)$, the $G$-invariant section $\upsect{\sectoid X} \in \Gamma^G(TP)$ acts naturally, by the Lie derivative, on the $G$-equivariant function $\tilde{\sect \mu} \in C^\infty_G(M)$. It can be shown that $\upsect{\sectoid X}(\tilde{\sect \mu}) \in C^\infty_G(M)$ is also $G$-equivariant, and therefore there is a corresponding element in $\Gamma(E)$, which we call $\rho(\sectoid X)(\sect \mu)$. In other words, the representation of $TP/G$ on $E$ is given by
+Recall the notation introduced in Proposition \ref{3.1.3} and \ref{propAssociatedExists}. Given $\sectoid X \in \Gamma(TP/G)$ and $\sect \mu \in \Gamma(E) = \Gamma(P \times V/G)$, the $G$-invariant section $\upsect{\sectoid X} \in \Gamma^G(TP)$ acts naturally, by the Lie derivative, on the $G$-equivariant function $\tilde{\sect \mu} \in C^\infty_G(M)$. It can be shown that $\upsect{\sectoid X}(\tilde{\sect \mu}) \in C^\infty_G(M)$ is also $G$-equivariant, and therefore there is a corresponding element in $\Gamma(E)$, which we call $\rho(\sectoid X)(\sect \mu)$. In other words, the representation of $TP/G$ on $E$ is given by
 \begin{equation} \label{defnReprPpalAss}
     \tilde{\rho(\sectoid X)(\sect \mu)} := \upsect{\sectoid X}(\tilde{\sect \mu}) \in C^\infty_G(P, V).
 \end{equation}
