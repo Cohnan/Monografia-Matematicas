@@ -659,27 +659,23 @@ for any $\ppal X \in TP$.
 \subsubsection{The Space of Sections}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Now, the following proposition allows a description of the sections of the vector bundle $E/G$ from \ref{3.1.1}.
+Now, the following proposition allows a description of the sections of the vector bundle a quotient vector bundle by a group action.
 
 \begin{proposition}\label{3.1.3}
-Let $(E, p^E, P)$ be as in \ref{3.1.1}. Let $U \subset M$ be open and $\mathcal U = \pi^{-1}(U)$ open in $P$. The space of (smooth) local sections of $E/G$ on $U$ is $C^\infty(U)$-module isomorphic to the $G$-invariant local sections of $E$ on $\mathcal U$.
-
+Let $(E, p^E, P)$ on which $G$ acts to the right satisfying the properties of proposition \ref{3.1.1}. Let $U \subset M$ be open and $\mathcal U = \pi^{-1}(U)$ open in $P$. The extension of the $\natural: E \to E/G$ map to local sections of this vector bundles is an isomorphism of $C^\infty(U)$-modules between the local sections $\Gamma_U(E/G)$ of $E$ and the $G$-invariant local sections of $E$ on $\mathcal U$
 \[ 
-    \Gamma_{\mathcal U}^G(E) = \set{\sect{\mu} \in \Gamma_{\mathcal U}(E) \st \forall p \in P, \forall g \in G:\, \sect \mu(pg) = \sect \mu(p)g}
+    \Gamma_{\mathcal U}^G(E) = \set{\sect{\mu} \in \Gamma_{\mathcal U}(E) \st \forall p \in P, \forall g \in G:\, \sect \mu(pg) = \sect \mu(p)g},
 \] 
-
-where $f \sect \mu (p) := (f \circ \pi)(p) \sect \mu(p)$ for any $\sect \mu \in \Gamma_{\mathcal U}^G(E)$, $p \in \mathcal U$, via the map $\Gamma_U(E/G) \to \Gamma_{\mathcal U}^G(E)$, $\sectoid \mu \mapsto \upsect{\sectoid \mu}$ defined by 
-\[
-    \upsect{\sectoid \mu}(p) := \natural_p^{-1}(\sectoid \mu(\pi p))
-\] % this definition can't be used to "lift" a vector of E/G to E because it is not clear what $p$ should be chosen
-
-which has as inverse the map $\Gamma_{\mathcal U}^G(E) \to \Gamma_U(E/G)$, $\sect \mu \mapsto \downsect{\sect \mu}$ defined, for $m \in M$, by
-
-\[
-    \downsect{\sect \mu}(m) := \cl{\sect \mu(p)} = \natural_p(\sect{\mu}(p))
-\]
-
-where $p \in P$ is any point in the fiber of $m \in U$.
+where the action of a function is given by $f \sect \mu (p) := (f \circ \pi)(p) \sect \mu(p)$ for any $\sect \mu \in \Gamma_{\mathcal U}^G(E)$, $p \in \mathcal U$ via . Explicitly, the isomorphism is
+\begin{eqnsplit}
+\Gamma_{\mathcal U}^G(E) &\to \Gamma_U(E/G) \\
+\sect \mu &\mapsto \cl{\sect \mu} : m \mapsto \cl{\sect \mu_p} \equiv \natural(\sect \mu_p)
+\end{eqnsplit} 
+where $p \in P$ is any point in the fiber of $m \in U$, which has as inverse the map 
+\begin{eqnsplit}
+\Gamma_{U}(E/G) &\to \Gamma^G_{\mathcal U}(E) \\
+\sect \mu &\mapsto \upsect{\mu} : p \mapsto \natural_p^{-1}(\sect \mu_{\pi(m)}).
+\end{eqnsplit} % this definition can't be used to "lift" a vector of E/G to E because it is not clear what $p$ should be chosen
 \end{proposition}
 %allows us to write any $\sectoid \mu \in \Gamma(E/G)$ as 
 %\begin{align}\label{sectoidFormula}
@@ -687,14 +683,11 @@ where $p \in P$ is any point in the fiber of $m \in U$.
 %\end{align}
 
 It is important to realize that:
-
 \begin{itemize}
-    \item the first map can not be extended to elements $\oid \mu \in E/G_m$ to return elements of $E/G$ because there is not a canonical choice of $p \in \pi^{-1}(m)$ where ``$\,\upsect{\oid \mu}\,$'' should belong to;
+    \item the first map can not be extended to general sections $\mu \in \Gamma(E)$ because it is not, in general, the case that $\cl{\sect \mu(p)} = \cl{\sect \mu(p')}$ even when $p, p' \in \pi^{-1}(m)$;
     
-    \item the second map, which might also be denoted by $\cl{\sect \mu} \in \Gamma(E/G)$\todo{I might opt for the original notation, and remove this awkward one entirely}, can not be extended to general sections $\mu \in \Gamma(E)$ because it is not, in general, the case that $\cl{\sect \mu(p)} = \cl{\sect \mu(p')}$ even when $p, p' \in \pi^{-1}(m)$.
+    \item the second map, can not be extended to elements $\oid \mu \in E/G_m$ to return elements of $E$ because there is not a canonical choice of $p \in \pi^{-1}(m)$ where ``$\,\upsect{\oid \mu}\,$'' should belong to .
 \end{itemize}
-
-In general, given a section $\sect \mu \in \Gamma(E)$ of a vector bundle $E$ over a base space $B$, the value of the section at $b\in B$ will usually be denoted by $\mu_b \in E_b$ instead of $\mu(b)$.
 
 \begin{proof}\complete{small adaptations to accommodate $U$ and $\mathcal U$}
 Before we show that the sections defined by above formulas are indeed smooth sections, we will remark a couple of things. The $G$-invariance of the map $\sectoid \mu \mapsto \upsect{\sectoid \mu}$ is inherited from the $G$-invariance of $\pi$. The map $\sect \mu \mapsto \downsect{\sect \mu}$ is well defined due to the $G$-invariance of $\sect \mu \in \Gamma^G(E)$, hence $\cl{X(pg)} = \cl{X(p)g} = \cl{X(p)}$. These two functions as defined by the formulas above are inverses of each other since, \improvement{REMEMBERING THAT $\cl{...}$ is $\natural_p$ might simplify this part}\\
