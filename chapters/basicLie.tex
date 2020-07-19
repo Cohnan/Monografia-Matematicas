@@ -834,7 +834,7 @@ All what is left to see is that this definitions of the anchor and the bracket o
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-A principal connection form on the principal bundle $P(M, G)$ is usually defined as $\alg g$-valued $1$-form  $w: TP \to \alg g$ that satisfies:
+A principal connection form on the principal bundle $P(M, G)$ is usually defined as $\alg g$-valued $1$-form  $w: TP \to \alg P \times g$ that satisfies:
 
     \begin{itemize}
     
@@ -875,17 +875,17 @@ where the top vectical arrows are the quotient maps, and, abusing notation, $\pi
 \end{theorem}
 
 \begin{proof}
-$\pi_*$ is $G$-equivariant since $\pi \circ R_g = \pi$, therefore the existence of the vector bundle $TP/G$ will follow if we find $\pi$-saturated $G$-equivariant charts. Using the notation in the proof of Theorem \ref{theoTPGexists}, where charts for $TP$ were built, we now construct the desired charts. Notice that $\pi_* \circ \psi_* (X, R_{g*, 1} \eta) = 0$, where $\psi_* : TU \boxplus TG \to T_{\mathcal U}$ is the isomorphism induced by the principal bundle chart $\psi: U \times G \to P_{\mathcal U}$, is equivalent to the statement $X = 0$ since $\pi \circ \psi: U \times G \to U$ is the projection to the first coordinate. Therefore, the fiber of $T^\pi P$ is only $\alg g$ and the following map is a vector bundle isomorphism:
+$\pi_*$ is $G$-equivariant since $\pi \circ R_g = \pi$, therefore the existence of the vector bundle $TP/G$ will follow if we find $\pi$-saturated $G$-equivariant charts, by Theorem \ref{3.1.1}. Using the notation in the proof of Theorem \ref{theoTPGexists}, where equivariant charts for $TP$ were built, we now construct the desired charts. Notice that $\pi_* \circ \psi_* (X, R_{g*, 1} \eta) = 0$, where $\psi_* : TU \boxplus TG \to T_{\mathcal U}$ is the isomorphism induced by the principal bundle chart $\psi: U \times G \to P_{\mathcal U}$, is equivalent to the statement $X = 0$ since $\pi \circ \psi: U \times G \to U$ is the projection to the first coordinate. Therefore, the fiber of $T^\pi P$ is only $\alg g$ and the following map is a vector bundle isomorphism:
 
 \begin{align*}
-    \Tilde \Psi :& (U \times G) \times \alg g & \to^{\cong} & T^\pi P|_{\mathcal U} \\    
+    \Tilde \Psi :& (U \times G) \times \alg g && \xrightarrow{\cong} && T^\pi P|_{\mathcal U} \\    
                  & (m, g, \eta)&& \mapsto &&\psi_{*, (m, g)}(0, R_{g*, 1} \eta).
 \end{align*}
-Now, $\Psi : \mathcal U \times \alg g  \to  T_{\mathcal U}P$ by $\Phi = \psi^{-1} \times id_{\alg g}$ is the desired $G$-equivariant chart by the same arguments used in the proof of Theorem \ref{theoTPGexists}.
+Now, $\Psi : \mathcal U \times \alg g  \to  T_{\mathcal U}P$ by $\Psi = \Tilde \Psi \circ (\psi^{-1} \times id_{\alg g})$ is the desired $G$-equivariant coordinate map by the same arguments used in the proof of Theorem \ref{theoTPGexists}.
 
 The existence of the vector bundle morphism $j: T^\pi P/G \to TP/G$ follows from the clear $G$-equivariance of the inclusion $i$.
 
-Momentarily, let $\natural^\pi: T^\pi P \to T^\pi/G$ and $\natural: TP \to TP/G$ be the quotient maps. Then, for any $\ppal X \in T^\pi P$, $\natural^\pi(\ppal X) = \set{\ppal X \, g \st g \in G} = \natural(\ppal X)$, so \[j(\natural^\pi(\ppal X)) = \natural(\ppal X) = \natural^\pi(\ppal X)\], so $j$ is indeed an inclusion of sets.
+Momentarily, let $\natural^\pi: T^\pi P \to T^\pi/G$ and $\natural: TP \to TP/G$ be the quotient maps. Then, for any $\ppal X \in T^\pi P$, $\natural^\pi(\ppal X) = \set{\ppal X \, g \st g \in G} = \natural(\ppal X)$, so \[j(\natural^\pi(\ppal X)) = \natural(\ppal X) = \natural^\pi(\ppal X),\] so $j$ is indeed an inclusion of sets.
 \end{proof}
 
 \begin{theorem}
@@ -893,9 +893,7 @@ The bracket of the Lie algebroid $TP/G$ induces a bracket on $T^\pi P/G$, and $T
 \end{theorem}
 
 \begin{proof}
-We need to prove is that the bracket of $TP/G$ of sections of $T^\pi P/G$ is again a section of this kind. Let $\sectoid X, \sectoid Y \in \Gamma(T^\pi P/G) \subset \Gamma(TP/G)$, then $\pi_*^G([\sectoid X, \sectoid Y]) = [\pi_*^G (\sectoid X), \pi_*^G(\sectoid Y)] = 0$, so $([\sectoid X, \sectoid Y] \in \Gamma(T^\pi P/G)$. 
-
-That $T^\pi P/G = ker(\pi_*^G)$ is clear due to top square of the commutative diagram (\ref{anchorDiagram}) that defined the anchor on $TP/G$. This implies that the anchor $\pi_*^G$ of $TP/G$ restricts to the zero map on $T^\pi P/G$ and so the compatibility conditions between the bracket and the anchor are inherited from the Atiyah Lie algebroid.
+Notice that $T^\pi P/G = ker(\pi_*^G)$ due to the top square of the commutative diagram \ref{anchorDiagram} that defines the anchor of $TP/G$. By the remark following Theorem \ref{theoFiberLie} all we need to prove is that the bracket of sections of $T^\pi P/G \subset TP/G$ is again a section of this kind. Suppose that $\sectoid X, \sectoid Y \in \Gamma(T^\pi P/G) \subset \Gamma(TP/G)$, then $\pi_*^G([\sectoid X, \sectoid Y]) = [\pi_*^G (\sectoid X), \pi_*^G(\sectoid Y)] \\= 0$, and so $[\sectoid X, \sectoid Y] \in \Gamma(T^\pi P/G)$. 
 \end{proof}
 
 \subsubsection{The Adjoint Bundle}
