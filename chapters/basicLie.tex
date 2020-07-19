@@ -753,23 +753,23 @@ Based on this theorem, for any $U \subset M$ open \ptext{we will usually underst
 \subsubsection{The Bracket}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-As we saw in theorem \ref{theoSectTPG}, the space of (local) sections of $TP/G$ can be identified as the subset of $G$-invariant (local) sections of $TP$, so we may use the bracket of $\Gamma(TP)$ to induce a bracket in $\Gamma(TP/G)$. Furthermore, proposition \ref{bracketIsLocal} enables the definition of the bracket only from local information without any sort of ambiguity.
+As we saw in theorem \ref{theoSectTPG}, the space of (local) sections of $TP/G$ can be identified as the subset of $G$-invariant (local) sections of $TP$, so we may use the bracket of $\Gamma(TP)$ to induce a bracket in $\Gamma(TP/G)$. Furthermore, proposition \ref{bracketIsLocal} applied to the Lie algebroid $TP$ enables the definition of the bracket on $TP/G$ only from local information without any sort of ambiguity.
 
-\begin{proposition}
-Let $(E, p^E, P)$ be a vector bundle over the principal bundle $P(M, G)$. For $\sect \mu, \sect \nu \in \Gamma_{\mathcal U}^G(E)$, $[\sect \mu, \sect \nu] \in \Gamma_{\mathcal U}^G(E)$.
-\end{proposition}
+\begin{lemma}
+If $\sect \mu, \sect \nu \in \Gamma_{\mathcal U}^G(TP) \subset \Gamma_{\mathcal U}(TP)$, then $[\sect \mu, \sect \nu] \in \Gamma_{\mathcal U}^G(TP)$.
+\end{lemma}
 
 \begin{proof}
-The invariance of a section $\sect \mu \in \Gamma_{\mathcal U}^G(E) \subset \Gamma_U(E)$ means that for $f \in C^\infty(P)$, $g \in G$ and $p \in P$,  
+The invariance of a section $\sect \mu \in \Gamma_{\mathcal U}^G(TP) \subset \Gamma_{\mathcal U}(TP)$ means that for $f \in C^\infty(P)$, $g \in G$ and $p \in P$,  
 \begin{align} \label{secInv1}
 \sect \mu_{pg} (f) = \sect \mu_p(f \circ R_g)\end{align} 
-because $\sect \mu_{pg} = R_{g*} \sect \mu_p$ by the definition of $\Gamma_{\mathcal U}^G(E)$. It also means that 
+because $\sect \mu_{pg} = R_{g*} \sect \mu_p$ by the definition of $\Gamma_{\mathcal U}^G(TP)$. It also means that 
 \begin{align}\label{secInv2}
 (\sect \mu (f)) \circ R_g = \sect \mu(f \circ R_g)
 \end{align}
 since $((\sect \mu f) \circ R_g)(p) = \sect \mu f(pg) = \sect \mu_{pg} f = \sect \mu_p(f \circ R_g) = (\sect \mu(f \circ R_g))(p)$, where the second to last equation follows from the invariance of $\sect \mu$.
     
-So, for $\sect \mu, \sect \nu \in \Gamma_{\mathcal U}^G(E)$, $p \in P$, $g \in G$ arbitrary,
+So, for $\sect \mu, \sect \nu \in \Gamma_{\mathcal U}^G(TP)$, $p \in \mathcal U$, $g \in G$ arbitrary,
 \begin{align*}
     [\sect \mu, \sect \nu]_{pg}(f)
         =& \sect \mu_{pg}(\sect \nu(f)) - \sect \nu_{pg}(\sect \mu (f))\\
@@ -789,10 +789,10 @@ For any $\sectoid X, \sectoid Y \in \Gamma_U(TP/G)$, define
 This is a Lie algebra structure on $\Gamma_U(E/G)$ called \emph{the Lie bracket of the Atiyah Lie algebroid of the principal bundle $P$}.
 \end{definition}
 
-This bracket inherits the $\RR-linearity$, the Jacobi identity and the alternating property from the bracket in $\Gamma_U(TP/G)$, that is why it is a Lie algebra structure.
+This bracket inherits the $\RR$-linearity, the Jacobi identity and the alternating property from the bracket in $\Gamma_U(TP/G)$, meaning that it is a Lie algebra structure on $\Gamma_U(TP/G)$.
 
 \begin{theorem}
-The vector bundle $TP/G$ with anchor $a:TP/G \to TM$ of Definition (\ref{anchorAtiyah}) and bracket of Definition (\ref{AtiyahBracket}) is a Lie algebroid over $M$, called \emph{the Atiyah Lie algebroid of the principal bundle $P$}.
+The vector bundle $TP/G$ with anchor $\pi_*^G:TP/G \to TM$ of Definition (\ref{anchorAtiyah}) and bracket of Definition (\ref{AtiyahBracket}) is a Lie algebroid over $M$, called \emph{the Atiyah Lie algebroid of the principal bundle $P$}.
 \end{theorem}
 
 \begin{proof}
@@ -800,11 +800,11 @@ All what is left to see is that this definitions of the anchor and the bracket o
 
     \begin{enumerate}
     
-    \item Since (\ref{theoAnchorUpsect}) tells us that $\upsect{\sectoid X}, \upsect{\sectoid Y}$ are $\pi_*$-related to $a(\sectoid X), a(\sectoid Y)$ respectively, then $[\upsect{\sectoid X}, \upsect{\sectoid Y}]$ is $\pi_*$-related to $[a(\sectoid X), a(\sectoid Y)]$
+    \item Since (\ref{theoAnchorUpsect}) tells us that $\upsect{\sectoid X}, \upsect{\sectoid Y}$ are $\pi_*$-related to $\pi_*^G(\sectoid X), a(\sectoid Y)$ respectively, then $[\upsect{\sectoid X}, \upsect{\sectoid Y}]$ is $\pi_*$-related to $[a(\sectoid X), a(\sectoid Y)]$
     \begin{align*}
-        a([\sectoid X, \sectoid Y])_m &= \pi_*(\upsect{[\sectoid X, \sectoid Y]}_p) & \textrm{by (\ref{theoAnchorUpsect})} \\
+        \pi_*^G([\sectoid X, \sectoid Y])_m &= \pi_*(\upsect{[\sectoid X, \sectoid Y]}_p) & \textrm{by (\ref{theoAnchorUpsect})} \\
                                     &= \pi_*([\upsect{\sectoid X}, \upsect{ \sectoid Y}]_p) & \textrm{by the definition of $[\cdot, \cdot]$} \\
-                                    &= [a(\sectoid X), a(\sectoid Y)]_m 
+                                    &= [\pi_*^G(\sectoid X), \pi_*^G(\sectoid Y)]_m 
     \end{align*}
     
     \item When equation (\ref{theoAnchorUpsectEqn}) is applied to $f \in C^\infty(M)$, at $m\in M$ we conclude that $a(\sectoid X)_mf = \pi_*(\upsect{\sectoid X})_m f = \upsect{\sectoid{X}}_p(f \circ \pi)$ for any $p \in \pi^{-1}(m)$, so $\upsect{\sectoid{X}}(f \circ \pi) = a(\sectoid X) \circ \pi \in C^\infty(P)$, therefore
@@ -812,10 +812,10 @@ All what is left to see is that this definitions of the anchor and the bracket o
         \upsect{[\sectoid X, f \sectoid Y]} 
         =[\upsect{\sectoid X}, (f \circ \pi) \upsect{\sectoid Y}] \\
         = (f \circ \pi)[\upsect{\sectoid X}, \upsect{\sectoid Y}] + \upsect{\sectoid X}(f \circ \pi) \upsect{\sectoid Y} = 
-        (f \circ \pi)[\upsect{\sectoid X}, \upsect{\sectoid Y}] + (a(\sectoid X) \circ \pi) \upsect{\sectoid Y}
+        (f \circ \pi)[\upsect{\sectoid X}, \upsect{\sectoid Y}] + (\pi_*^G(\sectoid X) \circ \pi) \upsect{\sectoid Y}
     \end{multline*} so 
     \[
-        [\sectoid X, f \sectoid Y] = \downsect{[\upsect{\sectoid X}, (f \circ \pi) \upsect{\sectoid Y}]} = f[\sectoid X, \sectoid Y] + a(\sectoid X) \sectoid Y
+        [\sectoid X, f \sectoid Y] = \downsect{[\upsect{\sectoid X}, (f \circ \pi) \upsect{\sectoid Y}]} = f[\sectoid X, \sectoid Y] + \pi_*^G(\sectoid X) \sectoid Y
     \]
     
     \end{enumerate}
