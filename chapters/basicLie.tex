@@ -669,12 +669,12 @@ Let $(E, p^E, P)$ on which $G$ acts to the right satisfying the properties of pr
 where the action of a function is given by $f \sect \mu (p) := (f \circ \pi)(p) \sect \mu(p)$ for any $\sect \mu \in \Gamma_{\mathcal U}^G(E)$, $p \in \mathcal U$ via . Explicitly, the isomorphism is
 \begin{eqnsplit}
 \Gamma_{\mathcal U}^G(E) &\to \Gamma_U(E/G) \\
-\sect \mu &\mapsto \cl{\sect \mu} : m \mapsto \cl{\sect \mu_p} \equiv \natural(\sect \mu_p)
+\sect \mu &\mapsto \cl{\sect \mu} : m \mapsto \cl{\sect \mu_p} \in E/G|_m
 \end{eqnsplit} 
-where $p \in P$ is any point in the fiber of $m \in U$, which has as inverse the map 
+where $p \in \mathcal U$ is any point in the fiber of $m \in U$, which has as inverse the map 
 \begin{eqnsplit}
 \Gamma_{U}(E/G) &\to \Gamma^G_{\mathcal U}(E) \\
-\sect \mu &\mapsto \upsect{\mu} : p \mapsto \natural_p^{-1}(\sect \mu_{\pi(p)}).
+\sect \mu &\mapsto \upsect{\mu} : p \mapsto \natural_p^{-1}(\sect \mu_{\pi(p)}) \in E|_p.
 \end{eqnsplit} % this definition can't be used to "lift" a vector of E/G to E because it is not clear what $p$ should be chosen
 \end{proposition}
 %allows us to write any $\sectoid \mu \in \Gamma(E/G)$ as 
@@ -684,19 +684,25 @@ where $p \in P$ is any point in the fiber of $m \in U$, which has as inverse the
 
 It is important to realize that:
 \begin{itemize}
-    \item the first map can not be extended to general sections $\mu \in \Gamma(E)$ because it is not, in general, the case that $\cl{\sect \mu(p)} = \cl{\sect \mu(p')}$ even when $p, p' \in \pi^{-1}(m)$;
+    \item the first map can not be extended to general sections $\mu \in \Gamma(E)$ because it is not, in general, the case that $\cl{\sect \mu(p)} = \cl{\mu(p')}$ even when $p, p' \in \pi^{-1}(m)$;
     
     \item the second map can not be extended to elements $\oid \mu \in E/G_m$ to return elements of $E$ because there is not a canonical choice of $p \in \pi^{-1}(m)$ where ``$\,\upsect{\oid \mu}\,$'' should belong to .
 \end{itemize}
 
 \begin{proof}\complete{small adaptations to accommodate $U$ and $\mathcal U$}
-Before we show that the sections defined by above formulas are indeed smooth sections, let us remark a couple of things. The map $\sect \mu \mapsto \cl{\sect \mu}$ is well defined due to the $G$-invariance of $\sect \mu \in \Gamma^G_{\mathcal U}(E)$, hence $\cl{X(pg)} = \cl{X(p)g} = \cl{X(p)}$. Given $\sectoid \mu \in \Gamma(E/G)$, $\upsect{\oid \mu}$ is $G$-invariant since, if $m = \pi(p) = \pi(pg)$, $\upsect{\oid \mu}_{pg} = \natural^{-1}_{pg}(\sectoid \mu_{m}) = \natural^{-1}_{p}(\sectoid \mu_{m})g \in E_{pg}$. Finally, these two functions as defined by the formulas above are inverses of each other since, 
-for $\sectoid \mu \in \Gamma_U(E/G)$ and $m \in M$, $\cl{(\upsect{\oid \mu})}(m) = \cl{\upsect{\oid \mu} (p)} = \cl{ \natural_p^{-1}(\sectoid \mu(m)) } = \natural \circ \natural_p^{-1}(\sectoid \mu(m)) = \sectoid \mu(m)$ where $p$ is any in $\pi^{-1}(m)$ \\
-for $\sect \mu \in \Gamma^G_{\mathcal U}(E)$ and $p \in P$ with $m = \pi(p)$, $\upsect{(\cl{\sect \mu})}(p) = \natural_p^{-1}(\cl{\sect \mu}(m)) = \natural_p^{-1}(\cl{\sect \mu(p')}) = \natural_p^{-1} \circ \natural (\sect \mu(pg)) = \natural_p^{-1} \circ \natural (\sect \mu(p)) = \sect \mu(p)$ for any $p' \in \pi^{-1}(m)$.
+Before showing smoothness, let us check that that the above isomorphisms indeed produce sections that satisfy the necessary properties.
+The map $\sect \mu \mapsto \cl{\sect \mu}$ is well defined due to the $G$-invariance of $\sect \mu \in \Gamma^G_{\mathcal U}(E)$, hence $\cl{X(pg)} = \cl{X(p)g} = \cl{X(p)}$. 
+Now, given $\sectoid \mu \in \Gamma_U(E/G)$, $\upsect{\oid \mu}$ is $G$-invariant since, if $m = \pi(p) = \pi(pg)$ for some $p \in \mathcal U$, $\upsect{\oid \mu}_{pg} = \natural^{-1}_{pg}(\sectoid \mu_{m}) = \natural^{-1}_{p}(\sectoid \mu_{m})g \in E_{pg}$. 
+The $\RR$-linearity of the pointwise vector space isomorphism $\natural_p:E_p \to (E/G)|_{\pi(p)}$ for any $p \in \mathcal U$ implies the $C^{\infty}(M)$-linearity of the isomorphisms.
+Finally, these two functions as defined by the formulas above are inverses of each other since, 
+for $\sectoid \mu \in \Gamma_U(E/G)$ and $m \in u$, 
+\[\cl{\upsect{\oid \mu}}(m) = \cl{\upsect{\oid \mu} (p)} = \cl{ \natural_p^{-1}(\sectoid \mu(m)) } = \natural \circ \natural_p^{-1}(\sectoid \mu(m)) = \sectoid \mu(m)\] 
+where $p$ is any in $\pi^{-1}(m)$; on the other hand,
+for $\sect \mu \in \Gamma^G_{\mathcal U}(E)$ and $p \in P$ with $m = \pi(p)$, 
+\[\upsect{\cl{\sect \mu}}(p) = \natural_p^{-1}(\cl{\sect \mu}(m)) = \natural_p^{-1}(\cl{\sect \mu(p')}) = \natural_p^{-1} \circ \natural (\sect \mu(pg)) = \natural_p^{-1} \circ \natural (\sect \mu(p)) = \sect \mu(p)\]
+for any $p' \in \pi^{-1}(m)$, with formula $p' = pg$ for some $g\in G$.
 
-Given $\sectoid \mu \in \Gamma_U(E/G)$, notice that the pullback (\ref{pullbackQuotient}) shows that $\upsect{\oid \mu}$ is precisely the pullback section of $\sectoid \mu$, so it is a smooth section. On the other hand, take $\sect \mu \in \Gamma^G_{\mathcal U}(E)$, so $\cl{\sect \mu}$ is a smooth section since $\cl{\sect \mu} \circ \pi = \natural \circ \sect \mu$ is smooth and $\pi$ is a surjective submersion.
-
-Finally, the $\RR$-linearity of the pointwise vector space isomorphism $\natural_p:E_p \to (E/G)|_{\pi(p)}$ implies the $C^{\infty}(M)$-linearity of both maps.
+We now proceed to prove the smoothness of the sections. Given $\sectoid \mu \in \Gamma_U(E/G)$, notice that the pullback (\ref{pullbackQuotient}) shows that $\upsect{\oid \mu}$ is precisely the pullback section of $\sectoid \mu$, so it is a smooth section. On the other hand, take $\sect \mu \in \Gamma^G_{\mathcal U}(E)$, so $\cl{\sect \mu}$ is a smooth section since $\cl{\sect \mu} \circ \pi = \natural \circ \sect \mu$ is smooth and $\pi$ is a surjective submersion.
 
 \end{proof}
 
@@ -710,12 +716,13 @@ Let $(E, p^E, B)$ and $(E', p^{E'}, B')$ be vector bundles and $F: E \to E'$ be 
     
     \item \emph{$\sect \mu$ is $F$-projectable} if there exists $\sect \nu' \in \Gamma(E')$ such that $\sect \mu$ is $F$-related to $\sect \nu'$.
     
-    \end{itemize}
+    \item If $f:B \to B'$ is surjective, and $\sect \mu \in \Gamma(E)$ is $F$-projectable, define \emph{the section $F(\sect \mu) \in \Gamma(E')$} to be the section of $E'$ such that, for any $b' \in B$
+    \begin{align} \label{funOfSection}
+        F(\sect \mu)_{b'} := F(\sect \mu_b)
+    \end{align} where $b$ is any element in $f^{-1}(b')$, and this is equal to \[F(\sect \mu)_{b'} = \sect \nu'_{b'}\] for any $\sect \nu' \in \Gamma(E')$ to which $\sect \mu$ is $F$-related.
     
-If $f:B \to B'$ is surjective, and $\sect \mu \in \Gamma(E)$ is $F$-projectable, define $F(\sect \mu)$ to be the section of $E'$ such that, for any $b' \in B$
-\begin{align} \label{funOfSection}
-    F(\sect \mu)_{b'} := F(\sect \mu_b)
-\end{align} where $b$ is any element in $f^{-1}(b')$, and this is equal to \[F(\sect \mu)_{b'} = \sect \nu'_{b'}\] for any $\sect \nu' \in \Gamma(E')$ to which $\sect \mu$ is $F$-related.
+    \end{itemize}
+
 
 Notice that whenever $f: B \to B'$ is bijective, e.g. the identity map, then every $\sect \mu \in \Gamma(E)$ is $F$-projectable.
 
