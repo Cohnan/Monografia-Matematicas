@@ -543,7 +543,7 @@ $(TP/G, \pi_*^G, M)$ and $\pi_*^G: TP/G \to TM$ are called \emph{the vector bund
 \begin{proof}
 This theorem reduces to the verication that the conditions of \ref{3.1.1} are satisfied by $(TP, \pi_*, P)$. Condition (1) is satisfied since, for any $g \in G$, the map $R_{g*}:TP \to TP$ is a fiberwise linear map over $R_g$ with inverse $R_{g^{-1} *}$.
 
-Given $p_0 \in P$, to construct an equivariant $\pi$-saturated chart near $p$ we will start with a chart $\psi:U \times G \to \mathcal U = \pi^{-1}(U)$ for $P$ where $U$ is the range of a chart $\theta:\RR^n \to U$ for $M$. The desired chart $\Psi: \mathcal U \times (\RR^n \oplus \alg g) \to TP|_{\mathcal U}$ for $TP$ will be, basically, $\psi^*$, after we identify (via smooth maps) 
+Given $p_0 \in P$, to construct an equivariant $\pi$-saturated chart near $p$ we will start with a chart $\psi:U \times G \to \mathcal U = \pi^{-1}(U)$ for $P$ where $U$ is the range of a chart $\theta:\RR^n \to U$ for $M$. The desired chart $\Psi: \mathcal U \times (\RR^n \oplus \alg g) \to TP|_{\mathcal U}$ for $TP$ will essentially be $\psi^*$, after we identify (via smooth maps) 
     \begin{itemize}
     
     \item $U \times \RR^n$ with $TU$ by the map $\theta_{*}: \RR^n \times \RR^n \to T_m U$,  
@@ -556,27 +556,22 @@ Given $p_0 \in P$, to construct an equivariant $\pi$-saturated chart near $p$ we
 
 Concretely, let
 \begin{align*}
-    \Tilde \Psi :& (U \times G) \times (\RR^n \oplus \alg g) && \to^{\cong} && TP|_{\mathcal U} \\    
-                 & (m, g, v, \eta)&& \mapsto &&\psi_{*, (m, g)}(\theta_{*, \theta^{-1}(m)} v, R_{g*, 1} \eta) 
+    \Tilde \Psi :& (U \times G) \times (\RR^n \oplus \alg g) && \xrightarrow{\cong} && TP|_{\mathcal U} \\    
+                 & (m, g, v, \eta)&& \mapsto &&\psi_{*, (m, g)}(\theta_{*, \theta^{-1}(m)} v, R_{g*, 1} \eta).
 \end{align*}
-now, define $\Psi : \mathcal U \times (\RR^n \oplus \alg g)  \to  T_{\mathcal U}P$ by $\Phi = \psi^{-1} \times id_{\RR^n \oplus \alg g}$. %The isomorphisms mentioned above mean that Given any $p \in P$ %and $X_m \in T_m M$ where $m = \pi(p)$, it is always possible to write $p = \psi(m, g)$ and $X_m = \theta_{*, \theta^{-1}(m)} v$ for some $g \in G, v \in \RR^n$; in this case
-
-\[
-    \Psi(p, v \oplus \eta) = \psi_{*, (m, g)}(\theta_{*, \theta^{-1}(m)} v, R_{g*, 1} \eta)
-\]
-
-The equivariance of this chart%, it is enough to show check the $G$-equivariance or $\Tilde \Psi$, where $G$ acts on $(U \times G) \times (\RR^n \oplus \alg g)$ as induced by $\psi$, i.e. $(m, g, v, \eta)g' = (m, gg', v, \eta)$ for any $g' \in G$, so we need to see  that 
+Now, define the coordinate map for $TP/G$ $\Psi : \mathcal U \times (\RR^n \oplus \alg g)  \to  T_{\mathcal U}P$ by $\Psi = \tilde \Psi \circ \psi^{-1} \times (id_{\RR^n \oplus \alg g})$. %The isomorphisms mentioned above mean that Given any $p \in P$ %and $X_m \in T_m M$ where $m = \pi(p)$, it is always possible to write $p = \psi(m, g)$ and $X_m = \theta_{*, \theta^{-1}(m)} v$ for some $g \in G, v \in \RR^n$; in this case
+The equivariance of this chart %, it is enough to show check the $G$-equivariance or $\Tilde \Psi$, where $G$ acts on $(U \times G) \times (\RR^n \oplus \alg g)$ as induced by $\psi$, i.e. $(m, g, v, \eta)g' = (m, gg', v, \eta)$ for any $g' \in G$, so we need to see  that 
 %\begin{align*}
 %    \Psi(m, g, v, \eta) g' &=R_{g'*, \psi(m,g)} \circ \psi_{*, (m, g)}(\theta_{*, \theta^{-1}(m)} v, R_{g*, 1} \eta)\\
 %    &= \psi_{*, (m, gg')}(\theta_{*, \theta^{-1}(m)} v, R_{gg'*, 1} \eta) = \Psi(m, gg', v, \eta).
 %\end{align*}
- means that for any $p \in \mathcal U$, which can be written as $p = \psi(m, g)$,
+ means that for any $p \in \mathcal U$, which can be written as $p = \psi(m, g)$ for some $m \in M$ and $g \in G$,
 \begin{align*}
     \Psi(p, v, \eta) g' &=R_{g'*, p} \circ \psi_{*, p}(X_m, R_{g*, 1} \eta)\\
-    &= \psi_{*, (m, gg')}(X_m, R_{gg'*, 1} \eta) = \Psi(m, gg', v, \eta).
-\end{align*} where $X_m = \theta_{*, \theta^{-1}(m)} v \in T_m M$.
+    &= \psi_{*, (m, gg')}(X_m, R_{gg'*, 1} \eta) = \Psi(pg', v, \eta).
+\end{align*} where $X_m = \theta_{*, \theta^{-1}(m)} v \in T_m M$ and $pg' = \psi(m, gg')$.
 
-This follows from the identity $\psi(m, g) g' = \psi(m, gg')$, when it is expressed as the equality of the functions $R_{g'} \circ \psi = \psi \circ (Id_U \times R_{g'}) : U \times G \to TP|_{\mathcal U}$. Deriving each formula at $(m, g)$ using the chain rule and the equality $R_g \circ R_{g'} = R_{gg'}$ we get the desired equation.%The left hand side is the derivative at $(m,g)$ of the map $F: U \times G \to TP|_{\mathcal U}$, $F =  R_{g'}\circ \psi$ applying the chain rule, and the right side is the same thing, but evaluating the derivative when $F$ is expressed as the composition map $(m, g) \mapsto (m, R_{g'}(g)) \mapsto \psi(m, gg')$; the equality of this formulas for $F$ is nothing more than the statement that the coordinate map $\psi:U \times G \to TP|_{\mathcal U}$ satisfies .
+This follows from the of the identity $\psi(m, g) g' = \psi(m, gg')$, when it is expressed as the equality of the functions $R_{g'} \circ \psi = \psi \circ (Id_U \times R_{g'}) : U \times G \to TP|_{\mathcal U}$: deriving each formula at $(m, g)$ using the chain rule and the equality $R_g \circ R_{g'} = R_{gg'}$ we get the desired equation.%The left hand side is the derivative at $(m,g)$ of the map $F: U \times G \to TP|_{\mathcal U}$, $F =  R_{g'}\circ \psi$ applying the chain rule, and the right side is the same thing, but evaluating the derivative when $F$ is expressed as the composition map $(m, g) \mapsto (m, R_{g'}(g)) \mapsto \psi(m, gg')$; the equality of this formulas for $F$ is nothing more than the statement that the coordinate map $\psi:U \times G \to TP|_{\mathcal U}$ satisfies .
 
 %since  let $g' \in G$, and let $\psi(m, g) = p$, then % = R_{g'*,\psi(m, g)} \circ \psi_{*, (m, g)} (\theta_{*, \theta^{-1}(m)} v, R_{g*, 1} \eta)
 %\begin{multline*}
