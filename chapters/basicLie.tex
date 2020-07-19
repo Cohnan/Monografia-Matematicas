@@ -450,7 +450,7 @@ Throughout this section, let $P(M, G)$ be a principal bundle over $M$ with the r
 
 The Atiyah Lie algebroid sequence of principal bundles is an exact sequence of Lie algebroids that arise naturally in traditional gauge theories, explicitly in the context of principal connections forms. This exact sequence will be generalized by the Lie algebroid sequences of transitive Lie algebroids, allowing the formulation of the concept of transitive Lie algebroid connections, among other things.
 
-The main component of this sequence is the Atiyah Lie algebroid $TP/G$. Our first goal is to give a smooth vector bundle structure to $TP/G$ inherited from the corresponding structure on $TP$, and to define the smooth fiberwise linear anchor and the Lie algebra structure on $\Gamma(TP/G)$, all of which will allow us to say that $TP/G$ is indeed a Lie algebroid.
+The main component of this sequence is the Atiyah Lie algebroid $TP/G$. Our first goal is to give a smooth vector bundle structure to $TP/G$ inherited from the corresponding structure on $TP$, and to define the smooth fiberwise-linear anchor and the Lie algebra structure on $\Gamma(TP/G)$, all of which will allow us to say that $TP/G$ is indeed a Lie algebroid.
 
 Then, we will follow a similar procedure to define the Adjoint Lie algebroid $P \times \alg g/G$ of $TP/G$ and its embedding into $TP/G$ as the kernel of the anchor, concluding the Atiyah Lie algebroid sequence
 \begin{align*}
@@ -503,11 +503,11 @@ Notice that conditions (1) and (2) tell us that, locally, the exact point in the
 
 Let $p^{E/G}: E/G \to M$, $\langle \mu \rangle \mapsto \pi(p^E(\mu))$. This function is well defined because, by (1), $p^E(\mu g)$ and $p^E(\mu)$ are in the same fiber of $P$, for all $g \in G$. (Notice that condition (1) implies that $p^E(\mu g) = p^E(\mu) g$ for $\mu$ and $g$ arbitrary).
 
-Let $m \in M$ and let $\psi: \mathcal U \times V \to E|_{\mathcal U}$ be coordinate map of $E$  such that $m \in U$ that satisfies condition (2); we may further assume that $U \subset M$ is a trivializing neighborhood of $P$ (by intersecting one such neighborhood of $m$ with $U$ if necessary), so that there exists a local section of $\pi$, $\sigma: U \to \mathcal U \subset P$ such that the local trivialization of $P$ is described by $\phi: U\times G \to \mathcal U$, $(y, g) \mapsto \sigma(y)g$.
+Let $m \in M$ and let $\psi: \mathcal U \times V \to E|_{\mathcal U}$ be coordinate map of $E$  such that $m \in U$ that satisfies condition (2); we may further assume that $U \subset M$ is a trivializing neighborhood of $P$ (by intersecting one such neighborhood of $m$ with $U$ if necessary), so that there exists a local section of $\pi$, $\sigma: U \to \mathcal U \subset P$ such that the local trivialization of $P$ is described by $\psi^G: U\times G \to \mathcal U$, $(m', g) \mapsto \sigma(m')g$.
 
-We'll now see that $E/G|_m$ can be given a vector space structure isomorphic to $V$:
+We'll now see that $E/G|_m := p^{E/G}(m)$ can be given a vector space structure isomorphic to $V$:
 \begin{itemize}
-    \item To define $\langle \mu \rangle + \langle \nu \rangle$ for $\langle \mu \rangle, \langle \nu \rangle \in E/G|_m := p^{E/G}(m)$ arbitrary, let $g \in G$ be such that $p^E(\nu g) = p^E(\mu)$, which exists because of condition (1). This means that both $\mu$ and $\nu g$ belong to the same vector space $E_{p^E(\mu)}$, so we may define $\langle \mu \rangle + \langle \nu \rangle := \langle \mu + \nu g \rangle$. To see that this is well defined it suffices to show that the result doesn't change if another representative of, say, the class of $\langle \nu \rangle$ is chosen: let $\nu' \in \langle \nu \rangle$, thus there is element $g_\nu \in G$ such that $\nu = \nu' g_\nu$; now let $g' \in G$ be such that $p^E(\nu' g') = p^E(\mu)$, therefore, by (1), $p^E(\nu) g_\nu g' = p^E(\nu g_\nu g') = p^E(\mu) \in P$, which allows us to conclude that $g_\nu g' = g$ as it is also true that $p^E(\mu) = p^E(\nu)g$ and $G$ acts freely on $P$.
+    \item To define $\langle \mu \rangle + \langle \nu \rangle$ for $\langle \mu \rangle, \langle \nu \rangle \in E/G|_m$ arbitrary, let $g \in G$ be such that $p^E(\nu g) = p^E(\mu)$, which exists because of condition (1). This means that both $\mu$ and $\nu g$ belong to the same vector space $E_{p^E(\mu)}$, so we may define $\langle \mu \rangle + \langle \nu \rangle := \langle \mu + \nu g \rangle$. To see that this is well defined it suffices to show that the result doesn't change if another representative of, say, the class of $\langle \nu \rangle$ is chosen: let $\nu' \in \langle \nu \rangle$, thus there is element $g_\nu \in G$ such that $\nu = \nu' g_\nu$; now let $g' \in G$ be such that $p^E(\nu' g') = p^E(\mu)$, therefore, by (1), $p^E(\nu) g_\nu g' = p^E(\nu g_\nu g') = p^E(\mu) \in P$, which allows us to conclude that $g_\nu g' = g$ as it is also true that $p^E(\mu) = p^E(\nu)g$ and $G$ acts freely on $P$.
     
     \item We define $t\langle\mu\rangle := \langle t \mu\rangle$, for any $t \in \RR$, $\langle\mu\rangle \in E/G$. This is well defined as, by condition (1), $G$ acts by vector bundle isomorphism, in particular it restricts to linear maps between fibers. It is now clear that these operations make $E/G|_m$ a vector space.
     
@@ -533,10 +533,12 @@ $E$ is clearly in a bijective correspondence with the pullback bundle $\pi^*E/G 
 \end{proof}
 
 \begin{theorem}\label{theoTPGexists}
-The vector bundle $\pi_*:TP \to P$ over the principal bundle $P$, on which $g \in G$ acts to the right by the push-forward of the right translation map $R_g: P \to P$ on $P$, satisfies the conditions of theorem \ref{3.1.1}.
+Let $g \in G$ act to the right on the vector bundle $(TP, \pi_*, P)$ by the push-forward of the right translation map $R_g: P \to P$ on $P$. Then, the quotient space $TP/G$ has a (smooth) vector bundle structure over $M$, with projection map $(TP/G, \pi_*^G, M)$, such that the quotient map $\natural: TP \to TP/G$ is a linear surjective submersion such that, for any $\ppal X \in TP$
+\begin{align}\label{eqnAnchorAtiyah}
+\pi_*^G(\cl{\ppal X}) = \pi_*(\ppal X).    
+\end{align}
 \end{theorem}
-
-We will denote by $\pi_*^G:TP/G \to M$ the projection map of the quotient vector bundle of $(TP, \pi, P)$ under the action of $G$, and we will call it \emph{the vector bundle of the Atiyah Lie algebroid of the principal bundle $P$}.
+This is \emph{the vector bundle of the Atiyah Lie algebroid associated to the principal bundle $P$}.
 
 \begin{proof}
 Condition (1) is satisfied since, for any $g \in G$, the map $R_{g*}:TP \to TP$ is a fiberwise linear map over $R_g$ with inverse $R_{g^{-1} *}$.
