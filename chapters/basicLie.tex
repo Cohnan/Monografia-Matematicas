@@ -706,8 +706,6 @@ We now proceed to prove the smoothness of the sections. Given $\sectoid \mu \in 
 
 \end{proof}
 
-The following will be useful to define $\Psi^{/G}: E/G \to E'/G'$, in particular the anchor of the Atiyah Lie algebroid, among other things. 
-
 \begin{definition}\label{defnRelatedProjectable}
 Let $(E, p^E, B)$ and $(E', p^{E'}, B')$ be vector bundles and $F: E \to E'$ be a vector bundle morphism over $f: B \to B'$ Let $\sect \mu \in \Gamma(E)$ and $\sect \nu' \in \Gamma(E')$ , then
     \begin{itemize}
@@ -716,23 +714,22 @@ Let $(E, p^E, B)$ and $(E', p^{E'}, B')$ be vector bundles and $F: E \to E'$ be 
     
     \item \emph{$\sect \mu$ is $F$-projectable} if there exists $\sect \nu' \in \Gamma(E')$ such that $\sect \mu$ is $F$-related to $\sect \nu'$.
     
-    \item If $f:B \to B'$ is surjective, and $\sect \mu \in \Gamma(E)$ is $F$-projectable, define \emph{the section $F(\sect \mu) \in \Gamma(E')$} to be the section of $E'$ such that, for any $b' \in B$
+    \item If $f:B \to B'$ is surjective, and $\sect \mu \in \Gamma(E)$ is $F$-projectable, define \emph{the section $F(\sect \mu) \in \Gamma(E')$} to be the smooth section such that, for any $b' \in B$
     \begin{align} \label{funOfSection}
         F(\sect \mu)_{b'} := F(\sect \mu_b)
     \end{align} where $b$ is any element in $f^{-1}(b')$, and this is equal to \[F(\sect \mu)_{b'} = \sect \nu'_{b'}\] for any $\sect \nu' \in \Gamma(E')$ to which $\sect \mu$ is $F$-related.
     
     \end{itemize}
 
-
-Notice that whenever $f: B \to B'$ is bijective, e.g. the identity map, then every $\sect \mu \in \Gamma(E)$ is $F$-projectable.
+Notice that whenever $f: B \to B'$ is bijective, e.g. an identity map, then every $\sect \mu \in \Gamma(E)$ is $F$-projectable. Notice that in proposition \ref{3.1.3} any section $\sect \mu \in \Gamma(E)$ is $\natural$-related to $\cl{\sect \mu}$ and the base map $\pi:P \to M$ is surjective, but the definition of $\cl{\sect \mu}$ given in that proposition coincides with the one suggested by the above definition, so the notation $\cl{\sect \mu}$ is not ambiguous.
 
 \end{definition}
 
 \begin{theorem} \label{theoAnchorUpsect}
 Let $\sectoid X \in \Gamma(TP/G)$. $\sectoid X$ is projectable over the surjective map $a: TP/G \to TM$, $\upsect{\sectoid X} \in \Gamma^G(TP)$ is projectable over the surjective map $\pi_*: TP \to TM$ and
 \begin{align} \label{theoAnchorUpsectEqn}
-    a(\sectoid X) = \pi_*(\upsect{\sectoid X}) \in \Gamma(TM)
-\end{align} where $\pi_*: TP \to TG$
+    \pi^G_*(\sectoid X) = \pi_*(\upsect{\sectoid X}) \in \Gamma(TM).
+\end{align}
 \end{theorem}
 
 \begin{proof}
@@ -742,8 +739,15 @@ $\sectoid X$ is $a$-projectable since the corresponding base space map is the bi
 
 The following calculation proves the remaining statements. Let $m \in M$ and $p \in \pi^{-1}(m)$, so any other element $p' \in P$ such that $m = \pi(p)$ may be written as $p' = pg$ for some $g \in G$. Now %$\upsect{\sectoid X} \in \Gamma^G(TP)$ is $\pi_*$-projectable since 
 $\pi_*(\upsect{\sectoid X}_{pg}) = \pi_*(\natural^{-1}_{pg}(\sectoid X_{\pi(pg)})) = a(\natural \circ \natural^{-1}_{pg}(\sectoid X_{m})) = a(\sectoid X_{m})$, where the second to last equality is the defining property of $a$, as seen in the Diagram (\ref{anchorDiagram}). 
-
 \end{proof}
+
+The following theorem gives a convenient way to understand the space of sections of the Atiyah Lie algebroid that, additionally, will be used in the next section to define the Lie algebra structure on $\Gamma(TP/G)$ that completes the construction of the Atiyah Lie algebroid.
+
+\begin{theorem}\label{theoSectTPG}
+Let $U \subset$ be open, and $\mathcal U = \pi^{-1}(U) \subset P$. The $C^\infty(U)$-module of local sections $\Gamma_U(Tp/G)$ is isomorphic to the space of loca $G$-invariant sections $\Gamma_{\mathcal U}(TP)$.
+\end{theorem}
+
+Based on this theorem, \ptext{we will usually understand $\Gamma^G(TP)$ as the space of sections of $TP/G$, and we might say that a $G$-invariant section $\upsect{\oid X} \in \Gamma^G(TP)$ ``is a section of the Atiyah Lie algebroid $TP/G$''}.
 
 \subsubsection{The Bracket}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
