@@ -448,7 +448,7 @@ Coming from Lie groupoids
 
 Throughout this section, let $P(M, G)$ be a principal bundle over $M$ with the real Lie group $G$ (a finite dimensional, smooth manifold) as fiber which acts on the right by the smooth action $R: G \times P \to G$.
 
-The Atiyah Lie algebroid sequence of principal bundles is an exact sequence of Lie algebroids that arise naturally in traditional gauge theories, explicitly in the context of principal connections forms. This exact sequence will be generalized by the Lie algebroid sequences of transitive Lie algebroids, allowing the formulation of the concept of transitive Lie algebroid connections, among other things.
+The Atiyah Lie algebroid sequence of principal bundles is an exact sequence of Lie algebroids that arises naturally in traditional gauge theories, explicitly in the context of principal connections forms. This exact sequence will be generalized by the Lie algebroid sequences of transitive Lie algebroids, allowing the formulation of the concept of transitive Lie algebroid connections, among other things.
 
 The main component of this sequence is the Atiyah Lie algebroid $TP/G$. Our first goal is to give a smooth vector bundle structure to $TP/G$ inherited from the corresponding structure on $TP$, and to define the smooth fiberwise-linear anchor and the Lie algebra structure on $\Gamma(TP/G)$, all of which will allow us to say that $TP/G$ is indeed a Lie algebroid.
 
@@ -458,8 +458,11 @@ Then, we will follow a similar procedure to define the Adjoint Lie algebroid $P 
 \end{align*}
 formally defined in definition \ref{AtiyahSeq}.
 
-\subsection{The Vector Bundle $TP/G$}
+\subsection{The Atiyah Lie algebroid}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{The Vector Bundle $TP/G$}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{proposition} \label{3.1.1}
@@ -580,9 +583,8 @@ This follows from the of the identity $\psi(m, g) g' = \psi(m, gg')$, when it is
 
 \end{proof}
 
-\subsection{The Anchor}
+\subsubsection{The Anchor}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The following proposition and its corollary allow us to define smooth vector bundle maps that start in quotient vector bundles. In particular, it will allow us to define the anchor $a:TP/G \to TM$ of what will be the Atiyah Lie algebroid, and later on to define the embedding of the adjoint Lie algebroid into $TP/G$.
 
@@ -652,9 +654,8 @@ There \emph{exists a unique (smooth) vector bundle morphism} $a: TP/G \to TM$ ov
 We call the vector bundle morphism $a:TP/G \to TM$ \emph{the anchor of the Atiyah Lie algebroid of $P$}.
 \end{theorem}
 
-\subsection{The Space of Sections}
+\subsubsection{The Space of Sections}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Now, the following proposition allows a description of the sections of the vector bundle $E/G$ from \ref{3.1.1}.
 
@@ -742,9 +743,8 @@ $\pi_*(\upsect{\sectoid X}_{pg}) = \pi_*(\natural^{-1}_{pg}(\sectoid X_{\pi(pg)}
 
 \end{proof}
 
-\subsection{The Bracket}
+\subsubsection{The Bracket}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 As we saw in \ref{3.1.3}, the space of sections of $TP/G$ can be identified as the subset of $G$-invariant sections of $TP$, so we may use the bracket of $\Gamma(TP)$ to induce a bracket in $\Gamma(TP/G)$.
 
@@ -815,8 +815,10 @@ All what is left to see is that this definitions of the anchor and the bracket o
 
 \end{proof}
 
-\subsection{The Adjoint Bundle}
+\subsection{The Adjoint Lie algebroid}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 A principal connection form on the principal bundle $P(M, G)$ is usually defined as $\alg g$-valued $1$-form  $w: TP \to \alg g$ that satisfies:
 
     \begin{itemize}
@@ -829,7 +831,8 @@ A principal connection form on the principal bundle $P(M, G)$ is usually defined
 
 We will see that the $G$-equivariance of a connection suggest the use of $TP/G$ and $P \times \alg g / G$ instead of $TP$ and $\alg g$ (or $P \times \alg g$) respectively, and the first property suggests the Atiyah sequence of a principal bundle. a natural language to talk about connection forms, and the injection map of the Atiyah sequence $j: P \times \alg g/G \to TP/G$% awhere they are replaced by vector bundle maps $\omega: TP/G \to P \times \alg g / G$ such that $\omega \circ j = id_{P \times \alg g / G}$.
 
-\subsubsection{$T^\pi P/G$} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{The Lie algebroid $T^\pi P/G$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{lemma}
 Define $T^\pi P := ker(\pi_*) \subset TP$. $T^\pi P$ is a vector subbundle of $TP$ and the action of $G$ on $TP$ restricts to an action on $T^\pi P$.
@@ -879,7 +882,8 @@ We need to prove is that the bracket of $TP/G$ of sections of $T^\pi P/G$ is aga
 That $T^\pi P/G = ker(\pi_*^G)$ is clear due to top square of the commutative diagram (\ref{anchorDiagram}) that defined the anchor on $TP/G$. This implies that the anchor $\pi_*^G$ of $TP/G$ restricts to the zero map on $T^\pi P/G$ and so the compatibility conditions between the bracket and the anchor are inherited from the Atiyah Lie algebroid.
 \end{proof}
 
-\subsection{The Atiyah Sequence}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{The Adjoint Bundle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Although we could consider the exact sequence of Atiyah Lie algebroids
 \begin{align*}
@@ -904,6 +908,9 @@ as the Atiyah sequence of the principal bundle $P(M, G)$, it will be useful to r
 % \begin{definition}
 % Left and Right brackets in a Lie algebra
 % \end{definition}
+
+\subsubsection{The Vector Bundle $P \times \alg g / G$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{proposition} \label{propAssociatedExists}
     Let $V$ be a vector space on which $G$ acts to the left. Let $g \in G$ act to the right on the trivial vector bundle $p_1 :P \times V \to P$ by $(p, v)g = (pg, g^{-1}v)$. Let $\cl{p, v}$ or $\cl{v_p}$ denote the orbit of $(p, v) \in P \times V$. The space $P \times V/G$ has a unique vector bundle structure over $M$, with projection map $p: P \times V / G \to M$, such that \begin{align}
@@ -935,6 +942,9 @@ The $G$-equivariance of $\Psi$ follows from $\Psi(\sigma(m)g, v)g' = (\sigma(m)g
 The theorem then follows from theorems \ref{3.1.1} and \ref{3.1.3}, noticing that $\Gamma^G(P \times V) \cong C^\infty_G(M)$ and that $\tilde{f \sect \mu} = (f \circ \pi) \tilde{\sect \mu}$.
 \end{proof}
 
+\subsubsection{The Inclusion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{theorem}
 Let $g \in G$ act to the left on $\alg g$ by $Ad_g: \alg g \to \alg g$, $\eta \mapsto \frac{d}{dt}|_{t=0} g \exp{(t \eta)} g^{-1}$ (derivative at the identity of $AD_g: G \to G$, $h \mapsto g h g^{-1}$). For any $p \in P$ let $m_p: G \to P$, $g \mapsto gp$. The map 
     \begin{align}
@@ -962,6 +972,9 @@ which means that $F: P \times \alg g \to TP$ is $G$-equivariant, so we may apply
 
 The injectivity of $j$ in inherited from the injectivity of $F: P \times \alg g \to TP$, which, in turn, is consequence of the injectivity of each $m_{p*, 1}$. The image of $j$ is $T^\pi P/G$ because $\pi_*^G(j\cl{p, \eta}) = \pi_*^G(\cl{\frac{d}{dt}_{t = 0}p \exp{(t \eta)}}) = \pi_*(\frac{d}{dt}_{t = 0}p \exp{(t \eta)}) = \frac{d}{dt}_{t= 0} p = 0$. Finally, since the vector bundles $P \times \alg g/G$ and $im(j) = T^\pi P/G$ have the same fiber $\alg g$, $j$ being an injective vector bundle map implies that $j$ is an isomorphism in each fiber, and so $j$ is a vector bundle isomorphism between $P \times \alg g/G$ and $T^\pi P/G$.
 \end{proof}
+
+\subsubsection{The Bracket}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Since $P \times \alg g/G$ and $T^\pi P/G$ are isomorphic as vector bundles, we can define a bracket on $P \times \alg g/G$ by the bracket on $T^\pi P/G$, however, in $P \times \alg g/G$ we also have a natural Lie algebra structure inherited from the Lie algebra bracket of $\alg g$. Our current purpose is to conclude that they coincide except for a negative sign.
 
@@ -1035,6 +1048,8 @@ And so the two Lie algebra structures $[\cdot, \cdot]^R$ and $[\cdot, \cdot]$ de
 
 \end{proof}
 
+\subsubsection{The Atiyah Sequence}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{definition}\label{AtiyahSeq}
     \begin{itemize}
     
