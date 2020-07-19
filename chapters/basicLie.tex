@@ -467,7 +467,6 @@ formally defined in definition \ref{AtiyahSeq}.
 
 \begin{proposition} \label{3.1.1}
 Let $(E, p^E, P)$ be a (smooth) vector bundle over the principal bundle $P$. Suppose that $G$ acts (smoothly) to the right on $E$ in such a way that:
-
 \begin{enumerate}
     \item Each $g \in G$ acts by vector bundle isomorphism over the right translation map $R_g: P \to P$.
     
@@ -536,12 +535,12 @@ $E$ is clearly in a bijective correspondence with the pullback bundle $\pi^*E/G 
 \end{proof}
 
 \begin{theorem}\label{theoTPGexists}
-Let $g \in G$ act to the right on the vector bundle $(TP, \pi_*, P)$ by the push-forward of the right translation map $R_g: P \to P$ on $P$. Then, the quotient space $TP/G$ has a (smooth) vector bundle structure over $M$, with projection map $(TP/G, \pi_*^G, M)$, such that the quotient map $\natural: TP \to TP/G$ is a linear surjective submersion such that, for any $\ppal X \in TP$
+Let $g \in G$ act to the right on the vector bundle $(TP, \pi, P)$ by the push-forward of the right translation map $R_g: P \to P$ on $P$. Then, the quotient space $TP/G$ has a (smooth) vector bundle structure over $M$, with the projection map called $\pi^G: TP/G \to M$, such that the quotient map $\natural: TP \to TP/G$ is a smooth, linear, surjective submersion, and for any $\ppal X \in TP$
 \begin{align}\label{eqnAnchorAtiyah}
-\pi_*^G(\cl{\ppal X}) = \pi_*(\ppal X).    
+\pi^G(\cl{\ppal X}) = \pi(\ppal X).    
 \end{align}
 \end{theorem}
-$(TP/G, \pi_*^G, M)$ and $\pi_*^G: TP/G \to TM$ are called \emph{the vector bundle of the Atiyah Lie algebroid} and \emph{the anchor of the Atiyah Lie algebroid associated to the principal bundle $P$}.
+$(TP/G, \pi^G, M)$ is called \emph{the vector bundle of the Atiyah Lie algebroid associated to the principal bundle $P$}.
 
 \begin{proof}
 This theorem reduces to the verication that the conditions of \ref{3.1.1} are satisfied by $(TP, \pi_*, P)$. Condition (1) is satisfied since, for any $g \in G$, the map $R_{g*}:TP \to TP$ is a fiberwise linear map over $R_g$ with inverse $R_{g^{-1} *}$.
@@ -580,13 +579,12 @@ This follows from the of the identity $\psi(m, g) g' = \psi(m, gg')$, when it is
 %\begin{multline*}
 %    \Psi(pg', v \oplus \eta) = \Tilde \Psi(\psi^{-1}(pg'), v \oplus \eta) = \Tilde \Psi(\psi^{-1}(p)g', v \oplus \eta) = \Tilde \Psi(m, gg', v, \eta) = \psi_{*, (m, gg')}(\theta_{*, \theta^{-1}(m)} v, R_{gg'*, 1} \eta)
 %\end{multline*}
-
 \end{proof}
 
 \subsubsection{The Anchor}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The following proposition and its corollary allow us to define smooth vector bundle maps that start in quotient vector bundles. In particular, it will allow us to define the anchor $a:TP/G \to TM$ of what will be the Atiyah Lie algebroid, and later on to define the embedding of the adjoint Lie algebroid into $TP/G$.
+The following proposition and its corollary allow us to define smooth vector bundle maps between quotient vector bundles. In particular, it will allow us to define the anchor $\pi_*:TP/G \to TM$ of what will be the Atiyah Lie algebroid, and later on to define the embedding of the adjoint Lie algebroid into $TP/G$.
 
 \begin{proposition} \label{3.1.2}
 Let $(E, p^E, P)$ and $(E, p^{E'}, P')$ be vector bundles over principal bundles $P(M, G)$ and $P'(M', G')$, respectively. Let $G$ and $G'$ act on $E$ and $E'$ respectively satisfying the conditions of \ref{3.1.1}. Let $\Psi: E \to E'$ be a vector bundle morphism, over the principal bundle morphism $F(f, \psi)$ where $f:M\to M'$ and $\psi:G \to G'$, that satisfies \[\Psi(\mu g) = \Psi(\mu) \psi(g)\] for all $\mu \in E$, $g \in G$, i.e. \emph{$\Psi$ is $G$-equivariant}. Then, there \emph{exists a unique (smooth) vector bundle morphism} $\Psi^{/G}: E/G \to E'/G'$ over $f: M \to M'$ such that $\Psi^{/G} \circ \natural = \natural' \circ \Psi$, where notation from \ref{3.1.1} has been used. In particular, the following diagram commutes:
