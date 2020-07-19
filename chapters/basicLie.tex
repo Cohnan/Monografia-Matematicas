@@ -684,12 +684,12 @@ where $p \in \mathcal U$ is any point in the fiber of $m \in U$, which has as in
 
 It is important to realize that:
 \begin{itemize}
-    \item the first map can not be extended to general sections $\mu \in \Gamma(E)$ because it is not, in general, the case that $\cl{\sect \mu(p)} = \cl{\mu(p')}$ even when $p, p' \in \pi^{-1}(m)$;
+    \item the first map can not be extended to non-invariant sections $\sect \mu \in \Gamma_{\mathcal U}(E)$ because it is not, in general, the case that $\cl{\sect \mu(p)} = \cl{\mu(p')}$ even when $p, p' \in \pi^{-1}(m)$;
     
     \item the second map can not be extended to elements $\oid \mu \in E/G_m$ to return elements of $E$ because there is not a canonical choice of $p \in \pi^{-1}(m)$ where ``$\,\upsect{\oid \mu}\,$'' should belong to .
 \end{itemize}
 
-\begin{proof}\complete{small adaptations to accommodate $U$ and $\mathcal U$}
+\begin{proof}
 Before showing smoothness, let us check that that the above isomorphisms indeed produce sections that satisfy the necessary properties.
 The map $\sect \mu \mapsto \cl{\sect \mu}$ is well defined due to the $G$-invariance of $\sect \mu \in \Gamma^G_{\mathcal U}(E)$, hence $\cl{X(pg)} = \cl{X(p)g} = \cl{X(p)}$. 
 Now, given $\sectoid \mu \in \Gamma_U(E/G)$, $\upsect{\oid \mu}$ is $G$-invariant since, if $m = \pi(p) = \pi(pg)$ for some $p \in \mathcal U$, $\upsect{\oid \mu}_{pg} = \natural^{-1}_{pg}(\sectoid \mu_{m}) = \natural^{-1}_{p}(\sectoid \mu_{m})g \in E_{pg}$. 
@@ -726,28 +726,29 @@ Notice that whenever $f: B \to B'$ is bijective, e.g. an identity map, then ever
 \end{definition}
 
 \begin{theorem} \label{theoAnchorUpsect}
-Let $\sectoid X \in \Gamma(TP/G)$. $\sectoid X$ is projectable over the surjective map $a: TP/G \to TM$, $\upsect{\sectoid X} \in \Gamma^G(TP)$ is projectable over the surjective map $\pi_*: TP \to TM$ and
+Let $\sectoid X \in \Gamma_U(TP/G)$. $\sectoid X$ is projectable over the surjective map $\pi_*^G: T\mathcal U/G \to TU$, $\upsect{\sectoid X} \in \Gamma^G_{\mathcal U}(TP)$ is projectable over the surjective map $\pi_*: T\mathcal U \to TU$ and
 \begin{align} \label{theoAnchorUpsectEqn}
-    \pi^G_*(\sectoid X) = \pi_*(\upsect{\sectoid X}) \in \Gamma(TM).
+    \pi^G_*(\sectoid X) = \pi_*(\upsect{\sectoid X}) \in \Gamma(TU).
 \end{align}
+Notice that we are understanding $TU$ as a subset of $TP$ and $T\mathcal U$ as subset of $TP$.
 \end{theorem}
 
 \begin{proof}
-Notice that the last statement makes sense thanks to the first part of the theorem, which allows the maps $a$ and $\pi_*$ to be extended to sections.% since because the sections are projectable for surjective vector bundles, so the base space maps are surjective and so the vector bundle maps may be extended to sections.
+Notice that the last statement makes sense thanks to the first part of the theorem, which allows the maps $\pi_*^G$ and $\pi_*$ to be extended to sections.% since because the sections are projectable for surjective vector bundles, so the base space maps are surjective and so the vector bundle maps may be extended to sections.
 
-$\sectoid X$ is $a$-projectable since the corresponding base space map is the bijective map $Id_M: M \to M$. 
+$\sectoid X$ is $\pi_*^G$-projectable since the corresponding base space map is the bijective map $Id_U: U \to U$.
 
-The following calculation proves the remaining statements. Let $m \in M$ and $p \in \pi^{-1}(m)$, so any other element $p' \in P$ such that $m = \pi(p)$ may be written as $p' = pg$ for some $g \in G$. Now %$\upsect{\sectoid X} \in \Gamma^G(TP)$ is $\pi_*$-projectable since 
+The following calculation proves the remaining statements. Let $m \in U$ and $p \in \pi^{-1}(m)$, so any other element $p' \in P$ such that $m = \pi(p)$ may be written as $p' = pg$ for some $g \in G$. Now %$\upsect{\sectoid X} \in \Gamma^G(TP)$ is $\pi_*$-projectable since 
 $\pi_*(\upsect{\sectoid X}_{pg}) = \pi_*(\natural^{-1}_{pg}(\sectoid X_{\pi(pg)})) = a(\natural \circ \natural^{-1}_{pg}(\sectoid X_{m})) = a(\sectoid X_{m})$, where the second to last equality is the defining property of $a$, as seen in the Diagram (\ref{anchorDiagram}). 
 \end{proof}
 
 The following theorem gives a convenient way to understand the space of sections of the Atiyah Lie algebroid that, additionally, will be used in the next section to define the Lie algebra structure on $\Gamma(TP/G)$ that completes the construction of the Atiyah Lie algebroid.
 
 \begin{theorem}\label{theoSectTPG}
-Let $U \subset$ be open, and $\mathcal U = \pi^{-1}(U) \subset P$. The $C^\infty(U)$-module of local sections $\Gamma_U(Tp/G)$ is isomorphic to the space of loca $G$-invariant sections $\Gamma_{\mathcal U}(TP)$.
+Let $U \subset M$ be open, e.g. $U = M$, and $\mathcal U = \pi^{-1}(U) \subset P$. The $C^\infty(U)$-module of local sections $\Gamma_U(TP/G)$ is isomorphic to the space of loca $G$-invariant sections $\Gamma^G_{\mathcal U}(TP)$.
 \end{theorem}
 
-Based on this theorem, \ptext{we will usually understand $\Gamma^G(TP)$ as the space of sections of $TP/G$, and we might say that a $G$-invariant section $\upsect{\oid X} \in \Gamma^G(TP)$ ``is a section of the Atiyah Lie algebroid $TP/G$''}.
+Based on this theorem, for any $U \subset M$ open \ptext{we will usually understand $\Gamma_{\mathcal U}^G(TP)$ as the space of sections of $T\mathcal U/G$, and we might say that a $G$-invariant section $\upsect{\oid X} \in \Gamma_{\mathcal U}^G(TP)$ ``is a loca section of the Atiyah Lie algebroid $TP/G$''}.
 
 \subsubsection{The Bracket}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
