@@ -789,25 +789,27 @@ For any $\sectoid X, \sectoid Y \in \Gamma_U(TP/G)$, define
 This is a Lie algebra structure on $\Gamma_U(E/G)$ called \emph{the Lie bracket of the Atiyah Lie algebroid associated to the principal bundle $P$}.
 \end{definition}
 
-This bracket inherits the $\RR$-linearity, the Jacobi identity and the alternating property from the bracket in $\Gamma_U(TP/G)$, meaning that it is a Lie algebra structure on $\Gamma_U(TP/G)$.
+This bracket inherits the $\RR$-linearity, the Jacobi identity and the alternating property from the bracket on $\Gamma_{\mathcal U}(TP)$, meaning that it is a Lie algebra structure on $\Gamma_U(TP/G)$.
 
 \begin{theorem}
-The vector bundle $TP/G$ with anchor $\pi_*^G:TP/G \to TM$ of Definition (\ref{anchorAtiyah}) and bracket of Definition (\ref{AtiyahBracket}) is a Lie algebroid over $M$, called \emph{the Atiyah Lie algebroid associated to the principal bundle $P$}.
+The vector bundle $TP/G$ with anchor $\pi_*^G:TP/G \to TM$ of definition \ref{anchorAtiyah} and bracket of definition \ref{AtiyahBracket} is a Lie algebroid over $M$, called \emph{the Atiyah Lie algebroid associated to the principal bundle $P$}.
 \end{theorem}
 
 \begin{proof}
-All what is left to see is that this definitions of the anchor and the bracket of the Lie algebroid satisfy the $2$ compatibility conditions of Definition (\ref{defnLieAlgoid}). Let $\sectoid X, Y \in \Gamma_U(TP/G)$ and let $f \in C^{\infty}(M)$:
+All what is left to see is that this definitions of the anchor and the bracket of the Lie algebroid satisfy the two compatibility conditions of definition \ref{defnLieAlgoid}. Let $\sectoid X, \sectoid Y \in \Gamma_U(TP/G)$ and let $f \in C^{\infty}(M)$:
 
     \begin{enumerate}
     
-    \item Since (\ref{theoAnchorUpsect}) tells us that $\upsect{\sectoid X}, \upsect{\sectoid Y}$ are $\pi_*$-related to $\pi_*^G(\sectoid X), a(\sectoid Y)$ respectively, then $[\upsect{\sectoid X}, \upsect{\sectoid Y}]$ is $\pi_*$-related to $[a(\sectoid X), a(\sectoid Y)]$
+    \item Since Theorem \ref{theoAnchorUpsect} tells us that $\upsect{\sectoid X}, \upsect{\sectoid Y}$ are $\pi_*$-related to $\pi_*^G(\sectoid X), \pi_*^G(\sectoid Y)$ respectively, then $[\upsect{\sectoid X}, \upsect{\sectoid Y}]$ is $\pi_*$-related to $[\pi_*^G(\sectoid X), \pi_*^G(\sectoid Y)]$ since $\pi_*$ is the anchor of the Lie algebroid $TP$, and so
     \begin{align*}
         \pi_*^G([\sectoid X, \sectoid Y])_m &= \pi_*(\upsect{[\sectoid X, \sectoid Y]}_p) & \textrm{by (\ref{theoAnchorUpsect})} \\
                                     &= \pi_*([\upsect{\sectoid X}, \upsect{ \sectoid Y}]_p) & \textrm{by the definition of $[\cdot, \cdot]$} \\
                                     &= [\pi_*^G(\sectoid X), \pi_*^G(\sectoid Y)]_m 
     \end{align*}
     
-    \item When equation (\ref{theoAnchorUpsectEqn}) is applied to $f \in C^\infty(M)$, at $m\in M$ we conclude that $a(\sectoid X)_mf = \pi_*(\upsect{\sectoid X})_m f = \upsect{\sectoid{X}}_p(f \circ \pi)$ for any $p \in \pi^{-1}(m)$, so $\upsect{\sectoid{X}}(f \circ \pi) = a(\sectoid X) \circ \pi \in C^\infty(P)$, therefore
+    \item When equation (\ref{theoAnchorUpsectEqn}) is applied to $f \in C^\infty(M)$, at $m\in U$ we conclude that 
+    \[\pi_*^G(\sectoid X)_mf = \pi_*(\upsect{\sectoid X})_m f = \upsect{\sectoid{X}}_p(f \circ \pi)\]
+    for any $p \in \pi^{-1}(m)$, so $\upsect{\sectoid{X}}(f \circ \pi) = a(\sectoid X) \circ \pi \in C^\infty(P)$, therefore
     \begin{multline*}
         \upsect{[\sectoid X, f \sectoid Y]} 
         =[\upsect{\sectoid X}, (f \circ \pi) \upsect{\sectoid Y}] \\
