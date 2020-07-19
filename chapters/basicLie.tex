@@ -93,7 +93,7 @@ The simplest examples of Lie algebroids are the tangent bundle $TM$ of a manifol
     
     \item A \emph{field of Lie algebra brackets on $L$} $[\cdot, \cdot]:\Gamma(L) \times \Gamma(L) \to \Gamma(L)$ is a section of the vector bundle $Alt^2(L; L)$ of alternating $2$-forms with values on $L$ such that, at any $m \in M$, $[\cdot, \cdot]_m:L_m \times L_m \to L_m$ makes $L_m$ a Lie algebra.
     
-    \item $L$ together with a field of Lie brackets $[\cdot, \cdot]:\Gamma(L) \times \Gamma(L) \to \Gamma(L)$ is a \emph{Lie algebra bundle} or \emph{LAB} if $L$ admits an atlas, called \emph{an LAB atlas}, $\set{\psi_i: U_i \times \alg g_i \to L_{U_i}}_{i \in I}$, where $\alg g_i$ is a Lie algebra and each $\psi_{i, m}: \alg g_i \to L_m$ is a Lie algebra isomorphism. An LAB is said to \emph{have fiber type $\alg g$} is there is an LAB atlas such that $\alg g_i = \alg g$ for all $i \in I$.
+    \item $L$ together with a field of Lie brackets $[\cdot, \cdot]:\Gamma(L) \times \Gamma(L) \to \Gamma(L)$ is a \emph{Lie algebra bundle} or \emph{LAB} if $L$ admits an atlas, called \emph{an LAB atlas}, $\set{\psi_i: U_i \times \alg g_i \to L|_{U_i}}_{i \in I}$, where $\alg g_i$ is a Lie algebra and each $\psi_{i, m}: \alg g_i \to L_m$ is a Lie algebra isomorphism. An LAB is said to \emph{have fiber type $\alg g$} is there is an LAB atlas such that $\alg g_i = \alg g$ for all $i \in I$.
     
     \end{itemize}
     
@@ -238,10 +238,19 @@ The trivial Lie algebroid makes explicit the understanding of Lie algebroids as 
 
 Let $M$ be a manifold, and $\alg g$ a (real, finite dimensional) Lie algebra with Lie bracket $[\cdot , \cdot]: \alg g \times \alg g \to \alg g$.
 
-Consider $p_1: M \times \alg g \to M$, $(m, \eta) \mapsto m$ as the trivial vector bundle with fiber $\alg g$ and base $M$. \ptext{Greek letters like $\eta, \theta, \kappa, \dots$ will usually be used to denote both elements of a lie algebra $\alg g$, and elements of a trivial bundle $M \times \alg g$; furthermore, the subscript $m \in M$ will be used both to emphasize that such a vector bundle element belongs to the fiber of $m$, and to denote the Lie algebra element in the second coordinate of such a vector bundle element, e.g. $\eta_m$ might refer, depending on the contexto, to either an element $\eta_m \in \set{m} \times \alg g \subset M \times \alg g$, or to $p_2(\eta_m) \in \alg g$}. %A section of this bundle will be denoted by capital greek letters like $H, \Theta, K, \dots$ and their image in the fiber of $m \in M$ will once again be denoted by the subscript $m$, so $H \in \Gamma(M \times \alg g)$ and $H_m \in p_1^{-1}(m)$. $X(H)$, $H$ corresponds canonically to a function $M \to g$. (The sections of/This vector bundle) has a natural Lie structure given by the fiberwise Lie bracket of the Lie algebra $\alg g$.
+Consider $p_1: M \times \alg g \to M$, $(m, \eta) \mapsto m$ as the trivial vector bundle with fiber $\alg g$ and base $M$. \ptext{Greek letters like $\eta, \theta, \kappa, \dots$ will usually be used to denote both elements of a lie algebra $\alg g$, and elements of a trivial bundle $M \times \alg g$; furthermore, the subscript $m \in M$ will be used both to emphasize that such a vector bundle element belongs to the fiber of $m$, and to denote the Lie algebra element in the second coordinate of such a vector bundle element, e.g. $\eta_m$ might refer, depending on the context, to either an element $\eta_m \in \set{m} \times \alg g \subset M \times \alg g$, or to $p_2(\eta_m) \in \alg g$}. %A section of this bundle will be denoted by capital greek letters like $H, \Theta, K, \dots$ and their image in the fiber of $m \in M$ will once again be denoted by the subscript $m$, so $H \in \Gamma(M \times \alg g)$ and $H_m \in p_1^{-1}(m)$. $X(H)$, $H$ corresponds canonically to a function $M \to g$. (The sections of/This vector bundle) has a natural Lie structure given by the fiberwise Lie bracket of the Lie algebra $\alg g$.
+
+The space of sections a trivial vector bundle $B \times V$ over $B$ is a $C^\infty(B)$-module isomorphic to the space of smooth $\alg g$-valued functions on $B$, denoted by \emph{$C^\infty(B, \alg g)$} and so 
+%to any section $\sect \mu \in \Gamma(B \times V)$ corresponds a function $\stilde \mu \in C^\infty(B, V)$ characterized by
+there is a bijective correspondence between sections $\sect \mu \in \Gamma(B \times V)$ and functions $C^\infty(B, V)$, which is characterized by
+\begin{align} \label{defnTildeSect}
+    \sect \mu(b) = (b, \stilde \mu(b)),
+\end{align}, and, to any function $\stilde \nu \in C^\infty(B, V)$ corresponds a section $\sect \nu \in \Gamma(B \times V)$. \ptext{Therefore, in general, we will indistinctively regard $C^\infty(B, V)$ of $\Gamma(B \times V)$ as the space of sections, so we might say that $\stilde \mu \in C^\infty(B, V)$ ``is a section of $B \times V$''}. In our current situation, this means that may we regard the $\alg g$-valued functions $C^\infty(M, \alg g)$ as the space of sections of $M \times \alg g$
 
 Now, consider the internal direct sum over $M$ of the vector bundles $TM$ and $M \times \alg g$ with projection map $\pi: TM \oplus (M \times \alg g) \to M$. %; -> esta definicion de la suma directa no me permite ver facilmente la estructura de variedad; Tu define distinto y prueba que la suma directa de haces vectoriales suaves es suave... pero quisiera poder ver que esta estructura es la misma estructura de variedad de $TM \times \alg g$... cambiar la definicion de la suma directa significa tambien que cambie la forma de referirme a los elementos de la suma, de tal forma que el anchor ya no es solo una proyeccion a la primera coordenada \unsure{Here I'm being explicit with basic stuff of vector bundle theory on purpose, but I'm not sure if this will stay} that the underlying manifold of this bundle is simply the NO regular submanifold of the product $TM \times (M \times \alg g)$ given by $TM \oplus (M \times \alg g) = \set{(X, \eta) \in TM \times (M \times \alg g) \st \pi(X) = p_1(\eta)}$; we will call the projection of this vector bundle $\pi: X \oplus \eta \mapsto \pi(X) = p_1(\eta)$, abusing the notation; we write an element of this vector bundle as $X \oplus \eta$, where $X \in \pi^{-1}(m)$ and $\eta \in p_1^{-1}(m)$.
 It has a vector bundle atlas $\set{(U_i, \psi^\oplus_i: U_i \times (\RR^{n_i} \oplus \alg g) \to \pi^{-1}(U_i) )}_{i \in I}$, where $n_i$ is some positive integer and $U_i$ is a chart neighborhood of $M$ that simultaneously trivializes the vector bundles $TM$ and $M \times \alg g$ through the coordinate maps $\psi^{TM}_i: U_i \times \RR^{n_i} \to TU_i$  and $\psi^\alg g = id_{U_i \times \alg g}$.
+
+The space of sections of $\Gamma(TM \oplus (M \times \alg g))$ is a $C^\infty(M)$-module isomorphic to $\Gamma(TM) \oplus_{C^\infty(M)}\Gamma(M \times \alg g)$ which, in turn, is isomorphic to the module $\Gamma(TM) \oplus_{C^\infty(M)} C^\infty(M, \alg g)$. Therefore, \ptext{the $C^\infty(M)$-module $\Gamma(TM) \oplus C^\infty(M, \alg g)$ may be regarded as the space of sections of $TM \oplus (M \times \alg g)$, and an element $\sect X \oplus \stilde \eta  \in \Gamma(TM) \oplus C^\infty(M, \alg g)$ might be called a section of this bundle.}
 
 We now define the main ingredients of the trivial Lie algebroid:
     \begin{itemize}
@@ -249,34 +258,34 @@ We now define the main ingredients of the trivial Lie algebroid:
     
     \item The bracket is given by 
     \[
-        [\sect X \oplus \sect \eta, \sect Y \oplus \sect \theta] := [\sect X, \sect Y] \oplus \{\sect X(\sect \theta) - \sect Y(\sect \eta) + [\sect \eta, \sect \theta]\}
+        [\sect X \oplus \stilde \eta, \sect Y \oplus \stilde \theta] := [\sect X, \sect Y] \oplus \{\sect X(\stilde \theta) - \sect Y(\stilde \eta) + [\stilde \eta, \stilde \theta]\}
     \]
-    for all $\sect X, \sect Y \in \Gamma(TM)$, $\sect \eta, \sect \theta \in \Gamma(M \times \alg g)$, where $\sect X(\sect \Theta)$ and $\sect Y(\sect \eta)$ mean the Lie derivative in direction of the vector field of the $\alg g$-valued functions that $\sect \Theta$ and $\sect \eta \in \Gamma(M \times \alg g)$ encode. %\sout{This definition will be motivated in the example of the Atiyah lie algebroid \ref{}, but for now we restrict ourselves to see that it works} 
-    Notice that this definition, by $\RR$-linearity and alternation which are clear, is equivalent to saying that $[\sect X, \sect \theta] := \sect X(\sect \theta)$ and $[\sect \eta, \sect Y] := - [\sect Y, \sect \eta] = -\sect Y(\sect \eta)$, i.e. to say that the bracket is the Lie derivative in direction of vector fields, applied to both vector fields and vector valued functions. %Notice that in the above formula the symbols $[\cdot , \cdot]$ are used in $3$ different instances, each one referring to the brackets of $3$ different spaces. $X(\Theta)$ makes reference to the derivative in direction of $X$ of the vector valued function $M \to \alg g$ associated to $\Theta$, or, simply, to the Lie derivative of the section $\Theta \in \Gamma(M \times \alg g)$, $\mathcal L_X \Theta$. Veamos que esto es una estructura de Lie en $\Gamma(TM \times (M \times \alg g))$:
+    for all $\sect X, \sect Y \in \Gamma(TM)$, $\stilde \eta, \stilde \theta \in C^\infty(M, \alg g)$.%, where $\sect X(\stilde \theta)$ and $\sect Y(\stilde \eta)$ mean the Lie derivative in direction of the vector field of the $\alg g$-valued functions that $\stilde \theta$ and $\stilde \eta \in \Gamma(M \times \alg g)$ encode. %\sout{This definition will be motivated in the example of the Atiyah lie algebroid \ref{}, but for now we restrict ourselves to see that it works} 
+    Notice that this definition, by $\RR$-linearity and alternation which are clear, means that $[\sect X, \stilde \theta] \equiv \sect X(\stilde \theta)$ and $[\stilde \eta, \sect Y] = - [\sect Y, \stilde \eta] \equiv -\sect Y(\stilde \eta)$, i.e. to say that the bracket on this vector bundle is the Lie derivative applied to both vector fields and vector valued functions. %Notice that in the above formula the symbols $[\cdot , \cdot]$ are used in $3$ different instances, each one referring to the brackets of $3$ different spaces. $X(\Theta)$ makes reference to the derivative in direction of $X$ of the vector valued function $M \to \alg g$ associated to $\Theta$, or, simply, to the Lie derivative of the section $\Theta \in \Gamma(M \times \alg g)$, $\mathcal L_X \Theta$. Veamos que esto es una estructura de Lie en $\Gamma(TM \times (M \times \alg g))$:
     To check the Jacobi identity
     \[ [\sectoid X, [\sectoid Y, \sectoid Z]] = [[\sectoid X, \sectoid Y], \sectoid Z] + [[\sectoid X, \sectoid Z], \sectoid Y]] \] it is enough to check verify two cases: when two of the sections $\sectoid X, \sectoid Y, \sectoid Z \in \Gamma(TM \oplus (M \times \alg g))$ are sections of $TM$ and the remaining one is a section of $M \times \alg g$, and, where the opposite is true.
     \end{itemize}
 
-Let's check that the compatibility conditions between the anchor and the bracket are satisfied; let $\sect X \oplus \sect \eta, \sect Y \oplus \sect \theta \in \Gamma(TM \oplus (M \times \alg g))$, $f \in C^\infty(M)$:
+Let's check that the compatibility conditions between the anchor and the bracket are satisfied; let $\sect X \oplus \stilde \eta, \sect Y \oplus \stilde \theta \in \Gamma(TM \oplus (M \times \alg g))$, $f \in C^\infty(M)$:
 
     \begin{enumerate}
     \item $a: \Gamma(A) \to \Gamma(TM)$ is a Lie algebra morphism: 
     \begin{multline*}
-    a([\sect X \oplus \sect \eta, \sect Y \oplus \sect \theta]) 
-    = a(\, [\sect X, \sect Y] \oplus \{\sect X(\sect \theta) - \sect Y(\sect \eta) + [\sect \eta, \sect \theta]  \}) \\
+    a([\sect X \oplus \stilde \eta, \sect Y \oplus \stilde \theta]) 
+    = a(\, [\sect X, \sect Y] \oplus \{\sect X(\stilde \theta) - \sect Y(\stilde \eta) + [\stilde \eta, \stilde \theta]  \}) \\
     = [\sect X, \sect Y] 
-    = [a(\sect X \oplus \sect \eta), a(\sect Y \oplus \sect \theta)].    
+    = [a(\sect X \oplus \stilde \eta), a(\sect Y \oplus \stilde \theta)].    
     \end{multline*}
     
     
     \item Lebniz identity: 
     \begin{align*}
-        [\sect X \oplus \sect \eta, &f\, (\sect Y \oplus \sect \theta)] =\\
-        &= [\sect X \oplus \sect \eta, f\sect Y \oplus f\sect \theta] \\
-        &=  [\sect X, f\sect Y] \oplus \{\sect X(f\sect \theta) - f\sect Y(\sect \eta) + [\sect \eta, f\sect \theta]\} \\
-        &= (f[\sect X, \sect Y] + \sect X(f)\,\sect Y) \oplus \{\sect X(f)\,\sect \theta + f\,\sect X(\sect \theta) - f\sect Y(\sect \eta) + f[\sect \eta, \sect \theta]\} \\
-        &=f([\sect X, \sect Y] \oplus \{ \sect X(\sect \theta) -\sect Y(\sect \eta) + [\sect \eta, \sect \theta]\} ) + (\sect X(f) \sect Y \oplus \sect X(f)\sect \theta) \\
-        &= f[\sect X \oplus \sect \eta, \sect Y \oplus \sect \theta] + a(\sect X \oplus \sect \eta)(f) \, (\sect Y \oplus \sect \theta)
+        [\sect X \oplus \stilde \eta, &f\, (\sect Y \oplus \stilde \theta)] =\\
+        &= [\sect X \oplus \stilde \eta, f\sect Y \oplus f\stilde \theta] \\
+        &=  [\sect X, f\sect Y] \oplus \{\sect X(f\stilde \theta) - f\sect Y(\stilde \eta) + [\stilde \eta, f\stilde \theta]\} \\
+        &= (f[\sect X, \sect Y] + \sect X(f)\,\sect Y) \oplus \{\sect X(f)\,\stilde \theta + f\,\sect X(\stilde \theta) - f\sect Y(\stilde \eta) + f[\stilde \eta, \stilde \theta]\} \\
+        &=f([\sect X, \sect Y] \oplus \{ \sect X(\stilde \theta) -\sect Y(\stilde \eta) + [\stilde \eta, \stilde \theta]\} ) + (\sect X(f) \sect Y \oplus \sect X(f)\stilde \theta) \\
+        &= f[\sect X \oplus \stilde \eta, \sect Y \oplus \stilde \theta] + a(\sect X \oplus \stilde \eta)(f) \, (\sect Y \oplus \stilde \theta)
     \end{align*}
     \end{enumerate}
 
@@ -1267,12 +1276,12 @@ where $a(\sectoid X)(f)$ means the standard Lie derivative of $f$ in direction o
 Recall that lemma \ref{lemmaSectionLocal} allowed us to restrict a Lie algebroid to an open subset $U$ of the base manifold. We now study how a transitive Lie algebroid is a collection of locally defined trivial Lie algebroids correctly pasted together.
 
 \begin{definition}[Lie algebroid atlas]
-Let $L \hookrightarrow^j A \twoheadrightarrow TM$ be a transitive Lie algebroid sequence, and let $\alg g$ be a Lie algebra. Given an open cover $\set{U_i}_{i \in I}$ of $M$, a \emph{a Lie algebroid atlas for $A$} is a collection $\set{U_i, \psi_i:U_i \times \alg g \to L_{U_i}, \Theta^i: TU_i \to A_{U_i}}_{i \in I}$ such that:
+Let $L \hookrightarrow^j A \twoheadrightarrow TM$ be a transitive Lie algebroid sequence, and let $\alg g$ be a Lie algebra. Given an open cover $\set{U_i}_{i \in I}$ of $M$, a \emph{a Lie algebroid atlas for $A$} is a collection $\set{U_i, \psi_i:U_i \times \alg g \to L|_{U_i}, \Theta^i: TU_i \to A|_{U_i}}_{i \in I}$ such that:
     \begin{itemize}
     
     \item each $\Theta^i: TU_i \to A_{u_i}$ is a Lie algebroid morphism,
     
-    \item the family $\set{\psi_i:U_i \times \alg g \to L_{U_i}}$ is a LAB atlas for the adjoint bundle 
+    \item the family $\set{\psi_i:U_i \times \alg g \to L|_{U_i}}$ is a LAB atlas for the adjoint bundle 
     
     \item for all $\sect X \in \Gamma(TU_i)$, $\sect \eta \in C^\infty(U_i, \alg g) \cong \Gamma(U_i \times \alg g)$
         \begin{align} \label{eqnCompLocal}
@@ -1289,11 +1298,11 @@ Every transitive Lie algebroid has a Lie algebroid atlas.\todo{Perhaps prove it 
 At least show that it follows from Theorem 8.2.1 (TLA over contractible $M$ admits a flat connection; this theorem is analogous to ``every ppal bundle over a contractible space has a global section'', and so requires top. algebra: cohomology theory of Ch 7 in this case). The proof I mention I should do is, I think, in page 317
 \end{proof}
 
-Throughout this chapter $L \hookrightarrow^j A \twoheadrightarrow TM$ will be a Lie algebroid sequence with Lie algebroid atlas $\set{U_i, \psi_i:U_i \times \alg g\to L_{U_i}, \Theta^i}_{i \in I}$.
+Throughout this chapter $L \hookrightarrow^j A \twoheadrightarrow TM$ will be a Lie algebroid sequence with Lie algebroid atlas $\set{U_i, \psi_i:U_i \times \alg g\to L|_{U_i}, \Theta^i}_{i \in I}$.
 
-In chapter \ref{chp:connections} we will see that the $\Theta^i$ are flat connections in $A_{U_i}$ and so their image gives a notion of horizontallity in $A_{U_i}$ and $ \oid X \mapsto \Theta^i(a(\oid)) \in A_{U_i}$ is the horizontal projection of $\oid X$ induced by $\Theta^i$.
+In chapter \ref{chp:connections} we will see that the $\Theta^i$ are flat connections in $A|_{U_i}$ and so their image gives a notion of horizontallity in $A|_{U_i}$ and $ \oid X \mapsto \Theta^i(a(\oid)) \in A|_{U_i}$ is the horizontal projection of $\oid X$ induced by $\Theta^i$.
 \begin{align}\label{defnLocalIsom}
-    S_i:&& TU_i &\oplus (U_i \times \alg g) &&\to&& A_{U_i}\\
+    S_i:&& TU_i &\oplus (U_i \times \alg g) &&\to&& A|_{U_i}\\
         && X &\oplus \eta && \mapsto && \Theta^i(X) + j\psi_i(\eta).
 \end{align}
 This vector bundle morphisms inherit the compatibility with the anchors from the respective property of the Lie algebroid morphisms $\Theta^i$, and are compatible with the bracket due to the compatibility equation (\ref{eqnCompLocal}) which is equivalent to the equation
@@ -1302,11 +1311,11 @@ This vector bundle morphisms inherit the compatibility with the anchors from the
 \end{align*}, thus we proved the following:
 
 \begin{theorem}
-The maps $S_i : TU_i \oplus (U_i \times \alg g) \to A_{U_i}$ defined in equation \ref{defnLocalIsom} are Lie algebroid isomorphisms between the trivial Lie algebroids $TU_i \oplus (U_i \times \alg g)$ and $A_{U_i}$.
+The maps $S_i : TU_i \oplus (U_i \times \alg g) \to A|_{U_i}$ defined in equation \ref{defnLocalIsom} are Lie algebroid isomorphisms between the trivial Lie algebroids $TU_i \oplus (U_i \times \alg g)$ and $A|_{U_i}$.
 
 Furthermore for each $i \in I$ 
 \begin{align*}
-    \psi_i = S_i^+: U_i \times \alg g \to L_{U_i}
+    \psi_i = S_i^+: U_i \times \alg g \to L|_{U_i}
 \end{align*} and 
 \begin{align*}
     \Theta^i(X) = S_i(X \oplus 0)
@@ -1314,7 +1323,7 @@ Furthermore for each $i \in I$
 for all $X \in TU_i$.
 \end{theorem}
 
-This means that for every $\oid X \in A_{U_{i}}$, let $X = a(\oid X) \in TM$ and so there is some $\eta^i \in U_i \times \alg g$ such that
+This means that for every $\oid X \in A|_{U_{i}}$, let $X = a(\oid X) \in TM$ and so there is some $\eta^i \in U_i \times \alg g$ such that
 \begin{align}
     \oid X = S_i(X \oplus \eta^i)
 \end{align}
@@ -1337,9 +1346,9 @@ be the transition functions for $\set{\psi_i}$. Since any element $\eta \in U_i 
 \end{align}
 notice that $\alpha^i_j(\eta) = (m, \alpha^i_{j, m}(\eta_m))$.
 
-Notice, however, that for $\oid X = S_j(X \oplus \eta^j)$ in $A_{U_{ij}}$, $\oid X \neq S_i(X \oplus \alpha^i_j(\eta^j))$ since $S_i(X \oplus \alpha^i_j(\eta^j)) = \Theta_i(X) + j\psi_i(\alpha^i_j(\eta^j)) = \Theta^i(X) + j\psi^j(\eta^j) = S_j(X \oplus \eta^j) + (\Theta^i(X) - \Theta^j(X))$. $a(S_j(X \oplus \eta^j)) = a(S_i(X \oplus \alpha^i_j(\eta^j)))$ so $\Theta^i(X) - \Theta^j(X) \in ker(a)$ and we may define the $L_{U_ij}$-valued $1$-form
+Notice, however, that for $\oid X = S_j(X \oplus \eta^j)$ in $A|_{U_{ij}}$, $\oid X \neq S_i(X \oplus \alpha^i_j(\eta^j))$ since $S_i(X \oplus \alpha^i_j(\eta^j)) = \Theta_i(X) + j\psi_i(\alpha^i_j(\eta^j)) = \Theta^i(X) + j\psi^j(\eta^j) = S_j(X \oplus \eta^j) + (\Theta^i(X) - \Theta^j(X))$. $a(S_j(X \oplus \eta^j)) = a(S_i(X \oplus \alpha^i_j(\eta^j)))$ so $\Theta^i(X) - \Theta^j(X) \in ker(a)$ and we may define the $L|_{U_ij}$-valued $1$-form
 \begin{align}
-    l^i_j: TU_{ij} & \to L_{U_{ij}} \\
+    l^i_j: TU_{ij} & \to L|_{U_{ij}} \\
             X & \mapsto j^{-1}(\Theta^j(X) - \Theta^i(X)),
 \end{align} and the $\alg g$-valued $1$-forms
 \begin{eqnsplit}
@@ -1347,7 +1356,7 @@ Notice, however, that for $\oid X = S_j(X \oplus \eta^j)$ in $A_{U_{ij}}$, $\oid
                X & \mapsto  \psi_i^{-1} \circ l^i_j(X)
 \end{eqnsplit} called \emph{the transition forms for the Lie algebroid atlas}.
 
-With this maps, in $A_{U_{ij}}$ the correct way to change from a local expression from another is given by
+With this maps, in $A|_{U_{ij}}$ the correct way to change from a local expression from another is given by
 \begin{align}
     S_j(X \oplus \eta^j) = S_i(X \oplus [\alpha^i_j(\eta^j) + \chi^i_j(X)]).
 \end{align}
@@ -1355,10 +1364,10 @@ In summary, for a Lie algebroid element that in the coordinate frame $j$ has for
 \begin{itemize}
     \item one for the distinct notions of horizontality induced by the $\Theta$'s: $\chi^i_j(X)$,
     
-    \item another for the distinct ways the adjoint Lie algebroid $L_{U_{ij}}$ is trivialized as the bundle $U_{ij}\times \alg g$: $\alpha^i_j(\eta^j)$;
+    \item another for the distinct ways the adjoint Lie algebroid $L|_{U_{ij}}$ is trivialized as the bundle $U_{ij}\times \alg g$: $\alpha^i_j(\eta^j)$;
 \end{itemize} the addition of both corrections gives $\eta^i = \chi^i_j(X) + \alpha^i_j(\eta^j)$.
 
-We now present some useful formulas. Suppose $\oid X = S_i(X \oplus \eta^i) = S_j(X \oplus \eta^j) \in A_{U_{ij}}$, then 
+We now present some useful formulas. Suppose $\oid X = S_i(X \oplus \eta^i) = S_j(X \oplus \eta^j) \in A|_{U_{ij}}$, then 
 \begin{eqnsplit}
     l^i_j(X) &= -j^{-1}(\Theta^i(X) - \Theta^j(X)) \\
              &= \phi_i(\eta^i) - \phi_j(\eta^j)
@@ -1384,7 +1393,7 @@ $\chi^i_j: U_{ij} \to U_{ij} \times \alg g$ is a Maurer-Cartan form, i.e. it sat
 \end{theorem}
 
 \begin{proof}
-Add proof is this theorem is indeed left in the document. This reduces to the fact that the standard flat connection in $U_i \times \alg g$ is mapped through $\psi^i$ to the adjoint connection $\nabla^{\Theta^i}$ in $L_{U_i}$ induced by the flat connection $\Theta^i$ in $A_{U_i}$. 
+Add proof is this theorem is indeed left in the document. This reduces to the fact that the standard flat connection in $U_i \times \alg g$ is mapped through $\psi^i$ to the adjoint connection $\nabla^{\Theta^i}$ in $L|_{U_i}$ induced by the flat connection $\Theta^i$ in $A|_{U_i}$. 
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
