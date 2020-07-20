@@ -13,7 +13,30 @@ Relation between exterior derivative and usual covariant derivative:
         
     \end{itemize}
 
-Vector calculus.
+Why relevant to me:
+    \begin{itemize}
+        
+    \item Vector calculus?
+    
+    \item What can be integrated. Inner integration generates usual (vector bundle valued) forms on the base manifold.
+    
+    \item Algebroid connections are ``normalized'' elements $ \omega \in \Omega^1(A, L)$, and their curvature is $d\omega \in \Omega^2(A, L)$. Generalized connections are precisely the elements of $\Omega^1(A, L)$.
+    
+    \item When talking about matter fields, a generalized connection $\hat \omega$ induces covariant derivatives $\hat \nabla^E: \Gamma(E) \to \mathbf{\Omega^1(A, E)}$, so that $\hat \nabla^E \phi \in \Omega^1(A, E)$.
+    
+    \item $\Omega^\bullet(A)$ is used to do cohomology on Lie algebroids
+    
+    \item In each $\Omega^p(A, L)$ the natural scalar product $(\omega, \eta) = \cl{\omega, \star \eta} = \int_A h(\omega, \star \eta)$, for $h$ in inner metric, is what will be used to define the gauge action:
+        
+        \begin{itemize}
+            
+        \item For $\hat \omega \in \Omega^1(A, L)$, define $S_{Gauge}[\hat \omega] = (\hat R, \hat R)$
+        
+        \item For $\phi \in \Gamma(E)$ and $\hat \omega$ as above, $S_{Matter}[\phi, \hat \omega] := (\hat \nabla^E \phi, \hat \nabla^E \phi)$
+        
+        \end{itemize}
+        
+    \end{itemize}
 
 TODO\todo{check this}: the third ``important example'' introduced in Lazzarini is important to me? $A$ connections on $E$ are used to define finite gauge transformations, which somehow induce the infinitesimal gauge transformation definition on generalized connections?
 
