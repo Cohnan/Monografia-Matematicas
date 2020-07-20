@@ -964,31 +964,37 @@ In $V = \alg g$, $g \in G$ acts smoothly to the right by $Ad_g = AD_{g*, 1}: \al
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{theorem}
-Let $g \in G$ act to the left on $\alg g$ by $Ad_g: \alg g \to \alg g$, $\eta \mapsto \frac{d}{dt}|_{t=0} g \exp{(t \eta)} g^{-1}$ (derivative at the identity of $AD_g: G \to G$, $h \mapsto g h g^{-1}$). For any $p \in P$ let $m_p: G \to P$, $g \mapsto gp$. The map 
+For any $p \in P$ and $g \in G$, denote by $m_p: G \to P$, $g \mapsto gp = R_g(p)$. The map 
     \begin{align}
-        m_{p*, 1}: \alg g \to T_p G,& &\eta \mapsto \frac{d}{dt}_{t = 0}p \exp{(t \eta)} = \eta^*_p
+        -m_{p*, 1}: \alg g \to T_p G,& &\eta \mapsto \frac{d}{dt}_{t = 0}p \exp{(-t \eta)} \equiv -\eta^*_p
     \end{align}
     induces an injective vector bundle morphism $j: P \times \alg g / G \to TP/G$ such that 
     \begin{align}\label{formulaJ}
-        j(\cl{p, \alg \eta}) = \cl{\frac{d}{dt}_{t = 0} p \exp{(t \alg \eta)}} \in T^\pi P/G \subset TP/G
+        j(\cl{p, \alg \eta}) = \cl{\frac{d}{dt}_{t = 0} p \exp{(-t \alg \eta)}} \in T^\pi P/G \subset TP/G
     \end{align} for any $(p, \alg \eta) \in P \times \alg g$. Furthermore, the vector bundle $P \times \alg g/G$ is isomorphic to $T^\pi P/G$ through $j$.
 \end{theorem}
 
-\begin{proof}
-Let $m: P \times G \to P$ be the Lie group action of $G$ on $P$, and identify $T(P \times G)$ with $TP \boxplus TG$. Then the map $F: P \times \alg g \to TP$, $(p, \eta) \mapsto \frac{d}{dt}_{t = 0}p \exp{(t \eta)}$ induced by $m_{p*, 1}$ may be rewritten as $F: (p, \eta) \mapsto m_{*, (p, 1)}(0_p, \eta)$, showing that $F$ is a smooth vector bundle morphism over $P$.
+The vector bundle morphism $j$ induces a $C^\infty(M)$-linear map between sections, but since $\Gamma(P \times g / G) \cong C^\infty_G(P, \alg g)$ and $\Gamma(TP/G) \cong \Gamma^G(TP)$, for $\stilde \eta \in C^\infty_G(P)$ we will also denote by $j$ the induced map:
+\begin{eqnsplit}
+    j : C^\infty_G(P, \alg g) &\to \Gamma^G(TP)\\
+    j(\stilde \eta)(p) &= \frac{d}{dt}_{t = 0} p \exp(-t \stilde \eta(p))
+\end{eqnsplit}
 
-Now, since for any $g \in G$ $p \in P$ $\eta \in \alg g$ it is true that $R_g \circ m_p = m_{pg} \circ AD_{g^{-1}} : G \to P$, then 
+\begin{proof}
+Let $m: P \times G \to P$ be the Lie group action of $G$ on $P$, and identify $T(P \times G)$ with $TP \boxplus TG$. Then the map $F: P \times \alg g \to TP$, $(p, \eta) \mapsto \frac{d}{dt}_{t = 0}p \exp{(-t \eta)}$ induced by $-m_{p*, 1}$ may be rewritten as $F: (p, \eta) \mapsto -m_{*, (p, 1)}(0_p, \eta)$, showing that $F$ is a smooth vector bundle morphism over $P$.
+
+Now, since for any $g \in G$, $p \in P$ and $\eta \in \alg g$ it is true that $R_g \circ m_p = m_{pg} \circ AD_{g^{-1}} : G \to P$, then 
 \begin{multline*}
 F((p, \eta)g)
 = F(pg, Ad_{g^{-1}}\eta)
-= m_{pg*, 1}(Ad_{g^{-1}}\eta)
-= (m_{pg} \circ AD_{g^{-1}})_{*, 1}(\eta)\\
-= (R_g \circ m_{p})_{*, 1}(\eta) 
-= (m_{p*, 1}(\eta))g = F(p, \eta) g,
+= -m_{pg*, 1}(Ad_{g^{-1}}\eta)
+= -(m_{pg} \circ AD_{g^{-1}})_{*, 1}(\eta)\\
+= -(R_g \circ m_{p})_{*, 1}(\eta) 
+= -(m_{p*, 1}(\eta))g = F(p, \eta) g,
 \end{multline*}
 which means that $F: P \times \alg g \to TP$ is $G$-equivariant, so we may apply Theorem \ref{3.1.2} to get the vector bundle morphism $j: P \times \alg g/G \to TP/G$ where the formula (\ref{formulaJ}) is nothing but the commutativity of the top square of diagram (\ref{diagramQuotientMorph}); in particular, the formula (\ref{formulaJ}) is well defined.
 
-The injectivity of $j$ in inherited from the injectivity of $F: P \times \alg g \to TP$, which, in turn, is consequence of the injectivity of each $m_{p*, 1}$. The image of $j$ is $T^\pi P/G$ because $\pi_*^G(j\cl{p, \eta}) = \pi_*^G(\cl{\frac{d}{dt}_{t = 0}p \exp{(t \eta)}}) = \pi_*(\frac{d}{dt}_{t = 0}p \exp{(t \eta)}) = \frac{d}{dt}_{t= 0} p = 0$. Finally, since the vector bundles $P \times \alg g/G$ and $im(j) = T^\pi P/G$ have the same fiber $\alg g$, $j$ being an injective vector bundle map implies that $j$ is an isomorphism in each fiber, and so $j$ is a vector bundle isomorphism between $P \times \alg g/G$ and $T^\pi P/G$.
+The injectivity of $j$ in inherited from the injectivity of $F: P \times \alg g \to TP$, which, in turn, is consequence of the injectivity of each $m_{p*, 1}$. The image of $j$ is $T^\pi P/G$ because $\pi_*^G(j\cl{p, \eta}) = \pi_*^G(\cl{\frac{d}{dt}_{t = 0}p \exp{(-t \eta)}}) = \pi_*(\frac{d}{dt}_{t = 0}p \exp{(-t \eta)})$ $=  \frac{d}{dt}_{t= 0} p = 0$. Finally, since the vector bundles $P \times \alg g/G$ and $im(j) = T^\pi P/G$ have the same fiber $\alg g$, $j$ being an injective vector bundle map implies that $j$ is an isomorphism in each fiber, and so $j$ is a vector bundle isomorphism between $P \times \alg g/G$ and $T^\pi P/G$.
 \end{proof}
 
 \subsubsection{The Bracket}
