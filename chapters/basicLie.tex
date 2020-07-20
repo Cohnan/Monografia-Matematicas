@@ -1104,7 +1104,7 @@ coincides with the Lie algebra structure induced by the (left-hand) bracket of $
 \end{theorem}
 
 \begin{proof}
-First notice that a section on $P \times \alg g/G$ is $j$-projectable since the base map of the vector bundle morphism $j$ is the identity in $M$, and so it may be extended to $j:\Gamma(P \times \alg g/G) \to \Gamma(TP/G)$. Now, given $\downsect{\eta} \in \Gamma(P \times \alg g/G)$, for $m \in M$ and $p \in \pi^{-1}(m)$, $j(\downsect{\eta})_m := j(\downsect{\eta}_m) = j(\cl{p, \stilde{\eta}(p)})$ by equation (\ref{wigly1}), so $j(\downsect{\eta})_m = \cl{m_{p*, 1}(-\stilde{\eta}(p))}$ by equation (\ref{formulaJ}), and so
+First notice that a section on $P \times \alg g/G$ is $j$-projectable since the base map of the vector bundle morphism $j$ is the identity in $M$, and so it may be extended to $j:\Gamma(P \times \alg g/G) \to \Gamma(TP/G)$. Now, given $\downsect{\eta} \in \Gamma(P \times \alg g/G)$, for $m \in M$ and $p \in \pi^{-1}(m)$, $j(\downsect{\eta})_m := j(\downsect{\eta}_m) = j(\cl{p, \stilde{\eta}(p)})$ by definition of $\stilde \eta$, so $j(\downsect{\eta})_m = \cl{m_{p*, 1}(-\stilde{\eta}(p))}$ by equation (\ref{formulaJ}), and so
 \begin{align}
     \up{j(\downsect{\eta})}_p = \natural_p^{-1}(j(\downsect{\eta}_{\pi(p)})) = m_{p*,1}(-\stilde{\eta}(p)) = \der{t}[t = 0] p \exp{(-t \stilde{\eta}(p))}.
 \end{align}
@@ -1137,24 +1137,29 @@ Finally,
 And so the two Lie algebra structures $[\cdot, \cdot]^L$ and $[\cdot, \cdot]$ defined on $P \times \alg g/G$ coincide.
 \end{proof}
 \begin{remark}
-If the map $j: P \times \alg g/G \to TP/G$ is defined instead by $j(\cl{p, \eta}) := \der{t}[t = 0] p \exp{(+t \eta)}$, then the bracket induced by $\Gamma(T^\pi P/G)$ through $j$ on $\Gamma(P \times \alg g/G)$ corresponds to the \emph{right-hand bracket} induced by $C^\infty(P, \alg g)$.
+If the map $j: P \times \alg g/G \to TP/G$ is defined instead by $j(\cl{p, \eta}) := \der{t}[t = 0] p \exp{(+t \eta)}$, then the bracket induced by $\Gamma(T^\pi P/G)$ through $j$ on $\Gamma(P \times \alg g/G)$ corresponds to the \emph{right-hand bracket} induced by $C^\infty_G(P, \alg g)$.
 \end{remark}
+
+From now on, since the two induced Lie algebra structures on $\Gamma(P \times \alg g/G)$ coincide, we will simply use the notation $[\cdot, \cdot]: \Gamma(P \times \alg g/G) \times \Gamma(P \times \alg g/G) \to \Gamma(P \times \alg g/G)$ and refer to it as \emph{the bracket on $P \times \alg g/G$}.
 
 \subsubsection{The Atiyah Sequence}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{definition}\label{AtiyahSeq}
     \begin{itemize}
     
-    \item With the Lie algebra structure on $P \times \alg g/G$ from theorem (\ref{theoBracketAdjoint}), denoted from now on by $[\cdot, \cdot]^R: \Gamma(P \times \alg g/G, P \times \alg g/G) \to \Gamma(P \times \alg g/G)$, and trivial anchor $a=0$, $P \times \alg g/G$ becomes a Lie algebroid called \emph{the adjoint Lie algebroid to the Atiyah Lie algebroid associated to the principal bundle $P$}.
+    \item With the Lie algebra structure on $P \times \alg g/G$ from Theorem (\ref{theoBracketAdjoint}), denoted from now on by $[\cdot, \cdot]: \Gamma(P \times \alg g/G, P \times \alg g/G) \to \Gamma(P \times \alg g/G)$, and trivial anchor $a=0$, $P \times \alg g/G$ becomes a Lie algebroid called \emph{the adjoint Lie algebroid to the Atiyah Lie algebroid associated to the principal bundle $P$}.
     
-    \item The exact sequence of vector bundles
+    \item The exact sequence of Lie algebroids over $M$
 \begin{align} \label{AtiyahSequence}
-    0 \to P \times \alg g/G \xrightarrow{j} TP/G \xrightarrow{a} TM \to 0
+    0 \to P \times \alg g/G \xrightarrow{j} TP/G \xrightarrow{\pi_*^G} TM \to 0
 \end{align}
 is called \emph{the Atiyah sequence of the principal bundle $P(M, G)$}.
-    
     \end{itemize}
 
+From the algebraic perspective, we could also say that the Atiyah sequence of $P$ is the induced Atiyah sequence of $C^\infty(M)$-modules
+\begin{align} \label{AtiyahSequenceSections}
+    0 \to C^\infty_G(P, \alg g) \xrightarrow{j} \Gamma^G(TP) \xrightarrow{\pi_*^G} \Gamma(TM) \to 0.
+\end{align}
 
 \end{definition}
 
