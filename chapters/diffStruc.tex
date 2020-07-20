@@ -83,42 +83,45 @@ Let $E$ be a vector bundle over $M$.
     
     \item Let \emph{$\Alt^0(A, E)$}$:= E$.
     
-    \item For $n \in \ZZ_{\geq 1}$, let \emph{$\Alt^n(A, E)$} be the natural embedding, as alternating maps, of the hom-bundle $\Hom(\bigwedge^n A, E)$ into the vector bundle of $\Hom^n(A, E)$ over $M$. Its fiber at $m \in M$ is the vector space of alternating linear transformations $\{\omega: \underbrace{A_m \times \cdots \times A_m}_{\textrm{$n$ times}} \to E_m \st \textrm{$\omega$ is $\RR$-linear and alternating}\}$.
+    \item For $n \in \ZZ_{\geq 1}$, let \emph{$\Alt^n(A, E)$} be the natural embedding, as alternating maps, of the hom-bundle $\Hom(\bigwedge^n A, E)$ into the vector bundle of $\Hom^n(A, E)$ over $M$. Its fiber at $m \in M$ is the vector space of alternating linear transformations $\{\omega: \underbrace{A_m \times \cdots \times A_m}_{\text{$n$ times}} \to E_m \st \text{$\omega$ is $\RR$-linear and alternating}\}$.
     
-    \item Let \emph{$\Alt^\bullet(A, E)$}$:= \bigoplus^\infty_{n = 0} \Alt^n(A, E)$. \todo{Is this also a vector space? I'm not sure, since the fibers are not finite dimensional now.}
+    \item Let \emph{$\Alt^\bullet(A, E)$}$:= \bigoplus^\infty_{n = 0} \Alt^n(A, E)$.
+    % OJO: i can't call this forms, since forms are either C^\infty M multilinear, or complete vector bundle morphisms!
     
-    \item For $n \in \ZZ_{\geq 0}$, let \emph{$\Alt^n(A)$} and \emph{$Alt^\bullet (A)$} be the application of the previous definitions to the trivial vector bundle $E = M \times \RR$.
+    %\item For $n \in \ZZ_{\geq 0}$, let \emph{$\Alt^n(A)$} and \emph{$Alt^\bullet (A)$} be the application of the previous definitions to the trivial vector bundle $E = M \times \RR$.
         
     \end{itemize}
     
 \end{definition}
+
+Notice that $\Alt^\bullet(A, E)$ is a vector bundle with finite dimensional fibers since, due to the antisymmetry property, $\Alt^n(A, E) = 0$ for all values of $n$ greater than some fixed value $N \in \ZZ > 0$.
 
 \begin{definition}
 Let $E$ be a vector bundle over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$.
 
     \begin{itemize}
     
-    \item For $n \in \ZZ_{\geq 0}$, define the $C^\infty(M)$-module \emph{$\Omega^n(A, E)$}$:= \Gamma\Alt^n(A, E)$. 
+    \item For $n \in \ZZ_{\geq 0}$, define the $C^\infty(M)$-module \emph{$\Omega^n(A, E)$}$:= \Gamma\Alt^n(A, E)$. Its elements are called \emph{$E$-valued $n$-forms on $A$}.
     
-    \item Define the $C^\infty(M)$-module $\emph{\Omega^\bullet(A, E)} := \bigoplus^\infty_{n = 0} \Omega^n(A, E)$.
+    \item Define the $C^\infty(M)$-module $\emph{\Omega^\bullet(A, E)} := \bigoplus^\infty_{n = 0} \Omega^n(A, E)$. Its elements are simply called \emph{$E$-valued forms on $A$}.
     
-    \item \item For $n \in \ZZ_{\geq 0}$, let \emph{$\Omega^n(A)$}$:= \Gamma\Alt^n(A)$. 
+    %\item \item For $n \in \ZZ_{\geq 0}$, let \emph{$\Omega^n(A)$}$:= \Gamma\Alt^n(A)$. 
     
-    \item Define the $C^\infty(M)$-module $\emph{\Omega^\bullet(A)} := \bigoplus^\infty_{n = 0} \Omega^n(A)$.
+    %\item Define the $C^\infty(M)$-module $\emph{\Omega^\bullet(A)} := \bigoplus^\infty_{n = 0} \Omega^n(A)$.
         
     \end{itemize}
     
 \end{definition}
 
 \begin{remark}
-Due to the bijective correspondence between $C^\infty(M)$-linear maps between sections of vector bundles and vector bundle morphisms, 
-    \begin{itemize}
-        
-    \item $\Omega^n(A, E)$ may be considered the space of $C^\infty(M)$-multilinear antisymmetric maps from $\Gamma(A)^n$ to $\Gamma(E)$.
+Due to the bijective correspondence between $C^\infty(M)$-linear maps between sections of vector bundles and vector bundle morphisms, $\Omega^n(A, E)$ may be considered the space of $C^\infty(M)$-multilinear antisymmetric maps from $\Gamma(A)^n$ to $\Gamma(E) = \Omega^0(A, E)$. We will as \ptext{$E$-valued $n$-forms on $A$} to both elements
+\begin{align}
+    \omega &: \underbrace{A \oplus \cdots \oplus A}_{\text{$n$ times}} \to E & \text{alternating $\RR$-vector bundle morphism}\\
+    \omega &: \underbrace{\Gamma(A) \times \cdots \times \Gamma(A)}_{\text{$n$ times}} \to \Gamma(E) & \text{alternating $C^\infty(M)$-multilinear map}.
+\end{align}
     
-    \item $\Omega^n(A)$ may be considered the space of $C^\infty(M)$-multilinear antisymmetric maps from $\Gamma(A)^n$ to $C^\infty(M)$.
+    %\item $\Omega^n(A)$ may be considered the space of $C^\infty(M)$-multilinear antisymmetric maps from $\Gamma(A)^n$ to $C^\infty(M)$.
     
-    \end{itemize}
 \end{remark}
 
 \begin{theorem}
@@ -126,18 +129,28 @@ Due to the bijective correspondence between $C^\infty(M)$-linear maps between se
     
     \item $\Alt^n(A, E)$ and $E \otimes \bigwedge^n A^*$ are isomorphic vector bundles.
     
-    \item $\Alt^n(A)$ and $\bigwedge^n A^*$ are isomorphic vector bundles.
+    %\item $\Alt^n(A)$ and $\bigwedge^n A^*$ are isomorphic vector bundles.
     
-    \item $\Omega^n(A, E)$ and $\Gamma(E) \otimes \Gamma\Alt A^*$ are isomorphic $C^\infty(M)$-modules.
+    \item $\Omega^n(A, E)$ and $\Gamma(E) \otimes \Gamma\Alt^n A^*$ are isomorphic $C^\infty(M)$-modules.
     
-    \item $\Omega^n(A)$ and $\Gamma\Alt^nA^*$ are isomorphic $C^\infty(M)$-modules.
+    %\item $\Omega^n(A)$ and $\Gamma\Alt^nA^*$ are isomorphic $C^\infty(M)$-modules.
     
     \end{itemize}
 \end{theorem}
 
+\begin{proof}
+$\Alt^n(A, E) \cong \Hom(\bigwedge^n A, E)$ by definition, and $\Hom(\bigwedge^n A, E) \cong E \otimes (\bigwedge^n A)* \cong E \otimes \bigwedge^n A*$.
+
+Since $\Gamma$ is a strong monoidal function, it distributes over the tensor product, and so the result follows from the first part of the theorem.
+\end{proof}
+
 % Only define things for A, E, and THEN do define the one without E
 \begin{definition}
-Equip $\Omega^n(A, E)$ with the $\wedge$
+Let $E$ be a Lie algebra bundle over $M$ on which $A$ is represented. Define on $\Omega^\cdot(A, E)$ the binary operation
+\begin{eqnsplit}
+\wedge : \Omega^p(A, E) \times \Omega^q(A, E) &\to \Omega^{p+q}(A, E) \\
+(\sect \omega \wedge \sect \eta)(\sectoid X_1, \dots, \sectoid X_{p+q}) := \frac{1}{p!q!} \sum_{\sigma \in S_{p+q}} (-1)^{\sigma} []
+\end{eqnsplit}
 \end{definition}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
