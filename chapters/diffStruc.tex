@@ -146,13 +146,26 @@ Since $\Gamma$ is a strong monoidal function\todo{can I make this more clear?}, 
 
 % Only define things for A, E, and THEN do define the one without E
 \begin{definition}
-Let $E$ be a Lie algebra bundle over $M$ on which $A$ is represented. Define on $\Omega^\bullet(A, E)$ the binary operation
+Let $E$ be a Lie algebra bundle over $M$ on which $A$ is represented. Define on $\Omega^\bullet(A, E)$ the binary operation, called \emph{the wedge product of LAB-valued forms on $A$}
 \begin{eqnsplit}
 \wedge : \Omega^p(A, E) \times \Omega^q(A, E) &\to \Omega^{p+q}(A, E) \\
 (\omega \wedge \eta)(\sectoid X_1, \dots, \sectoid X_{p+q}) &:= \\
 \frac{1}{p!q!} \sum_{\sigma \in S_{p+q}} &(-1)^{\sigma} [\omega(\oid X_{\sigma(1)}, \cdots, \oid X_{\sigma(p)}), \eta(\oid X_{\sigma(p+1)}, \cdots, \oid X_{\sigma(p+q)})].
 \end{eqnsplit}
 \end{definition}
+
+\begin{definition}
+Let $E$ be a LAB over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$. Define the differential $\hat d_\phi: \Omega^{\bullet}(A, E) \to \Omega^{\bullet+1}(A, E)$ by the Koszul formula
+\begin{align}
+\hat d_\phi
+\end{align}
+
+
+\end{definition}
+
+\begin{theorem}
+Let $E$ be a LAB over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$. Then $(\Omega^\bullet(A, E), \wedge, \hat d_\phi)$ is a graded differential (Lie?) algebra.
+\end{theorem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
