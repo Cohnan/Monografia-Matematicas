@@ -1563,7 +1563,7 @@ For each $i \in I$, define the LAB morphism, i.e. vector bundle morphism that re
 It induces $C^\infty(M)$-module and Lie algebra morphism
 \begin{eqnsplit}
     \tilde \psi_i: C^\infty(U_i, \alg g) &\to C^\infty_G(\mathcal U_i, \alg g) \\
-    \stilde \eta &\mapsto (\sigma_i(m)g \mapsto Ad_{g^{-1}}(\stilde \eta_m))  \quad \textrm{for any $m \in M$, $g \in G$}.
+    \stilde \eta &\mapsto (\sigma_i(m)g \mapsto Ad_{g^{-1}}(\stilde \eta(m)))  \quad \textrm{for any $m \in M$, $g \in G$}.
 \end{eqnsplit}
 \end{definition}
 
@@ -1587,6 +1587,22 @@ $\Theta_i$ is Lie algebroid morphism. That's what it induces
 
 Compatibility condition $[\up{\Theta}_i(X), \up{j \psi(\eta)}] = \up j(\tilde \psi_i(\sect X(\stilde \eta)))$
 \end{proof}
+
+\begin{definition}
+For any $i \in I$, define the Lie algebroid morphism
+\begin{eqnsplit}
+    S_i: TU_i \oplus (U_i \times \alg g) &\to T\mathcal U_i/G \\
+    X \oplus \eta &\mapsto \Theta_i(X) + j \psi_i(\eta) = \cl{\sigma_{i*}(X) + \der{t}[t = 0]\sigma_i(m) \exp{(-t \eta)}}.
+\end{eqnsplit}
+This map induces the $C^\infty(M)$-linear and Lie algebra morphism:
+\begin{eqnsplit}
+    \up{S_i}: \Gamma(TU_i)\oplus C^\infty(U_i, \alg g) &\to  \Gamma^G(T \mathcal U_i)\\
+    \sect X \oplus \stilde \eta &\mapsto \left(\sigma_i(m) g \mapsto R_{g*}\sigma_{i*}(X) + \der{t}[t=0] \sigma_i(m)\exp{(-t \stilde \eta(m))} g\right)
+\end{eqnsplit} for any $m \in U_i$ and $g \in G$.
+\end{definition}
+
+\linea
+
 
 
 %\section{Actions of Lie Algebroids?}
