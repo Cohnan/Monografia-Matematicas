@@ -77,17 +77,69 @@ TODO\todo{check this}: the third ``important example'' introduced in Lazzarini i
 Throughout this section, let $A$ be a Lie algebroid over the manifold $M$ with anchor $a$.
 
 \begin{definition}
-Let $E$ be a vector bundle over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$. 
+Let $E$ be a vector bundle over $M$. 
 
     \begin{itemize}
     
-    \item Let \emph{$\Alt^0(A, E)$}$:= E$ and for $n \in \ZZ_{\geq 1}$ let \emph{$\Alt^n(A, E)$} be the natural embedding, as alternating maps, of the hom-bundle $\Hom(\bigwedge^n A, E)$ into the vector bundle of $\Hom^n(A, E)$ over $M$. Its fiber at $m \in M$ is the vector space of alternating linear transformations $\{\omega: \underbrace{A_m \times \cdots \times A_m}_{\textrm{$n$ times}} \to E_m \st \textrm{$\omega$ is alternating}\}$.
+    \item Let \emph{$\Alt^0(A, E)$}$:= E$.
     
-    \item For $n \in \ZZ_{\geq 0}$, let \emph{$\Alt^n(A)$}$:= \Alt^n(A, M \times \RR)$.
+    \item For $n \in \ZZ_{\geq 1}$, let \emph{$\Alt^n(A, E)$} be the natural embedding, as alternating maps, of the hom-bundle $\Hom(\bigwedge^n A, E)$ into the vector bundle of $\Hom^n(A, E)$ over $M$. Its fiber at $m \in M$ is the vector space of alternating linear transformations $\{\omega: \underbrace{A_m \times \cdots \times A_m}_{\textrm{$n$ times}} \to E_m \st \textrm{$\omega$ is $\RR$-linear and alternating}\}$.
+    
+    \item Let \emph{$\Alt^\bullet(A, E)$}$:= \bigoplus^\infty_{n = 0} \Alt^n(A, E)$. \todo{Is this also a vector space? I'm not sure, since the fibers are not finite dimensional now.}
+    
+    \item For $n \in \ZZ_{\geq 0}$, let \emph{$\Alt^n(A)$} and \emph{$Alt^\bullet (A)$} be the application of the previous definitions to the trivial vector bundle $E = M \times \RR$.
         
     \end{itemize}
     
 \end{definition}
+
+\begin{definition}
+Let $E$ be a vector bundle over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$.
+
+    \begin{itemize}
+    
+    \item For $n \in \ZZ_{\geq 0}$, define the $C^\infty(M)$-module \emph{$\Omega^n(A, E)$}$:= \Gamma\Alt^n(A, E)$. 
+    
+    \item Define the $C^\infty(M)$-module $\emph{\Omega^\bullet(A, E)} := \bigoplus^\infty_{n = 0} \Omega^n(A, E)$.
+    
+    \item \item For $n \in \ZZ_{\geq 0}$, let \emph{$\Omega^n(A)$}$:= \Gamma\Alt^n(A)$. 
+    
+    \item Define the $C^\infty(M)$-module $\emph{\Omega^\bullet(A)} := \bigoplus^\infty_{n = 0} \Omega^n(A)$.
+        
+    \end{itemize}
+    
+\end{definition}
+
+\begin{remark}
+Due to the bijective correspondence between $C^\infty(M)$-linear maps between sections of vector bundles and vector bundle morphisms, 
+    \begin{itemize}
+        
+    \item $\Omega^n(A, E)$ may be considered the space of $C^\infty(M)$-multilinear antisymmetric maps from $\Gamma(A)^n$ to $\Gamma(E)$.
+    
+    \item $\Omega^n(A)$ may be considered the space of $C^\infty(M)$-multilinear antisymmetric maps from $\Gamma(A)^n$ to $C^\infty(M)$.
+    
+    \end{itemize}
+\end{remark}
+
+\begin{theorem}
+    \begin{itemize}
+    
+    \item $\Alt^n(A, E)$ and $E \otimes \bigwedge^n A^*$ are isomorphic vector bundles.
+    
+    \item $\Alt^n(A)$ and $\bigwedge^n A^*$ are isomorphic vector bundles.
+    
+    \item $\Omega^n(A, E)$ and $\Gamma(E) \otimes \Gamma\Alt A^*$ are isomorphic $C^\infty(M)$-modules.
+    
+    \item $\Omega^n(A)$ and $\Gamma\Alt^nA^*$ are isomorphic $C^\infty(M)$-modules.
+    
+    \end{itemize}
+\end{theorem}
+
+% Only define things for A, E, and THEN do define the one without E
+\begin{definition}
+Equip $\Omega^n(A, E)$ with the $\wedge$
+\end{definition}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Cartan Operations}
