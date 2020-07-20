@@ -114,7 +114,7 @@ Let $E$ be a vector bundle over $M$ on which there is a representation $\phi: A 
 \end{definition}
 
 \begin{remark}
-Due to the bijective correspondence between $C^\infty(M)$-linear maps between sections of vector bundles and vector bundle morphisms, $\Omega^n(A, E)$ may be considered the space of $C^\infty(M)$-multilinear antisymmetric maps from $\Gamma(A)^n$ to $\Gamma(E) = \Omega^0(A, E)$. We will as \ptext{$E$-valued $n$-forms on $A$} to both elements
+Due to the bijective correspondence between $C^\infty(M)$-linear maps between sections of vector bundles and vector bundle morphisms, $\Omega^n(A, E)$ may be considered the space of $C^\infty(M)$-multilinear antisymmetric maps from $\Gamma(A)^n$ to $\Gamma(E) = \Omega^0(A, E)$. We will refer as \ptext{$E$-valued $n$-forms on $A$} to both elements
 \begin{align}
     \omega &: \underbrace{A \oplus \cdots \oplus A}_{\text{$n$ times}} \to E & \text{alternating $\RR$-vector bundle morphism}\\
     \omega &: \underbrace{\Gamma(A) \times \cdots \times \Gamma(A)}_{\text{$n$ times}} \to \Gamma(E) & \text{alternating $C^\infty(M)$-multilinear map}.
@@ -141,15 +141,16 @@ Due to the bijective correspondence between $C^\infty(M)$-linear maps between se
 \begin{proof}
 $\Alt^n(A, E) \cong \Hom(\bigwedge^n A, E)$ by definition, and $\Hom(\bigwedge^n A, E) \cong E \otimes (\bigwedge^n A)* \cong E \otimes \bigwedge^n A*$.
 
-Since $\Gamma$ is a strong monoidal function, it distributes over the tensor product, and so the result follows from the first part of the theorem.
+Since $\Gamma$ is a strong monoidal function\todo{can I make this more clear?}, it distributes over the tensor product, and so the result follows from the first part of the theorem.
 \end{proof}
 
 % Only define things for A, E, and THEN do define the one without E
 \begin{definition}
-Let $E$ be a Lie algebra bundle over $M$ on which $A$ is represented. Define on $\Omega^\cdot(A, E)$ the binary operation
+Let $E$ be a Lie algebra bundle over $M$ on which $A$ is represented. Define on $\Omega^\bullet(A, E)$ the binary operation
 \begin{eqnsplit}
 \wedge : \Omega^p(A, E) \times \Omega^q(A, E) &\to \Omega^{p+q}(A, E) \\
-(\sect \omega \wedge \sect \eta)(\sectoid X_1, \dots, \sectoid X_{p+q}) := \frac{1}{p!q!} \sum_{\sigma \in S_{p+q}} (-1)^{\sigma} []
+(\omega \wedge \eta)(\sectoid X_1, \dots, \sectoid X_{p+q}) &:= \\
+\frac{1}{p!q!} \sum_{\sigma \in S_{p+q}} &(-1)^{\sigma} [\omega(\oid X_{\sigma(1)}, \cdots, \oid X_{\sigma(p)}), \eta(\oid X_{\sigma(p+1)}, \cdots, \oid X_{\sigma(p+q)})].
 \end{eqnsplit}
 \end{definition}
 
