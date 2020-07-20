@@ -61,18 +61,19 @@
 %% Derivatives
 
 % Normal derivative
-% Example: \der[n]{f}{x}[x_0]
-\NewDocumentCommand \der {O{} m m o}
-{
-	\frac{\mathrm{d}^{#1} #2}{\mathrm{d} {#3}^{#1}}%
-	\IfNoValueF{#4} {\biggr|_{#4}}
+% Example: \der[n][f]{x}[x = 0]
+\NewDocumentCommand \der {O{} O{} m o}
+{   \ensuremath{
+	\left.\frac{\mathrm{d}^{#1} #2}{\mathrm{d} {#3}^{#1}}%
+	\IfNoValueF{#4} \right|_{#4}
+	}
 }
 
 %% Partial Derivatives
 
 % With respect to one variable
 % Example: \pder[n]{f}{y}[\pthvars[x_0][y_0][z_0]][(x, z)
-\NewDocumentCommand \pder {O{} m m O{} o}
+\NewDocumentCommand \pder {O{} O{} m O{} o}
 {
     \ensuremath{
 	\IfNoValueTF {#5}
@@ -89,7 +90,7 @@
 
 % With respecto to two variables
 % Example: \twpder{g}{y}{x}[(x_0, y_0)]
-\NewDocumentCommand \twpder {m m m O{}}
+\NewDocumentCommand \twpder {O{} m m O{}}
 {
 	\frac{\partial^2 #1}{\partial #2 \partial #3} #4
 }
