@@ -975,7 +975,7 @@ For any $p \in P$ and $g \in G$, denote by $m_p: G \to P$, $g \mapsto gp = R_g(p
 \end{theorem}
 
 The vector bundle morphism $j$ induces a $C^\infty(M)$-linear map between sections, but since $\Gamma(P \times g / G) \cong C^\infty_G(P, \alg g)$ and $\Gamma(TP/G) \cong \Gamma^G(TP)$, for $\stilde \eta \in C^\infty_G(P)$ denote by $\up{j}$ the induced map:
-\begin{eqnsplit} \label{equationJbar}
+\begin{eqnsplit} \label{formulaJbar}
     \up{j} : C^\infty_G(P, \alg g) &\to \Gamma^G(TP)\\
     \up{j}(\stilde \eta)(p) &= \der{t}[t = 0] p \exp(-t \stilde \eta(p))
 \end{eqnsplit}
@@ -1521,7 +1521,73 @@ If $X \oplus \eta^i$ and $X \oplus \eta^j$ are local trivializations of $\oid X$
      \chi^i_j(X) &= g_{ij} dg_{ij}^{-1}(X) 
 \end{align}
 
-Let $P(M, G)$ be a principal bundle with the 
+Let $P(M, G)$ be a (smooth) principal bundle, and let $\alg g$ be the Lie algebra of the Lie group $G$. Since this is the family of examples that appear in regular Gauge theories, some time will be devoted to its understanding.
+
+Throught this section, let $\{(U_i, \rho_i: U_i \times G \to P|_{U_i})\}_{i \in I}$ be a principal bundle atlas, let $\mathcal U_i = P|_{U_i} = \pi^{-1}(U_i)$ and let $\sigma_i: U_i \to \mathcal U_i$ be the corresponding trivializing local sections, which satisfy
+\begin{eqnsplit*}
+    \rho_i: U_i \times G &\to \mathcal U_i\\
+            (m, g) &\mapsto \sigma_i(m) g.
+\end{eqnsplit*} Finally, let $g_{ij}: U_{ij} = U_i \inter U_j \to G$, be the transition functions of the atlas. They satisfy, for any $m \in U_{ij}$,
+\begin{align*}
+    \sigma_i(m) &= \sigma_j(m) g_{ij}(m)\\
+    \rho_i(m, g) &= \rho_j(m, g_{ij}(m) g).
+\end{align*}
+
+From this principal bundle atlas, we will now build a Lie algebroid atlas for the Atiyah Lie algebroid $TP/G$. Since we are identifying the spaces of sections of the Atiyah sequence with some other $C^\infty(M)$-modules, we will also understand the relevant maps in terms of this spaces.
+
+For the sake of completeness, we recall the map $j$ of the Atiyah sequence.
+\begin{definition}
+For any $p \in P$ and $\eta \in \alg g$, the immersion and injective Lie algebroid morphism $j$ is defined by equation (\ref{formulaJ}):
+\begin{eqnsplit*}
+    j: P \times \alg g/G &\to T^\pi P/G \subset TP/G\\
+    \cl{p, \alg \eta} &\mapsto \cl{\der{t}[t = 0] p \exp{(-t \alg \eta)}}.
+\end{eqnsplit*}
+It induces the $C^\infty(M)$-module and Lie algebra morphism of equation (\ref{formulaJbar}):
+\begin{eqnsplit*}
+    \up{j} : C^\infty_G(P, \alg g) &\to \Gamma^G(TP)\\
+    \up{j}(\stilde \eta)(p) &= \der{t}[t = 0] p \exp(-t \stilde \eta(p))
+\end{eqnsplit*}
+\end{definition}
+
+\begin{theorem}\label{algebroidAtlasAtiyah}
+A principal bundle atlas induces on $P(M, G)$, through the constructions below, a Lie algebroid atlas on $0 \to P \times \alg g/G \xrightarrow{j} TP/G \xrightarrow{a} TM \to 0$.
+\end{theorem}
+
+\begin{definition}
+For each $i \in I$, define the LAB morphism, i.e. vector bundle morphism that respects the fiberwise Lie brackets,
+\begin{eqnsplit}
+    \psi_i: U_i \times \alg g  \to &\mathcal U_i \times \alg g/G \\
+    (m, \eta) \mapsto &\cl{\sigma_i(m), \eta} \\
+                   &\equiv \cl{\sigma(m)g, Ad_{g^{-1}} \eta}  \quad \textrm{for any $g \in G$}.
+\end{eqnsplit}
+It induces $C^\infty(M)$-module and Lie algebra morphism
+\begin{eqnsplit}
+    \tilde \psi_i: C^\infty(U_i, \alg g) &\to C^\infty_G(\mathcal U_i, \alg g) \\
+    \stilde \eta &\mapsto (\sigma_i(m)g \mapsto Ad_{g^{-1}}(\stilde \eta_m))  \quad \textrm{for any $m \in M$, $g \in G$}.
+\end{eqnsplit}
+\end{definition}
+
+\begin{definition}
+For each $i \in I$, define the Lie algebroid morphism
+\begin{eqnsplit}
+    \Theta_i: TU_i \to & T\mathcal U_i/G \\
+             X \mapsto &\cl{\sigma_{i*}(X)}.
+\end{eqnsplit}
+It induces $C^\infty(M)$-module and Lie algebra morphism
+\begin{eqnsplit}
+    \up \Theta_i: \Gamma(TU_i) &\to \Gamma^G(T\mathcal U_i) \\
+    \sect X &\mapsto (\sigma_i(m)g \mapsto R_{g*}\sigma_{i*}(X))  \quad \textrm{for any $m \in M$, $g \in G$}.
+\end{eqnsplit}
+\end{definition}
+
+\begin{proof}[Proof of Theorem \ref{algebroidAtlasAtiyah}]\todo{hacer}
+$\psi_i$ is LAB morphism. That is what is induced.
+
+$\Theta_i$ is Lie algebroid morphism. That's what it induces
+
+Compatibility condition $[\up{\Theta}_i(X), \up{j \psi(\eta)}] = \up j(\tilde \psi_i(\sect X(\stilde \eta)))$
+\end{proof}
+
 
 %\section{Actions of Lie Algebroids?}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
