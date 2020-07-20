@@ -1435,7 +1435,7 @@ This means that for every $\oid X \in A|_{U_{i}}$, $X = a(\oid X) \in TM$ and so
 \begin{align}
     \oid X = S_i(X \oplus \eta^i).
 \end{align}
-The set $\{X \oplus \eta^i\}_{i \in I}$ will be called \emph{a family of trivializations of $\oid X \in A$}.
+The set $\{X \oplus \eta^i \in TU_i \oplus (U_i \times \alg g)\}_{i \in I}$ will be called \emph{a family of trivializations of $\oid X \in A$}. Analogously, for $\sectoid X \in \Gamma(A)$, a \emph{family of trivializations of $\sectoid X$} will be a set $\{\sect X \oplus \stilde \eta^i \in \Gamma(TU_i) \oplus C^\infty(U_i, \alg g)\}_{i \in I}$.
 
 Now, to understand the transition between charts of a Lie algebroid atlas,
 
@@ -1509,17 +1509,8 @@ Add proof is this theorem is indeed left in the document. This reduces to the fa
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Local Description of the Atiyah Lie algebroid}
 
-$\psi_i(\eta^i)(p) = Ad_{g^{-1}}\eta^i(x)$.
-
 $\Theta^i(X)_p = R_{g*, s_i(x)} s_{i*, x} X_x$
 
-If $X \oplus \eta^i$ and $X \oplus \eta^j$ are local trivializations of $\oid X$, $\sectoid X$, then
-
-\begin{align}
-    \eta^i &= g_{ij} \eta^j g_{ij}^{-1} + g_{ij} dg^{-1}_{ij}(X) \\
-    \alpha^i_j(\eta) &= g_{ij} \eta  g_{ij}^{-1} \\
-     \chi^i_j(X) &= g_{ij} dg_{ij}^{-1}(X) 
-\end{align}
 
 Let $P(M, G)$ be a (smooth) principal bundle, and let $\alg g$ be the Lie algebra of the Lie group $G$. Since this is the family of examples that appear in regular Gauge theories, some time will be devoted to its understanding.
 
@@ -1602,8 +1593,61 @@ This map induces the $C^\infty(M)$-linear and Lie algebra morphism:
 \end{definition}
 
 \linea
+Show what is necessary for the following formulas to make sense.
 
+\begin{definition}
+For any $i, j \in I$ such that $U_i \inter U_j \neq \empty$, the change of coordinate maps for the LAB atlas ${\psi_i: U_i \times \alg g \to \mathcal U_i \times \alg g/G}$ is the vector bundle morphism that respects the fiberwise bracket given by
+\begin{eqnsplit}
+    \alpha^i_j: U_{ij} \to \alg g &\to U_{ij} \to \alg g\\
+    (m, \eta) &\mapsto (m, Ad_{g_{ij}(m)} \eta)
+\end{eqnsplit}. It induces $C^\infty(M)$-linear and Lie algebra morphism 
+\begin{eqnsplit}
+    \alpha^i_j:C^\infty(U_{ij}, \alg g) & \to C^\infty(U_{ij}, \alg g)\\
+    \stilde \eta &\mapsto (m \mapsto Ad_{g_{ij}(m)} (\stilde \eta (m))).
+\end{eqnsplit} If $G$ is matrix Lie group, this may be written as:
+\begin{align}
+    \alpha^i_j(\stilde \eta) = g_{ij} \stilde \eta {g_{ij}}^{-1}
+\end{align}
+\end{definition}
 
+\begin{definition}
+For any $i, j \in I$ such that $U_i \inter U_j \neq \empty$, define the $\mathcal U_{ij} \times \alg g/G$ valued forms on $U_{ij}$ \todo{what other properties does it have?}
+\begin{eqnsplit}
+    l^i_j: TU_{ij} &\to \mathcal U_{ij} \times \alg g/G \\
+        X &\mapsto j^{-1}(\Theta^j(X) - \Theta^i(X)) = \cl{\sigma_i(m), L_{g_{ij}(m)*}(g^{-1}_{ij*} X)}
+\end{eqnsplit} for $m = \pi(X)$. If $G$ is a matrix Lie group, this becomes:
+\begin{align}
+    l^i_j(X) = \cl{\sigma_i(m), g_{ij}(m) dg^{-1}_{ij}(X)}
+\end{align}. It induces $C^\infty(M)$-linear map
+\begin{eqnsplit}
+    llenar
+\end{eqnsplit} and
+\begin{eqnsplit}
+    llenar, matrix valued
+\end{eqnsplit}.
+\end{definition}
+
+\begin{definition}
+For any $i, j \in I$ such that $U_i \inter U_j \neq \empty$, define the $\alg g$-valued forms on $U_{ij}$ \todo{what other properties does it have? Maurer-Cartan, ...}
+\begin{eqnsplit}
+    \chi^i_j: TU_{ij} &\to U_{ij} \times \alg g \\
+        X &\mapsto \psi_i^{-1} \circ j^{-1}(\Theta^j(X) - \Theta^i(X)) = \left(\sigma_i(m), L_{g_{ij}(m)*}(g^{-1}_{ij*} X)\right)
+\end{eqnsplit} for $m = \pi(X)$. If $G$ is a matrix Lie group, this becomes:
+\begin{align}
+    \chi^i_j(X) = \left(m, g_{ij}(m) dg^{-1}_{ij}(X)\right)
+\end{align}. It induces $C^\infty(M)$-linear map
+\begin{eqnsplit}
+    llenar
+\end{eqnsplit} and
+\begin{eqnsplit}
+    \chi^i_j(\sect X) = g_{ij} dg_{ij}^{-1}(\sect X)
+\end{eqnsplit}.
+\end{definition}
+
+If $\{\sect X \oplus \stilde \eta^i\}$ is a family of local trivializations of $\oid X \in \Gamma(TP/G)$, then
+\begin{align}
+    \stilde \eta^i &= g_{ij} \stilde \eta^j g_{ij}^{-1} + g_{ij} dg^{-1}_{ij}(\sect X)
+\end{align}
 
 %\section{Actions of Lie Algebroids?}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
