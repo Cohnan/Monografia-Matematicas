@@ -1156,7 +1156,7 @@ From now on, since the two induced Lie algebra structures on $\Gamma(P \times \a
 is called \emph{the Atiyah sequence of the principal bundle $P(M, G)$}.
     \end{itemize}
 
-From the algebraic perspective, we could also say that the Atiyah sequence of $P$ is the induced Atiyah sequence of $C^\infty(M)$-modules
+From the algebraic perspective, we could also say that the Atiyah sequence of $P$ is the induced short exact sequence of $C^\infty(M)$-modules and Lie algebras
 \begin{align} \label{AtiyahSequenceSections}
     0 \to C^\infty_G(P, \alg g) \xrightarrow{j} \Gamma^G(TP) \xrightarrow{\pi_*^G} \Gamma(TM) \to 0.
 \end{align}
@@ -1381,17 +1381,17 @@ Let $A$ be a Lie algebroid on $M$ and let $V$ be a vector space. \emph{The trivi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Recall that lemma \ref{bracketIsLocal} allowed us to restrict a Lie algebroid to an open subset $U$ of the base manifold. We now study how a transitive Lie algebroid is a collection of locally defined trivial Lie algebroids correctly pasted together.
+Recall that Lemma \ref{bracketIsLocal} allowed us to restrict a Lie algebroid to an open subset $U$ of the base manifold. We now study how a transitive Lie algebroid is a collection of locally defined trivial Lie algebroids correctly pasted together.
 
 \begin{definition}[Lie algebroid atlas]
-Let $L \hookrightarrow^j A \twoheadrightarrow TM$ be a transitive Lie algebroid sequence, and let $\alg g$ be a Lie algebra. Given an open cover $\set{U_i}_{i \in I}$ of $M$, a \emph{a Lie algebroid atlas for $A$} is a collection $\set{U_i, \psi_i:U_i \times \alg g \to L|_{U_i}, \Theta^i: TU_i \to A|_{U_i}}_{i \in I}$ such that:
+Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ be a transitive Lie algebroid sequence, and let $\alg g$ be a Lie algebra. Given an open cover $\set{U_i}_{i \in I}$ of $M$, a \emph{Lie algebroid atlas for $A$} is a collection $\{U_i, \psi_i:U_i \times \alg g \to L|_{U_i}, \Theta^i: TU_i \to A|_{U_i}\}_{i \in I}$ such that:
     \begin{itemize}
     
     \item each $\Theta^i: TU_i \to A_{u_i}$ is a Lie algebroid morphism,
     
     \item the family $\set{\psi_i:U_i \times \alg g \to L|_{U_i}}$ is a LAB atlas for the adjoint bundle 
     
-    \item for all $\sect X \in \Gamma(TU_i)$, $\sect \eta \in C^\infty(U_i, \alg g) \cong \Gamma(U_i \times \alg g)$
+    \item for all $\sect X \in \Gamma(TU_i)$, $\stilde \eta \in C^\infty(U_i, \alg g) \cong \Gamma(U_i \times \alg g)$
         \begin{align} \label{eqnCompLocal}
             [\Theta^i(\sect X), j\psi_i(\sect \eta)] = j\psi_i([\sect X \oplus 0, 0 \oplus \sect \eta]) \equiv j\psi_i(\sect X(\sect \eta)) 
         \end{align}
@@ -1400,26 +1400,26 @@ Let $L \hookrightarrow^j A \twoheadrightarrow TM$ be a transitive Lie algebroid 
 \end{definition}
 
 \begin{theorem}
-Every transitive Lie algebroid has a Lie algebroid atlas.\todo{Perhaps prove it completely for Atiyah Lie algebroid?}
+Every transitive Lie algebroid has a Lie algebroid atlas.
 \end{theorem}
 \begin{proof}
-At least show that it follows from Theorem 8.2.1 (TLA over contractible $M$ admits a flat connection; this theorem is analogous to ``every ppal bundle over a contractible space has a global section'', and so requires top. algebra: cohomology theory of Ch 7 in this case). The proof I mention I should do is, I think, in page 317
+At least show that it follows from Theorem 8.2.1\todo{complement this} (TLA over contractible $M$ admits a flat connection; this theorem is analogous to ``every ppal bundle over a contractible space has a global section'', and so requires top. algebra: cohomology theory of Ch 7 in this case). The proof I mention I should do is, I think, in page 317
 \end{proof}
 
-Throughout this chapter $L \hookrightarrow^j A \twoheadrightarrow TM$ will be a Lie algebroid sequence with Lie algebroid atlas $\set{U_i, \psi_i:U_i \times \alg g\to L|_{U_i}, \Theta^i}_{i \in I}$.
+Throughout this chapter $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ will be a sequence of the transitive Lie algebroid $A$ with Lie algebroid atlas $\{U_i, \psi_i:U_i \times \alg g\to L|_{U_i}, \Theta^i:TU_i \to A|_{U_i}\}_{i \in I}$.
 
-In chapter \ref{chp:connections} we will see that the $\Theta^i$ are flat connections in $A|_{U_i}$ and so their image gives a notion of horizontallity in $A|_{U_i}$ and $ \oid X \mapsto \Theta^i(a(\oid)) \in A|_{U_i}$ is the horizontal projection of $\oid X$ induced by $\Theta^i$.
+In Chapter \ref{chp:connections} we will see that the $\Theta^i$ are flat connections in $A|_{U_i}$ and so their image gives a notion of horizontallity in $A|_{U_i}$ and $ \oid X \mapsto \Theta^i(a(\oid X)) \in A|_{U_i}$ is the horizontal projection of $\oid X$ induced by $\Theta^i$.
 \begin{align}\label{defnLocalIsom}
     S_i:&& TU_i &\oplus (U_i \times \alg g) &&\to&& A|_{U_i}\\
         && X &\oplus \eta && \mapsto && \Theta^i(X) + j\psi_i(\eta).
 \end{align}
 This vector bundle morphisms inherit the compatibility with the anchors from the respective property of the Lie algebroid morphisms $\Theta^i$, and are compatible with the bracket due to the compatibility equation (\ref{eqnCompLocal}) which is equivalent to the equation
 \begin{align*}
-    S_i[\sect X \oplus 0, 0 \oplus \sect \eta] = [S_i(X \oplus 0), S_i(0 \oplus \eta)]
-\end{align*}, thus we proved the following:
+    S_i[\sect X \oplus 0, 0 \oplus \sect \eta] = [S_i(X \oplus 0), S_i(0 \oplus \eta)],
+\end{align*} thus we proved the following:
 
 \begin{theorem}
-The maps $S_i : TU_i \oplus (U_i \times \alg g) \to A|_{U_i}$ defined in equation \ref{defnLocalIsom} are Lie algebroid isomorphisms between the trivial Lie algebroids $TU_i \oplus (U_i \times \alg g)$ and $A|_{U_i}$.
+The maps $S_i : TU_i \oplus (U_i \times \alg g) \to A|_{U_i}$ defined in equation (\ref{defnLocalIsom}) are Lie algebroid isomorphisms between the trivial Lie algebroids $TU_i \oplus (U_i \times \alg g)$ and $A|_{U_i}$.
 
 Furthermore for each $i \in I$ 
 \begin{align*}
@@ -1431,16 +1431,17 @@ Furthermore for each $i \in I$
 for all $X \in TU_i$.
 \end{theorem}
 
-This means that for every $\oid X \in A|_{U_{i}}$, let $X = a(\oid X) \in TM$ and so there is some $\eta^i \in U_i \times \alg g$ such that
+This means that for every $\oid X \in A|_{U_{i}}$, $X = a(\oid X) \in TM$ and so there is some $\eta^i \in U_i \times \alg g$ such that
 \begin{align}
-    \oid X = S_i(X \oplus \eta^i)
+    \oid X = S_i(X \oplus \eta^i).
 \end{align}
+The set $\{X \oplus \eta^i\}_{i \in I}$ will be called \emph{a family of trivializations of $\oid X \in A$}.
 
 Now, to understand the transition between charts of a Lie algebroid atlas,
 
-\begin{proposition}
-Structure of Lie algebroid morphisms between Trivial Lie algebroids: relevant for intersections.
-\end{proposition}
+% \begin{proposition}
+% Structure of Lie algebroid morphisms between Trivial Lie algebroids: relevant for intersections.
+% \end{proposition} Pg. 101 Mackenzie
 
 Let 
 \begin{align*}
@@ -1454,7 +1455,7 @@ be the transition functions for $\set{\psi_i}$. Since any element $\eta \in U_i 
 \end{align}
 notice that $\alpha^i_j(\eta) = (m, \alpha^i_{j, m}(\eta_m))$.
 
-Notice, however, that for $\oid X = S_j(X \oplus \eta^j)$ in $A|_{U_{ij}}$, $\oid X \neq S_i(X \oplus \alpha^i_j(\eta^j))$ since $S_i(X \oplus \alpha^i_j(\eta^j)) = \Theta_i(X) + j\psi_i(\alpha^i_j(\eta^j)) = \Theta^i(X) + j\psi^j(\eta^j) = S_j(X \oplus \eta^j) + (\Theta^i(X) - \Theta^j(X))$. $a(S_j(X \oplus \eta^j)) = a(S_i(X \oplus \alpha^i_j(\eta^j)))$ so $\Theta^i(X) - \Theta^j(X) \in ker(a)$ and we may define the $L|_{U_ij}$-valued $1$-form
+Notice, however, that for $\oid X = S_j(X \oplus \eta^j)$ in $A|_{U_{ij}}$, $\oid X \neq S_i(X \oplus \alpha^i_j(\eta^j))$ since $S_i(X \oplus \alpha^i_j(\eta^j)) = \Theta_i(X) + j\psi_i(\alpha^i_j(\eta^j)) = \Theta^i(X) + j\psi^j(\eta^j) = S_j(X \oplus \eta^j) + (\Theta^i(X) - \Theta^j(X))$. But $a(S_j(X \oplus \eta^j)) = a(S_i(X \oplus \alpha^i_j(\eta^j)))$ so $\Theta^i(X) - \Theta^j(X) \in ker(a)$ and we may define the $L|_{U_ij}$-valued $1$-form
 \begin{align}
     l^i_j: TU_{ij} & \to L|_{U_{ij}} \\
             X & \mapsto j^{-1}(\Theta^j(X) - \Theta^i(X)),
@@ -1519,6 +1520,8 @@ If $X \oplus \eta^i$ and $X \oplus \eta^j$ are local trivializations of $\oid X$
     \alpha^i_j(\eta) &= g_{ij} \eta  g_{ij}^{-1} \\
      \chi^i_j(X) &= g_{ij} dg_{ij}^{-1}(X) 
 \end{align}
+
+Let $P(M, G)$ be a principal bundle with the 
 
 %\section{Actions of Lie Algebroids?}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
