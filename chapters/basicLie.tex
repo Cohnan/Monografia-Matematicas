@@ -1177,7 +1177,7 @@ is a vector bundle morphism over $M$ such that
     a' \comp \psi = a, & : A \to TM,
 \end{align}
 i.e. it is compatible with the anchors, and such that 
-\[\psi[\sect{\oid X}, \sect{\oid Y}] = [\psi(\oid X), \psi(\oid Y)]\] 
+\[\psi[\sect{\oid X}, \sect{\oid Y}] = [\psi(\sectoid X), \psi(\sectoid Y)]\] 
 for all $\sectoid X, \sectoid Y \in \Gamma(A)$, i.e. it is a Lie algebra morphism when applied to sections. 
 \end{definition}
 
@@ -1209,36 +1209,36 @@ This can be done due to the equivalence between vector bundle maps over $M$ and 
 \end{definition}
 
 \begin{remark}
-If $A$ is a regular Lie algebroid with anchor $a$, both $im(a)$ and $ker(a)$ are vector subbundles or $A$ and $TM$ respective. By Theorem \ref{kerAlgebroid} $ker(a)$ is in fact a totally intransitive Lie algebroid. The image of the anchor defines an involutive distribution \todo{is an involutive distribution always a vector bundle?} on $M$ and, in consequence, a foliation of the base manifold called \emph{the characteristic foliation of $A$}. Then, the restriction of $A$ to each leaf is a transitive Lie algebroid. \todo{verify these claims}
+If $A$ is a regular Lie algebroid with anchor $a$, both $im(a)$ and $ker(a)$ are vector subbundles or $A$ and $TM$ respective. By Theorem \ref{theoFiberLie} $ker(a)$ is in fact a totally intransitive Lie algebroid. The image of the anchor defines an involutive distribution on $M$ and, in consequence, a foliation of the base manifold called \emph{the characteristic foliation of $A$}. Then, the restriction of $A$ to each leaf is a transitive Lie algebroid.
 
-Additionally, we can apply Theorem \ref{theoFiberLie} to see that, locally, a regular Lie algebroid is simply the vector bundle $U \times (V \oplus \alg g)$, where $V$ is a vector subspace of the tangent space at some $m \in U \subset M$.
+Additionally, we can apply Theorem \ref{theoFiberLie} to see that, around any $m \in M$ there is a neighborhood $U \subset M$ such that a regular Lie algebroid is isomorphic to the vector bundle $U \times (V \oplus \alg g)$, where $V = a(A_m)$, although this local form of the Lie algebroid might not be consistent with the brackets.% Since V \oplus \alg g is nothing but one way to write the ``local'' vector space.
 \end{remark}
 
 \begin{remark}
-Any $LAB$ is a totally intransitive Lie algebroid, but the converse is not true since there might not be an adapted atlas.
+Any $LAB$ is a totally intransitive Lie algebroid, but the converse is not true since there might not be an atlas adapted to the Lie brackets.
 \end{remark}
 
-Transitive Lie algebroids will be a main concert for us throughout this document. In this case, since the anchor is fiberwise surjective\todo{is this a satisfactory reason?} it is a surjective submersion, and, in particular, a vector bundle map of locally constant rank, so Theorem \ref{kerAlgebroid} may be applied to conclude that its kernel is a Lie algebroid. However, more is true, as shown below.
+Transitive Lie algebroids will be a main concert for us throughout this document. In this case, since the anchor is fiberwise surjective,\todo{is this a satisfactory reason?} it is a surjective submersion, and, in particular, a vector bundle map of locally constant rank, so Theorem \ref{theoFiberLie} may be applied to conclude that its kernel is a Lie algebroid. However, more is true, as shown below.
 
 \begin{definition}\label{transitiveSequence}
-Let $A$ be a transitive Lie algebroid on $M$ with anchor $a$. A \emph{transitive Lie algebroid sequence of $A$} is an exact sequence of vector bundles
+Let $A$ be a transitive Lie algebroid on $M$ with anchor $a$. A \emph{Lie algebroid sequence of a transitive Lie algebroid $A$} is an exact sequence of Atiyah Lie algebroids
 \begin{align}
-    0 \to^j A \to^a TM \to 0
+    0 \xrightarrow{j} A \xrightarrow{a} TM \to 0
 \end{align}
-where $L$ is a Lie algebroid isomorphic to $ker(a)$ by a Lie algebroid morphism $j:L \to ker(a) \subset A$. The lie algebroid $L$ is called an \emph{adjoint Lie algebroid of (the transitive Lie algebroid) A}.
+where $L$ is a Lie algebroid isomorphic to $ker(a)$ by a Lie algebroid morphism $j:L \to ker(a) \subset A$. The lie algebroid $L$ is called an \emph{adjoint Lie algebroid of/to (the transitive Lie algebroid) A}\todo{to? Same for the one defined in the Atiyah sequence}.
 \end{definition}
 Notice that an adjoint Lie algebroid of $A$ must be a totally intransitive Lie algebroid with a bracket compatible, through some $j$, with the bracket inherited by $ker(a)$ from $A$.
 
 \begin{theorem}\label{theoAdjointLAB} % Theorem 6.5.1
-Let $L \hookrightarrow^j A \twoheadrightarrow^a TM$ be an Atiyah Lie algebroid sequence of the transitive Lie algebroid $A$ over $M$. Then $L$ is a Lie algebra bundle with respect to the bracket structure on $\Gamma(L)$ induced by that on $\Gamma(A)$.
+Let $0 \to L \to A \to  TM \to 0$ be a transitive Lie algebroid sequence. Then $L$ is a Lie algebra bundle with respect to the bracket structure on $\Gamma(L)$ induced by that on $\Gamma(A)$.
 \end{theorem}
 Although a full proof requires knowledge on locally trivial groupoids, an almost complete proof will be possible once we develop the tools of connections on Lie algebroids in chapter \ref{chp:connections}. \todo{Move this proof to a more appropriate place  in Ch 3 and reference it once written}
 \begin{proof}
-Let $ad: A \to \alg D(L)$ be the adjoint representation of $A$ on $L$ and let $\gamma: TM \to A$ be a connection in $A$, which exists due to \ref{theoConnectionExists}. Denote by $\nabla = ad \circ \gamma : TM \to \alg D(L)$ the produced connection in $L$. This connection satisfies $\nabla_{\sect X}[\sect \mu, \sect \nu] = [\nabla_{\sect X} \sect \nu, \sect \mu] + [\sect \nu, \nabla_{\sect X} \sect mu]$, and the existence of such connection is equivalent to $L$ being an LAB (this may be proved with tools of path connections).
+Let $ad: A \to \alg D(L)$ be the adjoint representation of $A$ on $L$ and let $\gamma: TM \to A$ be a connection in $A$, which exists due to \ref{theoConnectionExists}. Denote by $\nabla = ad \circ \gamma : TM \to \alg D(L)$ the produced connection in $L$. This connection satisfies $\nabla_{\sect X}[\sect \mu, \sect \nu] = [\nabla_{\sect X} \sect \nu, \sect \mu] + [\sect \nu, \nabla_{\sect X} \sect \mu]$, and the existence of such connection is equivalent to $L$ being an LAB (this may be proved with tools of path connections).
 \end{proof}
 
 \begin{definition}\label{defnPhi+}
-Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ and $0 \to L' \xrightarrow{j'} A' \xrightarrow{a'} TM \to 0$ be transitive Lie algebroids sequences over $M$. Let $\psi: A \to A'$ be a morphism of Lie algebroids. since, $a' \circ \psi = a$, $\psi$ induces a morphism of Lie algebroids denoted by
+Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ and $0 \to L' \xrightarrow{j'} A' \xrightarrow{a'} TM \to 0$ be transitive Lie algebroids sequences over $M$. Let $\psi: A \to A'$ be a morphism of Lie algebroids. Since, $a' \circ \psi = a$, $\psi$ induces a morphism between the adjoint Lie algebroids denoted by
 \begin{align*}
     \psi^+: L \to L'
 \end{align*}
@@ -1249,9 +1249,9 @@ Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ and $0 \to L' \xrightar
 \end{proposition}
 
 \begin{proof}
-We may think of $L$ and $L'$ as the kernels of the anchors, so $j$ and $j'$ are simply the inclusion maps and $\psi^+ = \psi_L$. Since $a' \circ \psi = a$, $ker(\psi) \subset \ker(a) = L$, and so, by linearity, $\psi$ is injective if and only if $\psi^+$ is injective.
+We may think of $L$ and $L'$ as the kernels of the anchors, so $j$ and $j'$ are simply the inclusion maps and $\psi^+ = \psi|_L$. Since $a' \circ \psi = a$, $ker(\psi) \subset \ker(a) = L$, and so, by linearity, $\psi$ is injective if and only if $\psi^+$ is injective.
 
-By the same property, only elements of $L$ can be mapped to $L'$ $\psi$ being surjective implies that $\psi^+$ is surjective. For the converse, we recall that the anchors are fiberwise surjective, so given any $\oid Y \in A'$ such that $a'(\oid Y) = Y \in TM$, we can find an element $\oid X_1 \in A$ with $a(\oid X) = Y$; let $\nu = \oid Y - \psi(\oid X_1)$, so $\nu \in L'$ and if $\psi^+$ is surjective there must exist $\mu \in L$ such that $\psi^+(\mu) = \nu$ and so $\oid X = \oid X_1 + \mu$ satisfies $\psi(X) = \oid Y$, which allows us to conclude that $\psi$ must also be surjective.
+By the same property, only elements of $L$ can be mapped to $L'$, therefore $\psi$ being surjective implies that $\psi^+$ is surjective. For the converse, we recall that the anchors are fiberwise surjective, so given any $\oid Y \in A'$, $a'(\oid Y) = Y \in TM$, we can find an element $\oid X_1 \in A$ with $a(\oid X_1) = Y$; let $\nu = \oid Y - \psi(\oid X_1)$, so $\nu \in L'$ and if $\psi^+$ is surjective there must exist $\mu \in L$ such that $\psi^+(\mu) = \nu$ and so $\oid X = \oid X_1 + j\mu$ satisfies $\psi(X) = \oid Y$, which allows us to conclude that $\psi$ must also be surjective.
 \end{proof}
 
 %Theo: locally constant rank both $\psi$ and $\psi^+$
@@ -1287,14 +1287,15 @@ Let $A, A', A''$ be Lie algebroids over $M$. \emph{An extension of Lie algebroid
 \linea
 %Definitions comming from Lie algebra theory semisimple, nilpotent, abelian, reductive.
 
-The following concept generalizes that of associated vector bundles of a principal bundle $P(G, M)$. In the principal bundle theory, sections of an associated vector bundle with fiber $V$ are equivalent to $G$-equivariant functions $P \to V$, so $G$-invariant vector fields $\ppal X \in \Gamma(TP)$, or equivalently sections in $\Gamma(TP/G)$ as Proposition \ref{3.1.3} shows, are derivations of the sections of $E$ (satisfying Leibniz for $G$-invariant functions of $P$ / to functions in $M$). Similarly, sections of a Lie algebroid $A$ act as derivations on representation vector bundles $E$. In particular, a (Lie algebroid connection) on $A$ will induce a vector bundle connection and covariant derivatives on a representation vector bundle $E$, just as principal bundle connections induce covariant derivatives in associated vector bundles.
+The following concept generalizes that of associated vector bundles of a principal bundle $P(G, M)$. In the principal bundle theory, sections of an associated vector bundle with fiber $V$ are equivalent to $G$-equivariant functions $P \to V$ or, equivalently, to sections in $\Gamma(P \times V/G)$ as Proposition \ref{associatedExistsAndSections} shows, and $G$-equivariant vector fields in $\Gamma^G(TP)$ or, equivalently, sections $\Gamma(TP/G)$ act as derivations on the sections of $E$ \ref{somwhere in the Introduction}% (satisfying Leibniz for $G$-invariant functions of $P$ / to functions in $M$). 
+Similarly, sections of a Lie algebroid $A$ act as derivations on representation vector bundles $E$. In particular, a (Lie algebroid connection) on $A$ will induce a vector bundle connection and covariant derivatives on a representation vector bundle $E$, just as principal bundle connections induce covariant derivatives in associated vector bundles.
 
 \begin{definition}[Representation of a Lie algebroid]\label{defnRepr}
 Let $A$ be a Lie algebroid on $M$ and let $E$ be a vector bundle also on $M$. A \emph{representation of $A$ on $E$} is a Lie algebroid morphism over $M$,
 \begin{align}
     \rho: A \to \alg D(E).
 \end{align}
-For $\oid X \in A$, $\rho(\oid X)$ is usually denoted by $\rho_{\oid X}$.
+Given $\oid X \in A$, $\rho(\oid X)$ is usually denoted by $\rho_{\oid X}$.
 \end{definition}
 Using an algebraic language, notice how a representation $\rho:A \to \alg D(E)$ may be defined instead as a $C^\infty(M)$-linear mapping that, to every $\sectoid A \in \Gamma(E)$, \emph{assigns a derivation on $E$} 
 \begin{align}
@@ -1311,12 +1312,12 @@ or, equivalently
 \begin{align*}
     \rho: \Gamma(TP/M) \to \Gamma(\alg D(E)),
 \end{align*}
-which is best understood recalling, from Proposition \ref{3.1.3}, that $\Gamma(TP/G) \cong \Gamma^G(TP)$ and $\Gamma(E) \cong \Gamma^G(P \times V) \cong C^\infty_G(P, V)$.
+which is best understood recalling, from Propositions \ref{theoSectTPG} and \ref{associatedExistsAndSections}, that $\Gamma(TP/G) \cong \Gamma^G(TP)$ and $\Gamma(E) \cong \Gamma^G(P \times V) \cong C^\infty_G(P, V)$.
 
-Recall the notation introduced in Proposition \ref{3.1.3} and \ref{propAssociatedExists}. Given $\sectoid X \in \Gamma(TP/G)$ and $\sect \mu \in \Gamma(E) = \Gamma(P \times V/G)$, the $G$-invariant section $\upsect{\sectoid X} \in \Gamma^G(TP)$ acts naturally, by the Lie derivative, on the $G$-equivariant function $\tilde{\sect \mu} \in C^\infty_G(M)$. It can be shown that $\upsect{\sectoid X}(\tilde{\sect \mu}) \in C^\infty_G(M)$ is also $G$-equivariant, and therefore there is a corresponding element in $\Gamma(E)$, which we call $\rho(\sectoid X)(\sect \mu)$. In other words, the representation of $TP/G$ on $E$ is given by
-\begin{equation} \label{defnReprPpalAss}
-    \tilde{\rho(\sectoid X)(\sect \mu)} := \upsect{\sectoid X}(\tilde{\sect \mu}) \in C^\infty_G(P, V).
-\end{equation}
+Recall the notation introduced in Proposition \ref{3.1.3} and \ref{associatedExistsAndSections}. Given $\sectoid X \in \Gamma(TP/G)$ and $\sect \mu \in \Gamma(E) = \Gamma(P \times V/G)$, the $G$-invariant section $\upsect{\sectoid X} \in \Gamma^G(TP)$ acts naturally on the equivariant function $\stilde \mu \in C^\infty_G(M)$ by the Lie derivative. It is not hard to show that $\upsect{\sectoid X}(\tilde{\sect \mu}) \in C^\infty(M)$ is also $G$-equivariant, and therefore there is a corresponding element in $\Gamma(E)$, which we call $\rho(\sectoid X)(\sect \mu)$. In other words, the representation of $TP/G$ on $E$ is given by
+\begin{eqnsplit}\label{defnReprPpalAss}
+    \rho(\sectoid X)(\sect \mu):= \upsect{\sectoid X}(\tilde{\sect \mu}) \in C^\infty_G(P, V).
+\end{eqnsplit}
 
 It is clear that $\rho$ is $C^\infty(M)$-linear in $\sectoid X$ and $\RR$-linear in $\sect \mu$. That $\rho(\sectoid X): \Gamma(E) \to \Gamma(E)$ is a derivation, i.e. $\RR$-linear and satisfies Leibniz, follows once we recall the definition of the anchor in $\Gamma(TP/G)$ in equation (\ref{anchorAtiyah}), which tells us that $a(\sectoid X) = \upsect{\sectoid X}(f \circ \pi)$, therefore:
 \begin{multline*}
@@ -1325,7 +1326,7 @@ It is clear that $\rho$ is $C^\infty(M)$-linear in $\sectoid X$ and $\RR$-linear
     \upsect{\sectoid X}((f \circ \pi) \tilde{ \sect \mu}) = 
     (f \circ \pi) \upsect{\sectoid X}(\tilde{\sect \mu}) + \upsect{\sectoid X}(f \circ \pi) \tilde{\sect \mu} = \tilde{f \rho(\sectoid X)(\sect \mu)} + \tilde{a(\sectoid X)(f) \sect \mu}.
 \end{multline*}
-This equation also shows us that \[a(\rho(\sectoid X)) = a(\sectoid X),\] so $\rho$ is compatible with the anchors. The fact that, by definition of the bracket on $\Gamma(TP/G)$, the map $\sectoid X \mapsto \upsect{\sectoid X}$ is a Lie algebra morphism implies the respective property for $\rho$. 
+This equation also shows us that \[a(\rho(\sectoid X)) = a(\sectoid X),\] so $\rho$ is compatible with the anchors. The fact that, by definition of the bracket on $\Gamma(TP/G)$, the map $\sectoid X \mapsto \upsect{\sectoid X}$ is a Lie algebra morphism, by definition, implies the respective property for $\rho$. 
 
 All of these combined mean that $\rho: \Gamma(TP/G) \to \Gamma(\alg D(E))$ is indeed a Lie algebra representation of $TP/G$ in $E = P \times V/G$.
 \end{example}
@@ -1333,10 +1334,10 @@ All of these combined mean that $\rho: \Gamma(TP/G) \to \Gamma(\alg D(E))$ is in
 \begin{example}
 Let $\nabla: \Gamma(E) \to \Gamma(T^*M \otimes E)$ be a connection on a a vector bundle $E$. That statement is equivalent to: given any $\sect X \in \Gamma(TM)$,
 \begin{align*}
-    \Gamma(TM) && \to && \Gamma(\alg D(E))
-    \sec X &\mapsto& \nabla_{\sect X}
+    \Gamma(TM) \to \Gamma\alg D(E) &&
+    \sect X \mapsto \nabla_{\sect X}
 \end{align*}
-is a $C^\infty(M)$-linear mapping from the vector fields on $M$ to the derivations on $E$. The Leibniz identity of the derivation $\nabla_{\sect X}$ implies that $a(\nabla_{\sect X}) = \sect X$. This means that a connection on $E$ is only missing the compatibility with the brackets to be a representation, but this compatibility is equivalent to the property of a connection being flat. Therefore \emph{flat} connections on the vector bundle $E$ give us a representation of $TM$ on $E$.
+is a $C^\infty(M)$-linear mapping from the vector fields on $M$ to the derivations on $E$. The Leibniz identity of the derivation $\nabla_{\sect X}$ implies that $a(\nabla_{\sect X}) = \sect X$. This means that a connection on $E$ is only missing the compatibility with the brackets to be a representation, but this compatibility is equivalent to the property of the connection being flat. Therefore \emph{flat} connections on the vector bundle $E$ give us a representation of $TM$ on $E$.
 \end{example}
 
 \begin{definition}(Adjoint representation of a transitive Lie algebroid)\label{defnAdjointAct}
@@ -1352,7 +1353,7 @@ for all $\sectoid X \in \Gamma(A)$, $\sect \mu \in \Gamma(L)$.
 \end{definition}
 The adjoint action is well defined since the anchor commutes with the bracket.
 
-Perhaps\todo{complement of remove according to necessity}, if needed later: metric: representations of $\alg D(E)$ induced by frame groupoid action
+PERHAPS\todo{complement of remove according to necessity}, if needed later: metric: representations of $\alg D(E)$ induced by the frame groupoid action
     \begin{itemize}
     
     \item On $Hom^n(E; M \times \RR)$, $Alt^n$, $Sum^n$
@@ -1366,15 +1367,13 @@ Perhaps\todo{complement of remove according to necessity}, if needed later: metr
 %Equivariant 1 Equivariant 2
 
 \begin{definition}
-Let $A$ be a Lie algebroid on $M$ and let $V$ be a vector space. \emph{The trivial representation of $A$ on $M \times V$} is
+Let $A$ be a Lie algebroid on $M$ and let $V$ be a vector space. \emph{The trivial representation of $A$ on $M \times V$} is defined by identifying $\Gamma(M \times V)$ with $C^\infty(M, V)$:
 \begin{align*}
-    \rho^0(\sectoid X)(f) := a(X)(f), && f: M \to V,\, \sectoid \in \Gamma(A)
+%\rho : A &\to \alg D(M \times V)\\
+%       \oid X \mapsto a(\oid X)
+    \rho^0(\sectoid X)(f) := a(\sectoid X)(f), && f: \Gamma(M \times V) \cong C^\infty(M, V),\, \sectoid X \in \Gamma(A).
 \end{align*}
-where $a(\sectoid X)(f)$ means the standard Lie derivative of $f$ in direction of the vector field $a(\sectoid X)$.
 \end{definition}
-
-
-
 
 \section{Local Description of Transitive Lie Algebroids}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1382,7 +1381,7 @@ where $a(\sectoid X)(f)$ means the standard Lie derivative of $f$ in direction o
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Recall that lemma \ref{lemmaSectionLocal} allowed us to restrict a Lie algebroid to an open subset $U$ of the base manifold. We now study how a transitive Lie algebroid is a collection of locally defined trivial Lie algebroids correctly pasted together.
+Recall that lemma \ref{bracketIsLocal} allowed us to restrict a Lie algebroid to an open subset $U$ of the base manifold. We now study how a transitive Lie algebroid is a collection of locally defined trivial Lie algebroids correctly pasted together.
 
 \begin{definition}[Lie algebroid atlas]
 Let $L \hookrightarrow^j A \twoheadrightarrow TM$ be a transitive Lie algebroid sequence, and let $\alg g$ be a Lie algebra. Given an open cover $\set{U_i}_{i \in I}$ of $M$, a \emph{a Lie algebroid atlas for $A$} is a collection $\set{U_i, \psi_i:U_i \times \alg g \to L|_{U_i}, \Theta^i: TU_i \to A|_{U_i}}_{i \in I}$ such that:
