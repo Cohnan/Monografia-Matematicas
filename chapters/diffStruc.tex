@@ -270,14 +270,53 @@ $\Omega^p(A) \wedge \Omega^q(A, L) \subset \Omega^{p+q}(A, L)$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Cartan Operations}
 
-\begin{itemize}
+% \begin{itemize}
 
-\item $i, L$
+% \item $i, L$
 
-\item Horizontal, invariant and basic forms.
+% \item Horizontal, invariant and basic forms.
 
-\end{itemize}
+% \end{itemize}
 
+\begin{definition}
+Let $E$ be an algebra bundle over $M$, let $\phi: A \to \alg D(E)$ be a representation of $A$, and let $B$ be a Lie algebroid over $M$. A \emph{Cartan operation on $(\Omega^\bullet(A, E), \wedge, \hat d_\phi)$} is a triple $(B, i, L)$ such that: for any $\sectoid X \in B$, for any $p \geq 1$ there is a map $i_{\sectoid X}: \Omega^p(A, E) \to \Omega^{p-1}(A, E)$ such that, defining 
+\begin{align}
+L_{\sectoid X} := \hat d_\phi i_{\sectoid X} + i_{\sectoid X}\hat d_\phi,
+\end{align}
+the following relations hold for any $\sectoid X, \sectoid Y \in B$ and $f \in C^\infty(M)$:
+\begin{align}
+    i_{f \sectoid X} = f i_{\sectoid X} & i_{\sectoid X} i_{\sectoid Y} + i_{\sectoid Y} i_{\sectoid X} = 0 \\
+    [L_{\sectoid X}, i_{\sectoid Y}] = i_{[\sectoid X, \sectoid Y]} & [L_{\sectoid X}, L_{\sectoid Y}] = L_{[\sectoid X, \sectoid Y]}
+\end{align}
+\end{definition}
+
+\begin{example}
+$B = A$ defines one.
+\end{example}
+
+\begin{example}
+$B = L$ also defines one.
+\end{example}
+
+\begin{definition}
+Let $(B, i, L)$ be a Cartan operation on $(\Omega^\bullet(A, E), \wedge, \hat d_\phi)$.
+    
+    \begin{itemize}
+        
+    \item Define $\Omega^\bullet(A, E)_{Hor}$ to be the graded subspace of \emph{horizontal elements in $\Omega^\bullet(A, E)$} characterized by 
+    \[
+    i_{\sectoid X} \omega = 0?
+    \]
+    
+    \item Define $\Omega^\bullet(A, E)_{Inv}$ to be the graded subspace of \emph{invariant elements in $\Omega^\bullet(A, E)$} characterized by 
+    \[
+    L_{\sectoid X} \omega = \omega?
+    \]
+    
+    \item Define $\Omega^\bullet(A, E)_{Basic} = \Omega^\bullet(A, E)_{Hor} \inter \Omega^\bullet(A, E)_{Inv}$ to be the graded subspace of \emph{basic or tensorial elements in $\Omega^\bullet(A, E)$}.
+        
+    \end{itemize}
+\end{definition}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -293,10 +332,12 @@ To understand better:
 
 \item Generic element in $\Omega^n$, given dual basis $\theta = \set{\theta^a}$ of a basis of $\alg g$ $\set{E_a}$
 \begin{align*}
-    \omega = \sum_{p + s = n} \omega^\theta_{\mu_1 \cdots a_1 \cdots a_s} dx^{\mu_1} wedge \cdots \theta^{a_s}
+    \omega = \sum_{p + s = n} \omega^\theta_{\mu_1 \cdots a_1 \cdots a_s} dx^{\mu_1} \wedge \cdots \theta^{a_s}
 \end{align*}
     
 \end{itemize}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
