@@ -174,7 +174,7 @@ for any $p \in \ZZ_{\geq 0}$, $p$-form $\omega$, and any $\sectoid X_1, \dots, \
 \end{definition}
 
 \begin{definition}
-Let $\mathcal A = \oplus_{n = 0}^\infty \mathcal A^k$ be a graded algebra (over $\RR$).
+Let $\mathcal A = \oplus_{n = 0}^\infty \mathcal A^n$ be a graded algebra (over $\RR$).
     \begin{itemize}
     
     \item An element $\omega \in \mathcal A^n$ is called a \emph{homogeneous element of degree $n$}, for $n \in \ZZ_{\geq 0}$, and its degree is denoted by $|\omega|$.
@@ -188,8 +188,11 @@ Let $\mathcal A = \oplus_{n = 0}^\infty \mathcal A^k$ be a graded algebra (over 
     \begin{align*}
         |d\omega| = |\omega| + m.
     \end{align*}
+    If the antiderivation is of degree $1$ or $-1$, it is called a \emph{differential on $\mathcal A$}. The same definitions apply for $M = \oplus_{n = 0}^\infty M^n$ graded module over the graded ring $R = \oplus_{n = 0}^\infty R^n$, i.e. an $R$-module such that $R^p \cdot M^q \subset M^{p+q}$.
     
-    \item $\mathcal A$ equipped with an antiderivation $d: \mathcal A \to \mathcal A$ is a \emph{differential graded algebra} if $d \circ d = 0$ and the antiderivation has either degree $1$ of $-1$.
+    \item Let $d: \mathcal A \to \mathcal A$ be a derivation. $(A, d)$ is a \emph{differential graded algebra} if $d \circ d = 0$. 
+    
+    \item Similarly, let $M = \oplus_{n = 0}^\infty M^n$ be a graded module and $d: M \to M$ a differential on $M$. $(M, d)$ is called a \emph{differential graded module} if $d \circ d = 0$
     
     \item Let $(\mathcal A, \bullet, d)$ and $(\mathcal A', \bullet', d')$ be differential graded algebras. A \emph{morphism of differential graded algebras} is a graded algebra morphism $\phi: \mathcal A \to \mathcal A'$ such that $d' \circ \phi = \phi \circ d$.
     
@@ -204,9 +207,9 @@ Let $E$ be an algebra bundle over $M$ on which there is a representation $\phi: 
 \begin{proof}
 To see:
 
-Associativity
+Associativity... just say it is, alhthough, is there an easy way to see it?
 
-$d^2 = 0$
+$d^2 = 0$. Apparently this follows from the fact that $\phi$ respects the Lie algebroid bracket.
 
 Graded Leibniz
 \end{proof}
@@ -244,7 +247,7 @@ To see:
 \end{proof}
 
 \begin{proposition}
-$(\Omega^\bullet(A, L), \wedge, \hat d)$ is a graded differential module over the graded commutative differential algebra $\Omega^\cdot(A)$, through the linear extension of the action:
+$(\Omega^\bullet(A, L), \wedge, \hat d)$ is a differential graded module over the graded ring $(\Omega^\bullet(A), \wedge)$, through the linear extension of the action:
 \begin{align*}
     \wedge: \Omega^\bullet(A) \times \Omega^\bullet(A, L) &\to \Omega^\bullet(A, L)
 \end{align*}
@@ -257,6 +260,12 @@ $(\Omega^\bullet(A, L), \wedge, \hat d)$ is a graded differential module over th
 \end{eqnsplit}
 for any real valued $p$-form $\omega$, $L$-valued $q$-form $\eta$ and any $\sectoid X_1, \dots, \sectoid X_{p+q} \in \Gamma(A)$.
 \end{proposition}
+
+\begin{proof}
+To see:
+
+$\Omega^p(A) \wedge \Omega^q(A, L) \subset \Omega^{p+q}(A, L)$.
+\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Cartan Operations}
