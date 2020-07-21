@@ -328,7 +328,6 @@ Atiyah. The concept coincides? (See Mackenzie)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Trivial Lie Algebroid}
 
-To understand better:
 \begin{itemize}
     
 \item $(\Omega(A), \hat d_A)$ as $(\Omega(M)\otimes \bigwedge g^*, d + s)$.
@@ -397,6 +396,8 @@ Respects the differentials
 
 Respects Lie structure?
 \end{proof}
+
+TODO: typical element of both differential algebras given a basis dual to a basis of the Lie algebra.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -423,6 +424,101 @@ Respects Lie structure?
     
 \end{itemize}
 
+
+
+Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ be an Atiyah sequenece of the transitive Lie algebroid $A$ over $M$. Let $\{(U_i, \psi_i: U_i \times \alg g \to L|_{U_i}, \Theta^i: TU_i \to A|_{U_i})\}_{i \in I}$ be a Lie algebroid atlas for $A$.
+
+\begin{definition}
+Let $\omega \in \Omega^q(A)$.
+    \begin{itemize}
+    
+    \item For each $i \in I$ define the local $q$-form $\omega^i_{loc}$ by
+    \begin{align}
+        \omega^i_{loc} = \omega \circ \Theta^i  \quad \in \Omega^q(TU_i\times \alg g)
+    \end{align}
+    
+    \item A \emph{family of trivializations of $\omega$} is a set $\{\omega^i_{loc} \in \Omega^q(TU_i \times \alg g)\}$.
+    
+    \end{itemize}
+
+\end{definition}
+
+\begin{definition}
+Let $\omega \in \Omega^q(A, L)$.
+    \begin{itemize}
+    
+    \item For each $i \in I$ define the local $q$-form $\omega^i_{loc}$ by
+    \begin{align}
+        \omega^i_{loc} = \psi_i^{-1} \circ \omega \circ \Theta^i  \quad \in \Omega^q(TU_i\times \alg g, U_i \times \alg g) \equiv \Omega^q_{TLA}(U_i, \alg g)
+    \end{align}
+    
+    \item A \emph{family of trivializations of $\omega$} is a set $\{\omega^i_{loc} \in \Omega^q_{TLA}(U_i, \alg g)\}$.
+    
+    \end{itemize}
+
+\end{definition}
+
+Let $\omega \in \Omega^q(A, L)$ and let $\{\sectoid X_k\} \subset \Gamma(A)$ for $k = 1, \dots, q$. Let each $\sectoid X_k$ have a family of trivializations $\{\sect X_k \oplus \stilde \eta_k^i \in \Gamma(TU_i) \oplus C^\infty(U_i, \alg g)\}$, then, in $U_{ij} = U_i \inter U_j \neq \empty$
+\begin{align*}
+    \omega^i_{loc}(X_1 \oplus \stilde \eta_1^i, \cdots, X_q \oplus \stilde \eta_q^i) = \alpha^i_j \circ \omega^j_{loc}(X_1 \oplus \stilde \eta_1^j, \cdots, X_q \oplus \stilde \eta_q^j)
+\end{align*}
+which can be expressed as
+\begin{align}
+    \omega^i_{loc} = \alpha^i_j \circ \omega^j_{loc} \circ s^j_i
+\end{align}
+
+\begin{definition}
+    \begin{itemize}
+    
+    \item Let $\omega \in \Omega^q(A, L)$. Define
+    \begin{eqnsplit}
+    \hat \alpha^i_j: \Omega^q_{TLA}(U_{ij}, \alg g) &\to \Omega^q_{TLA}(U_{ij}, \alg g)\\
+                    \omega^j_{loc} &\mapsto \omega^i_{loc} = \alpha^i_j \circ \omega^j_{loc} \circ s^j_i
+    \end{eqnsplit}
+    
+    \item Let $\omega \in \Omega^q(A)$. Define
+    \begin{eqnsplit}
+    \hat \alpha^i_j: \Omega^q(TU_{ij}\times \alg g) &\to \Omega^q(TU_{ij}\times \alg g)\\
+                    \omega^j_{loc} &\mapsto \omega^i_{loc} = \omega^j_{loc} \circ s^j_i
+    \end{eqnsplit}
+    
+\end{itemize}
+
+\end{definition}
+
+\begin{theorem}
+Let $\omega$ be an $L$-valued $q$-form on $A$. Then, for any $i \in I$
+\begin{align}
+    (\hat d \omega) = d_{TLA} \omega
+\end{align}
+
+For real valued forms too?
+\end{theorem}
+
+\begin{theorem}
+$\alpha^i_j: \Omega^q_{TLA}(U_{ij}, \alg g) \to \Omega^q_{TLA}(U_{ij}, \alg g)$ is an isomorphism of differential graded algebras.
+\end{theorem}
+\linea 
+
+Let $\set{E_a}_{1 \leq a \leq n}$ be a basis of the Lie algebra $\alg g$, and let $\set{\theta^a}$ be its dual basis.
+
+\begin{definition}
+    ${G_i^j}_a^b(m) = \theta^b \circ \alpha^i_{j, m}(E_a)$
+\end{definition}
+
+\begin{theorem}
+For real valued forms:
+\begin{align}
+    \omega^i_{\mu_1 \cdots \mu_r a_1 \dots a_s} = {G^i_j}^{b_1}_{a_1} \cdots {G^i_j}^{b_s}_{a_s} \omega^i_{\mu_1 \cdots \mu_r b_1 \dots b_s}
+\end{align}
+
+For $L$-valued forms:
+\begin{align}
+    \omega^i_{\mu_1 \cdots \mu_r a_1 \dots a_s} = {G^i_j}^{b_1}_{a_1} \cdots {G^i_j}^{b_s}_{a_s} \alpha^i_j(\omega^i_{\mu_1 \cdots \mu_r b_1 \dots b_s})
+\end{align}
+\end{theorem}
+
+TODO: how does G look for the Atiyah Lie algebroid
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
