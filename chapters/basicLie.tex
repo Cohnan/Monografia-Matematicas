@@ -385,12 +385,12 @@ Let $\Hom(T^*M, \End(E))$ be the vector bundle whose sections are vector bundle 
 \begin{align*}
     \sigma: \Diff^1(E) \to \Hom(T^*M, \End(E)) 
 \end{align*}
-defined by its $C^\infty(M)$-linear action on sections:
+defined by the induced $C^\infty(M)$-linear action on $1$-forms on $M$:
 \begin{align*}
     \sigma(D)(fdg)(\sect \mu) := f (D(g \sect \mu) - g D(\sect \mu))
 \end{align*}
 for all $D \in \Gamma\alg D(E)$, $f, g \in C^\infty(M)$, $\sect \mu \in \Gamma(E)$.
-Note that the previous definitions suffices since $\sigma(D) \in \Gamma\Hom(T^*M, \End(E))$ is a local operator because it is a $C^\infty(M)$-linear map between sections of vector bundles over $M$. $\sigma$ is a surjective submersion\todo{what allows him to say this so easily in some many opportunities? Fiberwise surjectivity suffices?}, and its kernel is precisely $\End(E)$ since $F:\Gamma(E) \to \Gamma(E)$ vanishes precisely here.
+Note that the previous definitions suffices since $\sigma(D) \in \Gamma\Hom(T^*M, \End(E))$ is a local operator because it is a $C^\infty(M)$-linear map between sections of vector bundles over $M$. $\sigma$ is a surjective submersion\todo{what allows Mackenzie to say this so easily in some many opportunities? Fiberwise surjectivity suffices?}, and its kernel is precisely $\End(E)$ since $F:\Gamma(E) \to \Gamma(E)$ vanishes precisely here.
 
 $TM$ is embedded into $\Hom(T^*M, \End(E))$ via
 \begin{eqnsplit*}
@@ -561,7 +561,7 @@ Concretely, let
     \Tilde \Psi :& (U \times G) \times (\RR^n \oplus \alg g) && \xrightarrow{\cong} && TP|_{\mathcal U} \\    
                  & (m, g, v, \eta)&& \mapsto &&\psi_{*, (m, g)}(\theta_{*, \theta^{-1}(m)} v, R_{g*, 1} \eta).
 \end{align*}
-Now, define the coordinate map for $TP/G$ $\Psi : \mathcal U \times (\RR^n \oplus \alg g)  \to  T_{\mathcal U}P$ by $\Psi = \tilde \Psi \circ \psi^{-1} \times (id_{\RR^n \oplus \alg g})$. %The isomorphisms mentioned above mean that Given any $p \in P$ %and $X_m \in T_m M$ where $m = \pi(p)$, it is always possible to write $p = \psi(m, g)$ and $X_m = \theta_{*, \theta^{-1}(m)} v$ for some $g \in G, v \in \RR^n$; in this case
+Now, define the coordinate map for $TP/G$ $\Psi : \mathcal U \times (\RR^n \oplus \alg g)  \to  T_{\mathcal U}P$ by $\Psi = \tilde \Psi \circ (\psi^{-1} \times id_{\RR^n \oplus \alg g})$. %The isomorphisms mentioned above mean that Given any $p \in P$ %and $X_m \in T_m M$ where $m = \pi(p)$, it is always possible to write $p = \psi(m, g)$ and $X_m = \theta_{*, \theta^{-1}(m)} v$ for some $g \in G, v \in \RR^n$; in this case
 The equivariance of this chart %, it is enough to show check the $G$-equivariance or $\Tilde \Psi$, where $G$ acts on $(U \times G) \times (\RR^n \oplus \alg g)$ as induced by $\psi$, i.e. $(m, g, v, \eta)g' = (m, gg', v, \eta)$ for any $g' \in G$, so we need to see  that 
 %\begin{align*}
 %    \Psi(m, g, v, \eta) g' &=R_{g'*, \psi(m,g)} \circ \psi_{*, (m, g)}(\theta_{*, \theta^{-1}(m)} v, R_{g*, 1} \eta)\\
@@ -745,10 +745,10 @@ $\pi_*(\upsect{\sectoid X}_{pg}) = \pi_*(\natural^{-1}_{pg}(\sectoid X_{\pi(pg)}
 The following theorem gives a convenient way to understand the space of sections of the Atiyah Lie algebroid that, additionally, will be used in the next section to define the Lie algebra structure on $\Gamma(TP/G)$ that completes the construction of the Atiyah Lie algebroid.
 
 \begin{theorem}\label{theoSectTPG}
-Let $U \subset M$ be open, e.g. $U = M$, and $\mathcal U = \pi^{-1}(U) \subset P$. The $C^\infty(U)$-module of local sections $\Gamma_U(TP/G)$ is isomorphic to the space of loca $G$-invariant sections $\Gamma^G_{\mathcal U}(TP)$.
+Let $U \subset M$ be open, e.g. $U = M$, and $\mathcal U = \pi^{-1}(U) \subset P$. The $C^\infty(U)$-module of local sections $\Gamma_U(TP/G)$ is isomorphic to the space of local $G$-invariant sections $\Gamma^G_{\mathcal U}(TP)$.
 \end{theorem}
 
-Based on this theorem, for any $U \subset M$ open \ptext{we will usually understand $\Gamma_{\mathcal U}^G(TP)$ as the space of sections of $T\mathcal U/G$, and we might say that a $G$-invariant section $\upsect{\oid X} \in \Gamma_{\mathcal U}^G(TP)$ ``is a loca section of the Atiyah Lie algebroid $TP/G$''}.
+Based on this theorem, for any $U \subset M$ open \ptext{we will usually understand $\Gamma_{\mathcal U}^G(TP)$ as the space of sections of $T\mathcal U/G$, and we might say that a $G$-invariant section $\upsect{\oid X} \in \Gamma_{\mathcal U}^G(TP)$ ``is a local section of the Atiyah Lie algebroid $TP/G$''}.
 
 \subsubsection{The Bracket}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -834,7 +834,7 @@ All what is left to see is that this definitions of the anchor and the bracket o
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-A principal connection form on the principal bundle $P(M, G)$ is usually defined as $\alg g$-valued $1$-form  $w: TP \to \alg P \times g$ that satisfies:
+A principal connection form on the principal bundle $P(M, G)$ is usually defined as $\alg g$-valued $1$-form  $w: TP \to P \times \alg g$ that satisfies:
 
     \begin{itemize}
     
@@ -1147,7 +1147,7 @@ From now on, since the two induced Lie algebra structures on $\Gamma(P \times \a
 \begin{definition}\label{AtiyahSeq}
     \begin{itemize}
     
-    \item With the Lie algebra structure on $P \times \alg g/G$ from Theorem (\ref{theoBracketAdjoint}), denoted from now on by $[\cdot, \cdot]: \Gamma(P \times \alg g/G, P \times \alg g/G) \to \Gamma(P \times \alg g/G)$, and trivial anchor $a=0$, $P \times \alg g/G$ becomes a Lie algebroid called \emph{the adjoint Lie algebroid to the Atiyah Lie algebroid associated to the principal bundle $P$}.
+    \item With the Lie algebra structure on $P \times \alg g/G$ from Theorem (\ref{theoBracketAdjoint}), denoted from now on by $[\cdot, \cdot]: \Gamma(P \times \alg g/G, P \times \alg g/G) \to \Gamma(P \times \alg g/G)$, and trivial anchor $a=0$, $P \times \alg g/G$ becomes a Lie algebroid over $M$ called \emph{the adjoint Lie algebroid to the Atiyah Lie algebroid associated to the principal bundle $P$}.
     
     \item The exact sequence of Lie algebroids over $M$
 \begin{align} \label{AtiyahSequence}
@@ -1158,7 +1158,7 @@ is called \emph{the Atiyah sequence of the principal bundle $P(M, G)$}.
 
 From the algebraic perspective, we could also say that the Atiyah sequence of $P$ is the induced short exact sequence of $C^\infty(M)$-modules and Lie algebras
 \begin{align} \label{AtiyahSequenceSections}
-    0 \to C^\infty_G(P, \alg g) \xrightarrow{j} \Gamma^G(TP) \xrightarrow{\pi_*^G} \Gamma(TM) \to 0.
+    0 \to C^\infty_G(P, \alg g) \xrightarrow{\overline{j}} \Gamma^G(TP) \xrightarrow{\pi_*} \Gamma(TM) \to 0.
 \end{align}
 
 \end{definition}
