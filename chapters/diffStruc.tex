@@ -174,7 +174,7 @@ for any $p \in \ZZ_{\geq 0}$, $p$-form $\omega$, and any $\sectoid X_1, \dots, \
 \end{definition}
 
 \begin{definition}
-Let $\mathcal A = \oplus_{n = 0}^\infty \mathcal A^k$ be a graded algebra.
+Let $\mathcal A = \oplus_{n = 0}^\infty \mathcal A^k$ be a graded algebra (over $\RR$).
     \begin{itemize}
     
     \item An element $\omega \in \mathcal A^n$ is called a \emph{homogeneous element of degree $n$}, for $n \in \ZZ_{\geq 0}$, and its degree is denoted by $|\omega|$.
@@ -184,7 +184,7 @@ Let $\mathcal A = \oplus_{n = 0}^\infty \mathcal A^k$ be a graded algebra.
         d(\omega \, \eta) = (d\omega)\tau + (-1)^{|\omega|} \omega (d\tau)
     \end{align*}
     
-    \item An antiderivation is \emph{of degree $m$} if, for all homogeneous elements $\omega \in \mathcal A$,
+    \item An antiderivation $d: \mathcal A \to \mathcal A$ is \emph{of degree $m$} if, for all homogeneous elements $\omega \in \mathcal A$,
     \begin{align*}
         |d\omega| = |\omega| + m.
     \end{align*}
@@ -196,19 +196,50 @@ Let $\mathcal A = \oplus_{n = 0}^\infty \mathcal A^k$ be a graded algebra.
 \end{definition}
 
 \begin{theorem}
-Let $E$ be a LAB over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$. Then
-    \begin{itemize}
-
-    \item $(\Omega^{\bullet}(A, E), \wedge)$ is a graded algebra,
-    
-    \item $ f$
-    
-    \end{itemize}
-    
+Let $E$ be an algebra bundle over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$. Then $(\Omega^\bullet(A, E), \wedge, \hat d_\phi)$ is a differential graded algebra.
 \end{theorem}
 
+\begin{proof}
+To see:
+
+Associativity
+
+$d^2 = 0$
+
+Graded Leibniz
+\end{proof}
+
+The following instances of $(\Omega^\bullet(A, E), \wedge, \hat d_\phi)$ will be important to us in future chapters.
+
+\begin{definition}
+On the trivial vector bundle $M \times \RR$, let $A$ act by the trivial action $\phi^0: A \to \alg D(E)$, i.e. considering $\Gamma(M \times \RR)$ as $C^\infty(M)$ and letting the representation be the anchor. %$\phi^0(\sectoid X)f = a(\sectoid X)(f)$, for any $\sectoid X \in \Gamma(A)$ and $f \in C^\infty(M)$.
+Define \[(\Omega^\bullet(A), \wedge, \hat d_A)\] to be the graded differential algebra be $(\Omega^\bullet(A, M \times \RR), \wedge, \hat d_{\phi^0})$.
+\end{definition}
+
+\begin{theorem}
+$(\Omega^\bullet(A), \wedge, \hat d_A)$ is a graded-commutative differential graded algebra.
+\end{theorem}
+
+\begin{proof}
+To see:
+
+$xy = (-1)^{|x||y|}yx$. This follows from $\RR$ being commutative.
+\end{proof}
 
 
+\begin{definition}
+Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ be a transitive Lie algebroid sequence.
+Define \[(\Omega^\bullet(A, L), \wedge, \hat d)\] to be the graded differential algebra be $(\Omega^\bullet(A, L), \wedge, \hat d_{ad})$, where $ad: A \to \alg D(L)$, $\oid X \mapsto j^{-1}[\oid X, \cdot]$ is the adjoint action defined in \ref{defnAdjointAct}.
+\end{definition}
+
+\begin{theorem}
+$(\Omega^\bullet(A), \wedge, \hat d_A)$ is a Lie-graded differential graded algebra.
+\end{theorem}
+
+\begin{proof}
+To see:
+
+\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Cartan Operations}
