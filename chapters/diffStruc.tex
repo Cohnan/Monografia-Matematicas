@@ -146,28 +146,68 @@ Since $\Gamma$ is a strong monoidal function\todo{can I make this more clear?}, 
 
 % Only define things for A, E, and THEN do define the one without E
 \begin{definition}
-Let $E$ be a Lie algebra bundle over $M$ on which $A$ is represented. Define on $\Omega^\bullet(A, E)$ the binary operation, called \emph{the wedge product of LAB-valued forms on $A$}
+Let $E$ be a Lie algebra bundle over $M$, i.e. a vector bundle such that each fiber is an algebra and such that there exists an atlas compatible with the algebra multiplication, on which $A$ is represented. Define on $\Omega^\bullet(A, E)$ the $C^\infty(M)$-bilinear operation operation, called \emph{the wedge product of LAB-valued forms on $A$}
+\begin{eqnsplit*}
+\wedge : \Omega^\bullet(A, E) &\times \Omega^\bullet(A, E) \to \Omega\bullet(A, E)
+\end{eqnsplit*}
+as the linear extension of the maps, for any $p, q \in \ZZ_{\geq 0}$
+\begin{eqnsplit*}
+\wedge : \Omega^p(A, E) \times \Omega^q(A, E) &\to \Omega^{p+q}(A, E)
+\end{eqnsplit*}
 \begin{eqnsplit}
-\wedge : \Omega^p(A, E) \times \Omega^q(A, E) &\to \Omega^{p+q}(A, E) \\
 (\omega \wedge \eta)(\sectoid X_1, \dots, \sectoid X_{p+q}) &:= \\
-\frac{1}{p!q!} \sum_{\sigma \in S_{p+q}} &(-1)^{\sigma} [\omega(\oid X_{\sigma(1)}, \cdots, \oid X_{\sigma(p)}), \eta(\oid X_{\sigma(p+1)}, \cdots, \oid X_{\sigma(p+q)})].
+\frac{1}{p!q!} \sum_{\sigma \in S_{p+q}} &(-1)^{\sigma} \omega(\oid X_{\sigma(1)}, \cdots, \oid X_{\sigma(p)}) \bullet \eta(\oid X_{\sigma(p+1)}, \cdots, \oid X_{\sigma(p+q)}).
 \end{eqnsplit}
+for any $p$-form $\omega$, $q$-form $\eta$ and any $\sectoid X_1, \dots, \sectoid X_{p+q} \in \Gamma(A)$, where $\bullet$ is the algebra multiplication induced on $\Gamma(E)$ by the fiberwise algebra multiplication in $E$.
 \end{definition}
 
 \begin{definition}
-Let $E$ be a LAB over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$. Define the differential  by the Koszul formula
-\begin{eqnsplit}
-\hat d_\phi: \Omega^{\bullet}(A, E) &\to \Omega^{\bullet+1}(A, E)\\
-(\hat d_\phi \omega)(\sectoid X_1, \dots, \sectoid X_{p+1}) &= \sum \\
-& + \sum 
-\end{eqnsplit}
-$\omega$ $p$-form
+Let $E$ be an algebra bundle over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$. Define \emph{the differential of $E$-valued forms on $A$} by the Koszul formula:
+\begin{eqnsplit*}
+\hat d_\phi: \Omega^{\bullet}(A, E) &\to \Omega^{\bullet+1}(A, E)
+\end{eqnsplit*}
+\begin{multline}
+(\hat d_\phi \omega)(\sectoid X_1, \dots, \sectoid X_{p+1}) = \sum_{i=1}^{p+1} (-1)^{i+1} \phi(\sectoid X_i)\cdot \omega(\sectoid X_1, \cdots, \overset{\vee}{\sectoid X_i}, \cdots, \sectoid X_{p+1}) \\
+ + \sum_{1 \leq i < j \leq p+1} (-1)^{i+j}\omega([\sectoid X_i, \sectoid X_j], \sectoid X_1, \cdots, \overset{\vee}{\sectoid X_i}, \cdots, \overset{\vee}{\sectoid X_j}, \cdots, \sectoid X_{p+1})
+\end{multline}
+for any $p \in \ZZ_{\geq 0}$, $p$-form $\omega$, and any $\sectoid X_1, \dots, \sectoid X_{p+1} \in \Gamma(A)$.
+\end{definition}
 
+\begin{definition}
+Let $\mathcal A = \oplus_{n = 0}^\infty \mathcal A^k$ be a graded algebra.
+    \begin{itemize}
+    
+    \item An element $\omega \in \mathcal A^n$ is called a \emph{homogeneous element of degree $n$}, for $n \in \ZZ_{\geq 0}$, and its degree is denoted by $|\omega|$.
+    
+    \item An \emph{antiderivation on $\mathcal A$} is an $\RR$-linear map $d: \mathcal A \to \mathcal A$ such that, if $\omega$ is homogeneous, 
+    \begin{align*}
+        d(\omega \, \eta) = (d\omega)\tau + (-1)^{|\omega|} \omega (d\tau)
+    \end{align*}
+    
+    \item An antiderivation is \emph{of degree $m$} if, for all homogeneous elements $\omega \in \mathcal A$,
+    \begin{align*}
+        |d\omega| = |\omega| + m.
+    \end{align*}
+    
+    \item $\mathcal A$ equipped with an antiderivation $d: \mathcal A \to \mathcal A$ is a \emph{differential graded algebra} if $d \circ d = 0$ and the antiderivation has either degree $1$ of $-1$.
+    
+    \end{itemize}
+    
 \end{definition}
 
 \begin{theorem}
-Let $E$ be a LAB over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$. Then $(\Omega^\bullet(A, E), \wedge, \hat d_\phi)$ is a graded differential (Lie?) algebra.
+Let $E$ be a LAB over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$. Then
+    \begin{itemize}
+
+    \item $(\Omega^{\bullet}(A, E), \wedge)$ is a graded algebra,
+    
+    \item $ f$
+    
+    \end{itemize}
+    
 \end{theorem}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
