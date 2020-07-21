@@ -342,8 +342,61 @@ To understand better:
     
 \end{itemize}
 
+Let $A = TM \oplus (M \times \alg g)$ be a trivial Lie algebroid with fiber type $\alg g$.
 
+\begin{theorem}
+The graded (commutative) differential algebra $(\Omega^\bullet(A), \hat d_A)$ is isomorphic to the bigraded commutative differential algebra $(\Omega^\bullet(TM) \otimes \bigwedge^\bullet \alg g^*, d + s)$, where
+\begin{align}
+    d: \Omega^\bullet(TM) \otimes \bigwedge^\bullet \alg g^* &\to \Omega^{\bullet+1}(TM) \otimes \bigwedge^\bullet \alg g^*
+\end{align}
+is the usual de Rham differential on $\Omega^\bullet(TM)$ and
+\begin{align*}
+    s: \Omega^\bullet(TM) \otimes \bigwedge^\bullet \alg g^* &\to \Omega^\bullet(TM) \otimes \bigwedge^{\bullet+1} \alg g^*
+\end{align*}
+\begin{multline}
+    s\omega(\sect \eta_1, \cdots, \sect \eta_{p+1}) := \sum_{1 \leq i < j \leq p+1} (-1)^{i+j} \omega([\sect \eta_i, \sect \eta_j], \sect \eta_1, \cdots, \overset{\vee}{\sect \eta_i}, \cdots, \overset{\vee}{\sect \eta_j}, \cdots \sect \eta_{p+1})
+\end{multline}
+is \emph{the Chevalley-Eilenbert differential on $\bigwedge \alg g^*$}.
+\end{theorem}
 
+\begin{proof}
+To see:
+
+Is isomorphism of graded algebras
+
+Respects the differentials
+\end{proof}
+
+\begin{theorem}
+The graded differential algebra $(\Omega^\bullet(A), \hat d_A)$ is isomorphic to the bigraded Lie differential algebra $(\Omega^\bullet(TM) \otimes \bigwedge^\bullet \alg g^* \otimes \alg g, d + s')$, where
+\begin{align}
+    d: \Omega^\bullet(TM) \otimes \bigwedge^\bullet \alg g^* &\to \Omega^{\bullet+1}(TM) \otimes \bigwedge^\bullet \alg g^*
+\end{align}
+is the usual de Rham differential on $\Omega^\bullet(TM)$ and
+\begin{align*}
+    s: \Omega^\bullet(TM) \otimes \bigwedge^\bullet \alg g^* &\to \Omega^\bullet(TM) \otimes \bigwedge^{\bullet+1} \alg g^*
+\end{align*}
+\begin{multline}
+    s'\omega(\sect \eta_1, \cdots, \sect \eta_{p+1}) := \sum_{i = 0}^{p+1} (-1)^i [g_i, \omega(\sect \eta_1, \cdots, \overset{\vee}{\sect \eta_i}, \cdots, \sect \eta_{p+1})] \\
+    \sum_{1 \leq i < j \leq p+1} (-1)^{i+j} \omega([\sect \eta_i, \sect \eta_j], \sect \eta_1, \cdots, \overset{\vee}{\sect \eta_i}, \cdots, \overset{\vee}{\sect \eta_j}, \cdots \sect \eta_{p+1})
+\end{multline}
+is \emph{the Chevalley-Eilenbert differential on the $\alg g$-valued forms $\bigwedge \alg g^* \otimes \alg g$}. 
+
+The graded differential Lie algebra $(\Omega^\bullet(TM) \otimes \bigwedge^\bullet \alg g^* \otimes \alg g, d + s')$ will be denoted instead by
+\begin{align}
+    (\Omega^\bullet_{TLA}(M, \alg g), \hat d_{TLA}).
+\end{align}
+\end{theorem}
+
+\begin{proof}
+To see:
+
+Is morphism of differential graded algebras
+
+Respects the differentials
+
+Respects Lie structure?
+\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
