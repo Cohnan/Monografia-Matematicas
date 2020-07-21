@@ -191,6 +191,8 @@ Let $\mathcal A = \oplus_{n = 0}^\infty \mathcal A^k$ be a graded algebra (over 
     
     \item $\mathcal A$ equipped with an antiderivation $d: \mathcal A \to \mathcal A$ is a \emph{differential graded algebra} if $d \circ d = 0$ and the antiderivation has either degree $1$ of $-1$.
     
+    \item Let $(\mathcal A, \bullet, d)$ and $(\mathcal A', \bullet', d')$ be differential graded algebras. A \emph{morphism of differential graded algebras} is a graded algebra morphism $\phi: \mathcal A \to \mathcal A'$ such that $d' \circ \phi = \phi \circ d$.
+    
     \end{itemize}
     
 \end{definition}
@@ -213,7 +215,7 @@ The following instances of $(\Omega^\bullet(A, E), \wedge, \hat d_\phi)$ will be
 
 \begin{definition}
 On the trivial vector bundle $M \times \RR$, let $A$ act by the trivial action $\phi^0: A \to \alg D(E)$, i.e. considering $\Gamma(M \times \RR)$ as $C^\infty(M)$ and letting the representation be the anchor. %$\phi^0(\sectoid X)f = a(\sectoid X)(f)$, for any $\sectoid X \in \Gamma(A)$ and $f \in C^\infty(M)$.
-Define \[(\Omega^\bullet(A), \wedge, \hat d_A)\] to be the graded differential algebra be $(\Omega^\bullet(A, M \times \RR), \wedge, \hat d_{\phi^0})$.
+Define \[(\Omega^\bullet(A), \wedge, \hat d_A)\] to be the graded differential algebra be $(\Omega^\bullet(A, M \times \RR), \wedge, \hat d_{\phi^0})$, and call its elements \emph{the real valued forms on $A$}.
 \end{definition}
 
 \begin{theorem}
@@ -240,6 +242,21 @@ $(\Omega^\bullet(A), \wedge, \hat d_A)$ is a Lie-graded differential graded alge
 To see:
 
 \end{proof}
+
+\begin{proposition}
+$(\Omega^\bullet(A, L), \wedge, \hat d)$ is a graded differential module over the graded commutative differential algebra $\Omega^\cdot(A)$, through the linear extension of the action:
+\begin{align*}
+    \wedge: \Omega^\bullet(A) \times \Omega^\bullet(A, L) &\to \Omega^\bullet(A, L)
+\end{align*}
+\begin{eqnsplit}
+(\omega \wedge \eta)(\sectoid X_1, \dots, \sectoid X_{p+q}) &:= \\
+\frac{1}{p!q!} \sum_{\sigma \in S_{p+q}} &(-1)^{\sigma} 
+\underbrace{\omega(\oid X_{\sigma(1)}, \cdots, \oid X_{\sigma(p)})}_{\in \,\Gamma(M \times \RR)} 
+\cdot 
+\underbrace{\eta(\oid X_{\sigma(p+1)}, \cdots, \oid X_{\sigma(p+q)})}_{\in \, \Gamma(L)}
+\end{eqnsplit}
+for any real valued $p$-form $\omega$, $L$-valued $q$-form $\eta$ and any $\sectoid X_1, \dots, \sectoid X_{p+q} \in \Gamma(A)$.
+\end{proposition}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Cartan Operations}
