@@ -94,7 +94,7 @@ Let $E$ be a vector bundle over $M$.
     
 \end{definition}
 
-Notice that $\Alt^\bullet(A, E)$ is a vector bundle with finite dimensional fibers since, due to the antisymmetry property, $\Alt^n(A, E) = 0$ for all values of $n$ greater than some fixed value $N \in \ZZ > 0$.
+Notice that $\Alt^\bullet(A, E)$ is a vector bundle, with finite dimensional fibers, since due to the antisymmetry property, $\Alt^n(A, E) = 0$ for all values of $n$ greater than some fixed value $N \in \ZZ_{\geq 0}$.
 
 \begin{definition}
 Let $E$ be a vector bundle over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$.
@@ -131,7 +131,9 @@ Due to the bijective correspondence between $C^\infty(M)$-linear maps between se
     
     %\item $\Alt^n(A)$ and $\bigwedge^n A^*$ are isomorphic vector bundles.
     
-    \item $\Omega^n(A, E)$ and $\Gamma(E) \otimes \Gamma\Alt^n A^*$ are isomorphic $C^\infty(M)$-modules.
+    \item $\Omega^n(A, E)$ and $\Gamma(E) \otimes \Gamma\bigwedge^n A^*$ are isomorphic $C^\infty(M)$-modules.
+    
+    \item If $U$ is trivializing neighborhood for both $A$ and $E$, $\Omega^n(A, E) \cong C^\infty(U, V) \otimes_{C^\infty(U)} \Gamma(U \times \bigwedge^n W^*) \cong C^\infty(U, V) \otimes_{\bb K} \bigwedge^n W^*$
     
     %\item $\Omega^n(A)$ and $\Gamma\Alt^nA^*$ are isomorphic $C^\infty(M)$-modules.
     
@@ -146,7 +148,7 @@ Since $\Gamma$ is a strong monoidal function\todo{can I make this more clear?}, 
 
 % Only define things for A, E, and THEN do define the one without E
 \begin{definition}
-Let $E$ be a Lie algebra bundle over $M$, i.e. a vector bundle such that each fiber is an algebra and such that there exists an atlas compatible with the algebra multiplication, on which $A$ is represented. Define on $\Omega^\bullet(A, E)$ the $C^\infty(M)$-bilinear operation operation, called \emph{the wedge product of LAB-valued forms on $A$}
+Let $E$ be an algebra bundle over $M$, i.e. a vector bundle such that each fiber is an algebra and such that there exists an atlas compatible with the algebra multiplication, on which $A$ is represented. Define on $\Omega^\bullet(A, E)$ the $C^\infty(M)$-bilinear operation operation, called \emph{the wedge product of LAB-valued forms on $A$}
 \begin{eqnsplit*}
 \wedge : \Omega^\bullet(A, E) &\times \Omega^\bullet(A, E) \to \Omega\bullet(A, E)
 \end{eqnsplit*}
@@ -543,3 +545,4 @@ There seem to be $2$, related, alternative descriptions (Lazzarini2012):
         
     \end{itemize}
 
+Recall: Space of $k$-forms on $M$ with values in $P \times V/G$ $\longleftarrow$ Space of $G$-equivariant and \emph{horizontal} $V$-valued $k$-forms on $P$.
