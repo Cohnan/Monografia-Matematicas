@@ -75,7 +75,42 @@ What meaning may be given to \ref{whatMeaning}
 
 
 \subsection{Equivalence for Atiyah Lie Algebroid to Principal Bundle Theory}
+
+Mackenzie does this in detail.
+
+The general equivalence of $G$-equivariant/invariant forms on $TP$ and Lie algebroid forms has been established in Ch 2. THe normalized part is easy.
+
+$\omega_{loc}(\cdot \oplus 0)$ is a local principal connection form.
+
 \subsection{Local Description of connection and curvature and ``Change of Gauge''}
+
+Ordinary Lie algebroid connection, i.e. $\omega \circ j = - id_L$
+
+\begin{align}
+    \omega^j_{loc}(X \oplus \eta) 
+    &= \omega^j_{loc}(X) - \eta !!\text{$\omega(S(\cdot \oplus 0))$ is a local principal connection}\\
+    &= \underbrace{\alpha^j_i(\omega^i_{loc}(X)) + \chi^j_i(X)}_{\text{same as the ppal. connection $\omega(S(\cdot \oplus 0))$}}- \eta
+\end{align}
+
+Generalized connections: $\omega \circ j = \tau - id_L$
+
+\begin{align}
+\omega^j_{loc}(X \oplus \eta) 
+ = \underbrace{\alpha^j_o)\omega^j_{loc})(X)) + \chi^j_i(X) - \eta}_{\text{same as before}} + \psi_j^{-1}\circ \tau (\psi_j(\eta) - l^j_i(X))\\
+\end{align}
+
+The extra bit can also be written as 
+\begin{align}
+    \psi_j^{-1}\circ \gau \circ j^{-1}S_i(\eta) \\
+    \psi_j^{-1}\circ \gau \circ j^{-1}\psi_i(\eta^i) & \text{if $\eta$ is understood as $\eta = \eta^j$}
+\end{align}
+
+These all means that
+\begin{proposition}
+A family of local $1$-forms with the above transformation rules $\equiv$ a (generalized) Lie algebroid connection on $A$
+\end{proposition}
+
+\linea
 
 \section{Mixed Local Basis of Forms given a Connection and $G^i_j$ Matrices}
 

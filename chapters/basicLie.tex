@@ -1474,7 +1474,11 @@ In summary, for a Lie algebroid element that in the coordinate frame $j$ has for
     \item one for the distinct notions of horizontality induced by the $\Theta$'s: $\chi^i_j(X)$,
     
     \item another for the distinct ways the adjoint Lie algebroid $L|_{U_{ij}}$ is trivialized as the bundle $U_{ij}\times \alg g$: $\alpha^i_j(\eta^j)$;
-\end{itemize} the addition of both corrections gives $\eta^i = \chi^i_j(X) + \alpha^i_j(\eta^j)$.
+\end{itemize} the addition of both corrections gives $\eta^i = \chi^i_j(X) + \alpha^i_j(\eta^j)$, i.e.
+\begin{eqnsplit}\label{formulasij}
+    s^i_j:= S_i^{-1} \circ S_j :TU_{ij} \oplus (U_{ij} \times \alg g) &\to TU_{ij} \oplus (U_{ij} \times \alg g) \\
+    X \oplus \eta &\mapsto X \oplus (\chi^i_j(X) + \alpha^i_j(\eta))
+\end{eqnsplit}
 
 We now present some useful formulas. Suppose $\oid X = S_i(X \oplus \eta^i) = S_j(X \oplus \eta^j) \in A|_{U_{ij}}$, then 
 \begin{eqnsplit}
