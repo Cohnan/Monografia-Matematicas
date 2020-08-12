@@ -460,6 +460,52 @@ Let $\omega \in \Omega^q(A, L)$.
 
 \end{definition}
 
+\begin{proposition}
+Let $U$ be a Lie algebroid trivializing neighborhood of $A$ \textbf{that also trivializes $M$}, with associated trivializing maps $\psi: U \times \alg g \to L|_{U}$, $\Theta: TU \to A_{U}$, and let $\varphi = (x^1, \dots, x^m): U \to \RR^m$ be a coordinate map of $M$, and let $\set{E_a}_{a= 1, \dots, n}$ be a basis for $\alg g$. Then 
+\begin{multline}
+    \sectoid A_1, \dots, \sectoid A_m, \sectoid A_{m+1}, \dots, \sectoid A_{m+n} =\\
+    \{S\left(\pder{x^1}\right), \dots, S\left(\pder{x^m}\right), S(\stilde{E_1}), \dots, S(\stilde{E_m}))\} \subset \Gamma_U(A)
+\end{multline}
+is a local frame for $A$.
+\end{proposition}
+
+\begin{proof}
+For every $m \in U$, $S$ is fiberwise a vector space isomorphism between $T_m M \oplus \alg g$ and $A_m$, so the result follows since $\{\pder{x^1}_m, \dots, \pder{x^m}_m, E_1, \dots, E_m\}$ is a basis of $T_m M \oplus \alg g$.
+\end{proof}
+
+\begin{theorem}
+Let $U$ be a trivializing neighborhood of $A$ that also trivializes $M$. The map
+\begin{eqnsplit}
+\cdot_{loc} : (\Omega^\bullet_U(A), \wedge, \hat d_A) &\to (\Omega^\bullet(TU \oplus (U \times \alg g)), \wedge, \hat d_{TU \times \alg g})
+\end{eqnsplit}
+is an isomorphism of differential graded algebras. In particular
+\begin{equation}
+    (\hat d_A \omega)_{loc} = \hat d_{TU \times \alg g} \omega_{loc}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+They are isomorphic as $C^\infty(U)$-modules for each $\Omega^p_U$: easy
+
+They are isomorphic as $\bb K$-algebras: easy
+
+The differential ``commutes'' with loc: using the ``Koszul'' formula for the differential, it is necessary to use both that $S$ respects the anchor and the Lie bracket, i.e. \textbf{that $S$ is a Lie algebroid morphism}.
+\end{proof}
+
+\begin{theorem}
+Let $U$ be a trivializing neighborhood of $A$. The map
+\begin{eqnsplit}
+\cdot_{loc} : (\Omega^\bullet_U(A, L), \wedge, \hat d) &\to (\Omega^\bullet(TU \oplus (U \times \alg g), U \times \alg g), \wedge, \hat d_{TLA})
+\end{eqnsplit}
+is an isomorphism of differential graded algebras. In particular
+\begin{equation}
+    (\hat d \omega)_{loc} = \hat d_{TLA} \omega_{loc}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+The proof is identical to that of the previous theorem, except for the last part. To see that the differential commutes it is neceessary to show that the induced representation of $TLA$ on $U \times \alg g$ via $ad: A|_U \to D_{Der}(U \times \alg g)$ is the $ad$ representation. This will follow from the fact that $\tilde psi$ respects the Lie bracket, i.e. $\psi$ is a trivialization of a LAB.
+\end{proof}
+\linea 
+
 Let $\omega \in \Omega^q(A, L)$ and let $\{\sectoid X_k\} \subset \Gamma(A)$ for $k = 1, \dots, q$. Let each $\sectoid X_k$ have a family of trivializations $\{\sect X_k \oplus \stilde \eta_k^i \in \Gamma(TU_i) \oplus C^\infty(U_i, \alg g)\}$, then, in $U_{ij} = U_i \inter U_j \neq \empty$
 \begin{align*}
     \omega^i_{loc}(X_1 \oplus \stilde \eta_1^i, \cdots, X_q \oplus \stilde \eta_q^i) = \alpha^i_j \circ \omega^j_{loc}(X_1 \oplus \stilde \eta_1^j, \cdots, X_q \oplus \stilde \eta_q^j)
