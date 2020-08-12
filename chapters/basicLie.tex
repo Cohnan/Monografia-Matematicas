@@ -1,8 +1,8 @@
 %INTRODUCTION \complete{ Hacer la introducción. Quizá ver pequeños comentrios de Mackenzie y de Lazzarini} 
-In chapter \ref{chp:intro} we saw how the basic elements in a gauge theory are 
+In chapter \ref{chp:intro} we saw how the basic elements in a gauge theory are:
     \begin{itemize}
         
-    \item a principal bundle $P$, a fibration over spacetime $M$ whose fibers encode inner degrees of freedom associated to a continuous symmetry $G$,
+    \item a principal bundle $P$, a fibration over spacetime $M$ whose fibers encode inner degrees of freedom associated to a smooth symmetry $G$,
     
     \item their associated vector bundles, whose sections are matter fields which have certain symmetry with respect to the group action, and which can be interpreted as equivariant vector valued functions on $P$,
     
@@ -17,7 +17,7 @@ A natural language to talk about principal bundle connections is that of the Ati
 
     %\item the two defining properties of a principal connections $\omega: TP \to P \times \alg g$ are naturally as a section of the anchor $TP/G \xrightarrow{a} TM$,
     
-    \item As we will see in \ref{}, the vector bundle $TP/G$ over $M$ is, locally, the internal direct sum of the vector bundles $TM$ and $M\times \alg g$. Due to the Lie bracket structure on $TP/G$, this can be interpreted as saying that $TP/G$ at $m \in M$ being a set of ``generalized directions at $m$'': the set of tangent directions $T_m M \cong \RR^n$ plus a set of vertical directions $\alg g$ encoding the continuous symmetry.
+    \item As we will see in \ref{}, the vector bundle $TP/G$ over $M$ is, locally, the internal direct sum of the vector bundles $TM$ and $M\times \alg g$. Due to the Lie bracket structure on $TP/G$, this can be interpreted as saying that $TP/G$ at $m \in M$ is a set of ``generalized directions at $m$'': the set of tangent directions $T_m M \cong \RR^n$ plus a set of vertical directions $\alg g$ encoding the smooth symmetry $G$.
     
     \item The notion of horizontallity induced in $TP$  %this is a space where the fiber of each point $m$ of the base manifold $M$ is a set of directions over $m$ some of which are vertical to $TM$, removing the redundancy present in $TP$ where an arbitrary point $p$ in the fiber in $P$ of $m$ had to be chosen first to see $T_p P$ as the set of generalized directions over $m$ where paths could be lifted.
     possesses a redundancy given by the action of $G$, meaning that knowing the horizontal subspace of $T_p P$ at $p$ is enough to determine the induced horizontal spaces in all of the fiber of $\pi(p)$. This redundancy is removed if the notion of horizontallity is defined instead on $TP/G$ and this, locally, means indicating for each $X \in TM$ which ``generalized direction'' $X \oplus \eta \in TM \oplus (M \times \alg g)$ is the horizontal direction that corresponds to the tangent direction $X$.
@@ -93,7 +93,7 @@ The simplest examples of Lie algebroids are the tangent bundle $TM$ of a manifol
     
     \item A \emph{field of Lie algebra brackets on $L$} $[\cdot, \cdot]:\Gamma(L) \times \Gamma(L) \to \Gamma(L)$ is a section of the vector bundle $Alt^2(L; L)$ of alternating $2$-forms with values on $L$ such that, at any $m \in M$, $[\cdot, \cdot]_m:L_m \times L_m \to L_m$ makes $L_m$ a Lie algebra.
     
-    \item $L$ together with a field of Lie brackets $[\cdot, \cdot]:\Gamma(L) \times \Gamma(L) \to \Gamma(L)$ is a \emph{Lie algebra bundle} or \emph{LAB} if $L$ admits an atlas, called \emph{an LAB atlas}, $\set{\psi_i: U_i \times \alg g_i \to L|_{U_i}}_{i \in I}$, where $\alg g_i$ is a Lie algebra and each $\psi_{i, m}: \alg g_i \to L_m$ is a Lie algebra isomorphism. An LAB is said to \emph{have fiber type $\alg g$} is there is an LAB atlas such that $\alg g_i = \alg g$ for all $i \in I$.
+    \item $L$ together with a field of Lie brackets $[\cdot, \cdot]:\Gamma(L) \times \Gamma(L) \to \Gamma(L)$ is a \emph{Lie algebra bundle} or \emph{LAB} if $L$ admits an atlas, called \emph{an LAB atlas}, $\set{\psi_i: U_i \times \alg g_i \to L|_{U_i}}_{i \in I}$, where $\alg g_i$ is a Lie algebra and each $\psi_{i, m}: \alg g_i \to L_m$ is a Lie algebra isomorphism. An LAB is said to \emph{have fiber type $\alg g$} if there is an LAB atlas such that $\alg g_i = \alg g$ for all $i \in I$.
     
     \end{itemize}
     
@@ -109,7 +109,7 @@ is a Lie algebroid, called \emph{the vertical Lie subalgebroid of $A$} with triv
 \end{theorem}
 
 \begin{proof}
-$ker(a) \subset A$ implies that the sections of $ker(a)$ can be naturally considered sections of $A$. The first compatibility condition of Lie algebroids, i.e. that the anchor is a Lie algebra morphism, imply that the bracket of $A$ restricts to a bracket on $ker(a)$.
+$ker(a) \subset A$ implies that the sections of $ker(a)$ can be naturally considered sections of $A$. The first compatibility condition of Lie algebroids, i.e. that the anchor applied to sections is a Lie algebra morphism, imply that the bracket of $A$ restricts to a bracket on $ker(a)$.
 
 The second compatibility condition, Leibniz identity, becomes the statement of the $C^\infty(M)$ bilinearity of the bracket, which imply that the bracket is a point operator, and so the result follows.
 \end{proof}
@@ -127,7 +127,7 @@ $\Gamma(A)$ is a finitely generated projective $C^\infty(M)$-module over $M$, i.
 That a vector bundle over a smooth manifold is a finitely generated projective module is known as Serre-Swan's theorem. A morphism of $C^\infty(M)$-modules is simply a $C^\infty(M)$-linear map, so this statement is guaranteed by the equivalence between morphisms of vector bundles over $M$ and $C^\infty(M)$-linear maps between their sections.
 \end{proof}
 
-The previous result remarks the algebraic perspective which may also be used to study this topic, in contrast to the topological perspective that has been primarily adopted in this document. However, this perspective is useful and will be used whenever clarity may be gained by its use. An important point to have in mind when shifting from one perspective to the other is the equivalence between morphisms of vector bundles over $M$ and $C^\infty(M)$-linear maps between their sections.
+The previous result remarks the algebraic perspective which may also be used to study this topic, in contrast to the topological perspective that has been primarily adopted in this document. However, this perspective is useful and will be used whenever clarity may be gained by its use. An important point to have in mind when shifting from one perspective to the other is the \textbf{equivalence between morphisms of vector bundles over $M$ and $C^\infty(M)$-linear maps between their sections}.
 
 \section{Examples}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -139,7 +139,7 @@ The previous result remarks the algebraic perspective which may also be used to 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The tangent bundle of a manifold $M$ is the most basic example of a Lie algebroid, as it should be if we want to understand Lie algebroids on $M$ as generalized directions on $M$ since $TM$ is the space of the directions tangent to $M$.
+The tangent bundle of a manifold $M$ is the most basic example of a Lie algebroid, as it should be if we want to understand Lie algebroids on $M$ as generalized directions on $M$, since $TM$ is the space of the directions tangent to $M$.
 
 For any manifold $M$, its tangent bundle $(TM, \pi, M)$ together with the vector field commutator $[\cdot , \cdot]: \Gamma(TM) \times \Gamma(TM) \to \Gamma(TM)$ as bracket and with the identity of $TM$ as anchor make of $TM$ a Lie algebroid over $M$. Notice how, evidently, the anchor is fiberwise surjective, meaning that every tangent direction on $M$ has a ``representative'' in this Lie algebroid. Additionally, there are no ``vertical directions'' since the vertical Lie subalgebroid of $TM$ is the $0$ bundle on $M$.
 
@@ -245,7 +245,7 @@ The space of sections a trivial vector bundle $B \times V$ over $B$ is a $C^\inf
 there is a bijective correspondence between sections $\sect \mu \in \Gamma(B \times V)$ and functions $C^\infty(B, V)$, which is characterized by
 \begin{align} \label{defnTildeSect}
     \sect \mu(b) = (b, \stilde \mu(b)),
-\end{align}, and, to any function $\stilde \nu \in C^\infty(B, V)$ corresponds a section $\sect \nu \in \Gamma(B \times V)$. \ptext{Therefore, in general, we will indistinctively regard $C^\infty(B, V)$ of $\Gamma(B \times V)$ as the space of sections, so we might say that $\stilde \mu \in C^\infty(B, V)$ ``is a section of $B \times V$''}. In our current situation, this means that may we regard the $\alg g$-valued functions $C^\infty(M, \alg g)$ as the space of sections of $M \times \alg g$
+\end{align} and, to any function $\stilde \nu \in C^\infty(B, V)$ corresponds a section $\sect \nu \in \Gamma(B \times V)$. \ptext{Therefore, in general, we will indistinctively regard $C^\infty(B, V)$ of $\Gamma(B \times V)$ as the space of sections, so we might say that $\stilde \mu \in C^\infty(B, V)$ ``is a section of $B \times V$''}. In our current situation, this means that may we regard the $\alg g$-valued functions $C^\infty(M, \alg g)$ as the space of sections of $M \times \alg g$
 
 Now, consider the internal direct sum over $M$ of the vector bundles $TM$ and $M \times \alg g$ with projection map $\pi: TM \oplus (M \times \alg g) \to M$. %; -> esta definicion de la suma directa no me permite ver facilmente la estructura de variedad; Tu define distinto y prueba que la suma directa de haces vectoriales suaves es suave... pero quisiera poder ver que esta estructura es la misma estructura de variedad de $TM \times \alg g$... cambiar la definicion de la suma directa significa tambien que cambie la forma de referirme a los elementos de la suma, de tal forma que el anchor ya no es solo una proyeccion a la primera coordenada \unsure{Here I'm being explicit with basic stuff of vector bundle theory on purpose, but I'm not sure if this will stay} that the underlying manifold of this bundle is simply the NO regular submanifold of the product $TM \times (M \times \alg g)$ given by $TM \oplus (M \times \alg g) = \set{(X, \eta) \in TM \times (M \times \alg g) \st \pi(X) = p_1(\eta)}$; we will call the projection of this vector bundle $\pi: X \oplus \eta \mapsto \pi(X) = p_1(\eta)$, abusing the notation; we write an element of this vector bundle as $X \oplus \eta$, where $X \in \pi^{-1}(m)$ and $\eta \in p_1^{-1}(m)$.
 It has a vector bundle atlas $\set{(U_i, \psi^\oplus_i: U_i \times (\RR^{n_i} \oplus \alg g) \to \pi^{-1}(U_i) )}_{i \in I}$, where $n_i$ is some positive integer and $U_i$ is a chart neighborhood of $M$ that simultaneously trivializes the vector bundles $TM$ and $M \times \alg g$ through the coordinate maps $\psi^{TM}_i: U_i \times \RR^{n_i} \to TU_i$  and $\psi^\alg g = id_{U_i \times \alg g}$.
@@ -289,7 +289,7 @@ Let's check that the compatibility conditions between the anchor and the bracket
     \end{align*}
     \end{enumerate}
 
-The vector bundle $TM \times (M \times \alg g)$ together with the previously defined anchor and bracket is called \emph{the trivial Lie algebroid on $M$ with structure algebra $\alg g$}.
+The vector bundle $TM \oplus (M \times \alg g)$ together with the previously defined anchor and bracket is called \emph{the trivial Lie algebroid on $M$ with structure algebra $\alg g$}. Since the underlying set of this Lie algebroid is $TM \times \alg g$, we will constantly refer to it as the trivial Lie algebroid.
 
 % \subsubsection{Explicit Examples}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -456,7 +456,7 @@ Then, we will follow a similar procedure to define the Adjoint Lie algebroid $P 
 \begin{align*}
     0 \to P \times \alg g/G \xrightarrow{j} TP/G \xrightarrow{a} TM \to 0,
 \end{align*}
-formally defined in definition \ref{AtiyahSeq}.
+formally introduced in definition \ref{AtiyahSeq}.
 
 \subsection{The Atiyah Lie algebroid}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -496,7 +496,7 @@ We will denote by $\langle \mu \rangle \in E/G$ the orbit of $\mu \in E$, and by
 \begin{align} \label{eqnProjectionOfQuotient}
     p^{E/G}(\cl{\mu}) = \pi(p^E(\mu)) \in M
 \end{align}
-for any $\mu \in E$, as indicated by the commutative diagram. \ptext{In general, the action of $g \in G$ on some manifold will be denoted by concatenation, so, for example, $pg$ means $R_g(p)$ for any $p \in P$.}
+for any $\mu \in E$, as indicated by the commutative diagram. \ptext{In general, the action of $g \in G$ on some manifold will be denoted by concatenation if no confusion may arise; for example, $pg$ means $R_g(p)$ for any $p \in P$.}
 
 \end{proposition}
 
@@ -543,7 +543,7 @@ Let $g \in G$ act to the right on the vector bundle $(TP, \pi, P)$ by the push-f
 $(TP/G, \pi^G, M)$ is called \emph{the vector bundle of the Atiyah Lie algebroid associated to the principal bundle $P$}.
 
 \begin{proof}
-This theorem reduces to the verication that the conditions of \ref{3.1.1} are satisfied by $(TP, \pi_*, P)$. Condition (1) is satisfied since, for any $g \in G$, the map $R_{g*}:TP \to TP$ is a fiberwise linear map over $R_g$ with inverse $R_{g^{-1} *}$.
+This theorem reduces to the verification that the conditions of \ref{3.1.1} are satisfied by $(TP, \pi_*, P)$. Condition (1) is satisfied since, for any $g \in G$, the map $R_{g*}:TP \to TP$ is a fiberwise linear map over $R_g$ with inverse $R_{g^{-1} *}$.
 
 Given $p_0 \in P$, to construct an equivariant $\pi$-saturated chart near $p$ we will start with a chart $\psi:U \times G \to \mathcal U = \pi^{-1}(U)$ for $P$ where $U$ is the range of a chart $\theta:\RR^n \to U$ for $M$. The desired chart $\Psi: \mathcal U \times (\RR^n \oplus \alg g) \to TP|_{\mathcal U}$ for $TP$ will essentially be $\psi^*$, after we identify (via smooth maps) 
     \begin{itemize}
@@ -620,7 +620,7 @@ Finally, $\Psi^{G}$ is a smooth vector bundle morphism over $f:M \to M'$ since $
 \end{proof}
 
 \begin{corollary}
-Let $(E, p^E, P)$ be a vector bundle over the principal bundle $P(M, G)$, and let $G$ act on $E$ satisfying the conditions of Proposition \ref{3.1.1}. Let $(E, p^{E'}, M')$ be another vector bundle. Let $\Psi: E \to E'$ be a vector bundle morphism over a map $f: P \to M'$ that satisfies \[\Psi(\mu g) = \Psi(\mu)\] and $f(pg) = f(p)$ for all $\mu \in E$, $p \in P$ and $g \in G$. Then there exists a unique (smooth) vector bundle morphism $\Psi^{G}: E/G \to E'$ over a map $f^{G}: M \to M'$ such that $f = f^{G} \circ \pi$, that satisfies \[\Psi^{G} \circ \natural = \Psi\], where $\natural: E \to E/G$ is the quotient map. In particular, the following diagram commutes
+Let $(E, p^E, P)$ be a vector bundle over the principal bundle $P(M, G)$, and let $G$ act on $E$ satisfying the conditions of Proposition \ref{3.1.1}. Let $(E, p^{E'}, M')$ be another vector bundle. Let $\Psi: E \to E'$ be a vector bundle morphism over a map $f: P \to M'$ that satisfies \[\Psi(\mu g) = \Psi(\mu)\] and $f(pg) = f(p)$ for all $\mu \in E$, $p \in P$ and $g \in G$. Then there exists a unique (smooth) vector bundle morphism $\Psi^{G}: E/G \to E'$ over a map $f^{G}: M \to M'$ such that $f = f^{G} \circ \pi$, that satisfies \[\Psi^{G} \circ \natural = \Psi,\] where $\natural: E \to E/G$ is the quotient map. In particular, the following diagram commutes
 
 \begin{equation} \label{anchorDiagram}
     \begin{tikzcd}
@@ -684,7 +684,7 @@ where $p \in \mathcal U$ is any point in the fiber of $m \in U$, which has as in
 
 It is important to realize that:
 \begin{itemize}
-    \item the first map can not be extended to non-invariant sections $\sect \mu \in \Gamma_{\mathcal U}(E)$ because it is not, in general, the case that $\cl{\sect \mu(p)} = \cl{\mu(p')}$ even when $p, p' \in \pi^{-1}(m)$;
+    \item the first map can not be extended to non-invariant sections $\sect \mu \in \Gamma_{\mathcal U}(E)$ because it is not true, in general, that $\cl{\sect \mu(p)} = \cl{\sect \mu(p')}$ even when $p, p' \in \pi^{-1}(m)$;
     
     \item the second map can not be extended to elements $\oid \mu \in E/G_m$ to return elements of $E$ because there is not a canonical choice of $p \in \pi^{-1}(m)$ where ``$\,\upsect{\oid \mu}\,$'' should belong to .
 \end{itemize}
@@ -779,7 +779,7 @@ So, for $\sect \mu, \sect \nu \in \Gamma_{\mathcal U}^G(TP)$, $p \in \mathcal U$
 from which the $G$-invariance of $[\sect \mu, \sect \nu]$ follows by (\ref{secInv1}).
 \end{proof}
 
-The previous proposition shows that the following is a good definition.
+The previous lemma shows that the following is a good definition.
 
 \begin{definition}\label{AtiyahBracket}
 For any $\sectoid X, \sectoid Y \in \Gamma_U(TP/G)$, define 
@@ -1209,7 +1209,7 @@ This can be done due to the equivalence between vector bundle maps over $M$ and 
 \end{definition}
 
 \begin{remark}
-If $A$ is a regular Lie algebroid with anchor $a$, both $im(a)$ and $ker(a)$ are vector subbundles or $A$ and $TM$ respective. By Theorem \ref{theoFiberLie} $ker(a)$ is in fact a totally intransitive Lie algebroid. The image of the anchor defines an involutive distribution on $M$ and, in consequence, a foliation of the base manifold called \emph{the characteristic foliation of $A$}. Then, the restriction of $A$ to each leaf is a transitive Lie algebroid.
+If $A$ is a regular Lie algebroid with anchor $a$, both $im(a)$ and $ker(a)$ are vector subbundles of $A$ and $TM$ respectively\footnote{A bundle map has subbundle kernel if and only if it has subbundle image if and only if it has locally constant rank.}. By Theorem \ref{theoFiberLie} $ker(a)$ is in fact a totally intransitive Lie algebroid. The image of the anchor is, then, an involutive distribution on $M$ and, in consequence, induces a foliation of the base manifold called \emph{the characteristic foliation of $A$}. Then, the restriction of $A$ to each leaf is a transitive Lie algebroid.
 
 Additionally, we can apply Theorem \ref{theoFiberLie} to see that, around any $m \in M$ there is a neighborhood $U \subset M$ such that a regular Lie algebroid is isomorphic to the vector bundle $U \times (V \oplus \alg g)$, where $V = a(A_m)$, although this local form of the Lie algebroid might not be consistent with the brackets.% Since V \oplus \alg g is nothing but one way to write the ``local'' vector space.
 \end{remark}
@@ -1218,7 +1218,7 @@ Additionally, we can apply Theorem \ref{theoFiberLie} to see that, around any $m
 Any $LAB$ is a totally intransitive Lie algebroid, but the converse is not true since there might not be an atlas adapted to the Lie brackets.
 \end{remark}
 
-Transitive Lie algebroids will be a main concert for us throughout this document. In this case, since the anchor is fiberwise surjective,\todo{is this a satisfactory reason?} it is a surjective submersion, and, in particular, a vector bundle map of locally constant rank, so Theorem \ref{theoFiberLie} may be applied to conclude that its kernel is a Lie algebroid. However, more is true, as shown below.
+Transitive Lie algebroids will be a main concern for us throughout this document. In this case, since the anchor is fiberwise surjective,\todo{is this a satisfactory reason?} it is a surjective submersion, and, in particular, it is locally constant rank implying that $ker(a)$ is a vector bundle, so Theorem \ref{theoFiberLie} may be applied to conclude that its kernel is a Lie algebroid. However, more is true, as shown below.
 
 \begin{definition}\label{transitiveSequence}
 Let $A$ be a transitive Lie algebroid on $M$ with anchor $a$. A \emph{Lie algebroid sequence of a transitive Lie algebroid $A$} is an exact sequence of Atiyah Lie algebroids
