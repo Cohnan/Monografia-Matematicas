@@ -1223,11 +1223,46 @@ Transitive Lie algebroids will be a main concern for us throughout this document
 \begin{definition}\label{transitiveSequence}
 Let $A$ be a transitive Lie algebroid on $M$ with anchor $a$. A \emph{Lie algebroid sequence of a transitive Lie algebroid $A$} is an exact sequence of Atiyah Lie algebroids
 \begin{align}
-    0 \xrightarrow{j} A \xrightarrow{a} TM \to 0
+    0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0
 \end{align}
 where $L$ is a Lie algebroid isomorphic to $ker(a)$ by a Lie algebroid morphism $j:L \to ker(a) \subset A$. The lie algebroid $L$ is called an \emph{adjoint Lie algebroid of/to (the transitive Lie algebroid) A}\todo{to? Same for the one defined in the Atiyah sequence}.
 \end{definition}
 Notice that an adjoint Lie algebroid of $A$ must be a totally intransitive Lie algebroid with a bracket compatible, through some $j$, with the bracket inherited by $ker(a)$ from $A$.
+
+\begin{remark}
+A sequence of a transitive Lie algebroid $A$ induces the exact sequence of $C^\infty(M)$-modules and Lie algebras
+\begin{equation}
+    \label{moduleTransitiveSequence}
+    0 \xrightarrow{j} \Gamma(L) \to  \Gamma(A) \xrightarrow{a} \Gamma(TM) \to 0.
+\end{equation}
+ When doing computations, it will be important to have in mind this sequences, perhaps replacing some of the elements by isomorphic ones, like we did in the Atiyah sequence of a principal bundle \ref{AtiyahSeq}.
+\end{remark}
+
+\begin{example}
+A trivial Lie algebroid induced the  sequence
+\begin{equation}
+     0 \to M \times \alg g \xrightarrow{j} TM \oplus M \times \alg g  \xrightarrow{p_1} TM \to 0
+\end{equation}
+where $j$ is simply the inclusion. The algebraic version of this sequence that we will work with is
+\begin{equation}
+     0 \to C^\infty(M, \alg g) \xrightarrow{j} \Gamma(TM) \oplus C^\infty(M, \alg g)  \xrightarrow{p_1} \Gamma(TM) \to 0
+\end{equation}
+\end{example}
+
+\begin{example}
+A principal bundle induces the sequence
+\begin{equation}
+    0 \to P \times \alg g/G \xrightarrow{j} TP/G \xrightarrow{\pi_*^G} TM \to 0
+\end{equation}
+as shown in \ref{}.
+\end{example}
+
+\begin{example}
+A vector bundle $E$ over $M$ induces the Atiyah sequence
+\begin{equation}
+0 \to 0 \to End(E) \xrightarrow{j} \alg D(E)  \xrightarrow{a} TM \to 0
+\end{equation} \ref{}
+\end{example}
 
 \begin{theorem}\label{theoAdjointLAB} % Theorem 6.5.1
 Let $0 \to L \to A \to  TM \to 0$ be a transitive Lie algebroid sequence. Then $L$ is a Lie algebra bundle with respect to the bracket structure on $\Gamma(L)$ induced by that on $\Gamma(A)$.
@@ -1236,6 +1271,10 @@ Although a full proof requires knowledge on locally trivial groupoids, an almost
 \begin{proof}
 Let $ad: A \to \alg D(L)$ be the adjoint representation of $A$ on $L$ and let $\gamma: TM \to A$ be a connection in $A$, which exists due to \ref{theoConnectionExists}. Denote by $\nabla = ad \circ \gamma : TM \to \alg D(L)$ the produced connection in $L$. This connection satisfies $\nabla_{\sect X}[\sect \mu, \sect \nu] = [\nabla_{\sect X} \sect \nu, \sect \mu] + [\sect \nu, \nabla_{\sect X} \sect \mu]$, and the existence of such connection is equivalent to $L$ being an LAB (this may be proved with tools of path connections).
 \end{proof}
+
+\begin{example}
+A LAB trivialization of $End(E)$ is \dots, $\psi_i$
+\end{example}
 
 \begin{definition}\label{defnPhi+}
 Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ and $0 \to L' \xrightarrow{j'} A' \xrightarrow{a'} TM \to 0$ be transitive Lie algebroids sequences over $M$. Let $\psi: A \to A'$ be a morphism of Lie algebroids. Since, $a' \circ \psi = a$, $\psi$ induces a morphism between the adjoint Lie algebroids denoted by
@@ -1297,7 +1336,7 @@ Let $A$ be a Lie algebroid on $M$ and let $E$ be a vector bundle also on $M$. A 
 \end{align}
 Given $\oid X \in A$, $\rho(\oid X)$ is usually denoted by $\rho_{\oid X}$.
 \end{definition}
-Using an algebraic language, notice how a representation $\rho:A \to \alg D(E)$ may be defined instead as a $C^\infty(M)$-linear mapping that, to every $\sectoid A \in \Gamma(E)$, \emph{assigns a derivation on $E$} 
+Using an algebraic language, notice how a representation $\rho:A \to \alg D(E)$ may be defined instead as a $C^\infty(M)$-linear mapping that, to every $\sectoid X \in \Gamma(A)$, \emph{assigns a derivation on $E$} 
 \begin{align}
     \rho(\sectoid X): \Gamma(E) \to \Gamma(E)
 \end{align}
@@ -1375,6 +1414,10 @@ Let $A$ be a Lie algebroid on $M$ and let $V$ be a vector space. \emph{The trivi
 \end{align*}
 \end{definition}
 
+\begin{definition}
+Induced representation.\complete{Induced representation}
+\end{definition}
+
 \section{Local Description of Transitive Lie Algebroids}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1436,6 +1479,8 @@ This means that for every $\oid X \in A|_{U_{i}}$, $X = a(\oid X) \in TM$ and so
     \oid X = S_i(X \oplus \eta^i).
 \end{align}
 The set $\{X \oplus \eta^i \in TU_i \oplus (U_i \times \alg g)\}_{i \in I}$ will be called \emph{a family of trivializations of $\oid X \in A$}. Analogously, for $\sectoid X \in \Gamma(A)$, a \emph{family of trivializations of $\sectoid X$} will be a set $\{\sect X \oplus \stilde \eta^i \in \Gamma(TU_i) \oplus C^\infty(U_i, \alg g)\}_{i \in I}$.
+
+\linea
 
 Now, to understand the transition between charts of a Lie algebroid atlas,
 
@@ -1523,10 +1568,11 @@ Throught this section, let $\{(U_i, \rho_i: U_i \times G \to P|_{U_i})\}_{i \in 
     \rho_i: U_i \times G &\to \mathcal U_i\\
             (m, g) &\mapsto \sigma_i(m) g.
 \end{eqnsplit*} Finally, let $g_{ij}: U_{ij} = U_i \inter U_j \to G$, be the transition functions of the atlas. They satisfy, for any $m \in U_{ij}$,
-\begin{align*}
-    \sigma_i(m) &= \sigma_j(m) g_{ij}(m)\\
-    \rho_i(m, g) &= \rho_j(m, g_{ij}(m) g).
-\end{align*}
+\begin{eqnsplit}
+    \label{transitionFunctionDefn}
+    \sigma_i(m) &= \sigma_j(m) g_{ji}(m)\\
+    \rho_i(m, g) &= \rho_j(m, g_{ji}(m) g).
+\end{eqnsplit}
 
 From this principal bundle atlas, we will now build a Lie algebroid atlas for the Atiyah Lie algebroid $TP/G$. Since we are identifying the spaces of sections of the Atiyah sequence with some other $C^\infty(M)$-modules, we will also understand the relevant maps in terms of this spaces.
 
@@ -1545,11 +1591,11 @@ It induces the $C^\infty(M)$-module and Lie algebra morphism of equation (\ref{f
 \end{definition}
 
 \begin{theorem}\label{algebroidAtlasAtiyah}
-A principal bundle atlas induces on $P(M, G)$, through the constructions below, a Lie algebroid atlas on $0 \to P \times \alg g/G \xrightarrow{j} TP/G \xrightarrow{a} TM \to 0$.
+An open cover of $M$ that corresponds to both a principal bundle atlas induces on $P(M, G)$ and to a manifold atlas of $M$ induce a Lie algebroid atlas, through the constructions below, on $0 \to P \times \alg g/G \xrightarrow{j} TP/G \xrightarrow{a} TM \to 0$.
 \end{theorem}
 
 \begin{definition}
-For each $i \in I$, define the LAB morphism, i.e. vector bundle morphism that respects the fiberwise Lie brackets,
+Let $\set{(U_i, \rho_i)}$ be a principal bundle atlas. For each $i \in I$, define the LAB morphism, i.e. vector bundle morphism that respects the fiberwise Lie brackets,
 \begin{eqnsplit}
     \psi_i: U_i \times \alg g  \to &\mathcal U_i \times \alg g/G \\
     (m, \eta) \mapsto &\cl{\sigma_i(m), \eta} \\
@@ -1561,6 +1607,8 @@ It induces $C^\infty(M)$-module and Lie algebra morphism
     \stilde \eta &\mapsto (\sigma_i(m)g \mapsto Ad_{g^{-1}}(\stilde \eta(m)))  \quad \textrm{for any $m \in M$, $g \in G$}.
 \end{eqnsplit}
 \end{definition}
+
+\ptext{From now on suppose that the open cover $\{U_i\}_{i \in I}$ of $M$ is associated to a manifold trivialization of $M$ and to a principal bundle trivialization of $P$ with local sections $\sigma_i: U_i \to P|_{U_i}$ }.
 
 \begin{definition}
 For each $i \in I$, define the Lie algebroid morphism
