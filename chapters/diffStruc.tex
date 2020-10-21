@@ -77,13 +77,12 @@ TODO\todo{check this}: the third ``important example'' introduced in Lazzarini i
 Throughout this section, let $A$ be a Lie algebroid over the manifold $M$ with anchor $a$.
 
 \begin{definition}
-Let $E$ be a vector bundle over $M$. 
-
+Let $E$ be a vector bundle over $M$. We now define some vector bundles over $M$.
     \begin{itemize}
     
-    \item Let \emph{$\Alt^0(A, E)$}$:= E$.
+    \item Let \emph{$\Alt^0(A, E)$}$:= E$. 
     
-    \item For $n \in \ZZ_{\geq 1}$, let \emph{$\Alt^n(A, E)$} be the natural embedding, as alternating maps, of the hom-bundle $\Hom(\bigwedge^n A, E)$ into the vector bundle of $\Hom^n(A, E)$ over $M$. Its fiber at $m \in M$ is the vector space of alternating linear transformations $\{\omega: \underbrace{A_m \times \cdots \times A_m}_{\text{$n$ times}} \to E_m \st \text{$\omega$ is $\RR$-linear and alternating}\}$.
+    \item For $n \in \ZZ_{\geq 1}$, let \emph{$\Alt^n(A, E)$} be the natural embedding, as alternating maps, of the (hom-)bundle $\Hom(\bigwedge^n A, E)$ into the vector bundle $\Hom(\bigoplus^n A, E)$ (as defined according to \ref{}) over $M$. Its fiber at $m \in M$ is, then, the vector space of alternating linear transformations $\{\omega: \underbrace{A_m \times \cdots \times A_m}_{\text{$n$ times}} \to E_m \st \text{$\omega$ is $\RR$-linear and alternating}\}$.
     
     \item Let \emph{$\Alt^\bullet(A, E)$}$:= \bigoplus^\infty_{n = 0} \Alt^n(A, E)$.
     % OJO: i can't call this forms, since forms are either C^\infty M multilinear, or complete vector bundle morphisms!
@@ -94,16 +93,16 @@ Let $E$ be a vector bundle over $M$.
     
 \end{definition}
 
-Notice that $\Alt^\bullet(A, E)$ is a vector bundle, with finite dimensional fibers, since due to the antisymmetry property, $\Alt^n(A, E) = 0$ for all values of $n$ greater than some fixed value $N \in \ZZ_{\geq 0}$.
+Notice that $\Alt^\bullet(A, E)$ is indeed a vector bundle, with finite dimensional fibers, since, if $U \subset M$ is a trivializing neighborhood of both $A$ and $E$ with fibers $V$ and $W$ respectively, due to the antisymmetry property, $\Alt_U^\bullet(A, E) \cong U \times Hom(V, \bigwedge^* W)$.
 
 \begin{definition}
-Let $E$ be a vector bundle over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$.
+Let $E$ be a vector bundle over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$. Let $U \subset M$.
 
     \begin{itemize}
     
-    \item For $n \in \ZZ_{\geq 0}$, define the $C^\infty(M)$-module \emph{$\Omega^n(A, E)$}$:= \Gamma\Alt^n(A, E)$. Its elements are called \emph{$E$-valued $n$-forms on $A$}.
+    \item For $n \in \ZZ_{\geq 0}$, define the $C^\infty(U)$-module \emph{$\Omega_U^n(A, E)$}$:= \Gamma_U\Alt^n(A, E)$. Its elements are called \emph{local $E$-valued $n$-forms on $A$ over $U$}. If $U = M$, simply write \emph{$\Omega^n(A, E)$} and call its elements \emph{$E$-valued $n$-forms on $A$}.
     
-    \item Define the $C^\infty(M)$-module $\emph{\Omega^\bullet(A, E)} := \bigoplus^\infty_{n = 0} \Omega^n(A, E)$. Its elements are simply called \emph{$E$-valued forms on $A$}.
+    \item Define the $C^\infty(U)$-module $\emph{\Omega_U^\bullet(A, E)} := \bigoplus^\infty_{n = 0} \Omega_U^n(A, E)$. Its elements are simply called \emph{local $E$-valued forms on $A$ over $U$}. If $U = M$, simply write $\emph{\Omega^\bullet(A, E)}$ and call its elements \emph{$E$-valued forms on $A$.}
     
     %\item \item For $n \in \ZZ_{\geq 0}$, let \emph{$\Omega^n(A)$}$:= \Gamma\Alt^n(A)$. 
     
@@ -116,8 +115,8 @@ Let $E$ be a vector bundle over $M$ on which there is a representation $\phi: A 
 \begin{remark}
 Due to the bijective correspondence between $C^\infty(M)$-linear maps between sections of vector bundles and vector bundle morphisms, $\Omega^n(A, E)$ may be considered the space of $C^\infty(M)$-multilinear antisymmetric maps from $\Gamma(A)^n$ to $\Gamma(E) = \Omega^0(A, E)$. We will refer as \ptext{$E$-valued $n$-forms on $A$} to both elements
 \begin{align}
-    \omega &: \underbrace{A \oplus \cdots \oplus A}_{\text{$n$ times}} \to E & \text{alternating $\RR$-vector bundle morphism}\\
-    \omega &: \underbrace{\Gamma(A) \times \cdots \times \Gamma(A)}_{\text{$n$ times}} \to \Gamma(E) & \text{alternating $C^\infty(M)$-multilinear map}.
+    \omega &: \underbrace{A \oplus \cdots \oplus A}_{\text{$n$ times}} \to E & \text{alternating, $\RR$-vector bundle morphism}\\
+    \omega &: \underbrace{\Gamma(A) \times \cdots \times \Gamma(A)}_{\text{$n$ times}} \to \Gamma(E) & \text{alternating, $C^\infty(M)$-multilinear map}.
 \end{align}
     
     %\item $\Omega^n(A)$ may be considered the space of $C^\infty(M)$-multilinear antisymmetric maps from $\Gamma(A)^n$ to $C^\infty(M)$.
@@ -131,7 +130,7 @@ Due to the bijective correspondence between $C^\infty(M)$-linear maps between se
     
     %\item $\Alt^n(A)$ and $\bigwedge^n A^*$ are isomorphic vector bundles.
     
-    \item $\Omega^n(A, E)$ and $\Gamma(E) \otimes \Gamma\bigwedge^n A^*$ are isomorphic $C^\infty(M)$-modules.
+    \item \rtext{$\Omega^n(A, E)$ and $\Gamma(E) \otimes \Gamma\bigwedge^n A^*$ are isomorphic} $C^\infty(M)$-modules.
     
     \item If $U$ is trivializing neighborhood for both $A$ and $E$, $\Omega^n(A, E) \cong C^\infty(U, V) \otimes_{C^\infty(U)} \Gamma(U \times \bigwedge^n W^*) \cong C^\infty(U, V) \otimes_{\bb K} \bigwedge^n W^*$
     

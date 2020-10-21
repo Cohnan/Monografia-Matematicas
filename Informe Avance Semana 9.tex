@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+
+%%%%%% To use hyperlinks, including the formula ones
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+%%%%%% Make paragraphs start with no indentation and leave spaces between paragraphs
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+%%%%%% Math stuff
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+
+%%%%%% Mis Codigos
+
+% TODO notes package
+\usepackage{xargs}                  % Use more than one optional parameter in a new command
+\usepackage[pdftex,dvipsnames]{xcolor}
+\input{tools/todoCode}
+
+% Colored text and boxes with my color conventions for highlighting
+\usepackage[dvipsnames]{xcolor}
+\input{tools/colorCode}
+
+% Math symbols
+\usepackage{xparse}
+\input{tools/common_math_symbols}
+
+% Physics symbols (vectors, units)
+\usepackage{tikz}
+\input{tools/physics_macros}
+
+% Theorem environments
+\input{tools/theorem_definitions}
+
+%%%%%%
+\title{Informe de Avance Proyecto de Grado: }
+\author{Sebastian Camilo Puerto}
+\date{July 2020}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\maketitle
+
+\setcounter{section}{-1}
+\section{Introduction}\label{chp:intro}
+
+\section{Basic Lie Algebroid Theory}\label{chp:basicLie}
+
+\section{Differential Algebras on Lie Algebroids}\label{chp:diffStruc}
+
+\section{Connections and Curvature}\label{chp:connections}
+
+\section{Integration Theory}\label{chp:integration}
+
+\section{Gauge Theory in Transitive Lie Algebroids}\label{chp:gaugeTh}
+
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

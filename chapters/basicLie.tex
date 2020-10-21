@@ -1514,13 +1514,14 @@ With this maps, in $A|_{U_{ij}}$ the correct way to change from a local expressi
 \begin{align}
     S_j(X \oplus \eta^j) = S_i(X \oplus [\alpha^i_j(\eta^j) + \chi^i_j(X)]).
 \end{align}
-In summary, for a Lie algebroid element that in the coordinate frame $j$ has formula $X \oplus \eta^j$ and formula $X \oplus \eta^i$ in the coordinate frame $j$, two corrections in the vertical components are need when the coordinate change from $i$ to $j$ is applied:
+In summary, for a Lie algebroid element that in the coordinate frame $j$ has formula $X \oplus \eta^j$ and formula $X \oplus \eta^i$ in the coordinate frame $j$, two corrections in the vertical components are needed when the coordinate change from $i$ to $j$ is applied:
 \begin{itemize}
     \item one for the distinct notions of horizontality induced by the $\Theta$'s: $\chi^i_j(X)$,
     
     \item another for the distinct ways the adjoint Lie algebroid $L|_{U_{ij}}$ is trivialized as the bundle $U_{ij}\times \alg g$: $\alpha^i_j(\eta^j)$;
 \end{itemize} the addition of both corrections gives $\eta^i = \chi^i_j(X) + \alpha^i_j(\eta^j)$, i.e.
-\begin{eqnsplit}\label{formulasij}
+\begin{eqnsplit}
+    \label{changeCoordinatesAlgebroid}
     s^i_j:= S_i^{-1} \circ S_j :TU_{ij} \oplus (U_{ij} \times \alg g) &\to TU_{ij} \oplus (U_{ij} \times \alg g) \\
     X \oplus \eta &\mapsto X \oplus (\chi^i_j(X) + \alpha^i_j(\eta))
 \end{eqnsplit}
