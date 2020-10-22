@@ -93,7 +93,7 @@ Let $E$ be a vector bundle over $M$. We now define some vector bundles over $M$.
     
 \end{definition}
 
-Notice that $\Alt^\bullet(A, E)$ is indeed a vector bundle, with finite dimensional fibers, since, if $U \subset M$ is a trivializing neighborhood of both $A$ and $E$ with fibers $V$ and $W$ respectively, due to the antisymmetry property, $\Alt_U^\bullet(A, E) \cong U \times Hom(V, \bigwedge^* W)$.
+Notice that $\Alt^\bullet(A, E)$ is indeed a vector bundle, with finite dimensional fibers, since, if $U \subset M$ is a trivializing neighborhood of both $A$ and $E$ with fibers $V$ and $W$ respectively, $\Alt^\bullet(A, E)|_U \cong U \times Hom(V, \bigwedge^* W)$ is a trivial vector bundle.
 
 \begin{definition}
 Let $E$ be a vector bundle over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$. Let $U \subset M$.
@@ -123,6 +123,24 @@ Due to the bijective \dbtext{correspondence between $C^\infty(M)$-linear maps be
     
 \end{remark}
 
+\lin
+
+The following is the fundamental example of forms on an algebroid $A$. It has been used to define a cohomology theory on Lie algebroids and \todo{complement}.
+
+\begin{example}
+
+On the trivial vector bundle $M \times \bb K$\todo{$A$ as a $\bb K$ vector bundle}, let $A$ act by the trivial action $\phi^0: A \to \alg D(M \times \bb K)$, i.e. considering $\Gamma(M \times \RR)$ as $C^\infty(M)$ and letting the representation be the anchor. The associated space of forms on $A$ is denoted by $\lbtext{\lbtext{\Omega^\bullet(A)}}$, and it is called the \lbtext{space of scalar valued forms on $A$}. Notice that the module $\Omega^n(A)$ is isomorphic to $\Gamma \bigwedge^n A^*$.
+\end{example}
+
+Connections and Curvatures are particular cases of the following type of forms on $A$, when $A$ is a transitive Lie algebroid.
+
+\begin{example}
+Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ be a transitive Lie algebroid sequence.
+Let $\lbtext{\Omega^\bullet(A, L)}$ be the space of $L$ valued forms on $A$ associated to the adjoint action defined in \ref{defnAdjointAct}, $ad: A \to \alg D(L)$, $\oid X \mapsto j^{-1}[\oid X, \cdot]$.
+\end{example}
+
+\lin
+
 \begin{theorem}
     \begin{itemize}
     
@@ -130,9 +148,9 @@ Due to the bijective \dbtext{correspondence between $C^\infty(M)$-linear maps be
     
     %\item $\Alt^n(A)$ and $\bigwedge^n A^*$ are isomorphic vector bundles.
     
-    \item \rtext{$\Omega^n(A, E)$ and $\Gamma(E) \otimes \Gamma\bigwedge^n A^*$ are isomorphic} $C^\infty(M)$-modules.
+    \item \rtext{$\Omega^n(A, E)$ and $\Gamma(E) \otimes \Omega^n(A)$ are isomorphic} $C^\infty(M)$-modules.
     
-    \item If $U$ is trivializing neighborhood for both $A$ and $E$, $\Omega^n(A, E) \cong C^\infty(U, V) \otimes_{C^\infty(U)} \Gamma(U \times \bigwedge^n W^*) \cong C^\infty(U, V) \otimes_{\bb K} \bigwedge^n W^*$
+    \item If $U$ is trivializing neighborhood for both $A$ and $E$, $\Omega_U^n(A, E) \cong C^\infty(U, V) \otimes_{C^\infty(U)} \Gamma(U \times \bigwedge^n W^*) \cong C^\infty(U, V) \otimes_{\bb K} \bigwedge^n W^*$
     
     %\item $\Omega^n(A)$ and $\Gamma\Alt^nA^*$ are isomorphic $C^\infty(M)$-modules.
     
@@ -140,41 +158,15 @@ Due to the bijective \dbtext{correspondence between $C^\infty(M)$-linear maps be
 \end{theorem}
 
 \begin{proof}
-$\Alt^n(A, E) \cong \Hom(\bigwedge^n A, E)$ by definition, and $\Hom(\bigwedge^n A, E) \cong E \otimes (\bigwedge^n A)* \cong E \otimes \bigwedge^n A*$.
+$\Alt^n(A, E) \cong \Hom(\bigwedge^n A, E)$ by definition, and $\Hom(\bigwedge^n A, E) \cong E \otimes (\bigwedge^n A)* \cong E \otimes \bigwedge^n A^*$, but $\bigwedge^n A^* \cong \Omega^n(A)$.
 
 Since $\Gamma$ is a strong monoidal function\todo{can I make this more clear?}, it distributes over the tensor product, and so the result follows from the first part of the theorem.
 \end{proof}
 
 \linea
 
-{\color{gray}
-\begin{definition}
-Let $\mathcal A = \oplus_{n = 0}^\infty \mathcal A^n$ be a graded algebra (over $\RR$).
-    \begin{itemize}
-    
-    \item An element $\omega \in \mathcal A^n$ is called a \emph{homogeneous element of degree $n$}, for $n \in \ZZ_{\geq 0}$, and its degree is denoted by $|\omega|$.
-    
-    \item An \emph{antiderivation on $\mathcal A$} is an $\RR$-linear map $d: \mathcal A \to \mathcal A$ such that, if $\omega$ is homogeneous, 
-    \begin{align*}
-        d(\omega \, \eta) = (d\omega)\tau + (-1)^{|\omega|} \omega (d\tau)
-    \end{align*}
-    
-    \item An antiderivation $d: \mathcal A \to \mathcal A$ is \emph{of degree $m$} if, for all homogeneous elements $\omega \in \mathcal A$,
-    \begin{align*}
-        |d\omega| = |\omega| + m.
-    \end{align*}
-    If the antiderivation is of degree $1$ or $-1$, it is called a \emph{differential on $\mathcal A$}. The same definitions apply for $M = \oplus_{n = 0}^\infty M^n$ graded module over the graded ring $R = \oplus_{n = 0}^\infty R^n$, i.e. an $R$-module such that $R^p \cdot M^q \subset M^{p+q}$.
-    
-    \item Let $d: \mathcal A \to \mathcal A$ be a derivation. $(A, d)$ is a \emph{differential graded algebra} if $d \circ d = 0$. 
-    
-    \item Similarly, let $M = \oplus_{n = 0}^\infty M^n$ be a graded module and $d: M \to M$ a differential on $M$. $(M, d)$ is called a \emph{differential graded module} if $d \circ d = 0$
-    
-    \item Let $(\mathcal A, \bullet, d)$ and $(\mathcal A', \bullet', d')$ be differential graded algebras. A \emph{morphism of differential graded algebras} is a graded algebra morphism $\phi: \mathcal A \to \mathcal A'$ such that $d' \circ \phi = \phi \circ d$.
-    
-    \end{itemize}
-    
-\end{definition}
-}
+
+\ptext{In the following, assume that $E$ is a vector bundle over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of the Lie algebroid $A$ over $M$}.
 
 \begin{definition}
     \begin{itemize}
@@ -187,36 +179,33 @@ Let $\mathcal A = \oplus_{n = 0}^\infty \mathcal A^n$ be a graded algebra (over 
 \end{definition}
 
 \begin{definition}
-Let $\mathcal A = \oplus_{n = 0}^\infty \mathcal A^n$ be a graded algebra (over $\bb K$).
-    \begin{itemize}
-    
-    \item An element $\omega \in \mathcal A^n$ is called a \emph{homogeneous element of degree $n$}, for $n \in \ZZ_{\geq 0}$, and its degree is denoted by $|\omega|$.
-    
-    \item An \emph{antiderivation on $\mathcal A$} is an $\bb K$-linear map $d: \mathcal A \to \mathcal A$ such that, if $\omega$ is homogeneous, 
-    \begin{align*}
-        d(\omega \, \eta) = (d\omega)\tau + (-1)^{|\omega|} \omega (d\tau)
-    \end{align*}
-    
-    \item An antiderivation $d: \mathcal A \to \mathcal A$ is \emph{of degree $m$} if, for all homogeneous elements $\omega \in \mathcal A$,
-    \begin{align*}
-        |d\omega| = |\omega| + m.
-    \end{align*}
-    If the antiderivation is of degree $1$ or $-1$, it is called a \emph{differential on $\mathcal A$}.
-    
-    \item Let $d: \mathcal A \to \mathcal A$ be a derivation. $(A, d)$ is a \emph{differential graded algebra} if $d \circ d = 0$. 
-    
-    \item Similarly, let $M = \oplus_{n = 0}^\infty M^n$ be a graded module and $d: M \to M$ a differential on $M$. $(M, d)$ is called a \emph{differential graded module} if $d \circ d = 0$
-    
-    \item Let $(\mathcal A, \bullet, d)$ and $(\mathcal A', \bullet', d')$ be differential graded algebras. A \emph{morphism of differential graded algebras} is a graded algebra morphism $\phi: \mathcal A \to \mathcal A'$ such that $d' \circ \phi = \phi \circ d$.
-    
-    \end{itemize}
-    
+Let $E$ be a vector bundle over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$. Define \emph{the differential of $E$-valued forms on $A$} by the Koszul formula:
+\begin{eqnsplit*}
+\lbtext{\hat d_\phi}: \Omega^{\bullet}(A, E) &\to \Omega^{\bullet+1}(A, E)
+\end{eqnsplit*}
+\begin{multline}
+(\hat d_\phi \omega)(\sectoid X_1, \dots, \sectoid X_{p+1}) = \sum_{i=1}^{p+1} (-1)^{i+1} \phi(\sectoid X_i)\cdot \omega(\sectoid X_1, \cdots, \overset{\vee}{\sectoid X_i}, \cdots, \sectoid X_{p+1}) \\
+ + \sum_{1 \leq i < j \leq p+1} (-1)^{i+j}\omega([\sectoid X_i, \sectoid X_j], \sectoid X_1, \cdots, \overset{\vee}{\sectoid X_i}, \cdots, \overset{\vee}{\sectoid X_j}, \cdots, \sectoid X_{p+1})
+\end{multline}
+for any $p \in \ZZ_{\geq 0}$, $p$-form $\omega$, and any $\sectoid X_1, \dots, \sectoid X_{p+1} \in \Gamma(A)$.
 \end{definition}
 
+\begin{proposition}
+ $(\Omega^\bullet(A, E), \hat d_\phi)$ is a differential module. In particular, it is a differential complex.
+\end{proposition}
 
+\begin{theorem}\label{theoDifferentialLocal}
+$d_U$: Leibniz w.r.t. functions giben by the previous definition.\todo{complete}. \rtext{$\hat d_\phi$ is a local operator}
+\end{theorem}
 
-\begin{definition}
-    $M = \oplus_{n = 0}^\infty M^n$ graded module over the graded ring $R = \oplus_{n = 0}^\infty R^n$, i.e. an $R$-module such that $R^p \cdot M^q \subset M^{p+q}$.
+\begin{remark}
+So 1., 2. .
+\end{remark}
+
+\lin
+
+\begin{definition}\label{defnDiffGModule}
+    Let $M = \oplus_{n = 0}^\infty M^n$ graded module over the graded ring $R = \oplus_{n = 0}^\infty R^n$, i.e. an $R$-module such that $R^p \cdot M^q \subset M^{p+q}$.
     
     \begin{itemize}
     
@@ -227,31 +216,74 @@ Let $\mathcal A = \oplus_{n = 0}^\infty \mathcal A^n$ be a graded algebra (over 
         d(\omega \, \eta) = (d\omega)\tau + (-1)^{|\omega|} \omega (d\tau)
     \end{align*}
     
-    \item An antiderivation $d: \mathcal A \to \mathcal A$ is \emph{of degree $m$} if, for all homogeneous elements $\omega \in M$,
+    \item An antiderivation $d: M \to M$ is \emph{of degree $m \in \ZZ$} if, for all homogeneous elements $\omega \in M$,
     \begin{align*}
         |d\omega| = |\omega| + m.
     \end{align*}
     If the antiderivation is of degree $1$ or $-1$, it is called a \emph{differential on $M$}.
     
-    \item Similarly, let $M = \oplus_{n = 0}^\infty M^n$ be a graded module and $d: M \to M$ a differential on $M$. $(M, d)$ is called a \emph{differential graded module} if $d \circ d = 0$
+    \item Let $M = \oplus_{n = 0}^\infty M^n$ be a graded module and $d: M \to M$ a differential on $M$. $(M, d)$ is called a \emph{differential graded module} if $d \circ d = 0$.
+    
+    \item Let $(M, d)$ and $(M', d')$ be differential graded modules over $R$. A \emph{morphism of differential graded modules} is a graded module morphism $\phi: M \to M'$, i.e. an $R$-linear map that sends homogeneous elements of degree $m \in \ZZ$ of $M$ into similar elements in $M'$, such that $d' \circ \phi = \phi \circ d$.
     
     \end{itemize}
     
 \end{definition}
 
-
 \begin{definition}
-Let $E$ be a vector bundle over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$. Define \emph{the differential of $E$-valued forms on $A$} by the Koszul formula:
-\begin{eqnsplit*}
-\hat d_\phi: \Omega^{\bullet}(A, E) &\to \Omega^{\bullet+1}(A, E)
-\end{eqnsplit*}
-\begin{multline}
-(\hat d_\phi \omega)(\sectoid X_1, \dots, \sectoid X_{p+1}) = \sum_{i=1}^{p+1} (-1)^{i+1} \phi(\sectoid X_i)\cdot \omega(\sectoid X_1, \cdots, \overset{\vee}{\sectoid X_i}, \cdots, \sectoid X_{p+1}) \\
- + \sum_{1 \leq i < j \leq p+1} (-1)^{i+j}\omega([\sectoid X_i, \sectoid X_j], \sectoid X_1, \cdots, \overset{\vee}{\sectoid X_i}, \cdots, \overset{\vee}{\sectoid X_j}, \cdots, \sectoid X_{p+1})
-\end{multline}
-for any $p \in \ZZ_{\geq 0}$, $p$-form $\omega$, and any $\sectoid X_1, \dots, \sectoid X_{p+1} \in \Gamma(A)$.
+Define the $C^\infty(M)$-bilinear operation operation
+\begin{align*}
+    \lbtext{\wedge}: \Omega^\bullet(A) \times \Omega^\bullet(A, E) &\to \Omega^\bullet(A, E)
+\end{align*}
+for any $p, q \in \ZZ_{\geq 0}$,
+through the linear extension on the homogeneous elements:
+\begin{eqnsplit}
+(\omega \wedge \eta)(\sectoid X_1, \dots, \sectoid X_{p+q}) &:= \\
+\frac{1}{p!q!} \sum_{\sigma \in S_{p+q}} &(-1)^{\sigma} 
+\underbrace{\omega(\oid X_{\sigma(1)}, \cdots, \oid X_{\sigma(p)})}_{\in \,\Gamma(M \times \RR)} 
+\cdot 
+\underbrace{\eta(\oid X_{\sigma(p+1)}, \cdots, \oid X_{\sigma(p+q)})}_{\in \, \Gamma(L)}
+\end{eqnsplit}
+for any real valued $p$-form $\omega$, $L$-valued $q$-form $\eta$ and any $\sectoid X_1, \dots, \sectoid X_{p+q} \in \Gamma(A)$.
 \end{definition}
 
+\begin{theorem}\label{theoFormsAreDiffGModule}
+ \rtext{$(\Omega^\bullet(A, E), \hat d_\phi)$ is a graded differential module over $\Omega^\bullet(A)$}.
+\end{theorem}
+
+\begin{proof}
+To see:
+
+$\Omega^p(A) \wedge \Omega^q(A, E) \subset \Omega^{p+q}(A, E)$.
+\end{proof}
+
+
+\lin
+
+\begin{definition} \label{defnDiffGAlgebra}
+Let $\mathcal A = \oplus_{n = 0}^\infty \mathcal A^n$ be a graded algebra (over the field $\bb K$), and let $\cdot$ denote the product.
+    \begin{itemize}
+    
+    \item An element $\omega \in \mathcal A^n$ is called a \emph{homogeneous element of degree $n$}, for $n \in \ZZ_{\geq 0}$, and its degree is denoted by $|\omega|$.
+    
+    \item An \emph{antiderivation on $\mathcal A$} is an $\bb K$-linear map $d: \mathcal A \to \mathcal A$ such that, if $\omega$ is homogeneous, 
+    \begin{align*}
+        d(\omega \bullet \eta) = (d\omega)\bullet\tau + (-1)^{|\omega|} \omega \bullet (d\tau)
+    \end{align*}
+    
+    \item An antiderivation $d: \mathcal A \to \mathcal A$ is \emph{of degree $m \in \ZZ$} if, for all homogeneous elements $\omega \in \mathcal A$,
+    \begin{align*}
+        |d\omega| = |\omega| + m.
+    \end{align*}
+    If the antiderivation is of degree $1$ or $-1$, it is called a \emph{differential on $\mathcal A$}.
+    
+    \item Let $d: \mathcal A \to \mathcal A$ be a differential on $A$. Then the pair $(A, d)$ is called a \emph{differential graded algebra} if $d \circ d = 0$. 
+    
+    \item Let $(\mathcal A, \bullet, d)$ and $(\mathcal A', \bullet', d')$ be differential graded algebras. A \emph{morphism of differential graded algebras} is a graded algebra morphism $\phi: \mathcal A \to \mathcal A'$ such that $d' \circ \phi = \phi \circ d$.
+    
+    \end{itemize}
+    
+\end{definition}
 
 
 % Only define things for A, E, and THEN do define the one without E
@@ -271,8 +303,8 @@ as the linear extension of the maps, for any $p, q \in \ZZ_{\geq 0}$
 for any $p$-form $\omega$, $q$-form $\eta$ and any $\sectoid X_1, \dots, \sectoid X_{p+q} \in \Gamma(A)$, where $\bullet$ is the algebra multiplication induced on $\Gamma(E)$ by the fiberwise algebra multiplication in $E$.
 \end{definition}
 
-\begin{theorem}
-Let $E$ be an algebra bundle over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$. Then $(\Omega^\bullet(A, E), \wedge, \hat d_\phi)$ is a differential graded algebra.
+\begin{theorem} \label{theoFormsAreDiffGAlgebebra}
+Let $E$ be an algebra bundle over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$. \rtext{Then $(\Omega^\bullet(A, E), \wedge, \hat d_\phi)$ is a differential graded algebra over $\Omega^\bullet(A)$.}
 \end{theorem}
 
 \begin{proof}
@@ -285,15 +317,17 @@ $d^2 = 0$. Apparently this follows from the fact that $\phi$ respects the Lie al
 Graded Leibniz
 \end{proof}
 
-The following instances of $(\Omega^\bullet(A, E), \wedge, \hat d_\phi)$ will be important to us in future chapters.
+\begin{proposition}
+$(\Omega^\bullet(A), \wedge, \hat d_A)$ is a graded(-commutative) differential graded algebra.
+\end{proposition}
 
-\begin{definition}
-On the trivial vector bundle $M \times \RR$, let $A$ act by the trivial action $\phi^0: A \to \alg D(E)$, i.e. considering $\Gamma(M \times \RR)$ as $C^\infty(M)$ and letting the representation be the anchor. %$\phi^0(\sectoid X)f = a(\sectoid X)(f)$, for any $\sectoid X \in \Gamma(A)$ and $f \in C^\infty(M)$.
-Define \[(\Omega^\bullet(A), \wedge, \hat d_A)\] to be the graded differential algebra be $(\Omega^\bullet(A, M \times \RR), \wedge, \hat d_{\phi^0})$, and call its elements \emph{the real valued forms on $A$}.
-\end{definition}
+\linea 
 
+The following instances of $(\Omega^\bullet(A, E), \hat d_\phi)$ will be important to us in future chapters.
+
+{\color{gray}
 \begin{theorem}
-$(\Omega^\bullet(A), \wedge, \hat d_A)$ is a graded-commutative differential graded algebra.
+\rtext{$(\Omega^\bullet(A), \wedge, \hat d_A)$ is a graded(-commutative) differential graded algebra.}
 \end{theorem}
 
 \begin{proof}
@@ -303,40 +337,12 @@ $xy = (-1)^{|x||y|}yx$. This follows from $\RR$ being commutative.
 \end{proof}
 
 
-\begin{definition}
-Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ be a transitive Lie algebroid sequence.
-Define \[(\Omega^\bullet(A, L), \wedge, \hat d)\] to be the graded differential algebra be $(\Omega^\bullet(A, L), \wedge, \hat d_{ad})$, where $ad: A \to \alg D(L)$, $\oid X \mapsto j^{-1}[\oid X, \cdot]$ is the adjoint action defined in \ref{defnAdjointAct}.
-\end{definition}
-
 \begin{theorem}
-$(\Omega^\bullet(A), \wedge, \hat d_A)$ is a Lie-graded differential graded algebra.
+ NOT USEFUL TO US
+$(\Omega^\bullet(A, L, \wedge, \hat d)$ is a Lie-graded differential graded algebra.
 \end{theorem}
+}
 
-\begin{proof}
-To see:
-
-\end{proof}
-
-\begin{proposition}
-$(\Omega^\bullet(A, L), \wedge, \hat d)$ is a differential graded module over the graded ring $(\Omega^\bullet(A), \wedge)$, through the linear extension of the action:
-\begin{align*}
-    \wedge: \Omega^\bullet(A) \times \Omega^\bullet(A, L) &\to \Omega^\bullet(A, L)
-\end{align*}
-\begin{eqnsplit}
-(\omega \wedge \eta)(\sectoid X_1, \dots, \sectoid X_{p+q}) &:= \\
-\frac{1}{p!q!} \sum_{\sigma \in S_{p+q}} &(-1)^{\sigma} 
-\underbrace{\omega(\oid X_{\sigma(1)}, \cdots, \oid X_{\sigma(p)})}_{\in \,\Gamma(M \times \RR)} 
-\cdot 
-\underbrace{\eta(\oid X_{\sigma(p+1)}, \cdots, \oid X_{\sigma(p+q)})}_{\in \, \Gamma(L)}
-\end{eqnsplit}
-for any real valued $p$-form $\omega$, $L$-valued $q$-form $\eta$ and any $\sectoid X_1, \dots, \sectoid X_{p+q} \in \Gamma(A)$.
-\end{proposition}
-
-\begin{proof}
-To see:
-
-$\Omega^p(A) \wedge \Omega^q(A, L) \subset \Omega^{p+q}(A, L)$.
-\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Cartan Operations}
