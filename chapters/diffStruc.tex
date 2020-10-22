@@ -140,7 +140,7 @@ The space $\lbtext{\Omega^\bullet(A, L)}$ of $L$-valued forms on $A$ will be an 
 
 \lin
 
-\begin{theorem}
+\begin{theorem}\label{isomorphOmega}
     \begin{itemize}
     
     \item $\Alt^n(A, E)$ and $E \otimes \bigwedge^n A^*$ are isomorphic vector bundles.
@@ -419,31 +419,72 @@ Atiyah. The concept coincides? (See Mackenzie)
 
 Let $A = TM \oplus (M \times \alg g)$ be a trivial Lie algebroid with fiber type $\alg g$.
 
-\begin{theorem}
-The graded (commutative) differential algebra $(\Omega^\bullet(A), \hat d_A)$ is isomorphic to the bigraded commutative differential algebra $(\Omega^\bullet(TM) \otimes \bigwedge^\bullet \alg g^*, d + s)$, where
-\begin{align}
-    d: \Omega^\bullet(TM) \otimes \bigwedge^\bullet \alg g^* &\to \Omega^{\bullet+1}(TM) \otimes \bigwedge^\bullet \alg g^*
-\end{align}
-is the usual de Rham differential on $\Omega^\bullet(TM)$ and
+\begin{proposition}\label{propIsoScalarFormsTLA}
+The $C^\infty(M)$-module of $\bb K$-valued forms on the trivial Lie algebroid bundle $TM \times \alg g$ is isomorphic to $\Omega^\bullet(TM) \otimes_{\bb K} \bigwedge^\bullet \alg g^* = \Omega^\bullet(TM) \otimes_{C^\infty(M)} C^\infty(M, \bigwedge^\bullet \alg g^*)$. The isomorphism, defined by linear extension of
 \begin{align*}
-    s: \Omega^\bullet(TM) \otimes \bigwedge^\bullet \alg g^* &\to \Omega^\bullet(TM) \otimes \bigwedge^{\bullet+1} \alg g^*
+    \Omega^r(TM) \otimes C^\infty(U, \bigwedge^s \alg g^*) &\to \Omega^{r+s}(TM \times \alg g)\\
+    \alpha \otimes \beta &\mapsto \tilde \alpha \wedge \tilde \beta
+\end{align*} where, for any $\alpha \in \Omega^r(TM)$ $r, s \in \ZZ_{\geq 0}$:
+\begin{align*}
+    \tilde \alpha: (\Gamma(TM) \times C^\infty(M, \alg g)) \times \cdots (\Gamma(TM) \times C^\infty(M, \alg g)) &\to C^\infty(M) \\
+    (X_1 \oplus \tilde \eta_1, \dots, X_r \oplus \tilde \eta_r) &\mapsto \alpha(X_1, \dots, X_r)
+\end{align*} and for any $\beta \in C^\infty(M, \bigwedge^s \alg g^*)$:
+\begin{align*}
+    \tilde \beta: (\Gamma(TM) \times C^\infty(M, \alg g)) \times \cdots (\Gamma(TM) \times C^\infty(M, \alg g)) &\to C^\infty(M) \\
+    (X_1 \oplus \tilde \eta_1, \dots, X_s \oplus \tilde \eta_s) &\mapsto \beta(\tilde \eta_1, \dots, \tilde \eta_s)
 \end{align*}
+is compatible with the grading, where the set of homogeneous elements of degree $p \in \ZZ_{\geq 0}$ are $\sum_{r + s = p} \Omega^r(TU) \otimes_{C^\infty(M)} C^\infty(M, \bigwedge^s \alg g^*)$.
+\end{proposition}
+
+\begin{remark}
+The previous isomorphism between $\Omega^\bullet(TM \times \alg g)$ and $\Omega^\bullet(TM) \otimes_{\bb K} \bigwedge^\bullet \alg g^*$ can, and will, be used to define a multiplication $\lbtext{\wedge}$ on $\Omega^\bullet(TM) \otimes_{\bb K} \bigwedge^\bullet \alg g^*$ which is compatible with the gradings. 
+Furthermore, abusing notation we may ignore the $~$'s of the mapping to simply state that, for $\alpha \in \Omega^r(TM)$ and $\beta \in C^\infty(M)\otimes_{\bb K} \bigwedge^s \alg g^*$, $r, s \in \ZZ_{\geq 0}$, \ptext{$\alpha \wedge \beta \in \Omega^{r+s}(TM \times \alg g)$}. 
+\end{remark}
+
+\begin{definition}
+Let
+\begin{align}
+    d: \Omega^\bullet(TM) \otimes \bigwedge^\bullet \alg g^* &\to \Omega^{\bullet+1}(TM) \otimes \bigwedge^\bullet \alg g^*\\
+    \alpha \otimes 1 &\mapsto d\alpha \otimes 1
+\end{align}
+be the usual de Rham differential on $\Omega^\bullet(TM)$ applied to the first factor, and
+\begin{align*}
+    s: \Omega^\bullet(TM) \otimes \bigwedge^\bullet \alg g^* &\to \Omega^\bullet(TM) \otimes \bigwedge^{\bullet+1} \alg g^* \\
+    1 \otimes \beta &\mapsto 1 \otimes s\beta, 
+\end{align*} where, given $\eta_i \in C^\infty(M, \alg g)$,
 \begin{multline}
-    s\omega(\sect \eta_1, \cdots, \sect \eta_{p+1}) := \sum_{1 \leq i < j \leq p+1} (-1)^{i+j} \omega([\sect \eta_i, \sect \eta_j], \sect \eta_1, \cdots, \overset{\vee}{\sect \eta_i}, \cdots, \overset{\vee}{\sect \eta_j}, \cdots \sect \eta_{p+1})
+    s\beta(\sect \eta_1, \cdots, \sect \eta_{p+1}) := \sum_{1 \leq i < j \leq p+1} (-1)^{i+j} \beta([\sect \eta_i, \sect \eta_j], \sect \eta_1, \cdots, \overset{\vee}{\sect \eta_i}, \cdots, \overset{\vee}{\sect \eta_j}, \cdots \sect \eta_{p+1})
 \end{multline}
-is \emph{the Chevalley-Eilenbert differential on $\bigwedge \alg g^*$}.
+be \emph{the Chevalley-Eilenbert differential on $\bigwedge \alg g^*$}, applied to the second factor. On $\Omega^\bullet(TM) \otimes \bigwedge^\bullet \alg g^*$ define the $C^\infty(M)$-linear endomorphism $\lbtext{\hat d_{triv}}$:
+\begin{align}
+    \hat d_{triv}: \Omega^r(TM) \otimes \bigwedge^s \alg g^* &\to \left( \Omega^\bullet(TM) \otimes \bigwedge^\bullet \alg g^*\right)^{r+s+1} \\
+    \alpha \otimes \beta = \alpha \wedge \beta &\mapsto  \hat d_{triv} (\alpha \wedge \beta) := d\alpha \wedge \beta + (-1)^\alpha \alpha \wedge s\beta \\
+    \alpha \otimes 1 &\mapsto \hat d_{triv}\alpha = d\alpha \in \Omega^{r+1}(TM) \otimes 1 \\
+    1 \otimes \beta &\mapsto \hat d_{triv}\beta = s\beta \in 1 \otimes \bigwedge^{s+1} \alg g^*.
+\end{align} $\hat d_{triv}$ is sometimes also denoted by $d+s$ in the literature.
+
+\end{definition}
+
+\begin{theorem}\label{theoIsoScalarFormsTLA}
+\rtext{$(\Omega^\bullet(TM) \otimes \bigwedge^\bullet, \wedge, \hat d_{triv})$ is a (bi)graded (commutative) differential algebra and graded differential module over $\Omega^\bullet(TM \times \alg g)$, isomorphic to the space $(\Omega^\bullet(TM \times \alg g), \wedge, \hat d_{TM \times \alg g})$} of $\bb K$-valued forms on the trivial Lie algebroid $TM \times \alg g$.
 \end{theorem}
 
 \begin{proof}
 To see:
 
-Is isomorphism of graded algebras
+Graded module: done already, pretty much by definition of wedge.
 
-Respects the differentials
+$\hat d_{triv}$ is a differential of module and algebra: pretty much by definition
+
+Is isomorphism of graded modules: Respects the differentials DO!\todo{Done in my handwritten notes.}
+
+Is isomorphism of graded algebras: Respects the wedge product: by definition of the wedge on the new space as defined in the remark following theorem \ref{propIsoScalarFormsTLA}.
 \end{proof}
 
+\linea
+
 \begin{theorem}
-The graded differential algebra $(\Omega^\bullet(A), \hat d_A)$ is isomorphic to the bigraded Lie differential algebra $(\Omega^\bullet(TM) \otimes \bigwedge^\bullet \alg g^* \otimes \alg g, d + s')$, where
+The graded differential module $(\Omega^\bullet(A, L), \hat d)$ over $\Omega^\bullet(A)$ is isomorphic to the bigraded Lie differential algebra $(\Omega^\bullet(TM) \otimes \bigwedge^\bullet \alg g^* \otimes \alg g, d + s')$ over $\Omega^\bullet(TM)\otimes \bigwedge^\bullet \alg g^*$, where
 \begin{align}
     d: \Omega^\bullet(TM) \otimes \bigwedge^\bullet \alg g^* &\to \Omega^{\bullet+1}(TM) \otimes \bigwedge^\bullet \alg g^*
 \end{align}
