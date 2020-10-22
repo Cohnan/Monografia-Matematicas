@@ -113,10 +113,10 @@ Let $E$ be a vector bundle over $M$ on which there is a representation $\phi: A 
 \end{definition}
 
 \begin{remark}
-Due to the bijective correspondence between $C^\infty(M)$-linear maps between sections of vector bundles and vector bundle morphisms, $\Omega^n(A, E)$ may be considered the space of $C^\infty(M)$-multilinear antisymmetric maps from $\Gamma(A)^n$ to $\Gamma(E) = \Omega^0(A, E)$. We will refer as \ptext{$E$-valued $n$-forms on $A$} to both elements
+Due to the bijective \dbtext{correspondence between $C^\infty(M)$-linear maps between local sections over $U$ of vector bundles and vector bundle morphisms resticted to $U$}\todo{is this a thing? I think it might be correct to leave the linearity to be over all of $M$}, $\Omega_U^n(A, E)$ may be considered the space of \dbtext{$C^\infty(M)$-multilinear} antisymmetric maps from $\Gamma_U(A)^n$ to $\Gamma_U(E) = \Omega_U^0(A, E)$. We will refer as \ptext{(local) $E$-valued $n$-forms on $A$} to both elements
 \begin{align}
-    \omega &: \underbrace{A \oplus \cdots \oplus A}_{\text{$n$ times}} \to E & \text{alternating, $\RR$-vector bundle morphism}\\
-    \omega &: \underbrace{\Gamma(A) \times \cdots \times \Gamma(A)}_{\text{$n$ times}} \to \Gamma(E) & \text{alternating, $C^\infty(M)$-multilinear map}.
+    \omega &: \underbrace{A|_U \oplus \cdots \oplus A|_U}_{\text{$n$ times}} \to E_U & \text{alternating, $\RR$-vector bundle morphism}\\
+    \omega &: \underbrace{\Gamma_U(A) \times \cdots \times \Gamma_U(A)}_{\text{$n$ times}} \to \Gamma_U(E) & \text{alternating, $C^\infty(M)$-multilinear map}.
 \end{align}
     
     %\item $\Omega^n(A)$ may be considered the space of $C^\infty(M)$-multilinear antisymmetric maps from $\Gamma(A)^n$ to $C^\infty(M)$.
@@ -145,35 +145,9 @@ $\Alt^n(A, E) \cong \Hom(\bigwedge^n A, E)$ by definition, and $\Hom(\bigwedge^n
 Since $\Gamma$ is a strong monoidal function\todo{can I make this more clear?}, it distributes over the tensor product, and so the result follows from the first part of the theorem.
 \end{proof}
 
-% Only define things for A, E, and THEN do define the one without E
-\begin{definition}
-Let $E$ be an algebra bundle over $M$, i.e. a vector bundle such that each fiber is an algebra and such that there exists an atlas compatible with the algebra multiplication, on which $A$ is represented. Define on $\Omega^\bullet(A, E)$ the $C^\infty(M)$-bilinear operation operation, called \emph{the wedge product of LAB-valued forms on $A$}
-\begin{eqnsplit*}
-\wedge : \Omega^\bullet(A, E) &\times \Omega^\bullet(A, E) \to \Omega\bullet(A, E)
-\end{eqnsplit*}
-as the linear extension of the maps, for any $p, q \in \ZZ_{\geq 0}$
-\begin{eqnsplit*}
-\wedge : \Omega^p(A, E) \times \Omega^q(A, E) &\to \Omega^{p+q}(A, E)
-\end{eqnsplit*}
-\begin{eqnsplit}
-(\omega \wedge \eta)(\sectoid X_1, \dots, \sectoid X_{p+q}) &:= \\
-\frac{1}{p!q!} \sum_{\sigma \in S_{p+q}} &(-1)^{\sigma} \omega(\oid X_{\sigma(1)}, \cdots, \oid X_{\sigma(p)}) \bullet \eta(\oid X_{\sigma(p+1)}, \cdots, \oid X_{\sigma(p+q)}).
-\end{eqnsplit}
-for any $p$-form $\omega$, $q$-form $\eta$ and any $\sectoid X_1, \dots, \sectoid X_{p+q} \in \Gamma(A)$, where $\bullet$ is the algebra multiplication induced on $\Gamma(E)$ by the fiberwise algebra multiplication in $E$.
-\end{definition}
+\linea
 
-\begin{definition}
-Let $E$ be an algebra bundle over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$. Define \emph{the differential of $E$-valued forms on $A$} by the Koszul formula:
-\begin{eqnsplit*}
-\hat d_\phi: \Omega^{\bullet}(A, E) &\to \Omega^{\bullet+1}(A, E)
-\end{eqnsplit*}
-\begin{multline}
-(\hat d_\phi \omega)(\sectoid X_1, \dots, \sectoid X_{p+1}) = \sum_{i=1}^{p+1} (-1)^{i+1} \phi(\sectoid X_i)\cdot \omega(\sectoid X_1, \cdots, \overset{\vee}{\sectoid X_i}, \cdots, \sectoid X_{p+1}) \\
- + \sum_{1 \leq i < j \leq p+1} (-1)^{i+j}\omega([\sectoid X_i, \sectoid X_j], \sectoid X_1, \cdots, \overset{\vee}{\sectoid X_i}, \cdots, \overset{\vee}{\sectoid X_j}, \cdots, \sectoid X_{p+1})
-\end{multline}
-for any $p \in \ZZ_{\geq 0}$, $p$-form $\omega$, and any $\sectoid X_1, \dots, \sectoid X_{p+1} \in \Gamma(A)$.
-\end{definition}
-
+{\color{gray}
 \begin{definition}
 Let $\mathcal A = \oplus_{n = 0}^\infty \mathcal A^n$ be a graded algebra (over $\RR$).
     \begin{itemize}
@@ -199,6 +173,102 @@ Let $\mathcal A = \oplus_{n = 0}^\infty \mathcal A^n$ be a graded algebra (over 
     
     \end{itemize}
     
+\end{definition}
+}
+
+\begin{definition}
+    \begin{itemize}
+    
+    \item Differential complex:
+    
+    \item Differential module:
+        
+    \end{itemize}
+\end{definition}
+
+\begin{definition}
+Let $\mathcal A = \oplus_{n = 0}^\infty \mathcal A^n$ be a graded algebra (over $\bb K$).
+    \begin{itemize}
+    
+    \item An element $\omega \in \mathcal A^n$ is called a \emph{homogeneous element of degree $n$}, for $n \in \ZZ_{\geq 0}$, and its degree is denoted by $|\omega|$.
+    
+    \item An \emph{antiderivation on $\mathcal A$} is an $\bb K$-linear map $d: \mathcal A \to \mathcal A$ such that, if $\omega$ is homogeneous, 
+    \begin{align*}
+        d(\omega \, \eta) = (d\omega)\tau + (-1)^{|\omega|} \omega (d\tau)
+    \end{align*}
+    
+    \item An antiderivation $d: \mathcal A \to \mathcal A$ is \emph{of degree $m$} if, for all homogeneous elements $\omega \in \mathcal A$,
+    \begin{align*}
+        |d\omega| = |\omega| + m.
+    \end{align*}
+    If the antiderivation is of degree $1$ or $-1$, it is called a \emph{differential on $\mathcal A$}.
+    
+    \item Let $d: \mathcal A \to \mathcal A$ be a derivation. $(A, d)$ is a \emph{differential graded algebra} if $d \circ d = 0$. 
+    
+    \item Similarly, let $M = \oplus_{n = 0}^\infty M^n$ be a graded module and $d: M \to M$ a differential on $M$. $(M, d)$ is called a \emph{differential graded module} if $d \circ d = 0$
+    
+    \item Let $(\mathcal A, \bullet, d)$ and $(\mathcal A', \bullet', d')$ be differential graded algebras. A \emph{morphism of differential graded algebras} is a graded algebra morphism $\phi: \mathcal A \to \mathcal A'$ such that $d' \circ \phi = \phi \circ d$.
+    
+    \end{itemize}
+    
+\end{definition}
+
+
+
+\begin{definition}
+    $M = \oplus_{n = 0}^\infty M^n$ graded module over the graded ring $R = \oplus_{n = 0}^\infty R^n$, i.e. an $R$-module such that $R^p \cdot M^q \subset M^{p+q}$.
+    
+    \begin{itemize}
+    
+    \item An element $\omega \in N^n$ is called a \emph{homogeneous element of degree $n$}, for $n \in \ZZ_{\geq 0}$, and its degree is denoted by $|\omega|$.
+    
+    \item An \emph{antiderivation on $M$} is an $R$-linear map $d: M \to M$ such that, if $\omega$ is homogeneous, 
+    \begin{align*}
+        d(\omega \, \eta) = (d\omega)\tau + (-1)^{|\omega|} \omega (d\tau)
+    \end{align*}
+    
+    \item An antiderivation $d: \mathcal A \to \mathcal A$ is \emph{of degree $m$} if, for all homogeneous elements $\omega \in M$,
+    \begin{align*}
+        |d\omega| = |\omega| + m.
+    \end{align*}
+    If the antiderivation is of degree $1$ or $-1$, it is called a \emph{differential on $M$}.
+    
+    \item Similarly, let $M = \oplus_{n = 0}^\infty M^n$ be a graded module and $d: M \to M$ a differential on $M$. $(M, d)$ is called a \emph{differential graded module} if $d \circ d = 0$
+    
+    \end{itemize}
+    
+\end{definition}
+
+
+\begin{definition}
+Let $E$ be a vector bundle over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$. Define \emph{the differential of $E$-valued forms on $A$} by the Koszul formula:
+\begin{eqnsplit*}
+\hat d_\phi: \Omega^{\bullet}(A, E) &\to \Omega^{\bullet+1}(A, E)
+\end{eqnsplit*}
+\begin{multline}
+(\hat d_\phi \omega)(\sectoid X_1, \dots, \sectoid X_{p+1}) = \sum_{i=1}^{p+1} (-1)^{i+1} \phi(\sectoid X_i)\cdot \omega(\sectoid X_1, \cdots, \overset{\vee}{\sectoid X_i}, \cdots, \sectoid X_{p+1}) \\
+ + \sum_{1 \leq i < j \leq p+1} (-1)^{i+j}\omega([\sectoid X_i, \sectoid X_j], \sectoid X_1, \cdots, \overset{\vee}{\sectoid X_i}, \cdots, \overset{\vee}{\sectoid X_j}, \cdots, \sectoid X_{p+1})
+\end{multline}
+for any $p \in \ZZ_{\geq 0}$, $p$-form $\omega$, and any $\sectoid X_1, \dots, \sectoid X_{p+1} \in \Gamma(A)$.
+\end{definition}
+
+
+
+% Only define things for A, E, and THEN do define the one without E
+\begin{definition}
+Let $E$ be an algebra bundle over $M$, i.e. a vector bundle such that each fiber is an algebra and such that there exists an atlas compatible with the algebra multiplication, on which $A$ is represented. Define on $\Omega^\bullet(A, E)$ the $C^\infty(M)$-bilinear operation operation, called \emph{the wedge product of LAB-valued forms on $A$}
+\begin{eqnsplit*}
+\wedge : \Omega^\bullet(A, E) &\times \Omega^\bullet(A, E) \to \Omega\bullet(A, E)
+\end{eqnsplit*}
+as the linear extension of the maps, for any $p, q \in \ZZ_{\geq 0}$
+\begin{eqnsplit*}
+\wedge : \Omega^p(A, E) \times \Omega^q(A, E) &\to \Omega^{p+q}(A, E)
+\end{eqnsplit*}
+\begin{eqnsplit}
+(\omega \wedge \eta)(\sectoid X_1, \dots, \sectoid X_{p+q}) &:= \\
+\frac{1}{p!q!} \sum_{\sigma \in S_{p+q}} &(-1)^{\sigma} \omega(\oid X_{\sigma(1)}, \cdots, \oid X_{\sigma(p)}) \bullet \eta(\oid X_{\sigma(p+1)}, \cdots, \oid X_{\sigma(p+q)}).
+\end{eqnsplit}
+for any $p$-form $\omega$, $q$-form $\eta$ and any $\sectoid X_1, \dots, \sectoid X_{p+q} \in \Gamma(A)$, where $\bullet$ is the algebra multiplication induced on $\Gamma(E)$ by the fiberwise algebra multiplication in $E$.
 \end{definition}
 
 \begin{theorem}
