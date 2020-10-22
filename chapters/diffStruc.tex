@@ -125,18 +125,17 @@ Due to the bijective \dbtext{correspondence between $C^\infty(M)$-linear maps be
 
 \lin
 
-The following is the fundamental example of forms on an algebroid $A$. It has been used to define a cohomology theory on Lie algebroids and \todo{complement}.
+
 
 \begin{example}
+On the trivial vector bundle $M \times \bb K$\todo{$A$ as a $\bb K$ vector bundle}, the associated space of forms on $A$ is denoted by $\lbtext{\lbtext{\Omega^\bullet(A)}}$, and it is called the \lbtext{space of scalar valued forms on $A$}. Notice that the module $\Omega^n(A) = \Gamma \bigwedge^n A^*$.
 
-On the trivial vector bundle $M \times \bb K$\todo{$A$ as a $\bb K$ vector bundle}, let $A$ act by the trivial action $\phi^0: A \to \alg D(M \times \bb K)$, i.e. considering $\Gamma(M \times \RR)$ as $C^\infty(M)$ and letting the representation be the anchor. The associated space of forms on $A$ is denoted by $\lbtext{\lbtext{\Omega^\bullet(A)}}$, and it is called the \lbtext{space of scalar valued forms on $A$}. Notice that the module $\Omega^n(A)$ is isomorphic to $\Gamma \bigwedge^n A^*$.
+This is the fundamental example of forms on an algebroid $A$. It has been used to define a cohomology theory on Lie algebroids and \todo{complement}.
 \end{example}
-
-Connections and Curvatures are particular cases of the following type of forms on $A$, when $A$ is a transitive Lie algebroid.
 
 \begin{example}
 Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ be a transitive Lie algebroid sequence.
-Let $\lbtext{\Omega^\bullet(A, L)}$ be the space of $L$ valued forms on $A$ associated to the adjoint action defined in \ref{defnAdjointAct}, $ad: A \to \alg D(L)$, $\oid X \mapsto j^{-1}[\oid X, \cdot]$.
+The space $\lbtext{\Omega^\bullet(A, L)}$ of $L$-valued forms on $A$ will be an important example since (generalized) algebroid connections and their curvatures are particular cases of this type of forms on $A$.
 \end{example}
 
 \lin
@@ -150,7 +149,7 @@ Let $\lbtext{\Omega^\bullet(A, L)}$ be the space of $L$ valued forms on $A$ asso
     
     \item \rtext{$\Omega^n(A, E)$ and $\Gamma(E) \otimes \Omega^n(A)$ are isomorphic} $C^\infty(M)$-modules.
     
-    \item If $U$ is trivializing neighborhood for both $A$ and $E$, $\Omega_U^n(A, E) \cong C^\infty(U, V) \otimes_{C^\infty(U)} \Gamma(U \times \bigwedge^n W^*) \cong C^\infty(U, V) \otimes_{\bb K} \bigwedge^n W^*$
+    \item If $U$ is trivializing neighborhood for both $A$ and $E$, $\rtext{\Omega_U^n(A, E)} \cong C^\infty(U, V) \otimes_{C^\infty(U)} \Gamma(U \times \bigwedge^n W^*) \rtext{\cong C^\infty(U, V) \otimes_{\bb K} \bigwedge^n W^*}$
     
     %\item $\Omega^n(A)$ and $\Gamma\Alt^nA^*$ are isomorphic $C^\infty(M)$-modules.
     
@@ -158,7 +157,7 @@ Let $\lbtext{\Omega^\bullet(A, L)}$ be the space of $L$ valued forms on $A$ asso
 \end{theorem}
 
 \begin{proof}
-$\Alt^n(A, E) \cong \Hom(\bigwedge^n A, E)$ by definition, and $\Hom(\bigwedge^n A, E) \cong E \otimes (\bigwedge^n A)* \cong E \otimes \bigwedge^n A^*$, but $\bigwedge^n A^* \cong \Omega^n(A)$.
+$\Alt^n(A, E) \cong \Hom(\bigwedge^n A, E)$ by definition, and $\Hom(\bigwedge^n A, E) \cong E \otimes (\bigwedge^n A)* \cong E \otimes \bigwedge^n A^*$, but $\bigwedge^n A^* = \Omega^n(A)$.
 
 Since $\Gamma$ is a strong monoidal function\todo{can I make this more clear?}, it distributes over the tensor product, and so the result follows from the first part of the theorem.
 \end{proof}
@@ -257,6 +256,14 @@ To see:
 $\Omega^p(A) \wedge \Omega^q(A, E) \subset \Omega^{p+q}(A, E)$.
 \end{proof}
 
+\begin{example}
+Let $A$ act by the trivial action $\phi^0: A \to \alg D(M \times \bb K)$, i.e. considering $\Gamma(M \times \RR)$ as $C^\infty(M)$ and letting the representation be the anchor. The associated differential on $\Omega^\bullet(A)$ will be denoted by $\hat d_A$, making of \lbtext{$(\Omega^\bullet(A), \hat d_A)$} a differential graded module
+\end{example}
+
+\begin{example}
+Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ be a transitive Lie algebroid sequence.
+The differential graded module associated to the adjoint action defined in \ref{defnAdjointAct}, $ad: A \to \alg D(L)$, $\oid X \mapsto j^{-1}[\oid X, \cdot]$, will be denoted by \lbtext{$(\Omega^\bullet(A, L), \hat d)$}.
+\end{example}
 
 \lin
 
@@ -286,7 +293,6 @@ Let $\mathcal A = \oplus_{n = 0}^\infty \mathcal A^n$ be a graded algebra (over 
 \end{definition}
 
 
-% Only define things for A, E, and THEN do define the one without E
 \begin{definition}
 Let $E$ be an algebra bundle over $M$, i.e. a vector bundle such that each fiber is an algebra and such that there exists an atlas compatible with the algebra multiplication, on which $A$ is represented. Define on $\Omega^\bullet(A, E)$ the $C^\infty(M)$-bilinear operation operation, called \emph{the wedge product of LAB-valued forms on $A$}
 \begin{eqnsplit*}
@@ -317,25 +323,16 @@ $d^2 = 0$. Apparently this follows from the fact that $\phi$ respects the Lie al
 Graded Leibniz
 \end{proof}
 
-\begin{proposition}
-$(\Omega^\bullet(A), \wedge, \hat d_A)$ is a graded(-commutative) differential graded algebra.
-\end{proposition}
+\begin{example}
+\rtext{$(\Omega^\bullet(A), \wedge, \hat d_A)$ is a graded-commutative differential graded algebra}.
+
+The additional conditions is simply that $\alpha \beta = (-1)^{|x||y|}\beta \alpha$ for all homogeneous elements $\alpha, \beta$. This follows from $\bb K$ being commutative.
+\end{example}
 
 \linea 
 
-The following instances of $(\Omega^\bullet(A, E), \hat d_\phi)$ will be important to us in future chapters.
-
 {\color{gray}
-\begin{theorem}
-\rtext{$(\Omega^\bullet(A), \wedge, \hat d_A)$ is a graded(-commutative) differential graded algebra.}
-\end{theorem}
-
-\begin{proof}
-To see:
-
-$xy = (-1)^{|x||y|}yx$. This follows from $\RR$ being commutative.
-\end{proof}
-
+The following instances of $(\Omega^\bullet(A, E), \hat d_\phi)$ will be important to us in future chapters.
 
 \begin{theorem}
  NOT USEFUL TO US
@@ -409,9 +406,9 @@ Atiyah. The concept coincides? (See Mackenzie)
 
 \begin{itemize}
     
-\item $(\Omega(A), \hat d_A)$ as $(\Omega(M)\otimes \bigwedge g^*, d + s)$.
+\item $(\Omega(A), \hat d_A)$ as $(\Omega(M)\otimes \bigwedge g^*, d + s =: \lbtext{\hat d_{triv}})$.
 
-\item $(\Omega(A, L), \hat d)$ as $(\Omega(M)\otimes \bigwedge g^* \otimes \mathfrak g, d + s')$ : \[(\Omega_{TLA}(M, \mathfrak g), \hat d_{TLA})\]
+\item $(\Omega(A, L), \hat d)$ as $(\Omega(M)\otimes \bigwedge g^* \otimes \mathfrak g, d + s')$ : \[(\Omega_{TLA}(M, \mathfrak g), \lbtext{\hat d_{TLA} =: \hat d})\]
 
 \item Generic element in $\Omega^n$, given dual basis $\theta = \set{\theta^a}$ of a basis of $\alg g$ $\set{E_a}$
 \begin{align*}
