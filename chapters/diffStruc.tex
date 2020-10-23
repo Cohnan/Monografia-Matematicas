@@ -50,6 +50,7 @@ TODO\todo{check this}: the third ``important example'' introduced in Lazzarini i
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Differential Algebras}
 
+{\color{gray}
 \begin{itemize}
 
 \item Alt
@@ -71,6 +72,7 @@ TODO\todo{check this}: the third ``important example'' introduced in Lazzarini i
 \item Respect further structure... of $L$?
 
 \end{itemize}
+}
 
 \linea 
 
@@ -113,10 +115,10 @@ Let $E$ be a vector bundle over $M$ on which there is a representation $\phi: A 
 \end{definition}
 
 \begin{remark}
-Due to the bijective \dbtext{correspondence between $C^\infty(M)$-linear maps between local sections over $U$ of vector bundles and vector bundle morphisms resticted to $U$}\todo{is this a thing? I think it might be correct to leave the linearity to be over all of $M$}, $\Omega_U^n(A, E)$ may be considered the space of \dbtext{$C^\infty(M)$-multilinear} antisymmetric maps from $\Gamma_U(A)^n$ to $\Gamma_U(E) = \Omega_U^0(A, E)$. We will refer as \ptext{(local) $E$-valued $n$-forms on $A$} to both elements
+Due to the bijective \dbtext{correspondence between $C^\infty(M)$-linear maps between local sections over $U$ of vector bundles and vector bundle morphisms resticted to $U$}\todo{is this a thing? I think it might be correct to leave the linearity to be over all of $M$}, $\Omega_U^n(A, E)$ may be considered the space of \dbtext{$C^\infty(M)$-multilinear} antisymmetric maps from $\Gamma_U(A)^n$ to $\Gamma_U(E) = \Omega_U^0(A, E)$. We will refer as \ptext{(local) $E$-valued $n$-forms on $A$} to both
 \begin{align}
-    \omega &: \underbrace{A|_U \oplus \cdots \oplus A|_U}_{\text{$n$ times}} \to E_U & \text{alternating, $\RR$-vector bundle morphism}\\
-    \omega &: \underbrace{\Gamma_U(A) \times \cdots \times \Gamma_U(A)}_{\text{$n$ times}} \to \Gamma_U(E) & \text{alternating, $C^\infty(M)$-multilinear map}.
+    \omega &: \underbrace{A|_U \oplus \cdots \oplus A|_U}_{\text{$n$ times}} \to E_U, & \text{alternating, $\RR$-vector bundle morphism and}\\
+    \omega &: \underbrace{\Gamma_U(A) \times \cdots \times \Gamma_U(A)}_{\text{$n$ times}} \to \Gamma_U(E) & \text{alternating, \dbtext{$C^\infty(M)$}-multilinear map}.
 \end{align}
     
     %\item $\Omega^n(A)$ may be considered the space of $C^\infty(M)$-multilinear antisymmetric maps from $\Gamma(A)^n$ to $C^\infty(M)$.
@@ -149,7 +151,7 @@ The space $\lbtext{\Omega^\bullet(A, L)}$ of $L$-valued forms on $A$ will be an 
     
     \item \rtext{$\Omega^n(A, E)$ and $\Gamma(E) \otimes \Omega^n(A)$ are isomorphic} $C^\infty(M)$-modules.
     
-    \item If $U$ is trivializing neighborhood for both $A$ and $E$, $\rtext{\Omega_U^n(A, E)} \cong C^\infty(U, V) \otimes_{C^\infty(U)} \Gamma(U \times \bigwedge^n W^*) \rtext{\cong C^\infty(U, V) \otimes_{\bb K} \bigwedge^n W^*}$
+    \item If $U$ is trivializing neighborhood for both $A$ and $E$, $\rtext{\Omega_U^n(A, E)} \cong C^\infty(U, V) \otimes_{C^\infty(U)} \Gamma(U \times \bigwedge^n W^*) \rtext{\cong C^\infty(U, V) \otimes_{C^\infty(M)} C^\infty\left(U, \bigwedge^n W^* \right) } \cong \rtext{ C^\infty(U, V) \otimes_{\bb K} \bigwedge^n W^*}$.
     
     %\item $\Omega^n(A)$ and $\Gamma\Alt^nA^*$ are isomorphic $C^\infty(M)$-modules.
     
@@ -221,7 +223,7 @@ So 1., 2. .
     \end{align*}
     If the antiderivation is of degree $1$ or $-1$, it is called a \emph{differential on $M$}.
     
-    \item Let $M = \oplus_{n = 0}^\infty M^n$ be a graded module and $d: M \to M$ a differential on $M$. $(M, d)$ is called a \emph{differential graded module} if $d \circ d = 0$.
+    \item Let $M = \oplus_{n = 0}^\infty M^n$ be a graded module and $d: M \to M$ a differential on $M$. $(M, d)$ is called a \emph{differential graded module over $R$} if $d \circ d = 0$.
     
     \item Let $(M, d)$ and $(M', d')$ be differential graded modules over $R$. A \emph{morphism of differential graded modules} is a graded module morphism $\phi: M \to M'$, i.e. an $R$-linear map that sends homogeneous elements of degree $m \in \ZZ$ of $M$ into similar elements in $M'$, such that $d' \circ \phi = \phi \circ d$.
     
@@ -404,6 +406,7 @@ Atiyah. The concept coincides? (See Mackenzie)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Trivial Lie Algebroid}
 
+{\color{gray}
 \begin{itemize}
     
 \item $(\Omega(A), \hat d_A)$ as $(\Omega(M)\otimes \bigwedge g^*, d + s =: \lbtext{\hat d_{triv}})$.
@@ -416,11 +419,13 @@ Atiyah. The concept coincides? (See Mackenzie)
 \end{align*}
     
 \end{itemize}
+}
+\linea
 
-Let $A = TM \oplus (M \times \alg g)$ be a trivial Lie algebroid with fiber type $\alg g$.
+Let $A = TM \oplus (M \times \alg g)$ be a trivial Lie algebroid over the manifold $M$, with $\alg g$ a Lie algebra.
 
 \begin{proposition}\label{propIsoScalarFormsTLA}
-The $C^\infty(M)$-module of $\bb K$-valued forms on the trivial Lie algebroid bundle $TM \times \alg g$ is isomorphic to $\Omega^\bullet(TM) \otimes_{\bb K} \bigwedge^\bullet \alg g^* = \Omega^\bullet(TM) \otimes_{C^\infty(M)} C^\infty(M, \bigwedge^\bullet \alg g^*)$. The isomorphism, defined by linear extension of
+The $C^\infty(M)$-module of $\bb K$-valued forms on the trivial Lie algebroid bundle $TM \times \alg g$ is isomorphic\todo{even equal} to $\Omega^\bullet(TM) \otimes_{\bb K} \bigwedge^\bullet \alg g^* = \Omega^\bullet(TM) \otimes_{C^\infty(M)} C^\infty(M, \bigwedge^\bullet \alg g^*)$. The isomorphism, defined by linear extension of
 \begin{align*}
     \Omega^r(TM) \otimes C^\infty(U, \bigwedge^s \alg g^*) &\to \Omega^{r+s}(TM \times \alg g)\\
     \alpha \otimes \beta &\mapsto \tilde \alpha \wedge \tilde \beta
@@ -467,7 +472,7 @@ be \emph{the Chevalley-Eilenbert differential on $\bigwedge \alg g^*$}, applied 
 \end{definition}
 
 \begin{theorem}\label{theoIsoScalarFormsTLA}
-\rtext{$(\Omega^\bullet(TM) \otimes \bigwedge^\bullet, \wedge, \hat d_{triv})$ is a (bi)graded (commutative) differential algebra and graded differential module over $\Omega^\bullet(TM \times \alg g)$, isomorphic to the space $(\Omega^\bullet(TM \times \alg g), \wedge, \hat d_{TM \times \alg g})$} of $\bb K$-valued forms on the trivial Lie algebroid $TM \times \alg g$.
+\rtext{$(\Omega^\bullet(TM) \otimes \bigwedge^\bullet, \wedge, \hat d_{triv})$ is a (bi)graded (commutative) differential algebra and a graded differential module over $\Omega^\bullet(TM \times \alg g)$, isomorphic to the space $(\Omega^\bullet(TM \times \alg g), \wedge, \hat d_{TM \times \alg g})$} of $\bb K$-valued forms on the trivial Lie algebroid $TM \times \alg g$.
 \end{theorem}
 
 \begin{proof}
@@ -482,7 +487,7 @@ Is isomorphism of graded modules: Respects the differentials DO!\todo{Done in my
 Is isomorphism of graded algebras: Respects the wedge product: by definition of the wedge on the new space as defined in the remark following theorem \ref{propIsoScalarFormsTLA}.
 \end{proof}
 
-\ptext{Due to this isomorphism, from now on we will call $(\Omega^\bullet(TM) \otimes \bigwedge^\bullet, \wedge, \hat d_{triv})$ the space of scalar valued forms on the trivial Lie algebroid $TM \times \alg g$, and $\Omega^\bullet(TM)$ and $C^\infty(M, \bigwedge^\bullet \alg g*)$ as subspaces.}
+\ptext{Due to this isomorphism, from now on we will call $(\Omega^\bullet(TM) \otimes \bigwedge^\bullet \alg g^*, \wedge, \hat d_{triv})$ the space of scalar valued forms on the trivial Lie algebroid $TM \times \alg g$, and $\Omega^\bullet(TM)$ and $C^\infty(M, \bigwedge^\bullet \alg g*)$ as subspaces.}
 
 \linea
 
