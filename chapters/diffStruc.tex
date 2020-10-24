@@ -257,7 +257,7 @@ through the linear extension on the homogeneous elements:
 for any real valued $p$-form $\omega$, $L$-valued $q$-form $\eta$ and any $\sectoid X_1, \dots, \sectoid X_{p+q} \in \Gamma(A)$.
 \end{definition}
 
-\ptext{When the $E$-valued form is a $0$-form, i.e. a section of $\Gamma(E)$, the $\wedge$ symbol is usually not written}.
+\ptext{When one of the factors is a $0$-form, i.e. a section of $\Gamma(E)$ or $\Gamma(A)$, the $\wedge$ symbol is usually not written}.
 
 \begin{theorem}\label{theoFormsAreDiffGModule}
  \rtext{$(\Omega^\bullet(A, E), \hat d_\phi)$ is a graded differential module over $\Omega^\bullet(A)$}.
@@ -374,19 +374,20 @@ Let $E$ be a vector bundle over $M$, and suppose that on the open $U \subset M$,
         
     \item Each $\alpha_i$, $i = 1, \dots, N$, is in fact a local $1$-form in $\Omega_U^1(A) = \Gamma_U(A^*)$.
     
-    \item $\alpha_{i_1} \wedge \alpha_{i_p}$ is an element of $\Omega_U^p(A)$.
+    \item Any product $\alpha_{i_1} \wedge \alpha_{i_p}$, $i_1, \dots, i_p = 1, \dots, N$, is an element of $\Omega_U^p(A)$.
     
     \item For any $f \in C^\infty(U)$, 
     \begin{equation}
         f\, \alpha_{i_1} \wedge \cdots \wedge \alpha_{i_p},
     \end{equation} 
-    $i_1, \dots, i_p = 1, \dots, N$, is also an element of $\Omega_U^p(A)$. In fact, any scalar valued $p$-form on $A$ is a linear combination of forms of this type.\todo{Is this true? }
+    is also an element of $\Omega_U^p(A)$. In fact, any scalar valued $p$-form on $A$ is a linear combination of forms of this type.\todo{Is this true? }
     
     \item For any $\mu \in \Gamma_U(E) = \Omega_U^0(A, E)$, 
-    \begin{equation}
-        \mu \wedge \alpha_{i_1} \wedge \cdots \wedge \alpha_{i_p},
-    \end{equation}
-    $i_1, \dots, i_p = 1, \dots, N$, is an element of $\Omega_U^p(A, E)$, where the first $\wedge$ refers to the product between the scalar valued $p$-form $\alpha_{i_1} \wedge \cdots \wedge \alpha_{i_p}$ and the $L$-valued $0$-form $\mu$. In fact, any scalar valued $p$-form on $A$ is a linear combination of forms of this type.
+    \begin{align}
+        &\mu \wedge \alpha_{i_1} \wedge \cdots \wedge \alpha_{i_p}\\
+        \equiv & \mu \, \alpha_{i_1} \wedge \cdots \wedge \alpha_{i_p}
+    \end{align}
+     is an element of $\Omega_U^p(A, E)$, where the first $\wedge$ refers to the product between the scalar valued $p$-form $\alpha_{i_1} \wedge \cdots \wedge \alpha_{i_p}$ and the $L$-valued $0$-form $\mu$; we have used the convention of removing the $\wedge$ symbol if one of the factors is a $0$-form. In fact, any scalar valued $p$-form on $A$ is a linear combination of forms of this type.
         
     \end{itemize}
 \end{example}
@@ -570,7 +571,7 @@ Is isomorphism of graded algebras: Respects the wedge product: by definition of 
 
 \linea
 
-We now apply a similar result to the $L$-valued forms on the trivial Lie algebroid $A = TM \times \alg g$.
+We now apply a similar result to the $L$-valued forms on the trivial Lie algebroid $A = TM \times \alg g$.\todo{Due to the next subsubsection, this section is redundant. Perhaps only an aclaration saying that $\hat d_\phi$ applied to the second factor is also denoted by $s'$ and is called the Cheva... of $\alg g$-valued forms}
 
 \begin{theorem}
 The $C^\infty(M)$-module $\Omega(TM \times \alg g, M \times \alg g)$ of $M \times \alg g$-valued forms on the trivial Lie algebroid bundle $TM \times \alg g$, is isomorphic to $\Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes \alg g\right)$, and this isomorphism is compatible with the grading, where the set of homogeneous elements of degree $p \in \ZZ_{\geq 0}$ is $\left( \Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes \alg g\right) \right)^p = \sum_{r + s = p} \Omega^r(TM) \otimes \left(\bigwedge^s \alg g^* \otimes \alg g\right)$. 
@@ -615,7 +616,7 @@ See proofs of the previous 2 results.
 
 {\color{gray}(Copy paste of $L$-valued)}\todo{needed for Matter action}
 
-Let $E = M \times V$ be a trivial vector bundle over $M$ with the vector space $V$ as the fiber, and let $A = TM \times \alg g$ be represented on $E$ through $\phi: TM \times \alg g \to \alg D(M \times V)$. For example, if $V$ is a representation space of $G$, $V$ is also a representation space for $\alg g$, and this induces naturally a representation $\phi$.
+Let $E = M \times V$ be a trivial vector bundle over $M$ with the vector space $V$ as the fiber, and let $A = TM \times \alg g$ be represented on $E$ through $\phi: TM \times \alg g \to \alg D(M \times V)$. For example, if $V$ is a representation space of $G$, $V$ is also a representation space for $\alg g$, and this induces naturally a representation $\phi$. Notice that if $E$ is not a trivial vector bundle, on each trivializing neighborhood $U$ of $E$ we fall under the case we are presently studying.\todo{Perhaps all of them?}
 
 \begin{theorem}
 The $C^\infty(M)$-module $\Omega(TM \times \alg g, M \times V)$ of $M \times V$-valued forms on the trivial Lie algebroid bundle $TM \times \alg g$, is isomorphic to $\Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes V\right)$, and this isomorphism is compatible with the grading, where the set of homogeneous elements of degree $p \in \ZZ_{\geq 0}$ is $\left( \Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes V\right) \right)^p = \sum_{r + s = p} \Omega^r(TM) \otimes \left(\bigwedge^s \alg g^* \otimes V\right)$. 
@@ -645,6 +646,34 @@ where $d$ is the deRhan cohomology differential applied to the first factor, and
 Finally, \rtext{$\left( \Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes V\right), \hat d_\phi \right)$ is a graded differential module over $\Omega^\bullet(M)$ under the $\wedge$ product, isomorphic to $(\Omega^\bullet(TM \times \alg g, M \times V), \hat d_\phi)$}.
 \end{theorem}
 
+\linea
+
+Suppose that on $M$ there are $m$ global coordinates $\{x^i: M \to \RR^m\}_{i = 1, \dots, m}$. Let $\{E_a\}_{a = 1, \dots, n}$ be a basis of $\alg g$, with dual basis $\{\epsilon^a\}_{a = 1, \dots, n} \subset \alg g^*$.
+
+\begin{theorem}
+Let $\omega$ be a scalar valued $p$-form on $TM \times \alg g$, $p \in \ZZ_{\geq 0}$. Then, $\omega$ can be written as
+\begin{equation}
+    \omega = \sum_{r + s = p} \omega_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}\, dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \epsilon^{a_1} \wedge \cdots \wedge \epsilon^{a_s},
+\end{equation}
+where each $\omega_{\mu_1 \cdots \mu_r, a_1 \cdots a_s} \in C^\infty(M)$, for $\mu_1 \cdots \mu_r = 1, \dots, m$, $, a_1 \cdots a_s = 1, \dots, n$.
+\end{theorem}
+
+\lin
+
+Additionally to the suppositions stated before the previous theorem, also suppose that $E = M \times V$ is a trivial vector bundle over $M$ and $\phi: TM \times \alg g \to \alg D(E)$ a Lie algebroid representation. Let $\{e_c\}_{c = 1, \dots, h}$ be a basis of $V$, e.g. $E = L = M \times \alg g$.
+
+\begin{theorem}
+Let $\omega$ be an $E$-valued $p$-form on $TM \times \alg g$, $p \in \ZZ_{\geq 0}$. Then, $\omega$ can be written as
+\begin{equation}
+    \omega = \sum_{r + s = p} \omega^\epsilon_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}\, dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \epsilon^{a_1} \wedge \cdots \wedge \epsilon^{a_s},
+\end{equation}
+where each $\omega^\epsilon_{\mu_1 \cdots \mu_r, a_1 \cdots a_s} \in C^\infty(M, V)$, for $\mu_1 \cdots \mu_r = 1, \dots, m$, $, a_1 \cdots a_s = 1, \dots, n$. Viewing each $e_c$ as a constant section of $E$, i.e. $e_c \in \Omega^0(TM \times \alg g, E)$, we may also write
+\begin{equation}
+    \omega = \sum_{r + s = p} \left(\omega^\epsilon\right)^c_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}\, e_c \, dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \epsilon^{a_1} \wedge \cdots \wedge \epsilon^{a_s}.
+\end{equation} 
+with each $\left(\omega^\epsilon\right)^a_{\mu_1 \cdots \mu_r, a_1 \cdots a_s} \in C^\infty(M, V)$, $a = 1, \dots, n$.
+The convention of ignoring the $\wedge$ symbol when one of the factors is a $0$-form has been used in both formulas.
+\end{theorem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
