@@ -662,7 +662,7 @@ where each $\omega_{\mu_1 \cdots \mu_r, a_1 \cdots a_s} \in C^\infty(M)$, for $\
 
 Additionally to the suppositions stated before the previous theorem, also suppose that $E = M \times V$ is a trivial vector bundle over $M$ and $\phi: TM \times \alg g \to \alg D(E)$ a Lie algebroid representation. Let $\{e_c\}_{c = 1, \dots, h}$ be a basis of $V$, e.g. $E = L = M \times \alg g$.
 
-\begin{theorem}
+\begin{proposition}\label{decompOfFormsTLA}
 Let $\omega$ be an $E$-valued $p$-form on $TM \times \alg g$, $p \in \ZZ_{\geq 0}$. Then, $\omega$ can be written as
 \begin{equation}
     \omega = \sum_{r + s = p} \omega^\epsilon_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}\, dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \epsilon^{a_1} \wedge \cdots \wedge \epsilon^{a_s},
@@ -673,13 +673,13 @@ where each $\omega^\epsilon_{\mu_1 \cdots \mu_r, a_1 \cdots a_s} \in C^\infty(M,
 \end{equation} 
 with each $\left(\omega^\epsilon\right)^a_{\mu_1 \cdots \mu_r, a_1 \cdots a_s} \in C^\infty(M, V)$, $a = 1, \dots, n$.
 The convention of ignoring the $\wedge$ symbol when one of the factors is a $0$-form has been used in both formulas.
-\end{theorem}
+\end{proposition}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Local Description of ($\bb K$ and $L$ valued) forms on Transitive Lie Algebroids}
+\section{Local Description of forms on Transitive Lie Algebroids}
 
 \begin{itemize}
     
@@ -709,31 +709,48 @@ Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ be an Atiyah sequenece 
 Let $\omega \in \Omega^q(A)$.
     \begin{itemize}
     
-    \item For each $i \in I$ define the local $q$-form $\omega^i_{loc}$ by
+    \item For each $i \in I$ define the local $q$-form $\omega^i_{loc}$, called the \emph{local trivialization of $\omega$ on $U_i$}, by
     \begin{align}
-        \omega^i_{loc} = \omega \circ \Theta^i  \quad \in \Omega^q(TU_i\times \alg g)
+        \omega_i &= \omega \circ \Theta^i  & \in \Omega^q(TU_i\times \alg g)\\
+        &:\left( \Gamma_U(TM)\oplus C^\infty(U, \alg g) \right) \times \cdots \times &\left( \Gamma_U(TM)\oplus C^\infty(U, \alg g) \right) \to C^\infty(U)
     \end{align}
     
-    \item A \emph{family of trivializations of $\omega$} is a set $\{\omega^i_{loc} \in \Omega^q(TU_i \times \alg g)\}$.
+    \item A \emph{family of trivializations of $\omega$} is a set $\{\omega_i \in \Omega^q(TU_i \times \alg g)\}_{i \in I}$.
     
     \end{itemize}
 
 \end{definition}
+
+From now on let $E$ be a vector bundle over $M$ with typical fiber $V$, and suppose that each trivializing neighborhood $U_i$ of $A$ also trivializes $E$, and that $\{(U_i, \rho_i: U_i \times V \to E|_{U_i})\}$
 
 \begin{definition}
-Let $\omega \in \Omega^q(A, L)$.
+Let $\omega \in \Omega^q(A, E)$.
     \begin{itemize}
     
-    \item For each $i \in I$ define the local $q$-form $\omega^i_{loc}$ by
+    \item For each $i \in I$ define the local $q$-form $\omega^i_{loc}$, called the \emph{local trivialization of $\omega$ on $U_i$}, by
     \begin{align}
-        \omega^i_{loc} = \psi_i^{-1} \circ \omega \circ \Theta^i  \quad \in \Omega^q(TU_i\times \alg g, U_i \times \alg g) \equiv \Omega^q_{TLA}(U_i, \alg g)
+        \omega_i &= \psi_i^{-1} \circ \omega \circ \Theta^i  & \in \Omega^q(TU_i\times \alg g, U \times V)\\
+        &:\left( \Gamma_U(TM)\oplus C^\infty(U, \alg g) \right) \times \cdots \times &\left( \Gamma_U(TM)\oplus C^\infty(U, \alg g) \right) \to C^\infty(U, V)
     \end{align}
     
-    \item A \emph{family of trivializations of $\omega$} is a set $\{\omega^i_{loc} \in \Omega^q_{TLA}(U_i, \alg g)\}$.
+    \item A \emph{family of trivializations of $\omega$} is a set $\{\omega_i \in \Omega^q_{TLA}(U_i, \alg g)\}_{i \in I}$.
     
     \end{itemize}
 
 \end{definition}
+
+\begin{remark}
+Due to proposition \ref{decompOfFormsTLA}, if, additionally, there are local coordinates of $M$, $\{x^i: U_i \to \RR^m\}_{i \in I}$ on each $U_i$, the local trivializations of every form $\omega \in \Omega^p(A)$ satisfy \begin{equation}
+    \omega_i = \sum_{r + s = p} (\omega_i^\epsilon)_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}\, dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \epsilon^{a_1} \wedge \cdots \wedge \epsilon^{a_s},
+\end{equation}
+where each $\lbtext{(\omega_i^\epsilon)_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}} \in C^\infty(M, V)$, for $\mu_1 \cdots \mu_r = 1, \dots, m$, $, a_1 \cdots a_s = 1, \dots, n$. 
+
+Similarly for $E$-valued forms, viewing each $e_c$ as a constant section of $E$, we can write
+\begin{equation}
+    \omega_i = \sum_{r + s = p} \left(\omega_i^\epsilon\right)^c_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}\, e_c \, dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \epsilon^{a_1} \wedge \cdots \wedge \epsilon^{a_s}.
+\end{equation} 
+with each $\lbtext{\left(\omega_i^\epsilon\right)^a_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}} \in C^\infty(M, V)$, $a = 1, \dots, n$.
+\end{remark}
 
 \begin{proposition}
 Let $U$ be a Lie algebroid trivializing neighborhood of $A$ \textbf{that also trivializes $M$}, with associated trivializing maps $\psi: U \times \alg g \to L|_{U}$, $\Theta: TU \to A_{U}$, and let $\varphi = (x^1, \dots, x^m): U \to \RR^m$ be a coordinate map of $M$, and let $\set{E_a}_{a= 1, \dots, n}$ be a basis for $\alg g$. Then 
@@ -749,11 +766,11 @@ For every $m \in U$, $S$ is fiberwise a vector space isomorphism between $T_m M 
 \end{proof}
 
 \begin{theorem}
-Let $U$ be a trivializing neighborhood of $A$ that also trivializes $M$. The map
+Let $U$ be a trivializing neighborhood of $A$ that also trivializes $M$. The trivializing map
 \begin{eqnsplit}
 \cdot_{loc} : (\Omega^\bullet_U(A), \wedge, \hat d_A) &\to (\Omega^\bullet(TU \oplus (U \times \alg g)), \wedge, \hat d_{TU \times \alg g})
 \end{eqnsplit}
-is an isomorphism of differential graded algebras. In particular
+is an isomorphism of differential graded modules and algebras. In particular
 \begin{equation}
     (\hat d_A \omega)_{loc} = \hat d_{TU \times \alg g} \omega_{loc}.
 \end{equation}
@@ -771,14 +788,19 @@ Let $U$ be a trivializing neighborhood of $A$. The map
 \begin{eqnsplit}
 \cdot_{loc} : (\Omega^\bullet_U(A, L), \wedge, \hat d) &\to (\Omega^\bullet(TU \oplus (U \times \alg g), U \times \alg g), \wedge, \hat d_{TLA})
 \end{eqnsplit}
-is an isomorphism of differential graded algebras. In particular
+is an isomorphism of differential graded modules. In particular
 \begin{equation}
     (\hat d \omega)_{loc} = \hat d_{TLA} \omega_{loc}.
 \end{equation}
 \end{theorem}
 \begin{proof}
-The proof is identical to that of the previous theorem, except for the last part. To see that the differential commutes it is neceessary to show that the induced representation of $TLA$ on $U \times \alg g$ via $ad: A|_U \to D_{Der}(U \times \alg g)$ is the $ad$ representation. This will follow from the fact that $\tilde psi$ respects the Lie bracket, i.e. $\psi$ is a trivialization of a LAB.
+The proof is identical to that of the previous theorem, except for the last part. To see that the differentials commute it is neceessary \textbf{to show that the induced representation of $TLA$ on $U \times \alg g$ via $ad: A|_U \to D_{Der}(U \times \alg g)$ is the $ad$ representation}\todo{OJO!!!!! Para su generalizacion a todo $E$}. This will follow from the fact that $\tilde psi$ respects the Lie bracket, i.e. $\psi$ is a trivialization of a LAB.
 \end{proof}
+\begin{theorem}
+\dbtext{Previous theorem applied to $E$-valued forms!!}
+\end{theorem}
+
+
 \linea 
 
 Let $\omega \in \Omega^q(A, L)$ and let $\{\sectoid X_k\} \subset \Gamma(A)$ for $k = 1, \dots, q$. Let each $\sectoid X_k$ have a family of trivializations $\{\sect X_k \oplus \stilde \eta_k^i \in \Gamma(TU_i) \oplus C^\infty(U_i, \alg g)\}$, then, in $U_{ij} = U_i \inter U_j \neq \empty$
@@ -810,7 +832,7 @@ which can be expressed as
 \end{definition}
 
 \begin{theorem}
-$\alpha^i_j: \Omega^q_{TLA}(U_{ij}, \alg g) \to \Omega^q_{TLA}(U_{ij}, \alg g)$ and $\alpha^i_j: \Omega^q(TU_{ij}\times \alg g) \to \Omega^q(TU_{ij}\times \alg g)$ are isomorphisms of differential graded algebras.
+$\alpha^i_j: \Omega^q_{TLA}(U_{ij}, \alg g) \to \Omega^q_{TLA}(U_{ij}, \alg g)$ and $\alpha^i_j: \Omega^q(TU_{ij}\times \alg g) \to \Omega^q(TU_{ij}\times \alg g)$ are isomorphisms of differential graded modules.
 \end{theorem}
 \begin{proof}
 Recall that, since a differential $d$ in a differential algebra is a local operator, $(d\omega)|_U = d|_U \omega|_U$; we will omit the $|_U$ besides the differentials for ease of reading.
@@ -830,6 +852,8 @@ The interesting part is the commutation of $\hat \alpha^i_j$ with the differenti
 \end{align*}
 \end{proof}
 \linea 
+
+{\color{gray} FALSE!!!
 
 Let $\set{E_a}_{1 \leq a \leq n}$ be a basis of the Lie algebra $\alg g$, and let $\set{\theta^a}$ be its dual basis.
 
@@ -855,7 +879,7 @@ Similarly, for $L$-valued forms on $A$:
 Notice that a single coordinate map of $U_{ij} \subset M$ is used in the theorem, explaining wh
 \end{remark}
 
-TODO: how does G look for the Atiyah Lie algebroid
+TODO: how does G look for the Atiyah Lie algebroid}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
