@@ -344,25 +344,72 @@ $(\Omega^\bullet(A, L, \wedge^{[,]}, \hat d)$ is a Lie-graded differential grade
 
 \linea
 
-\begin{example}
-Let $A = TM$ for a manifold $M$. Then $(\Omega^\bullet (TM), \wedge, \hat d_{TM})$ is precisely the usual differential graded algebra and module $(\Omega(M), \wedge, d)$.
+\begin{theorem}\label{theoFormsPpalAtiyahSame}
+\rtext{Let $G \to P \to M$ be a principal bundle over $M$. The differential graded module $(\Omega^\bullet(TP/G, P \times \alg g/G), \hat d)$ is isomorphic to subset of $(\Omega^\bullet(TP) \otimes \alg g, d)$ associated to the $(R_*, Ad)$-equivariant $\alg g$ valued forms on $P$.}
+\end{theorem}
 
-Letting $E = M \times V$ for a vector space $V$, on which $TM$ is represented trivially by $i: TM \to \alg D(E)$, $X \mapsto X$, the differential graded module $(\Omega^\bullet(TM, M \times V), \hat d_i)$ is precisely the traditional $(\Omega^\bullet(M, V), d)$. If $V$ is an algebra with operator $\bullet$, for example a Lie algebra $\alg g$ with operation $[\cdot, \cdot]$, $(\Omega^\bullet(TM, E), \wedge^\bullet, \hat d_i)$ is exactly the traditional differential graded algebra $(\Omega^\bullet(M, V), \bullet, d)$.
+\linea
+
+\begin{example}
+Let $A = TM$ given a manifold $M$. Then $(\Omega^\bullet (TM), \wedge, \hat d_{TM})$ is precisely the usual differential graded algebra and module $(\Omega(M), \wedge, d)$.
+
+Letting $E = M \times V$ given a vector space $V$, on which $TM$ is represented trivially by $i: TM \to \alg D(E)$, $X \mapsto X$, the differential graded module $(\Omega^\bullet(TM, M \times V), \hat d_i)$ is precisely the traditional $(\Omega^\bullet(M, V), d)$. If $V$ is an algebra with operator $\bullet$, for example a Lie algebra $\alg g$ with operation $[\cdot, \cdot]$, $(\Omega^\bullet(TM, E), \wedge^\bullet, \hat d_i)$ is exactly the traditional differential graded algebra $(\Omega^\bullet(M, V), \bullet, d)$.
 \end{example}
 
+\begin{example}
 Let $E$ be a vector bundle over $M$, and suppose that on the open $U \subset M$, $\{\sect \mu_1, \dots, \sect \mu_d\} \subset \Gamma_U(E)$ and $\{\sectoid X^1, \dots, \sectoid X^N\} \subset \Gamma_U(A)$ and  are local frames
-\todo{\rtext{WAIT!} Even if only on $A = TS^2$, in which case we have the usual manifold theory of forms, $\partial_\phi$ is part of a local frame BUT can't be extended to a global vector field, it still defines a ``local form'' $d\phi \in \Omega_{U_{SN}}(M)$}
-. For the local frame of $A$, let the dual frame be $\{\alpha_1, \dots \alpha_N\} \Gamma_U(A^*)$, satisfying $\alpha_i(\sectoid X^j) = \delta_{ij} \in C^\infty(U)$. Then:
+\todo{\rtext{WAIT!} Even if only on $A = TS^2$, in which case we have the usual manifold theory of forms, $\partial_\phi$ is part of a local frame BUT can't be extended to a global vector field, it still defines a local form $d\phi \in \Omega_{U_{SN}}(M)$}
+. For this local frame of $A$, let the dual frame be $\{\alpha_1, \dots \alpha_N\} \in \Gamma_U(A^*)$, hence satisfying $\alpha_i(\sectoid X^j) = \delta_{ij} \in C^\infty(U)$. Then:
 
     \begin{itemize}
         
-    \item Each $\alpha_i$, $i = 1, \dots, N$, is in fact a $1$-form in $\Omega_U^1(A) = \Gamma_U(A^*)$.
+    \item Each $\alpha_i$, $i = 1, \dots, N$, is in fact a local $1$-form in $\Omega_U^1(A) = \Gamma_U(A^*)$.
     
-    \item $\alpha_{i_1} \wedge \alpha_{i_p}$ is an element of $\Omega^p(A)$.
+    \item $\alpha_{i_1} \wedge \alpha_{i_p}$ is an element of $\Omega_U^p(A)$.
     
-    \item For any $f \in C^\infty(U)$, $f\, \alpha_{i_1} \wedge \alpha_{i_p}$ is also an element of $\Omega^p(A)$.
+    \item For any $f \in C^\infty(U)$, 
+    \begin{equation}
+        f\, \alpha_{i_1} \wedge \cdots \wedge \alpha_{i_p},
+    \end{equation} 
+    $i_1, \dots, i_p = 1, \dots, N$, is also an element of $\Omega_U^p(A)$. In fact, any scalar valued $p$-form on $A$ is a linear combination of forms of this type.\todo{Is this true? }
+    
+    \item For any $\mu \in \Gamma_U(E) = \Omega_U^0(A, E)$, 
+    \begin{equation}
+        \mu \wedge \alpha_{i_1} \wedge \cdots \wedge \alpha_{i_p},
+    \end{equation}
+    $i_1, \dots, i_p = 1, \dots, N$, is an element of $\Omega_U^p(A, E)$, where the first $\wedge$ refers to the product between the scalar valued $p$-form $\alpha_{i_1} \wedge \cdots \wedge \alpha_{i_p}$ and the $L$-valued $0$-form $\mu$. In fact, any scalar valued $p$-form on $A$ is a linear combination of forms of this type.
         
     \end{itemize}
+\end{example}
+
+
+\begin{example}[Hopf $S^3$]
+Recall that $\{\underline{\partial_\phi}, \underline{\partial_{\xi^1}}, \underline{\partial_{\xi^2}}\}$ is a local frame of the Atiyah Lie algebroid associated to the complex Hopf principal bundle $S^1 \to S^3 \to S^2$. 
+
+So, the building blocks of any local form over $U_{SN}$ will be the dual frame, which we will denote by $\{\underline{d\phi}, \underline{d\xi_1}, \underline{\xi_2}\}$. 
+
+Since $L = S^3 \times i\RR / S^1$ has the global frame $\{i\}$, \rtext{any section of $L$ can be written as $f\,i$ for some $f \in C^\infty(S^2)$}. Hence, \rtext{any $S^3 \times i\RR/S^1$-valued local form on $TS^3/S^1$ can be written as a multiplication via wedge product of the forms $\{\underline{d\phi}, \underline{d\xi_1}, \underline{\xi_2}\}$, with coefficients in $C^\infty(S^2, i\RR)$}.
+
+An important local $1$-form on $TS^3/S^1$ over $U_{SN}$ is
+\begin{equation}
+    \lbtext{\omega^{Monop}_{U_{SN}}} := \frac{i}{2} d\xi^1 (1 + \cos \phi) \underline{d \xi_1} + \frac{i}{2} (1- \cos\phi)\underline{d\xi_2} \in \Omega_{U_{SN}}^1(TS^3/S^1, S^3 \times i\RR/S^1).
+\end{equation} This $1$-form is associated to the presence of a magnetic monopole on $3$-dimensional space.
+
+Due to theorem \ref{theoFormsPpalAtiyahSame}, the differential $d$ of $G$-invariant forms on $P$ corresponds to the differential $\hat d_{TS^3/S^1}$ under the identification of $G$-invariant sections of $TS^3$ with sections of $TS^3/S^1$ denoted by an underline. Hence, $\hat d_{TS^3/S^1} \underline{\xi_i} = \underline{d \xi_i}$, and, since $d^2 = 0$, 
+\begin{equation*}
+    \hat d_{TS^3/S^1} {\underline{d\xi_i}} = 0
+\end{equation*} for $i = 1, 2$; similarly 
+\begin{equation*}
+     \hat d_{TS^3/S^1} \underline{d \phi} = 0.
+\end{equation*}
+
+Now, applying the graded Leibniz rule to the above $1$-form considerint it a sum of products of $S^3\times i\RR/S^1$-valued $0$-forms and scalar valued $1$-forms, we conclude that
+\begin{equation}
+    \lbtext{R^{MP}_{U_{SN}}} 
+    := \hat d \omega^{Monop}_{U_{SN}} = -\frac{i}{4} \sin \phi \, \underline{d\phi} \wedge (\underline{d\xi_1} - \underline{d\xi_2}) 
+    \in \Omega^2(TS^3/S^1, S^3 \times i\RR / S^1).
+\end{equation}
+\end{example}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
