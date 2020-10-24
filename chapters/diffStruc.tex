@@ -106,7 +106,7 @@ Notice, that a local section of a hom-bundle $\Hom(E, E')$ need not have an exte
 Notice that $\Alt^\bullet(A, E)$ is indeed a vector bundle, with finite dimensional fibers, since, if $U \subset M$ is a trivializing neighborhood of both $A$ and $E$ with fibers $V$ and $W$ respectively, $\Alt^\bullet(A, E)|_U \cong U \times Hom(V, \bigwedge^* W)$ is a trivial vector bundle.
 
 \begin{definition}
-Let $E$ be a vector bundle over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$. Let $U \subset M$\todo{Open? Doesn't matter? I care about $U$ open only}.
+Let $E$ be a vector bundle over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$. Let $U \subset M$ be open:\todo{Open? Doesn't matter? I care about $U$ open only. RTA: to know what a smooth local section is, we prefer $U$ to be open}.
 
     \begin{itemize}
     
@@ -125,7 +125,7 @@ Let $E$ be a vector bundle over $M$ on which there is a representation $\phi: A 
 \begin{remark}
 Due to the bijective correspondence between $C^\infty(U)$-linear maps between local sections over $U$ of vector bundles and vector bundle morphisms of the bundles restricted to $U$\todo{Pretty sure this a thing. A local form need not be extendable to a global form, in the same way that the local vector field $\partial_\phi$ can not be extended to all $S^2$}, $\Omega_U^n(A, E)$ may be considered the space of $C^\infty(U)$-multilinear antisymmetric maps from $\Gamma_U(A)^n$ to $\Gamma_U(E) = \Omega_U^0(A, E)$. We will refer as \ptext{(local) $E$-valued $n$-forms on $A$} to both
 \begin{align}
-    \omega &: \underbrace{A|_U \oplus \cdots \oplus A|_U}_{\text{$n$ times}} \to E_U, & \text{alternating, $\RR$-vector bundle morphism and}\\
+    \omega &: \underbrace{A|_U \oplus \cdots \oplus A|_U}_{\text{$n$ times}} \to E|_U, & \text{alternating, $\RR$-vector bundle morphism and}\\
     \omega &: \underbrace{\Gamma_U(A) \times \cdots \times \Gamma_U(A)}_{\text{$n$ times}} \to \Gamma_U(E) & \text{alternating, \dbtext{$C^\infty(U)$}-multilinear map}.
 \end{align}
     
@@ -151,13 +151,14 @@ The space $\lbtext{\Omega^\bullet(A, L)}$ of $L$-valued forms on $A$ will be an 
 \lin
 
 \begin{theorem}\label{isomorphOmega}
+Let $U\subset M$ be open:
     \begin{itemize}
     
-    \item $\Alt^n(A, E)$ and $E \otimes \bigwedge^n A^*$ are isomorphic vector bundles.
+    \item $\Alt^n(A, E)|_U$ and $E|_U \otimes \bigwedge^n A^*|_U$ are isomorphic vector bundles.
     
     %\item $\Alt^n(A)$ and $\bigwedge^n A^*$ are isomorphic vector bundles.
     
-    \item \rtext{$\Omega^n(A, E)$ and $\Gamma(E) \otimes \Omega^n(A)$ are isomorphic} $C^\infty(M)$-modules.
+    \item \rtext{$\Omega_U^n(A, E)$ and $\Gamma_U(E) \otimes \Omega_U^n(A)$ are isomorphic} $C^\infty(U)$-modules.
     
     \item If $U$ is trivializing neighborhood for both $A$ and $E$, $\rtext{\Omega_U^n(A, E)} \cong C^\infty(U, V) \otimes_{C^\infty(U)} \Gamma(U \times \bigwedge^n W^*) \rtext{\cong C^\infty(U, V) \otimes_{C^\infty(M)} C^\infty\left(U, \bigwedge^n W^* \right) } \cong \rtext{ C^\infty(U, V) \otimes_{\bb K} \bigwedge^n W^*}$.
     
@@ -167,7 +168,7 @@ The space $\lbtext{\Omega^\bullet(A, L)}$ of $L$-valued forms on $A$ will be an 
 \end{theorem}
 
 \begin{proof}
-$\Alt^n(A, E) \cong \Hom(\bigwedge^n A, E)$ by definition, and $\Hom(\bigwedge^n A, E) \cong E \otimes (\bigwedge^n A)* \cong E \otimes \bigwedge^n A^*$, but $\bigwedge^n A^* = \Omega^n(A)$.
+We may assume simply that $U = M$, since using an arbitrary $U$ simply means that we are working on manifolds over $U$. $\Alt^n(A, E) \cong \Hom(\bigwedge^n A, E)$ by definition, and $\Hom(\bigwedge^n A, E) \cong E \otimes (\bigwedge^n A)* \cong E \otimes \bigwedge^n A^*$, but $\bigwedge^n A^* = \Omega^n(A)$.
 
 Since $\Gamma$ is a strong monoidal function\todo{can I make this more clear?}, it distributes over the tensor product, and so the result follows from the first part of the theorem.
 \end{proof}
