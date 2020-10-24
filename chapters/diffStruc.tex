@@ -71,6 +71,8 @@ TODO\todo{check this}: the third ``important example'' introduced in Lazzarini i
 
 \item Respect further structure... of $L$?
 
+
+
 \end{itemize}
 }
 
@@ -95,14 +97,20 @@ Let $E$ be a vector bundle over $M$. We now define some vector bundles over $M$.
     
 \end{definition}
 
+\begin{remark}
+A local section over the open $U \subset M$ of a hom-bundle $\Hom(E, E')$, for $E$ and $E'$ vector bundles over $M$, is a vector bundle morphism $:E|_U \to E|_{U'}$ between vector bundles over $U$. Naturally, then, the elements of $\Gamma_U(\Hom(E, E'))$ are equivalent to $C^\infty(U)$-linear maps $: \Gamma_U(E) \to \Gamma_U(E)$. 
+
+Notice, that a local section of a hom-bundle $\Hom(E, E')$ need not have an extension to a full vector bundle morphism $:E \to E'$.\todo{Even if only on $A = TS^2$, in which case we have the usual manifold theory of forms, $\partial_\phi$ is part of a local frame BUT can't be extended to a global vector field, it still defines a ``local form'' $d\phi \in \Omega_{U_{SN}}(M)$}
+\end{remark}
+
 Notice that $\Alt^\bullet(A, E)$ is indeed a vector bundle, with finite dimensional fibers, since, if $U \subset M$ is a trivializing neighborhood of both $A$ and $E$ with fibers $V$ and $W$ respectively, $\Alt^\bullet(A, E)|_U \cong U \times Hom(V, \bigwedge^* W)$ is a trivial vector bundle.
 
 \begin{definition}
-Let $E$ be a vector bundle over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$. Let $U \subset M$.
+Let $E$ be a vector bundle over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$. Let $U \subset M$\todo{Open? Doesn't matter? I care about $U$ open only}.
 
     \begin{itemize}
     
-    \item For $n \in \ZZ_{\geq 0}$, define the $C^\infty(U)$-module \emph{$\Omega_U^n(A, E)$}$:= \Gamma_U\Alt^n(A, E)$. Its elements are called \emph{local $E$-valued $n$-forms on $A$ over $U$}. If $U = M$, simply write \emph{$\Omega^n(A, E)$} and call its elements \emph{$E$-valued $n$-forms on $A$}.
+    \item For $n \in \ZZ_{\geq 0}$, define the $C^\infty(U)$-module \emph{\lbtext{$\Omega_U^n(A, E)$}}$:= \Gamma_U\Alt^n(A, E)$. Its elements are called \emph{local $E$-valued $n$-forms on $A$ over $U$}. If $U = M$, simply write \emph{$\Omega^n(A, E)$} and call its elements \emph{$E$-valued $n$-forms on $A$}.
     
     \item Define the $C^\infty(U)$-module $\emph{\Omega_U^\bullet(A, E)} := \bigoplus^\infty_{n = 0} \Omega_U^n(A, E)$. Its elements are simply called \emph{local $E$-valued forms on $A$ over $U$}. If $U = M$, simply write $\emph{\Omega^\bullet(A, E)}$ and call its elements \emph{$E$-valued forms on $A$.}
     
@@ -115,10 +123,10 @@ Let $E$ be a vector bundle over $M$ on which there is a representation $\phi: A 
 \end{definition}
 
 \begin{remark}
-Due to the bijective \dbtext{correspondence between $C^\infty(M)$-linear maps between local sections over $U$ of vector bundles and vector bundle morphisms resticted to $U$}\todo{is this a thing? I think it might be correct to leave the linearity to be over all of $M$}, $\Omega_U^n(A, E)$ may be considered the space of \dbtext{$C^\infty(M)$-multilinear} antisymmetric maps from $\Gamma_U(A)^n$ to $\Gamma_U(E) = \Omega_U^0(A, E)$. We will refer as \ptext{(local) $E$-valued $n$-forms on $A$} to both
+Due to the bijective correspondence between $C^\infty(U)$-linear maps between local sections over $U$ of vector bundles and vector bundle morphisms of the bundles restricted to $U$\todo{Pretty sure this a thing. A local form need not be extendable to a global form, in the same way that the local vector field $\partial_\phi$ can not be extended to all $S^2$}, $\Omega_U^n(A, E)$ may be considered the space of $C^\infty(U)$-multilinear antisymmetric maps from $\Gamma_U(A)^n$ to $\Gamma_U(E) = \Omega_U^0(A, E)$. We will refer as \ptext{(local) $E$-valued $n$-forms on $A$} to both
 \begin{align}
     \omega &: \underbrace{A|_U \oplus \cdots \oplus A|_U}_{\text{$n$ times}} \to E_U, & \text{alternating, $\RR$-vector bundle morphism and}\\
-    \omega &: \underbrace{\Gamma_U(A) \times \cdots \times \Gamma_U(A)}_{\text{$n$ times}} \to \Gamma_U(E) & \text{alternating, \dbtext{$C^\infty(M)$}-multilinear map}.
+    \omega &: \underbrace{\Gamma_U(A) \times \cdots \times \Gamma_U(A)}_{\text{$n$ times}} \to \Gamma_U(E) & \text{alternating, \dbtext{$C^\infty(U)$}-multilinear map}.
 \end{align}
     
     %\item $\Omega^n(A)$ may be considered the space of $C^\infty(M)$-multilinear antisymmetric maps from $\Gamma(A)^n$ to $C^\infty(M)$.
@@ -296,51 +304,65 @@ Let $\mathcal A = \oplus_{n = 0}^\infty \mathcal A^n$ be a graded algebra (over 
 
 
 \begin{definition}
-Let $E$ be an algebra bundle over $M$, i.e. a vector bundle such that each fiber is an algebra and such that there exists an atlas compatible with the algebra multiplication, on which $A$ is represented. Define on $\Omega^\bullet(A, E)$ the $C^\infty(M)$-bilinear operation operation, called \emph{the wedge product of LAB-valued forms on $A$}
+Let $E$ be an algebra bundle over $M$ with fiberwise multiplication $\bullet$, i.e. a vector bundle such that each fiber is an algebra and such that there exists an atlas compatible with the algebra multiplication, on which $A$ is represented. Define on $\Omega^\bullet(A, E)$ the $C^\infty(M)$-bilinear operation operation, called \emph{the wedge product of LAB-valued forms on $A$}
 \begin{eqnsplit*}
-\wedge : \Omega^\bullet(A, E) &\times \Omega^\bullet(A, E) \to \Omega\bullet(A, E)
+\wedge^\bullet : \Omega^\bullet(A, E) &\times \Omega^\bullet(A, E) \to \Omega\bullet(A, E)
 \end{eqnsplit*}
 as the linear extension of the maps, for any $p, q \in \ZZ_{\geq 0}$
 \begin{eqnsplit*}
-\wedge : \Omega^p(A, E) \times \Omega^q(A, E) &\to \Omega^{p+q}(A, E)
+\wedge^\bullet : \Omega^p(A, E) \times \Omega^q(A, E) &\to \Omega^{p+q}(A, E)
 \end{eqnsplit*}
 \begin{eqnsplit}
 (\omega \wedge \eta)(\sectoid X_1, \dots, \sectoid X_{p+q}) &:= \\
 \frac{1}{p!q!} \sum_{\sigma \in S_{p+q}} &(-1)^{\sigma} \omega(\oid X_{\sigma(1)}, \cdots, \oid X_{\sigma(p)}) \bullet \eta(\oid X_{\sigma(p+1)}, \cdots, \oid X_{\sigma(p+q)}).
 \end{eqnsplit}
-for any $p$-form $\omega$, $q$-form $\eta$ and any $\sectoid X_1, \dots, \sectoid X_{p+q} \in \Gamma(A)$, where $\bullet$ is the algebra multiplication induced on $\Gamma(E)$ by the fiberwise algebra multiplication in $E$.
+for any $p$-form $\omega$, $q$-form $\eta$ and any $\sectoid X_1, \dots, \sectoid X_{p+q} \in \Gamma(A)$.%, where $\bullet$ is the algebra multiplication induced on $\Gamma(E)$ by the fiberwise algebra multiplication in $E$.
 \end{definition}
 
 \begin{theorem} \label{theoFormsAreDiffGAlgebebra}
-Let $E$ be an algebra bundle over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$. \rtext{Then $(\Omega^\bullet(A, E), \wedge, \hat d_\phi)$ is a differential graded algebra over $\Omega^\bullet(A)$.}
+Let $E$ be an algebra bundle over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$. \rtext{Then $(\Omega^\bullet(A, E), \wedge^\bullet, \hat d_\phi)$ is a differential graded algebra over $\Omega^\bullet(A)$}.
 \end{theorem}
 
 \begin{proof}
 To see:
 
-Associativity... just say it is, alhthough, is there an easy way to see it?
-
-$d^2 = 0$. Apparently this follows from the fact that $\phi$ respects the Lie algebroid bracket.
-
 Graded Leibniz
 \end{proof}
 
+
 \begin{example}
-\rtext{$(\Omega^\bullet(A), \wedge, \hat d_A)$ is a graded-commutative differential graded algebra}.
+Since $\Omega^\bullet(A)$ is simply an abreviation for $\Omega^\bullet(A, M \times \bb K)$, \rtext{$(\Omega^\bullet(A), \wedge, \hat d_A)$ is a graded-commutative differential graded algebra} over $\Omega^\bullet(A)$, where $\wedge = \wedge^\cdot$, for $\cdot$ the multiplication in $\bb K$.
 
 The additional conditions is simply that $\alpha \beta = (-1)^{|x||y|}\beta \alpha$ for all homogeneous elements $\alpha, \beta$. This follows from $\bb K$ being commutative.
 \end{example}
 
-\linea 
+\begin{example}
+$(\Omega^\bullet(A, L, \wedge^{[,]}, \hat d)$ is a Lie-graded differential graded algebra.\todo{Useful? Perhaps when defining curvatures via something similar to structure equation?... Rta: it should be possible to use when defining the Atiyah Lie algebroid connection, and so in all transitive Lie algbroids, but we don't do it, we instead use the shorthand $[,]$ notation, which isn't the $[,] \equiv \wedge^{[,]}$}
 
-{\color{gray}
-The following instances of $(\Omega^\bullet(A, E), \hat d_\phi)$ will be important to us in future chapters.
+\end{example}
 
-\begin{theorem}
- NOT USEFUL TO US
-$(\Omega^\bullet(A, L, \wedge, \hat d)$ is a Lie-graded differential graded algebra.
-\end{theorem}
-}
+\linea
+
+\begin{example}
+Let $A = TM$ for a manifold $M$. Then $(\Omega^\bullet (TM), \wedge, \hat d_{TM})$ is precisely the usual differential graded algebra and module $(\Omega(M), \wedge, d)$.
+
+Letting $E = M \times V$ for a vector space $V$, on which $TM$ is represented trivially by $i: TM \to \alg D(E)$, $X \mapsto X$, the differential graded module $(\Omega^\bullet(TM, M \times V), \hat d_i)$ is precisely the traditional $(\Omega^\bullet(M, V), d)$. If $V$ is an algebra with operator $\bullet$, for example a Lie algebra $\alg g$ with operation $[\cdot, \cdot]$, $(\Omega^\bullet(TM, E), \wedge^\bullet, \hat d_i)$ is exactly the traditional differential graded algebra $(\Omega^\bullet(M, V), \bullet, d)$.
+\end{example}
+
+Let $E$ be a vector bundle over $M$, and suppose that on the open $U \subset M$, $\{\sect \mu_1, \dots, \sect \mu_d\} \subset \Gamma_U(E)$ and $\{\sectoid X^1, \dots, \sectoid X^N\} \subset \Gamma_U(A)$ and  are local frames
+\todo{\rtext{WAIT!} Even if only on $A = TS^2$, in which case we have the usual manifold theory of forms, $\partial_\phi$ is part of a local frame BUT can't be extended to a global vector field, it still defines a ``local form'' $d\phi \in \Omega_{U_{SN}}(M)$}
+. For the local frame of $A$, let the dual frame be $\{\alpha_1, \dots \alpha_N\} \Gamma_U(A^*)$, satisfying $\alpha_i(\sectoid X^j) = \delta_{ij} \in C^\infty(U)$. Then:
+
+    \begin{itemize}
+        
+    \item Each $\alpha_i$, $i = 1, \dots, N$, is in fact a $1$-form in $\Omega_U^1(A) = \Gamma_U(A^*)$.
+    
+    \item $\alpha_{i_1} \wedge \alpha_{i_p}$ is an element of $\Omega^p(A)$.
+    
+    \item For any $f \in C^\infty(U)$, $f\, \alpha_{i_1} \wedge \alpha_{i_p}$ is also an element of $\Omega^p(A)$.
+        
+    \end{itemize}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -496,9 +518,11 @@ We now apply a similar result to the $L$-valued forms on the trivial Lie algebro
 \begin{theorem}
 The $C^\infty(M)$-module $\Omega(TM \times \alg g, M \times \alg g)$ of $M \times \alg g$-valued forms on the trivial Lie algebroid bundle $TM \times \alg g$, is isomorphic to $\Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes \alg g\right)$, and this isomorphism is compatible with the grading, where the set of homogeneous elements of degree $p \in \ZZ_{\geq 0}$ is $\left( \Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes \alg g\right) \right)^p = \sum_{r + s = p} \Omega^r(TM) \otimes \left(\bigwedge^s \alg g^* \otimes \alg g\right)$. 
 
-This isomorphism induces a $C^\infty(M)$-multilinear mapping
+\todo{not clear where it comes from, perhaps after $d$}This isomorphism induces a $C^\infty(M)$-multilinear mapping
 \begin{equation}
-    \wedge: \Omega^\bullet(TM) \times \left(\bigwedge^s \alg g^* \otimes \alg g\right) \to \Omega^\bullet(TM) \otimes \left(\bigwedge^s \alg g^* \otimes \alg g\right).
+    \wedge: \Omega^\bullet(TM) \times \Omega^\bullet(TM) \otimes \left(\bigwedge^s \alg g^* \otimes \alg g\right)
+    \to 
+    \Omega^\bullet(TM) \otimes \left(\bigwedge^s \alg g^* \otimes \alg g\right).
 \end{equation}
 
 Furthermore, defining the $C^\infty(M)$-linear endomorphism $\hat d$ on this space, 
