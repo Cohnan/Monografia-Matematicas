@@ -209,7 +209,7 @@ $d_U$: Leibniz w.r.t. functions giben by the previous definition.\todo{complete}
 \end{theorem}
 
 \begin{remark}
-So 1., 2. .
+So 1., 2. . \ptext{In particular, \textbf{all of the remaining results of this section are still valid when applied to local forms, replacing every instance of $\Omega$ by $\Omega_U$.}}
 \end{remark}
 
 \lin
@@ -256,6 +256,8 @@ through the linear extension on the homogeneous elements:
 \end{eqnsplit}
 for any real valued $p$-form $\omega$, $L$-valued $q$-form $\eta$ and any $\sectoid X_1, \dots, \sectoid X_{p+q} \in \Gamma(A)$.
 \end{definition}
+
+\ptext{When the $E$-valued form is a $0$-form, i.e. a section of $\Gamma(E)$, the $\wedge$ symbol is usually not written}.
 
 \begin{theorem}\label{theoFormsAreDiffGModule}
  \rtext{$(\Omega^\bullet(A, E), \hat d_\phi)$ is a graded differential module over $\Omega^\bullet(A)$}.
@@ -521,7 +523,7 @@ is compatible with the grading, where the set of homogeneous elements of degree 
 \begin{remark}
 The previous isomorphism between $\Omega^\bullet(TM \times \alg g)$ and $\Omega^\bullet(TM) \otimes_{\bb K} \bigwedge^\bullet \alg g^*$ can, and will, be used to define a $C^\infty(M)$-linear multiplication $\lbtext{\wedge}$ on $\Omega^\bullet(TM) \otimes_{\bb K} \bigwedge^\bullet \alg g^*$ which is compatible with the gradings. 
 
-Furthermore, this isomorphisms allows us to see $\Omega^\bullet(TM)$ and $C^\infty(M, \alg g)$ as subsets of $\Omega^\bullet(TM \times \alg g)$. Abusing notation we may ignore the $~$'s of the mapping to simply state that, for $\alpha \in \Omega^r(TM)$ and $\beta \in C^\infty(M)\otimes_{\bb K} \bigwedge^s \alg g^*$, $r, s \in \ZZ_{\geq 0}$, \ptext{$\alpha \wedge \beta \in \Omega^{r+s}(TM \times \alg g)$}. 
+Furthermore, this isomorphisms allows us to see $\Omega^\bullet(TM)$ and $C^\infty(M, \alg g)$ as subsets of $\Omega^\bullet(TM \times \alg g)$, in which case the $\Omega^\bullet(TM)$-multiplication on the latter differential graded module coincides with the wedge product within $\Omega^\bullet(TM \times \alg g)$. Abusing notation we may ignore the $~$'s of the mapping to simply state that, for $\alpha \in \Omega^r(TM)$ and $\beta \in C^\infty(M)\otimes_{\bb K} \bigwedge^s \alg g^*$, $r, s \in \ZZ_{\geq 0}$, \ptext{$\alpha \wedge \beta \in \Omega^{r+s}(TM \times \alg g)$}. 
 \end{remark}
 
 \begin{definition}
@@ -592,7 +594,7 @@ where $d$ is the deRhan cohomology differential applied to the first factor, and
     s': \Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes \alg g\right) &\to \Omega^\bullet(TM) \otimes \left(\bigwedge^{\bullet+1} \alg g^* \otimes \alg g\right),
 \end{align*} when applied to functions $\eta_i \in C^\infty(M, \alg g)$, gives the $\alg g$-valued function
 \begin{multline}
-    s'\omega(\sect \eta_1, \cdots, \sect \eta_{p+1}) := \sum_{i = 0}^{p+1} (-1)^i [g_i, \omega(\sect \eta_1, \cdots, \overset{\vee}{\sect \eta_i}, \cdots, \sect \eta_{p+1})] \\
+    s'\omega(\sect \eta_1, \cdots, \sect \eta_{p+1}) := \sum_{i = 0}^{p+1} (-1)^i [\sect \eta_i, \omega(\sect \eta_1, \cdots, \overset{\vee}{\sect \eta_i}, \cdots, \sect \eta_{p+1})] \\
     \sum_{1 \leq i < j \leq p+1} (-1)^{i+j} \omega([\sect \eta_i, \sect \eta_j], \sect \eta_1, \cdots, \overset{\vee}{\sect \eta_i}, \cdots, \overset{\vee}{\sect \eta_j}, \cdots \sect \eta_{p+1}).
 \end{multline}
 
@@ -608,7 +610,42 @@ See proofs of the previous 2 results.
 
 \end{proof}
 
-TODO: typical element of both differential algebras given a basis dual to a basis of the Lie algebra.
+
+\linea
+
+{\color{gray}(Copy paste of $L$-valued)}\todo{needed for Matter action}
+
+Let $E = M \times V$ be a trivial vector bundle over $M$ with the vector space $V$ as the fiber, and let $A = TM \times \alg g$ be represented on $E$ through $\phi: TM \times \alg g \to \alg D(M \times V)$. For example, if $V$ is a representation space of $G$, $V$ is also a representation space for $\alg g$, and this induces naturally a representation $\phi$.
+
+\begin{theorem}
+The $C^\infty(M)$-module $\Omega(TM \times \alg g, M \times V)$ of $M \times V$-valued forms on the trivial Lie algebroid bundle $TM \times \alg g$, is isomorphic to $\Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes V\right)$, and this isomorphism is compatible with the grading, where the set of homogeneous elements of degree $p \in \ZZ_{\geq 0}$ is $\left( \Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes V\right) \right)^p = \sum_{r + s = p} \Omega^r(TM) \otimes \left(\bigwedge^s \alg g^* \otimes V\right)$. 
+
+This isomorphism induces a $C^\infty(M)$-multilinear mapping
+\begin{equation}
+    \wedge: \Omega^\bullet(TM) \times \Omega^\bullet(TM) \otimes \left(\bigwedge^s \alg g^* \otimes V\right)
+    \to 
+    \Omega^\bullet(TM) \otimes \left(\bigwedge^s \alg g^* \otimes V\right).
+\end{equation}
+
+Furthermore, defining the $C^\infty(M)$-linear endomorphism $\hat d$ on this space, 
+\begin{align}
+    \hat d_\phi: \Omega^r(TM) \otimes \left(\bigwedge^s \alg g^* \otimes V\right) &\to \left( \Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes V\right)\right)^{r+s+1} \\
+    \alpha \otimes \beta = \alpha \wedge \beta &\mapsto  \hat d_\phi (\alpha \wedge \beta) := d\alpha \wedge \beta + (-1)^{|\alpha|} \alpha \wedge \hat d_{\phi} \beta \\
+    \alpha \otimes 1 &\mapsto \hat d\alpha = d\alpha \in \Omega^{r+1}(TM) \otimes 1 
+\end{align}
+where $d$ is the deRhan cohomology differential applied to the first factor, and, similarly, $\hat d_\phi$ applied to the second factor is defined by
+\begin{align*}
+    \hat d_\phi: \Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes V\right) &\to \Omega^\bullet(TM) \otimes \left(\bigwedge^{\bullet+1} \alg g^* \otimes V\right),
+\end{align*} when applied to functions $\eta_i \in C^\infty(M, V)$, gives the $V$-valued function
+\begin{multline}
+    \hat d_\phi\omega(\sect \eta_1, \cdots, \sect \eta_{p+1}) := \sum_{i = 0}^{p+1} (-1)^i \phi(\sect \eta_i) \cdot \omega(\sect \eta_1, \cdots, \overset{\vee}{\sect \eta_i}, \cdots, \sect \eta_{p+1}) \\
+    \sum_{1 \leq i < j \leq p+1} (-1)^{i+j} \omega([\sect \eta_i, \sect \eta_j], \sect \eta_1, \cdots, \overset{\vee}{\sect \eta_i}, \cdots, \overset{\vee}{\sect \eta_j}, \cdots \sect \eta_{p+1}).
+\end{multline}
+
+Finally, \rtext{$\left( \Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes V\right), \hat d_\phi \right)$ is a graded differential module over $\Omega^\bullet(M)$ under the $\wedge$ product, isomorphic to $(\Omega^\bullet(TM \times \alg g, M \times V), \hat d_\phi)$}.
+\end{theorem}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
