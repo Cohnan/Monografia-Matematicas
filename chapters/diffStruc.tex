@@ -261,10 +261,11 @@ for any real valued $p$-form $\omega$, $L$-valued $q$-form $\eta$ and any $\sect
 \ptext{When one of the factors is a $0$-form, i.e. a section of $\Gamma(E)$ or $\Gamma(A)$, the $\wedge$ symbol is usually not written}.
 
 \begin{remark}\label{remarkTheModuleWedgeWOrksWellLocally}
-Notice that if we consider forms to be vector bundle maps as in the first equation of remark \ref{remarkFOrmsHave2Ways2FormsALternativeVersion}, the $C^\infty(M)$-multilinearitiy of the wedge product implies that it is also a local operator, even a point-operator, and so it can also be define between local forms in such a way that:
+Notice that if we consider forms to be vector bundle maps as in the first equation of remark \ref{remarkFOrmsHave2Ways2FormsALternativeVersion}, the $C^\infty(M)$-multilinearitiy of the wedge product implies that it is also a local operator, even a point-operator, and so it has a restriction, also denoted by $\wedge$, to local forms in such a way that:
 \begin{equation*}
-    (\omega \wedge \eta)|_U = \omega|_U \wedge \eta|_U.
+    (\omega \wedge \eta)|_U = \omega|_U \wedge \eta|_U
 \end{equation*}
+for all $\omega \in \Omega^\bullet(A)$ and $\eta \in \Omega^\bullet(A, E)$.
 \end{remark}
 
 \begin{theorem}\label{theoFormsAreDiffGModule}
@@ -333,6 +334,13 @@ as the linear extension of the maps, for any $p, q \in \ZZ_{\geq 0}$
 \end{eqnsplit}
 for any $p$-form $\omega$, $q$-form $\eta$ and any $\sectoid X_1, \dots, \sectoid X_{p+q} \in \Gamma(A)$.%, where $\bullet$ is the algebra multiplication induced on $\Gamma(E)$ by the fiberwise algebra multiplication in $E$.
 \end{definition}
+
+\begin{remark}\label{remarkWedgeofEVectorValuedFOrmsRestrictedLocal}
+Just as remarked in \ref{remarkTheModuleWedgeWOrksWellLocally} for the wedge product of scalar and $E$-valued forms, the $C^\infty(M)$-bilinearity of $\wedge^\bullet$ implies that it is a point operator, and so it has a restriction, also denoted by $\wedge$, to local forms in such a way that, for all $\omega$ and $\eta$ $E$-valued forms,
+\begin{equation}
+    (\omega \wedge \eta)|_U = \omega|_U \wedge^\bullet \eta|_U
+\end{equation}
+\end{remark}
 
 \begin{theorem} \label{theoFormsAreDiffGAlgebebra}
 Let $E$ be an algebra bundle over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$. \rtext{Then $(\Omega^\bullet(A, E), \wedge^\bullet, \hat d_\phi)$ is a differential graded algebra over $\Omega^\bullet(A)$}.
