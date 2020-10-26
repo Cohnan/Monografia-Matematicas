@@ -400,12 +400,12 @@ So, the building blocks of any local form over $U_{SN}$ will be the dual frame, 
 
 Since $L = S^3 \times i\RR / S^1$ has the global frame $\{i\}$, \rtext{any section of $L$ can be written as $f\,i$ for some $f \in C^\infty(S^2)$}. Hence, \rtext{any $S^3 \times i\RR/S^1$-valued local form on $TS^3/S^1$ can be written as a multiplication via wedge product of the forms $\{\underline{d\phi}, \underline{d\xi_1}, \underline{\xi_2}\}$, with coefficients in $C^\infty(S^2, i\RR)$}.
 
-An important local $1$-form on $TS^3/S^1$ over $U_{SN}$ is
+An important local $1$-form on $TS^3/S^1$ over $U_{SN}$ is\todo{$\omega^{MP}_{SN}$}
 \begin{equation}
     \lbtext{\omega^{Monop}_{U_{SN}}} := \frac{i}{2} d\xi^1 (1 + \cos \phi) \underline{d \xi_1} + \frac{i}{2} (1- \cos\phi)\underline{d\xi_2} \in \Omega_{U_{SN}}^1(TS^3/S^1, S^3 \times i\RR/S^1).
 \end{equation} This $1$-form is associated to the presence of a magnetic monopole on $3$-dimensional space.
 
-Due to theorem \ref{theoFormsPpalAtiyahSame}, the differential $d$ of $G$-invariant forms on $P$ corresponds to the differential $\hat d_{TS^3/S^1}$ under the identification of $G$-invariant sections of $TS^3$ with sections of $TS^3/S^1$ denoted by an underline. Hence, $\hat d_{TS^3/S^1} \underline{\xi_i} = \underline{d \xi_i}$, and, since $d^2 = 0$, 
+Due to theorem \ref{theoFormsPpalAtiyahSame}, the differential $d$ of $G$-invariant forms on $P$ corresponds to the differential $\hat d_{TS^3/S^1}$ under the identification of $G$-invariant sections of $TS^3$ with sections of $TS^3/S^1$ denoted by an underline\todo{This notation for sections, make sure I defined it and reference it}. Hence, $\hat d_{TS^3/S^1} \underline{\xi_i} = \underline{d \xi_i}$, and, since $d^2 = 0$, 
 \begin{equation*}
     \hat d_{TS^3/S^1} {\underline{d\xi_i}} = 0
 \end{equation*} for $i = 1, 2$; similarly 
@@ -505,7 +505,7 @@ Atiyah. The concept coincides? (See Mackenzie)
 Let $A = TM \oplus (M \times \alg g)$ be a trivial Lie algebroid over the manifold $M$, with $\alg g$ a Lie algebra.
 
 \begin{proposition}\label{propIsoScalarFormsTLA}
-The $C^\infty(M)$-module of $\bb K$-valued forms on the trivial Lie algebroid bundle $TM \times \alg g$ is isomorphic\todo{even equal} to $\Omega^\bullet(TM) \otimes_{\bb K} \bigwedge^\bullet \alg g^* = \Omega^\bullet(TM) \otimes_{C^\infty(M)} C^\infty(M, \bigwedge^\bullet \alg g^*)$. The isomorphism, defined by linear extension of
+The $C^\infty(M)$-module of $\bb K$-valued forms on the trivial Lie algebroid bundle $TM \times \alg g$ is canonically isomorphic\todo{even equal} to $\Omega^\bullet(TM) \otimes_{\bb K} \bigwedge^\bullet \alg g^* = \Omega^\bullet(TM) \otimes_{C^\infty(M)} C^\infty(M, \bigwedge^\bullet \alg g^*)$. The isomorphism, defined by linear extension of
 \begin{align*}
     \Omega^r(TM) \otimes C^\infty(U, \bigwedge^s \alg g^*) &\to \Omega^{r+s}(TM \times \alg g)\\
     \alpha \otimes \beta &\mapsto \tilde \alpha \wedge \tilde \beta
@@ -547,7 +547,7 @@ be \emph{the Chevalley-Eilenbert differential on $\bigwedge \alg g^*$}, applied 
     \alpha \otimes \beta = \alpha \wedge \beta &\mapsto  \hat d_{triv} (\alpha \wedge \beta) := d\alpha \wedge \beta + (-1)^|\alpha| \alpha \wedge s\beta \\
     \alpha \otimes 1 &\mapsto \hat d_{triv}\alpha = d\alpha \in \Omega^{r+1}(TM) \otimes 1 \\
     1 \otimes \beta &\mapsto \hat d_{triv}\beta = s\beta \in 1 \otimes \bigwedge^{s+1} \alg g^*.
-\end{align} $\hat d_{triv}$ is sometimes also denoted by $d+s$ in the literature.
+\end{align} $\hat d_{triv}$ is sometimes denoted by $d+s$ in the literature.
 
 \end{definition}
 
@@ -602,7 +602,7 @@ where $d$ is the deRhan cohomology differential applied to the first factor, and
 Finally, \rtext{$\left( \Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes \alg g\right), \hat d \right)$ is a graded differential module over $\Omega^\bullet(M)$ under the $\wedge$ product, isomorphic to $(\Omega^\bullet(TM \times \alg g, M \times \alg g), \hat d)$}.
 \end{theorem}
 
-\ptext{Due to this isomorphism, from now on we will call $(\Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes \alg g\right), \hat d)$ the space of $\alg g$-valued forms on the trivial Lie algebroid $TM \times \alg g$, and $\Omega^\bullet(TM)$, $\Omega^\bullet(TM)\otimes \alg g$, $C^\infty(M, \bigwedge^\bullet \alg g*)$ and $C^\infty(M, \bigwedge^\bullet \alg g*)\otimes \alg g$ as subspaces.}
+\ptext{Due to this canonical isomorphism, from now on we will call $(\Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes \alg g\right), \hat d)$ the space of $\alg g$-valued forms on the trivial Lie algebroid $TM \times \alg g$, and $\Omega^\bullet(TM)$, $\Omega^\bullet(TM)\otimes \alg g$, $C^\infty(M, \bigwedge^\bullet \alg g*)$ and $C^\infty(M, \bigwedge^\bullet \alg g*)\otimes \alg g$ as subspaces.}
 
 \begin{proof}
 To see:
@@ -614,14 +614,13 @@ See proofs of the previous 2 results.
 
 \linea
 
-{\color{gray}(Copy paste of $L$-valued)}\todo{needed for Matter action}
 
-Let $E = M \times V$ be a trivial vector bundle over $M$ with the vector space $V$ as the fiber, and let $A = TM \times \alg g$ be represented on $E$ through $\phi: TM \times \alg g \to \alg D(M \times V)$. For example, if $V$ is a representation space of $G$, $V$ is also a representation space for $\alg g$, and this induces naturally a representation $\phi$. Notice that if $E$ is not a trivial vector bundle, on each trivializing neighborhood $U$ of $E$ we fall under the case we are presently studying.\todo{Perhaps all of them?}
+Let $E = M \times V$ be a trivial vector bundle over $M$ with the vector space $V$ as the fiber, and let $A = TM \times \alg g$ be represented on $E$ through $\phi: TM \times \alg g \to \alg D(M \times V)$. One important example if the case $E = L = M \times \alg g$, with the adjoint representation $\phi = ad$. Another example comes from taking $V$ a representation space of $G$, hence $V$ is also a representation space for $\alg g$, and this induces naturally a representation $\phi$. Notice that if $E$ is not a trivial vector bundle, on each trivializing neighborhood $U$ of $E$ we fall under the case we are presently studying.\todo{Perhaps all of them?}
 
-\begin{theorem}
+\begin{theorem}\label{theoremTrivialFormsEValuedLValuedIsDifferentialModuleDefinitions}
 The $C^\infty(M)$-module $\Omega(TM \times \alg g, M \times V)$ of $M \times V$-valued forms on the trivial Lie algebroid bundle $TM \times \alg g$, is isomorphic to $\Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes V\right)$, and this isomorphism is compatible with the grading, where the set of homogeneous elements of degree $p \in \ZZ_{\geq 0}$ is $\left( \Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes V\right) \right)^p = \sum_{r + s = p} \Omega^r(TM) \otimes \left(\bigwedge^s \alg g^* \otimes V\right)$. 
 
-This isomorphism induces a $C^\infty(M)$-multilinear mapping
+This isomorphism induces a $C^\infty(M)$-multilinear mapping\todo{perhaps introduce this one after the $d$ to complement the $(\Omega, d)$ differential complex into a module thanks to this product}
 \begin{equation}
     \wedge: \Omega^\bullet(TM) \times \Omega^\bullet(TM) \otimes \left(\bigwedge^s \alg g^* \otimes V\right)
     \to 
@@ -648,9 +647,9 @@ Finally, \rtext{$\left( \Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg 
 
 \linea
 
-Suppose that on $M$ there are $m$ global coordinates $\{x^i: M \to \RR^m\}_{i = 1, \dots, m}$. Let $\{E_a\}_{a = 1, \dots, n}$ be a basis of $\alg g$, with dual basis $\{\epsilon^a\}_{a = 1, \dots, n} \subset \alg g^*$.
+Suppose, in addition to previous suppositions, that on $M$ there are $m \in \ZZ_{\geq 0}$ global coordinates $\{x^i: M \to \RR^m\}_{i = 1, \dots, m}$. Let $\{E_a\}_{a = 1, \dots, n}$ be a basis of $\alg g$, with dual basis $\{\epsilon^a\}_{a = 1, \dots, n} \subset \alg g^*$.
 
-\begin{theorem}
+\begin{theorem}\label{TheoremDecompOfScalarValuedFormsTLA}
 Let $\omega$ be a scalar valued $p$-form on $TM \times \alg g$, $p \in \ZZ_{\geq 0}$. Then, $\omega$ can be written as
 \begin{equation}
     \omega = \sum_{r + s = p} \omega_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}\, dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \epsilon^{a_1} \wedge \cdots \wedge \epsilon^{a_s},
@@ -662,7 +661,7 @@ where each $\omega_{\mu_1 \cdots \mu_r, a_1 \cdots a_s} \in C^\infty(M)$, for $\
 
 Additionally to the suppositions stated before the previous theorem, also suppose that $E = M \times V$ is a trivial vector bundle over $M$ and $\phi: TM \times \alg g \to \alg D(E)$ a Lie algebroid representation. Let $\{e_c\}_{c = 1, \dots, h}$ be a basis of $V$, e.g. $E = L = M \times \alg g$.
 
-\begin{proposition}\label{decompOfFormsTLA}
+\begin{theorem}\label{TheoremDecompOfVectorValuedFormsTLA}
 Let $\omega$ be an $E$-valued $p$-form on $TM \times \alg g$, $p \in \ZZ_{\geq 0}$. Then, $\omega$ can be written as
 \begin{equation}
     \omega = \sum_{r + s = p} \omega^\epsilon_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}\, dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \epsilon^{a_1} \wedge \cdots \wedge \epsilon^{a_s},
@@ -673,7 +672,7 @@ where each $\omega^\epsilon_{\mu_1 \cdots \mu_r, a_1 \cdots a_s} \in C^\infty(M,
 \end{equation} 
 with each $\left(\omega^\epsilon\right)^a_{\mu_1 \cdots \mu_r, a_1 \cdots a_s} \in C^\infty(M, V)$, $a = 1, \dots, n$.
 The convention of ignoring the $\wedge$ symbol when one of the factors is a $0$-form has been used in both formulas.
-\end{proposition}
+\end{theorem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -703,15 +702,15 @@ The convention of ignoring the $\wedge$ symbol when one of the factors is a $0$-
 
 
 
-Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ be an Atiyah sequenece of the transitive Lie algebroid $A$ over $M$. Let $\{(U_i, \psi_i: U_i \times \alg g \to L|_{U_i}, \Theta^i: TU_i \to A|_{U_i})\}_{i \in I}$ be a Lie algebroid atlas for $A$.
+Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ be an Atiyah sequenece of the transitive Lie algebroid $A$ over $M$. Let $\{(U_i, \psi_i: U_i \times \alg g \to L|_{U_i}, \nabla_{0, i}: TU_i \to A|_{U_i})\}_{i \in I}$ be a Lie algebroid atlas for $A$.
 
 \begin{definition}
 Let $\omega \in \Omega^q(A)$.
     \begin{itemize}
     
-    \item For each $i \in I$ define the local $q$-form $\omega^i_{loc}$, called the \emph{local trivialization of $\omega$ on $U_i$}, by
+    \item For each $i \in I$ define the local $q$-form $\omega_i$, called the \emph{local trivialization of $\omega$ on $U_i$}, by
     \begin{align}
-        \omega_i &= \omega \circ \Theta^i  & \in \Omega^q(TU_i\times \alg g)\\
+        \omega_i &:= \omega \circ \nabla_{0, i}  & \in \Omega^q(TU_i\times \alg g)\\
         &:\left( \Gamma_U(TM)\oplus C^\infty(U, \alg g) \right) \times \cdots \times &\left( \Gamma_U(TM)\oplus C^\infty(U, \alg g) \right) \to C^\infty(U)
     \end{align}
     
@@ -727,9 +726,9 @@ From now on let $E$ be a vector bundle over $M$ with typical fiber $V$, and supp
 Let $\omega \in \Omega^q(A, E)$.
     \begin{itemize}
     
-    \item For each $i \in I$ define the local $q$-form $\omega^i_{loc}$, called the \emph{local trivialization of $\omega$ on $U_i$}, by
+    \item For each $i \in I$ define the local $q$-form $\omega_i$, called the \emph{local trivialization of $\omega$ on $U_i$}, by
     \begin{align}
-        \omega_i &= \psi_i^{-1} \circ \omega \circ \Theta^i  & \in \Omega^q(TU_i\times \alg g, U \times V)\\
+        \omega_i &:= \psi_i^{-1} \circ \omega \circ \nabla_{0, i}  & \in \Omega^q(TU_i\times \alg g, U \times V)\\
         &:\left( \Gamma_U(TM)\oplus C^\infty(U, \alg g) \right) \times \cdots \times &\left( \Gamma_U(TM)\oplus C^\infty(U, \alg g) \right) \to C^\infty(U, V)
     \end{align}
     
@@ -740,7 +739,7 @@ Let $\omega \in \Omega^q(A, E)$.
 \end{definition}
 
 \begin{remark}
-Due to proposition \ref{decompOfFormsTLA}, if, additionally, there are local coordinates of $M$, $\{x^i: U_i \to \RR^m\}_{i \in I}$ on each $U_i$, the local trivializations of every form $\omega \in \Omega^p(A)$ satisfy \begin{equation}
+Due to proposition \ref{PropositionDecompOfFormsTLA}, if, additionally, there are local coordinates of $M$, $\{x^i: U_i \to \RR^m\}_{i \in I}$ on each $U_i$, the local trivializations of every form $\omega \in \Omega^p(A)$ satisfy \begin{equation}
     \omega_i = \sum_{r + s = p} (\omega_i^\epsilon)_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}\, dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \epsilon^{a_1} \wedge \cdots \wedge \epsilon^{a_s},
 \end{equation}
 where each $\lbtext{(\omega_i^\epsilon)_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}} \in C^\infty(M, V)$, for $\mu_1 \cdots \mu_r = 1, \dots, m$, $, a_1 \cdots a_s = 1, \dots, n$. 
@@ -772,7 +771,7 @@ Let $U$ be a trivializing neighborhood of $A$ that also trivializes $M$. The tri
 \end{eqnsplit}
 is an isomorphism of differential graded modules and algebras. In particular
 \begin{equation}
-    (\hat d_A \omega)_{loc} = \hat d_{TU \times \alg g} \omega_{loc}.
+    (\hat d_A \omega)_{loc} = \hat d_{triv} \omega_{loc}.
 \end{equation}
 \end{theorem}
 \begin{proof}
@@ -790,7 +789,7 @@ Let $U$ be a trivializing neighborhood of $A$. The map
 \end{eqnsplit}
 is an isomorphism of differential graded modules. In particular
 \begin{equation}
-    (\hat d \omega)_{loc} = \hat d_{TLA} \omega_{loc}.
+    (\hat d \omega)_{loc} = \hat d \omega_{loc}.
 \end{equation}
 \end{theorem}
 \begin{proof}
@@ -800,6 +799,11 @@ The proof is identical to that of the previous theorem, except for the last part
 \dbtext{Previous theorem applied to $E$-valued forms!!}
 \end{theorem}
 
+\lin
+
+\begin{example}
+
+\end{example}
 
 \linea 
 
