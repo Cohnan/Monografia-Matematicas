@@ -104,7 +104,7 @@ Let $E$ be a vector bundle over $M$ on which there is a representation $\phi: A 
     
 \end{definition}
 
-\begin{remark}
+\begin{remark}\label{remarkFOrmsHave2Ways2FormsALternativeVersion}
 Due to the bijective correspondence between $C^\infty(U)$-linear maps between local sections over $U$ of vector bundles and vector bundle morphisms of the bundles restricted to $U$\todo{Pretty sure this a thing. A local form need not be extendable to a global form, in the same way that the local vector field $\partial_\phi$ can not be extended to all $S^2$}, $\Omega_U^n(A, E)$ may be considered the space of $C^\infty(U)$-multilinear antisymmetric maps from $\Gamma_U(A)^n$ to $\Gamma_U(E) = \Omega_U^0(A, E)$. We will refer as \ptext{(local) $E$-valued $n$-forms on $A$} to both
 \begin{align}
     \omega &: \underbrace{A|_U \oplus \cdots \oplus A|_U}_{\text{$n$ times}} \to E|_U, & \text{alternating, $\RR$-vector bundle morphism and}\\
@@ -180,21 +180,21 @@ Let $E$ be a vector bundle over $M$ on which there is a representation $\phi: A 
 for any $p \in \ZZ_{\geq 0}$, $p$-form $\omega$, and any $\sectoid X_1, \dots, \sectoid X_{p+1} \in \Gamma(A)$.
 \end{definition}
 
-\begin{proposition}
+\begin{proposition} \label{propositionEValuedFormsOnAIsDifferentialComplex}
  $(\Omega^\bullet(A, E), \hat d_\phi)$ is a differential complex over the ring $\bb K$. 
 \end{proposition}
 
 \begin{proof}
-Notice that, although $C^\infty(M)$ is also a commutative unit ring, $\hat d_\phi$ isn't $C^\infty(M)$ linear since the maps $\phi(\sectoid X_i): \Gamma(E) \to \Gamma(E)$ may not be so; they are, however, $\bb K$-linear and this proves the $\bb K$-linearity of $\hat d_phi$. That $\hat d_\phi$ raises the degree of the homogeneous elements is part of their definition. 
+Notice that, although $C^\infty(M)$ is also a commutative unit ring, $\hat d_\phi$ isn't $C^\infty(M)$ linear since the maps $\phi(\sectoid X_i): \Gamma(E) \to \Gamma(E)$ may not be so; they are, however, $\bb K$-linear and this proves the $\bb K$-linearity of $\hat d_\phi$. That $\hat d_\phi$ raises the degree of the homogeneous elements is part of their definition. 
 
-All we need to check is that $\hat d_\phi \circ \hat d_\phi = 0$.
+All we need to check is that $\hat d_\phi \circ \hat d_\phi = 0$.\todo{}
 \end{proof}
 
 \begin{theorem}\label{theoDifferentialLocal}
-The $\bb K$-linear map $\hat d_\phi : \Gamma \Alt^\bullet(A, E) \to \Gamma \Alt^\bullet(A, E)$ is a local operator.$d_U$: Leibniz w.r.t. functions giben by the previous definition.\todo{complete}.
+The $\bb K$-linear map $\hat d_\phi : \Gamma \Alt^\bullet(A, E) \to \Gamma \Alt^\bullet(A, E)$ is a local operator
 \end{theorem}
 \begin{proof}
-Suppose that $\omega \in \Omega^p(A, E)$ is the $0$ section of $\Gamma_U(\Alt^p(A, E))$, for $p \in \ZZ_{\geq 0}$ arbitrary. Then, equation \ref{equationDefinitionDifferentialRepresentationKoszulFormula} shows us that $(\hat d_\phi \omega)|_U = 0$ since every term on the left will be $0$.
+Suppose that $\omega \in \Omega^p(A, E)$ is the $0$ section on $\Gamma_U(\Alt^p(A, E))$, for $p \in \ZZ_{\geq 0}$ arbitrary. Then, equation \ref{equationDefinitionDifferentialRepresentationKoszulFormula} shows us that $(\hat d_\phi \omega)|_U = 0$ since every term on the left will be $0$.
 \end{proof}
 
 
@@ -202,15 +202,15 @@ The previous theorem implies that on every $U \subset M$ open, the differential 
     \begin{equation} \label{equationRestrictionOfDifferentialLocalOperatorGoodRestriction}
         \hat d_\phi|_U( \omega|_U) = (\hat d_\phi \omega)|_U
     \end{equation} 
-It is now easy to proof the following.
+Hence the next theorem follows.
 
 
 \begin{theorem}
-$(\Omega_U^\bullet(A, E), \hat d_\phi|_U)$ is a differential complex over the ring $\bb K$.
+$(\Omega_U^\bullet(A, E), \hat d_\phi|_U)  = (\Omega^\bullet(A|_U, E|_U), \hat d_\phi|_U)$ is a differential complex over the ring $\bb K$.
 \end{theorem}
 
 \begin{remark}
-Thanks to this theorem, every result and definition that is stated for global forms can and will be extended to local forms over every $U \subset M$ open, since $(\Omega_U^\bullet(A, E), \hat d_\phi|_U)$ is simply the differential complex where the underlying manifold is $U$. In particular, the various definitions of the wedge product $\wedge$, and every theorem can be applied to local forms in a straighforward manner.
+Thanks to this theorem, every result and definition that is stated for global forms can and will be extended to local forms over every $U \subset M$ open, since $(\Omega_U^\bullet(A, E), \hat d_\phi|_U)$ is simply the differential complex where the underlying manifold is $U$. 
 \end{remark}
 
 \lin
@@ -255,19 +255,30 @@ through the linear extension on the homogeneous elements:
 \cdot 
 \underbrace{\eta(\oid X_{\sigma(p+1)}, \cdots, \oid X_{\sigma(p+q)})}_{\in \, \Gamma(L)}
 \end{eqnsplit}
-for any real valued $p$-form $\omega$, $L$-valued $q$-form $\eta$ and any $\sectoid X_1, \dots, \sectoid X_{p+q} \in \Gamma(A)$.
+for any real valued $p$-form $\omega$, $L$-valued $q$-form $\eta$ and any $\sectoid X_1, \dots, \sectoid X_{p+q} \in \Gamma(A)$. This is called \emph{the wedge product of scalar and $E$-valued forms on $A$}.
 \end{definition}
 
 \ptext{When one of the factors is a $0$-form, i.e. a section of $\Gamma(E)$ or $\Gamma(A)$, the $\wedge$ symbol is usually not written}.
+
+\begin{remark}\label{remarkTheModuleWedgeWOrksWellLocally}
+Notice that if we consider forms to be vector bundle maps as in the first equation of remark \ref{remarkFOrmsHave2Ways2FormsALternativeVersion}, the $C^\infty(M)$-multilinearitiy of the wedge product implies that it is also a local operator, even a point-operator, and so it can also be define between local forms in such a way that:
+\begin{equation*}
+    (\omega \wedge \eta)|_U = \omega|_U \wedge \eta|_U.
+\end{equation*}
+\end{remark}
 
 \begin{theorem}\label{theoFormsAreDiffGModule}
  \rtext{$(\Omega^\bullet(A, E), \hat d_\phi)$ is a graded differential module over $\Omega^\bullet(A)$}.
 \end{theorem}
 
 \begin{proof}
-To see:
+From the definition of the wedge product, it is clear that, for any $p, q \in \ZZ_{\geq 0}$, $\Omega^p(A) \wedge \Omega^q(A, E) \subset \Omega^{p+q}(A, E)$.
 
-$\Omega^p(A) \wedge \Omega^q(A, E) \subset \Omega^{p+q}(A, E)$.
+All we need to prove is that Leibniz rule, since then if follows from proposition \ref{propositionEValuedFormsOnAIsDifferentialComplex} that $\hat d_\phi$ is a differential of degree $1$.
+
+Let $\omega \in \Omega^p(A)$, $\eta \in \Omega^q(A, E)$ \todo{Leibniz}
+
+
 \end{proof}
 
 \begin{example}
@@ -308,7 +319,7 @@ Let $\mathcal A = \oplus_{n = 0}^\infty \mathcal A^n$ be a graded algebra (over 
 
 
 \begin{definition}
-Let $E$ be an algebra bundle over $M$ with fiberwise multiplication $\bullet$, i.e. a vector bundle such that each fiber is an algebra and such that there exists an atlas compatible with the algebra multiplication, on which $A$ is represented. Define on $\Omega^\bullet(A, E)$ the $C^\infty(M)$-bilinear operation operation, called \emph{the wedge product of LAB-valued forms on $A$}
+Let $E$ be an algebra bundle over $M$ with fiberwise multiplication $\bullet$, i.e. a vector bundle such that each fiber is an algebra and such that there exists an atlas compatible with the algebra multiplication .Suppose that $\phi$ is a Lie algebroid representation of $A$ on $E$\todo{additional condition? $\phi(A) \subset \alg D_{\bullet} (E)$}. Define on $\Omega^\bullet(A, E)$ the $C^\infty(M)$-bilinear operation operation, called \emph{the wedge product of LAB-valued forms on $A$}
 \begin{eqnsplit*}
 \wedge^\bullet : \Omega^\bullet(A, E) &\times \Omega^\bullet(A, E) \to \Omega\bullet(A, E)
 \end{eqnsplit*}
@@ -328,9 +339,7 @@ Let $E$ be an algebra bundle over $M$ on which there is a representation $\phi: 
 \end{theorem}
 
 \begin{proof}
-To see:
-
-Graded Leibniz
+Graded Leibniz is the only piece missing. Perhaps here I need the condition $\phi(A) \subset \alg D_\bullet (E)$? \todo{}
 \end{proof}
 
 
@@ -347,7 +356,7 @@ $(\Omega^\bullet(A, L, \wedge^{[,]}, \hat d)$ is a Lie-graded differential grade
 
 \linea
 
-The following important theorem relates the notions of vector valued connections on principal bundles, that give rise to principal connections and their curvatures, and the theory of forms on the Atiyah Lie algebroid associated to the principal bundle.
+The following important theorem relates the notions of vector valued connections on principal bundles, that give rise to principal connections and their curvatures, and the theory of forms on the Atiyah Lie algebroid associated to the principal bundle. To the proofs we refer to \cite{}.
 
 \begin{theorem}\label{theoFormsPpalAtiyahSame}
 Let $G \to P \to M$ be a principal bundle over $M$. 
