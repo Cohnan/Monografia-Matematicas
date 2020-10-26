@@ -1,3 +1,4 @@
+{\color{gray}
 Fernandes remarks that it is thanks to the Lie braket that it is possible to make this kind of Cartan calculi.
 
 Why is it necessary? What does this mean? What does it allow?
@@ -22,7 +23,7 @@ Why relevant to me:
     
     \item Algebroid connections are ``normalized'' elements $ \omega \in \Omega^1(A, L)$, and their curvature is $d\omega \in \Omega^2(A, L)$. Generalized connections are precisely the elements of $\Omega^1(A, L)$.
     
-    \item When talking about matter fields, a generalized connection $\hat \omega$ induces covariant derivatives $\hat \nabla^E: \Gamma(E) \to \mathbf{\Omega^1(A, E)}$, so that $\hat \nabla^E \phi \in \Omega^1(A, E)$.
+    \item When talking about matter fields, a generalized connection $\hat \omega$ induces covariant derivatives $\hat \nabla^E: \Gamma(E) \to \mathbf{\Omega^1(A, E)}$, so that $\hat \nabla^E \phi \in \Omega^1(A, E)$\todo{can this be written in terms of $A$-connections?}.
     
     \item $\Omega^\bullet(A)$ is used to do cohomology on Lie algebroids
     
@@ -38,7 +39,8 @@ Why relevant to me:
         
     \end{itemize}
 
-TODO\todo{check this}: the third ``important example'' introduced in Lazzarini is important to me? $A$ connections on $E$ are used to define finite gauge transformations, which somehow induce the infinitesimal gauge transformation definition on generalized connections? If not for this, $A$-connections, and so this examples, are of no relevance to me.
+TODO\todo{check this}: the third ``important example'' introduced in Lazzarini is important to me? $A$ connections on $E$ are used to define finite gauge transformations, which somehow induce the infinitesimal gauge transformation definition on generalized connections? If not for this, $A$-connections, and so this examples, are of no relevance to me. EDIT: actually, $A$-connections are important to us theoretically  since it this kind of connection/covariant derivative that our generalized Liea algebroid connections induce on its representation vector bundles (removing the normalization property removes the property of the covariant derivative to take horizontal forms to horizontal forms, so we can't restrict covariant derivatives of vector bundles to take directions only in $TM$, but instead all of $A$ needs to be taken as argument), and, hence, the forms $\Omega^\bullet(A, End(E))$ are involved in the theory since they the form version of the $A$-connections Summary: $A$-connections on $E$ are the generalized version of covariant derivative that we obtain, and they are in correspondence with forms $\Omega^1(A, End(E))$; furthermore, the notion of (infinitesimal) gauge transformation that we define on our generalized connections and curvature is such that it is compatible with the notion of gauge transformation in the theory of $A$-connections.
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -51,29 +53,9 @@ TODO\todo{check this}: the third ``important example'' introduced in Lazzarini i
 \subsection{Differential Algebras}
 
 {\color{gray}
-\begin{itemize}
 
-\item Alt
+Respect further structure... of $L$?
 
-\item $\Omega$
-
-\item $d$. Is antiderivation
-
-\item $(\Omega, d)$ Graded differential algebras. Differential calculus (over a commutative algebra?) ?
-    
-    \begin{itemize}
-    
-    \item $(\Omega(A), \hat d_A)$ is graded commutative differential algebra
-    
-    \item $(\Omega(A, L), \hat d)$ is graded differential Lie algebra.
-    
-    \end{itemize}
-
-\item Respect further structure... of $L$?
-
-
-
-\end{itemize}
 }
 
 \linea 
@@ -179,13 +161,9 @@ Since $\Gamma$ is a strong monoidal function\todo{can I make this more clear?}, 
 \ptext{In the following, assume that $E$ is a vector bundle over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of the Lie algebroid $A$ over $M$}.
 
 \begin{definition}
-    \begin{itemize}
-    
-    \item Differential complex:
-    
-    \item Differential module:
-        
-    \end{itemize}
+    Let $R$ be a commutative ring with unit, and let $M$ be an $R$-module. 
+    A \emph{differential on $M$} is a morphism $d: M \to M$ of $R$-modules such that $d\circ d = 0$; then, we call $(M, d)$ \emph{a differential module}. If, furthermore, $
+    M = \bigoplus_{n \in \ZZ_{\geq 0}}M_n$ is $\ZZ_{\geq 0}$-graded and $d(M_n) \subset M_{n+1}$ for all $n \in \ZZ_{\geq 0}$, then we call $(M, d)$ \emph{a differential complex}.
 \end{definition}
 
 \begin{definition}
@@ -201,7 +179,7 @@ for any $p \in \ZZ_{\geq 0}$, $p$-form $\omega$, and any $\sectoid X_1, \dots, \
 \end{definition}
 
 \begin{proposition}
- $(\Omega^\bullet(A, E), \hat d_\phi)$ is a differential module. In particular, it is a differential complex.
+ $(\Omega^\bullet(A, E), \hat d_\phi)$ is a differential complex.
 \end{proposition}
 
 \begin{theorem}\label{theoDifferentialLocal}
@@ -792,7 +770,7 @@ For example, any $S^2 \times i\RR$ valued $1$-form $\omega$ has the local trivia
 \end{equation}
 where $\omega^{Im}_{S;\mu,  a} \in C^\infty(S^2)$, and $(\phi, \theta)$ is a shortcut notation for $E(\phi, \theta) \in S^2$, where $\phi$ is the azimuthal angle and $\theta$ the polar angle in $S^2$; that the component \dbtext{functions are defined on all of $S^2$ guarantee that this local form can be extended to a global form on $TP^k/S^1$}, as we will see below.
 
-Recall that the spherical coordinates $(\phi, \theta)$, although, strictly speaking, they are not manifold coordinates on the neighborhood $U_{SN}$, they are so on two different charts that cover $U_{SN}$, and so $\{\partial_\phi, \partial_\theta\} \subset \Gamma_{U_{SN}}(S^2)$ is a local frame of $S^2$ associated to coordinate functions and so, on $U_{SN}$, we may once again apply remark \ref{remarkLocalDecompositionOfFormsOnTransitiveLieAlgebroidsIfTrivializationOfM} to write any form on $TP^k/S^1$ as the wedge product of the scalar valued local $1$-forms
+Recall that the spherical coordinates $(\phi, \theta)$, although, strictly speaking, they are not manifold coordinates on the neighborhood $U_{SN}$, they are so on two different charts that cover $U_{SN}$, therefore $\{\partial_\phi, \partial_\theta\} \subset \Gamma_{U_{SN}}(S^2)$ is a local frame of $S^2$ associated to coordinate functions. Hence, on $U_{SN}$ we may once again apply remark \ref{remarkLocalDecompositionOfFormsOnTransitiveLieAlgebroidsIfTrivializationOfM} to write any form on $TP^k/S^1$ as the wedge product of the scalar valued local $1$-forms
 \begin{align}
     \{d\phi, d\theta, Im\} \subset \Omega^1_{U_{SN}}(TP^k/S^1).
 \end{align} From now on we will replace every instance of $\Omega_{U_{S}}, \Omega_{U_{N}}$ and $\Omega_{U_{SN}}$ by $\Omega_{S}, \Omega_{N}$ and $\Omega_{SN}$, respectively.
@@ -803,16 +781,16 @@ Due to the exact same arguments as the ones given on the first part of the previ
 \begin{align}
     \{dx^\mu, Im, Jm, Km\}_{\mu = 1, \dots, 4} & \in \Omega_S^1(TS^7/S^3), \\ \{dy^\mu, Im, Jm, Km\}_{\mu = 1, \dots, 4} & \in \Omega_N^1(TS^7/S^3),
 \end{align}
-where $\{Im, Jm, Km \}$ is the restriction to the respective neighborhood of the global forms $\{Im, Jm, Km\} \subset \Omega^1(S^2 \times Im \HH)$ dual to the global frame $\{i, j, k\} \in C^\infty(S^4, Im \HH)$.
+where $\{Im, Jm, Km \}$ are the restrictions to the respective neighborhood of the global forms $\{Im, Jm, Km\} \subset \Omega^1(S^2 \times Im \HH)$ dual to the global frame $\{i, j, k\} \in C^\infty(S^4, Im \HH)$.
 \end{example}
 
 \linea 
 
-For the rest of the section, let $E$ be a vector bundle over $M$ on which $A$ is represented via $\phi$; suppose that there are vector bundle trivializations $\rho_i:U_i \times V$ and $\rho_j: U_j \times V$ on the neighborhoods $U_i$ and $U_j$, $U_{ij} = U_i \inter U_j \neq \empty$, that trivialize $A$, and denote by $\alpha^i_j: U_{ij} \to Gl(V)$, $m \mapsto \rho_{i, m} \circ \rho_{j, m}^{-1}$ the transition map from the trivialization of $E$ on $U_j$ to the trivialization on $U_i$; notice that, for $E = L$, this definition of $\alpha^i_j$ coincides with the one given in \ref{}. Let $\omega \in \Omega^q(A, E)$ and let $\{\sectoid X_k\} \subset \Gamma(A)$ for $k = 1, \dots, q$. Let each $\sectoid X_k$ have a family of trivializations $\{\sect X_k \oplus \stilde \eta_k^i \in \Gamma(TU_i) \oplus C^\infty(U_i, \alg g)\}$, then, in $U_{ij} = U_i \inter U_j \neq \empty$, then
+For the rest of the section, let $E$ be a vector bundle over $M$ on which $A$ is represented via $\phi$; suppose that there are vector bundle trivializations $\rho_i:U_i \times V$ and $\rho_j: U_j \times V$ on the neighborhoods $U_i$ and $U_j$, $U_{ij} = U_i \inter U_j \neq \empty$, that trivialize $A$, and denote by $\alpha^i_j: U_{ij} \to Gl(V)$, $m \mapsto \rho_{i, m} \circ \rho_{j, m}^{-1}$ the transition map from the trivialization of $E$ on $U_j$ to the trivialization on $U_i$; notice that, for $E = L$, this definition of $\alpha^i_j$ coincides with the one given in \ref{}. Let $\omega \in \Omega^q(A, E)$ and let $\{\sectoid X_k\} \subset \Gamma(A)$ for $k = 1, \dots, q$. Let each $\sectoid X_k$ have a family of trivializations $\{\sect X_k \oplus \stilde \eta_k^i \in \Gamma(TU_i) \oplus C^\infty(U_i, \alg g)\}$, then, in $U_{ij} = U_i \inter U_j \neq \empty$, 
 \begin{align*}
     \omega_i(X_1 \oplus \stilde \eta_1^i, \cdots, X_q \oplus \stilde \eta_q^i) = \alpha^i_j \circ \omega_j(X_1 \oplus \stilde \eta_1^j, \cdots, X_q \oplus \stilde \eta_q^j),
 \end{align*}
-where we are denoting by $\alpha^i_j$ the map $:C^\infty(U_{ij}, V) \to C^\infty(U_{ij}, V)$, $\alpha^i_j(f)(m) := \alpha^i_{j, m}(f(m))$ for any $f \in C^\infty(U_{ij}, V)$, which can be expressed as
+where we are denoting by $\alpha^i_j$ the induced map on functions $:C^\infty(U_{ij}, V) \to C^\infty(U_{ij}, V)$, $\alpha^i_j(f)(m) := \alpha^i_{j, m}(f(m))$ for any $f \in C^\infty(U_{ij}, V)$, which can be expressed as
 \begin{align}
     \omega_i = \alpha^i_j \circ \omega_j \circ s^j_i.
 \end{align}
@@ -834,10 +812,12 @@ where we are denoting by $\alpha^i_j$ the map $:C^\infty(U_{ij}, V) \to C^\infty
     \end{eqnsplit}
     
 \end{itemize}
+Notice that $\hat \alpha^i_j$ is a morphism between $C^\infty(U_{ij})$-modules.
+
 
 \end{definition}
 
-\begin{theorem}
+\begin{theorem}\label{theoremHatAlphaRespectsDifferentialAndWedgeIsomorphismOfModulesAndAlgebra}
 $\alpha^i_j: \Omega_{U_{ij}}^q(TU_{ij}\times \alg g, U_{ij}\times V) \to \Omega_{U_{ij}}^q(TU_{ij}\times \alg g, U_{ij}\times V)$ is an isomorphism of differential graded modules. Furthermore, $\alpha^i_j: \Omega^q(TU_{ij}\times \alg g) \to \Omega^q(TU_{ij}\times \alg g)$ is an isomorphism of differential graded algebras.
 \end{theorem}
 \begin{proof}
@@ -867,8 +847,60 @@ The theorem will now be proven once we check that $\hat \alpha^i_j$ respects the
 
 \end{proof}
 
+\begin{remark}\label{remarkSufficesEnoughNeedOnlyHatAlphaFor1FormsToTranslateLocalTrivializations}
+If we have the local trivialization with respect to $i \in I$ of a form on $A$ written in terms of the decomposition into local $1$-forms from remark \ref{remarkLocalDecompositionOfFormsOnTransitiveLieAlgebroidsIfTrivializationOfM}, then we can use theorem \ref{theoremHatAlphaRespectsDifferentialAndWedgeIsomorphismOfModulesAndAlgebra} to conclude that to find its relation with the trivialization with respect to $j \in I$, at least within $U_{ij}$ if it isn't empty, we need only know 
+\begin{align}
+    \hat \alpha^i_j(dx^\mu)& \quad \mu = 1, \dots, m \\ 
+    \hat \alpha^i_j(\epsilon^a)& \quad a = 1, \dots, n \\
+    \alpha^i_j(e_c)& \quad c = 1, \dots, h,
+\end{align}
+since $\hat \alpha^i_j$ respects the wedge product. Notice, however, that denoting by $\frac{\partial \vec x}{\partial \vec y}$ the Jacobian matrix of the coordinate transformation from $x$ coordinates to $y$ coordinates in $U_{ij}$, it is true that
+\begin{align}
+    \hat \alpha^i_j(dx^\mu) &= dx^\mu \\
+    &= \left(\frac{\partial \vec x}{\partial \vec y}\right)^\mu_\nu dy^\nu;
+\end{align}
+this follows from finding the decomposition of $\hat \alpha^i_j(dx^\mu)$ into the $1$-forms by evaluating $\hat \alpha^i_j(dx^\mu)(X \oplus \eta) = dx^\mu(s^j_i(X \oplus \eta)) = dx^\mu(X \oplus \cdots) = dx^\mu(X) = X^\mu$, meaning that $\hat \alpha^i_j (dx^\mu) = dx^\mu$.
+\end{remark}
 
 \linea 
+
+\begin{example}[$P^k$]
+Let
+\begin{equation*}
+    \omega_S = i\omega^{Im}_{S; 1,} dx^1 + i\omega^{Im}_{S; 2,} dx^2 + i\omega^{Im}_{S; \, ,1} Im.
+\end{equation*}
+It expresses the most general $L = P^k \times i\RR/S^1$-valued local $1$-form over $U_S$ if we allow each $\omega^{Im}_{S; \mu,a}$ to be an arbitrary function in $C^\infty(U_S)$, for $\mu = 1, 2$ and $a = 1$; however, notice that this local form may not have an extension to a global form $\omega$. If $\omega$ exists, restricting to $U_{SN}$ we can apply $\hat \alpha^i_j$ to $\omega_S$ to obtain $\omega_N$, the local trivialization of $\omega$ on $U_N$, restricted to $U_{SN}$:
+\begin{align*}
+    \hat \alpha^N_S(\omega_S) &= \hat \alpha^N_S(i\omega^{Im}_{S; 1,} dx^1 + i\omega^{Im}_{S; 2,} dx^2 + i\omega^{Im}_{S; \, ,1} Im) \\
+        &= i\omega^{Im}_{S; 1,} dx^1 + i\omega^{Im}_{S; 2,} dx^2 + i\omega^{Im}_{S; \, ,1} \hat \alpha^N_S(Im);
+\end{align*}
+we have applied remark \ref{remarkSufficesEnoughNeedOnlyHatAlphaFor1FormsToTranslateLocalTrivializations} to the $C^\infty(U_{SN)}$ map $\hat \alpha^N_S$ to reduce the calculation to finding $\hat \alpha^N_S(Im)$.
+
+Recall from \ref{} that $s^S_N(X \oplus \eta) = X \oplus (\eta + ik d\theta(X))$, and so $s^S_N(\partial_\phi) = \partial_\phi$, $s^S_N(\partial_\theta) = \partial_\theta + ik$ and $s^S_N(i) = i$. Hence,
+\begin{align}
+    \hat \alpha^N_S(Im)(\partial_\phi) &= 0 \\
+    \hat \alpha^N_S(Im)(\partial_\theta) &= k \\
+    \hat \alpha^N_S(Im)(i) &= 1,
+\end{align}
+so
+\begin{align}
+    \hat \alpha^N_S(Im) &= \,k d\theta + Im.
+\end{align} Similarly
+\begin{align}
+    \hat \alpha^S_N(Im) &= -k d\theta + Im.
+\end{align}
+
+From this calculation follows that, if the global form $\omega$ exists,
+\begin{align*}
+    \omega_N|_{U_{SN}} = i\omega^{Im}_{S; 1,} dx^1|_{U_{SN}} + i\omega^{Im}_{S; 2,} dx^2|_{U_{SN}} + i\omega^{Im}_{S; \, ,1} \hat \alpha^N_S(Im)
+\end{align*}
+
+
+A complete family of local trivializations of a form on $TP^k/S^1$, and hence the complete form, may be found only from knowledge of one of its local trivializations, either over $U_S$ or $U_N$. To see this, notice that each of $U_S$ and $U_N$ covers all of $S^2$ except for one point, implying that once we know the local trivialization of a form $\omega$ on $TP^k/S^1$ over, say, $U_S$, we can translate it(s restriction over $U_{SN}$) into the restriction over $U_{SN}$ of the trivialization of $\omega$ over $U_N$, which can then be extended by continuity to the complete trivialization of $\omega$ over $U_N$. 
+
+Furthermore, remark \ref{remarkSufficesEnoughNeedOnlyHatAlphaFor1FormsToTranslateLocalTrivializations} tells us that it suffices to find $\hat \alpha^i_j(Im)$ for $\{i, j\} = \S, N\}$. .
+\end{example}
+
 
 {\color{gray} FALSE!!!
 
