@@ -803,27 +803,28 @@ Due to the exact same arguments as the ones given on the first part of the previ
 \begin{align}
     \{dx^\mu, Im, Jm, Km\}_{\mu = 1, \dots, 4} & \in \Omega_S^1(TS^7/S^3), \\ \{dy^\mu, Im, Jm, Km\}_{\mu = 1, \dots, 4} & \in \Omega_N^1(TS^7/S^3),
 \end{align}
-where $\{Im, Jm, Km \}$ is the restriction to the respective neighborhood of the global forms $\{Im, Jm, Km\} \subset \Omega^1(S^2 \times i\RR)$ dual to the global frame $\{i, j, k\} \in C^\infty(S^4, Im \HH)$.
+where $\{Im, Jm, Km \}$ is the restriction to the respective neighborhood of the global forms $\{Im, Jm, Km\} \subset \Omega^1(S^2 \times Im \HH)$ dual to the global frame $\{i, j, k\} \in C^\infty(S^4, Im \HH)$.
 \end{example}
 
 \linea 
 
-Let $\omega \in \Omega^q(A, L)$ and let $\{\sectoid X_k\} \subset \Gamma(A)$ for $k = 1, \dots, q$. Let each $\sectoid X_k$ have a family of trivializations $\{\sect X_k \oplus \stilde \eta_k^i \in \Gamma(TU_i) \oplus C^\infty(U_i, \alg g)\}$, then, in $U_{ij} = U_i \inter U_j \neq \empty$
+For the rest of the section, let $E$ be a vector bundle over $M$ on which $A$ is represented via $\phi$; suppose that there are vector bundle trivializations $\rho_i:U_i \times V$ and $\rho_j: U_j \times V$ on the neighborhoods $U_i$ and $U_j$, $U_{ij} = U_i \inter U_j \neq \empty$, that trivialize $A$, and denote by $\alpha^i_j: U_{ij} \to Gl(V)$, $m \mapsto \rho_{i, m} \circ \rho_{j, m}^{-1}$ the transition map from the trivialization of $E$ on $U_j$ to the trivialization on $U_i$; notice that, for $E = L$, this definition of $\alpha^i_j$ coincides with the one given in \ref{}. Let $\omega \in \Omega^q(A, E)$ and let $\{\sectoid X_k\} \subset \Gamma(A)$ for $k = 1, \dots, q$. Let each $\sectoid X_k$ have a family of trivializations $\{\sect X_k \oplus \stilde \eta_k^i \in \Gamma(TU_i) \oplus C^\infty(U_i, \alg g)\}$, then, in $U_{ij} = U_i \inter U_j \neq \empty$, then
 \begin{align*}
-    \omega^i_{loc}(X_1 \oplus \stilde \eta_1^i, \cdots, X_q \oplus \stilde \eta_q^i) = \alpha^i_j \circ \omega^j_{loc}(X_1 \oplus \stilde \eta_1^j, \cdots, X_q \oplus \stilde \eta_q^j)
+    \omega_i(X_1 \oplus \stilde \eta_1^i, \cdots, X_q \oplus \stilde \eta_q^i) = \alpha^i_j \circ \omega_j(X_1 \oplus \stilde \eta_1^j, \cdots, X_q \oplus \stilde \eta_q^j),
 \end{align*}
-which can be expressed as
+where we are denoting by $\alpha^i_j$ the map $:C^\infty(U_{ij}, V) \to C^\infty(U_{ij}, V)$, $\alpha^i_j(f)(m) := \alpha^i_{j, m}(f(m))$ for any $f \in C^\infty(U_{ij}, V)$, which can be expressed as
 \begin{align}
-    \omega^i_{loc} = \alpha^i_j \circ \omega^j_{loc} \circ s^j_i
+    \omega_i = \alpha^i_j \circ \omega_j \circ s^j_i.
 \end{align}
 
-\begin{definition}
+\begin{definition}\label{definitionhatalphaforEVectorandScalarValuedForms}
+\hfill
     \begin{itemize}
     
-    \item Let $\omega \in \Omega^q(A, L)$. Define
+    \item Let $\omega \in \Omega^q(A, E)$. Define
     \begin{eqnsplit}
-    \hat \alpha^i_j: \Omega^q_{TLA}(U_{ij}, \alg g) &\to \Omega^q_{TLA}(U_{ij}, \alg g)\\
-                    \omega^j_{loc} &\mapsto \omega^i_{loc} = \alpha^i_j \circ \omega^j_{loc} \circ s^j_i
+    \hat \alpha^i_j: \Omega_{U_{ij}}^q(TU_{ij}\times \alg g, U_{ij}\times V) &\to \Omega_{U_{ij}}^q(TU_{ij}\times \alg g, U_{ij}\times V)\\
+                    \omega_j &\mapsto \omega_i = \alpha^i_j \circ \omega_j \circ s^j_i
     \end{eqnsplit}
     
     \item Let $\omega \in \Omega^q(A)$. Define
@@ -837,14 +838,12 @@ which can be expressed as
 \end{definition}
 
 \begin{theorem}
-$\alpha^i_j: \Omega^q_{TLA}(U_{ij}, \alg g) \to \Omega^q_{TLA}(U_{ij}, \alg g)$ and $\alpha^i_j: \Omega^q(TU_{ij}\times \alg g) \to \Omega^q(TU_{ij}\times \alg g)$ are isomorphisms of differential graded modules.
+$\alpha^i_j: \Omega_{U_{ij}}^q(TU_{ij}\times \alg g, U_{ij}\times V) \to \Omega_{U_{ij}}^q(TU_{ij}\times \alg g, U_{ij}\times V)$ is an isomorphism of differential graded modules. Furthermore, $\alpha^i_j: \Omega^q(TU_{ij}\times \alg g) \to \Omega^q(TU_{ij}\times \alg g)$ is an isomorphism of differential graded algebras.
 \end{theorem}
 \begin{proof}
 Recall that, since a differential $d$ in a differential algebra is a local operator, $(d\omega)|_U = d|_U \omega|_U$; we will omit the $|_U$ besides the differentials for ease of reading.
 
-We only show the result for the first $\hat \alpha^i_j$ map, since the other one follows from an identical calculation.
-
-The interesting part is the commutation of $\hat \alpha^i_j$ with the differential, i.e.
+That the $\hat \alpha^i_j$ commutes with the differential, follows from the following calculation, where we have temporarily denoted by $\hat d_{TLA}$ the differential on the trivial Lie algebroids, to distinguish it from the differential $\hat d$ on $A$; notice that the fact that this distinction is unnecessary is what this result shows:
 \begin{equation*}
     \hat d_{TLA} \hat \alpha^i_j(\omega^j_{loc}|_{U_{ij}}) = \hat \alpha^i_j(\hat d_{TLA} (\omega^i_{loc}|_{U_{ij}})),
 \end{equation*} which follows from the following calculation:
@@ -855,7 +854,20 @@ The interesting part is the commutation of $\hat \alpha^i_j$ with the differenti
     &= \hat \alpha^i_j((\hat d \omega)^j_{loc}|_{U_{ij}}) \\
     &= \hat \alpha^i_j(\hat d_{TLA} (\omega^j_{loc}|_{U_{ij}})).
 \end{align*}
+
+The theorem will now be proven once we check that $\hat \alpha^i_j$ respects the wedge product between scalar and $E$ valued forms, since $E = M \times \RR$ covers the second part of the theorem. Let $\beta \in \Omega^p_U(TU_{ij}\times \alg g)$ and $\gamma \in \Omega^q_U(TU_{ij}\times \alg g, U_{ij} \times V)$, for some $p, q \in \ZZ_{\geq 0}$, then:
+\begin{align*}
+    \hat \alpha^i_j(\beta \wedge \gamma)&(\sectoid X_1, \dots, \sectoid X_{p+q}) 
+    = \alpha^i_j\left( (\beta \wedge \gamma)(s^j_i(\sectoid X_1), \dots, s^j_i(\sectoid X_{p+q})) \right) \\
+    &= \alpha^i_j\left( \sum_{\sigma}(-1)^\sigma \beta(s^j_i(\sectoid X_{\sigma(1)}), \dots, s^j_i(\sectoid X_{\sigma(p)})) \cdot \gamma(s^j_i(\sectoid X_{\sigma(p+1)}), \dots, s^j_i(\sectoid X_{\sigma(p+q)})) \right) \\
+    &=  \sum_{\sigma}(-1)^\sigma \beta(s^j_i(\sectoid X_{\sigma(1)}), \dots, s^j_i(\sectoid X_{\sigma(p)})) \cdot \alpha^i_j\left(\gamma(s^j_i(\sectoid X_{\sigma(p+1)}), \dots, s^j_i(\sectoid X_{\sigma(p+q)}))\right) \\
+    &= \sum_{\sigma}(-1)^\sigma \hat \alpha^i_j(\beta)(\sectoid X_1, \dots, \sectoid X_{p+q})) \cdot \hat \alpha^i_j(\gamma)(\sectoid X_{p+1}, \dots, \sectoid X_{p+q}))\\
+    &= (\hat \alpha^i_j(\beta) \wedge \hat \alpha^i_j(\gamma))(\sectoid X_1, \dots, \sectoid X_{p+q}).
+\end{align*}
+
 \end{proof}
+
+
 \linea 
 
 {\color{gray} FALSE!!!
