@@ -162,8 +162,10 @@ Since $\Gamma$ is a strong monoidal function\todo{can I make this more clear?}, 
 
 \begin{definition}
     Let $R$ be a commutative ring with unit, and let $M$ be an $R$-module. 
-    A \emph{differential on $M$} is a morphism $d: M \to M$ of $R$-modules such that $d\circ d = 0$; then, we call $(M, d)$ \emph{a differential module}. If, furthermore, $
-    M = \bigoplus_{n \in \ZZ_{\geq 0}}M_n$ is $\ZZ_{\geq 0}$-graded and $d(M_n) \subset M_{n+1}$ for all $n \in \ZZ_{\geq 0}$, then we call $(M, d)$ \emph{a differential complex}.
+    A \emph{differential on $M$} is a morphism $d: M \to M$ of $R$-modules such that $d\circ d = 0$; then, we call $(M, d)$ \emph{a differential module}. 
+    
+    If, furthermore, $
+    M = \bigoplus_{n \in \ZZ_{\geq 0}}M^n$ is $\ZZ_{\geq 0}$-graded and $d(M^n) \subset M^{n+1}$ for all $n \in \ZZ_{\geq 0}$, then we call $(M, d)$ \emph{a differential complex}, and the elements in $M^n$ are called \emph{homogeneous elements of degree $n$}, for all $n \in \ZZ_{\geq 0}$, with the degree $n$ of $\omega \in M^n$ denoted by $|\omega|$.
 \end{definition}
 
 \begin{definition}
@@ -171,7 +173,7 @@ Let $E$ be a vector bundle over $M$ on which there is a representation $\phi: A 
 \begin{eqnsplit*}
 \lbtext{\hat d_\phi}: \Omega^{\bullet}(A, E) &\to \Omega^{\bullet+1}(A, E)
 \end{eqnsplit*}
-\begin{multline}
+\begin{multline}\label{equationDefinitionDifferentialRepresentationKoszulFormula}
 (\hat d_\phi \omega)(\sectoid X_1, \dots, \sectoid X_{p+1}) = \sum_{i=1}^{p+1} (-1)^{i+1} \phi(\sectoid X_i)\cdot \omega(\sectoid X_1, \cdots, \overset{\vee}{\sectoid X_i}, \cdots, \sectoid X_{p+1}) \\
  + \sum_{1 \leq i < j \leq p+1} (-1)^{i+j}\omega([\sectoid X_i, \sectoid X_j], \sectoid X_1, \cdots, \overset{\vee}{\sectoid X_i}, \cdots, \overset{\vee}{\sectoid X_j}, \cdots, \sectoid X_{p+1})
 \end{multline}
@@ -179,15 +181,36 @@ for any $p \in \ZZ_{\geq 0}$, $p$-form $\omega$, and any $\sectoid X_1, \dots, \
 \end{definition}
 
 \begin{proposition}
- $(\Omega^\bullet(A, E), \hat d_\phi)$ is a differential complex.
+ $(\Omega^\bullet(A, E), \hat d_\phi)$ is a differential complex over the ring $\bb K$. 
 \end{proposition}
 
+\begin{proof}
+Notice that, although $C^\infty(M)$ is also a commutative unit ring, $\hat d_\phi$ isn't $C^\infty(M)$ linear since the maps $\phi(\sectoid X_i): \Gamma(E) \to \Gamma(E)$ may not be so; they are, however, $\bb K$-linear and this proves the $\bb K$-linearity of $\hat d_phi$. That $\hat d_\phi$ raises the degree of the homogeneous elements is part of their definition. 
+
+All we need to check is that $\hat d_\phi \circ \hat d_\phi = 0$.
+\end{proof}
+
 \begin{theorem}\label{theoDifferentialLocal}
-$d_U$: Leibniz w.r.t. functions giben by the previous definition.\todo{complete}. \rtext{$\hat d_\phi$ is a local operator}
+The $\bb K$-linear map $\hat d_\phi : \Gamma \Alt^\bullet(A, E) \to \Gamma \Alt^\bullet(A, E)$ is a local operator.$d_U$: Leibniz w.r.t. functions giben by the previous definition.\todo{complete}.
+\end{theorem}
+\begin{proof}
+Suppose that $\omega \in \Omega^p(A, E)$ is the $0$ section of $\Gamma_U(\Alt^p(A, E))$, for $p \in \ZZ_{\geq 0}$ arbitrary. Then, equation \ref{equationDefinitionDifferentialRepresentationKoszulFormula} shows us that $(\hat d_\phi \omega)|_U = 0$ since every term on the left will be $0$.
+\end{proof}
+
+
+The previous theorem implies that on every $U \subset M$ open, the differential $\hat d_\phi$ has a restriction $\hat d_\phi|_U: \Omega_U^\bullet(A, E) \to \Omega_U^\bullet(A, E)$ that satisfies, for every $\omega \in \Omega^\bullet(A, E)$, 
+    \begin{equation} \label{equationRestrictionOfDifferentialLocalOperatorGoodRestriction}
+        \hat d_\phi|_U( \omega|_U) = (\hat d_\phi \omega)|_U
+    \end{equation} 
+It is now easy to proof the following.
+
+
+\begin{theorem}
+$(\Omega_U^\bullet(A, E), \hat d_\phi|_U)$ is a differential complex over the ring $\bb K$.
 \end{theorem}
 
 \begin{remark}
-So 1., 2. . \ptext{In particular, \textbf{all of the remaining results of this section are still valid when applied to local forms, replacing every instance of $\Omega$ by $\Omega_U$.}}
+Thanks to this theorem, every result and definition that is stated for global forms can and will be extended to local forms over every $U \subset M$ open, since $(\Omega_U^\bullet(A, E), \hat d_\phi|_U)$ is simply the differential complex where the underlying manifold is $U$. In particular, the various definitions of the wedge product $\wedge$, and every theorem can be applied to local forms in a straighforward manner.
 \end{remark}
 
 \lin
@@ -197,7 +220,7 @@ So 1., 2. . \ptext{In particular, \textbf{all of the remaining results of this s
     
     \begin{itemize}
     
-    \item An element $\omega \in N^n$ is called a \emph{homogeneous element of degree $n$}, for $n \in \ZZ_{\geq 0}$, and its degree is denoted by $|\omega|$.
+    \item An element $\omega \in M^n$ is called a \emph{homogeneous element of degree $n$}, for $n \in \ZZ_{\geq 0}$, and its degree is denoted by $|\omega|$.
     
     \item An \emph{antiderivation on $M$} is an $R$-linear map $d: M \to M$ such that, if $\omega$ is homogeneous, 
     \begin{align*}
@@ -821,7 +844,7 @@ Notice that $\hat \alpha^i_j$ is a morphism between $C^\infty(U_{ij})$-modules.
 $\alpha^i_j: \Omega_{U_{ij}}^q(TU_{ij}\times \alg g, U_{ij}\times V) \to \Omega_{U_{ij}}^q(TU_{ij}\times \alg g, U_{ij}\times V)$ is an isomorphism of differential graded modules. Furthermore, $\alpha^i_j: \Omega^q(TU_{ij}\times \alg g) \to \Omega^q(TU_{ij}\times \alg g)$ is an isomorphism of differential graded algebras.
 \end{theorem}
 \begin{proof}
-Recall that, since a differential $d$ in a differential algebra is a local operator, $(d\omega)|_U = d|_U \omega|_U$; we will omit the $|_U$ besides the differentials for ease of reading.
+Recall that, since a differential $d$ in a differential graded module is a local operator, a local version $\hat d|_U$ exists for all $U$ open in $M$, and it is such that $(d\omega)|_U = d|_U \omega|_U$; we will omit the $|_U$ besides the differentials for ease of reading.
 
 That the $\hat \alpha^i_j$ commutes with the differential, follows from the following calculation, where we have temporarily denoted by $\hat d_{TLA}$ the differential on the trivial Lie algebroids, to distinguish it from the differential $\hat d$ on $A$; notice that the fact that this distinction is unnecessary is what this result shows:
 \begin{equation*}
