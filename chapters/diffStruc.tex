@@ -602,70 +602,70 @@ be \emph{the Chevalley-Eilenbert differential on $\bigwedge \alg g^*$}, applied 
 \end{definition}
 
 \begin{theorem}\label{theoIsoScalarFormsTLA}
-\rtext{$(\Omega^\bullet(TM) \otimes \bigwedge^\bullet, \wedge, \hat d_{triv})$ is a (bi)graded (commutative) differential algebra and a graded differential module over $\Omega^\bullet(TM \times \alg g)$, isomorphic to the space $(\Omega^\bullet(TM \times \alg g), \wedge, \hat d_{TM \times \alg g})$} of $\bb K$-valued forms on the trivial Lie algebroid $TM \times \alg g$.
+\rtext{$(\Omega^\bullet(TM) \otimes \bigwedge^\bullet \alg g^*, \wedge, \hat d_{triv})$ is a (bi)graded (commutative) differential algebra and a graded differential module over $\Omega^\bullet(TM \times \alg g)$, isomorphic to the space $(\Omega^\bullet(TM \times \alg g), \wedge, \hat d_{TM \times \alg g})$} of $\bb K$-valued forms on the trivial Lie algebroid $TM \times \alg g$.
 \end{theorem}
 
 \begin{proof}
 To see:
 
-Graded module: done already, pretty much by definition of wedge, when restricting to the ``subspace'' $\Omega^\bullet(TM)$ in the first entry.
+% Graded module: done already, pretty much by definition of wedge, when restricting to the ``subspace'' $\Omega^\bullet(TM)$ in the first entry.
 
-$\hat d_{triv}$ is a differential of module and algebra: pretty much by definition
+% $\hat d_{triv}$ is a differential of module and algebra: pretty much by definition
 
-Is isomorphism of graded modules: Respects the differentials DO!\todo{Done in my handwritten notes.}
+Is isomorphism of differential modules: Respects the differentials DO!\todo{Done in my handwritten notes.}
 
 Is isomorphism of graded algebras: Respects the wedge product: by definition of the wedge on the new space as defined in the remark following theorem \ref{propIsoScalarFormsTLA}.
 \end{proof}
 
-\ptext{Due to this isomorphism, from now on we will call $(\Omega^\bullet(TM) \otimes \bigwedge^\bullet \alg g^*, \wedge, \hat d_{triv})$ the space of scalar valued forms on the trivial Lie algebroid $TM \times \alg g$, and $\Omega^\bullet(TM)$ and $C^\infty(M, \bigwedge^\bullet \alg g*)$ as subspaces.}
+\ptext{Due to this isomorphism, from now on we will call $(\Omega^\bullet(TM) \otimes \bigwedge^\bullet \alg g^*, \wedge, \hat d_{triv})$ the space of scalar valued forms on the trivial Lie algebroid $TM \times \alg g$, and $\Omega^\bullet(TM)$ and $C^\infty(M, \bigwedge^\bullet \alg g^*)$ as subspaces.}
+
+% \linea
+
+% We now apply a similar result to the $L$-valued forms on the trivial Lie algebroid $A = TM \times \alg g$.\todo{Due to the next subsubsection, this section is redundant. Perhaps only an aclaration saying that $\hat d_\phi$ applied to the second factor is also denoted by $s'$ and is called the Cheva... of $\alg g$-valued forms}
+
+% \begin{theorem}
+% The $C^\infty(M)$-module $\Omega(TM \times \alg g, M \times \alg g)$ of $M \times \alg g$-valued forms on the trivial Lie algebroid bundle $TM \times \alg g$, is isomorphic to $\Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes \alg g\right)$, and this isomorphism is compatible with the grading, where the set of homogeneous elements of degree $p \in \ZZ_{\geq 0}$ is $\left( \Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes \alg g\right) \right)^p = \sum_{r + s = p} \Omega^r(TM) \otimes \left(\bigwedge^s \alg g^* \otimes \alg g\right)$. 
+
+% \todo{not clear where it comes from, perhaps after $d$}This isomorphism induces a $C^\infty(M)$-multilinear mapping
+% \begin{equation}
+%     \wedge: \Omega^\bullet(TM) \times \Omega^\bullet(TM) \otimes \left(\bigwedge^s \alg g^* \otimes \alg g\right)
+%     \to 
+%     \Omega^\bullet(TM) \otimes \left(\bigwedge^s \alg g^* \otimes \alg g\right).
+% \end{equation}
+
+% Furthermore, defining the $C^\infty(M)$-linear endomorphism $\hat d$ on this space, 
+% \begin{align}
+%     \hat d: \Omega^r(TM) \otimes \left(\bigwedge^s \alg g^* \otimes \alg g\right) &\to \left( \Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes \alg g\right)\right)^{r+s+1} \\
+%     \alpha \otimes \beta = \alpha \wedge \beta &\mapsto  \hat d (\alpha \wedge \beta) := d\alpha \wedge \beta + (-1)^|\alpha| \alpha \wedge s'\beta \\
+%     \alpha \otimes 1 &\mapsto \hat d\alpha = d\alpha \in \Omega^{r+1}(TM) \otimes 1 \\
+%     1 \otimes \beta &\mapsto \hat d\beta = s'\beta \in 1 \otimes \bigwedge^{s+1} \alg g^*.
+% \end{align}
+% where $d$ is the deRhan cohomology differential applied to the first factor, and, similarly, $s'$ is the \emph{the Chevalley-Eilenbert differential on the $\alg g$-valued forms $\bigwedge \alg g^* \otimes \alg g$} applied to the second factor. This last mapping satisfies
+% \begin{align*}
+%     s': \Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes \alg g\right) &\to \Omega^\bullet(TM) \otimes \left(\bigwedge^{\bullet+1} \alg g^* \otimes \alg g\right),
+% \end{align*} when applied to functions $\eta_i \in C^\infty(M, \alg g)$, gives the $\alg g$-valued function
+% \begin{multline}
+%     s'\omega(\sect \eta_1, \cdots, \sect \eta_{p+1}) := \sum_{i = 0}^{p+1} (-1)^i [\sect \eta_i, \omega(\sect \eta_1, \cdots, \overset{\vee}{\sect \eta_i}, \cdots, \sect \eta_{p+1})] \\
+%     \sum_{1 \leq i < j \leq p+1} (-1)^{i+j} \omega([\sect \eta_i, \sect \eta_j], \sect \eta_1, \cdots, \overset{\vee}{\sect \eta_i}, \cdots, \overset{\vee}{\sect \eta_j}, \cdots \sect \eta_{p+1}).
+% \end{multline}
+
+% Finally, \rtext{$\left( \Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes \alg g\right), \hat d \right)$ is a graded differential module over $\Omega^\bullet(M)$ under the $\wedge$ product, isomorphic to $(\Omega^\bullet(TM \times \alg g, M \times \alg g), \hat d)$}.
+% \end{theorem}
+
+% \ptext{Due to this canonical isomorphism, from now on we will call $(\Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes \alg g\right), \hat d)$ the space of $\alg g$-valued forms on the trivial Lie algebroid $TM \times \alg g$, and $\Omega^\bullet(TM)$, $\Omega^\bullet(TM)\otimes \alg g$, $C^\infty(M, \bigwedge^\bullet \alg g^*)$ and $C^\infty(M, \bigwedge^\bullet \alg g^*)\otimes \alg g$ as subspaces.}
+
+% \begin{proof}
+% To see:
+
+% See proofs of the previous 2 results.
+
+% \end{proof}
+
 
 \linea
 
-We now apply a similar result to the $L$-valued forms on the trivial Lie algebroid $A = TM \times \alg g$.\todo{Due to the next subsubsection, this section is redundant. Perhaps only an aclaration saying that $\hat d_\phi$ applied to the second factor is also denoted by $s'$ and is called the Cheva... of $\alg g$-valued forms}
 
-\begin{theorem}
-The $C^\infty(M)$-module $\Omega(TM \times \alg g, M \times \alg g)$ of $M \times \alg g$-valued forms on the trivial Lie algebroid bundle $TM \times \alg g$, is isomorphic to $\Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes \alg g\right)$, and this isomorphism is compatible with the grading, where the set of homogeneous elements of degree $p \in \ZZ_{\geq 0}$ is $\left( \Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes \alg g\right) \right)^p = \sum_{r + s = p} \Omega^r(TM) \otimes \left(\bigwedge^s \alg g^* \otimes \alg g\right)$. 
-
-\todo{not clear where it comes from, perhaps after $d$}This isomorphism induces a $C^\infty(M)$-multilinear mapping
-\begin{equation}
-    \wedge: \Omega^\bullet(TM) \times \Omega^\bullet(TM) \otimes \left(\bigwedge^s \alg g^* \otimes \alg g\right)
-    \to 
-    \Omega^\bullet(TM) \otimes \left(\bigwedge^s \alg g^* \otimes \alg g\right).
-\end{equation}
-
-Furthermore, defining the $C^\infty(M)$-linear endomorphism $\hat d$ on this space, 
-\begin{align}
-    \hat d: \Omega^r(TM) \otimes \left(\bigwedge^s \alg g^* \otimes \alg g\right) &\to \left( \Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes \alg g\right)\right)^{r+s+1} \\
-    \alpha \otimes \beta = \alpha \wedge \beta &\mapsto  \hat d (\alpha \wedge \beta) := d\alpha \wedge \beta + (-1)^|\alpha| \alpha \wedge s'\beta \\
-    \alpha \otimes 1 &\mapsto \hat d\alpha = d\alpha \in \Omega^{r+1}(TM) \otimes 1 \\
-    1 \otimes \beta &\mapsto \hat d\beta = s'\beta \in 1 \otimes \bigwedge^{s+1} \alg g^*.
-\end{align}
-where $d$ is the deRhan cohomology differential applied to the first factor, and, similarly, $s'$ is the \emph{the Chevalley-Eilenbert differential on the $\alg g$-valued forms $\bigwedge \alg g^* \otimes \alg g$} applied to the second factor. This last mapping satisfies
-\begin{align*}
-    s': \Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes \alg g\right) &\to \Omega^\bullet(TM) \otimes \left(\bigwedge^{\bullet+1} \alg g^* \otimes \alg g\right),
-\end{align*} when applied to functions $\eta_i \in C^\infty(M, \alg g)$, gives the $\alg g$-valued function
-\begin{multline}
-    s'\omega(\sect \eta_1, \cdots, \sect \eta_{p+1}) := \sum_{i = 0}^{p+1} (-1)^i [\sect \eta_i, \omega(\sect \eta_1, \cdots, \overset{\vee}{\sect \eta_i}, \cdots, \sect \eta_{p+1})] \\
-    \sum_{1 \leq i < j \leq p+1} (-1)^{i+j} \omega([\sect \eta_i, \sect \eta_j], \sect \eta_1, \cdots, \overset{\vee}{\sect \eta_i}, \cdots, \overset{\vee}{\sect \eta_j}, \cdots \sect \eta_{p+1}).
-\end{multline}
-
-Finally, \rtext{$\left( \Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes \alg g\right), \hat d \right)$ is a graded differential module over $\Omega^\bullet(M)$ under the $\wedge$ product, isomorphic to $(\Omega^\bullet(TM \times \alg g, M \times \alg g), \hat d)$}.
-\end{theorem}
-
-\ptext{Due to this canonical isomorphism, from now on we will call $(\Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes \alg g\right), \hat d)$ the space of $\alg g$-valued forms on the trivial Lie algebroid $TM \times \alg g$, and $\Omega^\bullet(TM)$, $\Omega^\bullet(TM)\otimes \alg g$, $C^\infty(M, \bigwedge^\bullet \alg g*)$ and $C^\infty(M, \bigwedge^\bullet \alg g*)\otimes \alg g$ as subspaces.}
-
-\begin{proof}
-To see:
-
-See proofs of the previous 2 results.
-
-\end{proof}
-
-
-\linea
-
-
-Let $E = M \times V$ be a trivial vector bundle over $M$ with the vector space $V$ as the fiber, and let $A = TM \times \alg g$ be represented on $E$ through $\phi: TM \times \alg g \to \alg D(M \times V)$. One important example if the case $E = L = M \times \alg g$, with the adjoint representation $\phi = ad$. Another example comes from taking $V$ a representation space of $G$, hence $V$ is also a representation space for $\alg g$, and this induces naturally a representation $\phi$. Notice that if $E$ is not a trivial vector bundle, on each trivializing neighborhood $U$ of $E$ we fall under the case we are presently studying.\todo{Perhaps all of them?}
+We now apply a construction analogous to that of scalar forms on trivial Lie algebroids to the spaces of vector valued forms to build an alternative and useful description. Let $E = M \times V$ be a trivial vector bundle over $M$ with the vector space $V$ as the fiber, and let $A = TM \times \alg g$ be represented on $E$ through $\phi: TM \times \alg g \to \alg D(M \times V)$. One important example if the case $E = L = M \times \alg g$, with the adjoint representation $\phi = ad$. Another example comes from taking $V$ a representation space of $G$, hence $V$ is also a representation space for $\alg g$, and this induces naturally a representation $\phi$. Notice that if $E$ is not a trivial vector bundle, on each trivializing neighborhood $U$ of $E$ we fall under the case we are presently studying.\todo{Perhaps all of them?}
 
 \begin{theorem}\label{theoremTrivialFormsEValuedLValuedIsDifferentialModuleDefinitions}
 The $C^\infty(M)$-module $\Omega(TM \times \alg g, M \times V)$ of $M \times V$-valued forms on the trivial Lie algebroid bundle $TM \times \alg g$, is isomorphic to $\Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes V\right)$, and this isomorphism is compatible with the grading, where the set of homogeneous elements of degree $p \in \ZZ_{\geq 0}$ is $\left( \Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes V\right) \right)^p = \sum_{r + s = p} \Omega^r(TM) \otimes \left(\bigwedge^s \alg g^* \otimes V\right)$. 
@@ -683,7 +683,7 @@ Furthermore, defining the $C^\infty(M)$-linear endomorphism $\hat d$ on this spa
     \alpha \otimes \beta = \alpha \wedge \beta &\mapsto  \hat d_\phi (\alpha \wedge \beta) := d\alpha \wedge \beta + (-1)^{|\alpha|} \alpha \wedge \hat d_{\phi} \beta \\
     \alpha \otimes 1 &\mapsto \hat d\alpha = d\alpha \in \Omega^{r+1}(TM) \otimes 1 
 \end{align}
-where $d$ is the deRhan cohomology differential applied to the first factor, and, similarly, $\hat d_\phi$ applied to the second factor is defined by
+where $d$ is the deRham cohomology differential applied to the first factor, and, similarly, $\hat d_\phi$ applied to the second factor is defined by
 \begin{align*}
     \hat d_\phi: \Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes V\right) &\to \Omega^\bullet(TM) \otimes \left(\bigwedge^{\bullet+1} \alg g^* \otimes V\right),
 \end{align*} when applied to functions $\eta_i \in C^\infty(M, V)$, gives the $V$-valued function
@@ -692,7 +692,7 @@ where $d$ is the deRhan cohomology differential applied to the first factor, and
     \sum_{1 \leq i < j \leq p+1} (-1)^{i+j} \omega([\sect \eta_i, \sect \eta_j], \sect \eta_1, \cdots, \overset{\vee}{\sect \eta_i}, \cdots, \overset{\vee}{\sect \eta_j}, \cdots \sect \eta_{p+1}).
 \end{multline}
 
-Finally, \rtext{$\left( \Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes V\right), \hat d_\phi \right)$ is a graded differential module over $\Omega^\bullet(M)$ under the $\wedge$ product, isomorphic to $(\Omega^\bullet(TM \times \alg g, M \times V), \hat d_\phi)$}.
+Finally, \rtext{$\left( \Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes V\right), \hat d_\phi \right)$ is a graded differential module over the graded ring $(\Omega^\bullet(M), \wedge)$, isomorphic to $(\Omega^\bullet(TM \times \alg g, M \times V), \hat d_\phi)$}.
 \end{theorem}
 
 \linea
