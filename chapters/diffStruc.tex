@@ -373,7 +373,12 @@ Let $\mathcal A = \oplus_{n = 0}^\infty \mathcal A^n$ be a graded algebra (over 
 
 
 \begin{definition}
-Let $E$ be an algebra bundle over $M$ with fiberwise multiplication $\bullet$, i.e. a vector bundle such that each fiber is an algebra and such that there exists an atlas compatible with the algebra multiplication .Suppose that $\phi$ is a Lie algebroid representation of $A$ on $E$\todo{additional condition? $\phi(A) \subset \alg D_{\bullet} (E)$}. Define on $\Omega^\bullet(A, E)$ the $C^\infty(M)$-bilinear operation operation, called \emph{the wedge product of LAB-valued forms on $A$}
+Let $E$ be an algebra bundle over $M$ with fiberwise multiplication $\bullet$, i.e. a vector bundle such that each fiber is an algebra and such that there exists an atlas compatible with the algebra multiplication .Suppose that $\phi$ is a Lie algebroid representation of $A$ on $E$, which, additionally, is compatible with the algebra product, i.e. it satisfies
+\begin{equation}
+    \phi(\sectoid X)(\mu_1 \bullet \mu_2) = \phi(\sectoid X)(\mu_1) \bullet \mu_2 + \mu_1 \bullet \phi(\sectoid X)(\mu_2),
+\end{equation}
+for all $\sectoid in \Gamma(A)$ and all $\mu_1, \mu_2 \in \Gamma(E)$.
+Define on $\Omega^\bullet(A, E)$ the $C^\infty(M)$-bilinear operation operation, called \emph{the wedge product of LAB-valued forms on $A$}
 \begin{eqnsplit*}
 \wedge^\bullet : \Omega^\bullet(A, E) &\times \Omega^\bullet(A, E) \to \Omega\bullet(A, E)
 \end{eqnsplit*}
@@ -391,7 +396,7 @@ for any $p$-form $\omega$, $q$-form $\eta$ and any $\sectoid X_1, \dots, \sectoi
 \begin{remark}\label{remarkWedgeofEVectorValuedFOrmsRestrictedLocal}
 Just as remarked in \ref{remarkTheModuleWedgeWOrksWellLocally} for the wedge product of scalar and $E$-valued forms, the $C^\infty(M)$-bilinearity of $\wedge^\bullet$ implies that it is a point operator, and so it has a restriction, also denoted by $\wedge$, to local forms in such a way that, for all $\omega$ and $\eta$ $E$-valued forms,
 \begin{equation}
-    (\omega \wedge \eta)|_U = \omega|_U \wedge^\bullet \eta|_U
+    (\omega \wedge^\bullet \eta)|_U = \omega|_U \wedge^\bullet \eta|_U
 \end{equation}
 \end{remark}
 
@@ -400,26 +405,32 @@ Let $E$ be an algebra bundle over $M$ on which there is a representation $\phi: 
 \end{theorem}
 
 \begin{proof}
-Graded Leibniz is the only piece missing. Perhaps here I need the condition $\phi(A) \subset \alg D_\bullet (E)$? \todo{}
+Graded Leibniz is the only missing piece, and this can be proved in an almost identical manner as the graded Leibniz of theorem \ref{}; however, the additional condition on the representation plays an important role, as we can check from the calculation of $\hat d_\phi \mu$, when $\mu \in \Gamma(E)$ may be written as $\mu = \mu_1 \cdot \mu_2$ for some arbitrary $\mu_1, \mu_2 \in \Gamma(E)$, since then $\bullet$ coincides with $\wedge^\bullet$; let $\sectoid X \in \Gamma(A)$ be arbitrary, then:
+\begin{align*}
+    \phi(X) \cdot \mu &= \hat d_\phi \mu(\sectoid X)\\
+        &= \hat d_\phi (\mu_1 \bullet \mu_2)(\sectoid X) \\
+        &= \hat d_\phi (\mu_1 \wedge^\bullet \mu_2)(\sectoid X)\\
+        &= \hat d_\phi(\mu_1)(\sectoid X) \wedge^\bullet \mu_2 + \mu_1 \wedge^\bullet \hat d_\phi(\mu_2)(\sectoid X)\\
+        &= \phi(\sectoid X)(\mu_1) \bullet \mu_2 + \mu_1 \bullet \phi(\sectoid X)(\mu_2).
+\end{align*}
+
 \end{proof}
 
+\begin{example}
+The scalar valued forms on $A$ are not only a differential complex over $\bb K$ and a graded algebra, but, in fact, \rtext{$(\Omega^\bullet(A), \wedge, \hat d_A)$ is a differential graded algebra}. This follows from noticing that the wedge product associated to the algebra multiplication of $\bb K$ coincides with the already defined wedge product of scalar and vector valued forms, and so the statement that $(\Omega^\bullet(A), \hat d_A)$ was a differential complex over $(\Omega^\bullet(A), \wedge)$, together with the graded Leibniz that accompanies it, is precisely the statement that $\Omega^\bullet(A)$ is a differential graded algebra; the ``extra condition'' on the representation is simply the Lebniz rule of all vector fields acting on functions of $M$.
 
-\begin{example}----------
-Since $\Omega^\bullet(A)$ is simply an abreviation for $\Omega^\bullet(A, M \times \bb K)$, \rtext{$(\Omega^\bullet(A), \wedge, \hat d_A)$ is a graded-commutative differential graded algebra} over $\Omega^\bullet(A)$, where $\wedge = \wedge^\cdot$, for $\cdot$ the multiplication in $\bb K$.
-
-The additional conditions is simply that $\alpha \beta = (-1)^{|x||y|}\beta \alpha$ for all homogeneous elements $\alpha, \beta$. This follows from $\bb K$ being commutative.
+Actually, $(\Omega^\bullet(A), \wedge, \hat d_A)$ is a differential graded-commutative algebra. The additional conditions is simply that $\alpha \beta = (-1)^{|x||y|}\beta \alpha$ for all homogeneous forms $\alpha, \beta$; this follows from $\bb K$ being commutative.
 \end{example}
 
-\begin{example}------------
-$(\Omega^\bullet(A, L, \wedge^{[,]}, \hat d)$ is a Lie-graded differential graded algebra.\todo{Useful? Perhaps when defining curvatures via something similar to structure equation?... Rta: it should be possible to use when defining the Atiyah Lie algebroid connection, and so in all transitive Lie algbroids, but we don't do it, we instead use the shorthand $[,]$ notation, which isn't the $[,] \equiv \wedge^{[,]}$}
-
+\begin{example}
+$(\Omega^\bullet(A, L), \wedge^{[,]}, \hat d)$ is a differential graded Lie algebra. The additional condition on the representation $ad$ is nothing more than the Jacobi identity of the Lie bracket on $\Gamma(L)$. The Lie grading of this differential algebra means that on the homogeneous forms a graded antisymmetry, and a graded Jacobi identity are satisfied, and that the differential and the wedge product $\wedge^{[,]}$ are in some sense compatible.
 \end{example}
 
 \linea
 
-The following important theorem relates the notions of vector valued connections on principal bundles, that give rise to principal connections and their curvatures, and the theory of forms on the Atiyah Lie algebroid associated to the principal bundle. To the proofs we refer to \cite{}.
+The following important theorem relates the notions of vector valued connections on principal bundles, that give rise to principal connections and their curvatures, and the theory of forms on the Atiyah Lie algebroid associated to the principal bundle. For the proofs refer to \cite{}; this follows essentially from the equivalence between $G$-invariant sections of $TP$ and sections of $TP/G$ stated in theorem \ref{}, and of the $G$-invariant sections of $P \times \alg g$ with the sections of $P \times \alg g/G$.
 
-\begin{theorem}\label{theoFormsPpalAtiyahSame}
+\begin{theorem}\label{theoFormsPrincipalAtiyahSameGInvariantEquivariantSubspaces}
 Let $G \to P \to M$ be a principal bundle over $M$. 
 \begin{itemize}
     \item The differential graded module and algebra \rtext{$(\Omega^\bullet(TP/G), \hat d_{TS^3/S^1})$ is isomorphic to the subspace of $(\Omega^\bullet(TP), d)$ associated to the $R_*$-invariant  forms on $P$}.
@@ -463,62 +474,62 @@ Now, applying the graded Leibniz rule to the above $1$-form considerint it a sum
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-{\color{gray} This only seems to be useful if we want to define the alternative description of the Atiyah Lie algebroid found in Lazzarini2012
+% {\color{gray} This only seems to be useful if we want to define the alternative description of the Atiyah Lie algebroid found in Lazzarini2012
 
-\subsection{Cartan Operations}
+% \subsection{Cartan Operations}
 
-% \begin{itemize}
+% % \begin{itemize}
 
-% \item $i, L$
+% % \item $i, L$
 
-% \item Horizontal, invariant and basic forms.
+% % \item Horizontal, invariant and basic forms.
 
-% \end{itemize}
+% % \end{itemize}
 
-\begin{definition}
-Let $E$ be an algebra bundle over $M$, let $\phi: A \to \alg D(E)$ be a representation of $A$, and let $B$ be a Lie algebroid over $M$. A \emph{Cartan operation on $(\Omega^\bullet(A, E), \wedge, \hat d_\phi)$} is a triple $(B, i, L)$ such that: for any $\sectoid X \in B$, for any $p \geq 1$ there is a map $i_{\sectoid X}: \Omega^p(A, E) \to \Omega^{p-1}(A, E)$ such that, defining 
-\begin{align}
-L_{\sectoid X} := \hat d_\phi i_{\sectoid X} + i_{\sectoid X}\hat d_\phi,
-\end{align}
-the following relations hold for any $\sectoid X, \sectoid Y \in B$ and $f \in C^\infty(M)$:
-\begin{align}
-    i_{f \sectoid X} = f i_{\sectoid X} & i_{\sectoid X} i_{\sectoid Y} + i_{\sectoid Y} i_{\sectoid X} = 0 \\
-    [L_{\sectoid X}, i_{\sectoid Y}] = i_{[\sectoid X, \sectoid Y]} & [L_{\sectoid X}, L_{\sectoid Y}] = L_{[\sectoid X, \sectoid Y]}
-\end{align}
-\end{definition}
+% \begin{definition}
+% Let $E$ be an algebra bundle over $M$, let $\phi: A \to \alg D(E)$ be a representation of $A$, and let $B$ be a Lie algebroid over $M$. A \emph{Cartan operation on $(\Omega^\bullet(A, E), \wedge, \hat d_\phi)$} is a triple $(B, i, L)$ such that: for any $\sectoid X \in B$, for any $p \geq 1$ there is a map $i_{\sectoid X}: \Omega^p(A, E) \to \Omega^{p-1}(A, E)$ such that, defining 
+% \begin{align}
+% L_{\sectoid X} := \hat d_\phi i_{\sectoid X} + i_{\sectoid X}\hat d_\phi,
+% \end{align}
+% the following relations hold for any $\sectoid X, \sectoid Y \in B$ and $f \in C^\infty(M)$:
+% \begin{align}
+%     i_{f \sectoid X} = f i_{\sectoid X} & i_{\sectoid X} i_{\sectoid Y} + i_{\sectoid Y} i_{\sectoid X} = 0 \\
+%     [L_{\sectoid X}, i_{\sectoid Y}] = i_{[\sectoid X, \sectoid Y]} & [L_{\sectoid X}, L_{\sectoid Y}] = L_{[\sectoid X, \sectoid Y]}
+% \end{align}
+% \end{definition}
 
-\begin{example}
-$B = A$ defines one.
-\end{example}
+% \begin{example}
+% $B = A$ defines one.
+% \end{example}
 
-\begin{example}
-$B = L$ also defines one.
-\end{example}
+% \begin{example}
+% $B = L$ also defines one.
+% \end{example}
 
-\begin{definition}
-Let $(B, i, L)$ be a Cartan operation on $(\Omega^\bullet(A, E), \wedge, \hat d_\phi)$.
+% \begin{definition}
+% Let $(B, i, L)$ be a Cartan operation on $(\Omega^\bullet(A, E), \wedge, \hat d_\phi)$.
     
-    \begin{itemize}
+%     \begin{itemize}
         
-    \item Define $\Omega^\bullet(A, E)_{Hor}$ to be the graded subspace of \emph{horizontal elements in $\Omega^\bullet(A, E)$} characterized by 
-    \[
-    i_{\sectoid X} \omega = 0?
-    \]
+%     \item Define $\Omega^\bullet(A, E)_{Hor}$ to be the graded subspace of \emph{horizontal elements in $\Omega^\bullet(A, E)$} characterized by 
+%     \[
+%     i_{\sectoid X} \omega = 0?
+%     \]
     
-    \item Define $\Omega^\bullet(A, E)_{Inv}$ to be the graded subspace of \emph{invariant elements in $\Omega^\bullet(A, E)$} characterized by 
-    \[
-    L_{\sectoid X} \omega = \omega?
-    \]
+%     \item Define $\Omega^\bullet(A, E)_{Inv}$ to be the graded subspace of \emph{invariant elements in $\Omega^\bullet(A, E)$} characterized by 
+%     \[
+%     L_{\sectoid X} \omega = \omega?
+%     \]
     
-    \item Define $\Omega^\bullet(A, E)_{Basic} = \Omega^\bullet(A, E)_{Hor} \inter \Omega^\bullet(A, E)_{Inv}$ to be the graded subspace of \emph{basic or tensorial elements in $\Omega^\bullet(A, E)$}.
+%     \item Define $\Omega^\bullet(A, E)_{Basic} = \Omega^\bullet(A, E)_{Hor} \inter \Omega^\bullet(A, E)_{Inv}$ to be the graded subspace of \emph{basic or tensorial elements in $\Omega^\bullet(A, E)$}.
         
-    \end{itemize}
+%     \end{itemize}
     
-\end{definition}
+% \end{definition}
 
-\begin{example}
-Atiyah. The concept coincides? (See Mackenzie)
-\end{example}}
+% \begin{example}
+% Atiyah. The concept coincides? (See Mackenzie)
+% \end{example}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
