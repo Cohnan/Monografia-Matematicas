@@ -456,7 +456,7 @@ Then, we will follow a similar procedure to define the Adjoint Lie algebroid $P 
 \begin{align*}
     0 \to P \times \alg g/G \xrightarrow{j} TP/G \xrightarrow{a} TM \to 0,
 \end{align*}
-formally introduced in definition \ref{AtiyahSeq}.
+formally introduced in definition \ref{definitionAtiyahSequencePrincipalBundleVectorBundle}.
 
 \subsection{The Atiyah Lie algebroid}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1144,25 +1144,517 @@ From now on, since the two induced Lie algebra structures on $\Gamma(P \times \a
 
 \subsubsection{The Atiyah Sequence}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{definition}\label{AtiyahSeq}
+\begin{definition}\label{definitionAtiyahSequencePrincipalBundleVectorBundle}
     \begin{itemize}
     
     \item With the Lie algebra structure on $P \times \alg g/G$ from Theorem (\ref{theoBracketAdjoint}), denoted from now on by $[\cdot, \cdot]: \Gamma(P \times \alg g/G, P \times \alg g/G) \to \Gamma(P \times \alg g/G)$, and trivial anchor $a=0$, $P \times \alg g/G$ becomes a Lie algebroid over $M$ called \emph{the adjoint Lie algebroid to the Atiyah Lie algebroid associated to the principal bundle $P$}.
     
     \item The exact sequence of Lie algebroids over $M$
-\begin{align} \label{AtiyahSequence}
+\begin{align} \label{definitionAtiyahSequencePrincipalBundleVectorBundleuence}
     0 \to P \times \alg g/G \xrightarrow{j} TP/G \xrightarrow{\pi_*^G} TM \to 0
 \end{align}
 is called \emph{the Atiyah sequence of the principal bundle $P(M, G)$}.
     \end{itemize}
 
 From the algebraic perspective, we could also say that the Atiyah sequence of $P$ is the induced short exact sequence of $C^\infty(M)$-modules and Lie algebras
-\begin{align} \label{AtiyahSequenceSections}
+\begin{align} \label{equationdefinitionAtiyahSequencePrincipalBundleVectorBundleuencePrincipalBundleSectionsSequence}
     0 \to C^\infty_G(P, \alg g) \xrightarrow{\overline{j}} \Gamma^G(TP) \xrightarrow{\pi_*} \Gamma(TM) \to 0.
 \end{align}
 
 \end{definition}
 
+\subsection{Examples}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+There are a two big families of examples of principal bundles given a normed division algebra $\FF$ over $\RR$ which is one of $\RR, \CC, \HH$: let $d$ be the dimension of $\FF$ as an $\RR$-vector space, and for any $n \in \ZZ_{\geq 1}$ the sphere $S^{dn - 1} \subset \FF^n$ on which the Lie group
+\footnote{It is well known that the only spheres which admit a topological group structure are $S^0$, $S^1$ and $S^3$, explaining why a similar construction for the remaining normed division algebra, the octonion algebra, can't be a principal bundle.} 
+$S^{d-1}$ acts is a principal bundle over $\FF P^{n-1}$. We will focus in the two particular fibrations obtained by restricting to $n = 2$ and $\FF$ either $\CC$ or $\HH$, called the \lbtext{complex Hopf fibration} and \lbtext{quaternionic Hopf fibration} respectively. In these cases the base manifolds $\CC P^1$ and $\HH P^1$ can be regarded instead as $S^2$ and $S^4$ respectively, and so these principal fibrations have spheres as total space, base space and fiber:
+\begin{equation*}
+    \begin{tikzcd}
+    S^1 \arrow[hook]{r} & S^3 \arrow{r} & S^2\\
+    S^3 \arrow[hook]{r} & S^7 \arrow{r} & S^4
+    \end{tikzcd}
+\end{equation*}
+
+\ptext{The way to describe the Lie algebroid that will be most useful to use will be through their local trivializations as transitive Lie algebroids, and this requires a local description of both the base manifolds and the principal bundles, which we will develop now.}
+
+\subsubsection{The Underlying Manifolds}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Atlas for $S^n \subset \RR^{n+1}$ for $n \geq 1$: Let $U_N = S^n \ \set{(0, \dots, 0, -1)}$ and $U_S = S^n \ \set{(0, \dots, 0, 1)}$. Notice that these two sets are open subsets missing only one point of $S^n$, and so they make an open cover of $S^n$. A $C^\infty$ atlas is given by $\{(U_S, \vphi_S), (U_N, \vphi_N)\}$ where
+% \begin{align}
+%     \vphi_S : U_S &\to \RR^{n} &
+%     \vphi^{-1}_S : \RR^{n} &\to U_S\\
+%         (x^1, \dots, x^{n+1}) &\mapsto \frac{(x^1, \dots, x^n)}{1-x^{n+1}} &
+%         \vec y &\mapsto \frac{(2y^1, \dots, 2y^{n}, ||\vec y||^2 - 1)}{1+||\vec y||^2}
+% \end{align}
+\begin{align}
+    \vphi_S : U_S &\to \RR^{n}, &
+        (x^1, \dots, x^{n+1}) &\mapsto \frac{(x^1, \dots, x^n)}{1-x^{n+1}} \\
+    x := \vphi^{-1}_S : \RR^{n} &\to U_S, &
+        \vec \xi &\mapsto \frac{(2\xi^1, \dots, 2\xi^{n}, ||\vec \xi||^2 - 1)}{1+||\vec \xi||^2}
+\end{align}
+and 
+\begin{align}
+    \vphi_N : U_N &\to \RR^{n} &
+        (x^1, \dots, x^{n+1}) &\mapsto \frac{(x^1, \dots, x^n)}{1+x^{n+1}} \\
+    y:= \vphi^{-1}_N : \RR^{n} &\to U_N &
+        \vec \xi &\mapsto \frac{(2\xi^1, \dots, 2\xi^{n}, 1 - ||\vec \xi||^2)}{1+||\vec \xi||^2}.
+\end{align}
+In the intersection $\RR^n - 0 = \phi_S(U_S \inter U_N) = \phi_N(U_S \inter U_N) \ni \vec \xi$ they satisfy:
+\begin{equation}
+    \vphi_S \circ \vphi_N^{-1}(\vec \xi) = \frac{\vec \xi}{|| \vec \xi||^2} = \vphi_N \circ \vphi_S^{-1}(\vec v).
+\end{equation}
+When $n = 2$ we may write $\CC$ instead of $\RR^2$ and when $n = 4$ write $\HH$ instead of $\RR^4$, which also allows the previous formula to be written in terms of the conjugation of this normed division algebras, i.e. for $y \in \FF$
+\begin{equation}
+    \vphi_S \circ \vphi_N^{-1}(\xi) = \overline{\xi}^{-1} = \vphi_N \circ \vphi_S^{-1}(\xi)
+\end{equation}
+where $\FF$ can actually be either $\RR, \CC$ or $\HH$.
+
+In $S^2$ a very useful and intuitive set of coordinates are the polar coordinates. In $U_C := U_S \inter U_N$ the polar angle $\phi \in [0, \pi]$ and the azimuthal angle $\theta \in [0, 2 \pi]$ induce the local frame $\{\partial_\phi, \partial_\theta\} \subset \Gamma_{U_C}(TS^2)$ of the tangent bundle which are properly defined as coordinate vector fields once at two appropriate charts that cover $U_C$; one possibility is the chart in which $\phi \in (0, \pi)$ and $\theta \in (0, 2\pi)$ and another chart where $\phi \in (0, \pi)$ and $\theta \in (-\pi, \pi)$. The inverses of these coordinate maps will be denoted by $Esph$, or simply $E$, with formula
+\begin{eqnsplit}
+    Esph: (\phi, \theta) &\mapsto (\sin \phi \cos \theta, \sin \phi \sin \theta, \cos \phi) \in S^2.
+\end{eqnsplit}
+
+Similarly, in $S^3$ there is a set of coordinates which allow us to develop an intuition of the complex Hopf bundle when combined with the previously defined coordinates for $S^2$. Notice that any point $(z^1, z^2)$ in $S^3$ can be written as $(z_1, z_2) = (\cos \left( \frac{\phi}{2}\right) e^{i \xi_1}, \sin\left( \frac{\phi}{2} \right) e^{i \xi_2})$ with $\phi \in [0, \pi]$ and $\xi_1, \xi_2 \in [0, 2\pi]$, in particular notice that indeed $|z^1|^2 + |z^2|^2 = \cos^2 \left( \frac{\phi}{2}\right) + \sin^2 \left( \frac{\phi}{2}\right) = 1$. Again, once appropriate coordinate maps are chosen, these coordinates induce the local frame $\{\partial_\phi, \partial_{\xi_1}, \partial_{\xi_2}\} \subset \Gamma_{U_C}(TS^3)$ where $U_C = U_S \inter U_N$ is the set where $\phi \in (0, \pi)$. We will denote by $Tor$, or simply $T$, the map
+\begin{eqnsplit}
+    Tor: (\phi, \xi_1, \xi_2) \mapsto (\cos \left( \frac{\phi}{2}\right) e^{i \xi_1}, \sin\left( \frac{\phi}{2} \right) e^{i \xi_2}) \in S^3.
+\end{eqnsplit}
+
+\lin
+
+Atlas for $\FF P^{1}$: The sets $U_i = \{ [\xi^1, \xi^2] \st \xi^i \neq 0 \}$, for $i = 1, 2$, are open subsets of $\FF P^1$ missing only one point of the total space, which make up an open cover. Writting the not necessarily commutative multiplication $\xi^1 (\xi^2)^{-1}$ as $\xi^1 / \xi^2$ An atlas for $\FF P^1$ is given by $\{(U_2, \vphi_2), (U_1, \overline{\vphi_1})\}$ where 
+\begin{align}
+    \vphi_2: U_2 &\to \FF &
+    x :=\vphi_2^{-1}: \FF &\to U_2 \\
+    (\xi^1, \xi^2) &\mapsto \xi^1 / \xi^2 &
+    \xi &\mapsto [\xi, 1]
+\end{align} and
+\begin{align}
+    \overline{\vphi_1}: U_1 &\to \FF &
+    y := \overline{\vphi_1}^{-1}: \FF &\to U_1 \\
+    (\xi^1, \xi^2) &\mapsto \overline{\xi^2 /\xi^1} &
+    \xi &\mapsto [1, \overline{\xi}].
+\end{align} In the intersection $\FF - 0 = \phi_i(U_2 \inter U_1) \ni \xi$ it is then true that
+\begin{equation}
+    \vphi_2 \circ \overline{\vphi_1}^{-1}(\xi) = \overline{\xi}^{-1} = \overline{\vphi_1} \circ \vphi_2^{-1}(\xi).
+\end{equation} This construction can be easily modified to generate a smooth atlas $\{(U_1, \phi_1), (U_2, \phi_2)\}$ for $\FF P^n$ for any $n \geq 1$ where $U_k = \set{[\xi^1, \dots, \xi^{n+1}] \st \xi^k \neq 0}$ and $\phi_k: U_k \to \FF^{n}$, $[\xi^1, \dots, \hat \xi^k, \dots, \xi^{n+1}] \mapsto (\xi^1, \dots, \hat \xi^k, \dots, \xi^{n+1}) \cdot (\xi^k)^{-1}$.
+
+The atlases given for $\FF P^1$ and $S^d$ where $d = dim_\RR \FF$ suggests a bijective map $\FF P^1 \to S^d$ given by $\vphi_S^{-1} \circ \vphi_2$ in $U_2$ and $\vphi_N^{-1} \circ \overline{\vphi_1}$ in $U_1$ if they were compatible in $U_2 \inter U_1$; it can be easily shown that these $2$ maps indeed coincide there and that the resulting map has the formula
+\begin{eqnsplit}
+    \label{diffProjFtoS}
+    F: \FF P^1 &\to S^d\\
+    [\xi^1, \xi^2] &\mapsto \frac{(2 \xi^1 \overline{\xi^2}, |\xi^1|^2 - |\xi^2|^2)}{||(\xi^1, \xi^2)||^2}
+\end{eqnsplit} and it is a diffeomorphism with inverse
+\begin{eqnsplit}
+    F^{-1}: S^d &\to \FF P^1 \\
+    (x^1, \dots, x^{d+1}) &\mapsto [(x^1, \dots, x^d), 1-x^{d+1}] \\
+     &\text{ or  } [1+x^{d+1}, (x^1, \dots, x^d)].
+\end{eqnsplit}
+
+\subsubsection{The Principal Bundles}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The complex Hopf bundle is obtained as the case $n=2$ of the family of $S^1$-principal bundles $S^1 \hookrightarrow S^{2n-1} \to \CC P^{n-1}$ defined a continuacion. $S^1 \subset \CC$ acts naturally on the right on $S^{2n-1} \subset \CC^n$ by coordinate-wise multiplication. Let $\tilde \pi: S^{2n-1} \to \CC P^{n-1}$ be the restriction of the smooth quotient map $p: \CC^n \to \CC P^{n-1}$ to $S^{2n-1}$; by the definition of the projective spaces, for any $g \in S^1$ and $p \in S^{2n-1} \subset \CC^n$, the projection map $\pi$ satisfies $\tilde \pi(pg) = \tilde \pi(p)$. %Furthermore, for any $[z^1, \dots z^n] \in \CC P^{n-1}$, $\pi^{-1}([z^1, \dots, z^n]) = \{(z^1, \dots, z^n)g \st g \in S^1\}$
+To see that these is a principal bundle all we need to do is define smooth local sections of the projection map $\tilde \pi$ for all the neighborhoods of the previously defined atlas of $\CC P^{n-1}$: for $k \in \{1, \dots, n\}$, let
+\begin{eqnsplit}
+    \sigma_k: U_k &\to S^{2n-1}\\
+      [z^1, \dots, z^n] &\mapsto \frac{(z^1, \dots, z^n) |z^k|/z^k}{\sqrt{|z^1|^2 + \cdots + |z^n|^2}};
+\end{eqnsplit} notice that this section takes us to points in $S^{2n-1}$ whose $k$-th entry is strictly real, and so any point of the fiber of $m \in U_k \subset \CC P^{n-1}$ can be obtained by letting a phase $g \in S^1$ act on $\sigma_k(m)$, meaning that $S^{2d-1}$ is locally homeomorphic to $U_k \times S^1$ on $U_k$. The transition functions $g_{ij}: U_i \inter U_j \to S^1$ for $i, j \in \set{1, 2}$ are defined by the relations
+\begin{equation*}
+    \sigma_j(m) g_{ji}(m) = \sigma_j(m)
+\end{equation*} for all $m \in U_{i} \inter U_j$, and have the explicit formula
+\begin{equation}
+    g_{ji}([z^1, \dots, z^{n}]) = \frac{z^j / |z^j|}{z^i / |z^i|}.
+\end{equation}
+
+In the particular case when $n = 2$, define $\pi = F\circ \tilde \pi : S^{3} \to S^2$. Since $\CC P^1$ is diffeomorphic to $S^2$ through $F$, $\pi$ is the projection map of a principal bundle $S^3$ over $S^2$ with fiber $S^1$, called the \lbtext{complex Hopf bundle}. By plugging any point in $S^3$ using the special coordinates defined for $S^2$ and $S^3$, and using equation (\ref{diffProjFtoS}), we obtain the following nice formula for this projection map of the complex Hopf bundle:
+\begin{eqnsplit}
+    \pi: S^3 &\to S^2\\
+        Tor(\phi, \xi_1, \xi_2) &\mapsto Esph(\phi, \xi_1 - \xi_2).
+\end{eqnsplit}
+The action of $e^{i \alpha} \in S^1$ on $Tor(\phi, \xi_1, \xi_2) = (\cos \left( \frac{\phi}{2}\right) e^{i \xi_1}, \sin\left( \frac{\phi}{2} \right) e^{i \xi_2})$ returns $Tor(\phi, \xi_1 + \alpha, \xi_2 + \alpha)$, which indeed leaves invariant the quantity $\xi_1 - \xi_2$, and this implies that 
+\begin{equation*}
+    \pi^{-1}(Esph(\phi, \theta)) = \{Tor(\phi, \xi_1, \xi_2) \st \xi_1 - \xi_2 = \theta\}.
+\end{equation*} The induced local trivializations $\sigma_S := F^{-1} \circ \sigma_2$ and $\sigma_N := F^{-1} \circ \sigma_1$ have the formulas:
+\begin{align}
+    \sigma_S: U_S &\to S^3, &  Esph(\phi, \theta) &\mapsto Tor(\phi, \theta, 0)\\
+    \sigma_N: U_N &\to S^3, &  Esph(\phi, \theta) &\mapsto Tor(\phi, 0, -\theta).
+\end{align} This principal bundle, due to the Reconstruction Theorem \ref{}, is completely determined by the transition function
+\begin{equation}
+    \label{transFunHopfS3}
+    g_{NS}(E(\phi, \theta)) = e^{i \theta}.
+\end{equation}
+
+\lin
+
+An identical procedure as the one follows for the principal bundles $S^1 \hookrightarrow S^{2n-1} \to \CC P^{n-1}$ for all integer $n \geq 1$ can be used to define a family of $S^3$-principal bundles $S^3 \hookrightarrow S^{4n-1} \to \HH P^{n-1}$, where the right action of the symplectic group $Sp(1)$ comes from \ptext{understanding $Sp(1)$ as the unit quaternions} through the map \ref{groupQuaternionicMorphism}
+and $S^{4n-1}$ as a subset of $\HH^n$, in which case the right action is once again given by coordinate-wise multiplication . The relevant ingredients of these principal bundles are its smooth projection map that respects the $Sp(1)$ action $\tilde \pi: S^{4n-1} \to \HH P^{n-1}$ equal to the resctriction of the quotient map $p: \HH^n \to \HH P^{n-1}$ to $S^{4n-1}$, the local sections
+\begin{eqnsplit}
+    \sigma_k: U_k \subset \HH P^{n-1} &\to S^{4n-1}\\
+      [q^1, \dots, q^n] &\mapsto \frac{(q^1, \dots, q^n) |q^k|/q^k}{\sqrt{|q^1|^2 + \cdots + |q^n|^2}}.
+\end{eqnsplit} and its transition functions
+The transition functions $g_{ij}: U_i \inter U_j \to Sp(1)$ for $i, j \in \set{1, 2}$ 
+\begin{equation}
+    g_{ji}([q^1, \dots, q^{n}]) = \frac{q^j / |q^j|}{q^i / |q^i|}.
+\end{equation}
+
+When $n = 2$ we recall from equation (\ref{diffProjFtoS}) that $\HH P^1 \cong S^4$, and since the Lie group $Sp(1)$ is diffeomorphic to $S^3$
+\footnote{The Lie algebras may give a straightforward proof}
+, the \lbtext{quaternionic Hopf bundle} is the induced $S^3$-principal bundle $S^3 \hookrightarrow S^7 \to S^4$ with projection map $\pi := F^{-1} \circ \tilde \pi: S^7 \to S^4$.
+
+\lin
+
+Up to isomorphism of principal bundles, the $S^1$-principal bundles over $S^2$ are in bijective correspondence with $\ZZ$. Since we know an atlas of $S^2$ with only two neighborhooods, $U_S$ and $U_N$, each of these bundles is completely determined \ref{} by its transition function $g_{NS}: U_{SN} \to S^1$. More precisely, the non-homotopic equivalent functions indexed by $k \in ZZ$ 
+\begin{eqnsplit}
+    g^k_{NS}: U_{NS} &\subset S^2 \to S^1\\
+    E(\phi, \theta) &\mapsto e^{i k \theta}
+\end{eqnsplit} determine a different $S^1$-principal bundle over $S^2$ \ref{}.
+
+Let $P^k$ be the $S^1$-principal bundle over $S^2$ determined by the transition function $g^k_{NS}$; as implied by equation (\ref{transFunHopfS3}), the complex Hopf bundle corresponds to the index $k = 1$. A proof Reconstruction Theorem \ref{} shows that $P^k$ can be defined by
+\begin{align*}
+    P^k := \left( \bigsqcup_{l \in {N, S}} U_i \times S^1 \right) \Bigg/ \sim \quad \ni [E(\phi, \theta), e^{i\theta}, l]
+\end{align*} where the equivalence relation $\sim$ is defined, for any $E(\phi, \theta) \in S^2$ and $e^{i\alpha_N}, e^{i\alpha_N} \in S^1$, by
+\begin{align*}
+    (E(\phi, \theta), e^{i \alpha_N}, N) \sim (E(\phi, \theta), e^{i \alpha_S}, S)
+    &\Longleftrightarrow e^{i\alpha_N} = g^k_{NS}(E(\phi, \theta)) e^{i \alpha_S} \\
+    &\Longleftrightarrow \alpha_N \equiv \alpha_S + k\theta \,(\text{mod } 2\pi),
+\end{align*} and the right group action by
+\begin{equation*}
+    [m, g, l] g' := [m, gg', l]
+\end{equation*} for all $m \in S^2$, $g, g' \in S^1$ and $l \in {S, N}$.
+
+ The regular atlas of $S^2$ can be used to define local sections for these principal bundles:
+\begin{eqnsplit}
+    \sigma_S^k: U_S &\to P^k \\
+    E(\phi, \theta) &\mapsto [E(\phi, \theta), 1, S] = [E(\phi, \theta), e^{i k \theta}, N]
+\end{eqnsplit} and
+\begin{eqnsplit}
+    \sigma_N^k: U_N &\to P^k \\
+    E(\phi, \theta) &\mapsto [E(\phi, \theta), 1, N] = [E(\phi, \theta), e^{-i k \theta}, S];
+\end{eqnsplit} notice that it is indeed satisfied the relation
+\begin{align*}
+    \sigma^k_N(E(\phi, \theta)) g^k_{NS}(E(\phi, \theta)) = \sigma^k_S(E(\phi, \theta)).
+\end{align*}
+
+\subsubsection{The Atiyah Lie Algebroid Sequences}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We saw in \ref{} that to every principal bundle $G \hookrightarrow P \to M$ there is an associated Atiyah sequence of transitive Lie algebroids $0 \to P \times \alg g / G \to TP/G \to TM \to 0$. Furthermore, Theorem \ref{} states that local trivializations of $P$ and $M$ induce local trivializations of the Lie algebroids $P \times \alg g/G$ and $TP/G$. Hence, we may give a full description of the Atiyah sequence associated to the principal bundles
+    \begin{itemize}
+    
+    \item Complex Hopf bundle, as $S^1 \hookrightarrow S^3 \to S^2$ and as $S^1 \hookrightarrow S^3 \to \CC P^1$
+    
+    \item One generalization (which I'll probably ignore): the principal bundles $S^1 \hookrightarrow S^{2n - 1} \to \CC P^{n-1}$
+    
+    \item Another generalization: the principal bundles $S^1 \hookrightarrow P^k \to S^2$
+    
+    \item Quaternionic Hopf bundle, as $Sp(1) \hookrightarrow S^7 \to S^4$ and as $Sp(1) \hookrightarrow S^7 \to \HH P^1$
+    
+    \item One generalization (which I'll probably ignore): the principal bundles $Sp(1) \hookrightarrow S^{4n - 1} \to \HH P^{n-1}$
+    
+    \item Another generalization: the principal bundles $Sp(1) \hookrightarrow P^k \to S^4$
+    
+    \end{itemize} 
+by studying the local trivializations induced by the principal bundle trivialization. In the case of the complex Hopf bundle we can give a partial global description thanks to the local frames $\set{\partial_\phi, \partial_\theta}$ of $TS^2$ and $\set{\partial_\phi, \partial_{\xi^1}, \partial_{\xi^2}}$ of $TS^3$.
+
+\lin 
+
+The Lie algebra of the Lie group $S^1$ is $i\RR \subset \CC$, which can be easily seen since every element of $g \in S^1$ may be written as $g = e^{i r}$ for some $r \in \RR$. A basis of this algebra is simply $\set{i} \subset i\RR$, with only one element and so the Lie bracket is trivially $0$. $S^1$ can be canonically identified with $U(1)$, so its Lie algebra can be seen \dbtext{embedded} in the associative matrix Lie algebra $iM_1(\RR) \subset M_1(\CC)$, so the adjoint action of any $g \in U(1)$, $Ad_g: iM_1(\RR) \to iM_1(\RR)$, is simply given by the matrix multiplication $(ir) \mapsto g(ir)g^{-1}$, but $M_1(\CC)$ is a commutative algebra, implying that \[Ad_g = Id : i\RR \to i\RR\] for any $g \in S^1$.
+
+\lin
+
+To understand the Lie algebra associated to our second family of principal bundles, we first study the space $Im \HH := \{x i + y j + z k \st (x, y, z) \in \RR^3 \} \subset \HH$, whose elements we denote, by abuse of notation, $\vec x := x i + y j + z k \in Im \HH \cong \RR^3$. The product of two elements $\vec x, \vec y$ of this subspace of the associative normed algebra $\HH$ is 
+\begin{align*}
+    \vec x \vec y &= \frac{1}{2}(\vec x \vec y - \vec y \vec x) - \frac{1}{2}(\vec x \vec y + \vec y \vec x) \\
+    &= \vec x \times \vec y - \vec x \cdot \vec y \in \HH
+\end{align*} where the $\times$ and $\cdot$ operations are the cross product and dot product of the corresponding vectors in $\RR^3$. The induced commutator is, then,
+\begin{align}
+    [\vec x, \vec y] = 2 (\vec x \times \vec y) \in Im \HH,
+\end{align} showing that $Im \HH$ is a real Lie algebra, which has as basis $\{i, j, k\}$ that satisfy the commutation relations
+\begin{align}
+    [i, j] = 2k && [j, k] = 2i && [k, i] = 2i. 
+\end{align} Every element $q \in \HH$ can be written as \ref{}
+\begin{align*}
+    q &= e^{x^ 0 + x^1 i + x^2 j + x^3 k} & \text{for some } x^0 \in \RR, \vec x = (x^1, x^2, x^3) \in \RR^3 \\
+     &= e^{x^0} e^{x^1 i + x^2 j + x^3 k}\\
+     &= e^{x^0} \left( \cos |\vec x|  + \hat x \sin|\vec x| \right) \in \HH
+\end{align*}
+where $\hat x \in \HH$, by abuse of notation, denotes the quaternion $\hat x = \frac{x^1 i + x^2 j + x^3 k}{\sqrt{(x^0)^2} + (x^1)^2 + (x^3)^2}$ associated to the unitary $\RR$ vector $\hat x = \frac{\vec x}{||\vec x||}$, its conjugate is
+\begin{align*}
+    \conj{q} = e^{x^ 0 - x^1 i - x^2 j - x^3 k},
+\end{align*}
+its norm is
+\begin{align*}
+    |q| &= \sqrt{q \conj{q}} \\
+     &=e^{x^0}
+\end{align*}
+and its inverse is
+\begin{align*}
+    q^{-1} = \conj{q}/|q|^2.
+\end{align*} 
+From all of this it is easy to see that \otext{the unitary quaternions, which coincide as a set with $S^3 \subset \HH \equiv \RR^4$, are a smooth Lie group whose real Lie algebra is $Im \HH$}. Now, recall that the real Lie algebra $\alg{su}(2)$ of $SU(2)$ of anti-hermitian matrices is generated by the basis $\set{u_1, u_2, u_3} \subset \alg{su(2)}$ where $u_i = i \sigma_i$, $i = 1, 2, 3$ and
+\begin{align}
+    \sigma_1 = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} && \sigma_2 = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix} && \sigma_1 = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix},
+\end{align} where this basis satisfy the bracket in $\alg{su}(2)$ is determined by the relations
+\begin{align}
+    [u_1, u_2] = 2u_3 && [u_2, u_3] = 2u_1 && [u_3, u_1] = 2u_2. 
+\end{align} Therefore, we now easily see that the real Lie algebra isomorphism
+% \begin{equation}
+% \begin{tikzcd}
+%     Im \HH \arrow{r}{\cong} & \alg{su}(2) \\
+%     i \arrow[mapsto]{r} & i\sigma_1 \\
+%     j \arrow[mapsto]{r} & i\sigma_2 \\
+%     k \arrow[mapsto]{r} & i\sigma_3 \\
+%     \vec x \arrow[mapsto]{r} & \vec x \cdot \vec \sigma = \begin{pmatrix} x^3 & x^1 -i x^2  \\ x^1 + ix^2  & -x^3\end{pmatrix}
+% \end{tikzcd}
+% \end{equation} 
+\begin{eqnsplit}
+    Im \HH \overset{\cong}{\longrightarrow}& \alg{su}(2) \\
+    i \longmapsto & i\sigma_1 \\
+    j \longmapsto & i\sigma_2 \\
+    k \longmapsto & i\sigma_3 \\
+    \vec x \longmapsto & \vec x \cdot \vec \sigma = \begin{pmatrix} x^3 & x^1 -i x^2  \\ x^1 + ix^2  & -x^3\end{pmatrix}
+\end{eqnsplit}
+where $\vec \sigma$ is notation for $x^1 \sigma_1 + x^2 \sigma_2 + x^3 \sigma_3$, induces the isomorphism of simply-connected smooth Lie groups
+\begin{eqnsplit}
+    S^3 \equiv \HH^* \overset{\cong}{\longrightarrow} & Sp(1) \equiv SU(2) \\
+    e^{x^1 i + x^2 j + x^3 k} \longmapsto & e^{i(x^1 \sigma_1 + x^2 \sigma_2 + x^3 \sigma_3)},
+\end{eqnsplit}
+
+Finally, for every $e^{\vec x} = \cos |\vec x| + \hat x \sin |\vec x|  \in \HH^*$ the adjoint action 
+\begin{eqnsplit}
+    Ad_{e^{\vec x}}: Im \HH &\to Im \HH\\
+     \vec y &\mapsto e^{\vec x} \, \vec y \, e^{-\vec x} = R_{\hat x, |\vec x|}(\vec y)
+\end{eqnsplit}
+is the rotation operation in $\RR^3$ with respect to the axis $\hat x$ of $|\vec x|$ radians.
+
+
+\rtext{For any transitive Lie algebroid sequence $0 \to L \xrightarrow{j} A \xrightarrow{a} \to TM \to 0 $, a complete description of the Lie algebroid is achieved only with knowledge of an open cover $\set{I_i}_{i \in I}$ from a transitive Lie algebroid atlas %$\{U_i, \psi_i:U_i \times \alg g \to L|_{U_i}, \Theta^i: TU_i \to A|_{U_i}\}_{i \in I}$, 
+and from knowledge of the local version of maps that allow a change of local trivialization $\alpha^i_j$ and $\chi^i_j$} since in each trivializing neighborhood the transitive Lie algebroid can be studied as a trivial Lie algebroid%, and so only pasting information, for both the vertical and horizontal parts, is necessary.
+ and so the change of coordinate formula \ref{changeCoordinatesAlgebroid} allows the transition between trivializations.
+
+\rtext{For the principal bundles we have been working with, the open cover $\set{U_S, U_N}$ trivializes both the base space $S^n$ and the principal bundles, so we get a full description of the transitive Lie algebroids by describing exactly two maps: $\alpha^N_S$ and $\chi^N_S$}.
+
+\linea 
+
+The Lie algebra of the fiber group $S^1$ is $1$ dimensional, so the only Lie algebra automorphism of $i\RR$ is the identity map, hence 
+\begin{equation}
+    \alpha^N_S = Id = \alpha_N^S,
+\end{equation} either the identity of $U_{SN} \times i\RR$ or the identity of $C^\infty(U_{SN}, i\RR)$ depending on whether we are dealing with pointwise information of with sections of the vector bundles.
+
+
+\[j\cl{[p, e^{i \alpha}, N], ir} \mapsto \cl{\frac{d}{dt}|_{t=0} [p, e^{i\alpha}e^{-irt}, N]}\]
+
+$x: V \subset \RR^2 \to U_{CS} \subset S^2$ can be any coordinate map that exists in a neighborhood of the point $x(x^1, x^2) \in U_{SN}$. $\Psi^k_N: V \times \RR \to P^k$ is a the manifold trivialization of $P^k$ $(x^1, x^2, r) \mapsto \sigma_N(x(x^1, x^2))e^{ir}$.
+
+\begin{align*}
+    \nabla_S(\partial_{x^i}|_{x(x^1, x^2)}) &= \cl{\der{t}[t = 0] \sigma_S(x(x^{i} + t, x^{\overline{i}})), 1, S} \\
+        &= \cl{ \der{t}[t = 0] [x(x^{i} + t, x^{\overline{i}}),  1, S] } \\
+        &= \cl{ \der{t}[t = 0] [x(x^{i} + t, x^{\overline{i}}),  e^{i \theta(x^{i} + t, x^{\overline{i}})}, N] }\\
+        &= \Psi^k_N  (x^{i} + t, x^{\overline{i}},  \theta(x^{i} + t, x^{\overline{i}})
+\end{align*}
+
+\begin{align*}
+    \nabla_N(\partial_{x^i}|_{x(x^1, x^2)}) &= \cl{\der{t}[t = 0] \sigma_N(x(x^{i} + t, x^{\overline{i}})), 1, N} \\
+        &= \cl{ \der{t}[t = 0] [x(x^{i} + t, x^{\overline{i}}),  1, N] }\\
+        &= \Psi^k_N  (x^{i} + t, x^{\overline{i}}, 0)
+\end{align*}
+
+Thinking of $\theta$ as a function in $C^\infty(U_{SN})$
+\begin{align*}
+    \nabla_N(\partial_{x^i}|_{x(x^1, x^2)}) - \nabla_S(\partial_{x^i}|_{x(x^1, x^2)}) &=
+        \cl{\der{t}[t = 0] \Psi^k_N(  (x^{i} + t, x^{\overline{i}},  i \theta(x^{i} + t, x^{\overline{i}})) - (x^{i} + t, x^{\overline{i}}, 0) + (x^{i}, x^{\overline{i}}, 0) ) } \\
+        &= \cl{\der{t}[t = 0] \Psi^k_N(  x^{i}, x^{\overline{i}}, \theta(x^{i} + t, x^{\overline{i}} ))}\\
+        &= \cl{\der{t}[t = 0] \Psi^k_N(  x^{i}, x^{\overline{i}},  \theta(x^{i}, x^{\overline{i}}) +  tk \partial_i|_{x(x^{i}, x^{\overline{i}})} \theta(x^{i}, x^{\overline{i}})) }\\
+        &= \cl{\der{t}[t = 0] \Psi^k_N(  x^{i}, x^{\overline{i}}, tk \partial_i|_{x^{i}, x^{\overline{i}}} \theta(x^{i}, x^{\overline{i}}) }\\ %Si no hubiera quitado esto entonces tendria una parte constante que haria que la ultima linea de esta derivacion no tuviera un 1... pero en este caso no es importante
+        &= \cl{ \der{t}[t = 0] [x(x^{i}, x^{\overline{i}}), e^{ikt \partial_i|_{x^{i}, x^{\overline{i}}} \theta(x^{i}, x^{\overline{i}})}, N] } \\
+        &= j\cl{ [x(x^{i}, x^{\overline{i}}), 1, N], -ikt \partial_{x^1}|_{x(x^{i}, x^{\overline{i}})} \theta }
+\end{align*}
+
+In conclusion
+\begin{align*}
+    l^N_S(\partial_{x^i}) &= j^{-1}( \nabla_N(\partial_{x^i}|_{x(x^1, x^2)}) - \nabla_S(\partial_{x^i}|_{x(x^1, x^2)}) ) \\
+    &= \cl{ [x(x^{i}, x^{\overline{i}}), 1, N], -ikt \partial_{x^1} \theta }
+\end{align*}
+
+And so, since the adjoint action on $i\RR$ is the identity, $P^k \times i\RR/S^1$ is canonically isomorphic to $S^2 \times i\RR$ through the projection $\pi: P^k \to S^2$ (\dbtext{adjoint bundle paralelizable}):
+\begin{eqnsplit}
+    \chi^N_S(\partial_{x^i}) &= \psi_N^{-1}(l^N_S(\partial_{x^i})) \\
+    &= -ikt \partial_{x^i} \theta \in C^\infty(U_{SN})
+\end{eqnsplit}
+
+\begin{eqnsplit}
+    \chi^N_S : \Gamma_{U_{CS}}(TS^2) &\to C^\infty(U_{SN}) (= \Omega^1_{NS}(TS^2, S^2 \times i\RR) = \Omega^1(TU_{SN}, U_{SN}\times i\RR)\\
+            &= -ik d\theta... WAIT!\\% I COULD HAVE DEDUCED THIS USING THE (\phi, \theta) charts!!
+    \chi^S_N = id d\theta % This is straighforward only because psi_N and psi_S are both trivial
+\end{eqnsplit}
+
+In the explicit case in which $x: U_S \to S^2$ and $y: U_N \to S^2$ from \ref{} the explicit formulas are:
+\begin{todo}
+
+\end{todo}
+
+This allows us to conclude that the change of coordinate maps between local trivializations of the Atiyah Lie algebroid bundles over $S^2$ are
+\begin{align}
+    s^N_S(X \oplus \stilde \eta) &= X \oplus (\stilde \eta - ik d\theta(X))\\
+    s^S_N(X \oplus \stilde \eta) &= X \oplus (\stilde \eta + ik d\theta(X))
+\end{align}
+where $k \in \ZZ$ indexes all possible principal $S^1$-bundles over $S^2$. In particular, 
+\begin{align*}
+    s^S_N(\partial_\theta) = \partial_\theta + ik
+\end{align*} 
+is the only element of the frame that changes forms.
+
+\linea
+
+In $U_S$ we have the following local frame of the Atiyah Lie algebroid $TP^k/S^1$:
+\begin{align*}
+    \set{\partial_{x^1}, \partial_{x^2}, i} \subset \Gamma(TU_S) \oplus C^\infty(U_S)
+\end{align*}
+considering $i$ as a function $C^\infty(S^2)$ which restricts to $C^\infty(U_S) \subset \Gamma(TU_S) \oplus C^\infty(U_S)$; in $U_N$ we have the following local frame of the Atiyah Lie algebroid $TP^k/S^1$:
+\begin{align*}
+    \set{\partial_{y^1}, \partial_{y^2}, i} \subset \Gamma(TU_S) \oplus C^\infty(U_S)
+\end{align*}; finally, in $U_{SN} = U_S \inter U_N$ we may use the three local frames
+\begin{align*}
+    &\set{\partial_{x^1}, \partial_{x^2}, i} \subset \Gamma(TU_S) \oplus C^\infty(U_S) \\
+    &\set{\partial_{y^1}, \partial_{y^2}, i} \subset \Gamma(TU_N) \oplus C^\infty(U_N) \\
+    &\set{\partial_\phi, \partial_\theta, i}\subset \Gamma(TU_{SN}) \oplus C^\infty(U_{SN})
+\end{align*}
+
+\linea 
+
+Notice that the local frame \rtext{$\{\partial_\phi, \partial_{\xi^1}, \partial_{\xi^2}\} \in \Gamma_{\mathcal U_C}(TS^3)$ is made of $S^1$-invariant vector fields, making up a local frame of $TS^3/S^1$: 
+\[
+    \{\underline{\partial_\phi}, \underline{\partial_{\xi^1}}, \underline{\partial_{\xi^2}}\} \in \Gamma_{U_C}(TS^3/S^1)
+\] }
+
+Having the local frame allows to express a section with functions of $S^2$ as components. \rtext{ A \dbtext{global} section may be expressed as:
+\begin{align*}
+    \oid X^\phi(\phi, \theta) \underline{\partial_{\phi}} +  \oid X^{\xi^1}(\phi, \theta) \underline{\partial_{\xi^1}} + \oid X^{\xi^2}(\phi, \theta) \underline{\partial_{\xi^2}}
+\end{align*}
+for $\oid X^\phi, \oid X^{\xi^1}, \oid X^{\xi^2} \in C^\infty(S^2)$ ALL OF $S^2$} \dbtext{using all of $S^2$ should guarantee that }
+
+
+Although in general the adjoing bundle will be studied as $C^\infty_{G}(P)$ for a general principal bundle, since in our case the adjoint bundle is \dbtext{paralelizable} with global frame $i \in C^\infty(S^2, i\RR) \cong \Gamma_{U_C}(S^3 \times i\RR / S^1)$, \rtext{a global section of the adjoint bundle $S^3 \times i\RR / S^1$ may be expressed as
+\begin{align}
+    r(\phi, \theta)i
+\end{align} 
+} with $r(\phi, \theta) \in C^\infty(S^2)$, \rtext{hence the adjoint bundle of the Atiyah Lie algebroid of the complex Hopf bundle will be studied throuth the module $C^\infty(S^2, i\RR)$}. The precise isomorphism:
+\begin{eqnsplit}
+    C^\infty(S^2) &\mapsto C_{S^1}^\infty(S^3) \\
+    f &\mapsto f \circ \pi
+\end{eqnsplit}
+
+\linea
+
+The following is a intuitive, global description of the Atiyah Lie algebroid $TS^3/S^1$ associated to the complex Hopf bundle, which can only be applied to $U_C = U_S \inter U_N = S^2 - \set{(0, 0, -1), (0, 0, 1)}$. \ptext{We will ignore adding to each map an indication that it is the restriction of the original map to $U_C$}.
+
+\begin{align*}
+    \sigma_S : U_C &\to S^3 &       E(\phi, \theta) &\mapsto Tor(\phi, \theta, 0) = (\cos \frac{\phi}{2} e^{i \theta}, \sin \frac{\phi}{2} )\\
+    \sigma_N : U_C &\to S^3 &       E(\phi, \theta) &\mapsto Tor(\phi, 0, -\theta) = (\cos \frac{\phi}{2} , \sin \frac{\phi}{2} e^{-i \theta})
+\end{align*}
+
+Straightforward to calculate the pushforwards:
+\begin{align*}
+    \sigma_{S*} : \Gamma_{U_C}(TS^2) &\to \Gamma_{\mathcal U_C}(TS^3) & \partial_\phi &\mapsto \partial_\phi & \partial_\theta &\mapsto \partial_{\xi^1}   \\
+    \sigma_{N*} : \Gamma_{U_C}(TS^2) &\to \Gamma(TS^3)_{\mathcal U_C} & \partial_\phi &\mapsto \partial_\phi & \partial_\theta &\mapsto -\partial_{\xi^2}      
+\end{align*}
+
+which means that through the map \ref{} they correspond to sections $\Gamma_{U_C}(TS^3/S^1)$, therefore the local flat connections are:
+\begin{align}
+    \nabla_{S} : \Gamma_{U_C}(TS^2) &\to \Gamma_{U_C}(TS^3/S^1) & \partial_\phi &\mapsto \underline{\partial_\phi} & \partial_\theta &\mapsto \underline{\partial_{\xi^1}}   \\
+    \nabla_{N} : \Gamma_{U_C}(TS^2) &\to \Gamma_{U_C}(TS^3/S^1) & \partial_\phi &\mapsto \underline{\partial_\phi} & \partial_\theta &\mapsto -\underline{\partial_{\xi^2}}
+\end{align}
+
+Useful when we change ford of local trivialization
+\begin{align*}
+    S^S_N(\partial_\phi) &= \partial_\phi &  S^S_N(\partial_\theta) &= \partial_\theta + i & S^S_N(i) &= i
+\end{align*}
+
+\lin 
+
+For the vertical maps:
+
+First. Pointwise:
+\begin{align*}
+    j(i) &= \cl{\der{t}[t = 0] Tor(\phi, \xi^1, \xi^2) e^{-it} }\\
+        &= \cl{\der{t}[t=0] T(\phi, \xi^1 - t, \xi^2 - t)} \\
+        &= \cl{T_{*, (\phi, \xi^1, \xi^2)}(0, -1, -1)} \\
+        &= \cl{T_{*, (\phi, \xi^1, \xi^2)}(0, -1, 0) + T_{*, (\phi, \xi^1, \xi^2)}(0, 0, -1)} \\
+        &= \cl{\der{t}[t=0] T(\phi, \xi^1 - t, \xi^2) + \der{t}[t=0] T(\phi, \xi^1, \xi^2 - t)}\\
+        &= \cl{-\partial_{\xi^1| T(\phi, \xi^1, \xi^2)} - \partial_{\xi^2|  T(\phi, \xi^1, \xi^2)}}\\
+        &= - \underline{\partial_{\xi^1}}_{|E(\phi, \theta)} - \underline{\partial_{\xi^2}}_{|E(\phi, \theta)}
+\end{align*}
+
+So the Lie algebra and $C^\infty(S^2)$ $j$, when restricted to $U_C$
+\begin{align}
+    j: C^\infty(U_C, i\RR) &\to \Gamma_{U_C}(TS^3/S^1) & i &\mapsto -(\underline{\partial_{\xi^1}} + \underline{\partial_{\xi^2}}) \\ 
+    && if(\phi, \theta) &\mapsto -f(\phi, \theta)(\underline{\partial_{\xi^1}} + \underline{\partial_{\xi^2}})
+\end{align}
+
+\begin{align*}
+    \psi_S &: C^\infty(U_C, i\RR) \to \Gamma_U(S^3 \times i\RR / S^1) \cong C^\infty(U_C, i\RR)\\
+        &= Id \\
+    \psi_N &= 
+\end{align*}
+
+\begin{eqnsplit}
+    j \psi_S = j \psi_N : C^\infty({U_C}, i\RR) &\to \Gamma_{U_C}(TS^3/S^1) \\
+    if &\mapsto -f (\underline{\partial_{\xi^1}} + \underline{\partial_{\xi^2}})
+\end{eqnsplit}
+
+
+All of this summarizes into
+\begin{eqnsplit}
+    S_S: \Gamma_{U_C}(TS^2) \oplus C^\infty(U_C, i\RR) &\to \Gamma(TS^3/S^1) \\
+         X^\phi(\phi, \theta) \partial_\phi + X^{\theta}(\phi, \theta) \partial_{\theta} + if(\phi, \theta) 
+         &\to X^\phi \underline{\partial_{\phi}} + X^\theta \underline{\partial_{\xi^1}} - f(\underline{\partial_{\xi^1}} + \underline{\partial_{\xi^2}})
+\end{eqnsplit}
+
+\begin{eqnsplit}
+    S_N: \Gamma_{U_C}(TS^2) \oplus C^\infty(U_C, i\RR) &\to \Gamma(TS^3/S^1) \\
+         X^\phi(\phi, \theta) \partial_\phi + X^{\theta}(\phi, \theta) \partial_{\theta} + if(\phi, \theta) 
+         &\to X^\phi \underline{\partial_{\phi}} - X^\theta \underline{\partial_{\xi^2}} - f(\underline{\partial_{\xi^1}} + \underline{\partial_{\xi^2}})
+\end{eqnsplit}
+
+Since we are using local frames on both sides, we may write
+\begin{equation}
+    [S_S]_{(\partial_\phi, \partial_\theta, i)}^{(\underline{\partial_\phi}, \underline{\partial_{\xi^1}}, \underline{\partial_{\xi^2}})}
+    = 
+    \begin{pmatrix}
+    1 & 0 & 0 \\
+    0 & 1 & -1 \\
+    0 & 0 & -1
+    \end{pmatrix}
+    = [S^{-1}_S]^{(\partial_\phi, \partial_\theta, i)}_{(\underline{\partial_\phi}, \underline{\partial_{\xi^1}}, \underline{\partial_{\xi^2}})}
+\end{equation}
+
+Which means (good to have as reference for later)
+
+{\color{red}
+\begin{align*}
+    S_S(\partial_\phi) &=  \underline{\partial_\phi} 
+    & \underline{\partial_\phi} &= S_S(\partial_\phi)\\
+    S_S(\partial_\theta) &= \underline{\partial_{\xi^1}} 
+    & \underline{\partial_{\xi^1}} &= S_S(\partial_\theta) \\
+    S_S(i) &= -\underline{\partial_{\xi^1}} - \underline{\partial_\xi^2}
+    & \underline{\partial_{\xi^2}} &= S_S(- \partial_\theta - i)
+\end{align*}
+}
+
+Similarly
+{\color{red}
+\begin{align*}
+    S_N(\partial_\phi) &=  \underline{\partial_\phi} 
+    & \underline{\partial_\phi} &= S_N(\partial_\phi)\\
+    S_N(\partial_\theta) &= -\underline{\partial_{\xi^2}} 
+    & \underline{\partial_{\xi^1}} &= S_N(\partial_\theta - i) \\
+    S_N(i) &= -\underline{\partial_{\xi^1}} - \underline{\partial_\xi^2}
+    & \underline{\partial_{\xi^2}} &= S_N(- \partial_\theta)
+\end{align*}
+}
 
 \section{More Basic Definitions about Lie Algebroids}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1235,7 +1727,7 @@ A sequence of a transitive Lie algebroid $A$ induces the exact sequence of $C^\i
     \label{moduleTransitiveSequence}
     0 \xrightarrow{j} \Gamma(L) \to  \Gamma(A) \xrightarrow{a} \Gamma(TM) \to 0.
 \end{equation}
- When doing computations, it will be important to have in mind this sequences, perhaps replacing some of the elements by isomorphic ones, like we did in the Atiyah sequence of a principal bundle \ref{AtiyahSeq}.
+ When doing computations, it will be important to have in mind this sequences, perhaps replacing some of the elements by isomorphic ones, like we did in the Atiyah sequence of a principal bundle \ref{definitionAtiyahSequencePrincipalBundleVectorBundle}.
 \end{remark}
 
 \begin{example}
