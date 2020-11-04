@@ -137,6 +137,7 @@ Do they give rise to good ``covariant derivatives''? (In associated bundles) \re
 \subsection{Decomposition of a Generalized Connection and its Curvature}
 }
 
+{ \color{gray}
 What we really want: 
 matter fields 
 on which groups acts <- “local” gauge transformation associated to a group: Representation v. bundles of a transitive Lie algebroid $A ~ TM x \alg g$
@@ -336,8 +337,9 @@ Takeaway: even though I lose the view of connections as a notion of horizontalit
         \end{itemize}
     
     \end{itemize}
+}
 
-\section{Connections on Transitive Lie Algebroids}    
+\section{Connections on Transitive Lie Algebroids}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -360,7 +362,7 @@ Let $\nabla:TM \to A$ be an ordinary connection on $A$. There is a unique $L$-va
 \begin{equation} \label{equationRelationNablaOmegaOfOrdinaryConnection}
     \nabla_X = \sectoid X + j \comp \omega(\sectoid X),
 \end{equation}
-for all $\oid X \in A$ with $X = a(\oid X)$. In particular, this form is \textit{normalize}, meaning that
+for all $\oid X \in A$ with $X = a(\oid X)$. In particular, this form is \textit{normalized}, meaning that
 \begin{equation}\label{equationNormalizedOneFormOrdinaryConnectionOnTransitiveAlgebroid}
     \omega \circ j = - 1_{L};
 \end{equation}
@@ -428,7 +430,7 @@ The $G$-invariance of the horizontal lift implies that it induces a well defined
     \nabla: TM &\to TP/G \\
     X &\mapsto \cl{\tilde \nabla^p_X} = \cl{H(\ppal X)},
 \end{eqnsplit}
-where $p$ is any element in the fiber of $\pi(X) \in M$ and $\ppal X$ is any tangent vector of $P$ such that $\pi_*(\ppal X) = x$; furthermore, $\nabla$ is a section of the anchor $\pi_*^G$ of the Atiyah Lie algebroid $TP/G$, meaning that $\nabla$ is an ordinary connection on the Atiyah Lie algebroid associated to the principal bundle $P$. Notice that $\nabla$ can be seen as a horizontal lift where the horizontal subbundle of $TP/G$ is the class of $HP$ under the group action; furthermore, this horizontal lift is simpler to use since it is globally defined as a vector bundle morphism, and no specification of a $p \in P$ is need. 
+where $p$ is any element in the fiber of $\pi(X) \in M$ and $\ppal X$ is any tangent vector of $P$ such that $\pi_*(\ppal X) = x$; furthermore, $\nabla$ is a section of the anchor $\pi_*^G$ of the Atiyah Lie algebroid $TP/G$, meaning that $\nabla$ is an ordinary connection on the Atiyah Lie algebroid associated to the principal bundle $P$. Notice that $\nabla$ can be seen as a horizontal lift where the horizontal subbundle of $TP/G$ is the class of $HP$ under the group action; furthermore, this horizontal lift is simpler to use since it is globally defined as a vector bundle morphism, and no specification of a $p \in P$ is needed. 
 
 Similary, the $G$-equivariance of $w$ implies that it induces a well defined element of $\Omega^1(TP/G, P \times \alg g/G)$:
 \begin{eqnsplit}
@@ -476,7 +478,7 @@ If $\ppal X$ is any element in $T_p P$ such that $\pi_*(\ppal X) = X$ it is then
 \end{eqnsplit}
 where the underline is the $C^\infty(M)$-module isomorphism $:C^\infty_G(P, V) \to \Gamma(E)$, inverse to the tilde map. 
 
-This connection on $E$ has a simple rewriting in the language of Lie algebroids. First recall that the map $\mu \mapsto \underline{\ppal X (\tilde{\mu}}$ is precisely $\phi(\ppal X) \in \alg D(E)$ where 
+This connection on $E$ has a simple rewriting in the language of Lie algebroids. First recall that the map $\mu \mapsto \underline{\ppal X (\tilde{\mu}})$ is precisely $\phi(\cl{\ppal X}) \in \alg D(E)$ where 
 \begin{equation}
     \phi: TP/G \to \alg D(E)
 \end{equation} 
@@ -491,14 +493,68 @@ since $\cl{H(\ppal X)} \equiv \nabla_{\pi^*_G\cl{\ppal X}}$. Notice, however, th
 Let $E$ be a vector bundle over $M$ and let $\phi: A \to \alg D(E)$ be a representation of $A$. Given an ordinary connection $\nabla: TM \to A$ on $A$, $\nabla^E: TM \to \alg D(E)$, $\nabla^E := \phi \circ \nabla$ is an ordinary connection on $\alg D(E)$ called \emph{the produced connection on $E$ induced by $\phi$ and $\nabla$}.
 \end{definition}
 
-Using the notation of the previous definition, and recalling that for a representation $\phi$ of a transitive Lie algebroid sequence $L \to A \to M$, $\phi \circ j$ is denoted by $\phi_L$, the equation $\nabla_X = \oid X - j \circ \omega(\oid X)$ relating $\nabla$ and its associated normalized $1$-form $\omega$ allows us to rewrite the produced connection on $E$ as
-\begin{equation}\label{equationInducedProducedConnectionByNormalizedOrdinaryLieAlgebroidConnectionInTermsOfForm}
-    \nabla^E_X = \phi(\oid X) - \phi_L \circ \omega(\oid X),
+Using the notation of the previous definition, and recalling that for a representation $\phi$ of a transitive Lie algebroid sequence $L \to A \to M$, $\phi \circ j$ is denoted by $\phi_L$, the equation $\nabla_X = \oid X - j \circ \omega(\oid X)$ relating $\nabla$ and its associated normalized connection $1$-form $\omega$ allows us to rewrite the produced connection on $E$ as
+\begin{equation}\label{equationInducedProducedConnectionByNormalizedOrdinaryLieAlgebroidConnectionInTermsOfFormAssociatedRepresentationVector}
+    \nabla^E_X = \phi(\oid X) - \phi_L \circ \omega(\oid X)
 \end{equation}
 for any $\oid X \in TP/G$ such that $\pi_*^G(\oid X) = X$. Then, 
 \begin{equation}
-    \phi_L \circ \omega \in \Omega^1(TP/G, \End(E))
+    \phi_L \circ \omega \in \Omega^1(A, \End(E))
 \end{equation} 
-is a $1$-form associated to the ordinary connection $\nabla^E$; notice that the equation \eqref{equationInducedProducedConnectionByNormalizedOrdinaryLieAlgebroidConnectionInTermsOfForm} is well defined precisely because $\omega$ is normalized, since then the right hand sides vanishes when $\oid X \in Im(j)$. Shortly we will relax the normalization condition on transitive Lie algebroids when defining connections, in which case the ``covariant derivatives'' that will be induced on representation vector bundles will be changed by the notion of $A$-connections on $E$, which will be defined on section \ref{}.
+is a $1$-form associated to the ordinary connection $\nabla^E$; notice that the equation \eqref{equationInducedProducedConnectionByNormalizedOrdinaryLieAlgebroidConnectionInTermsOfFormAssociatedRepresentationVector} is well defined for $X$ precisely because $\omega$ is normalized, since then the right hand sides vanishes when $\oid X \in Im(j)$. We will now relax the normalization condition on transitive Lie algebroids when defining connections, in which case the ``covariant derivatives'' that will be induced on vector bundles will be taken in any direction $\oid X \in A$; these are called $A$-connections on $E$ and will be defined in chapter \ref{}.
 
+\linea
 
+\begin{definition}\label{definitionGeneralizedConnectionFOrmOnTransitiveLieAlgebroidAndTauReducedKernelEndomorphism}
+Given a transitive Lie algebroid sequence $L \hookrightarrow A \twoheadrightarrow TM$ for the transitive Lie algebroid $A$, any $L$-valued $1$-form $\hat \omega \in \Omega^1(A, L)$ is called \emph{a (generalized) connection form on $A$}. Given $\hat \omega$, define \emph{the reduced kernel endomorphism $\tau \in End(L)$} by
+\begin{equation}
+    \tau := \omega \comp j + 1_L.
+\end{equation}
+\end{definition}
+
+Notice that, although changing the chosen adjoint Lie algebroid $L$ changes the strict definition of what the connection forms on $A$ are, since every adjoint Lie algebroid is isomorphic to $ker(a)$ the distinction is not important, it is just a matter of choice of which adjoint Lie algebroid to work with. Also notice that a connection form on $A$ is ordinary, i.e. $\hat \omega$ is normalized, if and only if $\tau = 0$.
+
+\begin{proposition}
+Let $\hat \omega$ be a connection form on $A$. Then 
+\begin{equation}\label{equationRelationBetweenGeneralizedConnectionFOrmAndGeneralizedNablaHatTransitive}
+    \hat \nabla_{\oid X} := \oid X + \hat \omega \comp j(\oid X)
+\end{equation}
+is an anchor preserving vector bundle morphism. Conversely, any such map defines a generalized connection form $\hat \omega$ related to $\hat \nabla$ by the above equation. Furthermore, $\hat \nabla$ is associated to an ordinary connection on $A$ if and only if $\hat \nabla \comp j = 0$, in which case $\nabla_X := \hat \nabla_{\oid X} + j \comp \hat \omega(\oid X)$ is well defined and an ordinary connection.
+\end{proposition}
+
+\begin{proof}
+The equivalence between $\hat \omega$ and $\hat \nabla$ is clear from equation \eqref{equationRelationBetweenGeneralizedConnectionFOrmAndGeneralizedNablaHatTransitive}, since $j$, being injective, has a left inverse.
+
+If $\hat \omega$ is an ordinary connection form, then $\hat \omega \comp j = -1_L$, hence, for any $l \in L$ $\hat \nabla(j(l)) = j(l) + j \comp \hat \omega \comp j(l) = j(l) + j(-l) = 0$. Conversely, if $\hat \theta \comp j= 0$, then for any $\oid X_1, \oid X_2 \in A$ such that $a(\oid X_1) = a(\oid X_2) = X$ it is true that $\hat \nabla_{\oid X_1} = \hat \nabla_{\oid X_2}$ and so the map $\nabla_X := \hat \nabla_{\oid X_1}$ is well defined for all $X \in TM$; since $a(\nabla_X) = a(\hat \nabla_{\oid X_1}) = X$, $\nabla$ is an ordinary connection on $A$.
+\end{proof}
+
+\begin{remark}
+Just as in the case of an Atiyah Lie algebroid shown in example \ref{}, an ordinary connection $\nabla$ on $A$ is equivalent to the definition of a subbundle $Im(\nabla)$ on $A$, called \emph{the horizontal subbundle}, that is isomorphic to $TM$ and that defines an isomorphism $A \cong TM \oplus L$; in that case the associated $\hat \nabla: A \to A$ is the projection onto this subbundle and $\hat \nabla^2 = \hat \nabla$. With the generalized connections on $A$ such an equivalent definition in terms of a horizontal subbundle is lost. However, a formula analogous to \eqref{equationInducedProducedConnectionByNormalizedOrdinaryLieAlgebroidConnectionInTermsOfFormAssociatedRepresentationVector} will still allow the definition of ``covariant derivatives'' on representation vector bundles $E$ as we will see in section \ref{}; furthermore, the additional directions will give rise to a coupling of the matter fields, i.e. sections of $E$, with new fields that enable the appearance of new mass terms in the Lagrangian of a gauge theory based on transitive Lie algebroids.
+
+If we were to desire for $\hat \nabla$ to be a projection onto a subbundle, i.e. that $\hat \nabla^2 = \hat \nabla$, from equation \eqref{equationInducedProducedConnectionByNormalizedOrdinaryLieAlgebroidConnectionInTermsOfFormAssociatedRepresentationVector} it follows that a necessary and sufficient condition is 
+\begin{equation}\label{equationEquivalentNecessarySufficientGeneralizedConnectionBeDefineHorizontalProjectionSubbundle}
+    \omega \comp j|_{Im(\hat \omega)} = - 1_{Im(\hat \omega)}.
+\end{equation}
+For example, $\hat \omega = 0$ is a generalized connection form on $A$ and $\hat \nabla = 1_A$, so $\hat \nabla^2 = \hat \nabla$ trivially, and the induced ``horizontal'' subbundle of $A$ is $A$ itself.
+\end{remark}
+
+The following proposition allows us to obtain an ordinary connection from a generalized connection, if we posses a ``background'' ordinary connection.
+
+\begin{proposition}
+Let $\hat \omega$ be a connection form on $A$ with reduced kernel endomorphism $\tau$, and let $\tilde \omega$ be an ordinary connection form on $A$. Then,
+\begin{equation}
+    \omega = \hat \omega + \tau \circ \tilde \omega
+\end{equation}
+is an ordinary connection form on $A$.
+\end{proposition}
+\begin{proof}
+We see that $\omega$ is normalized from:
+\begin{align*}
+    \omega \circ j &= \hat \omega \circ j + \tau \circ \tilde \omega \circ j\\
+        &= (\tau - 1_L) + \tau \circ (-1_L) \\
+        &= -1_L;
+\end{align*}
+the second line follows from the definition of $\tau$ and the normalization of $\tilde \omega$.
+\end{proof}
+
+\linea
