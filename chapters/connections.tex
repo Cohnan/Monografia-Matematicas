@@ -176,101 +176,128 @@ Takeaway: even though I lose the view of connections as a notion of horizontalit
     
         \begin{itemize}
         
-        \item Theorem: Ordinary connection as normalized $1$-form
+        \item Definition: Lie algebroid connection: section
         
+        \item Theorem: Ordinary connection as normalized $1$-form
+            
             \begin{itemize}
+    
+            \item Example: Principal bundle connection.
             
-            \item Example: gauge fields
+            \item Example: GENERALIZES: Covariant Derivatives of Vector Bundles
             
-            \item Example: form: principal bundle connections. Induced in associated v. bundles.
+                \begin{itemize}
+                    
+                \item A + representation -> Induced Covariant Derivative
+                
+                \item Associated $\Omega^1(TM, End(E))$ form.
+                
+                Gauge fields (See Bleecker or Naber for precise definitions)
+                    
+                \end{itemize}
             
             \end{itemize}
         
-        \item Definition: Generalized connection on Transitive $A$
+        \item Definition: Generalized connection on Transitive $A$. Definition $\tau$.
         
-        \item Local trivialization: $A - \epsilon + \tau$
+        \item Proposition: Generalized connection equivalent to $\hat \Theta$ $C^\infty$ that respects the anchor. 
+        
+        \item Ordinary connection IFF $\hat \Theta \comp j = 0$. If that is the case, then $\hat \theta^2 = \hat \theta$ is the horizontal projection of the horizontal lift $\nabla$.
+        
+        From the properties $\nabla$ horizontal lift, $\hat \omega$ vertical projection onto horizontal and vertical subbundles of $A$. We lose the intuition of horizontality, but we will still have a generalized notion of covariant derivatives which will give rise to the additional field that may couple with the gauge fields and the matter to give them mass. If it were desired, $\hat \theta$ is still a projection iff $\hat \omega \circ j|_{Im \hat \,\omega} = - 1|_{Im \, \hat \omega}$, e.g. $\hat \omega = 0$, then $\tau = -1_L$ and $\hat \Theta$ is a projection onto all of $A$.
+        
+        Still valid interpretation: gauge potential, given of gauge fields that fix ``local'' gauge invariance.
+        
+        \item Ordinary connection from background connection
+            
+        \item Curvature    
+            
+            \begin{itemize}
+                
+            \item Nabla version
+            
+            \item Form version
+            
+            \item If ordinary connection, we can recover usual notion of curvature (of ppal bundle connection): nabla version
+            
+            \item Bianchi? Only for ordinary? ``HOmogeneous field equation''
+                
+            \end{itemize}
+            
+        \item Algebraic curvature of $\tau$
+        
+        \item Decomposition given background connection
+        
+        \end{itemize}
+        
+    \item Local Trivializations of Generalized Connections on $A$
+    
+        \begin{itemize}
+            
+        \item Local trivialization of connection: $A - \epsilon + \tau$
         
             \begin{itemize}
                 
             \item Change of coordinates
                 
             \end{itemize}
+        
+        \item \textbf{Mixed local basis}
+        
+        \item Local trivialization of curvature given background connection.
             
-        \item Curvature    
+        \end{itemize}
+        
+        
+    \item EXAMPLES:
+    
+        \begin{itemize}
             
+        \item Complex Hopf
+        
+            \begin{itemize}
+            \item Monopole connection, local trivializations 
+            \end{itemize}
+        
+        \item $P^k$ over $S^2$
+        
             \begin{itemize}
                 
-            \item Mention nabla version
+            \item Monopole connection. Different unit magnetic charge? In the north looks like so...
             
-            \item Remark form version
+            \item More general connection from $U_S$: completely arbitrary phi and theta components \& $x^1 x^2$ components
+
+            \item It transforms like so: in phi theta to phi theta; in x to y.
             
-            \item Bianchi? Only for ordinary? ``HOmogeneous field equation''
+            \item \lbtext{Nablas in local trivialization associated to general connection}
+
+            \end{itemize}
+            
+        \item Quaternonic Hopf
+        
+            \begin{itemize}
+            
+            \item Instanton connection, local trivializations / it transforms like so
+
+            \item More general ordinary connection from local trivialization in $U_S$. It transforms like so in x to y coordinates.
+
+            \end{itemize}
+        
+        \item $P^k$ over $S^4$
+        
+            \begin{itemize}
+            
+            \item Instanton connection in $U_S$. Local trivialization in $U_N$
+            
+            \item Nablas in local trivialization associated to general connection
                 
             \end{itemize}
         
         \end{itemize}
         
-        \item EXAMPLES:
-        
-            \begin{itemize}
-                
-            \item Complex Hopf
-            
-                \begin{itemize}
-                \item Monopole connection, local trivializations 
-                \end{itemize}
-            
-            \item $P^k$ over $S^2$
-            
-                \begin{itemize}
-                    
-                \item Monopole connection. Different unit magnetic charge? In the north looks like so...
-                
-                \item More general connection from $U_S$: completely arbitrary phi and theta components & $x^1 x^2$ components
-
-                \item It transforms like so: in phi theta to phi theta; in x to y.
-                
-                \item \lbtext{Nablas in local trivialization associated to general connection}
-
-                \end{itemize}
-                
-            \item Quaternonic Hopf
-            
-                \begin{itemize}
-                
-                \item Instanton connection, local trivializations / it transforms like so
-
-                \item More general ordinary connection from local trivialization in $U_S$. It transforms like so in x to y coordinates.
-
-                \end{itemize}
-            
-            \item $P^k$ over $S^4$
-            
-                \begin{itemize}
-                
-                \item Instanton connection in $U_S$. Local trivialization in $U_N$
-                
-                \item Nablas in local trivialization associated to general connection
-                    
-                \end{itemize}
-            
-            \end{itemize}
-        
     \item A-Connections on E
     
         \begin{itemize}
-            
-        \item Definition: Lie algebroid connection: section
-            
-            \begin{itemize}
-    
-            \item Example: Principal bundle connection
-            
-            \item Example: GENERALIZES: Covariant Derivatives of Vector Bundles
-            
-                - A + representation -> Induced Derivative
-        
-            \end{itemize}
             
         \item Definition: $A$-Connection on $E$: Generalized covariant derivative
         
@@ -280,7 +307,7 @@ Takeaway: even though I lose the view of connections as a notion of horizontalit
         
         \item Theorem: If representation. $A$-connection on $E$ <-> $1$-form $\Omega^1(A, End(E))$
         
-        \item Theorem: Induced $A$-connections
+        \item Theorem: Induced $A$-connections from generalized connections on $A$ (and representation) 2
         
         \item Local trivializations
         
@@ -309,3 +336,60 @@ Takeaway: even though I lose the view of connections as a notion of horizontalit
         \end{itemize}
     
     \end{itemize}
+
+\section{Connections on Transitive Lie Algebroids}    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Throughout this section consider $A$ to be a transitive Lie algebroid over the manifold $M$, and $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ be a Lie algebroid sequence of $A$; suppose all the vector bundles on this section have vector spaces over $\bb K$ as typical fibers, where $\bb K$ is one of $\RR$ or $\CC$.
+
+\begin{definition}
+\emph{An ordinary connection on $A$} is a right splitting $\nabla: TM \to A$ (i.e. a section of $a$) as vector bundles of the short exact sequence
+\begin{equation}\label{equationDefinitionConnectionRightSplittingNablaSectionAnchorShortExactSequence}
+    \begin{tikzcd}
+    0 \arrow{r} & L \arrow{r}{j} & A \arrow{r}{a} & TM \arrow{r} \arrow[bend left]{l}{\nabla} & 0.
+    \end{tikzcd}
+\end{equation}
+For any $X \in TM$, the application of the connection is written as $\nabla_X \in A$.
+\end{definition}
+
+\begin{theorem}
+Let $\nabla:TM \to A$ be an ordinary connection on $A$. It has associated a unique $L$-valued, surjective one form $\omega \in \Omega^1(A, L)$ such that
+\begin{equation} \label{equationRelationNablaOmegaOfOrdinaryConnection}
+    \nabla_X = \sectoid X + j \comp \omega(\sectoid X),
+\end{equation}
+for all $\oid X \in A$ with $X = a(\oid X)$. In particular,
+\begin{equation}\label{equationNormalizedOneFormOrdinaryConnectionOnTransitiveAlgebroid}
+    \omega \circ j = - 1_{L};
+\end{equation}
+that is, $-\omega$ is a left splitting (i.e. a retract of $j$) of \eqref{equationDefinitionConnectionRightSplittingNablaSectionAnchorShortExactSequence} as a short exact sequence of vector bundles.
+\end{theorem}
+
+\begin{proof}
+For any $\oid X \in A$, with $X = a(\oid X)$, $a(\nabla_X - \oid X) \in ker(a)$, so we can define the one form 
+\begin{equation}\label{equationPreciseDefinitionOrdinaryConnectionFormUnique}
+    \omega(\oid X) := j^{-1}(\nabla_X - \oid X);
+\end{equation}
+since the Lie algebra bundle morphism $j$ is injective, this $\omega$ is the only vector bundle morphism that satisfies \eqref{equationRelationNablaOmegaOfOrdinaryConnection}.
+
+For any $l \in L$, $\omega(j(l)) = j^{-1}(- j(l)) = - j \comp j^{-1}(l) = -1$, proving the first equation, and therefore the surjectivity of $\omega$.
+\end{proof}
+
+
+\begin{theorem}
+On the transitive Lie algebroid $A$ there is at least one ordinary connection.
+\end{theorem}
+\begin{proof}
+This is simply a restatement of the known fact that the short exact sequence \eqref{equationDefinitionConnectionRightSplittingNablaSectionAnchorShortExactSequence} in the category of vector bundles is split, which is equivalent to the statement that \begin{equation}
+    A \cong TM \oplus L
+\end{equation}
+as vector bundles. To prove this last fact, we follow a standard partition of unity argument: let $\{U_\alpha\}$ be an open cover that trivializes $TM$, $L$ and $A$ simultaneously; then, on each $U \in \{U_\alpha\}$, there is a vector bundle isomorphism $f_\alpha: A|_U \to TM|_U \oplus L|U$. Now take a partition of unity $\{\rho_\alpha:U_\alpha \to [0,1]\}$ subordinate to it; then $\sum_\alpha \rho_\alpha f_\alpha : A \to TM \oplus L$ is a vector bundle isomorphism.
+
+%Although we may now see this to be true thanks to the existence of a Lie algebroid atlas for $0 \to L \to A \to a \to a$ stated in theorem \ref{algebroidAtlasExists}, recall that the proof of that statement was not within the scope of this text. 
+\end{proof}
+
+\begin{example}
+Let $G \to P \to M$ be a principal bundle over the manifold $M$ with structure Lie group $G$. On a principal bundle the notion of connection has multiple statements, including 
+\end{example}

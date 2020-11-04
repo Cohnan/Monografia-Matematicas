@@ -405,7 +405,7 @@ where $\omega_m(X_m) \cdot \,$ denotes the multiplication by $\omega_m(X_m) \in 
     \end{tikzcd}
 \end{equation*}
 This diagram implies that $\alg D(E)$ can be regarded as a vector subbundle of $\Diff^1(E)$ since the left vertical arrow must be an injective immersion, and $a: \alg D(E) \to TM$ is a surjective vector bundle map since the bottom arrow is so. This means that we have an exact sequence of vector bundles over $M$
-\begin{align}
+\begin{align}\label{equationTransitiveLieAlgebroidSequenceDerivationsEndomorphism}
         0 \rightarrow \End(E) \rightarrow \alg D(E) \xrightarrow{a} TM \rightarrow 0
 \end{align}
 
@@ -1394,9 +1394,9 @@ Any $LAB$ is a totally intransitive Lie algebroid, but the converse is not true 
 
 Transitive Lie algebroids will be a main concern for us throughout this document. In this case, since the anchor is fiberwise surjective,\todo{is this a satisfactory reason?} it is a surjective submersion, and, in particular, it is locally constant rank implying that $ker(a)$ is a vector bundle, so Theorem \ref{theoFiberLie} may be applied to conclude that its kernel is a Lie algebroid. However, more is true, as shown below.
 
-\begin{definition}\label{transitiveSequence}
+\begin{definition}\label{definitionTransitiveLieAlgebroidSequenceLiealgebroidsequenceofatransitiveliealgebroidA}
 Let $A$ be a transitive Lie algebroid on $M$ with anchor $a$. A \emph{Lie algebroid sequence of a transitive Lie algebroid $A$} is an exact sequence of Atiyah Lie algebroids
-\begin{align}
+\begin{align}\
     0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0
 \end{align}
 where $L$ is a Lie algebroid isomorphic to $ker(a)$ by a Lie algebroid morphism $j:L \to ker(a) \subset A$. The lie algebroid $L$ is called an \emph{adjoint Lie algebroid of/to (the transitive Lie algebroid) A}\todo{to? Same for the one defined in the Atiyah sequence}.
