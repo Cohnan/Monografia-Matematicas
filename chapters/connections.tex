@@ -506,7 +506,8 @@ is a $1$-form associated to the ordinary connection $\nabla^E$; notice that the 
 \linea
 
 \begin{definition}\label{definitionGeneralizedConnectionFOrmOnTransitiveLieAlgebroidAndTauReducedKernelEndomorphism}
-Given a transitive Lie algebroid sequence $L \hookrightarrow A \twoheadrightarrow TM$ for the transitive Lie algebroid $A$, any $L$-valued $1$-form $\hat \omega \in \Omega^1(A, L)$ is called \emph{a (generalized) connection form on $A$}. Given $\hat \omega$, define \emph{the reduced kernel endomorphism $\tau \in End(L)$} by
+Given a transitive Lie algebroid sequence $L \hookrightarrow A \twoheadrightarrow TM$ for the transitive Lie algebroid $A$, any $L$-valued $1$-form $\hat \omega \in \Omega^1(A, L)$ is called \emph{a (generalized) connection form on $A$}. Given $\hat \omega$, define \emph{the reduced kernel endomorphism $\tau \in End(L) = \Omega^1(L, L)$} ($L$ represented on itself through the bracket, i.e. the restriction to $L$ of the adjoint representation $ad:A \to \alg D(L)$) 
+ by
 \begin{equation}
     \tau := \omega \comp j + 1_L.
 \end{equation}
@@ -558,3 +559,37 @@ the second line follows from the definition of $\tau$ and the normalization of $
 \end{proof}
 
 \linea
+
+\begin{definition}
+Let $\hat \omega$ be a connection form on $A$. \emph{The curvature form of $\hat \omega$} is the $L$-valued form $\hat R$
+\begin{equation}
+    \hat R := \hat d \hat \omega + \frac{1}{2} \hat \omega \wedge^{[,]} \hat \omega \in \Omega^2(A, L),
+\end{equation}
+where $\wedge^{[,]}$ is the wedge product in the Lie-graded differential Lie algebra $(\Omega^\bullet(A, L), \wedge^{[, ]}, \hat d)$ defined in \ref{definitionWedgeProductAlgebraEvaluedwithEValued}; i.e. for any $\oid X, \oid Y \in \Gamma(A)$
+\begin{equation}
+    \hat R(\oid X, \oid Y) = \hat d \hat \omega (\oid X, \oid Y) + [\hat \omega(\oid X), \hat \omega(\oid Y)].
+\end{equation}
+
+\emph{The algebraic curvature of the reduced kernel endormorphism} $\tau \in End(L)$ of $\hat \omega$ is
+\begin{equation}
+    R_\tau(\eta, \theta) := [\tau(\eta), \tau(\theta)] - \tau[\eta, \theta]. 
+\end{equation}
+\end{definition}
+
+\begin{proposition}
+Let $\hat \omega$ be a connection form on $A$ with reduced kernel endomorphism $\tau$. Then the curvature $2$-form of $\hat \omega$ can be expressed as
+\begin{equation}
+    \hat R(\oid X, \oid Y) = j^{-1}([\hat \nabla_{\oid X}, \hat \nabla_{\oid Y}] - [\hat \nabla_{\oid X}, \hat \nabla_{\oid Y}]),
+\end{equation}
+for all $\oid X, \oid Y \in \Gamma(A)$.
+\end{proposition}
+
+\begin{remark}
+From the previous proposition we see that the connection induced by $\hat \omega$ is flat, i.e. has $0$ curvature, if and only if the endomorphism $\hat \nabla: A \to A$ is a Lie algebra bundle morphism, i.e. $\hat \nabla$ is a Lie algebroid morphism. Similarly, $\tau$ is flat, i.e. its algebraic curvature is $0$ if and only if the endomorphism $\tau: L \to L$ is a Lie algebra bundle morphism. 
+\end{remark}
+
+If $\hat \omega$ is an ordinary connection form, then $j^* \hat R = 0$ since $hat \nabla \comp j = 0$, and so it the curvature $2$-form $\hat R$ defines an element $R \in \Omega^2(TM, L)$ called \emph{the curvature of the ordinary connection on $A$}. When $\hat \omega$ is an ordinary connection on $A = TP/G$ for some $G \to P \to M$ principal bundle, then $R \in \Omega^2(TM, P \times \alg g/G)$ is the form that corresponds to the basic\footnote{} $2$-form that is usually defined to be the curvature of the connection on $P$; when $\hat \omega$ is an ordinary connection on $A = \alg D(E)$ for some vector bundle $E$ over $M$, $R \in \Omega^2(TM, End(E))$ is precesily what is called the curvature of the corresponding connection on $E$.
+
+\begin{definition}
+Let $\hat \omega$ be an connection form on $A$, let $\tilde \omega$ be an ordinary connection and call it a background connection. Then
+\end{definition}
