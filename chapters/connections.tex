@@ -398,8 +398,8 @@ as vector bundles, where $\nabla: TM \to A$ is then an embedding and $\omega: A 
 %Although we may now see this to be true thanks to the existence of a Lie algebroid atlas for $0 \to L \to A \to a \to a$ stated in theorem \ref{algebroidAtlasExists}, recall that the proof of that statement was not within the scope of this text. 
 \end{proof}
 
-\begin{example}
-Let $G \to P \xrightarrow{\pi} M$ be a principal bundle over the manifold $M$ with structure Lie group $G$, with $\alg g = Lie(G)$. On a principal bundle the notion of connection has multiple equivalent definitions, including:
+\begin{example}\label{example}
+The following example shows how \textbf{the generalized notion of an ordinary connection on a transitive Lie algebroid coincides with that of connection on a principal bundle, when the transitive Lie algebroid in question is the Atiyah Lie algebroid associated to the principal bundle}. Let $G \to P \xrightarrow{\pi} M$ be a principal bundle over the manifold $M$ with structure Lie group $G$, with $\alg g = Lie(G)$. On a principal bundle the notion of connection has multiple equivalent definitions, including:
     \begin{itemize}
     
     \item A $G$-invariant subbundle $HP$ of $TP$ (under the pushforward of the right action $R$ of $G$ on $P$), called the \textit{horizontal subbundle}, such that $TP = HP \oplus VP$ where $VP = ker(\pi_*)$. 
@@ -426,9 +426,11 @@ Both $H$ and $V$ are indeed projections since $H^2 = H$ and $V^2 = V$, and so an
 The $G$-invariance of the horizontal lift implies that it induces a well defined vector bundle map
 \begin{eqnsplit}
     \nabla: TM &\to TP/G \\
-    X &\mapsto \cl{\tilde \nabla^p_X},
+    X &\mapsto \cl{\tilde \nabla^p_X} = \cl{H(\ppal X)},
 \end{eqnsplit}
-where $p$ is any element in the fiber of $\pi(X) \in M$; furthermore, $\nabla$ is a section of the anchor $\pi_*^G$ of the Atiyah Lie algebroid $TP/G$, meaning that $\nabla$ is an ordinary connection on the Atiyah Lie algebroid associated to the principal bundle $P$. Similary, the $G$-equivariance of $w$ implies that it induces a well defined element of $\Omega^1(TP/G, P \times \alg g/G)$:
+where $p$ is any element in the fiber of $\pi(X) \in M$ and $\ppal X$ is any tangent vector of $P$ such that $\pi_*(\ppal X) = x$; furthermore, $\nabla$ is a section of the anchor $\pi_*^G$ of the Atiyah Lie algebroid $TP/G$, meaning that $\nabla$ is an ordinary connection on the Atiyah Lie algebroid associated to the principal bundle $P$. Notice that $\nabla$ can be seen as a horizontal lift where the horizontal subbundle of $TP/G$ is the class of $HP$ under the group action; furthermore, this horizontal lift is simpler to use since it is globally defined as a vector bundle morphism, and no specification of a $p \in P$ is need. 
+
+Similary, the $G$-equivariance of $w$ implies that it induces a well defined element of $\Omega^1(TP/G, P \times \alg g/G)$:
 \begin{eqnsplit}
     \omega: TP/G &\to P \times \alg g/G \\
         \cl{\ppal X} &\mapsto \cl{w(\ppal X)};
@@ -441,9 +443,62 @@ the normalization condition of $\omega$ is then simply a restatement of the cond
         &= \cl{ \tilde \nabla^p_X + w(\ppal X)^*_p}\\
         &= \cl{\ppal X} & \text{decomposition  \eqref{equationDecompositionTangentElementOfTPVerticalHorizontalDirectSumSubbundles}};
 \end{align*}
-hence, the ordinary connection $\nabla$ on $TP/G$ is associated, as specified by theorem \ref{theoremOrdinaryConnectionEquialenceRelatoinNablasandNormalizedForms} to the normalized $1$-form $\omega$.
+hence, the ordinary connection $\nabla$ on $TP/G$ is associated, as specified by theorem \ref{theoremOrdinaryConnectionEquialenceRelatoinNablasandNormalizedForms}, to the normalized $1$-form $\omega$.
 \end{example}
 
 \begin{example}
+Let $E$ be a vector bundle over $M$. We will now see how the notion of connection on $E$, also called a covariant derivative on $E$, coincides with that of ordinary connection on the transitive Lie algebroid $\alg D(E)$ with associated sequence $0 \to End(E) \to \alg D(E) \to TM \to 0$. A connection on the vector bundle $E$ is an $\bb K$-linear map
+\begin{eqnsplit}
+    \nabla^E: \Gamma(E) &\to \Omega^1(TM, E)
+\end{eqnsplit}
+such that, for all $X \in TM$, $\mu \in \Gamma(E)$ and $f \in C^\infty(M)$, the following Leibniz rule is satisfied:
+\begin{equation}
+    \nabla^E_X \mu (f \mu) = X(f) \mu + f \nabla^E_X \mu.
+\end{equation}
 
+Notice that we may reorder the different components entering the connection to rewrite
+%may restate this definition using the vector bundle $\alg D(E)$ whose sections are the derivations of $E$; in that case, we can say instead that $\nabla$ is a connection on the vector bundle $E$ if and only if it is a vector bundle map
+$\nabla$ as a vector bundle morphism
+\begin{eqnsplit}
+    \nabla^E : TM &\to \alg D(E)\\
+        X &\mapsto \nabla_X,
+\end{eqnsplit}
+since the Leibniz rule is what defines the elements of $\Gamma(\alg D(E))$ within the $\bb K$-linear maps $\Gamma(E) \to \Gamma(E)$; furthermore, this Leibniz rule shows that $a(\nabla_X) = X$, where $a$ is the anchor of $\alg D(E)$. The same arguments show that such an anchor preserving vector bundle morphism $:TM \to \alg D(E)$ defines a vector bundle connection of $E$. Hence, \textbf{ordinary connections of the transitive Lie algebroid $\alg D(E)$ and vector bundle connections of $E$ are the same notion}.
+
+Now, let $G \to P \to M$ be a principal bundle, and let us use the notation of the previous example. Suppose that $E$ is associated to $P$ and that it has the vector space $V$ as typical fiber. A connection on the principal bundle $P$ induces a connection on $E = P \times V / G$ as follows: let $X \in T_pM$ and let $\tilde \mu \in C_G^\infty(P, V)$ be the $G$-equivariant function associated to the section $\mu \in \Gamma(E)$; then define the connection $\nabla^E$ by
+\begin{eqnsplit}
+    \tilde{\nabla^E_X(\mu)}: p &\mapsto \tilde \nabla^p_X(\tilde \mu) \in C_G^\infty(P, V).
+\end{eqnsplit}
+If $\ppal X$ is any element in $T_p P$ such that $\pi_*(\ppal X) = X$ it is then true that
+\begin{eqnsplit}\label{equationsInducedConnectionCovariantDerivativeOnAssociatedVectorBundleByPrincipal}
+    \nabla^E_X : \mu \mapsto& \underline{H(\ppal X)(\tilde \mu)}\\
+    &= \underline{(\ppal X - V(\ppal X))(\Tilde{\mu})}
+\end{eqnsplit}
+where the underline is the $C^\infty(M)$-module isomorphism $:C^\infty_G(P, V) \to \Gamma(E)$, inverse to the tilde map. 
+
+This connection on $E$ has a simple rewriting in the language of Lie algebroids. First recall that the map $\mu \mapsto \underline{\ppal X (\tilde{\mu}}$ is precisely $\phi(\ppal X) \in \alg D(E)$ where 
+\begin{equation}
+    \phi: TP/G \to \alg D(E)
+\end{equation} 
+is the Lie algebroid representation of $TP/G$ in $E$ defined in \ref{example...}. Hence, we may rewrite the first equation in \eqref{equationsInducedConnectionCovariantDerivativeOnAssociatedVectorBundleByPrincipal} as the composition
+\begin{align}
+    \nabla^E : TM \xrightarrow{\nabla} A \xrightarrow{\phi} \alg D(E) && \nabla_X^E = \phi(\nabla_X)
+\end{align}
+since $\cl{H(\ppal X)} \equiv \nabla_{\pi^*_G\cl{\ppal X}}$. Notice, however, that other covariant derivatives on $E$ may be induced by an ordinary connection on $TP/G$ is another Lie algebroid representation $\phi$ is used. \textbf{In conclusion, the covariant derivative on vector bundles associated to principal bundles induced by principal bundle connections is an example of a $\alg D(E)$ ordinary connection induced by a Lie algebroid representation of $TP/G$ on $E$ and an ordinary connection on $TP/G$}.
 \end{example}
+
+\begin{definition}
+Let $E$ be a vector bundle over $M$ and let $\phi: A \to \alg D(E)$ be a representation of $A$. Given an ordinary connection $\nabla: TM \to A$ on $A$, $\nabla^E: TM \to \alg D(E)$, $\nabla^E := \phi \circ \nabla$ is an ordinary connection on $\alg D(E)$ called \emph{the produced connection on $E$ induced by $\phi$ and $\nabla$}.
+\end{definition}
+
+Using the notation of the previous definition, and recalling that for a representation $\phi$ of a transitive Lie algebroid sequence $L \to A \to M$, $\phi \circ j$ is denoted by $\phi_L$, the equation $\nabla_X = \oid X - j \circ \omega(\oid X)$ relating $\nabla$ and its associated normalized $1$-form $\omega$ allows us to rewrite the produced connection on $E$ as
+\begin{equation}\label{equationInducedProducedConnectionByNormalizedOrdinaryLieAlgebroidConnectionInTermsOfForm}
+    \nabla^E_X = \phi(\oid X) - \phi_L \circ \omega(\oid X),
+\end{equation}
+for any $\oid X \in TP/G$ such that $\pi_*^G(\oid X) = X$. Then, 
+\begin{equation}
+    \phi_L \circ \omega \in \Omega^1(TP/G, \End(E))
+\end{equation} 
+is a $1$-form associated to the ordinary connection $\nabla^E$; notice that the equation \eqref{equationInducedProducedConnectionByNormalizedOrdinaryLieAlgebroidConnectionInTermsOfForm} is well defined precisely because $\omega$ is normalized, since then the right hand sides vanishes when $\oid X \in Im(j)$. Shortly we will relax the normalization condition on transitive Lie algebroids when defining connections, in which case the ``covariant derivatives'' that will be induced on representation vector bundles will be changed by the notion of $A$-connections on $E$, which will be defined on section \ref{}.
+
+
