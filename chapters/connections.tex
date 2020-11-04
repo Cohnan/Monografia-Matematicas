@@ -355,16 +355,16 @@ Throughout this section consider $A$ to be a transitive Lie algebroid over the m
 For any $X \in TM$, the application of the connection is written as $\nabla_X \in A$.
 \end{definition}
 
-\begin{theorem}
-Let $\nabla:TM \to A$ be an ordinary connection on $A$. It has associated a unique $L$-valued, surjective one form $\omega \in \Omega^1(A, L)$ such that
+\begin{theorem}\label{theoremOrdinaryConnectionEquialenceRelatoinNablasandNormalizedForms}
+Let $\nabla:TM \to A$ be an ordinary connection on $A$. There is a unique $L$-valued, surjective $1$-form $\omega \in \Omega^1(A, L)$, called \textit{the connection form}, such that
 \begin{equation} \label{equationRelationNablaOmegaOfOrdinaryConnection}
     \nabla_X = \sectoid X + j \comp \omega(\sectoid X),
 \end{equation}
-for all $\oid X \in A$ with $X = a(\oid X)$. In particular,
+for all $\oid X \in A$ with $X = a(\oid X)$. In particular, this form is \textit{normalize}, meaning that
 \begin{equation}\label{equationNormalizedOneFormOrdinaryConnectionOnTransitiveAlgebroid}
     \omega \circ j = - 1_{L};
 \end{equation}
-that is, $-\omega$ is a left splitting (i.e. a retract of $j$) of \eqref{equationDefinitionConnectionRightSplittingNablaSectionAnchorShortExactSequence} as a short exact sequence of vector bundles.
+that is, $-\omega$ is a left splitting (i.e. a retract of $j$) of \eqref{equationDefinitionConnectionRightSplittingNablaSectionAnchorShortExactSequence} as a short exact sequence of vector bundles. Conversely, equation \eqref{equationRelationNablaOmegaOfOrdinaryConnection} defines an equivalence between normalized $L$-valued one forms and ordinary connections.
 \end{theorem}
 
 \begin{proof}
@@ -375,21 +375,75 @@ For any $\oid X \in A$, with $X = a(\oid X)$, $a(\nabla_X - \oid X) \in ker(a)$,
 since the Lie algebra bundle morphism $j$ is injective, this $\omega$ is the only vector bundle morphism that satisfies \eqref{equationRelationNablaOmegaOfOrdinaryConnection}.
 
 For any $l \in L$, $\omega(j(l)) = j^{-1}(- j(l)) = - j \comp j^{-1}(l) = -1$, proving the first equation, and therefore the surjectivity of $\omega$.
+
+Now, to see that equation \eqref{equationRelationNablaOmegaOfOrdinaryConnection} produces a well defined connection from the normalized $1$-form $\omega$, let $\oid X_1, \oid X_2 \in A$ be such that $a(\oid X_1) = a(\oid X_2) = X$. Since $a(\oid X_2 - \oid X_1) = 0$, let $l \in L$ be such that $j(l) = \oid X_2 - \oid X_1$; in fact, since $\omega$ is normalized, $l = -\omega(\oid X_2 - \oid X_1)$. Then $\nabla_X$ is well defined since
+\begin{align*}
+    \oid X_2 + j \comp \omega(\oid X_2) 
+        &= \oid X_1 + j(l) + j \comp \omega(\oid X_1 + j(l))\\
+        &= \oid X_1 + j \comp \omega(\oid X_1) + j(l) + j \comp w \comp j(l)\\
+        &= \oid X_1 + j \comp \omega(\oid X_1).
+\end{align*}
 \end{proof}
 
 
 \begin{theorem}
-On the transitive Lie algebroid $A$ there is at least one ordinary connection.
+On any transitive Lie algebroid there is at least one ordinary connection.
 \end{theorem}
 \begin{proof}
-This is simply a restatement of the known fact that the short exact sequence \eqref{equationDefinitionConnectionRightSplittingNablaSectionAnchorShortExactSequence} in the category of vector bundles is split, which is equivalent to the statement that \begin{equation}
+This is simply a restatement of the (standard) fact that the short exact sequence \eqref{equationDefinitionConnectionRightSplittingNablaSectionAnchorShortExactSequence} in the category of vector bundles is split, which is equivalent to the statement that \begin{equation}
     A \cong TM \oplus L
 \end{equation}
-as vector bundles. To prove this last fact, we follow a standard partition of unity argument: let $\{U_\alpha\}$ be an open cover that trivializes $TM$, $L$ and $A$ simultaneously; then, on each $U \in \{U_\alpha\}$, there is a vector bundle isomorphism $f_\alpha: A|_U \to TM|_U \oplus L|U$. Now take a partition of unity $\{\rho_\alpha:U_\alpha \to [0,1]\}$ subordinate to it; then $\sum_\alpha \rho_\alpha f_\alpha : A \to TM \oplus L$ is a vector bundle isomorphism.
+as vector bundles, where $\nabla: TM \to A$ is then an embedding and $\omega: A \to L$ a projection. To prove the last equation we follow a standard partition of unity argument: let $\{U_\alpha\}$ be an open cover that trivializes $TM$, $L$ and $A$ simultaneously; then, on each $U \in \{U_\alpha\}$, there is a vector bundle isomorphism $f_\alpha: A|_U \to TM|_U \oplus L|U$. Now take a partition of unity $\{\rho_\alpha:U_\alpha \to [0,1]\}$ subordinate to it; then $\sum_\alpha \rho_\alpha f_\alpha : A \to TM \oplus L$ is a vector bundle isomorphism.
 
 %Although we may now see this to be true thanks to the existence of a Lie algebroid atlas for $0 \to L \to A \to a \to a$ stated in theorem \ref{algebroidAtlasExists}, recall that the proof of that statement was not within the scope of this text. 
 \end{proof}
 
 \begin{example}
-Let $G \to P \to M$ be a principal bundle over the manifold $M$ with structure Lie group $G$. On a principal bundle the notion of connection has multiple statements, including 
+Let $G \to P \xrightarrow{\pi} M$ be a principal bundle over the manifold $M$ with structure Lie group $G$, with $\alg g = Lie(G)$. On a principal bundle the notion of connection has multiple equivalent definitions, including:
+    \begin{itemize}
+    
+    \item A $G$-invariant subbundle $HP$ of $TP$ (under the pushforward of the right action $R$ of $G$ on $P$), called the \textit{horizontal subbundle}, such that $TP = HP \oplus VP$ where $VP = ker(\pi_*)$. 
+    
+    \item A $G$-equivariant Lie algebra valued form $w: TP \to P \times \alg g$ such that $w(\eta^*) = \eta$ where $\eta^*$ is the fundamental vertical vector field associated to $\eta \in \alg g$.
+    
+    \end{itemize}
+    
+These two definitions are related to each other by $HP = ker(w)$. From the first definition it follows that for each $p \in P$ there is a section or $\pi_*$, called \textit{the horizontal lift} $\tilde \nabla^p: T_{\pi(p)}M \to H_pP \subset T_p P$ with the property that $\tilde \nabla ^{pg}_X = R_{g, *}(\tilde \nabla^p_X) \in T_{pg} P$ for all $g \in G$ and $X \in T_{\pi(p)}M$, and, hence, a $G$-equivariant \textit{horizontal projection} onto $HP$ 
+\begin{eqnsplit}
+H: T_pP &\to T_pP\\ 
+\ppal X &\mapsto \tilde \nabla^p_{\pi_*(\ppal X)} \in HP.
+\end{eqnsplit}
+From the second definition we can define the $G$-equivariant \textit{vertical projection} onto $VP$
+\begin{eqnsplit}
+    V: T_pP &\to T_pP\\ \ppal X &\mapsto w(\ppal X)^*_p \in VP.
+\end{eqnsplit}
+Both $H$ and $V$ are indeed projections since $H^2 = H$ and $V^2 = V$, and so any any $\ppal X \in T_p P$ with $\pi_*(\ppal X) = X$ can be decomposed as
+\begin{equation} \label{equationDecompositionTangentElementOfTPVerticalHorizontalDirectSumSubbundles}
+    \ppal X = \tilde \nabla^p_X \oplus w(\ppal X)^*_p \in HP \oplus VP.
+\end{equation}
+
+
+The $G$-invariance of the horizontal lift implies that it induces a well defined vector bundle map
+\begin{eqnsplit}
+    \nabla: TM &\to TP/G \\
+    X &\mapsto \cl{\tilde \nabla^p_X},
+\end{eqnsplit}
+where $p$ is any element in the fiber of $\pi(X) \in M$; furthermore, $\nabla$ is a section of the anchor $\pi_*^G$ of the Atiyah Lie algebroid $TP/G$, meaning that $\nabla$ is an ordinary connection on the Atiyah Lie algebroid associated to the principal bundle $P$. Similary, the $G$-equivariance of $w$ implies that it induces a well defined element of $\Omega^1(TP/G, P \times \alg g/G)$:
+\begin{eqnsplit}
+    \omega: TP/G &\to P \times \alg g/G \\
+        \cl{\ppal X} &\mapsto \cl{w(\ppal X)};
+\end{eqnsplit}
+the normalization condition of $\omega$ is then simply a restatement of the condition $w(\eta^*) = \eta$ where $\eta^*_p = \der{t}[t=0]{p \cdot \exp(t \eta)} = - \der{t}[t=0]{p \cdot \exp(-t \eta)}$ for all $\eta \in \alg g$. From the decomposition \eqref{equationDecompositionTangentElementOfTPVerticalHorizontalDirectSumSubbundles} of every $\ppal X \in T_pP$ it follows that
+\begin{align*}
+    \tilde \nabla_{X} - j \comp \omega(\cl{\ppal X}) 
+        &=  \cl{\tilde \nabla^p_X} - j\cl{w(\ppal X)} \\
+        &=  \cl{\tilde \nabla^p_X} - \cl{\der{t}[t=0]{\exp(-t w(\ppal X))}},& \text{definition of $j$} \\
+        &= \cl{ \tilde \nabla^p_X + w(\ppal X)^*_p}\\
+        &= \cl{\ppal X} & \text{decomposition  \eqref{equationDecompositionTangentElementOfTPVerticalHorizontalDirectSumSubbundles}};
+\end{align*}
+hence, the ordinary connection $\nabla$ on $TP/G$ is associated, as specified by theorem \ref{theoremOrdinaryConnectionEquialenceRelatoinNablasandNormalizedForms} to the normalized $1$-form $\omega$.
+\end{example}
+
+\begin{example}
+
 \end{example}
