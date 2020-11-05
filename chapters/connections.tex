@@ -641,7 +641,7 @@ Using the notation of the previous definition, the curvature form of the connect
 \begin{equation}
     \hat R = a^* \hat F - (a^* \mathcal D \tau)\comp \omega + \tilde \omega ^* R_\tau.
 \end{equation}
-This is called the \emphtext{decomposition of the curvature form of $\hat \omega$ given the background connection $\tilde \omega$}.
+This is called the \emph{decomposition of the curvature form of $\hat \omega$ given the background connection $\tilde \omega$}.
 \end{theorem}
 \begin{proof}
 TODO \todo{}.
@@ -659,21 +659,22 @@ TODO \todo{}.
 Throughout this section consider $A$ to be a transitive Lie algebroid over the manifold $M$, and $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ be a Lie algebroid sequence of $A$; suppose all the vector bundles on this section have vector spaces over $\bb K$ as typical fibers, where $\bb K$ is one of $\RR$ or $\CC$. Also, suppose that $\{\psi^i, \nabla^{0, i}\}_{i in I}$ is a transitive Lie algebroid atlas of $A$. Additionally, let $\hat \omega \in \Omega^1(A, L)$ be a connection for on $A$ with reduced kernel endomorphism $\tau \in \End(L)$; then, the local trivialization of $\hat \omega$ over $U_i$ is $\hat \omega_i \in \Omega^1()$. As usual with local trivializations, we prefer to adopt the module perspective.
 
 \begin{theorem}\label{theoremLocalTrivializationDecompositionGenralizedConnectionForm}
-On any $U_i$, $i \in I$, 
+Over any $U_i$, $i \in I$, the local trivialization of the connection form $\hat \omega$ may be decomposed as the following element of $\Omega^1(TU_i, U_i \times \alg g) \oplus_{C^\infty(U_i)} \Omega^1(U_i \times \alg g, U_i \times \alg g)$:
 \begin{eqnsplit}
-    \hat \omega_i =  A_i \oplus (- \epsilon + \tau_i) \quad\in &\Omega^1(TU_i \times \alg g, U_i \times \alg g) \\
-    &= \Omega^1(TU_i, U_i \times \alg g) \oplus_{C^\infty(U_i)} \Omega^1(U_i \times \alg g, U_i \times \alg g).
+    \hat \omega_i =  A_i \oplus (- \epsilon + \tau_i) %\quad\in &\Omega^1(TU_i \times \alg g, U_i \times \alg g)
 \end{eqnsplit}
 where 
     \begin{itemize}
     
     \item $\tau_i:= (\psi^i)^{-1} \comp \tau \comp \psi^i \in C^\infty(U_i, End(\alg g)) \cong \Omega^1(U_i \times \alg g, U_i \times \alg g)$ is called \emph{the local trivialization of $\tau$} over $U_i$.
     
-    \item $\epsilon = Id_L \in \Omega^1(U_i \times \alg g, U_i \times \alg g)$.
+    \item $\epsilon = Id_{C^\infty(U_i, U_i \times \alg g)} \in \Omega^1(U_i \times \alg g, U_i \times \alg g)$.
     
     \item $A_i= \psi_i^{-1} \comp \hat \omega \comp \nabla^{0, i} \in \Omega^1(TU_i, U_i \times \alg g)$ is called \emph{the local tangent connection form of $\hat \omega$}.
     
     \end{itemize}
+
+Furthermore, $A_i - \epsilon$ is an ordinary connection form on the trivial Lie algebroid $TU_i \times \alg g$, and $\omega_i$ is a generalized connection form on $TU_i\times \alg g$.
 \end{theorem}
 
 We may also write 
@@ -691,6 +692,8 @@ understanding $A$ as $A \comp pr_1$, where $pr_1: \Gamma(TU_i)\oplus C^\infty(U_
         &= A_i(X) - \eta + \psi_i^{-1} \comp \tau \comp psi_i(\eta) \\
         &= A_i(X) - \epsilon(\eta) + \tau_i(\eta).
 \end{align*}
+
+That $A_i - \epsilon$ is an ordinary connection follows simply from the fact that, for every $\eta \in C^\infty(U_i, \alg g)$, $(A_i - \epsilon)(\eta) = - \epsilon(\eta) = -\eta$. The last statement is a rewriting of $\hat \omega_i$ being a $1$-form.
 \end{proof}
 
 \begin{proposition}
@@ -711,15 +714,40 @@ Let $\hat \omega$ be a connection form on $A$ with local trivialization $\hat \o
     \end{itemize}
 \end{proposition}
 
-Notice that if $\hat \omega$ is an ordinary connection form, a family of local trivializations $\{\omega_i \in \Omega^1(TU_i \times \alg g, U_i \times \alg g)\}_{i \in I} $ of $\hat \omega$ is completely specified by its associated local tangent connection forms $\{A_i \in \Omega^1(TU_i, U_i \times \alg g)\}$, since then $\hat \omega_i = A_i - \epsilon$. Furthermore, notice that if $A$ is an Atiyah Lie algebroid associated to a principal bundle, the transformation law of the $A_i$'s is precisely that of the local connection $1$-forms of a principal connection \ref{}, hence the family $\{A_i\}_{i \in I}$ where the $A_i$'s transform as indicated in the previous proposition does specify a principal connection of $P$. In general, \textbf{a family \{A_i, \tau_i\}_{i \in I} with the transformation laws indicated above define a connection form on the transitive Lie algebroid $A$}.
+Notice that if $\hat \omega$ is an ordinary connection form, a family of local trivializations $\{\omega_i \in \Omega^1(TU_i \times \alg g, U_i \times \alg g)\}_{i \in I} $ of $\hat \omega$ is completely specified by its associated local tangent connection forms $\{A_i \in \Omega^1(TU_i, U_i \times \alg g)\}$, since then $\hat \omega_i = A_i - \epsilon$. Furthermore, notice that if $A$ is an Atiyah Lie algebroid associated to a principal bundle, the transformation law of the $A_i$'s is precisely that of the local connection $1$-forms of a principal connection \ref{}, hence the family $\{A_i\}_{i \in I}$ where the $A_i$'s transform as indicated in the previous proposition does specify a principal connection of $P$. In general, \textbf{a family $\{A_i, \tau_i\}_{i \in I}$ with the transformation laws indicated above define a connection form on the transitive Lie algebroid $A$}.
+
+\begin{definition}\label{definitionLocalTrivializationOfHatNablaEndormorphismAnchorPreservingGeneralizedConnection}
+Let $\hat \nabla \in End(A)$ be the anchor preserving endomorphism associated to the connection form $\hat \omega$. \emph{The local trivialization $\hat \nabla^i$ of $\hat \nabla$ over $U_i$} is the map
+\begin{eqnsplit}
+    \hat \nabla^i = S_i^{-1} \comp \hat \nabla \comp &= S_i \quad \in \, End(TU_i \times \alg g).
+\end{eqnsplit}
+
+If $\hat \omega$ is normalized, \emph{the local trivialization $\nabla^i$ over $U_i$} of the associated map $\nabla: TM \to A$ is
+\begin{eqnsplit}
+    \nabla^i = S_i^{-1} \comp \nabla  \quad : TU_i \to TU_i \times \alg g.
+\end{eqnsplit}
+\end{definition}
+
+For any $X \oplus \eta \in \Gamma(TU_i)\oplus C^\infty(U_i, \alg g)$, it follows from the definitions that
+\begin{eqnsplit}\label{equationLocalTrivializationOfGeneralizedConnectionHatNablaVersionEndomorphism}
+    \hat \nabla^i_{X \oplus \eta} &= X\oplus \eta + \hat \omega_i(X \oplus \eta)\\
+        &= X \oplus (A_i(X) - \tau(\eta)).
+\end{eqnsplit}
+
+If $\hat \omega$ were an ordinary connection form, then $\tau = 0$ and the local trivialization of $\nabla: TM \to A$ satisfies, for any $X \in \Gamma(TU_i)$:
+\begin{eqnsplit}\label{equationLocalTrivializationOfOrdinaryConnectionNablaVersion}
+    \nabla^i_{X} &= X \oplus A_i(X)\\
+        &= \hat \nabla^i_{X \oplus \eta},
+\end{eqnsplit}
+for all $\eta \in C^\infty(U_i, \alg g)$.
 
 \subsection{Mixed Local Basis}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Let $\{E_a\}_{a = 1, dots, n}$ be a basis for $\alg g$. Let us also denote by $E_a$ the corresponding constant functions in $C^\infty(U_i, \alg g) = \Omega^0(TU_i \times \alg g, U_i \times \alg g)$ for all $i \in I$. Recall the convention of not write the wedge product symbol if one of the factors is a a $0$-form, like $E_a$.
+Let $\{E_a\}_{a = 1, \dots, n}$ be a basis for $\alg g$. Let us also denote by $E_a$ the corresponding constant functions in $C^\infty(U_i, \alg g) = \Omega^0(TU_i \times \alg g, U_i \times \alg g)$ for all $i \in I$. Beware of our use of the convention of not write the wedge product symbol if one of the factors is a a $0$-form, like $E_a$.
 
 \begin{definition}
-    Let $a, b \in 1, \dots, n$. \emphtext{The components of $A_i$, $\epsilon$ and $\tau_i$ with respect to the basis} 
+    Let $a, b \in 1, \dots, n$. \emph{The components of $A_i$, $\epsilon$ and $\tau_i$ with respect to the basis $\{E_a\}_{a = 1, \dots, n}$} of $\alg g$ are, respectively: 
     
         \begin{itemize}
         
@@ -730,27 +758,68 @@ Let $\{E_a\}_{a = 1, dots, n}$ be a basis for $\alg g$. Let us also denote by $E
         
         \item $\epsilon^a \in \Omega^1(U_i \times \alg g)$ such that
             \begin{equation}
-                \epsilon = \sum_{a = 1}^n \epsilon^a E_a;
+                \epsilon = \sum_{a = 1}^n \epsilon^a E_a,
             \end{equation}
+        i.e. each $\epsilon^a$ can be seen as the constant function in $C^\infty(U_i, \alg g^*)$ used in theorem \ref{TheoremDecompOfVectorValuedFormsTLAEpsilonsDxs}, taking the constant value $\epsilon^a \in \alg g^*$ that satisfies $\epsilon^a(E_b) = \delta^a_b$;
         
         \item $(\tau_i)^a_b \in C^\infty(U_i)$ such that
             \begin{equation}
-                \tau_i(E_b) = \sum_{a = 1}^n (\tau_i)^a_b E_a
-            \end{equation}.
-        
+                \tau_i = \sum_{a, b = 1}^n (\tau_i)^a_b E_b \epsilon^b,
+            \end{equation}
+        i.e. $\tau_i(E_b) = \sum_{a = 1}^n (\tau_i)^a_b E_a$.
         \end{itemize}
 \end{definition}
 
-
+For the rest of the section let $\omega \in \Omega(A, L)$ be an ordinary connection form with local trivializations $\omega_i = A_i - \epsilon$ over each $U_i$, and associated ordinary connection $\nabla: TM \to A$.
 
 \begin{definition}
-    Let $\omega \in \Omega(A, L)$ be an ordinary connection form with local trivialization $\omega_i = A_i - \epsilon$ over each $U_i$, and let $a = 1, \dots, n$. The local $1$-forms, 
+    Let $a = 1, \dots, n$. The local $1$-forms, 
     \begin{equation}
-        \alg a^a := (A_i)^a - \epsilon^a \in \Omega^1(TU_i \times \alg g, U_i \times \alg g)
+        \alg a_i^a := (A_i)^a - \epsilon^a \in \Omega^1(TU_i \times \alg g)
     \end{equation}
-    are called \emph{the mixed local basis}
+    are called \emph{the mixed local basis of the inner part of $\Omega^1(TU_i \times \alg g, U_i \times \alg g)$ with respect to the ordinary connection form $\omega$ and the basis $\{E_a\}_{a= 1, \dots, n}$} of $\alg g$.
 \end{definition}
 
+For the rest of the section suppose that in $U_i$ the tangent bundle is trivialized with coordinates $x^\mu: U_i \to \RR$, $\mu = 1, \dots, m$, with associated local vector fields $\partial_\mu \equiv \partial_{x^\mu}$. Denote by $\nabla_{\mu} := \nabla_{\partial_{x^\mu}} \in \Gamma(TU_i \times \alg g)$. Notice that, from the trivialization of $\nabla$ equation \eqref{equationLocalTrivializationOfOrdinaryConnectionNablaVersion} it follows that
+\begin{eqnsplit}
+    \nabla^i_\mu = \partial_\mu \oplus A_i(X). 
+\end{eqnsplit}
+
+\begin{proposition}
+The set 
+\begin{equation}
+    \{\nabla^i_\mu, -E_a\}_{\mu = 1, \dots, m; a = 1, \dots, n} \subset \Gamma(TU_i \times \alg g)
+\end{equation} 
+is a global frame of the transitive Lie algebroid $TU_i \times \alg g$ is dual the the frame
+\begin{equation}
+    \{dx^\mu, \alg a^a\}_{\mu = 1, \dots, m; a = 1, \dots, n} \subset \Gamma((TU_i\times \alg g)^*) = \Omega^1(TU_i \times \alg g).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The linear independence of $\{\nabla^i_\mu, -E_a\}$ from that, if we try to write a $\nabla^i_\mu$ as a linear combination $\sum_{\nu \neq \mu} c^\nu \nabla^i_\nu + \sum_a d^a E_a$, applying the anchor reduces the argument to the fact that $\{\partial_\mu\}$ is linearly independent; similarly, writing $E_a$ as a linear combination $\sum_{\mu} c^\mu \nabla^i_\nu + \sum_{b \neq a} d^b E_b$ and applying $\epsilon$ reduces the argument to $\{E_b\}$ is linearly independent.
+
+Let's see that they are indeed dual to each other. Let $\mu = 1, \dots, m$, $a = 1, \dots, n$, and recall that $A - \epsilon = \alg a^a E_a$ is an ordinary connection form, hence normalized:
+\begin{align*}
+    dx^\mu&(\partial_\nu \oplus( A_i(\partial_\nu))) = dx^\mu(\partial_\nu) = \delta^\mu_\nu\\
+    dx^\mu&(0 \oplus (-E_a)) = 0\\
+    \alg a^a&(\partial_\mu + A_i(\partial_\mu)) = A(\partial_\mu) + \alg a^a(+\oplus A_i(\partial_\mu)) \\
+    &\quad = A(\partial_\mu) - A(\partial_\mu) = 0\\
+    \alg a^a&(0\oplus (-E_b)) = -\epsilon^a(-E_b) = \delta^a_b.
+\end{align*}
+
+Since $\{dx^\mu, \alg a^a\}$ is dual to the global frame $\{\nabla^i_\mu, -E_a\}$, then it must be a global frame of the dual bundle.
+\end{proof}
+
+The following proposition now follows:
+\begin{proposition}\label{TheoremDecompOfVectorValuedFormsTLAMixedLocalBasisDxs}
+Let $E$ be a vector bundle over $M$ that trivializes over each $U_i$ as $U_i \times V$, and let $\{e_u\}_{r = 1, \dots, h}$ be a basis of the vector space $V$. Let $\alpha$ be an $E$-valued $p$-form on $A$, $p \in \ZZ_{\geq 0}$. Viewing each $e_u$ as a constant section of $E$, i.e. $e_u \in \Omega^0(TM \times \alg g, E)$, each local trivialization of $\alpha$ may be decomposed as follows
+\begin{equation}
+    \alpha_i = \sum_{r + s = p} \left(\alpha_i \right)^u_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}\, e_u \, dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \alg a^{a_1} \wedge \cdots \wedge \alg a^{a_s}.
+\end{equation} 
+with each $\left(\omega^\epsilon\right)^a_{\mu_1 \cdots \mu_r, a_1 \cdots a_s} \in C^\infty(M, V)$, $a = 1, \dots, n$.
+The convention of ignoring the $\wedge$ symbol when one of the factors is a $0$-form has been used in both formulas.
+\end{proposition}
 
 \subsection{Curvature Forms}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
