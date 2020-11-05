@@ -340,12 +340,17 @@ Takeaway: even though I lose the view of connections as a notion of horizontalit
 }
 
 \section{Connections on Transitive Lie Algebroids}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Throughout this section consider $A$ to be a transitive Lie algebroid over the manifold $M$, and $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ be a Lie algebroid sequence of $A$; suppose all the vector bundles on this section have vector spaces over $\bb K$ as typical fibers, where $\bb K$ is one of $\RR$ or $\CC$.
+
+\subsection{Ordinary Transitive Lie Algebroid Connections}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 \begin{definition}
 \emph{An ordinary connection on $A$} is a right splitting $\nabla: TM \to A$ (i.e. a section of $a$) as vector bundles of the short exact sequence
@@ -505,6 +510,10 @@ is a $1$-form associated to the ordinary connection $\nabla^E$; notice that the 
 
 \linea
 
+\subsection{Generalized Connections}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{definition}\label{definitionGeneralizedConnectionFOrmOnTransitiveLieAlgebroidAndTauReducedKernelEndomorphism}
 Given a transitive Lie algebroid sequence $L \hookrightarrow A \twoheadrightarrow TM$ for the transitive Lie algebroid $A$, any $L$-valued $1$-form $\hat \omega \in \Omega^1(A, L)$ is called \emph{a (generalized) connection form on $A$}. Given $\hat \omega$, define \emph{the reduced kernel endomorphism $\tau \in End(L) = \Omega^1(L, L)$} ($L$ represented on itself through the bracket, i.e. the restriction to $L$ of the adjoint representation $ad:A \to \alg D(L)$) 
  by
@@ -560,6 +569,9 @@ the second line follows from the definition of $\tau$ and the normalization of $
 
 \linea
 
+\subsection{Curvature}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{definition}
 Let $\hat \omega$ be a connection form on $A$. \emph{The curvature form of $\hat \omega$} is the $L$-valued form $\hat R$
 \begin{equation}
@@ -605,9 +617,158 @@ Recall from proposition \ref{} that $(\Omega^\bullet(A, L), \wedge^{[,]}, \hat d
         &= (- \hat \omega \wedge^{[,]} \hat d \hat \omega) + (\hat \omega \wedge^{[,]} \hat d \hat \omega + 0) \\
         &= 0.
 \end{align*}
-The second line follows from applying the graded Leibniz rule \eqref{} satisfies by $\hat d$; the third line follows from applying the anticommutativity in the first parenthesis, and the graded Jacobi identity to the second parenthesis.
+The second line follows from applying the graded Leibniz rule \eqref{} satisfies by $\hat d$; the third line follows from applying the anticommutativity \eqref{} in the first parenthesis, and the graded Jacobi identity \ref{} to the second parenthesis.
 \end{proof}
 
-\begin{definition}
-Let $\hat \omega$ be an connection form on $A$, let $\tilde \omega$ be an ordinary connection and call it a background connection. Then
+\begin{definition}\label{definitionIngredientsCurvatureDecompositionConnection}
+Let $\hat \omega$ be an connection form on $A$ with reduced kernel endomorphism $\tau \in End(L)$, let $\tilde \omega$ be an ordinary connection form, call it a \emph{background connection}, and let $\omega = \hat \omega + \tau \comp \tilde \omega$ be the induced ordinary connection form. For $\tilde \omega$ and $\omega$ let $\tilde \nabla$ and $\nabla: TM \to A$ be the associated connections and $\tilde R, R \in \Omega^2(TM, L)$ be the curvatures of $\tilde \omega$ and $\omega$.
+
+    \begin{itemize}
+        
+    \item Define $\hat F = R - \tau \comp \tilde R \in \Omega^2(TM, L)$. Notice that $a^* \hat F \in \Omega^2(A, L)$.
+    
+    \item Let $\mathcal D \tau \in \Omega^1(TM, End(L))$ defined by
+        \begin{equation}
+            (\mathcal D_X \tau)(\eta) := [\nabla_X, \tau(\eta)] - \tau[\tilde \nabla_X, \eta].
+        \end{equation}
+        Now, define $(a^* \mathcal D \tau)\comp \omega (\oid X, \oid Y) := (\mathcal D_{a(\oid X)})(\tilde \omega \oid Y) - (\mathcal D_{a(\oid Y)})(\tilde \omega \oid X)$. This is an element of $\Omega^2(A, L)$.
+        
+    \end{itemize}
 \end{definition}
+
+\begin{theorem}
+Using the notation of the previous definition, the curvature form of the connection form $\hat \omega$ may be decomposed as
+\begin{equation}
+    \hat R = a^* \hat F - (a^* \mathcal D \tau)\comp \omega + \tilde \omega ^* R_\tau.
+\end{equation}
+This is called the \emphtext{decomposition of the curvature form of $\hat \omega$ given the background connection $\tilde \omega$}.
+\end{theorem}
+\begin{proof}
+TODO \todo{}.
+\end{proof}
+
+\section{Local Trivialization of Generalized Connection Forms}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Connection Forms}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Throughout this section consider $A$ to be a transitive Lie algebroid over the manifold $M$, and $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ be a Lie algebroid sequence of $A$; suppose all the vector bundles on this section have vector spaces over $\bb K$ as typical fibers, where $\bb K$ is one of $\RR$ or $\CC$. Also, suppose that $\{\psi^i, \nabla^{0, i}\}_{i in I}$ is a transitive Lie algebroid atlas of $A$. Additionally, let $\hat \omega \in \Omega^1(A, L)$ be a connection for on $A$ with reduced kernel endomorphism $\tau \in \End(L)$; then, the local trivialization of $\hat \omega$ over $U_i$ is $\hat \omega_i \in \Omega^1()$. As usual with local trivializations, we prefer to adopt the module perspective.
+
+\begin{theorem}\label{theoremLocalTrivializationDecompositionGenralizedConnectionForm}
+On any $U_i$, $i \in I$, 
+\begin{eqnsplit}
+    \hat \omega_i =  A_i \oplus (- \epsilon + \tau_i) \quad\in &\Omega^1(TU_i \times \alg g, U_i \times \alg g) \\
+    &= \Omega^1(TU_i, U_i \times \alg g) \oplus_{C^\infty(U_i)} \Omega^1(U_i \times \alg g, U_i \times \alg g).
+\end{eqnsplit}
+where 
+    \begin{itemize}
+    
+    \item $\tau_i:= (\psi^i)^{-1} \comp \tau \comp \psi^i \in C^\infty(U_i, End(\alg g)) \cong \Omega^1(U_i \times \alg g, U_i \times \alg g)$ is called \emph{the local trivialization of $\tau$} over $U_i$.
+    
+    \item $\epsilon = Id_L \in \Omega^1(U_i \times \alg g, U_i \times \alg g)$.
+    
+    \item $A_i= \psi_i^{-1} \comp \hat \omega \comp \nabla^{0, i} \in \Omega^1(TU_i, U_i \times \alg g)$ is called \emph{the local tangent connection form of $\hat \omega$}.
+    
+    \end{itemize}
+\end{theorem}
+
+We may also write 
+\begin{equation}
+    \hat \omega_i = A_i - \epsilon + \tau_i,
+\end{equation}
+understanding $A$ as $A \comp pr_1$, where $pr_1: \Gamma(TU_i)\oplus C^\infty(U_i, \alg g) \to \Gamma(TU_i)$ is the projection to the first coordinate, and understanding $\epsilon, \tau_i$ as the ones from the propositions precomposed with $pr_2$.
+
+\begin{proof}
+\begin{align*}
+    \hat \omega(X \oplus \eta) 
+        &= \psi_i^{-1} \comp \hat \omega (\nabla^{0, i}_X + j\psi_i(\eta)) \\
+        &= \psi_i^{-1} \comp \hat \omega (\nabla^{0, i}_X) + \psi_i^{-1} \comp \hat \omega \comp j (\psi_i(\eta))\\
+        &= A_i(X) + \psi_i^{-1} \comp (\tau - 1_L) (\psi_i(\eta))\\
+        &= A_i(X) - \eta + \psi_i^{-1} \comp \tau \comp psi_i(\eta) \\
+        &= A_i(X) - \epsilon(\eta) + \tau_i(\eta).
+\end{align*}
+\end{proof}
+
+\begin{proposition}
+Let $\hat \omega$ be a connection form on $A$ with local trivialization $\hat \omega = A_i - \epsilon + \tau_i$, decomposed as proposed in theorem \ref{theoremLocalTrivializationDecompositionGenralizedConnectionForm}, on each $U_i$, $i \in I$. Then, for all $X \in \Gamma(TM)$ and all $U_i, U_j$ such that $U_{ij} = U_i \inter U_j \neq \empty$,
+
+    \begin{itemize}
+    
+    \item The local tangent connection form $A_i$ has the following transformation law:
+        \begin{equation}
+                A_j(X) = \alpha^i_j(\omega_i(X)) + \chi^j_i(X).
+        \end{equation}
+    
+    \item The local trivialization $\tau_i$ of $\tau$ has the following transformation law:
+        \begin{equation}
+                \tau_j(\eta) = \tau_i(\eta) - \tau_j \comp \chi^j_i(X).
+        \end{equation}\todo{}
+    
+    \end{itemize}
+\end{proposition}
+
+Notice that if $\hat \omega$ is an ordinary connection form, a family of local trivializations $\{\omega_i \in \Omega^1(TU_i \times \alg g, U_i \times \alg g)\}_{i \in I} $ of $\hat \omega$ is completely specified by its associated local tangent connection forms $\{A_i \in \Omega^1(TU_i, U_i \times \alg g)\}$, since then $\hat \omega_i = A_i - \epsilon$. Furthermore, notice that if $A$ is an Atiyah Lie algebroid associated to a principal bundle, the transformation law of the $A_i$'s is precisely that of the local connection $1$-forms of a principal connection \ref{}, hence the family $\{A_i\}_{i \in I}$ where the $A_i$'s transform as indicated in the previous proposition does specify a principal connection of $P$. In general, \textbf{a family \{A_i, \tau_i\}_{i \in I} with the transformation laws indicated above define a connection form on the transitive Lie algebroid $A$}.
+
+\subsection{Mixed Local Basis}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Let $\{E_a\}_{a = 1, dots, n}$ be a basis for $\alg g$. Let us also denote by $E_a$ the corresponding constant functions in $C^\infty(U_i, \alg g) = \Omega^0(TU_i \times \alg g, U_i \times \alg g)$ for all $i \in I$. Recall the convention of not write the wedge product symbol if one of the factors is a a $0$-form, like $E_a$.
+
+\begin{definition}
+    Let $a, b \in 1, \dots, n$. \emphtext{The components of $A_i$, $\epsilon$ and $\tau_i$ with respect to the basis} 
+    
+        \begin{itemize}
+        
+        \item $(A_i)^a \in \Omega^1(TU_i)$ be such that
+            \begin{equation}
+                A_i = \sum_{a = 1}^n (A_i)^a E_a;
+            \end{equation}
+        
+        \item $\epsilon^a \in \Omega^1(U_i \times \alg g)$ such that
+            \begin{equation}
+                \epsilon = \sum_{a = 1}^n \epsilon^a E_a;
+            \end{equation}
+        
+        \item $(\tau_i)^a_b \in C^\infty(U_i)$ such that
+            \begin{equation}
+                \tau_i(E_b) = \sum_{a = 1}^n (\tau_i)^a_b E_a
+            \end{equation}.
+        
+        \end{itemize}
+\end{definition}
+
+
+
+\begin{definition}
+    Let $\omega \in \Omega(A, L)$ be an ordinary connection form with local trivialization $\omega_i = A_i - \epsilon$ over each $U_i$, and let $a = 1, \dots, n$. The local $1$-forms, 
+    \begin{equation}
+        \alg a^a := (A_i)^a - \epsilon^a \in \Omega^1(TU_i \times \alg g, U_i \times \alg g)
+    \end{equation}
+    are called \emph{the mixed local basis}
+\end{definition}
+
+
+\subsection{Curvature Forms}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Let $\hat R \in \Omega^2(A, L)$ be the curvature form of the connection form $\hat \omega$, and recall the maps defined in \ref{definitionIngredientsCurvatureDecompositionConnection}.
+
+\begin{definition}
+    \begin{itemize}
+        
+    \item 
+        
+    \end{itemize}
+\end{definition}
+
+\begin{proposition}
+
+\end{proposition}
+
+
+
