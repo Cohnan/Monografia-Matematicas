@@ -811,15 +811,40 @@ Let's see that they are indeed dual to each other. Let $\mu = 1, \dots, m$, $a =
 Since $\{dx^\mu, \alg a^a\}$ is dual to the global frame $\{\nabla^i_\mu, -E_a\}$, then it must be a global frame of the dual bundle.
 \end{proof}
 
-The following proposition now follows:
+The following proposition now follows, giving an alternative to theorem \ref{remarkLocalDecompositionOfFormsOnTransitiveLieAlgebroidsIfTrivializationOfM}:
+
 \begin{proposition}\label{TheoremDecompOfVectorValuedFormsTLAMixedLocalBasisDxs}
-Let $E$ be a vector bundle over $M$ that trivializes over each $U_i$ as $U_i \times V$, and let $\{e_u\}_{r = 1, \dots, h}$ be a basis of the vector space $V$. Let $\alpha$ be an $E$-valued $p$-form on $A$, $p \in \ZZ_{\geq 0}$. Viewing each $e_u$ as a constant section of $E$, i.e. $e_u \in \Omega^0(TM \times \alg g, E)$, each local trivialization of $\alpha$ may be decomposed as follows
+Let $E$ be a vector bundle over $M$ that trivializes over each $U_i$ as $U_i \times V$, and let $\{e_u\}_{r = 1, \dots, h}$ be a basis of the vector space $V$. Let $\beta$ be an $E$-valued $p$-form on $A$, $p \in \ZZ_{\geq 0}$. Viewing each $e_u$ as a constant section of $E$, i.e. $e_u \in \Omega^0(TM \times \alg g, E)$, each local trivialization of $\beta$ may be decomposed as follows
 \begin{equation}
-    \alpha_i = \sum_{r + s = p} \left(\alpha_i \right)^u_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}\, e_u \, dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \alg a^{a_1} \wedge \cdots \wedge \alg a^{a_s}.
+    \beta_i = \sum_{r + s = p} \left(\beta_i \right)^u_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}\, e_u \, dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \alg a^{a_1} \wedge \cdots \wedge \alg a^{a_s}.
 \end{equation} 
-with each $\left(\omega^\epsilon\right)^a_{\mu_1 \cdots \mu_r, a_1 \cdots a_s} \in C^\infty(M, V)$, $a = 1, \dots, n$.
+with each $\left(\beta_i\right)^a_{\mu_1 \cdots \mu_r, a_1 \cdots a_s} \in C^\infty(M, V)$, $a = 1, \dots, n$.
 The convention of ignoring the $\wedge$ symbol when one of the factors is a $0$-form has been used in both formulas.
 \end{proposition}
+
+\begin{definition}
+    ${G_i^j}_a^b = \theta^b \circ \alpha^i_J(E_a)$
+\end{definition}
+
+\begin{theorem}
+Then, for real valued forms on $A$:
+\begin{align}
+    \beta_{\mu_1 \cdots \mu_r a_1 \dots a_s} = {G^i_j}^{b_1}_{a_1} \cdots {G^i_j}^{b_s}_{a_s} \beta_{\mu_1 \cdots \mu_r b_1 \dots b_s}
+\end{align}
+
+Similarly, for $L$-valued forms on $A$:
+\begin{align}
+    \omega^i_{\mu_1 \cdots \mu_r a_1 \dots a_s} = {G^i_j}^{b_1}_{a_1} \cdots {G^i_j}^{b_s}_{a_s} \alpha^i_j(\omega^i_{\mu_1 \cdots \mu_r b_1 \dots b_s})
+\end{align}
+\end{theorem}
+\begin{proof}
+
+\end{proof}
+\begin{remark}
+Notice that a single coordinate map of $U_{ij} \subset M$ is used in the theorem, explaining wh
+\end{remark}
+
+TODO: how does G look for the Atiyah Lie algebroid
 
 \subsection{Curvature Forms}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
