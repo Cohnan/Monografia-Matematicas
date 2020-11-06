@@ -741,10 +741,9 @@ If $\hat \omega$ were an ordinary connection form, then $\tau = 0$ and the local
 \end{eqnsplit}
 for all $\eta \in C^\infty(U_i, \alg g)$.
 
-\subsection{Mixed Local Basis}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Let $\{E_a\}_{a = 1, \dots, n}$ be a basis for $\alg g$. Let us also denote by $E_a$ the corresponding constant functions in $C^\infty(U_i, \alg g) = \Omega^0(TU_i \times \alg g, U_i \times \alg g)$ for all $i \in I$. Beware of our use of the convention of not write the wedge product symbol if one of the factors is a a $0$-form, like $E_a$.
+\lin
+
+Let $\{E_a\}_{a = 1, \dots, n}$ be a basis for $\alg g$. Let us also denote by $E_a$, $a = 1, \dots, n$, the corresponding constant functions in $C^\infty(U_i, \alg g) = \Omega^0(TU_i \times \alg g, U_i \times \alg g)$ for all $i \in I$. Recall our convention of not writing the wedge product symbol if one of the factors is a a $0$-form, like $E_a$.
 
 \begin{definition}
     Let $a, b \in 1, \dots, n$. \emph{The components of $A_i$, $\epsilon$ and $\tau_i$ with respect to the basis $\{E_a\}_{a = 1, \dots, n}$} of $\alg g$ are, respectively: 
@@ -770,7 +769,14 @@ Let $\{E_a\}_{a = 1, \dots, n}$ be a basis for $\alg g$. Let us also denote by $
         \end{itemize}
 \end{definition}
 
-For the rest of the section let $\omega \in \Omega(A, L)$ be an ordinary connection form with local trivializations $\omega_i = A_i - \epsilon$ over each $U_i$, and associated ordinary connection $\nabla: TM \to A$.
+
+
+\subsection{Mixed Local Basis}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In this section let $\omega \in \Omega(A, L)$ be an ordinary connection form with local trivializations $\omega_i = A_i - \epsilon$ over each $U_i$, and associated ordinary connection $\nabla: TM \to A$.
+
+Let $\{E_a\}_{a=1, \dots, n}$ be a basis for $\alg g$ with dual basis $\{\epsilon^a\}_{a=1, \dots, n}$. Notice that, for any $i, j \in I$, $\hat \alpha^i_j(\epsilon^a)(X) = \epsilon^a(s^j_i(X)) = \epsilon^a(\chi^j_i(X)) \neq 0$; hence, $\hat \alpha^i_j(\epsilon^a)$ is a linear combination of forms that must include forms outside $\{\epsilon^b\}_{b = 1, \dots, n}$. In this section we develop new $1$-forms that will allow the decomposition of any form on $A$ into linear combination of products of $1$-forms, where each product of $1$-form transforms into one of the same kind under $\hat \alpha^i_j$.
 
 \begin{definition}
     Let $a = 1, \dots, n$. The local $1$-forms, 
@@ -782,7 +788,7 @@ For the rest of the section let $\omega \in \Omega(A, L)$ be an ordinary connect
 
 For the rest of the section suppose that in $U_i$ the tangent bundle is trivialized with coordinates $x^\mu: U_i \to \RR$, $\mu = 1, \dots, m$, with associated local vector fields $\partial_\mu \equiv \partial_{x^\mu}$. Denote by $\nabla_{\mu} := \nabla_{\partial_{x^\mu}} \in \Gamma(TU_i \times \alg g)$. Notice that, from the trivialization of $\nabla$ equation \eqref{equationLocalTrivializationOfOrdinaryConnectionNablaVersion} it follows that
 \begin{eqnsplit}
-    \nabla^i_\mu = \partial_\mu \oplus A_i(X). 
+    \nabla^i_\mu = \partial_\mu \oplus A_i(\partial_\mu). 
 \end{eqnsplit}
 
 \begin{proposition}
@@ -790,16 +796,16 @@ The set
 \begin{equation}
     \{\nabla^i_\mu, -E_a\}_{\mu = 1, \dots, m; a = 1, \dots, n} \subset \Gamma(TU_i \times \alg g)
 \end{equation} 
-is a global frame of the transitive Lie algebroid $TU_i \times \alg g$ is dual the the frame
+is a global frame of the transitive Lie algebroid $TU_i \times \alg g$ dual to the the frame
 \begin{equation}
     \{dx^\mu, \alg a^a\}_{\mu = 1, \dots, m; a = 1, \dots, n} \subset \Gamma((TU_i\times \alg g)^*) = \Omega^1(TU_i \times \alg g).
 \end{equation}
 \end{proposition}
 
 \begin{proof}
-The linear independence of $\{\nabla^i_\mu, -E_a\}$ from that, if we try to write a $\nabla^i_\mu$ as a linear combination $\sum_{\nu \neq \mu} c^\nu \nabla^i_\nu + \sum_a d^a E_a$, applying the anchor reduces the argument to the fact that $\{\partial_\mu\}$ is linearly independent; similarly, writing $E_a$ as a linear combination $\sum_{\mu} c^\mu \nabla^i_\nu + \sum_{b \neq a} d^b E_b$ and applying $\epsilon$ reduces the argument to $\{E_b\}$ is linearly independent.
+The linear independence of $\{\nabla^i_\mu, -E_a\}$ follows from that, if we try to write a $\nabla^i_\mu$ as a linear combination $\sum_{\nu \neq \mu} c^\nu \nabla^i_\nu + \sum_a d^a E_a$, applying the anchor reduces the argument to the fact that $\{\partial_\mu\}$ is linearly independent; similarly, writing $E_a$ as a linear combination $\sum_{\mu} c^\mu \nabla^i_\nu + \sum_{b \neq a} d^b E_b$ and applying $\epsilon$ reduces the argument to $\{E_b\}$ being linearly independent.
 
-Let's see that they are indeed dual to each other. Let $\mu = 1, \dots, m$, $a = 1, \dots, n$, and recall that $A - \epsilon = \alg a^a E_a$ is an ordinary connection form, hence normalized:
+Now to see that they are indeed dual to each other. Let $\mu = 1, \dots, m$, $a = 1, \dots, n$, and recall that $A - \epsilon = \alg a^a E_a$ is an ordinary connection form, hence normalized:
 \begin{align*}
     dx^\mu&(\partial_\nu \oplus( A_i(\partial_\nu))) = dx^\mu(\partial_\nu) = \delta^\mu_\nu\\
     dx^\mu&(0 \oplus (-E_a)) = 0\\
@@ -811,40 +817,53 @@ Let's see that they are indeed dual to each other. Let $\mu = 1, \dots, m$, $a =
 Since $\{dx^\mu, \alg a^a\}$ is dual to the global frame $\{\nabla^i_\mu, -E_a\}$, then it must be a global frame of the dual bundle.
 \end{proof}
 
-The following proposition now follows, giving an alternative to theorem \ref{remarkLocalDecompositionOfFormsOnTransitiveLieAlgebroidsIfTrivializationOfM}:
+The following proposition now follows, giving an alternative decomposition of forms to the one given in theorem \ref{remarkLocalDecompositionOfFormsOnTransitiveLieAlgebroidsIfTrivializationOfM}:
 
 \begin{proposition}\label{TheoremDecompOfVectorValuedFormsTLAMixedLocalBasisDxs}
-Let $E$ be a vector bundle over $M$ that trivializes over each $U_i$ as $U_i \times V$, and let $\{e_u\}_{r = 1, \dots, h}$ be a basis of the vector space $V$. Let $\beta$ be an $E$-valued $p$-form on $A$, $p \in \ZZ_{\geq 0}$. Viewing each $e_u$ as a constant section of $E$, i.e. $e_u \in \Omega^0(TM \times \alg g, E)$, each local trivialization of $\beta$ may be decomposed as follows
+Let $E$ be a vector bundle over $M$ that trivializes over $U_i$ as $U_i \times V$, and let $\{e_u\}_{r = 1, \dots, h}$ be a basis of the vector space $V$, and let $A$ be represented on $E$. Let $\beta$ be an $E$-valued $p$-form on $A$, $p \in \ZZ_{\geq 0}$. Viewing each $e_u$ as a constant section of $E$, i.e. $e_u \in \Omega^0(TM \times \alg g, E)$, each local trivialization of $\beta$ may be decomposed as follows
 \begin{equation}
-    \beta_i = \sum_{r + s = p} \left(\beta_i \right)^u_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}\, e_u \, dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \alg a^{a_1} \wedge \cdots \wedge \alg a^{a_s}.
+    \beta_i = \sum_{r + s = p} \left(\beta_i \right)^u_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}\, e_u \, dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \alg a_i^{a_1} \wedge \cdots \wedge \alg a_i^{a_s}.
 \end{equation} 
-with each $\left(\beta_i\right)^a_{\mu_1 \cdots \mu_r, a_1 \cdots a_s} \in C^\infty(M, V)$, $a = 1, \dots, n$.
-The convention of ignoring the $\wedge$ symbol when one of the factors is a $0$-form has been used in both formulas.
+with each $\left(\beta_i\right)^a_{\mu_1 \cdots \mu_r, a_1 \cdots a_s} \in C^\infty(M, V)$, $a = 1, \dots, n$, are called \emph{the scalar components of $\beta_i$ with respect to the local mixed basis}.
+The convention of ignoring the $\wedge$ symbol when one of the factors is a $0$-form has been used.
 \end{proposition}
 
-\begin{definition}
-    ${G_i^j}_a^b = \theta^b \circ \alpha^i_J(E_a)$
-\end{definition}
+Let the matrix valued function $G^i_j$ on $U_{ij} \neq \empty$
+    \begin{equation}
+        {G_j^i}_a^b = \epsilon^b \circ \alpha^i_j(E_a)
+    \end{equation}
+be {the matrix representation of the transition function $\alpha^i_j$ from $U_j$ to $U_i$ of $L$ with respect to the basis $\{E_a\}_{a= 1,\ dots, n}$} of $\alg g$.
 
 \begin{theorem}
-Then, for real valued forms on $A$:
+Let $\mu_1, \dots, \mu_r \in \{1, \dots, m\}$ and $\{a_1, \dots, a_s\} \in \{1, \dots n\}$. Then the following homogeneous transformation law under change of trivializations is satisfied:
+\begin{eqnsplit}
+    \hat \alpha^i_j(dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \alg a_j^{a_1} \wedge \cdots \wedge \alg a_j^{a_s}) &=\\
+    %\sum_{b_1, \dots, b_s \in \{1, \dots, n\}}
+    {G_j^i}_{b_1}^{a_1} \cdots {G_j^i}_{b_1}^{a_1} &dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \alg a_i^{b_1} \wedge \cdots \wedge \alg a_i^{b_s};
+\end{eqnsplit}
+Einstein's summation convention is used.
+In particular, let $E$ be a vector bundle over $M$ that trivializes over $U_i$ and $U_j$ as $U_i \times V$ and $U_j \times V$, $U_{ij} \neq \empty$ and with transition function from $U_j$ to $U_i$ $\alpha^i_j:U_{ij} \to End(V)$; let $\beta$ be an $E$-valued $p$-form on $A$, $p \in \ZZ_{\geq 0}$; for $E$-valued forms on $A$, its components with respect to the mixed local basis transform as follows
 \begin{align}
-    \beta_{\mu_1 \cdots \mu_r a_1 \dots a_s} = {G^i_j}^{b_1}_{a_1} \cdots {G^i_j}^{b_s}_{a_s} \beta_{\mu_1 \cdots \mu_r b_1 \dots b_s}
-\end{align}
-
-Similarly, for $L$-valued forms on $A$:
-\begin{align}
-    \omega^i_{\mu_1 \cdots \mu_r a_1 \dots a_s} = {G^i_j}^{b_1}_{a_1} \cdots {G^i_j}^{b_s}_{a_s} \alpha^i_j(\omega^i_{\mu_1 \cdots \mu_r b_1 \dots b_s})
+    (\beta_i)_{\mu_1 \cdots \mu_r a_1 \dots a_s} = {G^i_j}^{b_1}_{a_1} \cdots {G^i_j}^{b_s}_{a_s} \alpha^i_j((\beta_j)_{\mu_1 \cdots \mu_r b_1 \dots b_s})
 \end{align}
 \end{theorem}
 \begin{proof}
-
+Since $\hat \alpha^i_j$ is a morphism of differential graded modules over the ring of scalar valued forms on $TU_{ij} \times \alg g$, it respects the wedge product and so the proof reduces to demonstrating that 
+\begin{equation}
+    \hat \alpha^j_i(\alg a^a_i) = {G^i_j}^{b}_{a} \alg a_j^b.
+\end{equation}
+Since $\alg a_i = \alg a_i^a E_a$ and $\alg a_j$ are local trivializations of the connection form $\omega$, we know that $\hat \alpha^i_j(\alg a_j) = \alg a_i$, but
+\begin{align*}
+    \hat \alpha^i_j(\alg a_j) &= \alpha^i_j \comp \alg a_j \comp s^i_j\\
+        &= \alpha^i_j[(\alg a_j^b \comp s^j_i) E_b]\\
+        &= {G^i_j}^{a}_{b} (\alg a_j^b \comp s^j_i) E_a\\
+        &= \alg a_i;
+\end{align*}
+applying $\hat \alpha^j_i = (\hat \alpha^i_j)^{-1}$ on both sides gives the desired equation.
 \end{proof}
 \begin{remark}
 Notice that a single coordinate map of $U_{ij} \subset M$ is used in the theorem, explaining wh
 \end{remark}
-
-TODO: how does G look for the Atiyah Lie algebroid
 
 \subsection{Curvature Forms}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
