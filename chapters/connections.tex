@@ -839,12 +839,12 @@ Let $\mu_1, \dots, \mu_r \in \{1, \dots, m\}$ and $\{a_1, \dots, a_s\} \in \{1, 
 \begin{eqnsplit}
     \hat \alpha^i_j(dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \alg a_j^{a_1} \wedge \cdots \wedge \alg a_j^{a_s}) &=\\
     %\sum_{b_1, \dots, b_s \in \{1, \dots, n\}}
-    {G_j^i}_{b_1}^{a_1} \cdots {G_j^i}_{b_1}^{a_1} &dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \alg a_i^{b_1} \wedge \cdots \wedge \alg a_i^{b_s};
+    {G_i^j}_{b_1}^{a_1} \cdots {G_i^j}_{b_1}^{a_1} &dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \alg a_i^{b_1} \wedge \cdots \wedge \alg a_i^{b_s};
 \end{eqnsplit}
-Einstein's summation convention is used.
+where Einstein's summation convention has been used.
 In particular, let $E$ be a vector bundle over $M$ that trivializes over $U_i$ and $U_j$ as $U_i \times V$ and $U_j \times V$, $U_{ij} \neq \empty$ and with transition function from $U_j$ to $U_i$ $\alpha^i_j:U_{ij} \to End(V)$; let $\beta$ be an $E$-valued $p$-form on $A$, $p \in \ZZ_{\geq 0}$; for $E$-valued forms on $A$, its components with respect to the mixed local basis transform as follows
 \begin{align}
-    (\beta_i)_{\mu_1 \cdots \mu_r a_1 \dots a_s} = {G^i_j}^{b_1}_{a_1} \cdots {G^i_j}^{b_s}_{a_s} \alpha^i_j((\beta_j)_{\mu_1 \cdots \mu_r b_1 \dots b_s})
+    (\beta_i)_{\mu_1 \cdots \mu_r a_1 \dots a_s} = {G^j_i}^{b_1}_{a_1} \cdots {G^j_i}^{b_s}_{a_s} \alpha^i_j((\beta_j)_{\mu_1 \cdots \mu_r b_1 \dots b_s})
 \end{align}
 \end{theorem}
 \begin{proof}
