@@ -916,7 +916,7 @@ What we want to see is that the local trivialization over $U_i$ of each of the t
 
 That $a^*F_i = \hat F^a_{\mu \nu} E_a dx^\mu \wedge dx^\nu$ is clear since $\hat F$ is a $2$-form on $TM$ and $a$ is the anchor.
 
-To see that $(a^* \mathcal D \comp \tilde \omega)_i = (\mathcal D tau_i)^b_{\mu, a} dx^\mu \wedge (\alg a_i)^a$, first recall that $\{\nabla^i_\mu, -E_a\} \subset \Gamma(TU_i \times \alg)$, where $\nabla^i$ is the local trivialization of the connection $\nabla:TM \to A$ associated to $\tilde \omega$, is the global frame of $TU_i \times \alg g$ dual to $\{dx^\mu, \alg a^a\}$. Then, the result follows from the following $3$ calculations:
+To see that $(a^* \mathcal D \comp \tilde \omega)_i = (\mathcal D \tau_i)^b_{\mu, a} dx^\mu \wedge (\alg a_i)^a$, first recall that $\{\nabla^i_\mu, -E_a\} \subset \Gamma(TU_i \times \alg)$, where $\nabla^i$ is the local trivialization of the connection $\nabla:TM \to A$ associated to $\tilde \omega$, is the global frame of $TU_i \times \alg g$ dual to $\{dx^\mu, \alg a^a\}$. Then, the result follows from the following three calculations:
 \begin{align*}
     (a^* \mathcal D \comp \tilde \omega)_i(\nabla^i_\mu, \nabla^i_\nu) 
         &= (\mathcal D_{\partial_\mu} \tau_i) (\tilde \omega_i(\nabla^i_\mu)) - (\mathcal D_{\partial_\nu} \tau_i) (\tilde \omega_i(\nabla^i_\nu))\\
@@ -1011,17 +1011,36 @@ Let $\hat \omega$ be a connection $1$-form on $A$ with associated vector bundle 
 \end{definition}
 
 \begin{proposition}
-Let $\phi:A \to \alg D(E)$ be a representation. Then there is a bijective correspondence between $A$-connections $\hat \nabla^E$ on $E$ and $1$-forms $\hat \omega^E: \Omega^1(\alg D(E), \End(E))$ given by the relation:
+Let $\phi:A \to \alg D(E)$ be a representation. Then there is a bijective correspondence between $A$-connections $\hat \nabla^E$ on $E$ and $1$-forms $\hat \omega^E \in \Omega^1(A, \End(E))$ given by the relation:
 \begin{equation}
     \hat \nabla^E_{\oid X} = \phi(\oid X) + j \comp \hat \omega^E(\oid X).
 \end{equation}
 Furthermore, the curvature of $\hat \nabla^E$ satisfies:\todo{have to define $\hat d_E$ from induced representation of $A$ on $End(E)$}
 \begin{equation}
-    \hat R^E = \hat d_E \hat \omega^E + \frac{1}{2} \hat \omega^E \wedge^\comp \hat \omega^E.
+    \hat R^E = \hat d_E \hat \omega^E + \frac{1}{2} \hat \omega^E \wedge^{[,]} \hat \omega^E.
 \end{equation}
 \end{proposition}
+\begin{proof}
+Given an $A$-connection $\hat \nabla^E$, $a(\hat \nabla^E_{\oid X} - \phi(\oid X)) = a(\oid X) - a(\oid X) = 0$ for all $\oid X \in A$, so there is an element $\hat \omega^E(\oid X) \in End(E)$ (recall that $End(E) \xrightarrow[hook]{j} \alg D(E) \twoheadrightarrow TM$ is a Lie algebroid sequence for the transitive Lie algebroid $\alg D(E)$). That $\hat \omega^E: A \to End(E)$ is a vector bundle morphism, and hence a form, follows from the linearity of $\hat \nabla^E - \phi$. 
 
-For a produced connection $\hat \nabla^{E, \hat \omega}$ for the connection $1$-form $\hat \omega \in \Omega^1(A, L)$, the induced $1$-form is $\phi_L \comp \hat \omega$, and so:
-\begin{equation}
-    \hat \nabla^{E, \hat \omega}_{\oid X} = \phi(\oid X) + j \comp \phi_l \comp \hat \omega (\oid X)
-\end{equation}
+Conversely, given a $1$-form $\hat \omega^E(A, \End(E))$, for all $\oid X \in A$, $\phi(\oid X)$ and $\j \comp \hat \omega^E(\oid X)$ are elements of $\alg D(E)$, and so is their sum, so $\hat \nabla^E := \phi + j \comp \hat \omega^E: A \to \alg D(E)$ is a vector bundle morphism; Since $a(j \comp \hat \omega^E(\oid X)) = 0$, $\hat \nabla^E$ is anchor preserving.
+
+Now, let $\oid X, \oid Y \in A$ be arbitrary:
+\begin{align*}
+    j \comp \hat R^E(\oid X, \oid Y) 
+        &= [\hat \nabla^E_{\oid X}, \hat \nabla^E_{\oid Y}] - \hat \nabla^E_{[\oid x, \oid Y]}\\
+        &= [\oid X + j \comp \hat \omega^E(\oid X), \oid Y + j \comp \hat \omega^E(\oid Y)] - ([\oid X, \oid Y] + j \comp \hat \omega^E[\oid X, \oid Y])\\
+        &= [j \comp \hat \omega^E(\oid X), \oid Y] + [\oid X, j \comp \hat \omega^E(Y)] + [j \comp \hat \omega^E(\oid X), j \comp \hat \omega^E(\oid Y)] - j \comp \hat \omega^E[\oid X, \oid Y]\\
+        &= [\oid X, j \comp \hat \omega^E(\oid Y)] - [\oid Y, j \comp \hat \omega^E(\oid X)] - j \comp \hat \omega^E[\oid X, \oid Y] + j[\hat \omega(\oid X), \hat \omega (\oid Y)]\\
+        &= j(\hat d_E \omega^E(\oid X, \oid Y) + [\hat \omega^E(\oid X), \hat \omega^E(\oid Y)])
+        &= j \comp (\hat d_E \hat \omega^E + \frac{1}{2} \hat \omega^E \wedge^{[,]} \hat \omega^E)
+\end{align*}
+\end{proof}
+
+For an $A$-connection $\hat \nabla^{E, \, \hat \omega}$ produced by the connection $1$-form $\hat \omega \in \Omega^1(A, L)$, 
+\begin{align*}
+    \hat \nabla^{E, \hat \omega}_{\oid X} &= \phi(\hat \nabla_{\oid X})\\
+        &= \phi(\oid X + j \comp \hat \omega(\oid X)) \\
+        &= \phi(\oid X) + j \comp \phi_L \comp \hat \omega (\oid X)
+\end{align*}
+for all $\oid X \in A$. This means that the $End(E)$-valued $1$-form associated to the $A$-connection produced by $\hat \omega$ is $\phi_L \comp \hat \omega$.
