@@ -752,8 +752,12 @@ Let $\{E_a\}_{a = 1, \dots, n}$ be a basis for $\alg g$. Let us also denote by $
         
         \item $(A_i)^a \in \Omega^1(TU_i)$ be such that
             \begin{equation}
-                A_i = \sum_{a = 1}^n (A_i)^a E_a;
+                A_i = \sum_{a = 1}^n (A_i)^a E_a,
             \end{equation}
+        and if a set of coordinates $x^\mu: U_i \to \RR$ on $M$, $\mu = 1, \dots, m$, is clear from the context, we will denote by
+        \begin{equation}
+            (A_i)^a_\mu \equiv (A_i)^a(\partial_{x^\mu}) \in C^\infty(U_i);
+        \end{equation}
         
         \item $\epsilon^a \in \Omega^1(U_i \times \alg g)$ such that
             \begin{equation}
@@ -869,19 +873,100 @@ Notice that a single coordinate map of $U_{ij} \subset M$ is used in the theorem
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Let $\hat R \in \Omega^2(A, L)$ be the curvature form of the connection form $\hat \omega$, and recall the maps defined in \ref{definitionIngredientsCurvatureDecompositionConnection}.
+Let $\hat R \in \Omega^2(A, L)$ be the curvature form of the connection form $\hat \omega$, and recall the maps defined in \ref{definitionIngredientsCurvatureDecompositionConnection} for the background connection form $\tilde \omega$ and the induced ordinary connection form $\omega$. Let $\{E_a\}_{a = 1, \dots, n}$ be a basis of $\alg g$.
 
 \begin{definition}
+
     \begin{itemize}
-        
-    \item 
-        
+    
+    \item Over $U_i$, \emph{the local trivialization of the algebraic curvature of $\tau$}, the reduced kernel endomorphism of $\hat \omega$, is $C^\infty(U_i)$-multilinear antisymmetric map
+    \begin{equation}
+        (R_\tau)_i = \psi_i^{-1} \comp \psi_i^*R_\tau : C^\infty(U_i, \alg g) \times C^\infty(U_i, \alg g) \to C^\infty(U_i, \alg g).
+    \end{equation}
+    Denote by $(W_i)_{ab}^c \in C^\infty(U_i)$ the functions that satisfy
+    \begin{equation}
+        (R_\tau)_i(E_a, E_b) = (W_i)_{ab}^c E_c;
+    \end{equation}
+    call them \emph{the components of $R_\tau$ over $U_i$ with respect to the basis $\{E_a\}_{a = 1, \dots n}$}.
+    
+    \item Over $U_i$, \emph{the local trivialization of $\mathcal D\tau$} is the element 
+    \begin{eqnsplit}
+        (\mathcal D \tau)_i : \Gamma(TU_i) &\to C^\infty(U_i, End(\alg g^*))\\
+        X &\mapsto \mathcal \psi_i^{-1} \comp \,\psi_i^*(\mathcal D_{\nabla^{0, i}_X} \tau)
+    \end{eqnsplit}
+    induced by the local trivialization of $A$ over $U_i$. 
+    Let $x^\mu:U_i \to \RR$, $\mu = 1, \dots, m$ be coordinates on $U_i$ and denote by $(\mathcal D \tau_i)_{\mu, a}^b \in C^\infty(U_i)$ the functions that satisfy
+    \begin{equation}
+        (\mathcal D_{\partial_\mu} \tau )_i(E_a) = (\mathcal D \tau_i)_{\mu, a}^b E_b.
+    \end{equation}
     \end{itemize}
 \end{definition}
 
-\begin{proposition}
+\begin{theorem}
+Let $U_i \subset M$ be an open on which $x^\mu: U_i \to \RR$ are coordinates and the transitive Lie algebroid $A$ trivializes. Let $\tilde \omega\in \Omega^1(A, L)$ be an ordinary connection form on $A$ with local trivialization $\alg a_i$ over $U_i$, and call it a background connection on $A$. Finally, for a (generalized) connection form $\hat \omega$ on $A$ with reduced kernel endomorphism $\tau$, let $\omega = \hat \omega + \tau \comp \tilde \omega$ be the ordinary connection induced by $\hat \omega$ with respect to the background connection $\tilde \omega$, let $\hat R \in \Omega^2(A, L)$ be its curvature $2$-form, and $\hat F \in \omega^2(TM, L)$, $\mathcal D \tau \in \Omega^1(TM, End(L))$ and $R_\tau \in \Omega^2(L, L)$ be defined as in definition \ref{definitionIngredientsCurvatureDecompositionConnection}. Then, the local trivialization of $\hat R$ has the following decomposition in terms of the mixed local basis of the inner part of $\Omega^1(TU_i \times \alg g)$ with respect to the basis $\{E_a\}_{a = 1, \dots, n}$ of $\alg g$:
+\begin{equation}
+    \hat R_i = (\hat F_i)_{\mu \nu}^a E_a dx^\mu \wedge dx^\nu + 
+                (\mathcal D \tau_i)^b_{\mu, a} E_b  dx^\mu \wedge (\alg a_i)^a +
+                (W_i)^c_{ab} E_c (\alg a_i)^a \wedge (\alg a_i)^b
+\end{equation}
+where $a, b, c \in \{1, \dots a\}$, $\mu, \nu \in \{1, \dots, m\}$ and where Einstein's summation convention for the sum over repeated super- and sub-indices is used.
+\end{theorem}
+\begin{proof}
+What we want to see is that the local trivialization over $U_i$ of each of the terms on the decomposition \ref{theoremDecompositionCurvatureGeneralizedConnection3Terms} coincides with each of the stated terms.
 
-\end{proposition}
+That $a^*F_i = \hat F^a_{\mu \nu} E_a dx^\mu \wedge dx^\nu$ is clear since $\hat F$ is a $2$-form on $TM$ and $a$ is the anchor.
+
+To see that $(a^* \mathcal D \comp \tilde \omega)_i = (\mathcal D tau_i)^b_{\mu, a} dx^\mu \wedge (\alg a_i)^a$, first recall that $\{\nabla^i_\mu, -E_a\} \subset \Gamma(TU_i \times \alg)$, where $\nabla^i$ is the local trivialization of the connection $\nabla:TM \to A$ associated to $\tilde \omega$, is the global frame of $TU_i \times \alg g$ dual to $\{dx^\mu, \alg a^a\}$. Then, the result follows from the following $3$ calculations:
+\begin{align*}
+    (a^* \mathcal D \comp \tilde \omega)_i(\nabla^i_\mu, \nabla^i_\nu) 
+        &= (\mathcal D_{\partial_\mu} \tau_i) (\tilde \omega_i(\nabla^i_\mu)) - (\mathcal D_{\partial_\nu} \tau_i) (\tilde \omega_i(\nabla^i_\nu))\\
+        &= (\mathcal D_{\partial_\mu} \tau_i) (0) - (\mathcal D_{\partial_\nu} \tau_i)(0);
+\end{align*}
+\begin{align*}
+    (a^* \mathcal D \comp \tilde \omega)_i(\nabla^i_\mu, -E_a) 
+        &= (\mathcal D_{\partial_\mu} \tau_i) (\tilde \omega_i(-E_a)) - (\mathcal D_{0} \tau_i) (\tilde \omega_i(\nabla^i_\mu))\\
+        &= (\mathcal D \tau_i)^b_{\mu, a} E_b;
+\end{align*}
+\begin{align*}
+    (a^* \mathcal D \comp \tilde \omega)_i(-E_a, -E_b) 
+        &= (\mathcal D_{0} \tau_i) (\tilde \omega_i(-E_b)) - (\mathcal D_{0} \tau_i) (\tilde \omega_i(-E_a))\\
+        &= 0.
+\end{align*}
+
+Finally, that $(\tilde \omega^* R_\tau)_i = (W_i)^c_{ab} E_c (\alg a_i)^a \wedge (\alg a_i)^b$ follows from:
+\begin{align*}
+    (\tilde \omega^* R_\tau)_i(\nabla^i_\mu, \nabla^i_\nu) 
+        &= (R_\tau)_i(\tilde \omega_i(\nabla^i_\mu), \tilde \omega_i(\nabla^i_\nu)) \\
+        &= (R_\tau)_i(0, 0) \\
+        &= 0;
+\end{align*}
+\begin{align*}
+    (\tilde \omega^* R_\tau)_i(\nabla^i_\mu, -E_a) 
+        &= (R_\tau)_i(\tilde \omega_i(\nabla^i_\mu), \tilde \omega_i(-E_a)) \\
+        &= (R_\tau)_i(0, E_a) \\
+        &= 0;
+\end{align*}
+\begin{align*}
+    (\tilde \omega^* R_\tau)_i(-E_a, -E_b) 
+        &= (R_\tau)_i(\tilde \omega_i(-E_a), \tilde \omega_i(-E_b)) \\
+        &= (R_\tau)_i(E_a, E_b) \\
+        &= (W_i)^c_{ab} E_c.
+\end{align*}
+\end{proof}
+
+
+Denoting by $C^c_{ab} = \epsilon^c([E_a, E_b])$ the structure constants of $\alg g$ in the basis $\{E_a\}_{a = 1, \dots, n}$, it follows directly from the definition of $R_\tau$, in \ref{definitionIngredientsCurvatureDecompositionConnection}, that
+\begin{equation}
+    W^c_{ab} = \tau^b_a \tau^e_b C^c_{de} - C^d_{ab}\tau^c_d.
+\end{equation}
+Similarly, from the definition of $\mathcal D \tau$ if follows that
+\begin{eqnsplit}
+    (\mathcal D \tau_i)^b_{\mu, a} &= \epsilon^b ((\mathcal D_{\partial_\mu} \tau)(E_a))\\
+        &= \epsilon^b (  [\partial_\mu + A_i(\partial_\mu), \tau_i(E_a)] - \tau_i[\partial_\mu + \tilde A_i(\partial_\mu), E_a]  )\\
+        &= \epsilon^b (  [\partial_\mu + (A_i)^c_\mu E_c, \tau^d_a E_d] - \tau_i[\partial_\mu + (\tilde A_i)_\mu^d E_d, E_a ]  ) \\
+        &= \epsilon^b (  \partial_\mu(\tau^b_a E_b) + (A_i)^c_\mu   \tau^d_a [E_c, E_d] - (\tilde A_i)_\mu^d \tau_i[E_d, E_a])\\
+        &= \partial_\mu \tau^b_a + (A_i)^c_\mu (\tau_i)^d_c C^b_{cd} - (\tilde A_i)_\mu^d C^c_{da} \tau^b_c.
+\end{eqnsplit}
 
 
 
