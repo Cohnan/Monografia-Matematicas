@@ -63,7 +63,7 @@ In summary, a covariant derivative
 
 
 
-\section{Ordinary Connections and Curvature in Transtive Lie Algebroids}
+\section*{Ordinary Connections and Curvature in Transtive Lie Algebroids}
 
 They always exist.
 
@@ -76,7 +76,7 @@ Is our notion of curvature somehow redundant? \ref{curvatureRedundant}
 What meaning may be given to \ref{whatMeaning}
 
 
-\subsection{Equivalence for Atiyah Lie Algebroid to Principal Bundle Theory}
+\subsection*{Equivalence for Atiyah Lie Algebroid to Principal Bundle Theory}
 
 Mackenzie does this in detail.
 
@@ -84,7 +84,7 @@ The general equivalence of $G$-equivariant/invariant forms on $TP$ and Lie algeb
 
 $\omega_{loc}(\cdot \oplus 0)$ is a local principal connection form.
 
-\subsection{Local Description of connection and curvature and ``Change of Gauge''}
+\subsection*{Local Description of connection and curvature and ``Change of Gauge''}
 
 Ordinary Lie algebroid connection, i.e. $\omega \circ j = - id_L$
 
@@ -114,9 +114,9 @@ A family of local $1$-forms with the above transformation rules $\equiv$ a (gene
 
 \linea
 
-\section{Mixed Local Basis of Forms given a Connection and $G^i_j$ Matrices}
+\section*{Mixed Local Basis of Forms given a Connection and $G^i_j$ Matrices}
 
-\section{Covariant Derivatives of Forms}
+\section*{Covariant Derivatives of Forms}
 
 \section{$A$-Connections / Covariant Derivatives in ``Generalized Associated/Representation Algebroids''}
 
@@ -126,7 +126,7 @@ Horizontal lift of $\mathfrak{X}$ in $e\in E$? Linear vector field associated to
 
 %\section{Gauge Transformations and Infinitesimal Gauge Transformations}
 
-\section{Generalized Connections}
+\section*{Generalized Connections}
 
 Do they give rise to good ``covariant derivatives''? (In associated bundles) \ref{trulyCovariant}
 
@@ -968,5 +968,60 @@ Similarly, from the definition of $\mathcal D \tau$ if follows that
         &= \partial_\mu \tau^b_a + (A_i)^c_\mu (\tau_i)^d_c C^b_{cd} - (\tilde A_i)_\mu^d C^c_{da} \tau^b_c.
 \end{eqnsplit}
 
+\section{$A$-connections}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\todo{Do ``trivial'' example of representation of trivial Lie algebroid on trivial vector bundle on which $G$ acts: to this case reduces locally the representation of $TP/G$ on an associated vector bundle!}
 
+In this section, let $A$ be any Lie algebroid over a manifold $M$, not necessarily transitive. $A$-connections will be yet another generalizations of connections, in this case of vector bundle connections or covariant derivatives, on which the directions in which we take the derivatives are not only the tangent directions of $TM$, but the ``generalized directions'' of $A$. Additionally, let $E$ be a vector bundle over $M$.
+
+\begin{definition}
+\emph{An $A$-connection on $E$} is an anchor preserving vector bundle map
+\begin{equation}
+    \hat \nabla^E: A \to \alg D(E).
+\end{equation}
+\emph{The curvature of $\hat \nabla^E$} is the $\End(E)$-valued $2$-form:
+\begin{equation}
+    \hat R^E(\oid X, \oid Y) := j^{-1}([\hat \nabla^E_{\oid X}, \hat \nabla^E_{\oid Y}] - \hat \nabla^E_{[\oid X, \oid Y]}).
+\end{equation}
+\end{definition}
+
+\begin{example}
+On any vector bundle $E$ over $M$, an $TM$-connection is simply an ordinary connection on $E$, which also coincides with a connection on the vector bundle $E$ as seen in example \ref{}.
+\end{example}
+
+\begin{example}
+Let $A$ be a transitive Lie algebroid, and suppose that $\hat \nabla^E$ is an $A$-connection on $E$. If $\hat \nabla:A \to A$ is the vector bundle endomorphism associated to a connection $\hat \omega$ on $A$, then, the composition:
+\begin{equation}
+    \hat \nabla^{E, \hat \omega} : A \xrightarrow{\hat \nabla} A \xrightarrow{\hat \nabla^E} \alg D(E)
+\end{equation}
+is an anchor preserving vector bundle morphism, i.e. it is an $A$-connection on $E$.
+\end{example}
+
+An important subfamily of examples that will be of importance for us is the following. From now on we will assume that $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ is a transitive Lie algebroid sequence.
+
+\begin{definition}
+Let $\hat \omega$ be a connection $1$-form on $A$ with associated vector bundle endomorphism $\hat \nabla:A \to A$. Let $\phi: A \to \alg D(E)$ be a representation of $A$ on $E$. Then, \emph{the $A$-connection on $E$ produced by the connection $\hat \omega$} is the composition
+\begin{equation}
+    \hat \nabla^{E, \hat \omega} : A \xrightarrow{\hat \nabla} A \xrightarrow{\phi} \alg D(E).
+\end{equation}
+\end{definition}
+
+\begin{proposition}
+Let $\phi:A \to \alg D(E)$ be a representation. Then there is a bijective correspondence between $A$-connections $\hat \nabla^E$ on $E$ and $1$-forms $\hat \omega^E: \Omega^1(\alg D(E), \End(E))$ given by the relation:
+\begin{equation}
+    \hat \nabla^E_{\oid X} = \phi(\oid X) + j \comp \hat \omega^E(\oid X).
+\end{equation}
+Furthermore, the curvature of $\hat \nabla^E$ satisfies:\todo{have to define $\hat d_E$ from induced representation of $A$ on $End(E)$}
+\begin{equation}
+    \hat R^E = \hat d_E \hat \omega^E + \frac{1}{2} \hat \omega^E \wedge^\comp \hat \omega^E.
+\end{equation}
+\end{proposition}
+
+For a produced connection $\hat \nabla^{E, \hat \omega}$ for the connection $1$-form $\hat \omega \in \Omega^1(A, L)$, the induced $1$-form is $\phi_L \comp \hat \omega$, and so:
+\begin{equation}
+    \hat \nabla^{E, \hat \omega}_{\oid X} = \phi(\oid X) + j \comp \phi_l \comp \hat \omega (\oid X)
+\end{equation}
