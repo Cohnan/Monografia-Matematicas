@@ -1109,3 +1109,46 @@ Let $\hat \omega$ be a connection form on the transitive Lie algebroid $A$. The 
 \end{align*}
 \end{example}
 
+
+
+\section{Examples}
+
+\subsection{$P^k$ over $S^2$}
+
+The most general connection form on $TP^k/S^1$ has the local trivialization over $U_S$:
+\begin{equation}
+    \hat \omega_S = i\omega_{S; 1,}(\phi, \theta) dx^1 + i\omega_{S; 2,}(\phi, \theta) dx^2 + i\omega_{S; \, ,1}(\phi, \theta) Im
+\end{equation}
+where $ \in C^\infty(S^2)$; recall from \ref{} that this suffices to determine completely the form over all of $S^2$ since this $U_S$ covers all but one point of $S^2$. Its local trivialization over $U_N$ is
+\begin{equation}
+     \hat \omega_N = - kd\theta
+\end{equation}
+
+The local trivialization of the reduced kernel endomorphism of $\hat \omega$ is:
+\begin{equation}
+    \tau_S = h - 1.
+\end{equation}
+
+As already mentioned in \ref{}, the local trivialization of the curvature form of $\hat \omega$ is
+\begin{equation}
+    \hat R_S = \hat d \omega_S 
+\end{equation}
+
+
+\subsection{$P^k$ over $S^4$}
+
+Thanks to all what we have proved, we know that the most general connection $\hat \omega \in \Omega^2(TP^k/S^3, P^k \times Im \HH/S^3)$ on $TP^k/S^4$ has the local trivialization over $U_S$
+\begin{equation}
+    \hat \omega_S = i \omega_S^1 + j \omega_S^2 + k \omega_S^3 - Im - Jm - Km + \tau_S,
+\end{equation}
+where $\omega_S^i = (\omega_S)^i_\mu dx^\mu$ are restrictions to $U_S$ of $1$-forms in $\Omega^(TS^7)$, hence the components of $\hat \omega$ over $U_S$ with respect to the basis $i, j, k$ of $Im \HH$ are actually functions $(\omega_S)^i_\mu \in C^\infty(S^2)$ defined over all of $S^2$; similarly, $\tau_S$ is any function $C^\infty(S^2, End(Im \HH))$.
+
+If we use the matrix algebra $\alg{su}(2)$ as the representation of the Lie algebra,\todo{check isomorphism between $Im \HH$ and $su(2)$} then:
+\begin{eqnsplit}
+    \hat \omega_S 
+    &= \begin{pmatrix} i\omega_S^3 & \omega_S^2 + i \omega_S^1 \\ \omega_S^2 - i \omega_S^1 & -i\omega_S^3  \end{pmatrix} - Im - Jm - Km
+    + %\begin{pmatrix} i\tau^3 & \tau_S^2 + i \tau_S^1 \\ \tau_S^2 - i \tau_S^1 & -i\tau_S^3 \end{pmatrix} \\
+    %&= \omega_S^i \cdot i\sigma_i - \epsilon + \tau_S^i \cdot i\sigma_i,
+\end{eqnsplit}\todo{forma de expresar cualquier endomorfismo de $su(2)$ con matrices $2\times 2$}
+$\hat \omega_S \in \Omega^1(TU_S \times Im \HH, U_S \times Im \HH)$
+
