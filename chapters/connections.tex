@@ -1063,13 +1063,32 @@ Let $\hat \nabla^E$ be an $A$-connection on $E$ ($A$ with Lie algebroid atlas), 
 \end{definition}
 
 
+
+\begin{example}[Lie algebroid morphisms between Trivial Lie algebroid over $M$]
+$\omega \in \Omega^1(TM, M \times \alg g_2)$ Maurer Cartan form (w.r.t. Lie composition), $\phi_+: M \times \alg g_1 \to M \times \alg g_2$ LAB morphism, Comp. Cond..
+\end{example}
+
+
+\begin{example}[The derivations Lie algebroid of a trivial vector bundle]
+$TU_i \oplus (U_i \times \alg{gl}(V))$
+\end{example}
+
+
+\begin{example}[All representations of a TLA on a T.v.b.]
+$\alpha_i: \Gamma(TU_i) \to C^\infty(U_i, \alg{gl}(V)$ Maurer Cartan, $\phi_{L, i} \in C^\infty(U_i, \Hom(\alg g. \alg{gl}(V)))$ LAB morphism.
+\end{example}
+
+
 \begin{example}[Group induced representation]\todo{Change of place}
+Particular case: $\phi_L$ constant $\pi: \alg g \to End(V)$, and with $\alpha_i = 0$.
+
 Let $G$ be a group with $\alg g$ as its Lie algebra, and let it act on the vector space $V$. Then, the map $\phi: TM \times \alg g \to \alg D(M \times V)$ such that, for all $X \oplus \eta \in TM \times \alg g$ and $f \in C^\infty(M, V)$:
 \begin{eqnsplit}
     \phi(X \oplus \eta)(f) := X(f) + \eta \cdot f
 \end{eqnsplit}
 where $\eta \cdot f(m) := \der{t}[t=0]{\exp[t \eta] \cdot f(m)}$ is the action of $\eta \in \alg g$ on $V$ by the group action. This is called \emph{the $G$-induced representation of the trivial Lie algebroid on a trivial vector bundle}.
 \end{example}
+
 
 \begin{example}[Local trivialization of representation of $TP/G$ on $E = P \times V/G$]\label{localTrivializationOfRepresentationOfAtiyahTPGonAssociated}\todo{Change of place}
 $U_i$ trivializes $E$ as $\beta_i: U_i \times V\to E|_{U_i}$
@@ -1097,7 +1116,35 @@ where $\gamma: I \to U_i$ is a path on $M$ such that $\gamma'(0) = X_m$. In conc
 \end{equation}
 \end{example}
 
-\begin{example}
+
+\begin{example}[Family of Local trivializations of all representations Transitive Lie algebroids]
+i.e. Find transformation law of $\alpha_i$ and $\phi_{L, i}$.
+\end{example}
+
+
+\begin{example}[All TLA-connections on T.v.b.]
+$B: TU_i \to C^\infty(U_i, \alg{gl}(V))$ $C^\infty(U_i)$-linear, and $\nu \in C^\infty(U_i, \Hom(\alg g. \alg{gl}(V)))$.
+\end{example}
+
+
+\begin{example}[Local trivialization of arbitrary $A$-connection produced by connection on $A$]
+$B_i = \alpha_i + \phi_L \comp A_i$, $\nu_i = - \phi_{L, i} \comp \tau_i$
+
+\begin{equation} \label{equationLocalTrivializationOfGeneralProducedAConnectionArbitraryGeneralRepresentation}
+    \hat \nabla^{E, i}_{X \oplus \eta} = X \oplus [\alpha_i(X) + \phi_{L, i} \comp A_i(X) - \phi_{L, i}\comp \tau_i(\eta)].
+\end{equation}
+
+Given basis $\{E_a\}_a$ with ${a, b = 1, \dots, n}$ of $\alg g$ dual to $\{\epsilon^a\}_a$, $\{e_u\}_{u}$ with $u, v = 1, \dots h$ of $V$ dual to $\{\tilde e^u\}$, and coordinates $\{x^\mu: U_i \to \RR\}_{\mu}$ with $\mu, \nu  = 1, \dots m$ of $M$:
+\begin{align}
+    \hat \nabla^{E, i}_\mu &:= \hat \nabla^{E_i}_{\partial_\mu \oplus 0} = \partial_\mu \oplus (\alpha_i)_{\mu, v}^u e_u \tilde e^v + (\phi_{L, i})^u_{b, v} (A_i)_{\mu, a}^b e_u \tilde e^v &
+    \hat \nabla^{E, i}_a &:= \hat \nabla^{E_i}_{0 \oplus E_a} \ 
+    cdots = - (\phi_{L, i})
+\end{align}
+
+\end{example}
+
+
+\begin{example}[Trivialization of $A$-connection produced by connection on $A$ and gropu induced representation]
 Let $U_i$ be a neighborhood on which the representation $\phi:A \to \alg D(E)$ trivializes as the $G$-induced representation of $TU_i\times \alg g$ on $U_i \times V$, where $G$ is a Lie group with $\alg g$ as Lie algebra, and $V$ is the typical fiber of $E$ over $U_i$.
 
 Let $\hat \omega$ be a connection form on the transitive Lie algebroid $A$. The $A$-connection $\hat \nabla^E$ on $E$ produced by $\hat \omega$ trivializes \todo{define the local trivialization of a representation and of an $A$-connection} over $U_i$ as:
@@ -1108,6 +1155,7 @@ Let $\hat \omega$ be a connection form on the transitive Lie algebroid $A$. The 
         &= X(f) + (A_i(X) - \tau(\eta))\cdot f.
 \end{align*}
 \end{example}
+
 
 
 
