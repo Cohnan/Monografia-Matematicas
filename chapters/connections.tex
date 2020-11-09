@@ -1062,25 +1062,32 @@ Let $\hat \nabla^E$ be an $A$-connection on $E$ ($A$ with Lie algebroid atlas), 
 % \end{eqnsplit}
 \end{definition}
 
+\linea
 
+{\color{gray} Change the following ``examples'' of place and complete them being mindful of the context}\todo{DO}
 
-\begin{example}[Lie algebroid morphisms between Trivial Lie algebroid over $M$]
+\begin{example}[Lie algebroid morphisms between Trivial Lie algebroid over $M$]\label{exampleLieAlgebroidMorphismsBetweenTrivialLieAlgebroids}
 $\omega \in \Omega^1(TM, M \times \alg g_2)$ Maurer Cartan form (w.r.t. Lie composition), $\phi_+: M \times \alg g_1 \to M \times \alg g_2$ LAB morphism, Comp. Cond..
+
+The $\alpha^i_j = \psi_i^{-1} \comp \psi_j |_{U_{ij}\times \alg g}$'s, from a Lie algebroid atlas of a transitive Lie algebroid, are examples of $\phi^+$'s, and the $\chi^i_j$ are examples of $\omega$'s.
 \end{example}
 
 
 \begin{example}[The derivations Lie algebroid of a trivial vector bundle]
+\label{exampleDerivationsLieAlgebroidOfATrivialVectorBundleglV}
 $TU_i \oplus (U_i \times \alg{gl}(V))$
 \end{example}
 
 
 \begin{example}[All representations of a TLA on a T.v.b.]
-$\alpha_i: \Gamma(TU_i) \to C^\infty(U_i, \alg{gl}(V)$ Maurer Cartan, $\phi_{L, i} \in C^\infty(U_i, \Hom(\alg g. \alg{gl}(V)))$ LAB morphism.
+\label{exampleAllRepresentationsofTLAoverTrivialVectorbundle}
+$\alpha_i: \Gamma(TU_i) \to C^\infty(U_i, \alg{gl}(V)$ Maurer Cartan, $\phi_{L, i} \in C^\infty(U_i, \Hom(\alg g, \alg{gl}(V)))$ LAB morphis, plus compatibility condition between them.
 \end{example}
 
 
 \begin{example}[Group induced representation]\todo{Change of place}
-Particular case: $\phi_L$ constant $\pi: \alg g \to End(V)$, and with $\alpha_i = 0$.
+\label{definitionExampleGroupInducedRepresentationTrivialLieAlgebroidTLAOnTrivialVectorBundle}
+Particular case: $\phi_L$ constant $\pi: \alg g \to \alg{gl}(V)$, and with $\alpha_i = 0$.
 
 Let $G$ be a group with $\alg g$ as its Lie algebra, and let it act on the vector space $V$. Then, the map $\phi: TM \times \alg g \to \alg D(M \times V)$ such that, for all $X \oplus \eta \in TM \times \alg g$ and $f \in C^\infty(M, V)$:
 \begin{eqnsplit}
@@ -1091,6 +1098,7 @@ where $\eta \cdot f(m) := \der{t}[t=0]{\exp[t \eta] \cdot f(m)}$ is the action o
 
 
 \begin{example}[Local trivialization of representation of $TP/G$ on $E = P \times V/G$]\label{localTrivializationOfRepresentationOfAtiyahTPGonAssociated}\todo{Change of place}
+\label{exampleLocalTrivializationOfGroupInducedRepresentationOfAtiyahLieAlgebroidAction}
 $U_i$ trivializes $E$ as $\beta_i: U_i \times V\to E|_{U_i}$
 
 $\eta \in C^\infty(U_i, \alg g)$, $f \in C^\infty(U_i, V)$
@@ -1118,14 +1126,18 @@ where $\gamma: I \to U_i$ is a path on $M$ such that $\gamma'(0) = X_m$. In conc
 
 
 \begin{example}[Family of Local trivializations of all representations Transitive Lie algebroids]
+\label{transformationLawFamilyLocalTrivializationsRepresentationsOfTransitiveLieAlgebroid}
 i.e. Find transformation law of $\alpha_i$ and $\phi_{L, i}$.
 \end{example}
 
+\linea
 
 \begin{example}[All TLA-connections on T.v.b.]
+\label{exampleAllTLATrivialLieAlgebroidConnectionsOnTrivialVectorBundle}
 $B: TU_i \to C^\infty(U_i, \alg{gl}(V))$ $C^\infty(U_i)$-linear, and $\nu \in C^\infty(U_i, \Hom(\alg g. \alg{gl}(V)))$.
 \end{example}
 
+\linea
 
 \begin{example}[Local trivialization of arbitrary $A$-connection produced by connection on $A$]
 $B_i = \alpha_i + \phi_L \comp A_i$, $\nu_i = - \phi_{L, i} \comp \tau_i$
@@ -1135,11 +1147,17 @@ $B_i = \alpha_i + \phi_L \comp A_i$, $\nu_i = - \phi_{L, i} \comp \tau_i$
 \end{equation}
 
 Given basis $\{E_a\}_a$ with ${a, b = 1, \dots, n}$ of $\alg g$ dual to $\{\epsilon^a\}_a$, $\{e_u\}_{u}$ with $u, v = 1, \dots h$ of $V$ dual to $\{\tilde e^u\}$, and coordinates $\{x^\mu: U_i \to \RR\}_{\mu}$ with $\mu, \nu  = 1, \dots m$ of $M$:
-\begin{align}
-    \hat \nabla^{E, i}_\mu &:= \hat \nabla^{E_i}_{\partial_\mu \oplus 0} = \partial_\mu \oplus (\alpha_i)_{\mu, v}^u e_u \tilde e^v + (\phi_{L, i})^u_{b, v} (A_i)_{\mu, a}^b e_u \tilde e^v &
-    \hat \nabla^{E, i}_a &:= \hat \nabla^{E_i}_{0 \oplus E_a} \ 
-    cdots = - (\phi_{L, i})
-\end{align}
+\begin{eqnsplit}
+    \hat \nabla^{E, i}_\mu := \hat \nabla^{E_i}_{\partial_\mu \oplus 0} 
+    &= \partial_\mu + (\alpha_i)_\mu + A^b_\mu \phi_L(E_b) \\
+    &= \partial_\mu \oplus (\alpha_i)_{\mu, v}^u e_u \tilde e^v + (\phi_{L, i})^u_{b, v} (A_i)_{\mu}^b e_u \tilde e^v
+\end{eqnsplit}
+
+\begin{eqnsplit}
+    \hat \nabla^{E, i}_a := \hat \nabla^{E_i}_{0 \oplus E_a} 
+    &=  - \tau^b_a \phi_{L, i} (E_b) \\
+    &= - (\phi_{L, i})_{b, v}^u \tau^b_a e_u \tilde e^v
+\end{eqnsplit}
 
 \end{example}
 
