@@ -1112,9 +1112,10 @@ $\upsect{\beta_i(f)}: \sigma_i(m)g \mapsto g^{-1} f(m)) \in C^\infty_G(P, V)$.
 \begin{align*}
     \beta_i^{-1}[\phi\comp S_i(X \oplus \eta)(\beta_i(f))] (m)
         &= \upsect{\phi \comp S_i(X \oplus \eta)}_{\sigma_i(m)} (\upsect{\beta_i(f)})\\
-        &= \upsect{\phi\cl{\sigma_{i, *}(X)}}_{\sigma_i(m)} (\upsect{\beta_i(f)}) + \upsect{\phi( j\psi_i(\eta))}_{\sigma_i(m)} (\upsect{\beta_i(f)})\\
-        &= \sigma_{i, *}(X_m)(\upsect{\beta_i(f)}) + \der{t}[t=0]{\exp[t \eta(m)] f(m)}\\
-        &= \der{t}[t = 0]{\sigma_i(\gamma(t))} (\upsect{\beta_i(f)}) + (\eta \cdot f)(m)\\
+        %&= \sout{\upsect{\phi\cl{\sigma_{i, *}(X)}}_{\sigma_i(m)} (\upsect{\beta_i(f)}) + \upsect{\phi( j\psi_i(\eta))}_{\sigma_i(m)} (\upsect{\beta_i(f)})}\\
+        &= \sigma_{i, *}(X_m)(\upsect{\beta_i(f)}) 
+        + \der{t}[t = 0]{\upsect{\beta_i(f)}(\sigma_i(m) \cdot \exp[-t \eta(m)])}\\
+        &= \der{t}[t = 0]{\sigma_i(\gamma(t))} (\upsect{\beta_i(f)}) + \der{t}[t=0]{\exp[t \eta(m)] f(m)}\\
         &= \der{t}[t=0]{f(\gamma(t))} + (\eta \cdot f)(m)\\
         &= X_m(f) + (\eta \cdot f)(m),
 \end{align*}
@@ -1130,6 +1131,12 @@ where $\gamma: I \to U_i$ is a path on $M$ such that $\gamma'(0) = X_m$. In conc
 i.e. Find transformation law of $\alpha_i$ and $\phi_{L, i}$.
 \end{example}
 
+\begin{theorem}
+A representation can be determined from a family of local trivializations of Maurer-Cartan $\alpha$'s and LAB $\phi_{L, i}$'s with the above transformation laws.
+
+In particular, from a $V$ on which $G$ acts, the transitions functions of a vector bundle $E$ over $M$ with typical fiber $V$ is determined by stating that locally the representation is the group induced representation. \todo{I would think}
+\end{theorem}
+
 \linea
 
 \begin{example}[All TLA-connections on T.v.b.]
@@ -1137,7 +1144,7 @@ i.e. Find transformation law of $\alpha_i$ and $\phi_{L, i}$.
 $B: TU_i \to C^\infty(U_i, \alg{gl}(V))$ $C^\infty(U_i)$-linear, and $\nu \in C^\infty(U_i, \Hom(\alg g. \alg{gl}(V)))$.
 \end{example}
 
-\linea
+\lin
 
 \begin{example}[Local trivialization of arbitrary $A$-connection produced by connection on $A$]
 $B_i = \alpha_i + \phi_L \comp A_i$, $\nu_i = - \phi_{L, i} \comp \tau_i$
