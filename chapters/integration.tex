@@ -496,11 +496,11 @@ Similarly, letting $h^E$ be a metric on the representation vector bundle $E$, wi
 \end{equation}
 with local trivialization $g^{-1}_{i, h^E}$ defined by
 \begin{equation}
-    \hat g_{i, h^E}^{-1}(\alpha, \beta) := \hat g_i^{-1}(\alpha^u, \beta^v) h^E_{uv}
+    \hat g_{h^E, i}^{-1}(\alpha, \beta) := \hat g_{h^E, i}^{-1}(\alpha^u, \beta^v) h^E_{uv}
 \end{equation}
 Using the notation
 \begin{equation}
-    \beta_a^{\mu_1 \dots \mu_r a_1 \dots a_s} := h^E_{uv} g_i^{\mu_1 \nu_1} \cdots g^{\mu_r \nu_r} h^{a_1 b_1} \cdots h_i^{a_s b_s} \beta^u_{\nu_1 \dots \nu_r b_1 \dots  b_s},
+    \beta_v^{\mu_1 \dots \mu_r a_1 \dots a_s} := h^E_{uv} g_i^{\mu_1 \nu_1} \cdots g^{\mu_r \nu_r} h^{a_1 b_1} \cdots h_i^{a_s b_s} \beta^u_{\nu_1 \dots \nu_r b_1 \dots  b_s},
 \end{equation}
 we may also write, then,
 \begin{equation}
@@ -519,12 +519,12 @@ The Hodge-$*$ operator is the $C^\infty(M)$-linear (family of) operator
 \end{eqnsplit*}
 for all $p \in \ZZ_{\geq 0}$, where the element \emph{$* \alpha \in \Omega^{m+n-p}(A, E)$} is defined to be $*\alpha := \alpha \omega^{Vol}$ if $p = 0$, or, otherwise, by the local trivializations:
 \begin{eqnsplit}
-    (*\alpha)_i &= \sum_{r+s = p} (-1)^{s(m-r)} \frac{1}{r!s!} \sqrt{|h_i|} \sqrt{|g_i|} (\alpha_i)_{\mu_1 \dots \mu_r a_1 \dots a_s} \varepsilon_{\nu_1 \dots \nu_m}  \varepsilon_{b_1 \dots b_n}\\
+    (*\alpha)_i &= \sum_{r+s = p} (-1)^{s(m-r)} \frac{1}{r!s!} \sqrt{|h_i|} \sqrt{|g_i|} (\alpha_i)_{\mu_1 \dots \mu_r a_1 \dots a_s} \vepsilon_{\nu_1 \dots \nu_m}  \vepsilon_{b_1 \dots b_n}\\
     &\quad \times g^{\mu_1 \nu_1} \cdots g^{\mu_r \nu_r} h^{a_1 b_1} \cdots h^{a_s b_s} dx^{\nu_{r+1}} \wedge \cdots \wedge dx^{\nu_{m}} \wedge \alg a^{b_{s+1}} \wedge \cdots \wedge \alg a^{b_n} \\
-    &= \sum_{r+s = p} (-1)^{s(m-r)} \frac{1}{r!s!} \sqrt{|h_i|} \sqrt{|g_i|} (\alpha_i)^{\nu_1 \dots \nu_r b_1 \dots b_s} \varepsilon_{\nu_1 \dots \nu_m}  \varepsilon_{b_1 \dots b_n} \\
+    &= \sum_{r+s = p} (-1)^{s(m-r)} \frac{1}{r!s!} \sqrt{|h_i|} \sqrt{|g_i|} (\alpha_i)^{\nu_1 \dots \nu_r b_1 \dots b_s} \vepsilon_{\nu_1 \dots \nu_m}  \vepsilon_{b_1 \dots b_n} \\
     &\quad \times dx^{\nu_{r+1}} \wedge \cdots \wedge dx^{\nu_{m}} \wedge \alg a^{b_{s+1}} \wedge \cdots \wedge \alg a^{b_n}
 \end{eqnsplit}
-where $\varepsilon$ are totally antisymmetric Levi-Civita symbols.
+where $\vepsilon$ are totally antisymmetric Levi-Civita symbols.
 \end{definition}
 
 That the previous local trivializations do define a global form $*\alpha$ follows easily from the multiplication of the inverse $(G^i_j)$ matrices that appear when applying $\hat \alpha^i_j$, for $U_{ij} \neq \empty$, due to the transformations of $\sqrt{|h_i|}$, of the components of the inverse inner metric, of the components of $\alpha$ and of the subfactors of the inner volume element. Notice that $(*\alpha)_i = *(\alpha_i)$ by definition, so we may simply write $*\alpha_i$; also, notice that with respect to the basis $\{e_u\}$ of the typical fiber $V$ of $E$, $*\alpha_i = (*\alpha_i^u)e_u$.
