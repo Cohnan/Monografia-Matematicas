@@ -184,7 +184,7 @@ Also, let $E$ be a vector bundle over $M$ on which $A$ is represented by $\phi: 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{definition}
-    Let $E$ be any vector bundle over $M$. \emph{A degenerate metric on $E$} on $E$ is a symmetric vector bundle map $h^E: E \otimes E \to \bb K$. If $h^E$ is non-degenerate, i.e. if $h^E(\mu, \mu) = 0$, only if $\mu = 0$, then $h^E$ is called \emph{a metric on $E$}.
+    Let $E$ be any vector bundle over $M$. \emph{A degenerate metric on $E$} on $E$ is a symmetric vector bundle map $h^E: E \otimes E \to \bb R$. If $h^E$ is non-degenerate, i.e. if $h^E(\mu, \mu) = 0$, only if $\mu = 0$, then $h^E$ is called \emph{a metric on $E$}.
     
     In the case that $E = L$ the adjoint Lie algebroid of $A$, we also use the names \emph{degenerate inner metric on $A$} and \emph{inner metric on $A$}, respectively.
 \end{definition}
@@ -252,6 +252,8 @@ The previous proposition may be applied to the components of $E$-valued forms on
 \begin{equation}
     h^E|_{U_i}(\omega, \eta) = h^{E,i}_{uv}\,\omega^u \wedge \eta^v 
 \end{equation}
+
+The following definition will be important for the important property of a gauge theory: the ```gauge invariance'' of the action functional.
 
 \begin{definition}
 A degenerate metric $h^E$ on $E$ is called \emph{compatible with the representation} if
@@ -321,13 +323,17 @@ For the converse, let $\hat g$ be an inner non-degenerate metric on $A$. Then, l
 
 Suppose that on $U_i$ there is are coordinates $x^\mu: U_i \to \RR$ for $M$, with $\mu, \nu \in \{1, \dots, m\}$. Let $\hat g$ be an inner non-degenerate metric on $A$ associated to the triple $(g, h, \nabla)$. Then, with respect to the local frame $\{\nabla_\mu, -E_a\}$ of $TU_i \times \alg g$, dual to $\{dx^\mu, \alg a^a\}$, the following is true for the following scalar valued functions, called \emph{the local components of $\hat g$ with respect to the coordinates $x^\mu$ and the basis $\{E_a\}$} of $\alg g$, where $\mu, \nu = 1, \dots, m$ and $a, b = 1, \dots, n$:
 \begin{align*}
-    \hat g^i_{\mu \nu}& := \hat g^i(\nabla_\mu, \nabla_\nu) = \delta_{\mu \nu}\\
-    \hat g^i_{\mu a} &:= \hat g^i(\nabla_\mu, -E_a)=0\\
-    \hat g^i_{ab} &:= \hat g^i(-E_a, -E_b) = \delta_{ab}
+    \hat g^i_{\mu \nu,}& := \hat g^i(\nabla_\mu, \nabla_\nu) = \delta_{\mu \nu}\\
+    \hat g^i_{\mu, a} &:= \hat g^i(\nabla_\mu, -E_a)=0\\
+    \hat g^i_{,ab} &:= \hat g^i(-E_a, -E_b) = \delta_{ab}
 \end{align*}
 where $g^i := S^{i*}\hat g|_{U_i}$ is \emph{the local trivialization of $\hat g$ over $U_i$}, i.e.
 \begin{equation}
-    \hat g^i = g_{\mu \nu} dx^\mu\otimes dx^\nu + h_{ab} \alg a^a \otimes \alg a^b.
+    \hat g^i = g^i_{\mu \nu} dx^\mu\otimes dx^\nu + h^i_{ab} \alg a^a \otimes \alg a^b;
+\end{equation}
+and so its \emph{local matrix representation} with respect to the same elements, i.e. with respect to $\{\nabla_\mu, -E_a\}$, is the following symmetric matrix:
+\begin{equation}
+    (\hat g^i) = \begin{pmatrix}  (g_{\mu \nu})_{\mu, \nu = 1, \dots, m} & 0 \\ 0 & (h_{a b})_{a, b = 1, \dots, n} \end{pmatrix}.
 \end{equation}
 
 
@@ -410,8 +416,10 @@ applied to forms for which the corresponding integration over $M$ is well define
 \end{definition}
 
 \begin{remark}
-Notice that the integration on $A$ only requires an inner metric $h$ on $A$ and an orientable base manifold; neither $g$ nor the connection $\nabla$ influence the integration of forms on $A$. However, to define an action functional we will require one more ingredient: the Hodge-$*$ operator of forms, and this will require the full complexity of $\hag g$.
+Notice that the integration on $A$ only requires an inner metric $h$ on $A$ (to define $\int_{inner}$ and an orientable base manifold (to define $\int_M$), neither $g$ nor the connection $\nabla$ influence the integration of forms on $A$.
 \end{remark}
+
+However, to define an action functional we will require one more ingredient: the Hodge-$*$ operator of forms, which will require the full complexity of $\hat g$.
 
 % \begin{definition}
 % Let $h^E$ be a metric on $E$. Then 
@@ -420,3 +428,87 @@ Notice that the integration on $A$ only requires an inner metric $h$ on $A$ and 
 \section{Horizontal Metrics and Hodge-$*$ Operator}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The Hodge-$*$ operator enables the definition of the norm of a homogeneous $E$-valued form on $A$ of any degree, of which the gauge action functional \ref{} and the matter action functional \ref{}, which determine a gauge theory, will be examples.
+
+For the rest of this chapter, let the transitive Lie algebroid $A$ be orientable and let $\hat g$ be a metric on $A$ (in particular, non-degenerate) associated to the triple $(g, h, \nabla)$, where $g$ and $h$ are (non-degenerate) metrics and $\nabla$ is an ordinary connection associated to the connection form $\alg a \in \Omega^1(A, L)$. Additionally, let $h^E$ be a metric on the representation vector bundle $E$. Finally, suppose that on each $U_i$ there are local coordinates $x^\mu: U_i \to \RR$, where $\mu = 1, \dots, m$.
+
+\begin{definition}
+\emph{The volume form $\omega^{Vol}$ on $A$ with respect to the metric $\hat g$} is the never zero top form $\Omega^{m+n}(A)$ with local trivialization over each $U_i$:
+\begin{equation}
+    \omega^{Vol}_i = (-1)^n \sqrt{|g_i|} \sqrt{|h_i|} dx^1 \wedge \cdots \wedge dx^m \wedge \alg a^1 \wedge \cdots \wedge \alg a^n.
+\end{equation}
+\end{definition}
+
+\subsubsection{Inverse Metrics}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The non-degeneracy of $\hat g$ implies that, over each $U_i$, the matrix representation of $\hat g^i$ with respect to the local frame $\{\nabla^i_\mu, -E_a\}_{\mu = 1, \dots, m;\, a = 1, \dots, n}$ is invertible, with inverse:
+\begin{equation}
+    (\hat g_i^{-1}) = \begin{pmatrix} (g^{\mu \nu})_{\mu, \nu = 1, \dots, m} & 0 \\ 0 & (h^{a b})_{a, b = 1, \dots, n} \end{pmatrix},
+\end{equation}
+where the matrix $(g^{\mu \nu})_{\mu, \nu = 1, \dots, m}$ is the inverse of the matrix of the matrix representation $(g_{\mu \nu})_{\mu, \nu = 1, \dots, m}$ of the induced metric on $TU_i$ and similarly for $(h^{a b})_{a, b = 1, \dots, n}$. We can use this to define a metric on the spaces of homogeneous forms of a given degree just as in the traditional $A = TM$ case.
+
+\begin{definition}
+\emph{The inverse metric of $\hat g$} is the symmetric, \dbtext{non-degenerate}, $C^\infty(M)$-linear (family of) map
+\begin{equation}
+    \hat g^{-1}: \Omega^p(A) \otimes \Omega^p(A) \to C^\infty(M, \RR),
+\end{equation}
+for all $p, q \in \ZZ_{\geq 0}$, such that its \emph{local trivialization $\hat g_i^{-1}$ over $U_i$}, i.e. the metric of $TU_i \times \alg g$ defined by $\hat g^{-1}|_{U_i}(\omega, \eta) = \hat g_i^{-1} (\omega_i, \eta_i)$ for all $\omega, \eta \in \Omega^p(A)$, satisfies:
+\begin{equation*}
+    \hat g_i^{-1} (\alpha, \beta) = \sum_{r+s = p} g^{\mu_1 \nu_1} \cdots g^{\mu_r \nu_r} h^{a_1 b_1} \cdots h^{a_s b_s} \alpha_{\mu_1 \dots \mu_r a_1 \dots a_s} \beta_{\nu_1 \dots \nu_r b_1 \dots  b_s},
+\end{equation*}
+for all $\alpha, \beta \in \Omega^p(TU_i \times \alg g)$ and using their decomposition with respect to the local mixed basis induced by the connection $\nabla$. 
+
+Using the notation
+\begin{equation}
+    \beta^{\mu_1 \dots \mu_r a_1 \dots a_s} := g_i^{\mu_1 \nu_1} \cdots g^{\mu_r \nu_r} h^{a_1 b_1} \cdots h_i^{a_s b_s} \beta_{\nu_1 \dots \nu_r b_1 \dots  b_s},
+\end{equation}
+which defines an element of $\beta^\#$ in the dual module of $\Omega^p(A)$, we may also write, then,
+\begin{equation}
+    \hat g_i^{-1}(\alpha, \beta) = \alpha_{\mu_1 \dots \mu_r a_1 \dots a_s} \beta^{\mu_1 \dots \mu_r a_1 \dots  a_s}.
+\end{equation}
+\end{definition}
+
+That the inverse metric is a well defined global element follows from the transformation laws of the components of a form, given in theorem \ref{theoremTransformationLawOfFormsComponentsFOrMixedLocalBasisDecomposition}, and the transformation law of the inverse metric,
+\begin{equation}
+    h_i^{a_1 b_1} = {G^i_j}^{a_1}_{a_1'} {G^i_j}^{b_1}_{b_1'} h_j^{a_1' b_1'}
+\end{equation}
+that follows from \ref{              }, which is inverse to that of the components; concretely, for $\omega, \eta \in \Omega^p(A)$, over $U_{ij} \neq \empty$ it is satisfies that
+\begin{align*}
+    \hat g_j^{-1}(\omega_i, \eta_i) 
+        &= \sum_{r+s = p} g_i^{\mu_1 \nu_1} \cdots g_i^{\mu_r \nu_r} h_i^{a_1 b_1} \cdots h_i^{a_s b_s} (\omega_i)_{\mu_1 \dots \mu_r a_1 \dots a_s} (\eta_i)_{\nu_1 \dots \nu_r b_1 \dots  b_s}\\
+        &= g_j^{\mu_1 \nu_1} \cdots g_j^{\mu_r \nu_r} 
+        ({G^i_j}^{a_1}_{a_1'} {G^i_j}^{b_1}_{b_1'} h_j^{a_1' b_1'}) \cdots 
+        ({G^i_j}^{a_s}_{a_s'} {G^i_j}^{b_s}_{b_s'} h_j^{a_s' b_s'}) \times \\
+         &\quad  {G^j_i}^{a_1}_{a_1'}\cdots {G^i_j}^{a_s}_{a_s'} (\omega_j)_{\mu_1 \dots \mu_r a_1' \dots a_s'} \, {G^j_i}^{b_1}_{b_1'}\cdots {G^i_j}^{b_s}_{b_s'} (\eta_j)_{\nu_1 \dots \nu_r b_1' \dots  b_s'}\\
+        &= \sum_{r+s = p} g_j^{\mu_1 \nu_1} \cdots g_j^{\mu_r \nu_r} h_j^{a_1 b_1} \cdots h_j^{a_s b_s} (\omega_j)_{\mu_1 \dots \mu_r a_1 \dots a_s} (\eta_j)_{\nu_1 \dots \nu_r b_1 \dots  b_s}\\
+        &= \hat g_j^{-1}(\omega_j, \eta_j) .
+\end{align*}
+
+Similarly, letting $h^E$ be a metric on the representation vector bundle $E$, we can define an ``inverse'' metric for $E$-valued forms:
+
+\begin{definition}
+\emph{The inverse metric $\hat g_{h^E}^{-1}$ on $E$-valued forms induced by $h^E$} is the symmetric, \dbtext{non-degenerate}, $C^\infty(M)$-linear map
+\begin{equation}
+    \hat g^{-1}_{h^E}: \Omega^p(A) \otimes \Omega^p(A) \to C^\infty(M, \RR),
+\end{equation}
+with local trivialization $g^{-1}_{i, h^E}$ defined by
+\begin{equation}
+    \hat g_{i, h^E}^{-1}(\alpha, \beta) := \hat g_i^{-1}(\alpha^u, \beta^v) h^E_{uv}
+\end{equation}
+Using the notation
+\begin{equation}
+    \beta_a^{\mu_1 \dots \mu_r a_1 \dots a_s} := h^E_{uv} g_i^{\mu_1 \nu_1} \cdots g^{\mu_r \nu_r} h^{a_1 b_1} \cdots h_i^{a_s b_s} \beta^u_{\nu_1 \dots \nu_r b_1 \dots  b_s},
+\end{equation}
+we may also write, then,
+\begin{equation}
+    \hat g_{h^E, i}^{-1}(\alpha, \beta) = \alpha^u_{\mu_1 \dots \mu_r a_1 \dots a_s} \beta_u^{\mu_1 \dots \mu_r a_1 \dots  a_s}.
+\end{equation}
+\end{definition}
+
+\subsubsection{Hodge-$*$ Operator}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{definition}
+Let $\alpha$ be an element of $\Omega^p(A, E)$. If   
+\end{definition}
