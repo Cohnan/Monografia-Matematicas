@@ -51,7 +51,7 @@
                 
             \end{itemize}
             
-        \item $\phi_L$-compatible $E$-metric: $h^E(\phi_L(\eta) \mu_1, \mu_2) + h^E(\mu_1, \phi_L(\eta)\mu_2) = 1$
+        \item $\phi_L$-compatible $E$-metric: $h^E(\phi_L(\eta) \mu_1, \mu_2) + h^E(\mu_1, \phi_L(\eta)\mu_2) = 0$
         
             \begin{itemize}
                 
@@ -184,9 +184,84 @@ Also, let $E$ be a vector bundle over $M$ on which $A$ is represented by $\phi: 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{definition}
+    Let $E$ be any vector bundle over $M$. \emph{A degenerate metric on $E$} on $E$ is a symmetric vector bundle map $h^E: E \otimes E \to \bb K$. If $h^E$ is non-degenerate, i.e. if $h^E(\mu, \mu) = 0$, only if $\mu = 0$, then $h^E$ is called \emph{a metric on $E$}.
     
+    In the case that $E = L$, we also use, respectively, the call also call them \emph{degenerate inner metric on $A$} and \emph{inner metric on $A$}.
 \end{definition}
 
+Notice that a (degenerate) metric on $E$ is equivalent to a $C^\infty(M)$-linear map $h^E: \Gamma(E) \otimes \Gamma(E) \to C^\infty(M)$ which is a field of symmetric bilinear forms if $h^E$ is degenerate, and a field of metrics in the non-degenerate case. We now return to consider $E$ as a representation vector bundle of $A$.
+
+For the rest of the chapter, let $h^E$ be a degenerate metric on $E$ and let $h$ be a degenerate inner metric on $A$.
+
+\begin{definition}
+    Over the trivializing neighborhood $U_i$, \emph{the components of $h^E$ with respect to the basis $\{e_u\}$}, with $u, v = 1, \dots$, are the functions $h^{E, i}_{u, v}:= h^E|_{U_i}(\beta_i(e_u),\beta_i(e_v)) \in C^\infty(U_i)$, where $e_u$ and $e_v$ are the corresponding constant $V$-valued functions on $U_i$.
+\end{definition}
+
+In particular, $h_{ab}$ are the components of $h$ with respect to the basis $\{E_a\}$, $a, b = 1, \dots, n$. Notice that, in contrast to the components of forms, the components of a (degenerate) metric are symmetric on the indices.
+
+\begin{proposition}
+Let ${H^i_j}^u_v = \tilde e^u(\beta^i_j(e_v))$, for $i, j \in I$ and $u, v \in \{1, \dots, t\}$ be the matrix representation of the transition function of $E$ from $U_j$ to $U_i$. Then,
+\begin{equation}
+    h^{E, j}_{u_1 u_2} = {H^i_j}^{v_1}_{u_1}{H^i_j}^{v_2}_{u_2} h^{E, i}_{v_1 v_2}
+\end{equation}
+for $u_1, u_2, v_1, v_2 \in \{1, \dots, t\}$.
+\end{proposition}
+\begin{proof}
+\begin{align*}
+    h^{E, j}_{u_1 u_2} 
+        &= h^E(\beta_j(e_{u_1}),\beta_j(e_{u_2})) \\
+        &= h^E(\beta_i \comp \beta^i_j(e_{u_1}), \beta_i \comp \beta^i_j(e_{u_2})\\
+        &= h^E({H^i_j}^{v_1}_{u_1} \beta_i(e_{u_2}), {H^i_j}^{v_1}_{u_1} \beta_i(e_{u_2}))
+        &= {H^i_j}^{v_1}_{u_1}{H^i_j}^{v_2}_{u_2} h^{E, i}_{v_1 v_2}
+\end{align*}
+\end{proof}
+Recall that the transition functions of $L$ are denoted by $\alpha^i_j$ and its matrix representation with respect to $\{E_a\}_{a = 1, \dots, n}$ is denoted by ${G^i_j}^a_b$.
+
+\begin{definition}
+    Given a degenerate metric on the representation vector bundle $E$ of $A$, let
+    \begin{equation}
+        h^E: \Omega^p(A, E) \otimes \Omega^q(A, E) \to \Omega^{p+q}(A)
+    \end{equation}
+    for all $p, q \in \ZZ_{\geq 0}$ be the skew-symmetric $C^\infty(M)$-linear (family of) map defined by
+    \begin{eqnsplit}
+        h^E(\omega, \eta)(\oid X_1, \dots, \oid X_{p+q}) := \frac{1}{p!q!} \sum_{\sigma \in Sym_{p+q}} 
+        h^E\left( \omega(\oid X_{\sigma(1)}, \dots, \oid X_{\sigma(p)}),  \eta(\oid X_{\sigma(p+1)}, \dots, \oid X_{\sigma_{p+q}}) \right),
+    \end{eqnsplit}
+    for all $\omega \in \Omega^p(A, E)$, $\eta \in \Omega^q(A, E)$, and $\oid X_1, \dots, \oid X_{p+q} \in A$.
+\end{definition}
+
+\begin{proposition}
+Let $\alpha, \beta \in \Omega_{U_i}^\bullet(A)$, and let $\mu_1, \nu \in \Gamma_{U_i}(E) = \Omega^0_{U_i}(A, E)$. Then
+\begin{equation}
+    h^E(\mu \alpha, \nu \beta) = h^E(\mu, \nu) \, \alpha \wedge \beta.
+\end{equation}
+\end{proposition}
+\begin{proof}
+This is a direct consequence of the bilinearity of $h^E$  and how the formula for $h^E$ applied to forms is a generalization of the formula for the wedge product.
+\begin{align*}
+    h^E(\mu \alpha, \nu \beta)&(\oid X_1, \dots, \oid X_{p+q})\\
+    &=\frac{1}{p!q!} \sum_{\sigma \in Sym_{p+q}} h^E\left( \mu \omega(\oid X_{\sigma(1)}, \dots, \oid X_{\sigma(p)}),  \nu \eta(\oid X_{\sigma(p+1)}, \dots, \oid X_{\sigma_{p+q}}) \right) \\
+    &= \frac{1}{p!q!} \sum_{\sigma \in Sym_{p+q}} 
+        h^E\left( \mu ,  \nu  \right) 
+        \omega(\oid X_{\sigma(1)}, \dots, \oid X_{\sigma(p)}) \eta(\oid X_{\sigma(p+1)}, \dots, \oid X_{\sigma_{p+q}})\\
+    &= h^E(\mu, \nu) \, (\omega \wedge \eta)(\oid X_1, \dots, \oid X_{p+q}).
+\end{align*}
+\end{proof}
+
+The previous proposition may be applied to the components of $E$-valued forms on each $U_i$ with respect to the basis $\{e_u\}$, since then $\omega = \omega^u e_u$ and $\eta = \eta^v e_v$ with $\omega^u$ and $\eta^v$ are scalar valued forms; hence
+\begin{equation}
+    h^E|_{U_i}(\omega, \eta) = h^{E,i}_{uv}\,\omega^u \wedge \eta^v 
+\end{equation}
+
+\begin{definition}
+A degenerate metric $h^E$ on $E$ is called \emph{compatible with the representation} if
+\begin{equation*}
+    h^E(\phi_L(\eta) \mu_1, \mu_2) + h^E(\mu_1, \phi_L(\eta)\mu_2) = 0,
+\end{equation*}
+for all $\eta \in L$ and $\mu_1, \mu_2 \in E$.
+
+In the case that $E$ is the adjoint Lie algebroid $L$, we also say that \emph{$h$ is a Killing degenerate metric}.
+\end{definition}
 
 \section{Symmetric Bilinear Forms}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
