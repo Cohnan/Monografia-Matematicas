@@ -179,14 +179,14 @@ Let every vector space, and hence every vector bundle, be over the field $\bb K$
 
 Also, let $E$ be a vector bundle over $M$ on which $A$ is represented by $\phi: A \to \alg D(E)$, with vertical component $\phi_L: L \to \End(E)$. Suppose that $E$ is trivialized over each $U_i$, $i \in I$, by the vector bundle isomorphisms $\beta_i: U_i \times V \to E|_U$, where $V$ is a vector space with basis $\{e_u\}_{u = 1, \dots, t}$ and associated dual basis $\{\tilde e_u\}_{u = 1, \dots, t}$.\todo{Take this as example for all previous instances of this concepts and their labels}.
 
-\section{Metrics on Representation Vector Bundles and Inner Metrics}
+\section{Degenerate Metrics on Representation Vector Bundles and Inner Metrics}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{definition}
     Let $E$ be any vector bundle over $M$. \emph{A degenerate metric on $E$} on $E$ is a symmetric vector bundle map $h^E: E \otimes E \to \bb K$. If $h^E$ is non-degenerate, i.e. if $h^E(\mu, \mu) = 0$, only if $\mu = 0$, then $h^E$ is called \emph{a metric on $E$}.
     
-    In the case that $E = L$, we also use, respectively, the call also call them \emph{degenerate inner metric on $A$} and \emph{inner metric on $A$}.
+    In the case that $E = L$ the adjoint Lie algebroid of $A$, we also use the names \emph{degenerate inner metric on $A$} and \emph{inner metric on $A$}, respectively.
 \end{definition}
 
 Notice that a (degenerate) metric on $E$ is equivalent to a $C^\infty(M)$-linear map $h^E: \Gamma(E) \otimes \Gamma(E) \to C^\infty(M)$ which is a field of symmetric bilinear forms if $h^E$ is degenerate, and a field of metrics in the non-degenerate case. We now return to consider $E$ as a representation vector bundle of $A$.
@@ -258,15 +258,71 @@ A degenerate metric $h^E$ on $E$ is called \emph{compatible with the representat
 \begin{equation*}
     h^E(\phi_L(\eta) \mu_1, \mu_2) + h^E(\mu_1, \phi_L(\eta)\mu_2) = 0,
 \end{equation*}
-for all $\eta \in L$ and $\mu_1, \mu_2 \in E$.
+for all $\eta \in L_m$ and $\mu_1, \mu_2 \in E_m$ for all $m \in M$.
 
 In the case that $E$ is the adjoint Lie algebroid $L$, we also say that \emph{$h$ is a Killing degenerate metric}.
 \end{definition}
 
-\section{Symmetric Bilinear Forms}
+Since the representation of $A$ on $L$ is is the adjoint representation, a Killing inner (degenerate) metric $h$ satisfies, for all $m \in M$, $\eta, \theta, \gamma \in L_m$:
+\begin{equation}
+    h([\eta, \theta], \gamma) = h(\theta, [\eta, \gamma]) = 0.
+\end{equation}
+
+\section{Degenerate Metrics}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{definition}
+\emph{The inner part of $\hat g$} is the degenerate inner metric \begin{equation}
+    h := j^*g.
+\end{equation} If $h$ is non-degenerate, $\hat g$ is called \emph{an inner non-degenerate metric on $A$}.
+\end{definition}
+
+Let $g$ be a (degenerate) metric on $TM$, i.e. a (degenerate) metric on $M$, then we may define a degenerate metric $\hat g$ on $A$ by
+\begin{equation}
+    \hat g = a^* g;
+\end{equation}
+this is a degenerate metric on $A$ since its inner part is null.
+
+\begin{definition}
+Let $\nabla: TM \to A$ be an ordinary connection on $A$ with induced connection form $\alg a \in \Omega^1(A, L)$. Then:
+    \begin{itemize}
+    
+    \item Given an inner degenerate metric $h$ on $A$, \emph{the degenerate metric induced by $\nabla$} is
+    \begin{equation}
+        \hat g := \alg a^* h;
+    \end{equation}
+    this metric has $h$ as inner part.
+    
+    \item Given a degenerate metric $\hat g$ on $A$, \emph{the tangent degenerate metric induced by $\nabla$} is the degenerate metric $g$ on $TM$:
+    \begin{equation}
+        g := \nabla^* \hat g.
+    \end{equation}
+    
+    \end{itemize}
+\end{definition}
+
+\begin{theorem}
+An inner non-degenerate metric $\hat g$ on $A$ is equivalent to a triple $(g, h, \nabla)$ through the equation
+\begin{equation}
+    \hat g(\oid X, \oid Y) = g(a(\oid X), a(\oid Y)) + h(\alg a(\oid X), \alg a(\oid Y));
+\end{equation}
+where $g$ is a degenerate metric on $TM$, $h$ is an inner non-degenerate metric on $A$ and $\nabla$ is an ordinary connection on $A$ with associated connection $1$-form $\alg a$. In particular, $h$ is the inner part of $\hat g$ and $g$ is the tangent degenerate metric on $TM$ induced by the connection.
+\end{theorem}
+\begin{proof}
+For a given triple $(g, h, \nabla)$, the corresponding degenerate metric is precisely $\hat g = a^*g + \alg a^* h$.
+
+For the converse, let $\hat g$ be an inner non-degenerate metric on $A$. Then, let $h$ be the inner part of $\hat g$. We now need to see that an inner non-degenerate metric induces an ordinary connection $\nabla$ for which the vertical bundle of $A$ and the horizontal bundle induced by the connection are orthogonal, i.e. a connection such that
+\begin{align}
+    \hat g(\nabla_X, j(\eta)) &= 0,& \text{for all $X \in TM$ and $\eta \in L$};
+\end{align} then, $g$ will simply be the tangent degenerate metric induced by $\hat g$. To prove this we follow an adapted version of Riesz representation theorem \todo{}.
+\end{proof}
+
+
+Suppose that on $U_i$ there is are coordinates $x^\mu: U_i \to \RR$ for $M$, with $\mu, \nu \in \{1, \dots, m\}$. Let $\hat g$ be an inner nondegenerate metric on $A$ associated to the triple $(g, h, \nabla)$. Then, with respect to the local frame $\{\nabla_\mu, -E_a\}$ of $A$ it is true that the following maps, called \emph{the local components of $\hat g$ with respect to the coordinates $x^\mu$ and the basis $\{E_a\}$} of $\alg g$, where $\mu, \nu = 1, \dots, m$ and $a, b = 1, \dots, n$, satisfy $\hat g_{\mu \nu} = \hat g(\nabla_\mu, \nabla_\nu) = \delta_{\mu \nu}$, $\hat g_{\mu a} = \hat g(\nabla_\mu, -E_a)=0$ and $\hat g_{ab} = \hat g(-E_a, -E_b) = \delta_{ab}$, i.e.
+\begin{equation}
+    \hat g = g_{\mu \nu} dx^\mu dx^\nu + h_{ab} \alg a^a \alg a^b
+\end{equation}
 
 
 \section{Inner Integration and Integration}
