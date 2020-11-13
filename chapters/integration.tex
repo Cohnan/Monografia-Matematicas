@@ -217,7 +217,7 @@ for $u_1, u_2, v_1, v_2 \in \{1, \dots, t\}$.
 \end{proof}
 Recall that the transition functions of $L$ are denoted by $\alpha^i_j$ and its matrix representation with respect to $\{E_a\}_{a = 1, \dots, n}$ is denoted by ${G^i_j}^a_b$.
 
-\begin{definition}
+\begin{definition}\todo{Not sure if this map is non-degenerate IFF the vanilla $h^E$ is so}
     Given a degenerate metric on the representation vector bundle $E$ of $A$, let
     \begin{equation}
         h^E: \Omega^p(A, E) \otimes \Omega^q(A, E) \to \Omega^{p+q}(A)
@@ -319,15 +319,103 @@ For the converse, let $\hat g$ be an inner non-degenerate metric on $A$. Then, l
 \end{proof}
 
 
-Suppose that on $U_i$ there is are coordinates $x^\mu: U_i \to \RR$ for $M$, with $\mu, \nu \in \{1, \dots, m\}$. Let $\hat g$ be an inner nondegenerate metric on $A$ associated to the triple $(g, h, \nabla)$. Then, with respect to the local frame $\{\nabla_\mu, -E_a\}$ of $A$ it is true that the following maps, called \emph{the local components of $\hat g$ with respect to the coordinates $x^\mu$ and the basis $\{E_a\}$} of $\alg g$, where $\mu, \nu = 1, \dots, m$ and $a, b = 1, \dots, n$, satisfy $\hat g_{\mu \nu} = \hat g(\nabla_\mu, \nabla_\nu) = \delta_{\mu \nu}$, $\hat g_{\mu a} = \hat g(\nabla_\mu, -E_a)=0$ and $\hat g_{ab} = \hat g(-E_a, -E_b) = \delta_{ab}$, i.e.
+Suppose that on $U_i$ there is are coordinates $x^\mu: U_i \to \RR$ for $M$, with $\mu, \nu \in \{1, \dots, m\}$. Let $\hat g$ be an inner non-degenerate metric on $A$ associated to the triple $(g, h, \nabla)$. Then, with respect to the local frame $\{\nabla_\mu, -E_a\}$ of $TU_i \times \alg g$, dual to $\{dx^\mu, \alg a^a\}$, the following is true for the following scalar valued functions, called \emph{the local components of $\hat g$ with respect to the coordinates $x^\mu$ and the basis $\{E_a\}$} of $\alg g$, where $\mu, \nu = 1, \dots, m$ and $a, b = 1, \dots, n$:
+\begin{align*}
+    \hat g^i_{\mu \nu}& := \hat g^i(\nabla_\mu, \nabla_\nu) = \delta_{\mu \nu}\\
+    \hat g^i_{\mu a} &:= \hat g^i(\nabla_\mu, -E_a)=0\\
+    \hat g^i_{ab} &:= \hat g^i(-E_a, -E_b) = \delta_{ab}
+\end{align*}
+where $g^i := S^{i*}\hat g|_{U_i}$ is \emph{the local trivialization of $\hat g$ over $U_i$}, i.e.
 \begin{equation}
-    \hat g = g_{\mu \nu} dx^\mu dx^\nu + h_{ab} \alg a^a \alg a^b
+    \hat g^i = g_{\mu \nu} dx^\mu\otimes dx^\nu + h_{ab} \alg a^a \otimes \alg a^b.
 \end{equation}
 
 
 \section{Inner Integration and Integration}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{definition}
+The transitive Lie algebroid \emph{$A$ is inner orientable} if the adjoint Lie algebroid $L$ is an orientable vector bundle.
+\end{definition}
+
+Since the matrices ${G^i_j}^a_b$ represent the transition functions of $L$, where $a, b \in \{1, \dots, n\}$ and $i, j \in I$ such that $U_{ij \neq \empty}$ , $A$ is inner orientable if and only if $det({G^i_j}) \geq 0$.
+
+For the rest of the section, let $A$ be inner orientable, and let $\hat g$ be an inner non-degenerate metric on $A$ with $(g, h, \nabla)$ its associated triple.
+
+\begin{proposition}\label{propositionInnerVolumeFormIntegrationFOrmGloballyDefinedWell}
+For $i, j \in I$ such that $U_{ij \neq \empty}$,
+\begin{equation*}
+    \hat \alpha^i_j(\sqrt{|h^j|} \alg a_j^1 \wedge \cdots \wedge \alg a_j^n) = \sqrt{|h^i|} \alg a_i^1 \wedge \cdots \wedge \alg a_i^n \in \Omega^n(TU_{ij} \times \alg g),
+\end{equation*}
+where $\alg a = \alg a_i^a E_a$ is the connection form associated to $\nabla$, and $|h^i| \in C^\infty(U_i)$ denotes the absolute value of the determinant of $h$ over $U_i$, which is simply the absolute value of the determinant of the matrix $(h_{ab})$.
+\end{proposition}
+\begin{proof}
+\todo{}
+\end{proof}
+
+Thanks to the previous proposition, the following form is well defined globally:
+\begin{definition}
+The global form $\omega_{h, \alg a} \in \Omega^n(A)$ whose local trivializations with respect to the connection $\nabla$ and the basis $\{E_a\}$ over each $U_i$ are
+\begin{equation*}
+    (\omega_{h, \alg a})_i = (-1)^n \sqrt{|h^i|} \alg a_i^1 \wedge \cdots \wedge \alg a_i^n
+\end{equation*}
+is called \emph{the inner volume form of $A$} with respect to $h$ and $\nabla$ and, recall, $n = dim(\alg g)$.
+\end{definition}
+
+\begin{theorem}\label{theoremIntegratedFormFactorInnerVolumeFOrmWellGloballyDefined}
+Suppose that $\beta \in \Omega^\bullet(A, E)$, and let its decomposition with respect to the connection $\nabla$ and the basis $\{E_a\}$ over $U_i$ be
+\begin{equation*}
+    \beta_i = \beta^{M}_i \wedge \omega_{h, \alg a}%(-1)^n \sqrt{|h^i|} \alg a_i^1 \wedge \cdots \wedge \alg a_i^n 
+    + \beta^R,
+\end{equation*}
+where $\beta^R$ is the sum of the terms which do not have $\alg a_i^1 \wedge \cdots \wedge \alg a_i^n$ as a factor. Then, $\beta_i^M \in \Omega_{U_i}(A, E)$ is the local trivialization over $U_i$ of a globally defined form $\beta^M$.
+
+Furthermore, $\beta_i^M$ is also the term of the decomposition of $\beta$ over $U_i$ that multiplies the maximum inner degree term $\sqrt{|h_i|} \epsilon^1 \wedge \cdots \wedge \epsilon^n$, hence $\beta^M$ only depends on $h$.
+\end{theorem}
+
+\begin{proof}
+Thanks to the homogeneous transformation rules \ref{}, for all $j \in I$ such that $U_{ij} \neq \empty$, $\hat \alpha^i_j(\beta^R)$ does not have any term with $\alg a_j^1 \wedge \cdots \wedge \alg a_j^n$ as factor, and so, since $\hat \alpha^i_j$ respects the wedge product, proposition \ref{propositionInnerVolumeFormIntegrationFOrmGloballyDefinedWell} implies that
+\begin{equation}
+    \hat \alpha^j_i(\beta^{M}_i) = \beta^{M}_j.
+\end{equation}
+
+The last part of the theorem is follows simply from decomposing each $\alg a_i^a \in \Omega^1(TU_i \times \alg g)$ as $A_i^a - \epsilon^a$, showing that the term that accompanies $\epsilon^1 \wedge \cdots \wedge^n$ in the decomposition of $\beta$ with respect to the local frame $\{dx^\mu, \epsilon^a\}$, if it exists, is precisely the same term that accompanies $(-1)\alg a_i^1 \wedge \cdots \wedge \alg a_i^n$ in the decomposition of $\beta$ with respect to the frame $\{dx^\mu, \alg a^a\}$, where $x^\mu: U_i\to \RR$, $mu = 1, \dots , m$ are any (auxiliary) coordinates defined in perhaps smaller open subsets of $U_i$ that cover it; since $\hat \alpha^i_j(dx^\mu) = dx^\mu$, it does not matter that the coordinates $x^\mu$ are not defined globally.
+\end{proof}
+
+
+\begin{definition}
+On the inner orientable transitive Lie algebroid $A$ with inner non-degenerate metric $\hat g$, define \emph{the inner integration of forms on $A$} as the operation:
+\begin{align}
+    \int_{inner} &: \Omega^\bullet(A) \to \Omega^\bullet(TM)
+    & \beta &\mapsto \beta^M,
+\end{align}
+where we used the notation of proposition \ref{theoremIntegratedFormFactorInnerVolumeFOrmWellGloballyDefined}.
+\end{definition}
+The previous definition can be extended with the same formula to integration of $E$-valued forms, but we only state this definition since it suffices for our purposes of defining the action functional of a gauge theory.
+
+\linea
+
+\begin{definition}
+The transitive Lie algebroid $A$ is called \emph{orientable} if it is inner orientable and the base manifold $M$ is orientable.\todo{This coincides with the $A = TM \oplus L$ being orientable as a vector bundle, right? or is this weaker?}
+\end{definition}
+
+\begin{definition}
+Let $A$ be an orientable transitive Lie algebroid with inner non-degenerate metric $\hat g$. Define \emph{the integration of scalar valued forms on $A$} as the operation
+\begin{align}
+    \int_A: \Omega^\bullet(A) &\to \bb K
+    & \beta \mapsto \int_M \int_{inner} \beta,
+\end{align}
+applied to forms for which the corresponding integration over $M$ is well defined.
+\end{definition}
+
+\begin{remark}
+Notice that the integration on $A$ only requires an inner metric $h$ on $A$ and an orientable base manifold; neither $g$ nor the connection $\nabla$ influence the integration of forms on $A$. However, to define an action functional we will require one more ingredient: the Hodge-$*$ operator of forms, and this will require the full complexity of $\hag g$.
+\end{remark}
+
+% \begin{definition}
+% Let $h^E$ be a metric on $E$. Then 
+% \end{definition}
 
 \section{Horizontal Metrics and Hodge-$*$ Operator}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
