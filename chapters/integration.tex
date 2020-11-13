@@ -184,7 +184,7 @@ Also, let $E$ be a vector bundle over $M$ on which $A$ is represented by $\phi: 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{definition}
-    Let $E$ be any vector bundle over $M$. \emph{A degenerate metric on $E$} on $E$ is a symmetric vector bundle map $h^E: E \otimes E \to \bb R$. If $h^E$ is non-degenerate, i.e. if $h^E(\mu, \mu) = 0$, only if $\mu = 0$, then $h^E$ is called \emph{a metric on $E$}.
+    Let $E$ be any vector bundle over $M$. \emph{A degenerate metric on $E$} on $E$ is a symmetric vector bundle map $h^E: E \otimes E \to \bb R$\todo{I'm not actually sure we want $\RR$: on one side, a metric is defined to be real valued; but they do not say so in the paper and we eventually use this to define the natural ``scalar product'' of single degree forms}. If $h^E$ is non-degenerate, i.e. if $h^E(\mu, \mu) = 0$, only if $\mu = 0$, then $h^E$ is called \emph{a metric on $E$}.
     
     In the case that $E = L$ the adjoint Lie algebroid of $A$, we also use the names \emph{degenerate inner metric on $A$} and \emph{inner metric on $A$}, respectively.
 \end{definition}
@@ -434,9 +434,10 @@ For the rest of this chapter, let the transitive Lie algebroid $A$ be orientable
 
 \begin{definition}
 \emph{The volume form $\omega^{Vol}$ on $A$ with respect to the metric $\hat g$} is the never zero top form $\Omega^{m+n}(A)$ with local trivialization over each $U_i$:
-\begin{equation}
-    \omega^{Vol}_i = (-1)^n \sqrt{|g_i|} \sqrt{|h_i|} dx^1 \wedge \cdots \wedge dx^m \wedge \alg a^1 \wedge \cdots \wedge \alg a^n.
-\end{equation}
+\begin{eqnsplit}
+    \omega^{Vol}_i &= (-1)^n \sqrt{|g_i|} \sqrt{|h_i|} dx^1 \wedge \cdots \wedge dx^m \wedge \alg a^1 \wedge \cdots \wedge \alg a^n\\
+    &= \sqrt{|g_i|} \sqrt{|h_i|} dx^1 \wedge \cdots \wedge dx^m \wedge \omega_{h, \alg a}.
+\end{eqnsplit}
 \end{definition}
 
 \subsubsection{Inverse Metrics}
@@ -455,7 +456,8 @@ where the matrix $(g^{\mu \nu})_{\mu, \nu = 1, \dots, m}$ is the inverse of the 
 \end{equation}
 for all $p, q \in \ZZ_{\geq 0}$, such that its \emph{local trivialization $\hat g_i^{-1}$ over $U_i$}, i.e. the metric of $TU_i \times \alg g$ defined by $\hat g^{-1}|_{U_i}(\omega, \eta) = \hat g_i^{-1} (\omega_i, \eta_i)$ for all $\omega, \eta \in \Omega^p(A)$, satisfies:
 \begin{equation*}
-    \hat g_i^{-1} (\alpha, \beta) = \sum_{r+s = p} g^{\mu_1 \nu_1} \cdots g^{\mu_r \nu_r} h^{a_1 b_1} \cdots h^{a_s b_s} \alpha_{\mu_1 \dots \mu_r a_1 \dots a_s} \beta_{\nu_1 \dots \nu_r b_1 \dots  b_s},
+    \hat g_i^{-1} (\alpha, \beta) 
+    = \sum_{r+s = p} \frac{1}{r!s!}  g^{\mu_1 \nu_1} \cdots g^{\mu_r \nu_r} h^{a_1 b_1} \cdots h^{a_s b_s} \alpha_{\mu_1 \dots \mu_r a_1 \dots a_s} \beta_{\nu_1 \dots \nu_r b_1 \dots  b_s},
 \end{equation*}
 for all $\alpha, \beta \in \Omega^p(TU_i \times \alg g)$ and using their decomposition with respect to the local mixed basis induced by the connection $\nabla$. 
 
@@ -465,7 +467,7 @@ Using the notation
 \end{equation}
 which defines an element of $\beta^\#$ in the dual module of $\Omega^p(A)$, we may also write, then,
 \begin{equation}
-    \hat g_i^{-1}(\alpha, \beta) = \alpha_{\mu_1 \dots \mu_r a_1 \dots a_s} \beta^{\mu_1 \dots \mu_r a_1 \dots  a_s}.
+    \hat g_i^{-1}(\alpha, \beta) = \sum_{r+s = p} \frac{1}{r!s!} \alpha_{\mu_1 \dots \mu_r a_1 \dots a_s} \beta^{\mu_1 \dots \mu_r a_1 \dots  a_s}.
 \end{equation}
 \end{definition}
 
@@ -476,16 +478,16 @@ That the inverse metric is a well defined global element follows from the transf
 that follows from \ref{              }, which is inverse to that of the components; concretely, for $\omega, \eta \in \Omega^p(A)$, over $U_{ij} \neq \empty$ it is satisfies that
 \begin{align*}
     \hat g_j^{-1}(\omega_i, \eta_i) 
-        &= \sum_{r+s = p} g_i^{\mu_1 \nu_1} \cdots g_i^{\mu_r \nu_r} h_i^{a_1 b_1} \cdots h_i^{a_s b_s} (\omega_i)_{\mu_1 \dots \mu_r a_1 \dots a_s} (\eta_i)_{\nu_1 \dots \nu_r b_1 \dots  b_s}\\
-        &= g_j^{\mu_1 \nu_1} \cdots g_j^{\mu_r \nu_r} 
+        &= \sum_{r+s = p} \frac{1}{r!s!} g_i^{\mu_1 \nu_1} \cdots g_i^{\mu_r \nu_r} h_i^{a_1 b_1} \cdots h_i^{a_s b_s} (\omega_i)_{\mu_1 \dots \mu_r a_1 \dots a_s} (\eta_i)_{\nu_1 \dots \nu_r b_1 \dots  b_s}\\
+        &= \sum_{r+s = p} \frac{1}{r!s!} g_j^{\mu_1 \nu_1} \cdots g_j^{\mu_r \nu_r} 
         ({G^i_j}^{a_1}_{a_1'} {G^i_j}^{b_1}_{b_1'} h_j^{a_1' b_1'}) \cdots 
         ({G^i_j}^{a_s}_{a_s'} {G^i_j}^{b_s}_{b_s'} h_j^{a_s' b_s'}) \times \\
          &\quad  {G^j_i}^{a_1}_{a_1'}\cdots {G^i_j}^{a_s}_{a_s'} (\omega_j)_{\mu_1 \dots \mu_r a_1' \dots a_s'} \, {G^j_i}^{b_1}_{b_1'}\cdots {G^i_j}^{b_s}_{b_s'} (\eta_j)_{\nu_1 \dots \nu_r b_1' \dots  b_s'}\\
-        &= \sum_{r+s = p} g_j^{\mu_1 \nu_1} \cdots g_j^{\mu_r \nu_r} h_j^{a_1 b_1} \cdots h_j^{a_s b_s} (\omega_j)_{\mu_1 \dots \mu_r a_1 \dots a_s} (\eta_j)_{\nu_1 \dots \nu_r b_1 \dots  b_s}\\
+        &= \sum_{r+s = p} \frac{1}{r!s!} g_j^{\mu_1 \nu_1} \cdots g_j^{\mu_r \nu_r} h_j^{a_1 b_1} \cdots h_j^{a_s b_s} (\omega_j)_{\mu_1 \dots \mu_r a_1 \dots a_s} (\eta_j)_{\nu_1 \dots \nu_r b_1 \dots  b_s}\\
         &= \hat g_j^{-1}(\omega_j, \eta_j) .
 \end{align*}
 
-Similarly, letting $h^E$ be a metric on the representation vector bundle $E$, we can define an ``inverse'' metric for $E$-valued forms:
+Similarly, letting $h^E$ be a metric on the representation vector bundle $E$, with typical fiber generated by the basis $\{e_u\}_{u = 1, \dots, t}$, we can define an ``inverse'' metric for $E$-valued forms:
 
 \begin{definition}
 \emph{The inverse metric $\hat g_{h^E}^{-1}$ on $E$-valued forms induced by $h^E$} is the symmetric, \dbtext{non-degenerate}, $C^\infty(M)$-linear map
@@ -502,13 +504,55 @@ Using the notation
 \end{equation}
 we may also write, then,
 \begin{equation}
-    \hat g_{h^E, i}^{-1}(\alpha, \beta) = \alpha^u_{\mu_1 \dots \mu_r a_1 \dots a_s} \beta_u^{\mu_1 \dots \mu_r a_1 \dots  a_s}.
+    \hat g_{h^E, i}^{-1}(\alpha, \beta) = \sum_{r+s = p} \frac{1}{r!s!} \alpha^u_{\mu_1 \dots \mu_r a_1 \dots a_s} \beta_u^{\mu_1 \dots \mu_r a_1 \dots  a_s}.
 \end{equation}
 \end{definition}
 
 \subsubsection{Hodge-$*$ Operator}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{definition}
-Let $\alpha$ be an element of $\Omega^p(A, E)$. If   
+\begin{definition}\label{definitionHodgeStarFOrmula}
+The Hodge-$*$ operator is the $C^\infty(M)$-linear (family of) operator
+\begin{eqnsplit*}
+    * : \Omega^p(A, E) &\to \Omega^{m+n-p}(A, E)\\
+    \alpha &\mapsto *\alpha
+\end{eqnsplit*}
+for all $p \in \ZZ_{\geq 0}$, where the element \emph{$* \alpha \in \Omega^{m+n-p}(A, E)$} is defined to be $*\alpha := \alpha \omega^{Vol}$ if $p = 0$, or, otherwise, by the local trivializations:
+\begin{eqnsplit}
+    (*\alpha)_i &= \sum_{r+s = p} (-1)^{s(m-r)} \frac{1}{r!s!} \sqrt{|h_i|} \sqrt{|g_i|} (\alpha_i)_{\mu_1 \dots \mu_r a_1 \dots a_s} \varepsilon_{\nu_1 \dots \nu_m}  \varepsilon_{b_1 \dots b_n}\\
+    &\quad \times g^{\mu_1 \nu_1} \cdots g^{\mu_r \nu_r} h^{a_1 b_1} \cdots h^{a_s b_s} dx^{\nu_{r+1}} \wedge \cdots \wedge dx^{\nu_{m}} \wedge \alg a^{b_{s+1}} \wedge \cdots \wedge \alg a^{b_n} \\
+    &= \sum_{r+s = p} (-1)^{s(m-r)} \frac{1}{r!s!} \sqrt{|h_i|} \sqrt{|g_i|} (\alpha_i)^{\nu_1 \dots \nu_r b_1 \dots b_s} \varepsilon_{\nu_1 \dots \nu_m}  \varepsilon_{b_1 \dots b_n} \\
+    &\quad \times dx^{\nu_{r+1}} \wedge \cdots \wedge dx^{\nu_{m}} \wedge \alg a^{b_{s+1}} \wedge \cdots \wedge \alg a^{b_n}
+\end{eqnsplit}
+where $\varepsilon$ are totally antisymmetric Levi-Civita symbols.
 \end{definition}
+
+That the previous local trivializations do define a global form $*\alpha$ follows easily from the multiplication of the inverse $(G^i_j)$ matrices that appear when applying $\hat \alpha^i_j$, for $U_{ij} \neq \empty$, due to the transformations of $\sqrt{|h_i|}$, of the components of the inverse inner metric, of the components of $\alpha$ and of the subfactors of the inner volume element. Notice that $(*\alpha)_i = *(\alpha_i)$ by definition, so we may simply write $*\alpha_i$; also, notice that with respect to the basis $\{e_u\}$ of the typical fiber $V$ of $E$, $*\alpha_i = (*\alpha_i^u)e_u$.
+
+\begin{proposition}
+The Hodge-$*$ operator is such that the following identity is satisfied\todo{IFF?}:
+\begin{equation}
+    h_E(\alpha, *\beta) = \hat g_{h^E}^{-1}(\alpha, \beta) \omega^{Vol},
+\end{equation}
+for all $\alpha, \beta \in \Omega^p(A, E)$ and all $p \in \ZZ_{\geq 0}$.
+\end{proposition}
+
+\begin{proof}
+We prove this locally. Expanding $\alpha_i^u = \sum_{r+s} \alpha_{\nu_1 \dots b_s} e_u dx^{\nu_1} \wedge \cdots \wedge \alg a^{b_s}$ and $*\beta_i$ as in the second equation of definition \ref{definitionHodgeStarFOrmula}, replacing these formulas in $h^i_E(\alpha_i, *\beta_i) = (h^E_i)_{uv} \alpha_i^u \wedge * \beta_i^v$, expanding the wedge product and reordering the $dx$'s and $\alg a$'s in order to isolate $\omega^{Vol}$ results in the desire equation. \todo{I feel that either the Levi-CIvita symbols or the $-1$ multliple are redundant}
+\end{proof}
+
+\begin{definition}
+\emph{The scalar product on each $\Omega^p(A, E)$ induced by the metrics $\hat g$ on $A$ and $h^E$ on $E$}\todo{is it an actual scalar product? Is it non-degenrate? Do we want it to be able to be complex valued? In that case metric might not be the best term} in the orientable transitive Lie algebroid $A$, for all $p \in \ZZ_{\geq 0},$ is defined by
+\begin{equation*}
+    (\alpha, \beta) := \int_A h^E(\alpha, *\beta).
+\end{equation*}
+When $E = L$, $h^E$ is assumed to be $h$, the inner part of $\hat g$.
+\end{definition}
+
+\begin{theorem}\label{theoremDecompositionOfScalarProductOfHomogeneousFormsForLagrangian}
+For any $\alpha, \beta \in \Omega^p(A, E)$, $p \in \ZZ_{\geq 0}$,
+\begin{multline*}
+    (\alpha, \beta) = (-1)^n \sum_{r + s = p} (-1)^{s(m-s)} (m-r)! (n-s)! \times \\
+    \int_M \alpha^u_{\mu_1 \dots a_s} \beta_u^{\mu_1 \dots a_s} \sqrt{|g|} dx^1 \wedge \cdots \wedge dx^m. 
+\end{multline*}
+\end{theorem}
