@@ -1001,7 +1001,7 @@ Let $A$ be a transitive Lie algebroid, and suppose that $\hat \nabla^E$ is an $A
 is an anchor preserving vector bundle morphism, i.e. it is an $A$-connection on $E$.
 \end{example}
 
-An important subfamily of examples that will be of importance for us is the following. From now on we will assume that $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ is a transitive Lie algebroid sequence.
+\textbf{An important subfamily of examples that sits at the core of this document} is the following. From now on we will assume that $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ is a transitive Lie algebroid sequence.
 
 \begin{definition}
 Let $\hat \omega$ be a connection $1$-form on $A$ with associated vector bundle endomorphism $\hat \nabla:A \to A$. Let $\phi: A \to \alg D(E)$ be a representation of $A$ on $E$. Then, \emph{the $A$-connection on $E$ produced by the connection $\hat \omega$} is the composition
@@ -1044,12 +1044,12 @@ That the curvature $2$-form satisfies the Bianchi identity follows from the prev
 \end{proof}
 
 For an $A$-connection $\hat \nabla^{E, \, \hat \omega}$ produced by the connection $1$-form $\hat \omega \in \Omega^1(A, L)$, 
-\begin{align*}
+\begin{eqnsplit}\label{equationFormulaForProducedAConnectionGivenALgebroidConnectionFormulaForm}
     \hat \nabla^{E, \hat \omega}_{\oid X} &= \phi(\hat \nabla_{\oid X})\\
         &= \phi(\oid X + j \comp \hat \omega(\oid X)) \\
         &= \phi(\oid X) + j \comp \phi_L \comp \hat \omega (\oid X)
-\end{align*}
-for all $\oid X \in A$. This means that the $End(E)$-valued $1$-form associated to the $A$-connection produced by $\hat \omega$ is $\phi_L \comp \hat \omega$.
+\end{eqnsplit}
+for all $\oid X \in A$. This means that \textbf{the $End(E)$-valued $1$-form associated to the $A$-connection produced by $\hat \omega$ is $\phi_L \comp \hat \omega$}.
 
 \begin{definition}\label{definitionLocalTrivializationOfACOnnectionTransitiveLieAlgebroidComponents}
 Let $\hat \nabla^E$ be an $A$-connection on $E$ ($A$ with Lie algebroid atlas), and let $E$ have local trivialization $\beta_i: U_i \times V\to E|_{U_i}$ over $U_i$. \emph{The local trivialization over $U_i$ of the $A$-connection $\hat \nabla^E$} is the $TU_i \times \alg g$-connection on $U_i \times V$ defined by 
@@ -1181,6 +1181,19 @@ Let $\hat \omega$ be a connection form on the transitive Lie algebroid $A$. The 
 \end{align*}
 \end{example}
 
+The group induced $TP^k/S^1$-connections are
+\begin{eqnsplit}
+    \hat \nabla^{E, i}_\mu 
+    &= \partial_\mu + \omega^\epsilon_{S; \mu} \pi_V(E_b) \\
+    &= \partial_\mu \oplus  + (\phi_{L, i})^u_{b, v} (A_i)_{\mu}^b e_u \tilde e^v
+\end{eqnsplit}
+
+\begin{eqnsplit}
+    \hat \nabla^{E, i}_a := \hat \nabla^{E_i}_{0 \oplus E_a} 
+    &=  - \tau^b_a \phi_{L, i} (E_b) \\
+    &= - (\phi_{L, i})_{b, v}^u \tau^b_a e_u \tilde e^v
+\end{eqnsplit}
+
 
 
 
@@ -1188,24 +1201,94 @@ Let $\hat \omega$ be a connection form on the transitive Lie algebroid $A$. The 
 
 \subsection{$P^k$ over $S^2$}
 
+
+\linea
+
+We can combine the multiple coordinates that we have defined on $U_{SN} \subset S^2$ to see that every point there might be written as
+\begin{equation}
+    \frac{(2x^1, 2x^2, ||\vec x||^2 - 1)}{|| \vec x||^2 + 1} = (\sin \phi \cos \theta, \sin \phi \sin \theta, \cos \phi) = \frac{(2y^1, 2y^2, 1- ||\vec y||^2)}{|| \vec x||^2 + 1}.
+\end{equation}
+Then, the polar coordinates in terms of the $x$ and $y$ coordinates satisfy:
+\begin{align}
+    \tan \theta & = \frac{x_2}{x_1} 
+    & \cot\frac{\phi}{2} = ||\vec x|| \\
+    \tan \theta & = \frac{y_2}{y_1} 
+    & \tan\frac{\phi}{2} = ||\vec y||;
+\end{align}
+on the other hand
+\begin{align}
+    x^1 &= \cos \theta \cot \frac{\phi}{2} 
+    & y^1 &= \cos \theta \tan \frac{\phi}{2}\\
+    x^2 &= \sin \theta \cot \frac{\phi}{2} 
+    & y^2 &= \sin \theta \tan \frac{\phi}{2}.
+\end{align}
+
+From the first set of equation we conclude that 
+\begin{eqnsplit}\label{equationdThetaInTermsOfXAndYS2ComplexHopf}
+    d\theta &= \frac{-x^2 dx^1 + x^1 dx^2}{(x^1)^2 + (x^2)^2}\\
+        &= \frac{-y^2 dy^1 + y^1 dy^2}{(y^1)^2 + (y^2)^2};
+\end{eqnsplit}
+from the second set we deduce that
+\begin{eqnsplit}\label{equationdxsInTermsOfDThetasS2COmplexHopf}
+    dx^1 &= - \sin \theta \cot \frac{\phi}{2} d\theta + - \cos \theta \csc^2\frac{\phi}{2} d\phi \\
+    dx^2 &= \cos \theta \cot \frac{\phi}{2}d\theta  - \sin \theta  \csc^2\frac{\phi}{2} d\phi.
+\end{eqnsplit}
+
+\linea
+
 The most general connection form on $TP^k/S^1$ has the local trivialization over $U_S$:
 \begin{equation}
-    \hat \omega_S = i\omega_{S; 1,}(\phi, \theta) dx^1 + i\omega_{S; 2,}(\phi, \theta) dx^2 + i\omega_{S; \, ,1}(\phi, \theta) Im
+    \hat \omega_S = (\omega^\epsilon_{S})_{1,}(\phi, \theta) dx^1 + (\omega^\epsilon_{S})_{2,}(\phi, \theta) dx^2 + (\omega^\epsilon_{S})_{,1}(\phi, \theta) Im
 \end{equation}
-where $ \in C^\infty(S^2)$; recall from \ref{} that this suffices to determine completely the form over all of $S^2$ since this $U_S$ covers all but one point of $S^2$. Its local trivialization over $U_N$ is
+where $ \in C^\infty(S^2)$; recall from \ref{} that this suffices to determine completely the form over all of $S^2$ since this $U_S$ covers all but one point of $S^2$. We will rewrite this form, for simplicity, as
 \begin{equation}
-     \hat \omega_N = - kd\theta
+    \hat \omega_S = i\omega^\epsilon_{S; 1}(\phi, \theta) dx^1 + i\omega^\epsilon_{S; 2}(\phi, \theta) dx^2 + i\omega^\epsilon_{S; i}(\phi, \theta) Im.
+\end{equation}
+Due to the fact that $\alpha^N_S(Im) = Im - k d\theta$, its local trivialization over $U_N$ is
+\begin{eqnsplit}
+     \hat \omega_N &= \hat \omega^\epsilon_S + kd\theta\\
+         &= i\left[\omega^\epsilon_{S; 1} - \frac{x^2}{(x^1)^2 + (s^2)^2}\right] dx^1 + i\left[\omega^\epsilon_{S; 2} + \frac{x^1}{(x^1)^2 + (s^2)^2}\right] dx^2 + i\omega^\epsilon_{S; i} Im
+\end{eqnsplit}
+
+Using equations \ref{equationdxsInTermsOfDThetasS2COmplexHopf}, over $U_{SN}$ we may rewrite the local trivialization of the most general $1$-form on $TP^k/S$ as:
+\begin{eqnsplit}
+    \hat \omega_S &= if(\phi, \theta) d\phi + ig(\phi, \theta) d\theta + ih(\phi, \theta) Im\\
+    \text{where  }f(\phi, \theta) &= - \cos \theta \csc^2 \frac{\phi}{2} \omega^\epsilon_{S; 1}(\phi, \theta) - \sin \theta \csc^2 \frac{\phi}{2} \omega^\epsilon_{S; 2}(\phi, \theta) \\
+    g(\phi, \theta) &= \sin \theta \cot \frac{\phi}{2} \omega^\epsilon_{S; 1}(\phi, \theta) + \cos \theta \cot \frac{\phi}{2} \omega^\epsilon_{S; 2}(\phi, \theta) \\
+    h(\phi, \theta) &= \omega^\epsilon_{S; i}(\phi, \theta).
+\end{eqnsplit}
+
+Since $i$ is a global section of $TP^k/S^1$, the reduced kernel endomorphism $\tau \in \End(S)$ is determined from a single function $\tilde \tau = \in C^\infty(S^2)$ such that $\tau = i \tilde \tau$, and so the local components of $\tau$ are:
+\begin{align}
+    (\tau_S)^1_1 &= \tilde \tau|_{U_S} &    (\tau_N)^1_1 &= \tilde \tau|_{U_N}.
+\end{align}
+Decomposing $\omega_S$ as $A_S - Im + \tau_S$ and $\omega_N = A_N - Im - \tau_N$, we see that the $\tilde \tau$ is related to its associated connection form by:
+\begin{equation}
+    \tilde \tau = h - 1.
 \end{equation}
 
-The local trivialization of the reduced kernel endomorphism of $\hat \omega$ is:
-\begin{equation}
-    \tau_S = h - 1.
-\end{equation}
+The Lie algebra $i\RR$ is commutative, so the curvature of the connection form $\hat \omega$ is simply 
+\begin{align}
+    \hat R &= \hat d\hat \omega
+\end{align}, which we calculated in example \ref{} to be local trivialized as
+\begin{eqnsplit}
+    \hat R_S &= \hat d \omega_S \\
+        &= i(\partial_{x^1} \omega^\epsilon_{S;2} - \partial_{x^2} \omega^\epsilon_{S; 1}) dx^1 \wedge dx^2 + i \partial_{x^1} \tilde \tau dx^1 \wedge Im +  i \partial_{x^2} \tilde \tau dx^2 \wedge Im;
+\end{eqnsplit}
+on $U_{SN}$ with polar coordinates we also have
+\begin{eqnsplit}
+    \hat R_{SN} &= \hat d \omega_{SN} \\
+        &= i(\partial_{\phi} g - \partial_{\theta} f) d\phi \wedge d\theta + i \partial_{\phi} \tilde \tau d\phi \wedge Im +  i \partial_{\theta} \tilde \tau d\theta \wedge Im;
+\end{eqnsplit}
+notice that if $\tau = 0$, then $\hat \omega$ is an ordinary connection on $TP^k/S^1$ and the last $2$ terms of the trivialiations of the curvature form disappear, making it possible to define an equivalent $2$-form $R \in \Omega^2(TS^2, P^k\times i\RR/S^1)$.
 
-As already mentioned in \ref{}, the local trivialization of the curvature form of $\hat \omega$ is
-\begin{equation}
-    \hat R_S = \hat d \omega_S 
-\end{equation}
+This connection on $TP^k/S^1$ is associated to the 
+\begin{align}
+    \hat \nabla_{\mu} &= \partial_\mu \oplus i(\omega^\epsilon_{S; \mu})\\
+    \hat \nabla_{i} &= -i \tilde \tau.
+\end{align}
+
+
 
 
 \subsection{$P^k$ over $S^4$}

@@ -603,7 +603,7 @@ The top square of the above diagram imply that $\Psi^{G}$ is uniquely defined by
 $\Psi^G$ is fiberwise linear: for $\langle \mu \rangle, \langle \nu \rangle \in E/G$, let $g \in G$ be such that $\mu$ and $\nu g$ are in the same vector fiber of $E$; notice that this also means that $\Psi(\mu)$ and $\Psi(\nu g) = \Psi(\nu) \psi(g)$ are in the same vector fiber of $E'$ because $\Psi:E \to E'$ is fiber preserving. 
 Then $\Psi^{G}(\langle \mu \rangle + t\langle \nu \rangle) = \Psi^{G}(\langle \mu  + t \nu g \rangle)  = \langle \Psi(\mu + t \nu g ) \rangle = \langle \Psi(\mu) + t \Psi(\nu)\psi(g) \rangle = \langle \Psi(\mu) \rangle + t \langle \Psi(\nu) \rangle = \Psi^{G}(\langle \mu \rangle) + t\Psi^{G}(\langle \nu \rangle)$.
 
-$\Psi^{G}$ is smooth: Given that $F := \Psi^{G} \circ \natural = \natural' \circ \Psi : E \to E'/G'$ is a smooth mapping and that $\natural$ is a surjective submersion, the submersion theorem allows us to see the local smoothness of $\Psi^{G}$, and therefore conclude that $\Psi^{G}$ is smooth. Explicitly, due to the submersion theorem, for any $\mu \in E$ there exist manifold charts $(\mathcal U, \Phi: \mathcal U \to \RR^N)$ of $E$ near $\mu$, $(U, \phi: U \to \RR^n)$ of $E/G$ near $\langle \mu \rangle$, and $(U', \phi': U' \to \RR^m)$ of $E'/G'$ near $\Psi^{G}(\langle e \rangle)$where $n \leq N$, such that: %$\phi \circ \natural \circ \Phi^{-1}(x_1, \dots, x_N) = (x_1, \dots, x_n)$, $\phi' \circ (\Psi^{G} \circ \natural) \circ \Phi^{-1}(x_1, \dots, x_N) = (F^1(x_1), \dots, F^m(x_n)$
+$\Psi^{G}$ is smooth: Given that $F := \Psi^{G} \circ \natural = \natural' \circ \Psi : E \to E'/G'$ is a smooth mapping and that $\natural$ is a surjective submersion, the submersion theorem allows us to see the local smoothness of $\Psi^{G}$, and therefore conclude that $\Psi^{G}$ is smooth. Explicitly, we may apply the submersion theorem to $\natural$  to conclude that for any $\mu \in E$ there exist manifold charts $(\mathcal U, \Phi: \mathcal U \to \RR^N)$ of $E$ near $\mu$, $(U, \phi: U \to \RR^n)$ of $E/G$ near $\langle \mu \rangle$, and $(U', \phi': U' \to \RR^m)$ of $E'/G'$ near $\Psi^{G}(\langle e \rangle)$ where $n \leq N$, such that: %$\phi \circ \natural \circ \Phi^{-1}(x_1, \dots, x_N) = (x_1, \dots, x_n)$, $\phi' \circ (\Psi^{G} \circ \natural) \circ \Phi^{-1}(x_1, \dots, x_N) = (F^1(x_1), \dots, F^m(x_n)$
 
 \[
 \begin{tikzcd}
@@ -613,7 +613,7 @@ $\Psi^{G}$ is smooth: Given that $F := \Psi^{G} \circ \natural = \natural' \circ
 \end{tikzcd}
 \]
 
-the smoothness of $F$ implies that the functions $F^i:\Phi(\mathcal U) \to \phi'(U')$ are smooth, but $\Tilde F^i(x_1, \dots, x_N) = \Tilde{\Psi^{G}}^i(x_1, \dots, x_n)$, so the functions $\Tilde{\Psi^{G}}^i:\phi(U) \to \phi'(U')$ that localize $\Phi^{G}$ are smooth, therefore so is $\Psi^{G}$. 
+the smoothness of $F$ implies that the functions $F^i:\Phi(\mathcal U) \to \phi'(U')$ are smooth, but $\Tilde F^i(x_1, \dots, x_N) = \Tilde{\Psi^{G}}^i(x_1, \dots, x_n)$, so the functions $\Tilde{\Psi^{G}}^i:\phi(U) \to \phi'(U')$ that locally trivialize $\Phi^{G}$ are smooth, therefore so is $\Psi^{G}$. 
 
 Finally, $\Psi^{G}$ is a smooth vector bundle morphism over $f:M \to M'$ since $p^{E'/G'} \circ \Psi^{G}(\langle \mu \rangle) = p^{E'/G'}(\langle \Psi(\mu) \rangle) = p^{E'}(\Psi(\mu)) = f \circ p^E (\mu) = f \circ p^{E/G} (\langle \mu \rangle)$.
 
