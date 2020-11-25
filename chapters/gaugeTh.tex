@@ -76,13 +76,13 @@ The last calculation shows that $g^{-1} \comp \phi \comp g = \phi + g^{-1} \comp
 {
 \color{red}
 \begin{proposition}
-Let $T \in \End(E)$. The infinitesimal gauge action of $T$ on $\hat \omega^E$ is
+Let $T \in \End(E)$. The infinitesimal gauge action of $T$ on the $A$-connection form $\hat \omega^E$ is
 \begin{equation}
     \hat d_E T + \hat \omega \wedge T,
 \end{equation}
 on $\hat \nabla^E$ it is
 \begin{equation}
-    [\hat \nabla^E, T]
+    \hat \nabla^E \wedge T
 \end{equation}
 and on the curvature it is
 \begin{equation}
@@ -92,6 +92,7 @@ and on the curvature it is
 
 This is the connection between the ``traditional'' definitions, and the infinitesimal definitions given below for gauge transformations, so I would like to put the prove at least for the $A = TM$ case, i.e. ordinary vector bundle connections.
 }
+
 \linea
 
 
@@ -107,27 +108,31 @@ Let $\eta \in \Gamma(L)$. \emph{The infinitesimal gauge action on $\hat \omega$}
 \begin{equation}
     \hat d \eta + \hat \omega \wedge \eta
 \end{equation}
-and the gauge transformation is
+and \textbf{the infinitesimal gauge transformation} is
 \begin{equation}
     \hat \omega^\eta := \hat \omega + \hat d \eta + \hat \omega \wedge \eta.
 \end{equation}
-The gauge action on the curvature is defined to be
+\emph{The infinitesimal gauge action on the curvature} is defined to be
 \begin{equation}
-    [\hat R, \eta]
+    \hat R \wedge \eta
 \end{equation}
-and its gauge transformation is
+and its \emph{infinitesimal gauge transformation} is
 \begin{equation}
-    \hat R^\eta = \hat R + [\hat R, \eta]
+    \hat R^\eta = \hat R + \hat R \wedge \eta
 \end{equation}
 \end{definition}
 
 Notice that this is the curvature of $\hat omega^\eta$ without the second order terms in $\eta$.
 
 \begin{proposition}
-The algebroid mrophism corresponding to $\hat \omega^\eta$ is 
+The algebroid morphism corresponding to $\hat \omega^\eta$ is 
 \begin{equation}
     \hat \nabla^\eta = \hat \nabla + [\hat \nabla, \eta]
 \end{equation}
+\end{proposition}
+
+\begin{proposition}
+The infinitesimal gauge transformation of the A-connection induced by a generalized connection IS THE SAME AS the induced A-connection of the transformed generalized connection.
 \end{proposition}
 
 \section{Gauge Action Functional}

@@ -1,0 +1,113 @@
+\documentclass{article}
+\usepackage[centering]{geometry}
+\usepackage[spanish]{babel}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{lipsum}
+
+\setlength{\parskip}{0.5em} % PARECE QUE NO ES USUAL DEJAR ESTE ESPACIO
+
+\usepackage{sansmath}
+\renewcommand*\familydefault{\sfdefault}
+
+\newcommand{\mD}{\mathcal D}
+\newcommand{\mA}{\mathcal A}
+\newcommand\define[1]{\emph{#1}}
+
+\usepackage{xcolor}
+\newcommand{\commentbox}[1]{\marginpar{\textcolor{blue}{#1}} }
+\newcommand{\comment}[1]{{\bf\color{blue} #1}}
+\newcommand{\commentr}[1]{{\bf\color{magenta} #1}}
+\DeclareMathOperator{\range}{Rango}
+\newcommand\inner[2]{\langle #1, #2 \rangle}
+
+
+\begin{document}
+
+\begin{center}
+   \bf\Large Solicitud de jurado y fecha para la sustentaci\'on de\\
+   mi proyecto de grado 2020-20
+\end{center}
+\bigskip
+\bigskip
+\bigskip
+
+\noindent
+{\bf Estudiante:} SEBASTIAN CAMILO PUERTO GALINDO\\
+{\bf T\'itulo del trabajo:} FORMULATION AND GENERALIZATION OF GAUGE THEORIES IN THE LANGUAGE OF TRANSITIVE LIE ALGEBROIDS\\
+{\bf Asesor:} ALEXANDER CARDONA GUÍO\\
+%{\bf Co-asesor:} NOMBRES APELLIDOS del coasesor si el trabajo cuenta con uno.
+%{\color{blue}\bf Quitar esta l\'inea si no tiene co-asesor. Agragar m\'as l\'ineas si ten\'ia m\'as co-asesores.}
+\bigskip
+
+
+\noindent
+{\bf Jurado propuesto:} ANDRÉS FERNANDO REYES LEGA\\
+{\bf Fecha y hora propuesta:} 18 DICIEMBRE 2020, 10:00a.m.
+\bigskip
+
+\noindent
+% {\bf Requerimientos especiales:} VIDEO BEAM, CONEXI\'ON A INTERNET, SKYPE, PREFERENCIA DE SAL\'ON, ETC.
+% {\bf Requerimientos especiales:} 
+% \bigskip
+
+
+\smallskip
+
+\noindent
+{\bf Resumen del trabajo:}
+%\smallskip
+
+
+\noindent
+%{\color{blue}\bf 
+%Resumen de su trabajo de grado (1-3 p\'aginas).
+%NO puede ser una copia de su propuesta.
+%}
+
+La dinámica de las partículas elementales y sus interacciones son modeladas por teorías gauge cuantizadas, un tipo de teorías de campos. Éstas incluyen a la Electrodinámica Cuántica, a la Interacción Electrodébil, a la Cromodinámica Cuántica y el Modelo Estándar de la Física de Partículas, la cual describe a tres de las cuatro fuerzas fundamentales conocidas y clasifica a todas las partículas elementales conocidas. El modelo matemático usualmente utilizado para la formulación de las teorías gauge, previo a su cuantización, es el de la geometría diferencial de haces principales y haces vectoriales. En este documento se estudia una posible generalización de la formulación de teorías gauge en el lenguaje de algebroides de Lie transitivos, de la cual la formulación estándar se deriva como el caso particular en que el algebroide subyacente es el algebroide de Lie de Atiyah asociado a un haz principal.
+
+En el primer capítulo se repasan los fundamentos sobre álgebroides de Lie
+%sobre una variedad M
+, haces vectoriales $A$ con un campo de corchetes de Lie $[\,,\,]$ y un morfismo de haces $a:A \to TM$ llamado ancla. Se hace especial énfasis en los algebroides de Lie transitivos, aquellos cuya ancla es sobreyectiva fibra a fibra, y que por lo tanto son suma directa del haz tangente del espacio base con un haz de álgebras de Lie, llamado un algebroide de Lie adjunto. El ejemplo que motiva el estudio de estos algebroides es el algebroide de Lie de Atiyah $TP/G$ asociado a un haz un principal $P$ con grupo de estructura $G$, el cual tiene como algebroide adjunto a $P \times \mathfrak g/G$ donde $\mathfrak g = \text{Lie}(G)$; las conexiones de un haz principal están en correspondencia biyectiva con los morfismos de haz vectorial entre $TP/G$ y $P \times \mathfrak g/G$. El algebroide de Lie transitivo de Derivaciones $\mathfrak D(E)$ de un haz vectorial $E$ permite la generalización de la noción de haz vectorial asociado a un haz principal, a través del concepto de representación $\phi: A \to \mathfrak D(E)$ de un algebroide de Lie $A$ en $E$, y del concepto de conexión en $E$. Una propiedad de los algebroides de Lie transitivos que facilita su manipulación, especialmente para quienes han trabajado desde el punto de vista de las teorías gauge utilizado en la literatura de la física, es el hecho de que localmente son isomorfos a los algebroides de Lie triviales, de la forma $TM\oplus (M \times \mathfrak g)$ con $M$ una variedad, lo cual permite la descripción de los algebroides de Lie transitivos a partir de descripciones locales en abiertos $U_i$ y dos funciones de pegado en cada intersección no vacía de abiertos $U_{ij}$; para $TP/G$, con $G$ un grupo de Lie matricial, estas dos funciones son las familiares $\alpha^i_j = g^{-1}_{ij}\cdot \, \cdot g_{ij}$ y $\chi^i_j = g_{ij}^{-1} dg_{ij}$.
+
+En el capítulo $2$ se estudian formas diferenciales graduadas sobre los algebroides de Lie, dando las bases para la definición en los siguientes capítulos de las formas de conexión e integración en algebroides de Lie transitivos. Dado un haz vectorial $E$ de representación para un algebroide de Lie arbitrario $A$, una forma diferencial de grado $n \in \mathbb Z_{\geq 0}$, elemento de $\Omega^\bullet(A, E)$, es un morfismo de haces multilineal alternante que toma valores en $A$ y retorna valores en $E$. El álgebra diferencial graduada $(\Omega^\bullet(A), \wedge, \hat d_A)$ de formas diferenciales con valores escalares, que incluirá a la forma de volumen de ciertos algebroides, permitirá definir a $(\Omega^\bullet(A, E), \hat d_\phi)$ como un complejo diferencial sobre el anillo graduado $(\Omega^\bullet(A), \wedge)$. Cuando $E$ es además un haz de álgebras, el producto $\bullet$ en las fibras de $E$ induce un producto $\wedge^\bullet$ entre las formas diferenciales con valores en $E$, haciendo de $(\Omega^\bullet(A, E), \wedge^\bullet, \hat d_\phi)$ un álgebra diferencial graduada, y en particular en álgebra de Lie diferencial graduada cuando $E$ es un haz de álgebras de Lie, como lo son el haz $\text{End}(E)$ o los haces adjuntos de un algebroide de Lie transitivo. Cuando $A$ es transitivo, la trivialización local del algebroide da lugar a la localización de las formas diferenciales, donde esta trivialización es una operación que respeta tanto a los diferenciales como a los productos cuña. En cada trivialización local sobre $U$ abierto de la variedad base que también trivialice a $E$, el diferencial toma la forma $\hat d_A = d + s'$, donde $d$ es el diferencial usual de $TU$ y $s'$ es un diferencial asociado al diferencial de Chevalley-Eilenbert en el álgebra exterior del álgebra de Lie, fibra del haz adjunto a $A$.
+
+
+
+\vspace{\fill}
+
+
+\parbox{.4\textwidth}{%
+\underline{\hspace{7cm}}\\
+\raggedright NOMBRES Y APELLIDOS DEL ESTUDIANTE
+}
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+\parbox{.4\textwidth}{%
+\underline{\hspace{7cm}}\\
+\raggedright NOMBRES Y APELLIDOS DEL ASESOR (asesor)
+}
+\hspace*{\fill}
+\parbox{.4\textwidth}{%
+\underline{\hspace{7cm}}\\
+\raggedright NOMBRES Y APELLIDOS DEL JURADO (jurado)
+}
+
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+\parbox{.4\textwidth}{%
+\underline{\hspace{7cm}}\\
+\raggedright NOMBRES Y APELLIDOS DEL COASESOR (co-asesor)
+}
+
+\end{document}
+
