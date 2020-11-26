@@ -916,15 +916,15 @@ What we want to see is that the local trivialization over $U_i$ of each of the t
 
 That $a^*F_i = \hat F^a_{\mu \nu} E_a dx^\mu \wedge dx^\nu$ is clear since $\hat F$ is a $2$-form on $TM$ and $a$ is the anchor.
 
-To see that $(a^* \mathcal D \comp \tilde \omega)_i = (\mathcal D \tau_i)^b_{\mu, a} dx^\mu \wedge (\alg a_i)^a$, first recall that $\{\nabla^i_\mu, -E_a\} \subset \Gamma(TU_i \times \alg)$, where $\nabla^i$ is the local trivialization of the connection $\nabla:TM \to A$ associated to $\tilde \omega$, is the global frame of $TU_i \times \alg g$ dual to $\{dx^\mu, \alg a^a\}$. Then, the result follows from the following three calculations:
+To see that $(a^* \mathcal D \comp \tilde \omega)_i = (\mathcal D \tau_i)^b_{\mu, a} dx^\mu \wedge (\alg a_i)^a$, first recall that $\{\tilde \nabla^i_\mu, -E_a\} \subset \Gamma(TU_i \times \alg g)$, where $\tilde \nabla^i$ is the local trivialization of the connection $\tilde \nabla:TM \to A$ associated to $\tilde \omega$, is the global frame of $TU_i \times \alg g$ dual to $\{dx^\mu, \alg a^a\}$. Then, the result follows from the following three calculations:
 \begin{align*}
-    (a^* \mathcal D \comp \tilde \omega)_i(\nabla^i_\mu, \nabla^i_\nu) 
-        &= (\mathcal D_{\partial_\mu} \tau_i) (\tilde \omega_i(\nabla^i_\mu)) - (\mathcal D_{\partial_\nu} \tau_i) (\tilde \omega_i(\nabla^i_\nu))\\
+    (a^* \mathcal D \comp \tilde \omega)_i(\tilde \nabla^i_\mu, \tilde \nabla^i_\nu) 
+        &= (\mathcal D_{\partial_\mu} \tau_i) (\tilde \omega_i(\tilde \nabla^i_\mu)) - (\mathcal D_{\partial_\nu} \tau_i) (\tilde \omega_i(\tilde \nabla^i_\nu))\\
         &= (\mathcal D_{\partial_\mu} \tau_i) (0) - (\mathcal D_{\partial_\nu} \tau_i)(0);
 \end{align*}
 \begin{align*}
-    (a^* \mathcal D \comp \tilde \omega)_i(\nabla^i_\mu, -E_a) 
-        &= (\mathcal D_{\partial_\mu} \tau_i) (\tilde \omega_i(-E_a)) - (\mathcal D_{0} \tau_i) (\tilde \omega_i(\nabla^i_\mu))\\
+    (a^* \mathcal D \comp \tilde \omega)_i(\tilde \nabla^i_\mu, -E_a) 
+        &= (\mathcal D_{\partial_\mu} \tau_i) (\tilde \omega_i(-E_a)) - (\mathcal D_{0} \tau_i) (\tilde \omega_i(\tilde \nabla^i_\mu))\\
         &= (\mathcal D \tau_i)^b_{\mu, a} E_b;
 \end{align*}
 \begin{align*}
@@ -935,14 +935,14 @@ To see that $(a^* \mathcal D \comp \tilde \omega)_i = (\mathcal D \tau_i)^b_{\mu
 
 Finally, that $(\tilde \omega^* R_\tau)_i = (W_i)^c_{ab} E_c (\alg a_i)^a \wedge (\alg a_i)^b$ follows from:
 \begin{align*}
-    (\tilde \omega^* R_\tau)_i(\nabla^i_\mu, \nabla^i_\nu) 
-        &= (R_\tau)_i(\tilde \omega_i(\nabla^i_\mu), \tilde \omega_i(\nabla^i_\nu)) \\
+    (\tilde \omega^* R_\tau)_i(\tilde \nabla^i_\mu, \tilde \nabla^i_\nu) 
+        &= (R_\tau)_i(\tilde \omega_i(\tilde \nabla^i_\mu), \tilde \omega_i(\tilde \nabla^i_\nu)) \\
         &= (R_\tau)_i(0, 0) \\
         &= 0;
 \end{align*}
 \begin{align*}
-    (\tilde \omega^* R_\tau)_i(\nabla^i_\mu, -E_a) 
-        &= (R_\tau)_i(\tilde \omega_i(\nabla^i_\mu), \tilde \omega_i(-E_a)) \\
+    (\tilde \omega^* R_\tau)_i(\tilde \nabla^i_\mu, -E_a) 
+        &= (R_\tau)_i(\tilde \omega_i(\tilde \nabla^i_\mu), \tilde \omega_i(-E_a)) \\
         &= (R_\tau)_i(0, E_a) \\
         &= 0;
 \end{align*}
