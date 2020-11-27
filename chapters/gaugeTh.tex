@@ -6,16 +6,17 @@ In this chapter we will finally formulate a gauge theory on a transitive Lie alg
 
 Throughout this section let $A$, $\alg g$, $E$, representation $\phi$, basis for these, connected? \todo{complete}.
 
+{\color{gray}
 \subsection{Vector Bundles}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Let $E$ be an arbitrary vector bundle over $M$.
 
 \begin{definition}
-\emph{The gauge group of $E$}, denoted by $\alg G(E)$ is the group of (vertical) vector bundles automorphisms of $E$.
+\emph{The gauge group of $E$}, denoted by $\mathcal G(E)$ is the group of (vertical) vector bundles automorphisms of $E$.
 \end{definition}
 
-Notice that $\alg G(E)$ is the subset of $\Gamma\End(E)$ of invertible endomorphisms of $E$.
+Notice that $\mathcal G(E)$ is the subset of $\Gamma\End(E)$ of invertible endomorphisms of $E$.
 
 {
 \color{gray}
@@ -29,20 +30,42 @@ Notice that $\alg G(E)$ is the subset of $\Gamma\End(E)$ of invertible endomorph
 
 \subsection{Vector Bundles Associated to a Principal Bundle}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+}
 
+We have finally introduced all the necessary ingredients to define gauge theories. The traditional gauge theories arise from imposing that the dynamics of a matter field, i.e. sections of a vector bundle, be left invariant under space dependent changes of ``internal reference frame'' associated to the action of a structure group $G$, i.e. under gauge transformations, and this is achieved by the introduction of a connection on an associated principal bundle, also called a \emph{gauge potential}, with certain dynamics. Fournel, et al. in \cite{} propose the formulation of gauge theories on transitive Lie algebroids from a lagrangian approach through the action functional $\mathcal S$ of the theory, which decompomposes into the matter action $\mathcal S_{matter}$ and the gauge action $\mathcal S_{matter}$. The complete framework for the formulation is composed of an orientable transitive Lie algebroid $A$, over a base manifold $M$, equipped with a metric $\hat g \equiv (g, h, \tilde \nabla)$ with adjoint Lie algebroid $L$ on which $h$ is a Killing metric, and a vector bundle $E$ on which there is a representation $\phi: A \to \alg D(E)$ and a metric $h^E$ compatible with $\phi$; this notation will be used throughout the rest of the chapter.
+
+Traditional gauge theories start with a principal bundle $P$  over a manifold $M$ with structure group $G$, where $\alg g$ is its Lie algebra, and an associated vector bundle $E$ with typical fiber $V$. \emph{The gauge group} $\mathcal G(P) \ni f$ of $P$ is the group of (vertical) automorphisms of $P$, that respect the group action; the group $C^\infty_G(P, G) \ni g$ of $G$-invariant functions, where $G$ acts on itself through the adjoint action, is (anti)isomorphic to the $\mathcal G(P)$, via the relation $f(p) = R_{g(p)}$. $f\in \mathcal G(P)$ acts on vector valued forms on $P$ through the pullback, this is called a (finite) gauge transformation; in particular, it acts on $G$-invariant forms of $\Omega^0(TP, P \times V)$, i.e. on $\Gamma(E)$, the space of \emph{matter fields}; on the subset of $\Omega^1(TP, P \times \alg g)$ made of principal connection forms $w$, producing once again a connection; and on their curvatures, basic forms in $\Omega^2(TP, O \times \alg g)$, where the curvature of $f^*w$ is $f^*R$ where $R$ is the curvature of $w$.
+
+The infinite dimensional Lie algebra $C^\infty_G(P, \alg g)$, isomorphic to the sections of $P \times \alg g/G$, is called \emph{the gauge Lie algebra} of $P$, since there is an exponential map $\text{Exp}: C^\infty_G(P, \alg g) \to C^\infty_G(G, G)$, and hence an exponential map $\text{exp}: C^\infty_G(P, \alg g) \to \mathcal G(P)$. This allows to define the \emph{infinitesimal gauge action} of elements of $\eta \in C^\infty_G(P, \alg g)$ on forms $\alpha$ on $P$ as
+\begin{equation}
+    \der{t}[t=0]{\text{exp}(t\eta)} \alpha.
+\end{equation}
+In particular, from the fact that if $f = R_g \in \mathcal G(P)$, then the pushforward, for $\ppal X \in T_pP$, $f_* \ppal X = (L_{g(p) *}^{-1} g_*(\ppal X))^*_{f(p)} + R_{g(p)*}(X)$, we can easily conclude that the infinitesimal gauge action of $\eta$ on a matter field $\mu$, on a connection $w$ and on a curvature form $R$ is, respectively:
+\begin{align}
+    -\eta \cdot & \mu, &
+    d\eta &+ w \wedge \eta, &
+    - \eta \wedge  R;
+\end{align}
+the wedge product used is the one on the differential graded Lie algebra of $\alg g$-valued forms, which, for the last equation, is nothing more than the action of $\alg g$ on $\alg g$ induced by $G$-action on $\alg g$, i.e. the Lie bracket, just as $\eta \cdot$ is the action of $\alg g$ on $V$ induced by that of $G$. 
+
+Throughout this chapter we will be dealing with forms on differential graded Lie algebras, and we will use the symbol $\wedge$ instead of $\wedge^{[,]}$ to denote the multiplication within this algebra, unless confusion may arise.
 
 \section{Gauge Transformations associated to Transitive Lie Algebroids}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this section, $\hat \nabla^E: A \to \alg D(E)$ will be an $A$-connection on $E$, with associated $A$-connection form $\hat \omega^E \in \Omega^1(A, \End(E))$ with respect to the representation $\phi$, and let its curvature form be $\hat R^E \in \Omega^2(A, L)$. The following is a straightforward generalization of the concept of gauge transformation of a vector bundle connection.\todo{If this isn't done before, then mention that this coincides with the traditional definition if $A = TM$}
+For this framework of gauge theories on transitive Lie algebroids, Lazzarini, et al. in \cite{2012} define the gauge algebra in such a way that it coincides with the traditional definion in the case that $A$ is the Atiyah Lie algebroid associated to a principal bundle: as the space of sections of an adjoint Lie algebroid.
+
+{\color{gray}
+Throughout this section, let $\hat \nabla^E: A \to \alg D(E)$ be an $A$-connection on $E$, with associated $A$-connection form $\hat \omega^E \in \Omega^1(A, \End(E))$ with respect to the representation $\phi$, and let its curvature form be $\hat R^E \in \Omega^2(A, L)$. 
+The following is a straightforward generalization of the concept of gauge transformation of a vector bundle connection.\todo{If this isn't done before, then mention that this coincides with the traditional definition if $A = TM$}
 
 \begin{definition}
-Let $g$ be an element of $\alg G(E)$. \emph{The gauge transformation of the $A$-connection $\hat \nabla^E$ with respect to $g$} is the $A$-connection $\hat \nabla^{E, g} := g^{-1} \comp \hat \nabla^E \comp g$. \emph{The gauge transformation of the curvature of $\hat \nabla^E$} is the curvature of $\hat \nabla^{E,g}$.
+Let $g$ be an element of $\mathcal G(E)$. \emph{The gauge transformation of the $A$-connection $\hat \nabla^E$ with respect to $g$} is the $A$-connection $\hat \nabla^{E, g} := g^{-1} \comp \hat \nabla^E \comp g$. \emph{The gauge transformation of the curvature of $\hat \nabla^E$} is the curvature of $\hat \nabla^{E,g}$.
 \end{definition}
 
 \begin{proposition}
-Let $g \in \alg G(E)$. The $A$-connection form associated to $\hat \nabla^{E, g}$ is given by
+Let $g \in \mathcal G(E)$. The $A$-connection form associated to $\hat \nabla^{E, g}$ is given by
 \begin{equation*}
     \hat \omega^{E, g}  := g^{-1} \comp \hat \omega^E \comp g + g^{-1} \comp \hat d_E g,
 \end{equation*}
@@ -50,7 +73,7 @@ and its curvature form by
 \begin{equation*}
     \hat R^{E, g} = g^{-1} \comp  \hat R^E \comp g.
 \end{equation*}
-Here, we have omitted the wedge product of the $0$-forms $g, g^{-1} \in \Omega^0(A, \End(L))$ with other forms.
+
 \end{proposition}
 \begin{proof}
 Recalling the an $A$-connection $\hat \nabla^E$ and its associated form $\hat \omega^E$ are related by $\hat \nabla^E = \phi + \hat \omega^E$, we have that
@@ -90,9 +113,10 @@ and on the curvature it is
 \end{equation}
 \end{proposition}
 
+
 This is the connection between the ``traditional'' definitions, and the infinitesimal definitions given below for gauge transformations, so I would like to put the prove at least for the $A = TM$ case, i.e. ordinary vector bundle connections.
 }
-
+}
 \linea
 
 
@@ -101,18 +125,16 @@ This is the connection between the ``traditional'' definitions, and the infinite
 Given a Lie algebroid sequence $0 \to L \to A \to TM \to 0$, \emph{the gauge algebra of $A$} is the (infinite dimensional) Lie algebra $\Gamma(L)$.
 \end{definition}
 
-Let $\hat \omega \in \Omega^1(A, L)$ be an ordinary connection
-
-\begin{definition}
-Let $\eta \in \Gamma(L)$. \emph{The infinitesimal gauge action on $\hat \omega$} is the connection
+\begin{definition}\label{definitionInfinitesimalGaugeActionAndTransformationForAlgebroidFormsAndCurvature}
+Let $\hat \omega \in \Omega^1(A, L)$ be a connection for on $A$, and let $\eta \in \Gamma(L)$. \emph{The infinitesimal gauge action on $\hat \omega$ with respect to $\eta$} is 
 \begin{equation}
     \hat d \eta + \hat \omega \wedge \eta
 \end{equation}
-and \textbf{the infinitesimal gauge transformation} is
+and \emph{the infinitesimal gauge transformation of $\hat \omega$} is the connection
 \begin{equation}
     \hat \omega^\eta := \hat \omega + \hat d \eta + \hat \omega \wedge \eta.
 \end{equation}
-\emph{The infinitesimal gauge action on the curvature} is defined to be
+\emph{The infinitesimal gauge action on the curvature with respect to $\eta$} is defined to be
 \begin{equation}
     \hat R \wedge \eta
 \end{equation}
@@ -122,18 +144,78 @@ and its \emph{infinitesimal gauge transformation} is
 \end{equation}
 \end{definition}
 
-Notice that this is the curvature of $\hat omega^\eta$ without the second order terms in $\eta$.
+The curvature of $\hat \omega^\eta$ is $\hat R + \hat d \hat \omega \wedge \eta + \frac{1}{2} (\hat \omega \wedge \hat \omega) \wedge \eta + [\frac{1}{2} \hat d \eta \wedge \hat d \eta + \hat d \eta \wedge (\hat \omega \wedge \eta) + \frac{1}{2} (\hat \omega \wedge \eta) \wedge (\hat \omega \wedge \eta)]$, meaning that it is equal to $\hat R^\eta$ plus second order terms in $\eta$.
 
-\begin{proposition}
-The algebroid morphism corresponding to $\hat \omega^\eta$ is 
+\begin{proposition}\label{propositionInfinitesimalGaugeTransformationOfAlgebroidEndomorphismOfConnection}
+The algebroid morphism corresponding to the infinitesimal gauge transformation $\hat \omega^\eta$ of a connection form $\hat \omega$ with respect to $\eta \in \Gamma(L)$ is 
 \begin{equation}
-    \hat \nabla^\eta = \hat \nabla + [\hat \nabla, \eta]
+    \hat \nabla^\eta := \hat \nabla + [\hat \nabla, j\eta];
 \end{equation}
+the reduced kernel endomorphism corresponding to $\hat \omega$ is
+\begin{equation}
+    \tau^\eta := \tau + [\tau, \eta].
+\end{equation}
+These functions will be called \emph{the infinitesimal gauge transformations} of $\hat \nabla$ and $\tau$, respectively, with respect to $\eta$.
 \end{proposition}
+\begin{proof}
+$\hat \nabla^\eta$ is defined to be, for every $\oid X \in A$
+\begin{align*}
+    \hat \nabla^\eta_{\oid X} &=
+        \oid X + j\hat \omega^\eta(\oid X) \\
+        &= \oid X + j\hat \omega(\oid X) + j \comp (\hat d \eta + \hat \omega \wedge \eta)(\oid X) \\
+        &= \hat \nabla_{\oid X} + [\oid X, j\eta] + [j\hat \omega (\oid X), j\eta]\\
+        &= \hat \nabla_{\oid X} + [\hat \nabla_{\oid X}, \eta].
+\end{align*}
+Similarly, given any $\theta \in L$,
+\begin{align*}
+    \tau^\eta (\theta)
+        &= \hat \omega^\eta \comp j(\theta) + id_L(\theta) \\
+        &= (\hat \omega \comp j + id_L)(\theta) + \hat d \eta (j \theta) + \hat \omega \wedge \eta(j \theta)\\
+        &= \tau + [\theta, \eta] + [\hat \omega \comp j(\theta), \eta] \\
+        &= \tau + [Id_L(\theta) + \hat \omega \comp j(\theta) , \eta]\\
+        &= (\tau + [\tau, \eta])(\theta);
+\end{align*}
+the desired results follow from this calculations.
+\end{proof}
+
+
+\lin
+
+Throughout the rest of the chapter, let $\phi$ be the representation of $A$ on $E$, with vertical part $\phi_L: L \to \End(E)$.
+
+\begin{definition}\label{definitionInfinitesimalGaugeActionAndTransformationAConnection}
+Let $\mu \in \Gamma(E)$, $\hat \nabla^E: A \to \alg D(E)$ be an $A$-connection on $E$, and $\eta \in \Gamma(L)$. Then, \emph{the infinitesimal gauge transformation of $\mu$ with respect to $\eta$} is the section
+\begin{equation}
+    \mu^\eta := \mu - \phi_L(\eta)\mu;
+\end{equation}
+\emph{the infinitesimal gauge transformation of $\hat \nabla^E$} is the $A$-connection
+\begin{equation}
+    \hat \nabla^{E, \eta} := \hat \nabla^E + [\hat \nabla^E, j\phi_L(\eta)];
+\end{equation}
+\emph{the infinitesimal gauge transformation of the curvature $\hat R^E$}$\in \Omega^2(A, \End(L))$ is
+\begin{equation}
+    \hat R^E \wedge \eta.
+\end{equation}
+\end{definition}
+
+Following a calculation identical to that in the first part of the proof of proposition \ref{propositionInfinitesimalGaugeTransformationOfAlgebroidEndomorphismOfConnection}, but in the inverser order, we conclude that, with respect to any representation $\phi: A \to \alg D(E)$, the $\End(E)$-valued form associated to $\hat \nabla^{E, \eta}$ is
+\begin{equation}
+    \hat \omega^{E, \eta} := \hat \omega^E + \hat d_E(\phi_L(\eta)) + \hat \omega^E \wedge (\phi_L(\eta)).
+\end{equation}
 
 \begin{proposition}
-The infinitesimal gauge transformation of the A-connection induced by a generalized connection IS THE SAME AS the induced A-connection of the transformed generalized connection.
+Given a connection form $\hat \omega \in \Omega^1(A, L)$ and an element $\nabla \in \Gamma(L)$, let $\hat \nabla^E$ the $A$ be the $A$-connection produced by $\hat \omega$ on $E$ with respect to $\phi$. Then the infinitesimal transformation of $\hat \nabla^E$ coincides with the $A$-connection produced by $\hat \omega^{E, \eta}$.
 \end{proposition}
+\begin{proof}
+The $A$-connection produced by $\hat \omega^{E, \eta}$ is
+\begin{align}
+    \phi(\hat \nabla^{\eta}) 
+        &= \phi(\hat \nabla + [\nabla, j\eta]) \\
+        &= \phi(\hat \nabla) + [\phi(\hat \nabla), \phi_L(\eta)]\\
+        &= \hat \nabla^E + [\hat \nabla^E, \phi_L(\eta)\\
+        &= \hat \nabla^{E, \eta}.
+\end{align}
+\end{proof}
 
 \section{Gauge Action Functional}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
