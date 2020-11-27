@@ -1,343 +1,343 @@
-{
-\color{gray}
-Recall:
-    \begin{itemize}
+% {
+% \color{gray}
+% Recall:
+%     \begin{itemize}
     
-    \item Lifting of Paths gives lifting of Vector fields
+%     \item Lifting of Paths gives lifting of Vector fields
     
-    \item Sections of associated vector bundles are really $G$-equivariant $\psi(pg) = g^{-1} \psi(p)$ functions $P \to V$. In general, \dbtext{forms $\Omega^n(TM, E)$ are $V$ valued equivariant forms $\Omega_G(P, V)$?}, 
+%     \item Sections of associated vector bundles are really $G$-equivariant $\psi(pg) = g^{-1} \psi(p)$ functions $P \to V$. In general, \dbtext{forms $\Omega^n(TM, E)$ are $V$ valued equivariant forms $\Omega_G(P, V)$?}, 
     
-    and this may? be the same as considering the associated vector bundle with fiber $\bigwedge^n V$, but I don't think it matters to me right now.
+%     and this may? be the same as considering the associated vector bundle with fiber $\bigwedge^n V$, but I don't think it matters to me right now.
     
-        \begin{itemize}
+%         \begin{itemize}
         
-        \item The action of $G$ on $V$ determines uniquely the associated vector bundle
+%         \item The action of $G$ on $V$ determines uniquely the associated vector bundle
         
-        \item ``Conversely'', at least up to what I did by hand, having a single section of a vector bundle, and having a representation of $G$ on the fiber determines the cocycles, which in turns determines the principal bundle, so: ``the vector bundle $E$ with fiber $V$ + the representation of a group $\Longrightarrow$ determines the Principal Bundle''... so, \textbf{even if I start simply with a vector bundle and a group that acts in the fiber, I obtain a principal bundle}, and so I may see a seciton as an equivariant function $:P \to V$.
+%         \item ``Conversely'', at least up to what I did by hand, having a single section of a vector bundle, and having a representation of $G$ on the fiber determines the cocycles, which in turns determines the principal bundle, so: ``the vector bundle $E$ with fiber $V$ + the representation of a group $\Longrightarrow$ determines the Principal Bundle''... so, \textbf{even if I start simply with a vector bundle and a group that acts in the fiber, I obtain a principal bundle}, and so I may see a seciton as an equivariant function $:P \to V$.
         
-        \item This is interpreted as locally choosing a ``frame'' or local trivialization, so that I may, locally, consider the section as simply $:U \subset M \to V$, as it is perceived ``physically''.
+%         \item This is interpreted as locally choosing a ``frame'' or local trivialization, so that I may, locally, consider the section as simply $:U \subset M \to V$, as it is perceived ``physically''.
             
-        \end{itemize}
+%         \end{itemize}
     
-    \item \textbf{I want a ``covariant'' derivative of sections of $E$ to be something that sends $G$-equivariant funtions $:P \to V$ to $G$-equivariant functions},  given only $X \in TM$, because it is the manifold we see, on which $E$ is based. (In GR covariant means sending a tensor field to a tensor field)
+%     \item \textbf{I want a ``covariant'' derivative of sections of $E$ to be something that sends $G$-equivariant funtions $:P \to V$ to $G$-equivariant functions},  given only $X \in TM$, because it is the manifold we see, on which $E$ is based. (In GR covariant means sending a tensor field to a tensor field)
     
-    \item \textbf{This last point explains the $G$-equivariance of the principal connections!!} (see my example).
+%     \item \textbf{This last point explains the $G$-equivariance of the principal connections!!} (see my example).
     
-    \end{itemize}
+%     \end{itemize}
 
 
----
-The classical setting for Covariant derivate: 
+% ---
+% The classical setting for Covariant derivate: 
 
-    \begin{itemize}
+%     \begin{itemize}
     
-    \item Given a vector bundle $E$ over $M$ and
+%     \item Given a vector bundle $E$ over $M$ and
     
-    \item a (Lie algebroid) connection $\nabla: TM \to \mathcal D(E)$ 
+%     \item a (Lie algebroid) connection $\nabla: TM \to \mathcal D(E)$ 
         
-        \begin{itemize}
+%         \begin{itemize}
         
-        \item weaker than a Lie algebroid representation because it is not required to be a Lie algebra morphism in the sections, unless the curvature is $0$
+%         \item weaker than a Lie algebroid representation because it is not required to be a Lie algebra morphism in the sections, unless the curvature is $0$
         
-        \end{itemize}
+%         \end{itemize}
     
-    \item the Covariant Derivative \emph{of vector (bundle) valued forms} $\Omega^n(TM, E)$, $D^\nabla: \Omega^\cdot \to \Omega^{\cdot+1}$, e.g. $0$-forms, which are precisely $\Gamma(E)$, the matter fields. (The covariant is satisfied by definition, at least in the sense of GR, where it means to send a tensor field into a tensor field)
+%     \item the Covariant Derivative \emph{of vector (bundle) valued forms} $\Omega^n(TM, E)$, $D^\nabla: \Omega^\cdot \to \Omega^{\cdot+1}$, e.g. $0$-forms, which are precisely $\Gamma(E)$, the matter fields. (The covariant is satisfied by definition, at least in the sense of GR, where it means to send a tensor field into a tensor field)
     
-    \item is given precisely by the formula of the formula of the exterior derivative: Koszul formula
+%     \item is given precisely by the formula of the formula of the exterior derivative: Koszul formula
     
-    Take into account that instead of having a representation of $TM$ in $E$ (which would define an exterior derivative) we have a connection.
-    \end{itemize}
+%     Take into account that instead of having a representation of $TM$ in $E$ (which would define an exterior derivative) we have a connection.
+%     \end{itemize}
     
-In summary, a covariant derivative 
-    \begin{itemize}
+% In summary, a covariant derivative 
+%     \begin{itemize}
     
-    \item Is something defined on vector bundle valued forms, just like the exterior derivative $d$ (as defined in Lazzarini, at least).
+%     \item Is something defined on vector bundle valued forms, just like the exterior derivative $d$ (as defined in Lazzarini, at least).
     
-    \item Is coarser than a $d$ by only requiring a (Lie algebroid) connection, instead of a representation (so no Lie algebra morphism in the sections)
+%     \item Is coarser than a $d$ by only requiring a (Lie algebroid) connection, instead of a representation (so no Lie algebra morphism in the sections)
     
-    \item Is finer than a $d$ by requiring as starting vector bundle $TM$, instead of any Lie algebroid $A$.
+%     \item Is finer than a $d$ by requiring as starting vector bundle $TM$, instead of any Lie algebroid $A$.
     
-    \end{itemize}
+%     \end{itemize}
 
------
-
-
-
-\section*{Ordinary Connections and Curvature in Transtive Lie Algebroids}
-
-They always exist.
-
-If the algebroid is regular.
-
-The ordinary curvature is (see descriptions in \ref{chp:understand}, in \ref{ordinaryCurvatureIs}). It satisfies \ref{BianchiandInhomogeneous}. It gives sense of horizontality \ref{ordinaryHorizontality}.
-
-Is our notion of curvature somehow redundant? \ref{curvatureRedundant}
-
-What meaning may be given to \ref{whatMeaning}
-
-
-\subsection*{Equivalence for Atiyah Lie Algebroid to Principal Bundle Theory}
-
-Mackenzie does this in detail.
-
-The general equivalence of $G$-equivariant/invariant forms on $TP$ and Lie algebroid forms has been established in Ch 2. THe normalized part is easy.
-
-$\omega_{loc}(\cdot \oplus 0)$ is a local principal connection form.
-
-\subsection*{Local Description of connection and curvature and ``Change of Gauge''}
-
-Ordinary Lie algebroid connection, i.e. $\omega \circ j = - id_L$
-
-\begin{align}
-    \omega^j_{loc}(X \oplus \eta) 
-    &= \omega^j_{loc}(X) - \eta !!\text{$\omega(S(\cdot \oplus 0))$ is a local principal connection}\\
-    &= \underbrace{\alpha^j_i(\omega^i_{loc}(X)) + \chi^j_i(X)}_{\text{same as the ppal. connection $\omega(S(\cdot \oplus 0))$}}- \eta
-\end{align}
-
-Generalized connections: $\omega \circ j = \tau - id_L$
-
-\begin{align}
-\omega^j_{loc}(X \oplus \eta) 
- = \underbrace{\alpha^j_o)\omega^j_{loc})(X)) + \chi^j_i(X) - \eta}_{\text{same as before}} + \psi_j^{-1}\circ \tau (\psi_j(\eta) - l^j_i(X))\\
-\end{align}
-
-The extra bit can also be written as 
-\begin{align}
-    \psi_j^{-1}\circ \tau \circ j^{-1}S_i(\eta) \\
-    \psi_j^{-1}\circ \tau \circ j^{-1}\psi_i(\eta^i) & \text{if $\eta$ is understood as $\eta = \eta^j$}
-\end{align}
-
-These all means that
-\begin{proposition}
-A family of local $1$-forms with the above transformation rules $\equiv$ a (generalized) Lie algebroid connection on $A$
-\end{proposition}
-
-\linea
-
-\section*{Mixed Local Basis of Forms given a Connection and $G^i_j$ Matrices}
-
-\section*{Covariant Derivatives of Forms}
-
-\section{$A$-Connections / Covariant Derivatives in ``Generalized Associated/Representation Algebroids''}
-
-This concept of $A$-connection is introduced by Fernandes (either this, or their notion of $A$ connection is completely different from this one, but still reproduces the ordinary covariant derivative if we have a $TM$-connection). In his 2001 paper he remarks some important things about them, like how parallel transport does not depen only on the base path, the holonomy of a flt $A$-connection may be non-discrete, etc (pg. 7)
-
-Horizontal lift of $\mathfrak{X}$ in $e\in E$? Linear vector field associated to derivation?
-
-%\section{Gauge Transformations and Infinitesimal Gauge Transformations}
-
-\section*{Generalized Connections}
-
-Do they give rise to good ``covariant derivatives''? (In associated bundles) \ref{trulyCovariant}
+% -----
 
 
 
-%\subsection{Infinitesimal Gauge Action}
-\subsection{Local Description}
-\subsection{Decomposition of a Generalized Connection and its Curvature}
-}
+% \section*{Ordinary Connections and Curvature in Transtive Lie Algebroids}
 
-{ \color{gray}
-What we really want: 
-matter fields 
-on which groups acts <- “local” gauge transformation associated to a group: Representation v. bundles of a transitive Lie algebroid $A ~ TM x \alg g$
-on which there is a notion of covariant derivative (momentum: w.r.t space, energy: w.r.t. time -> Time Evolution Equations), 
-where the covariance means that $D_X\psi$ is indeed again a matter field 
-that  transforms as one under a “local gauge transformation”:
-pointwise action of the group: 
-including: change of local principal bundle trivialization
-making the Matter Action invariant under local gauge transformations
-And where the covariant derivatives induce the existence of observable Gauge Fields like light
-whose Gauge Action is again invariant under local gauge transformations
-Hence,
-Principal bundle introduced as the bigger space where the X in TP has a natural and consistent notion of derivative: generalized by representation of A=TP/G on E
-Where the group and its action on the vector fields plays an important role in the representation
-SEE HOW DOES THE TRADITIONAL ACTION OF TP ON E LOOKS AS A REPRESENTATION OF TP/G, and notice how the group action intervenes
-Generalized by: the lie algebra “of the structure group” is the vertical part of every transitive Lie algebroid, so a representation must take into account this infinitesimal gauge transformations
-The “local gauge transformations” induced on E related to the group are generated by the infinitesimal gauge transformations $L~C^\infty(M, g)$ of A
-And from where each connection induces a covariant (under gauge transformations) derivative on all associated matter fields: generalized covariant derivatives: $A$-connections
-Furthermore! The new directions on which we may take covariant derivatives ARE PRECISELY THE COUPLINGS WITH THE TAU (“Higgs”) FIELD.
+% They always exist.
 
-What I don’t need:
-The notion of horizontality in $TP/G$: we care about 
-the gauge fields (and tau fields) that the connections generate; and
-the notion of covariant derivative that it induces on associated matter fields coming from horizontal vector fields will be replaced by 
-representation to talk about the natural action, and of 
-A-connections to introduce the direction preferred by the gauge fields
-The principal bundle: 
-the structure group as generator of gauge transformations is still there; 
+% If the algebroid is regular.
 
-the natural notion of TP as derivatives is generalized by the notion of representation (so the horizontality is again unnecessary)
-Takeaway: even though I lose the view of connections as a notion of horizontality that is equivalent which helps make intuitive sense of connections as vertical projections and of the covariant derivatives as horizontal derivatives, its generalization purely in terms of forms completely suffices to incorporate the ingredients that are important for Gauge Theory, and allow the natural introduction of new fields tau that couple with the rest of the fields to make mass terms appear in the lagrangians.
+% The ordinary curvature is (see descriptions in \ref{chp:understand}, in \ref{ordinaryCurvatureIs}). It satisfies \ref{BianchiandInhomogeneous}. It gives sense of horizontality \ref{ordinaryHorizontality}.
+
+% Is our notion of curvature somehow redundant? \ref{curvatureRedundant}
+
+% What meaning may be given to \ref{whatMeaning}
 
 
-    \begin{itemize}
+% \subsection*{Equivalence for Atiyah Lie Algebroid to Principal Bundle Theory}
+
+% Mackenzie does this in detail.
+
+% The general equivalence of $G$-equivariant/invariant forms on $TP$ and Lie algebroid forms has been established in Ch 2. THe normalized part is easy.
+
+% $\omega_{loc}(\cdot \oplus 0)$ is a local principal connection form.
+
+% \subsection*{Local Description of connection and curvature and ``Change of Gauge''}
+
+% Ordinary Lie algebroid connection, i.e. $\omega \circ j = - id_L$
+
+% \begin{align}
+%     \omega^j_{loc}(X \oplus \eta) 
+%     &= \omega^j_{loc}(X) - \eta !!\text{$\omega(S(\cdot \oplus 0))$ is a local principal connection}\\
+%     &= \underbrace{\alpha^j_i(\omega^i_{loc}(X)) + \chi^j_i(X)}_{\text{same as the ppal. connection $\omega(S(\cdot \oplus 0))$}}- \eta
+% \end{align}
+
+% Generalized connections: $\omega \circ j = \tau - id_L$
+
+% \begin{align}
+% \omega^j_{loc}(X \oplus \eta) 
+%  = \underbrace{\alpha^j_o)\omega^j_{loc})(X)) + \chi^j_i(X) - \eta}_{\text{same as before}} + \psi_j^{-1}\circ \tau (\psi_j(\eta) - l^j_i(X))\\
+% \end{align}
+
+% The extra bit can also be written as 
+% \begin{align}
+%     \psi_j^{-1}\circ \tau \circ j^{-1}S_i(\eta) \\
+%     \psi_j^{-1}\circ \tau \circ j^{-1}\psi_i(\eta^i) & \text{if $\eta$ is understood as $\eta = \eta^j$}
+% \end{align}
+
+% These all means that
+% \begin{proposition}
+% A family of local $1$-forms with the above transformation rules $\equiv$ a (generalized) Lie algebroid connection on $A$
+% \end{proposition}
+
+% \linea
+
+% \section*{Mixed Local Basis of Forms given a Connection and $G^i_j$ Matrices}
+
+% \section*{Covariant Derivatives of Forms}
+
+% \section{$A$-Connections / Covariant Derivatives in ``Generalized Associated/Representation Algebroids''}
+
+% This concept of $A$-connection is introduced by Fernandes (either this, or their notion of $A$ connection is completely different from this one, but still reproduces the ordinary covariant derivative if we have a $TM$-connection). In his 2001 paper he remarks some important things about them, like how parallel transport does not depen only on the base path, the holonomy of a flt $A$-connection may be non-discrete, etc (pg. 7)
+
+% Horizontal lift of $\mathfrak{X}$ in $e\in E$? Linear vector field associated to derivation?
+
+% %\section{Gauge Transformations and Infinitesimal Gauge Transformations}
+
+% \section*{Generalized Connections}
+
+% Do they give rise to good ``covariant derivatives''? (In associated bundles) \ref{trulyCovariant}
+
+
+
+% %\subsection{Infinitesimal Gauge Action}
+% \subsection{Local Description}
+% \subsection{Decomposition of a Generalized Connection and its Curvature}
+% }
+
+% { \color{gray}
+% What we really want: 
+% matter fields 
+% on which groups acts <- “local” gauge transformation associated to a group: Representation v. bundles of a transitive Lie algebroid $A ~ TM x \alg g$
+% on which there is a notion of covariant derivative (momentum: w.r.t space, energy: w.r.t. time -> Time Evolution Equations), 
+% where the covariance means that $D_X\psi$ is indeed again a matter field 
+% that  transforms as one under a “local gauge transformation”:
+% pointwise action of the group: 
+% including: change of local principal bundle trivialization
+% making the Matter Action invariant under local gauge transformations
+% And where the covariant derivatives induce the existence of observable Gauge Fields like light
+% whose Gauge Action is again invariant under local gauge transformations
+% Hence,
+% Principal bundle introduced as the bigger space where the X in TP has a natural and consistent notion of derivative: generalized by representation of A=TP/G on E
+% Where the group and its action on the vector fields plays an important role in the representation
+% SEE HOW DOES THE TRADITIONAL ACTION OF TP ON E LOOKS AS A REPRESENTATION OF TP/G, and notice how the group action intervenes
+% Generalized by: the lie algebra “of the structure group” is the vertical part of every transitive Lie algebroid, so a representation must take into account this infinitesimal gauge transformations
+% The “local gauge transformations” induced on E related to the group are generated by the infinitesimal gauge transformations $L~C^\infty(M, g)$ of A
+% And from where each connection induces a covariant (under gauge transformations) derivative on all associated matter fields: generalized covariant derivatives: $A$-connections
+% Furthermore! The new directions on which we may take covariant derivatives ARE PRECISELY THE COUPLINGS WITH THE TAU (“Higgs”) FIELD.
+
+% What I don’t need:
+% The notion of horizontality in $TP/G$: we care about 
+% the gauge fields (and tau fields) that the connections generate; and
+% the notion of covariant derivative that it induces on associated matter fields coming from horizontal vector fields will be replaced by 
+% representation to talk about the natural action, and of 
+% A-connections to introduce the direction preferred by the gauge fields
+% The principal bundle: 
+% the structure group as generator of gauge transformations is still there; 
+
+% the natural notion of TP as derivatives is generalized by the notion of representation (so the horizontality is again unnecessary)
+% Takeaway: even though I lose the view of connections as a notion of horizontality that is equivalent which helps make intuitive sense of connections as vertical projections and of the covariant derivatives as horizontal derivatives, its generalization purely in terms of forms completely suffices to incorporate the ingredients that are important for Gauge Theory, and allow the natural introduction of new fields tau that couple with the rest of the fields to make mass terms appear in the lagrangians.
+
+
+%     \begin{itemize}
     
-    \item Connections on Transitive Lie Algebroid
+%     \item Connections on Transitive Lie Algebroid
     
-        \begin{itemize}
+%         \begin{itemize}
         
-        \item Definition: Lie algebroid connection: section
+%         \item Definition: Lie algebroid connection: section
         
-        \item Theorem: Ordinary connection as normalized $1$-form
+%         \item Theorem: Ordinary connection as normalized $1$-form
             
-            \begin{itemize}
+%             \begin{itemize}
     
-            \item Example: Principal bundle connection.
+%             \item Example: Principal bundle connection.
             
-            \item Example: GENERALIZES: Covariant Derivatives of Vector Bundles
+%             \item Example: GENERALIZES: Covariant Derivatives of Vector Bundles
             
-                \begin{itemize}
+%                 \begin{itemize}
                     
-                \item A + representation -> Induced Covariant Derivative
+%                 \item A + representation -> Induced Covariant Derivative
                 
-                \item Associated $\Omega^1(TM, End(E))$ form.
+%                 \item Associated $\Omega^1(TM, End(E))$ form.
                 
-                Gauge fields (See Bleecker or Naber for precise definitions)
+%                 Gauge fields (See Bleecker or Naber for precise definitions)
                     
-                \end{itemize}
+%                 \end{itemize}
             
-            \end{itemize}
+%             \end{itemize}
         
-        \item Definition: Generalized connection on Transitive $A$. Definition $\tau$.
+%         \item Definition: Generalized connection on Transitive $A$. Definition $\tau$.
         
-        \item Proposition: Generalized connection equivalent to $\hat \Theta$ $C^\infty$ that respects the anchor. 
+%         \item Proposition: Generalized connection equivalent to $\hat \Theta$ $C^\infty$ that respects the anchor. 
         
-        \item Ordinary connection IFF $\hat \Theta \comp j = 0$. If that is the case, then $\hat \theta^2 = \hat \theta$ is the horizontal projection of the horizontal lift $\nabla$.
+%         \item Ordinary connection IFF $\hat \Theta \comp j = 0$. If that is the case, then $\hat \theta^2 = \hat \theta$ is the horizontal projection of the horizontal lift $\nabla$.
         
-        From the properties $\nabla$ horizontal lift, $\hat \omega$ vertical projection onto horizontal and vertical subbundles of $A$. We lose the intuition of horizontality, but we will still have a generalized notion of covariant derivatives which will give rise to the additional field that may couple with the gauge fields and the matter to give them mass. If it were desired, $\hat \theta$ is still a projection iff $\hat \omega \circ j|_{Im \hat \,\omega} = - 1|_{Im \, \hat \omega}$, e.g. $\hat \omega = 0$, then $\tau = -1_L$ and $\hat \Theta$ is a projection onto all of $A$.
+%         From the properties $\nabla$ horizontal lift, $\hat \omega$ vertical projection onto horizontal and vertical subbundles of $A$. We lose the intuition of horizontality, but we will still have a generalized notion of covariant derivatives which will give rise to the additional field that may couple with the gauge fields and the matter to give them mass. If it were desired, $\hat \theta$ is still a projection iff $\hat \omega \circ j|_{Im \hat \,\omega} = - 1|_{Im \, \hat \omega}$, e.g. $\hat \omega = 0$, then $\tau = -1_L$ and $\hat \Theta$ is a projection onto all of $A$.
         
-        Still valid interpretation: gauge potential, given of gauge fields that fix ``local'' gauge invariance.
+%         Still valid interpretation: gauge potential, given of gauge fields that fix ``local'' gauge invariance.
         
-        \item Ordinary connection from background connection
+%         \item Ordinary connection from background connection
             
-        \item Curvature    
+%         \item Curvature    
             
-            \begin{itemize}
+%             \begin{itemize}
                 
-            \item Nabla version
+%             \item Nabla version
             
-            \item Form version
+%             \item Form version
             
-            \item If ordinary connection, we can recover usual notion of curvature (of ppal bundle connection): nabla version
+%             \item If ordinary connection, we can recover usual notion of curvature (of ppal bundle connection): nabla version
             
-            \item Bianchi? Only for ordinary? ``HOmogeneous field equation''
+%             \item Bianchi? Only for ordinary? ``HOmogeneous field equation''
                 
-            \end{itemize}
+%             \end{itemize}
             
-        \item Algebraic curvature of $\tau$
+%         \item Algebraic curvature of $\tau$
         
-        \item Decomposition given background connection
+%         \item Decomposition given background connection
         
-        \end{itemize}
+%         \end{itemize}
         
-    \item Local Trivializations of Generalized Connections on $A$
+%     \item Local Trivializations of Generalized Connections on $A$
     
-        \begin{itemize}
+%         \begin{itemize}
             
-        \item Local trivialization of connection: $A - \epsilon + \tau$
+%         \item Local trivialization of connection: $A - \epsilon + \tau$
         
-            \begin{itemize}
+%             \begin{itemize}
                 
-            \item Change of coordinates
+%             \item Change of coordinates
                 
-            \end{itemize}
+%             \end{itemize}
         
-        \item \textbf{Mixed local basis}
+%         \item \textbf{Mixed local basis}
         
-        \item Local trivialization of curvature given background connection.
+%         \item Local trivialization of curvature given background connection.
             
-        \end{itemize}
+%         \end{itemize}
         
         
-    \item EXAMPLES:
+%     \item EXAMPLES:
     
-        \begin{itemize}
+%         \begin{itemize}
             
-        \item Complex Hopf
+%         \item Complex Hopf
         
-            \begin{itemize}
-            \item Monopole connection, local trivializations 
-            \end{itemize}
+%             \begin{itemize}
+%             \item Monopole connection, local trivializations 
+%             \end{itemize}
         
-        \item $P^k$ over $S^2$
+%         \item $P^k$ over $S^2$
         
-            \begin{itemize}
+%             \begin{itemize}
                 
-            \item Monopole connection. Different unit magnetic charge? In the north looks like so...
+%             \item Monopole connection. Different unit magnetic charge? In the north looks like so...
             
-            \item More general connection from $U_S$: completely arbitrary phi and theta components \& $x^1 x^2$ components
+%             \item More general connection from $U_S$: completely arbitrary phi and theta components \& $x^1 x^2$ components
 
-            \item It transforms like so: in phi theta to phi theta; in x to y.
+%             \item It transforms like so: in phi theta to phi theta; in x to y.
             
-            \item \lbtext{Nablas in local trivialization associated to general connection}
+%             \item \lbtext{Nablas in local trivialization associated to general connection}
 
-            \end{itemize}
+%             \end{itemize}
             
-        \item Quaternonic Hopf
+%         \item Quaternonic Hopf
         
-            \begin{itemize}
+%             \begin{itemize}
             
-            \item Instanton connection, local trivializations / it transforms like so
+%             \item Instanton connection, local trivializations / it transforms like so
 
-            \item More general ordinary connection from local trivialization in $U_S$. It transforms like so in x to y coordinates.
+%             \item More general ordinary connection from local trivialization in $U_S$. It transforms like so in x to y coordinates.
 
-            \end{itemize}
+%             \end{itemize}
         
-        \item $P^k$ over $S^4$
+%         \item $P^k$ over $S^4$
         
-            \begin{itemize}
+%             \begin{itemize}
             
-            \item Instanton connection in $U_S$. Local trivialization in $U_N$
+%             \item Instanton connection in $U_S$. Local trivialization in $U_N$
             
-            \item Nablas in local trivialization associated to general connection
+%             \item Nablas in local trivialization associated to general connection
                 
-            \end{itemize}
+%             \end{itemize}
         
-        \end{itemize}
+%         \end{itemize}
         
-    \item A-Connections on E
+%     \item A-Connections on E
     
-        \begin{itemize}
+%         \begin{itemize}
             
-        \item Definition: $A$-Connection on $E$: Generalized covariant derivative
+%         \item Definition: $A$-Connection on $E$: Generalized covariant derivative
         
-            \begin{itemize}
-            \item Example? Perhaps later? Coming from generalized connection
-            \end{itemize}
+%             \begin{itemize}
+%             \item Example? Perhaps later? Coming from generalized connection
+%             \end{itemize}
         
-        \item Theorem: If representation. $A$-connection on $E$ <-> $1$-form $\Omega^1(A, End(E))$
+%         \item Theorem: If representation. $A$-connection on $E$ <-> $1$-form $\Omega^1(A, End(E))$
         
-        \item Theorem: Induced $A$-connections from generalized connections on $A$ (and representation) 2
+%         \item Theorem: Induced $A$-connections from generalized connections on $A$ (and representation) 2
         
-        \item Local trivializations
+%         \item Local trivializations
         
-            \begin{itemize}
+%             \begin{itemize}
             
-            \item Of nabla for ordinary connection
+%             \item Of nabla for ordinary connection
             
-            \item Of one induced from (generalized) connection on transitive $A$
+%             \item Of one induced from (generalized) connection on transitive $A$
                 
-            \end{itemize}
+%             \end{itemize}
             
-        \item EXAMPLES:
+%         \item EXAMPLES:
         
-            \begin{itemize}
+%             \begin{itemize}
                 
-            \item $P^k$ over $S^2$, trivial representation
+%             \item $P^k$ over $S^2$, trivial representation
             
-            \item $P^k$ over $S^4$, trivial representation
+%             \item $P^k$ over $S^4$, trivial representation
             
-            \end{itemize}
+%             \end{itemize}
         
-        \item Definition: Curvature of $A$-connection on $E$
+%         \item Definition: Curvature of $A$-connection on $E$
         
-        \item Proposition: Curvature of $A$-connection on $E$ in terms of forms. Bianchi identity.
+%         \item Proposition: Curvature of $A$-connection on $E$ in terms of forms. Bianchi identity.
             
-        \end{itemize}
+%         \end{itemize}
     
-    \end{itemize}
-}
+%     \end{itemize}
+% }
 
 \section{Connections on Transitive Lie Algebroids}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -631,17 +631,17 @@ Let $\hat \omega$ be an connection form on $A$ with reduced kernel endomorphism 
         \begin{equation}
             (\mathcal D_X \tau)(\eta) := [\nabla_X, \tau(\eta)] - \tau[\tilde \nabla_X, \eta].
         \end{equation}
-        Now, define $(a^* \mathcal D \tau)\comp \omega (\oid X, \oid Y) := (\mathcal D_{a(\oid X)})(\tilde \omega \oid Y) - (\mathcal D_{a(\oid Y)})(\tilde \omega \oid X)$. This is an element of $\Omega^2(A, L)$.
+        Now, define $[a^* \mathcal D \tau, \tilde \omega] (\oid X, \oid Y) := (\mathcal D_{a(\oid X)})(\tilde \omega \oid Y) - (\mathcal D_{a(\oid Y)})(\tilde \omega \oid X)$. This is an element of $\Omega^2(A, L)$.
         
     \end{itemize}
 \end{definition}
 
-\begin{theorem}
+\begin{theorem}\label{theoremGlobalDecompositionOfCurvatureFormWithRespectToBackgroundConnection}
 Using the notation of the previous definition, the curvature form of the connection form $\hat \omega$ may be decomposed as
 \begin{equation}
-    \hat R = a^* \hat F - (a^* \mathcal D \tau)\comp \omega + \tilde \omega ^* R_\tau.
+    \hat R = a^* \hat F - [a^* \mathcal D \tau, \tilde \omega] + \tilde \omega ^* R_\tau.
 \end{equation}
-This is called the \emph{decomposition of the curvature form of $\hat \omega$ given the background connection $\tilde \omega$}.
+This is called the \emph{decomposition of the curvature form of $\hat \omega$ with respect to the background connection $\tilde \omega$}.
 \end{theorem}
 \begin{proof}
 TODO \todo{}.
@@ -696,14 +696,14 @@ understanding $A$ as $A \comp pr_1$, where $pr_1: \Gamma(TU_i)\oplus C^\infty(U_
 That $A_i - \epsilon$ is an ordinary connection follows simply from the fact that, for every $\eta \in C^\infty(U_i, \alg g)$, $(A_i - \epsilon)(\eta) = - \epsilon(\eta) = -\eta$. The last statement is a rewriting of $\hat \omega_i$ being a $1$-form.
 \end{proof}
 
-\begin{proposition}
+\begin{proposition}\label{propositionTransformationLawsOfAandTau}
 Let $\hat \omega$ be a connection form on $A$ with local trivialization $\hat \omega = A_i - \epsilon + \tau_i$, decomposed as proposed in theorem \ref{theoremLocalTrivializationDecompositionGenralizedConnectionForm}, on each $U_i$, $i \in I$. Then, for all $X \in \Gamma(TM)$ and all $U_i, U_j$ such that $U_{ij} = U_i \inter U_j \neq \empty$,
 
     \begin{itemize}
     
     \item The local tangent connection form $A_i$ has the following transformation law:
         \begin{equation}
-                A_j(X) = \alpha^i_j(\omega_i(X)) + \chi^j_i(X).
+                A_j(X) = \alpha^i_j(A_i(X)) + \chi^j_i(X).
         \end{equation}
     
     \item The local trivialization $\tau_i$ of $\tau$ has the following transformation law:
@@ -891,18 +891,18 @@ Let $\hat R \in \Omega^2(A, L)$ be the curvature form of the connection form $\h
     
     \item Over $U_i$, \emph{the local trivialization of $\mathcal D\tau$} is the element 
     \begin{eqnsplit}
-        (\mathcal D \tau)_i : \Gamma(TU_i) &\to C^\infty(U_i, End(\alg g^*))\\
+        (\mathcal D \tau_i) : \Gamma(TU_i) &\to C^\infty(U_i, End(\alg g^*))\\
         X &\mapsto \mathcal \psi_i^{-1} \comp \,\psi_i^*(\mathcal D_{\nabla^{0, i}_X} \tau)
     \end{eqnsplit}
     induced by the local trivialization of $A$ over $U_i$. 
     Let $x^\mu:U_i \to \RR$, $\mu = 1, \dots, m$ be coordinates on $U_i$ and denote by $(\mathcal D \tau_i)_{\mu, a}^b \in C^\infty(U_i)$ the functions that satisfy
     \begin{equation}
-        (\mathcal D_{\partial_\mu} \tau )_i(E_a) = (\mathcal D \tau_i)_{\mu, a}^b E_b.
+        (\mathcal D_{\partial_\mu} \tau _i)(E_a) = (\mathcal D \tau_i)_{\mu, a}^b E_b.
     \end{equation}
     \end{itemize}
 \end{definition}
 
-\begin{theorem}
+\begin{theorem}\label{theoremDecompositionOfAlgebroidFormIntoNice2Forms}
 Let $U_i \subset M$ be an open on which $x^\mu: U_i \to \RR$ are coordinates and the transitive Lie algebroid $A$ trivializes. Let $\tilde \omega\in \Omega^1(A, L)$ be an ordinary connection form on $A$ with local trivialization $\alg a_i$ over $U_i$, and call it a background connection on $A$. Finally, for a (generalized) connection form $\hat \omega$ on $A$ with reduced kernel endomorphism $\tau$, let $\omega = \hat \omega + \tau \comp \tilde \omega$ be the ordinary connection induced by $\hat \omega$ with respect to the background connection $\tilde \omega$, let $\hat R \in \Omega^2(A, L)$ be its curvature $2$-form, and $\hat F \in \omega^2(TM, L)$, $\mathcal D \tau \in \Omega^1(TM, End(L))$ and $R_\tau \in \Omega^2(L, L)$ be defined as in definition \ref{definitionIngredientsCurvatureDecompositionConnection}. Then, the local trivialization of $\hat R$ has the following decomposition in terms of the mixed local basis of the inner part of $\Omega^1(TU_i \times \alg g)$ with respect to the basis $\{E_a\}_{a = 1, \dots, n}$ of $\alg g$:
 \begin{equation}
     \hat R_i = (\hat F_i)_{\mu \nu}^a E_a dx^\mu \wedge dx^\nu + 
@@ -957,15 +957,15 @@ Finally, that $(\tilde \omega^* R_\tau)_i = (W_i)^c_{ab} E_c (\alg a_i)^a \wedge
 
 Denoting by $C^c_{ab} = \epsilon^c([E_a, E_b])$ the structure constants of $\alg g$ in the basis $\{E_a\}_{a = 1, \dots, n}$, it follows directly from the definition of $R_\tau$, in \ref{definitionIngredientsCurvatureDecompositionConnection}, that
 \begin{equation}
-    W^c_{ab} = \tau^b_a \tau^e_b C^c_{de} - C^d_{ab}\tau^c_d.
+    (W_i)^c_{ab} = \tau^b_a \tau^e_b C^c_{de} - C^d_{ab}\tau^c_d.
 \end{equation}
 Similarly, from the definition of $\mathcal D \tau$ if follows that
 \begin{eqnsplit}
     (\mathcal D \tau_i)^b_{\mu, a} &= \epsilon^b ((\mathcal D_{\partial_\mu} \tau)(E_a))\\
         &= \epsilon^b (  [\partial_\mu + A_i(\partial_\mu), \tau_i(E_a)] - \tau_i[\partial_\mu + \tilde A_i(\partial_\mu), E_a]  )\\
-        &= \epsilon^b (  [\partial_\mu + (A_i)^c_\mu E_c, \tau^d_a E_d] - \tau_i[\partial_\mu + (\tilde A_i)_\mu^d E_d, E_a ]  ) \\
-        &= \epsilon^b (  \partial_\mu(\tau^b_a E_b) + (A_i)^c_\mu   \tau^d_a [E_c, E_d] - (\tilde A_i)_\mu^d \tau_i[E_d, E_a])\\
-        &= \partial_\mu \tau^b_a + (A_i)^c_\mu (\tau_i)^d_c C^b_{cd} - (\tilde A_i)_\mu^d C^c_{da} \tau^b_c.
+        &= \epsilon^b (  [\partial_\mu + (A_i)^c_\mu E_c, (\tau_i)^d_a E_d] - \tau_i[\partial_\mu + (\tilde A_i)_\mu^d E_d, E_a ]  ) \\
+        &= \epsilon^b (  \partial_\mu((\tau_i)^b_a E_b) + (A_i)^c_\mu   \tau^d_a [E_c, E_d] - (\tilde A_i)_\mu^d \tau_i[E_d, E_a])\\
+        &= \partial_\mu \tau^b_a + (A_i)^c_\mu (\tau_i)^d_c C^b_{cd} - (\tilde A_i)_\mu^d (\tau_i)^b_c C^c_{da} .
 \end{eqnsplit}
 
 \section{$A$-connections}

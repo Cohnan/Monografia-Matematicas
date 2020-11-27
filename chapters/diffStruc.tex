@@ -1,46 +1,46 @@
-{\color{gray}
-Fernandes remarks that it is thanks to the Lie braket that it is possible to make this kind of Cartan calculi.
+% {\color{gray}
+% Fernandes remarks that it is thanks to the Lie braket that it is possible to make this kind of Cartan calculi.
 
-Why is it necessary? What does this mean? What does it allow?
+% Why is it necessary? What does this mean? What does it allow?
 
-What is the difference, if any, with connection theory?
+% What is the difference, if any, with connection theory?
 
-Relation between exterior derivative and usual covariant derivative:
-    \begin{itemize}
+% Relation between exterior derivative and usual covariant derivative:
+%     \begin{itemize}
     
-    \item Finer than $d$: requiring $TM$ necessarily, because it is based on a connection $TM \to \mathcal D(E)$
+%     \item Finer than $d$: requiring $TM$ necessarily, because it is based on a connection $TM \to \mathcal D(E)$
     
-    \item Coarser than $d$: does not require a representation, a connection doesn't have to be a homomorphism of Lie algebras.
+%     \item Coarser than $d$: does not require a representation, a connection doesn't have to be a homomorphism of Lie algebras.
         
-    \end{itemize}
+%     \end{itemize}
 
-Why relevant to me:
-    \begin{itemize}
+% Why relevant to me:
+%     \begin{itemize}
         
-    \item Vector calculus?
+%     \item Vector calculus?
     
-    \item What can be integrated. Inner integration generates usual (vector bundle valued) forms on the base manifold.
+%     \item What can be integrated. Inner integration generates usual (vector bundle valued) forms on the base manifold.
     
-    \item Algebroid connections are ``normalized'' elements $ \omega \in \Omega^1(A, L)$, and their curvature is $d\omega \in \Omega^2(A, L)$. Generalized connections are precisely the elements of $\Omega^1(A, L)$.
+%     \item Algebroid connections are ``normalized'' elements $ \omega \in \Omega^1(A, L)$, and their curvature is $d\omega \in \Omega^2(A, L)$. Generalized connections are precisely the elements of $\Omega^1(A, L)$.
     
-    \item When talking about matter fields, a generalized connection $\hat \omega$ induces covariant derivatives $\hat \nabla^E: \Gamma(E) \to \mathbf{\Omega^1(A, E)}$, so that $\hat \nabla^E \phi \in \Omega^1(A, E)$\todo{can this be written in terms of $A$-connections?}.
+%     \item When talking about matter fields, a generalized connection $\hat \omega$ induces covariant derivatives $\hat \nabla^E: \Gamma(E) \to \mathbf{\Omega^1(A, E)}$, so that $\hat \nabla^E \phi \in \Omega^1(A, E)$\todo{can this be written in terms of $A$-connections?}.
     
-    \item $\Omega^\bullet(A)$ is used to do cohomology on Lie algebroids
+%     \item $\Omega^\bullet(A)$ is used to do cohomology on Lie algebroids
     
-    \item In each $\Omega^p(A, L)$ the natural scalar product $(\omega, \eta) = \cl{\omega, \star \eta} = \int_A h(\omega, \star \eta)$, for $h$ in inner metric, is what will be used to define the gauge action:
+%     \item In each $\Omega^p(A, L)$ the natural scalar product $(\omega, \eta) = \cl{\omega, \star \eta} = \int_A h(\omega, \star \eta)$, for $h$ in inner metric, is what will be used to define the gauge action:
         
-        \begin{itemize}
+%         \begin{itemize}
             
-        \item For $\hat \omega \in \Omega^1(A, L)$, define $S_{Gauge}[\hat \omega] = (\hat R, \hat R)$
+%         \item For $\hat \omega \in \Omega^1(A, L)$, define $S_{Gauge}[\hat \omega] = (\hat R, \hat R)$
         
-        \item For $\phi \in \Gamma(E)$ and $\hat \omega$ as above, $S_{Matter}[\phi, \hat \omega] := (\hat \nabla^E \phi, \hat \nabla^E \phi)$
+%         \item For $\phi \in \Gamma(E)$ and $\hat \omega$ as above, $S_{Matter}[\phi, \hat \omega] := (\hat \nabla^E \phi, \hat \nabla^E \phi)$
         
-        \end{itemize}
+%         \end{itemize}
         
-    \end{itemize}
+%     \end{itemize}
 
-TODO\todo{check this}: the third ``important example'' introduced in Lazzarini is important to me? $A$ connections on $E$ are used to define finite gauge transformations, which somehow induce the infinitesimal gauge transformation definition on generalized connections? If not for this, $A$-connections, and so this examples, are of no relevance to me. EDIT: actually, $A$-connections are important to us theoretically  since it this kind of connection/covariant derivative that our generalized Liea algebroid connections induce on its representation vector bundles (removing the normalization property removes the property of the covariant derivative to take horizontal forms to horizontal forms, so we can't restrict covariant derivatives of vector bundles to take directions only in $TM$, but instead all of $A$ needs to be taken as argument), and, hence, the forms $\Omega^\bullet(A, End(E))$ are involved in the theory since they the form version of the $A$-connections Summary: $A$-connections on $E$ are the generalized version of covariant derivative that we obtain, and they are in correspondence with forms $\Omega^1(A, End(E))$; furthermore, the notion of (infinitesimal) gauge transformation that we define on our generalized connections and curvature is such that it is compatible with the notion of gauge transformation in the theory of $A$-connections.
-}
+% TODO\todo{check this}: the third ``important example'' introduced in Lazzarini is important to me? $A$ connections on $E$ are used to define finite gauge transformations, which somehow induce the infinitesimal gauge transformation definition on generalized connections? If not for this, $A$-connections, and so this examples, are of no relevance to me. EDIT: actually, $A$-connections are important to us theoretically  since it this kind of connection/covariant derivative that our generalized Liea algebroid connections induce on its representation vector bundles (removing the normalization property removes the property of the covariant derivative to take horizontal forms to horizontal forms, so we can't restrict covariant derivatives of vector bundles to take directions only in $TM$, but instead all of $A$ needs to be taken as argument), and, hence, the forms $\Omega^\bullet(A, End(E))$ are involved in the theory since they the form version of the $A$-connections Summary: $A$-connections on $E$ are the generalized version of covariant derivative that we obtain, and they are in correspondence with forms $\Omega^1(A, End(E))$; furthermore, the notion of (infinitesimal) gauge transformation that we define on our generalized connections and curvature is such that it is compatible with the notion of gauge transformation in the theory of $A$-connections.
+% }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
