@@ -42,28 +42,26 @@
 % TODO\todo{check this}: the third ``important example'' introduced in Lazzarini is important to me? $A$ connections on $E$ are used to define finite gauge transformations, which somehow induce the infinitesimal gauge transformation definition on generalized connections? If not for this, $A$-connections, and so this examples, are of no relevance to me. EDIT: actually, $A$-connections are important to us theoretically  since it this kind of connection/covariant derivative that our generalized Liea algebroid connections induce on its representation vector bundles (removing the normalization property removes the property of the covariant derivative to take horizontal forms to horizontal forms, so we can't restrict covariant derivatives of vector bundles to take directions only in $TM$, but instead all of $A$ needs to be taken as argument), and, hence, the forms $\Omega^\bullet(A, End(E))$ are involved in the theory since they the form version of the $A$-connections Summary: $A$-connections on $E$ are the generalized version of covariant derivative that we obtain, and they are in correspondence with forms $\Omega^1(A, End(E))$; furthermore, the notion of (infinitesimal) gauge transformation that we define on our generalized connections and curvature is such that it is compatible with the notion of gauge transformation in the theory of $A$-connections.
 % }
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Differential Structures and Cartan Operations}
+In this chapter we define differential forms on general Lie algebroids, and study their structure. Their role in our goal to define gauge theories on a transitive Lie algebroid $A$ will be two-fold: definition of various notions of connections on $A$, and definition of integration on $A$. Firstly, in Chapter \ref{chp:connections} we define connections on $A$, $A$-connections on representation vector bundles $E$, and their curvatures, and all will have a formulation as forms on $A$ with values in different representation vector bundles. Secondly, in Chapter \ref{chp:integration} we define two notions of integration of forms on $A$, each one associated to a volume form on $A$. The combination of these concepts will give rise to the action function defining a gauge theory on $A$, as the integral of a sum of forms on $A$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Differential Algebras}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Spaces of Forms and their Structure}
 
-{\color{gray}
+Throughout this section, let $A$ be a Lie algebroid over the manifold $M$ with anchor $a$, not necessarily transitive.
 
-Respect further structure... of $L$?
+Forms on $A$ will be a generalization the concept of vector valued forms on a manifold, they will be multilinear vector bundle maps on $A$ taking values on representation vector bundles $E$. Which representation space $E$ is relevant will depend on the context, for example $E$ will be an adjoint Lie algebroid of $A$ when dealing with connections on $A$ and its curvature, but it will be $\End(E)$ when we talk about $A$-connections, a generalized version of covariant derivatives, on $E$.
 
-}
+In order for the definitions of forms to be useful, we need to understand their structure and how to manipulate them. In general, the space of $E$-valued forms will have the structure of a differential complex, but when $E$ is an algebra bundle additional structure will arise, making of the space of forms a differential graded algebra. We devote this section to lay out the details to make sense of these statements.
 
-\linea 
-
-Throughout this section, let $A$ be a Lie algebroid over the manifold $M$ with anchor $a$.
+\subsection{Space of Forms}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{definition}
-Let $E$ be a vector bundle over $M$. We now define some vector bundles over $M$.
+Let $E$ be a vector bundle over $M$. Let us now define the following vector bundles:
     \begin{itemize}
     
     \item Let \emph{$\Alt^0(A, E)$}$:= E$. 
@@ -157,10 +155,13 @@ The second part follows from the first one, Since $\Gamma$ is a strong monoidal 
 Lastly, $\Omega_U^n(A, E) \cong \cong C^\infty(U, V) \otimes_{C^\infty(U)} \Gamma(U \times \bigwedge^n W^*) \cong C^\infty(U, V) \otimes_{C^\infty(M)} C^\infty\left(U, \bigwedge^n W^* \right)$.
 \end{proof}
 
-\linea
-
+\subsection{Differential Complexes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \ptext{In the following, assume that $E$ is a vector bundle over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of the Lie algebroid $A$ over $M$}.
+
+
 
 \begin{definition}
     Let $R$ be a commutative ring with unit, and let $M$ be an $R$-module. 
@@ -188,7 +189,7 @@ for any $p \in \ZZ_{\geq 0}$, $p$-form $\omega$, and any $\sectoid X_1, \dots, \
 \begin{proof}
 Notice that, although $C^\infty(M)$ is also a commutative unit ring, $\hat d_\phi$ isn't $C^\infty(M)$ linear since the maps $\phi(\sectoid X_i): \Gamma(E) \to \Gamma(E)$ may not be so; they are, however, $\bb K$-linear and this proves the $\bb K$-linearity of $\hat d_\phi$. That $\hat d_\phi$ raises the degree of the homogeneous elements is part of their definition. 
 
-All we need to check is that $\hat d_\phi \circ \hat d_\phi = 0$, but it is known, and can be easily verified, that the formula used to define $\hat d_\phi$ guarantees this as long as the bracket of the Lie algebroid is a Lie bracket for the space of sections, hence satisfying the Jacobi identity, and that each $\phi(\sectoid X_i): \Gamma(E) \to \Gamma(E)$ is a Lie algebra isomorphism; this two properties are guaranteed because $\phi$ is a Lie algebroid representation.
+\todo{Find source for this. I said this parting from calculations on $0$ and $1$ forms}All what's left to chceck is that $\hat d_\phi \circ \hat d_\phi = 0$. The formula used to define $\hat d_\phi$ guarantees this as long as: the bracket applied to sections on $A$ satisfies the Jacobi identity, and each $\phi(\sectoid X_i): \Gamma(E) \to \Gamma(E)$ is a Lie algebra morphism.
 \end{proof}
 
 \begin{theorem}\label{theoDifferentialLocal}
@@ -210,7 +211,7 @@ Hence the next theorem follows.
 $(\Omega_U^\bullet(A, E), \hat d_\phi|_U)  = (\Omega^\bullet(A|_U, E|_U), \hat d_\phi|_U)$ is a differential complex over the ring $\bb K$.
 \end{theorem}
 
-\begin{remark}
+\begin{remark}\label{remarkEveryResultAboutDIfferentialComplexExtendedLOcally}
 Thanks to this theorem, every result and definition that is stated for global forms can and will be extended to local forms over every $U \subset M$ open, since $(\Omega_U^\bullet(A, E), \hat d_\phi|_U)$ is simply the differential complex where the underlying manifold is $U$. \ptext{ Every $\hat d_\phi|_U$ will usually be denoted simply by $\hat d_\phi$}.
 \end{remark}
 
@@ -221,19 +222,28 @@ Let $A = TM$ given a manifold $M$. Then $(\Omega^\bullet (TM), \wedge, \hat d_{T
 
 Letting $E = M \times V$ given a vector space $V$, on which $TM$ is represented trivially by $i: TM \to \alg D(E)$, $X \mapsto X$, the differential graded module $(\Omega^\bullet(TM, M \times V), \hat d_i)$ is precisely the traditional $(\Omega^\bullet(M, V), d)$. 
 
----- If $V$ is an algebra with multiplication $\bullet$, for example a Lie algebra $\alg g$ with operation $[\cdot, \cdot]$, $(\Omega^\bullet(TM, E), \wedge^\bullet, \hat d_i)$ is exactly the traditional differential graded algebra $(\Omega^\bullet(M, V), \bullet, d)$.
+If $V$ is an algebra with multiplication $\bullet$, for example a Lie algebra $\alg g$ with operation $[\cdot, \cdot]$, $(\Omega^\bullet(TM, E), \wedge^\bullet, \hat d_i)$ is exactly the traditional differential graded algebra $(\Omega^\bullet(M, V), \bullet, d)$.
 \end{example}
 
 \begin{example}\label{exampleScalarValuedFormsOnAUpToDifferential}
-Let $A$ act by the trivial action $\phi^0: A \to \alg D(M \times \bb K)$, i.e. considering $\Gamma(M \times \RR)$ as $C^\infty(M)$ and letting the representation be the anchor. The associated differential on $\Omega^\bullet(A)$ will be denoted by $\hat d_A$, making of \lbtext{$(\Omega^\bullet(A), \hat d_A)$} a differential complex.
+Let $A$ act by the trivial action $\phi^0: A \to \alg D(M \times \bb K)$, i.e. considering $\Gamma(M \times \RR)$ as $C^\infty(M)$ and letting the representation be the anchor. The associated differential on $\Omega^\bullet(A)$ will be denoted by $\hat d_A$, making of \lbtext{$(\Omega^\bullet(A), \hat d_A)$} a differential complex. This space of forms will be a basic building block for other space of forms.
 \end{example}
 
 \begin{example}\label{exampleLValuedFormsonTransitiveAUpToDifferential}
 Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ be a transitive Lie algebroid sequence.
-The differential graded module associated to the adjoint action defined in \ref{defnAdjointAct}, $ad: A \to \alg D(L)$, $\oid X \mapsto j^{-1}[\oid X, \cdot]$, will be denoted by \lbtext{$(\Omega^\bullet(A, L), \hat d)$}.
+The differential complex associated to the adjoint action defined in \ref{defnAdjointAct}, $ad: A \to \alg D(L)$, $\oid X \mapsto j^{-1}[\oid X, \cdot]$, will be denoted by \lbtext{$(\Omega^\bullet(A, L), \hat d)$}.
+This differential complex will be used to define connection on $A$ and their curvature.
+\end{example}
+
+
+\begin{example}\label{exampleEndEValuedFormsOnTRAnsitiveUpToDifferential}
+If $\phi: A \to \alg D(E)$ is an arbitrary representation on $E$, then on $\End(E)$ we have the representation $\tilde \phi: A \to \alg D(\End(E))$ defined by $\tilde \phi(\oid X)(T) = [\phi(\oid X), T]$ for any $\oid X \in A$ and $T \in \End(E)$. 
+The resulting differential graded complex is $(\Omega^\bullet(A, E), \hat d_{\tilde \phi})$. This differential complex will arise when we define a generalized notion of covariant derivatives on $E$, called $A$-connections.
 \end{example}
 
 \linea
+
+So far we have seen that $(\Omega^\bullet(A, E), \hat d_\phi)$ is a differential complex over $\bb K$, but it will be so over the graded ring of scalar valued forms with the product defined below.
 
 \begin{definition}\label{definitionWedgeProductEvaluedwithScalarValued}
 Define the $C^\infty(M)$-bilinear operation operation
@@ -267,7 +277,7 @@ Notice that the previous construction also applies for $E = M \times \bb K$ with
 \end{remark}
 
 \begin{remark}\label{remarkTheModuleWedgeWOrksWellLocally}
-If we consider forms to be vector bundle maps as in the first equation of remark \ref{remarkFOrmsHave2Ways2FormsALternativeVersion}, the $C^\infty(M)$-multilinearitiy of the wedge product implies that it is also a local operator, even a point-operator, and so it has a restriction, also denoted by $\wedge$, to local forms in such a way that:
+If we consider forms to be vector bundle maps as in the first equation of remark \ref{remarkFOrmsHave2Ways2FormsALternativeVersion}, the $C^\infty(M)$-multilinearitiy of the wedge product implies that it is also a local operator, even a point-operator, and so it has a restriction over each $U$ open, also denoted by $\wedge$, to local forms in such a way that:
 \begin{equation*}
     (\omega \wedge \eta)|_U = \omega|_U \wedge \eta|_U
 \end{equation*}
@@ -303,7 +313,7 @@ For this local frame of $A$, let the dual frame be $\{\alpha^1, \dots \alpha^N\}
     \end{equation}
     since
     \begin{align*}
-        \hat d_\phi \mu(\sectoid X) = \phi(X)\cdot \mu.
+        \hat d_\phi \mu(\sectoid X) = \phi(\sectoid X)\cdot \mu.
     \end{align*}
     In particular, for $f \in C^\infty(U) = \Omega_U^0(A)$:
     \begin{equation}\label{equationDifferentialOfAFunctionInLocalFrame}
@@ -340,11 +350,13 @@ From the definition of the wedge product, it is clear that, for any $p, q \in \Z
 
 By the graded commutativity property \eqref{equationGradedCommutativitiAnticommutativityWedgeProduct}, we may assume that $\omega \in \Omega^p(A)$ and  $\eta \in \Omega^q(A, E)$.  
 
-USE THE FACT THAT THE GLOBAL DIFFERENTIAL IS THE PASTING OVER ALL THE LOCAL DIFFERENTIALS, AND THAT IN LOCAL TRIVIALIZATIONS, THANKS TO THE PREVIOUS THEOREM,
+\todo{Do}USE THE FACT THAT THE GLOBAL DIFFERENTIAL IS THE PASTING OVER ALL THE LOCAL DIFFERENTIALS, AND THAT IN LOCAL TRIVIALIZATIONS, THANKS TO THE PREVIOUS REMARK, every form is a product of $1$-forms.
 
 \end{proof}
 
-\lin
+\subsection{Differential Graded Algebras}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{definition} \label{defnDiffGAlgebra}
 Let $\mathcal A = \oplus_{n = 0}^\infty \mathcal A^n$ be a graded algebra (over the field $\bb K$), and let $\cdot$ denote the product.
@@ -365,6 +377,8 @@ Let $\mathcal A = \oplus_{n = 0}^\infty \mathcal A^n$ be a graded algebra (over 
     
     \item Let $d: \mathcal A \to \mathcal A$ be a differential on $A$. Then the pair $(A, d)$ is called a \emph{differential graded algebra} if $d \circ d = 0$. 
     
+    \item IF 
+    
     \item Let $(\mathcal A, \bullet, d)$ and $(\mathcal A', \bullet', d')$ be differential graded algebras. A \emph{morphism of differential graded algebras} is a graded algebra morphism $\phi: \mathcal A \to \mathcal A'$ such that $d' \circ \phi = \phi \circ d$.
     
     \end{itemize}
@@ -378,7 +392,7 @@ Let $E$ be an algebra bundle over $M$ with fiberwise multiplication $\bullet$, i
     \phi(\sectoid X)(\mu_1 \bullet \mu_2) = \phi(\sectoid X)(\mu_1) \bullet \mu_2 + \mu_1 \bullet \phi(\sectoid X)(\mu_2),
 \end{equation}
 for all $\sectoid in \Gamma(A)$ and all $\mu_1, \mu_2 \in \Gamma(E)$.
-Define on $\Omega^\bullet(A, E)$ the $C^\infty(M)$-bilinear operation operation, called \emph{the wedge product of LAB-valued forms on $A$}
+Define on $\Omega^\bullet(A, E)$ the $C^\infty(M)$-bilinear operation operation, called \emph{the wedge product of algebra bundle-valued forms on $A$}
 \begin{eqnsplit*}
 \wedge^\bullet : \Omega^\bullet(A, E) &\times \Omega^\bullet(A, E) \to \Omega\bullet(A, E)
 \end{eqnsplit*}
@@ -405,7 +419,7 @@ Let $E$ be an algebra bundle over $M$ on which there is a representation $\phi: 
 \end{theorem}
 
 \begin{proof}
-Graded Leibniz is the only missing piece, and this can be proved in an almost identical manner as the graded Leibniz of theorem \ref{}; however, the additional condition on the representation plays an important role, as we can check from the calculation of $\hat d_\phi \mu$, when $\mu \in \Gamma(E)$ may be written as $\mu = \mu_1 \cdot \mu_2$ for some arbitrary $\mu_1, \mu_2 \in \Gamma(E)$, since then $\bullet$ coincides with $\wedge^\bullet$; let $\sectoid X \in \Gamma(A)$ be arbitrary, then:
+Graded Leibniz is the only missing piece, and this can be proved in an almost identical manner as the graded Leibniz of theorem \ref{}; however, the additional condition on the representation plays an important role, as we can check from the calculation of $\hat d_\phi \mu$, when $\mu \in \Gamma(E)$ may be written as $\mu = \mu_1 \bullet \mu_2$ for some arbitrary $\mu_1, \mu_2 \in \Gamma(E)$, since then $\bullet$ coincides with $\wedge^\bullet$; let $\sectoid X \in \Gamma(A)$ be arbitrary, then:
 \begin{align*}
     \phi(X) \cdot \mu &= \hat d_\phi \mu(\sectoid X)\\
         &= \hat d_\phi (\mu_1 \bullet \mu_2)(\sectoid X) \\
