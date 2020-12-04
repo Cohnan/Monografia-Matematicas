@@ -56,7 +56,7 @@ Forms on $A$ will be a generalization the concept of vector valued forms on a ma
 
 In order for the definitions of differential forms to be useful, we need to understand their structure and how to manipulate them. In general, the space of $E$-valued forms will have the structure of a differential complex, but when $E$ is an algebra bundle additional structure will arise, making of the space of differential forms a differential graded algebra. We devote this section to lay out the details to make sense of these statements.
 
-\subsection{Space of differential forms}
+\subsection{Module of differential forms}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -140,8 +140,7 @@ Let $U\subset M$ be open:
     
     \item \textit{$\Omega_U^n(A, E)$ and $\Gamma_U(E) \otimes \Omega_U^n(A)$ are isomorphic} $C^\infty(U)$-modules.
     
-    \item If $U$ is trivializing neighborhood for both $A$ and $E$, $\Omega_U^n(A, E) \cong$ \\
-    $( C^\infty(U, \bigwedge^\bullet \alg g^*) \otimes \Omega^\bullet(TU)) \otimes_{\bb K} V$, where $V$ is the typical fiber of $E$ and the Lie algebra $\alg g$ is the typical fiber of the vertical subalgebroid of $A$.
+    \item If $U$ is trivializing neighborhood for both $A$ and $E$, with typical fibers $V$ and $W$ respectively, then $\Omega_U^n(A, E) \cong C^\infty(U, V \otimes \bigwedge^\bullet W^*)$.
     
     %\item $\Omega^n(A)$ and $\Gamma\Alt^nA^*$ are isomorphic $C^\infty(M)$-modules.
     
@@ -297,13 +296,13 @@ For this local frame of $A$, let the dual frame be $\{\alpha^1, \dots \alpha^N\}
      is an element of $\Omega_U^p(A, E)$, where the first $\wedge$ refers to the product between the scalar valued $p$-form $\alpha_{i_1} \wedge \cdots \wedge \alpha_{i_p}$ and the $L$-valued $0$-form $\mu$; we have used the convention of removing the $\wedge$ symbol if one of the factors is a $0$-form. In fact, any scalar valued $p$-form on $A$ is a linear combination of differential forms of this type.
     
     \item For $\mu \in \Omega_U^0(A, E)$,
-    \begin{equation}\label{equationDifferentialESection0FormLocalFrame}
+    \begin{equation*}
         \hat d_\phi \mu = \sum_{i = 1}^N \phi(\sectoid X_i)\cdot \mu \, \alpha^i,
-    \end{equation}
+    \end{equation*}
     since
-    \begin{align*}
+    \begin{align}\label{equationDifferentialESection0FormLocalFrame}
         \hat d_\phi \mu(\sectoid X) = \phi(\sectoid X)\cdot \mu.
-    \end{align*}
+    \end{align}
     In particular, for $f \in C^\infty(U) = \Omega_U^0(A)$:
     \begin{equation}\label{equationDifferentialOfAFunctionInLocalFrame}
         \hat d_A f = \sum_{i = 1}^N X_i(f) \alpha^i,
@@ -581,20 +580,23 @@ Now, applying the graded Leibniz rule to the above $1$-form considerint it a sum
 
 Our focus on this document is on transitive Lie algebroids, all of which are locally isomorphic to trivial Lie algebroids. This will allow us to think of global objects, in particular forms, as families of simple local objects. In this section we study the forms on trivial Lie algebroids, which will enable in the section the study of differential forms on transitive Lie algebroids.
 
+\subsection{Scalar-valued forms}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 Let $A = TM \oplus (M \times \alg g)$ be a trivial Lie algebroid over the manifold $M$, with $\alg g$ a Lie algebra.
 
 In proposition \ref{propositionIsomorphOmegas} we used the natural distribution of the $\Gamma$ functor to find several modules isomorphic to spaces of homogeneous differential forms on $A$. We now complement this study with our current knowledge on their structure as differential complexes to find a computationally useful point of view of the the differential forms on a trivial Lie algebroid.
 
-Under the isomorphisms of proposition \ref{propositionIsomorphOmegas}, the graded vector spaces  $\Omega^\bullet(TM)$ and $C^\infty(M, \bigwedge^\bullet \alg g^*)$ can be seen as subspaces of the space of scalar-valued forms $\Omega^\bullet(TM\times \alg g)$; explicitly for any $\alpha \in \Omega^r(TM)$ $r, s \in \ZZ_{\geq 0}$ and , the inclusions of this space into $\Omega^\bullet(TM\times \alg g)$ is the following:
-\begin{align*}
+The graded vector spaces $\Omega^\bullet(TM)$ and $C^\infty(M, \bigwedge^\bullet \alg g^*)$ can be seen as subspaces of the space of scalar-valued forms $\Omega^\bullet(TM\times \alg g)$. Explicitly, for any $\alpha \in \Omega^r(TM)$ $r, s \in \ZZ_{\geq 0}$ and , the inclusions of this space into $\Omega^\bullet(TM\times \alg g)$ is the following:
+\begin{eqnsplit}\label{equationInclusionTMFormsInScalarValuedForms}
     \tilde \alpha: (\Gamma(TM) \oplus C^\infty(M, \alg g)) \times \cdots (\Gamma(TM) \oplus C^\infty(M, \alg g)) &\to C^\infty(M) \\
     (X_1 \oplus \tilde \eta_1, \dots, X_r \oplus \tilde \eta_r) &\mapsto \alpha(X_1, \dots, X_r);
-\end{align*} similarly, for any $\beta \in C^\infty(M, \bigwedge^s \alg g^*)$:
-\begin{align*}
+\end{eqnsplit} similarly, for any $\beta \in C^\infty(M, \bigwedge^s \alg g^*)$:
+\begin{eqnsplit}\label{equationInclusionAlgebraFormsInScalarValuedForms}
     \tilde \beta: (\Gamma(TM) \oplus C^\infty(M, \alg g)) \times \cdots (\Gamma(TM) \oplus C^\infty(M, \alg g)) &\to C^\infty(M) \\
     (X_1 \oplus \tilde \eta_1, \dots, X_s \oplus \tilde \eta_s) &\mapsto \beta(\tilde \eta_1, \dots, \tilde \eta_s).
-\end{align*}
-From now on the tilde notation used above to denote the image inside of $\Omega^\bullet(TM \times alg g)$ of forms $\alpha$ and $\beta$ as above will be omitted, unless clarity is necessary. Under this identifications, more can be said:
+\end{eqnsplit}
+From now on the tilde notation used above to denote the image inside of $\Omega^\bullet(TM \times \alg g)$ of forms $\alpha$ and $\beta$ as above will be omitted, unless clarity is necessary. Under this identifications, more can be said:
 \begin{proposition}
 \hfill
 \begin{itemize}
@@ -608,8 +610,8 @@ From now on the tilde notation used above to denote the image inside of $\Omega^
 \begin{proof}
 The closure of this subspaces under the wedge product is clear from its formulaic definition \eqref{definitionWedgeProductEvaluedEValued}. For the second part, let $\alpha \in \Omega^p(TM)$, then:
 \begin{align*}
-d\alpha (X_1, \dots, X_{p+1})
-        &= \sum_{i = 1}^{p+1} (-1)^{i+1}X_i(\alpha(X_1, \dots, \overset{\vee}{X_i}), \dots, X_{p+1}) \\
+d\alpha (X_1, \dots,& X_{p+1})
+        = \sum_{i = 1}^{p+1} (-1)^{i+1}X_i(\alpha(X_1, \dots, \overset{\vee}{X_i}, \dots, X_{p+1}) \\
         &+ \sum_{1 \leq i \leq j \leq p+1} (-1)^{i+j} \alpha([X_i, X_j], X_1, \dots, \overset{\vee}{\sect X_i}, \dots, \overset{\vee}{X_j}, \dots, X_{p+1})\\
         &= \sum_{i = 1}^{p+1} (-1)^{i+1}a(X_i \oplus \eta_i)(\tilde \alpha(X_1 \oplus \eta_1, \dots, \overset{\vee}{X_i \oplus \eta_i}, \dots, X_{p+1} \oplus \eta_{p+1}) \\
         &+ \sum_{1 \leq i \leq j \leq p+1} (-1)^{i+j} \tilde \alpha([X_i \oplus \eta_i, X_j \oplus \eta_j], X_1 \oplus \eta_1, \dots, \dots, X_{p+1} \oplus \eta_{p+1})\\
@@ -618,7 +620,9 @@ d\alpha (X_1, \dots, X_{p+1})
 where, for $i = 1, \dots, p+1$, $X_i \in \Gamma(TM)$ and $\eta_i \in C^\infty(M, \alg g)$ are arbitrary.
 \end{proof}
 
-Notice that the subalgebra $C^\infty(M, \bigwedge^\bullet \alg g^*)$ \textit{is not closed under the application of the differential}, since any function $f \in C^\infty(M)$ is an element of $C^\infty(M, \bigwedge^0 \alg g^*)$ as well as of $\Omega^0(TM)$, but $\hat d_{TM \times \alg g} = df \in \Omega^1(TM) \not\subset C^\infty(M, \bigwedge^\bullet \alg g^*)$.
+\begin{remark}
+Notice that the subalgebra $C^\infty(M, \bigwedge^\bullet \alg g^*)$ \textit{is not closed under the application of the differential}. We can see this, for example, taking any function $f \in C^\infty(M)$ which is an element of $C^\infty(M, \bigwedge^0 \alg g^*)$ as well as of $\Omega^0(TM)$, but $\hat d_{TM \times \alg g} = df \in \Omega^1(TM) \not\subset C^\infty(M, \bigwedge^\bullet \alg g^*)$.
+\end{remark}
 
 A formula that will be useful to use is the application of the differential to differential $1$-forms $C^\infty(M, \bigwedge^1 \alg g^*)$ when they are constant functions, e.g. taake constant values in elements of a basis $\{\epsilon^a\}_{a = 1, \dots, n}$ of $\alg g^*$ dual to a basis $\{E_a\}_{a = 1, \dots, n}$ of $\alg g$. Let $\epsilon$ be arbitrary in $C^\infty(M, \bigwedge^1 \alg g^*)$, then
 \begin{eqnsplit}\label{equationDifferentialOfFormDualToBasisLieAlgebra}
@@ -628,9 +632,20 @@ A formula that will be useful to use is the application of the differential to d
       &= X(\epsilon)(\theta) - Y(\epsilon)(\eta) - \epsilon[\eta, \theta]\\
       &= - \epsilon[\eta, \theta],
 \end{eqnsplit}
-for arbitrary $X \oplus \eta, Y \oplus \theta \in \Gamma(TM \times \alg g)$; our assumption that $\epsilon: C^\infty(M, \alg g) \to C^\infty(M)$ is constant is only used to write the last equation (notice that the second to last equation shows, again, that the subalgebra $C^\infty(M, \bigwedge^\bullet \alg^*)$ is not closed under the differential). The last equation is $s\epsilon(\eta, theta)$, where $s$ is the Chevalley-Eilenbert differential on $\bigwedge^\bullet \alg g^*$, extended naturally to functions taking values in this last space.
+for arbitrary $X \oplus \eta, Y \oplus \theta \in \Gamma(TM \times \alg g)$; our assumption that $\epsilon: C^\infty(M, \alg g) \to C^\infty(M)$ is constant is only used to write the last equation (notice that the second to last equation shows, again, that the subalgebra $C^\infty(M, \bigwedge^\bullet \alg g^*)$ is not closed under the differential). The last equation is $s(\epsilon)(\eta, \theta)$, where $s$ is the Chevalley-Eilenbert differential on $\bigwedge^\bullet \alg g^*$, extended naturally to functions taking values in this last space.
 
+Suppose, in addition to previous assumptions, that on $M$ there are $m \in \ZZ_{\geq 0}$ global coordinates $\{x^i: M \to \RR^m\}_{i = 1, \dots, m}$. Let $\{E_a\}_{a = 1, \dots, n}$ be a basis of $\alg g$, with dual basis $\{\epsilon^a\}_{a = 1, \dots, n} \subset \alg g^*$; also denote by $E_a$ and $\epsilon^a$ the corresponding constant functions in $C^\infty(U_i, \alg g) = \Omega^0(TU_i \times \alg g, U_i \times \alg g)$ and $C^\infty(U_i, \alg g^*) = \Omega^1(U_i \times \alg g)$.
 
+\begin{proposition}\label{propositionDecompOfScalarValuedFormsTLA}
+Let $\omega$ be a scalar valued $p$-form on $TM \times \alg g$, $p \in \ZZ_{\geq 0}$. Then, $\omega$ can be written as
+\begin{equation}
+    \omega = \sum_{r + s = p} \omega_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}\, dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \epsilon^{a_1} \wedge \cdots \wedge \epsilon^{a_s},
+\end{equation}
+where each $\omega_{\mu_1 \cdots \mu_r, a_1 \cdots a_s} \in C^\infty(M)$, for $\mu_1 \cdots \mu_r = 1, \dots, m$, $, a_1 \cdots a_s = 1, \dots, n$.
+\end{proposition}
+\begin{proof}
+On the fiber over $m \in M$ of $TM \times \alg g$ it is clear that the set of forms $dx^{\mu_1}|_m \wedge \cdots \wedge dx^{\mu_r}|_m \wedge \epsilon^{a_1}|_m \wedge \cdots \wedge \epsilon^{a_s}|_m$ is a basis for $\Omega_m^\bullet(TM \times \alg g)$, hence $dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \epsilon^{a_1} \wedge \cdots \wedge \epsilon^{a_s}$ is a local frame for $\Omega^\bullet(TM \times \alg g)$ and so any other element can be obtained as a linear combination of these forms with coefficients in $C^\infty(M)$.
+\end{proof}
 
 
 
@@ -795,12 +810,29 @@ for arbitrary $X \oplus \eta, Y \oplus \theta \in \Gamma(TM \times \alg g)$; our
 % % \end{proof}
 
 
-\lin
+\subsection{Vector bundle-valued forms}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-Similar results to those obtained for scalar-valued forms on Lie algebroids can be applied to the spaces of vector valued forms to build an alternative and useful description. Let $E = M \times V$ be a trivial vector bundle over $M$ with the vector space $V$ as the fiber, and let $A = TM \times \alg g$ be represented on $E$ through $\phi: TM \times \alg g \to \alg D(M \times V)$. One important example if the case $E = L = M \times \alg g$, with the adjoint representation $\phi = ad$. Another example comes from taking $V$ a representation space of $G$, hence $V$ is also a representation space for $\alg g$, and this induces naturally a representation $\phi$. Notice that if $E$ is not a trivial vector bundle, on each trivializing neighborhood $U$ of $E$ we fall under the case we are presently studying.
+Similar results to those obtained for scalar-valued forms on Lie algebroids can be applied to the spaces of vector valued forms to build an alternative and useful description. Let $E = M \times V$ be a trivial vector bundle over $M$ with the vector space $V$ as the fiber, and let $A = TM \times \alg g$ be represented on $E$ through $\phi: TM \times \alg g \to \alg D(M \times V)$; denote by $B \in \Omega^1(TM, M \times \End(V))$ and $\phi_L \in C^\infty(M, \End(V))$ be the Maurer-Cartan form and Lie algebra endomorphism that trivialize the representation $\phi$. One important example if the case $E = L = M \times \alg g$, with the adjoint representation $\phi = ad$. Another example comes from taking $V$ a representation space of $G$, hence $V$ is also a representation space for $\alg g$, and this induces naturally a representation $\phi$. Notice that if $E$ is not a trivial vector bundle, on each trivializing neighborhood $U$ of $E$ we fall under the case we are presently studying.
 
+The graded vector subspaces $\Omega^\bullet(TM, M \times V) = \Omega^\bullet(TM)\otimes V$ and $C^\infty(M,$ $ \bigwedge^\bullet \alg g^* \otimes V)$ may be seen as subspaces of the space $\Omega^\bullet(TM \times \alg g, M \times V)$; this is done in a way entirely analogous to what was done for scalar-valued forms in equations \eqref{equationInclusionAlgebraFormsInScalarValuedForms} and \eqref{equationInclusionTMFormsInScalarValuedForms}. Furthermore:
+\begin{proposition}
+%\begin{itemize}
+    %\item 
+    $(\Omega^\bullet(TM) \otimes V, \wedge)$ and $(C^\infty(M, \bigwedge^\bullet \alg g^* \otimes V), \wedge)$ are graded subalgebras of $(\Omega^\bullet(TM\times \alg g, M \times V), \wedge)$.
+    
+    %\item $(\Omega^\bullet(TM) \otimes V, \wedge, \hat d)$ is a differential subcomplex of $(\Omega^\bullet(TM\times \alg g, M \times V), \wedge, \hat d)$. Furthermore, the restriction of the differential $d_{TM \times \alg g}$ to $(\Omega^\bullet(TM)$ coincides with the traditional differential $d$ of forms on the manifold $M$.
+%\end{itemize}
+\end{proposition}
 
+\begin{remark}
+Neither $\Omega^\bullet(TM) \otimes V$ nor $C^\infty(M, \bigwedge^\bullet \alg g^* \otimes V)$ are closed under the differential $\hat d_\phi$. We can see this by taking a vector valued function $\mu$, which can be seen both as an element of $\Omega^0(TM)\otimes V$ and of $C^\infty(M, \bigwedge^0 \alg g^* \otimes V)$; then, as implied by equation \ref{equationDifferentialESection0FormLocalFrame},
+\begin{eqnsplit}\label{equationDifferentialOfSection0FormInTrivialization}
+    \hat d \mu(X \oplus \eta) &= X(\mu) \oplus (B(X)\mu + \phi_L(\eta)\mu).
+\end{eqnsplit}
+The previous equation further shows that under no representation $\phi$ is $C^\infty(M,$ $\bigwedge^\bullet \alg g^* \otimes V)$ closed under the differential, due to the first part of the left hand side, and that $\Omega^\bullet(TM)\otimes V$ is closed under $\hat d$ if and only if $B$ and $\phi_L$ are $0$, i.e. $\phi = a$ is the trivial representation. 
+\end{remark}
 
 % \begin{theorem}\label{theoremTrivialFormsEValuedLValuedIsDifferentialModuleDefinitions}
 % The $C^\infty(M)$-module $\Omega(TM \times \alg g, M \times V)$ of $M \times V$-valued forms on the trivial Lie algebroid bundle $TM \times \alg g$, is isomorphic to $\Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes V\right)$, and this isomorphism is compatible with the grading, where the set of homogeneous elements of degree $p \in \ZZ_{\geq 0}$ is $\left( \Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes V\right) \right)^p = \sum_{r + s = p} \Omega^r(TM) \otimes \left(\bigwedge^s \alg g^* \otimes V\right)$. 
@@ -830,23 +862,10 @@ Similar results to those obtained for scalar-valued forms on Lie algebroids can 
 % Finally, \textit{$\left( \Omega^\bullet(TM) \otimes \left(\bigwedge^\bullet \alg g^* \otimes V\right), \hat d_\phi \right)$ is a graded differential module over the graded ring $(\Omega^\bullet(M), \wedge)$, isomorphic to $(\Omega^\bullet(TM \times \alg g, M \times V), \hat d_\phi)$}.
 % \end{theorem}
 
-\linea
 
-Suppose, in addition to previous assumptions, that on $M$ there are $m \in \ZZ_{\geq 0}$ global coordinates $\{x^i: M \to \RR^m\}_{i = 1, \dots, m}$. Let $\{E_a\}_{a = 1, \dots, n}$ be a basis of $\alg g$, with dual basis $\{\epsilon^a\}_{a = 1, \dots, n} \subset \alg g^*$; also denote by $E_a$ and $\epsilon^a$ the corresponding constant functions in $C^\infty(U_i, \alg g) = \Omega^0(TU_i \times \alg g, U_i \times \alg g)$ and $C^\infty(U_i, \alg g^*) = \Omega^1(U_i \times \alg g)$.
+Now, suppose that on $M$ there are $m \in \ZZ_{\geq 0}$ global coordinates $\{x^i: M \to \RR\}_{i = 1, \dots, m}$. Let $\{E_a\}_{a = 1, \dots, n}$ be a basis of $\alg g$, with dual basis $\{\epsilon^a\}_{a = 1, \dots, n} \subset \alg g^*$; also denote by $E_a$ and $\epsilon^a$ the corresponding constant functions in $C^\infty(U_i, \alg g) = \Omega^0(TU_i \times \alg g, U_i \times \alg g)$ and $C^\infty(U_i, \alg g^*) = \Omega^1(U_i \times \alg g)$. Additionally, suppose that $\{e_u\}_{u = 1, \dots, t}$ is a basis of $V$. The following in a straighforward generalization of proposition \ref{propositionDecompOfScalarValuedFormsTLA}:
 
-\begin{theorem}\label{TheoremDecompOfScalarValuedFormsTLA}
-Let $\omega$ be a scalar valued $p$-form on $TM \times \alg g$, $p \in \ZZ_{\geq 0}$. Then, $\omega$ can be written as
-\begin{equation}
-    \omega = \sum_{r + s = p} \omega_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}\, dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \epsilon^{a_1} \wedge \cdots \wedge \epsilon^{a_s},
-\end{equation}
-where each $\omega_{\mu_1 \cdots \mu_r, a_1 \cdots a_s} \in C^\infty(M)$, for $\mu_1 \cdots \mu_r = 1, \dots, m$, $, a_1 \cdots a_s = 1, \dots, n$.
-\end{theorem}
-
-\lin
-
-Additionally to the suppositions stated before the previous theorem, also suppose that $E = M \times V$ is a trivial vector bundle over $M$ and $\phi: TM \times \alg g \to \alg D(E)$ a Lie algebroid representation. Let $\{e_c\}_{c = 1, \dots, h}$ be a basis of $V$, e.g. $E = L = M \times \alg g$.
-
-\begin{theorem}\label{TheoremDecompOfVectorValuedFormsTLAEpsilonsDxs}
+\begin{proposition}\label{TheoremDecompOfVectorValuedFormsTLAEpsilonsDxs}
 Let $\omega$ be an $E$-valued $p$-form on $TM \times \alg g$, $p \in \ZZ_{\geq 0}$. Then, $\omega$ can be written as
 \begin{equation}
     \omega = \sum_{r + s = p} \omega^\epsilon_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}\, dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \epsilon^{a_1} \wedge \cdots \wedge \epsilon^{a_s},
@@ -857,7 +876,7 @@ where each $\omega^\epsilon_{\mu_1 \cdots \mu_r, a_1 \cdots a_s} \in C^\infty(M,
 \end{equation} 
 with each $\left(\omega^\epsilon\right)^a_{\mu_1 \cdots \mu_r, a_1 \cdots a_s} \in C^\infty(M, V)$, $a = 1, \dots, n$.
 The convention of ignoring the $\wedge$ symbol when one of the factors is a $0$-form has been used in both formulas.
-\end{theorem}
+\end{proposition}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -865,7 +884,7 @@ The convention of ignoring the $\wedge$ symbol when one of the factors is a $0$-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Local Description of differential forms on Transitive Lie Algebroids}
 
-Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ be an Atiyah sequenece of the transitive Lie algebroid $A$ over $M$. Let $\{(U_i, \psi_i: U_i \times \alg g \to L|_{U_i}, \nabla^{0, i}: TU_i \to A|_{U_i})\}_{i \in I}$ be a Lie algebroid atlas for $A$.
+Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ be an Atiyah sequenece of the transitive Lie algebroid $A$ over $M$. Let $\{(U_i, \psi_i: U_i \times \alg g \to L|_{U_i}, \nabla^{0, i}: TU_i \to A|_{U_i})\}_{i \in I}$ be a Lie algebroid atlas for $A$ and call $S_i: TU_i \times \alg g \to A|_{U_i}$ the local trivialization over $U_i$.
 
 \begin{definition}\label{definitionLocalTrivializationOfScalarValuedForms}
 Let $\omega \in \Omega^q(A)$.
@@ -873,8 +892,8 @@ Let $\omega \in \Omega^q(A)$.
     
     \item For each $i \in I$ define the local $q$-form $\omega_i$, called the \emph{local trivialization of $\omega$ on $U_i$}, by
     \begin{align}
-        \omega_i &:= \omega \circ \nabla^{0, i}  & \in \Omega^q(TU_i\times \alg g)\\
-        &:\left( \Gamma_U(TM)\oplus C^\infty(U, \alg g) \right) \times \cdots \times &\left( \Gamma_U(TM)\oplus C^\infty(U, \alg g) \right) \to C^\infty(U)
+        \omega_i &:= \omega \circ S_i  & \in \Omega^q(TU_i\times \alg g)\\
+        &:\left( \Gamma_{U_i}(TM)\oplus C^\infty({U_i}, \alg g) \right) \times \cdots \times &\left( \Gamma_{U_i}(TM)\oplus C^\infty({U_i}, \alg g) \right) \to C^\infty({U_i})
     \end{align}
     
     \item A \emph{family of trivializations of $\omega$} is a set $\{\omega_i \in \Omega^q(TU_i \times \alg g)\}_{i \in I}$.
@@ -883,7 +902,7 @@ Let $\omega \in \Omega^q(A)$.
 
 \end{definition}
 
-From now on let $E$ be a vector bundle over $M$ with typical fiber $V$, and suppose that each trivializing neighborhood $U_i$ of $A$ also trivializes $E$, and that $\{(U_i, \rho_i: U_i \times V \to E|_{U_i})\}$
+From now on let $E$ be a vector bundle over $M$ with typical fiber $V$, and suppose that each trivializing neighborhood $U_i$ of $A$ also trivializes $E$ with trivialization map $\beta_i: U_i \times V \to E|_{U_i}$ over $U_i$. Let $\phi:A \to \alg D(E)$ be a representation and let its trivialization $\phi_i$ over $U_i$ be defined by the Maurer-Cartan form $B_i \in \Omega^1(TU_i, U_i \times \End(V))$ and the Lie algebra endomorphisms $\phi_{L,i} \in C^\infty(U_i, \End(V))$.
 
 \begin{definition}\label{definitionLocalTrivializationOfEValuedForms}
 Let $\omega \in \Omega^q(A, E)$.
@@ -891,64 +910,69 @@ Let $\omega \in \Omega^q(A, E)$.
     
     \item For each $i \in I$ define the local $q$-form $\omega_i$, called the \emph{local trivialization of $\omega$ on $U_i$}, by
     \begin{align}
-        \omega_i &:= \psi_i^{-1} \circ \omega \circ \nabla^{0, i}  & \in \Omega^q(TU_i\times \alg g, U \times V)\\
-        &:\left( \Gamma_U(TM)\oplus C^\infty(U, \alg g) \right) \times \cdots \times &\left( \Gamma_U(TM)\oplus C^\infty(U, \alg g) \right) \to C^\infty(U, V)
+        \omega_i &:= \beta_i^{-1} \circ \omega \circ S_i  & \in \Omega^q(TU_i\times \alg g, {U_i} \times V)\\
+        &:\left( \Gamma_{U_i}(TM)\oplus C^\infty({U_i}, \alg g) \right) \times \cdots \times &\left( \Gamma_{U_i}(TM)\oplus C^\infty({U_i}, \alg g) \right) \to C^\infty({U_i}, V)
     \end{align}
     
-    \item A \emph{family of trivializations of $\omega$} is a set $\{\omega_i \in \Omega^q_{TLA}(U_i, \alg g)\}_{i \in I}$.
+    \item The set $\{\omega_i \in \Omega^q(TU_i\times \alg g, U_i \times V)\}_{i \in I}$ is called a \emph{family of trivializations of $\omega$}.
     
     \end{itemize}
 
 \end{definition}
 
-\begin{remark} \label{remarkLocalDecompositionOfFormsOnTransitiveLieAlgebroidsIfTrivializationOfM}
-Due to theorem \ref{TheoremDecompOfScalarValuedFormsTLA}, if, additionally, there are local coordinates of $M$, $\{x^i: U_i \to \RR^m\}_{i \in I}$ on each $U_i$, the local trivializations of every form $\omega \in \Omega^p(A)$ satisfy \begin{equation}
+\begin{remark} \label{remarkLocalDecompositionOfFormsOnTransitiveLieAlgebroidsIfTrivializationOfM} % I call this quite a bit
+Due to proposition \ref{propositionDecompOfScalarValuedFormsTLA}, if, additionally, there are local coordinates of $M$, $\{\vec x^i: U_i \to \RR^m\}_{i \in I}$ on each $U_i$, the local trivializations of every form $\omega \in \Omega^p(A)$ satisfy \begin{equation}
     \omega_i = \sum_{r + s = p} (\omega_i^\epsilon)_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}\, dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \epsilon^{a_1} \wedge \cdots \wedge \epsilon^{a_s},
 \end{equation}
-where each $\lbtext{(\omega_i^\epsilon)_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}} \in C^\infty(M, V)$, for $\mu_1 \cdots \mu_r = 1, \dots, m$, $, a_1 \cdots a_s = 1, \dots, n$. 
+where each $\lbtext{(\omega_i^\epsilon)_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}} \in C^\infty(U_i, V)$, for $\mu_1 \cdots \mu_r = 1, \dots, m$, $, a_1 \cdots a_s = 1, \dots, n$. 
 
-Similarly for $E$-valued forms, viewing each $e_c$ as a constant section of $E$, we can write
+\noindent Similarly for $E$-valued forms, viewing each $e_c$ as a constant section of $E$, we can write
 \begin{equation}
     \omega_i = \sum_{r + s = p} \left(\omega_i^\epsilon\right)^c_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}\, e_c \, dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \epsilon^{a_1} \wedge \cdots \wedge \epsilon^{a_s}.
 \end{equation} 
 with each $\lbtext{\left(\omega_i^\epsilon\right)^a_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}} \in C^\infty(M, V)$, $a = 1, \dots, n$.
 \end{remark}
 
-\begin{proposition}
-Let $U$ be a Lie algebroid trivializing neighborhood of $A$ \textbf{that also trivializes $M$}, with associated trivializing maps $\psi: U \times \alg g \to L|_{U}$, $\Theta: TU \to A_{U}$, and let $\varphi = (x^1, \dots, x^m): U \to \RR^m$ be a coordinate map of $M$, and let $\set{E_a}_{a= 1, \dots, n}$ be a basis for $\alg g$. Then 
-\begin{multline}
-    \sectoid A_1, \dots, \sectoid A_m, \sectoid A_{m+1}, \dots, \sectoid A_{m+n} =\\
-    \{S\left(\pder{x^1}\right), \dots, S\left(\pder{x^m}\right), S(\stilde{E_1}), \dots, S(\stilde{E_m}))\} \subset \Gamma_U(A)
-\end{multline}
-is a local frame for $A$.
-\end{proposition}
+\begin{definition}
+Over each $U_i$ use the local trivialization of the representation $\phi_i: TU_i\times \alg g \to TU_i \times \End(V)$ to define the differential $\hat d_\phi$ on $\Omega^\bullet(TU_i\times \alg g, {U_i} \times V)$. Recall from examples \ref{exampleTrivializationTrivialRepresentation} and \ref{exmpleTrivializationTrivialRepresentation} that the local trivialization of the trivial representation is again the trivial representation, and of the adjoint representation is again the adjoint representation on the trivial Lie algebroid.
+\end{definition}
 
-\begin{proof}
-For every $m \in U$, $S$ is fiberwise a vector space isomorphism between $T_m M \oplus \alg g$ and $A_m$, so the result follows since $\{\pder{x^1}_m, \dots, \pder{x^m}_m, E_1, \dots, E_m\}$ is a basis of $T_m M \oplus \alg g$.
-\end{proof}
 
-\begin{theorem}\label{theoremLocalizationOfScalarValuedFormsIsomorphismOfDifferentialRespectsD}
-Let $U$ be a trivializing neighborhood of $A$ that also trivializes $M$. The trivializing map
-\begin{eqnsplit}
-\cdot_{loc} : (\Omega^\bullet_U(A), \wedge, \hat d_A) &\to (\Omega^\bullet(TU \oplus (U \times \alg g)), \wedge, \hat d_{TU \times \alg g})
-\end{eqnsplit}
-is an isomorphism of differential graded modules and algebras. In particular
-\begin{equation}
-    (\hat d_A \omega)_{loc} = \hat d_{triv} \omega_{loc}.
-\end{equation}
-\end{theorem}
-\begin{proof}
-They are isomorphic as $C^\infty(U)$-modules for each $\Omega^p_U$: easy
+% \begin{proposition}
+% % Let $U$ be a Lie algebroid trivializing neighborhood of $A$ \textbf{that also trivializes $M$}, with associated trivializing maps $\psi: U \times \alg g \to L|_{U}$, $\Theta: TU \to A_{U}$, and let $\varphi = (x^1, \dots, x^m): U \to \RR^m$ be a coordinate map of $M$, and let $\set{E_a}_{a= 1, \dots, n}$ be a basis for $\alg g$. Then 
+% % \begin{multline}
+% %     \sectoid A_1, \dots, \sectoid A_m, \sectoid A_{m+1}, \dots, \sectoid A_{m+n} =\\
+% %     \{S\left(\pder{x^1}\right), \dots, S\left(\pder{x^m}\right), S(\stilde{E_1}), \dots, S(\stilde{E_m}))\} \subset \Gamma_U(A)
+% % \end{multline}
+% % is a local frame for $A$.
+% % \end{proposition}
 
-They are isomorphic as $\bb K$-algebras: easy
+% % \begin{proof}
+% % For every $m \in U$, $S$ is fiberwise a vector space isomorphism between $T_m M \oplus \alg g$ and $A_m$, so the result follows since $\{\pder{x^1}_m, \dots, \pder{x^m}_m, E_1, \dots, E_m\}$ is a basis of $T_m M \oplus \alg g$.
+% % \end{proof}
 
-The differential ``commutes'' with loc: using the ``Koszul'' formula for the differential, it is necessary to use both that $S$ respects the anchor and the Lie bracket, i.e. \textbf{that $S$ is a Lie algebroid morphism}.
-\end{proof}
+% \begin{theorem}\label{theoremLocalizationOfScalarValuedFormsIsomorphismOfDifferentialRespectsD}
+% On each $U_i$ trivializing neighborhood of $A$. The trivializing map
+% \begin{eqnsplit}
+% \cdot_{i} : (\Omega^\_{U_i}(A), \wedge, \hat d_A) &\to (\Omega^\bullet(TU_i \oplus (U_i \times \alg g)), \wedge, \hat d_{TU_i \times \alg g})
+% \end{eqnsplit}
+% is an isomorphism of differential graded algebras. In particular
+% \begin{equation}
+%     (\hat d_A \omega)|{U_{i}} = \hat d_{TU \times \alg g} \omega_{i}.
+% \end{equation}
+% \end{theorem}
+% \begin{proof}
+
+
+% The differential ``commutes'' with loc: using the ``Koszul'' formula for the differential, it is necessary to use both that $S$ respects the anchor and the Lie bracket, i.e. \textbf{that $S$ is a Lie algebroid morphism}.
+% \end{proof}
+
+The following theorem allows us to use a family of trivialization of forms, i.e. form over trivial Lie algebroids, to understand forms on transitive Lie algebroids:
 
 \begin{theorem}\label{theoremLocalizationOfEVectorValuedFormsIsomorphismOfDifferentialRespectsD}
 Let $U$ be a trivializing neighborhood of $A$. The map
 \begin{eqnsplit}
-\cdot_{loc} : (\Omega^\bullet_U(A, L), \wedge, \hat d) &\to (\Omega^\bullet(TU \oplus (U \times \alg g), U \times \alg g), \wedge, \hat d_{TLA})
+\cdot_{i} : (\Omega^\bullet_U(A, E), \wedge, \hat d_{\phi_i}) &\to (\Omega^\bullet(TU \oplus (U \times \alg g), U \times \alg V), \wedge, \hat d_{\phi})
 \end{eqnsplit}
 is an isomorphism of differential graded modules. In particular
 \begin{equation}
@@ -956,11 +980,22 @@ is an isomorphism of differential graded modules. In particular
 \end{equation}
 \end{theorem}
 \begin{proof}
-The proof is identical to that of the previous theorem, except for the last part. To see that the differentials commute it is neceessary \textbf{to show that the induced representation of $TLA$ on $U \times \alg g$ via $ad: A|_U \to D_{Der}(U \times \alg g)$ is the $ad$ representation}\todo{OJO!!!!! Para su generalizacion a todo $E$}. This will follow from the fact that $\tilde psi$ respects the Lie bracket, i.e. $\psi$ is a trivialization of a LAB.
+Let $U$ be an arbitrary $U_i$. Since $\Omega^\bullet_U(A) = \Omega^\bullet(A|_U) = \Gamma\Alt^\bullet(A|_U)$ and $A|_U \cong TU \oplus (U \times \alg g)$, so $\bigwedge^p A|_U^*) \cong \bigwedge^p (TU \times \alg g)^*$; applying the $\Gamma$ functor and proposition \ref{propositionIsomorphOmegas} we conclude that the degree $p$ submodules $\Omega^p_U(A, E)$ and $\Omega^p(TU\times \alg g, U \times V)$ of $\Omega^\bullet_U(A, E)$ and $\Omega^\bullet(TU\times \alg g, U\times V)$, respectively, are isomorphic for all $p \in \ZZ_{\geq 0}$. The wedge product is defined using these degree $p$ submodules with equation \eqref{equationDefinitionWedgeEValuedEValuedAlgebraForms}, so the graded algebras are indeed isomorphic.
+
+All what's left to see is that the trivialization map respects the differential. Let $\omega \in \Omega^p(A, E)$, for some $p \in \ZZ_{\geq 0}$ and let $X_i \oplus \eta_i$, for $i = 1, \dots, p+1$ be arbitrary elements in $\Gamma(TU_i) \oplus C^\infty(U_i, \alg g)$, then:
+
+\begin{align*}
+    (\hat d_\phi \omega)_i&(X_1 \oplus \eta_1, \dots,  X_{p+1}\oplus \eta_{p+1}) \\ 
+      &= \beta_i^{-1}[(\hat d_\phi \omega)_i(S_i(X_1 \oplus \eta_1), \dots,  S_i(X_{p+1}\oplus \eta_{p+1}))]\\
+      &= \sum_{k=1}^{p+1} (-1)^{k+1} \beta^{-1} \comp \phi(S_i(X_k \oplus \eta_k))\cdot \omega( S_i(X_1\oplus \eta_1), \cdots,  S_i(X_{p+1}\oplus \eta_{p+1})) \\
+      &+ \sum_{1 \leq k < j \leq p+1} (-1)^{k+j}\beta_i^{-1}\comp\omega(S_i[ X_k \oplus \eta_k, X_j \oplus \eta_j], S_i(X_1 \oplus \eta_1), \cdots, S_i(X_{p+1} \oplus \eta_{p+1}))\\
+      &= \sum_{k=1}^{p+1} (-1)^{k+1} \phi_i (X_k \oplus \eta_k)\cdot \omega_i( X_1\oplus \eta_1, \cdots,  X_{p+1}\oplus \eta_{p+1}) \\
+      &+ \sum_{1 \leq k < j \leq p+1} (-1)^{k+j}\omega_i([ X_k \oplus \eta_k, X_j \oplus \eta_j], X_1 \oplus \eta_1, \cdots, X_{p+1} \oplus \eta_{p+1})\\
+      &= \hat d_{\phi} \omega_i(X_1 \oplus \eta_1, \dots, X_{p+1} \oplus \eta_{p+1})
+\end{align*}
 \end{proof}
-\begin{theorem}
-\dbtext{Previous theorem applied to $E$-valued forms!!}
-\end{theorem}
+
+In particular, scalar-valued and $L$-valued!!
 
 \lin
 
