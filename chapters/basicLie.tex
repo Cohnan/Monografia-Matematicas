@@ -77,7 +77,7 @@ Let $\sectoid Y \in \Gamma(A)$ as indicated above and $\sectoid X \in \Gamma(A)$
 The previous result allows us to restrict the Lie bracket of $A$ to the restriction vector bundle of $A$ to $U$, $A|_U$, which will be important to justify the study of (transitive) Lie algebroids from local information. 
 % Every local section can be extended to a global section that coincides with the initial local section BUT in a smaller neighborhood
 
-\begin{definition}[Restriction of a Lie algebroid]
+\begin{definition}%[Restriction of a Lie algebroid]
 %Let $(q:A \to M, a: A \to M, [\cdot , \cdot]:\Gamma(A)\times \Gamma(A) \to \Gamma(A))$ be a Lie algebroid. 
 Let $U$ be an open subset of $M$. \emph{The restriction of the Lie algebroid $A$ to $U$} is the restriction vector bundle $A$ to $U$ $A|_U$ with projection map $q_U: A|_U \to U$, together with the anchor $a_U:A|_U \to TU$ and bracket $[\cdot , \cdot]:\Gamma(A|_U)\times \Gamma(A|_U) \to \Gamma(A|_U)$ that result from the restrictions to $U$ of the anchor and bracket of $A$.
 \end{definition}
@@ -86,7 +86,7 @@ Let $U$ be an open subset of $M$. \emph{The restriction of the Lie algebroid $A$
 
 The simplest examples of Lie algebroids are the tangent bundle $TM$ of a manifold $M$ with the commutator of vector fields as bracket and $id_{TM}$ as anchor, and any Lie algebra, when considered as a vector bundle over a point. The following is a straightforward generalization of the latter, which contrasts the tangent bundle in the sense that we might consider it a space of only vertical directions on $M$.
 
-\begin{definition}[LAB]\label{defnLAB}
+\begin{definition}%[LAB]\label{defnLAB}
     Let $L$ be a vector bundle over $M$.
     
     \begin{itemize}
@@ -357,7 +357,7 @@ The vector bundle $TM \oplus (M \times \alg g)$ together with the previously def
 % \subsubsection{Explicit Examples}
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{The Algebroid of Derivations on a Vector Bundle}
+\subsection{The Algebroid of Derivations on a Vector Bundle} \label{subsectionDerivationsAlgebroid}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -427,6 +427,14 @@ is also a derivation on $E$ for any $D, D' \in \Gamma(\alg D(E))$, and it is str
 \end{align}
 for all $D, D' \in \Gamma \alg D(E), f \in C^\infty(M)$ which allow us to conclude that $(\alg D(E), a, $ $[\cdot, \cdot])$ is a transitive Lie algebroid on $M$, called \emph{the Lie algebroid of derivations on $E$}.
 
+\begin{example}[The derivations Lie algebroid of a trivial vector bundle]
+\label{exampleDerivationsLieAlgebroidOfATrivialVectorBundleglV}
+Let $E$ be a trivial vector bundle $M \times V$. Then $\End(E) \cong M, \alg{gl}(V)$. On such an $E$. The standard Lie derivative with respect to $\sect{X}$ on vector $V$-valued functions is a derivation for any a vector field $\sect{X} \in \Gamma(TM)$; since this mapping is $C^\infty(M)$-linear it defines a vector bundle section of the anchor in \ref{equationTransitiveLieAlgebroidSequenceDerivationsEndomorphism} that respects the Lie bracket. This section acts as an injection of $TM$ in $\alg D(E)$ that defines an isomorphism
+\begin{equation}
+    \alg D(M \times V) \cong TU_i \oplus (U_i \times \alg{gl}(V)).
+\end{equation}
+\end{example}
+
 % \subsection{Other (Families of) Examples}
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -447,7 +455,7 @@ for all $D, D' \in \Gamma \alg D(E), f \in C^\infty(M)$ which allow us to conclu
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Throughout this section, let $P(M, G)$ be a principal bundle over $M$ with the real Lie group $G$ (a finite dimensional, smooth manifold) as fiber which acts on the right by the smooth action $R: G \times P \to G$.
+Throughout this section, let $G \to P \to M$ be a principal bundle over $M$ with the real Lie group $G$ (a finite dimensional, smooth manifold) as fiber which acts on the right by the smooth action $R: G \times P \to G$.
 
 The Atiyah Lie algebroid sequence of principal bundles is an exact sequence of Lie algebroids that arises naturally in traditional gauge theories, explicitly in the context of principal connections forms. This exact sequence will be generalized by the Lie algebroid sequences of transitive Lie algebroids, allowing the formulation of the concept of transitive Lie algebroid connections, among other things.
 
@@ -588,7 +596,7 @@ This follows from the of the identity $\psi(m, g) g' = \psi(m, gg')$, when it is
 The following proposition and its corollary allow us to define smooth vector bundle maps between quotient vector bundles. In particular, it will allow us to define the anchor $\pi_*:TP/G \to TM$ of what will be the Atiyah Lie algebroid, and later on to define the embedding of the adjoint Lie algebroid into $TP/G$.
 
 \begin{proposition} \label{3.1.2}
-Let $(E, p^E, P)$ and $(E, p^{E'}, P')$ be vector bundles over principal bundles $P(M, G)$ and $P'(M', G')$, respectively. Let $G$ and $G'$ act on $E$ and $E'$ respectively satisfying the conditions of Proposition \ref{3.1.1}. Let $\Psi: E \to E'$ be a vector bundle morphism, over the principal bundle morphism $F(f, \psi)$ where $f:M\to M'$ and $\psi:G \to G'$, that satisfies \[\Psi(\mu g) = \Psi(\mu) \psi(g)\] for all $\mu \in E$, $g \in G$, i.e. \emph{$\Psi$ is $G$-equivariant}. Then, there \emph{exists a unique (smooth) vector bundle morphism} $\Psi^{G}: E/G \to E'/G'$ over $f: M \to M'$ such that $\Psi^{G} \circ \natural = \natural' \circ \Psi$, where $\natural$ and $\natural'$ denote the quotient maps in $E$ and $E'$ respectively. In particular, the following diagram commutes:
+Let $(E, p^E, P)$ and $(E, p^{E'}, P')$ be vector bundles over principal bundles $G \to P \to M$ and $P'(M', G')$, respectively. Let $G$ and $G'$ act on $E$ and $E'$ respectively satisfying the conditions of Proposition \ref{3.1.1}. Let $\Psi: E \to E'$ be a vector bundle morphism, over the principal bundle morphism $F(f, \psi)$ where $f:M\to M'$ and $\psi:G \to G'$, that satisfies \[\Psi(\mu g) = \Psi(\mu) \psi(g)\] for all $\mu \in E$, $g \in G$, i.e. \emph{$\Psi$ is $G$-equivariant}. Then, there \emph{exists a unique (smooth) vector bundle morphism} $\Psi^{G}: E/G \to E'/G'$ over $f: M \to M'$ such that $\Psi^{G} \circ \natural = \natural' \circ \Psi$, where $\natural$ and $\natural'$ denote the quotient maps in $E$ and $E'$ respectively. In particular, the following diagram commutes:
 \begin{equation} \label{diagramQuotientMorph}
 \begin{tikzcd}
     E   \ar{r}{\Psi}     \ar{d}{\natural} &   E'  \ar{d}{\natural'} \\
@@ -621,7 +629,7 @@ Finally, $\Psi^{G}$ is a smooth vector bundle morphism over $f:M \to M'$ since $
 \end{proof}
 
 \begin{corollary}
-Let $(E, p^E, P)$ be a vector bundle over the principal bundle $P(M, G)$, and let $G$ act on $E$ satisfying the conditions of Proposition \ref{3.1.1}. Let $(E, p^{E'}, M')$ be another vector bundle. Let $\Psi: E \to E'$ be a vector bundle morphism over a map $f: P \to M'$ that satisfies \[\Psi(\mu g) = \Psi(\mu)\] and $f(pg) = f(p)$ for all $\mu \in E$, $p \in P$ and $g \in G$. Then there exists a unique (smooth) vector bundle morphism $\Psi^{G}: E/G \to E'$ over a map $f^{G}: M \to M'$ such that $f = f^{G} \circ \pi$, that satisfies \[\Psi^{G} \circ \natural = \Psi,\] where $\natural: E \to E/G$ is the quotient map. In particular, the following diagram commutes
+Let $(E, p^E, P)$ be a vector bundle over the principal bundle $G \to P \to M$, and let $G$ act on $E$ satisfying the conditions of Proposition \ref{3.1.1}. Let $(E, p^{E'}, M')$ be another vector bundle. Let $\Psi: E \to E'$ be a vector bundle morphism over a map $f: P \to M'$ that satisfies \[\Psi(\mu g) = \Psi(\mu)\] and $f(pg) = f(p)$ for all $\mu \in E$, $p \in P$ and $g \in G$. Then there exists a unique (smooth) vector bundle morphism $\Psi^{G}: E/G \to E'$ over a map $f^{G}: M \to M'$ such that $f = f^{G} \circ \pi$, that satisfies \[\Psi^{G} \circ \natural = \Psi,\] where $\natural: E \to E/G$ is the quotient map. In particular, the following diagram commutes
 
 \begin{equation} \label{anchorDiagram}
     \begin{tikzcd}
@@ -835,7 +843,7 @@ All what is left to see is that this definitions of the anchor and the bracket o
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-A principal connection form on the principal bundle $P(M, G)$ is usually defined as $\alg g$-valued $1$-form  $w: TP \to P \times \alg g$ that satisfies:
+A principal connection form on the principal bundle $G \to P \to M$ is usually defined as $\alg g$-valued $1$-form  $w: TP \to P \times \alg g$ that satisfies:
 
     \begin{itemize}
     
@@ -904,7 +912,7 @@ Although we could consider the exact sequence of Atiyah Lie algebroids
 \begin{align*}
     0 \to T^\pi P/G \to TP/G \to TM \to 0
 \end{align*}
-as the Atiyah sequence of the principal bundle $P(M, G)$, it will be useful to replace $T^\pi P/G$ by $P \times \alg g/G$ once we see they are isomorphic Lie algebroids.
+as the Atiyah sequence of the principal bundle $G \to P \to M$, it will be useful to replace $T^\pi P/G$ by $P \times \alg g/G$ once we see they are isomorphic Lie algebroids.
 
 % Let $g \in G$ act on $\alg g$ by the adjoint action $Ad_g: \alg g \times \alg g$, derivative at the identity of the adjoint action of $g \in G$ on $G$ 
 % \begin{align*}
@@ -1154,7 +1162,7 @@ From now on, since the two induced Lie algebra structures on $\Gamma(P \times \a
 \begin{align} \label{definitionAtiyahSequencePrincipalBundleVectorBundleuence}
     0 \to P \times \alg g/G \xrightarrow{j} TP/G \xrightarrow{\pi_*^G} TM \to 0
 \end{align}
-is called \emph{the Atiyah sequence of the principal bundle $P(M, G)$}.
+is called \emph{the Atiyah sequence of the principal bundle $G \to P \to M$}.
     \end{itemize}
 
 From the algebraic perspective, we could also say that the Atiyah sequence of $P$ is the induced short exact sequence of $C^\infty(M)$-modules and Lie algebras
@@ -1168,22 +1176,22 @@ From the algebraic perspective, we could also say that the Atiyah sequence of $P
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-There are a two big families of examples of principal bundles given a normed division algebra $\FF$ over $\RR$ which is one of $\RR, \CC, \HH$: let $d$ be the dimension of $\FF$ as an $\RR$-vector space, and for any $n \in \ZZ_{\geq 1}$ the sphere $S^{dn - 1} \subset \FF^n$ on which the Lie group
+Throughout the document we will develop some explicit examples of transitive Lie algebroids and of the different structures built on them.  We will do so parting from two big families of principal bundles given a normed division algebra $\FF$ over $\RR$ which is one of $\RR, \CC, \HH$: let $d$ be the dimension of $\FF$ as an $\RR$-vector space, then for any $n \in \ZZ_{\geq 1}$ the sphere $S^{dn - 1} \subset \FF^n$ on which the Lie group
 \footnote{It is well known that the only spheres which admit a topological group structure are $S^0$, $S^1$ and $S^3$, explaining why a similar construction for the remaining normed division algebra, the octonion algebra, can't be a principal bundle.} 
-$S^{d-1}$ acts is a principal bundle over $\FF P^{n-1}$. We will focus in the two particular fibrations obtained by restricting to $n = 2$ and $\FF$ either $\CC$ or $\HH$, called the \lbtext{complex Hopf fibration} and \lbtext{quaternionic Hopf fibration} respectively. In these cases the base manifolds $\CC P^1$ and $\HH P^1$ can be regarded instead as $S^2$ and $S^4$ respectively, and so these principal fibrations have spheres as total space, base space and fiber:
+$S^{d-1}$ acts is a principal bundle over $\FF P^{n-1}$. We will focus in the two particular fibrations obtained by restricting to $n = 2$ and $\FF$ either $\CC$ or $\HH$, called the \lbtext{complex Hopf fibration} and \lbtext{quaternionic Hopf fibration} respectively. In these cases the base manifolds $\CC P^1$ and $\HH P^1$ can be regarded instead as $S^2$ and $S^4$ respectively, and so these principal fibrations may be seen as follows:
 \begin{equation*}
     \begin{tikzcd}
-    S^1 \arrow[hook]{r} & S^3 \arrow{r} & S^2\\
-    S^3 \arrow[hook]{r} & S^7 \arrow{r} & S^4
+    S^1 \arrow[hook]{r} & S^3 \arrow{r} & S^2,\\
+    S^3 \arrow[hook]{r} & S^7 \arrow{r} & S^4.
     \end{tikzcd}
 \end{equation*}
 
-\ptext{The way to describe the Lie algebroid that will be most useful to use will be through their local trivializations as transitive Lie algebroids, and this requires a local description of both the base manifolds and the principal bundles, which we will develop now.}
+\ptext{The way to describe the Lie algebroid that will be most useful to use will be through their local trivializations as transitive Lie algebroids studied in section \ref{chp:Connection:}, and this requires a local description of both the base manifolds and the principal bundles, which we will now develop.}
 
 \subsubsection{The Underlying Manifolds}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Atlas for $S^n \subset \RR^{n+1}$ for $n \geq 1$: Let $U_N = S^n \ \set{(0, \dots, 0, -1)}$ and $U_S = S^n \ \set{(0, \dots, 0, 1)}$. Notice that these two sets are open subsets missing only one point of $S^n$, and so they make an open cover of $S^n$. A $C^\infty$ atlas is given by $\{(U_S, \vphi_S), (U_N, \vphi_N)\}$ where
+First, let's define an atlas for $S^n \subset \RR^{n+1}$ for $n \geq 1$. Let $U_N = S^n \ \set{(0, \dots, 0, -1)}$ and $U_S = S^n \ \set{(0, \dots, 0, 1)}$. Notice that these two sets are open subsets missing only one point of $S^n$, and so they make an open cover of $S^n$. A $C^\infty$ atlas is given by $\{(U_S, \vphi_S), (U_N, \vphi_N)\}$ where
 % \begin{align}
 %     \vphi_S : U_S &\to \RR^{n} &
 %     \vphi^{-1}_S : \RR^{n} &\to U_S\\
@@ -1191,58 +1199,60 @@ Atlas for $S^n \subset \RR^{n+1}$ for $n \geq 1$: Let $U_N = S^n \ \set{(0, \dot
 %         \vec y &\mapsto \frac{(2y^1, \dots, 2y^{n}, ||\vec y||^2 - 1)}{1+||\vec y||^2}
 % \end{align}
 \begin{align}
-    \vphi_S : U_S &\to \RR^{n}, &
+    \vec x : U_S &\to \RR^{n}, &
         (x^1, \dots, x^{n+1}) &\mapsto \frac{(x^1, \dots, x^n)}{1-x^{n+1}} \\
-    x := \vphi^{-1}_S : \RR^{n} &\to U_S, &
+    \vphi_S := x^{-1} : \RR^{n} &\to U_S, &
         \vec \xi &\mapsto \frac{(2\xi^1, \dots, 2\xi^{n}, ||\vec \xi||^2 - 1)}{1+||\vec \xi||^2}
 \end{align}
 and 
 \begin{align}
-    \vphi_N : U_N &\to \RR^{n} &
+    y : U_N &\to \RR^{n} &
         (x^1, \dots, x^{n+1}) &\mapsto \frac{(x^1, \dots, x^n)}{1+x^{n+1}} \\
-    y:= \vphi^{-1}_N : \RR^{n} &\to U_N &
+    \vphi_N:= \vec y^{-1} : \RR^{n} &\to U_N &
         \vec \xi &\mapsto \frac{(2\xi^1, \dots, 2\xi^{n}, 1 - ||\vec \xi||^2)}{1+||\vec \xi||^2}.
 \end{align}
-In the intersection $\RR^n - 0 = \phi_S(U_S \inter U_N) = \phi_N(U_S \inter U_N) \ni \vec \xi$ they satisfy:
+In the intersection $\RR^n - 0 = \vec x(U_S \inter U_N) = \vec y(U_S \inter U_N) \ni \vec \xi$ they satisfy:
 \begin{equation}
-    \vphi_S \circ \vphi_N^{-1}(\vec \xi) = \frac{\vec \xi}{|| \vec \xi||^2} = \vphi_N \circ \vphi_S^{-1}(\vec v).
+    \vec x \circ \vec y^{-1}(\vec \xi) = \frac{\vec \xi}{|| \vec \xi||^2} = \vec y \circ \vec x^{-1}(\vec \xi).
 \end{equation}
-When $n = 2$ we may write $\CC$ instead of $\RR^2$ and when $n = 4$ write $\HH$ instead of $\RR^4$, which also allows the previous formula to be written in terms of the conjugation of this normed division algebras, i.e. for $y \in \FF$
+When $n = 2$ we write $\CC$ instead of $\RR^2$ and when $n = 4$ we write $\HH$ instead of $\RR^4$, which also allows the previous formula to be written in terms of the conjugation of this normed division algebras, i.e. for $y \in \FF$
 \begin{equation}
-    \vphi_S \circ \vphi_N^{-1}(\xi) = \overline{\xi}^{-1} = \vphi_N \circ \vphi_S^{-1}(\xi)
+    \vec x \circ \vec y^{-1}(\xi) = \overline{\xi}^{-1} = \vec y \circ \vec x^{-1}(\xi)
 \end{equation}
-where $\FF$ can actually be either $\RR, \CC$ or $\HH$.
-
-In $S^2$ a very useful and intuitive set of coordinates are the polar coordinates. In $U_C := U_S \inter U_N$ the polar angle $\phi \in [0, \pi]$ and the azimuthal angle $\theta \in [0, 2 \pi]$ induce the local frame $\{\partial_\phi, \partial_\theta\} \subset \Gamma_{U_C}(TS^2)$ of the tangent bundle which are properly defined as coordinate vector fields once at two appropriate charts that cover $U_C$; one possibility is the chart in which $\phi \in (0, \pi)$ and $\theta \in (0, 2\pi)$ and another chart where $\phi \in (0, \pi)$ and $\theta \in (-\pi, \pi)$. The inverses of these coordinate maps will be denoted by $Esph$, or simply $E$, with formula
-\begin{eqnsplit}
-    Esph: (\phi, \theta) &\mapsto (\sin \phi \cos \theta, \sin \phi \sin \theta, \cos \phi) \in S^2.
-\end{eqnsplit}
-
-Similarly, in $S^3$ there is a set of coordinates which allow us to develop an intuition of the complex Hopf bundle when combined with the previously defined coordinates for $S^2$. Notice that any point $(z^1, z^2)$ in $S^3$ can be written as $(z_1, z_2) = (\cos \left( \frac{\phi}{2}\right) e^{i \xi_1}, \sin\left( \frac{\phi}{2} \right) e^{i \xi_2})$ with $\phi \in [0, \pi]$ and $\xi_1, \xi_2 \in [0, 2\pi]$, in particular notice that indeed $|z^1|^2 + |z^2|^2 = \cos^2 \left( \frac{\phi}{2}\right) + \sin^2 \left( \frac{\phi}{2}\right) = 1$. Again, once appropriate coordinate maps are chosen, these coordinates induce the local frame $\{\partial_\phi, \partial_{\xi_1}, \partial_{\xi_2}\} \subset \Gamma_{U_C}(TS^3)$ where $U_C = U_S \inter U_N$ is the set where $\phi \in (0, \pi)$. We will denote by $Tor$, or simply $T$, the map
-\begin{eqnsplit}
-    Tor: (\phi, \xi_1, \xi_2) \mapsto (\cos \left( \frac{\phi}{2}\right) e^{i \xi_1}, \sin\left( \frac{\phi}{2} \right) e^{i \xi_2}) \in S^3.
-\end{eqnsplit}
+where $\FF$ can, in fact, be either $\RR, \CC$ or $\HH$.
 
 \lin
 
-Atlas for $\FF P^{1}$: The sets $U_i = \{ [\xi^1, \xi^2] \st \xi^i \neq 0 \}$, for $i = 1, 2$, are open subsets of $\FF P^1$ missing only one point of the total space, which make up an open cover. Writting the not necessarily commutative multiplication $\xi^1 (\xi^2)^{-1}$ as $\xi^1 / \xi^2$ An atlas for $\FF P^1$ is given by $\{(U_2, \vphi_2), (U_1, \overline{\vphi_1})\}$ where 
+In $S^2$ a very useful and intuitive set of coordinates are the polar coordinates. In $U_{SN} := U_S \inter U_N$ the polar angle $\phi \in [0, \pi]$ and the azimuthal angle $\theta \in [0, 2 \pi]$ induce the local frame $\{\partial_\phi, \partial_\theta\} \subset \Gamma_{U_{SN}}(TS^2)$ of the tangent bundle which are properly defined as coordinate vector fields once at two appropriate charts that cover $U_{SN}$; one possibility is the chart in which $\phi \in (0, \pi)$ and $\theta \in (0, 2\pi)$ and another chart where $\phi \in (0, \pi)$ and $\theta \in (-\pi, \pi)$. The inverses of these coordinate maps will be denoted by $E$, or simply $E$, with formula
+\begin{eqnsplit}
+    E: (\phi, \theta) &\mapsto (\sin \phi \cos \theta, \sin \phi \sin \theta, \cos \phi) \in S^2.
+\end{eqnsplit}
+
+Similarly, in $S^3$ there is a set of coordinates which allow us to develop an intuition of the complex Hopf bundle when combined with the previously defined coordinates for $S^2$. Notice that any point $(z^1, z^2)$ in $S^3$ can be written as $(z_1, z_2) = (\cos \left( \frac{\phi}{2}\right) e^{i \xi_1}, \sin\left( \frac{\phi}{2} \right) e^{i \xi_2})$ with $\phi \in [0, \pi]$ and $\xi_1, \xi_2 \in [0, 2\pi]$, in particular notice that indeed $|z^1|^2 + |z^2|^2 = \cos^2 \left( \frac{\phi}{2}\right) + \sin^2 \left( \frac{\phi}{2}\right) = 1$. Again, once appropriate coordinate maps are chosen, these coordinates induce the local frame $\{\partial_\phi, \partial_{\xi_1}, \partial_{\xi_2}\} \subset \Gamma_{U_{SN}}(TS^3)$ where $U_{SN} = U_S \inter U_N$ is the set where $\phi \in (0, \pi)$. We will denote by $T$, or simply $T$, the map
+\begin{eqnsplit}
+    T: (\phi, \xi_1, \xi_2) \mapsto (\cos \left( \frac{\phi}{2}\right) e^{i \xi_1}, \sin\left( \frac{\phi}{2} \right) e^{i \xi_2}) \in S^3.
+\end{eqnsplit}
+
+\linea
+
+We now find a smooth atlas for the projective space $\FF P^1$, where $\FF$ may be either $\RR, \CC$ or $\HH$. The sets $U_i := \{ [\xi^1, \xi^2] \st \xi^i \neq 0 \}$, for $i = 1, 2$, are open subsets of $\FF P^1$ missing only one point of the total space, which make up an open cover. Writing the not necessarily commutative multiplication $\xi^1 (\xi^2)^{-1}$ as $\xi^1 / \xi^2$ an atlas for $\FF P^1$ is given by $\{(U_2, \vec x), (U_1, \vec y)\}$ where 
 \begin{align}
-    \vphi_2: U_2 &\to \FF &
-    x :=\vphi_2^{-1}: \FF &\to U_2 \\
+    \vec x: U_2 &\to \FF &
+    \vphi_2 :=\vec x^{-1}: \FF &\to U_2 \\
     (\xi^1, \xi^2) &\mapsto \xi^1 / \xi^2 &
     \xi &\mapsto [\xi, 1]
 \end{align} and
 \begin{align}
-    \overline{\vphi_1}: U_1 &\to \FF &
-    y := \overline{\vphi_1}^{-1}: \FF &\to U_1 \\
+    \vec y: U_1 &\to \FF &
+    \vphi_1 := \vec y^{-1}: \FF &\to U_1 \\
     (\xi^1, \xi^2) &\mapsto \overline{\xi^2 /\xi^1} &
     \xi &\mapsto [1, \overline{\xi}].
 \end{align} In the intersection $\FF - 0 = \phi_i(U_2 \inter U_1) \ni \xi$ it is then true that
 \begin{equation}
-    \vphi_2 \circ \overline{\vphi_1}^{-1}(\xi) = \overline{\xi}^{-1} = \overline{\vphi_1} \circ \vphi_2^{-1}(\xi).
+    \vec x \circ \vec y^{-1}(\xi) = \overline{\xi}^{-1} = \vec y \circ \vec x^{-1}(\xi).
 \end{equation} This construction can be easily modified to generate a smooth atlas $\{(U_1, \phi_1), (U_2, \phi_2)\}$ for $\FF P^n$ for any $n \geq 1$ where $U_k = \set{[\xi^1, \dots, \xi^{n+1}] \st \xi^k \neq 0}$ and $\phi_k: U_k \to \FF^{n}$, $[\xi^1, \dots, \hat \xi^k, \dots, \xi^{n+1}] \mapsto (\xi^1, \dots, \hat \xi^k, \dots, \xi^{n+1}) \cdot (\xi^k)^{-1}$.
 
-The atlases given for $\FF P^1$ and $S^d$ where $d = dim_\RR \FF$ suggests a bijective map $\FF P^1 \to S^d$ given by $\vphi_S^{-1} \circ \vphi_2$ in $U_2$ and $\vphi_N^{-1} \circ \overline{\vphi_1}$ in $U_1$ if they were compatible in $U_2 \inter U_1$; it can be easily shown that these $2$ maps indeed coincide there and that the resulting map has the formula
+The atlases given for $\FF P^1$ and $S^d$ where $d = dim_\RR \FF$ suggests a bijective map $\FF P^1 \to S^d$ given by $\vphi_S \circ \vec x$ in $U_2$ and $\vphi_N \circ \vec y$ in $U_1$ if they were compatible in $U_2 \inter U_1$; it can be easily shown that these two maps indeed coincide there and that the resulting map has the formula
 \begin{eqnsplit}
     \label{diffProjFtoS}
     F: \FF P^1 &\to S^d\\
@@ -1251,14 +1261,14 @@ The atlases given for $\FF P^1$ and $S^d$ where $d = dim_\RR \FF$ suggests a bij
 \begin{eqnsplit}
     F^{-1}: S^d &\to \FF P^1 \\
     (x^1, \dots, x^{d+1}) &\mapsto [(x^1, \dots, x^d), 1-x^{d+1}] \\
-     &\text{ or  } [1+x^{d+1}, (x^1, \dots, x^d)].
+     &\, = [1+x^{d+1}, (x^1, \dots, x^d)].
 \end{eqnsplit}
 
 \subsubsection{The Principal Bundles}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The complex Hopf bundle is obtained as the case $n=2$ of the family of $S^1$-principal bundles $S^1 \hookrightarrow S^{2n-1} \to \CC P^{n-1}$ defined a continuacion. $S^1 \subset \CC$ acts naturally on the right on $S^{2n-1} \subset \CC^n$ by coordinate-wise multiplication. Let $\tilde \pi: S^{2n-1} \to \CC P^{n-1}$ be the restriction of the smooth quotient map $p: \CC^n \to \CC P^{n-1}$ to $S^{2n-1}$; by the definition of the projective spaces, for any $g \in S^1$ and $p \in S^{2n-1} \subset \CC^n$, the projection map $\pi$ satisfies $\tilde \pi(pg) = \tilde \pi(p)$. %Furthermore, for any $[z^1, \dots z^n] \in \CC P^{n-1}$, $\pi^{-1}([z^1, \dots, z^n]) = \{(z^1, \dots, z^n)g \st g \in S^1\}$
-To see that these is a principal bundle all we need to do is define smooth local sections of the projection map $\tilde \pi$ for all the neighborhoods of the previously defined atlas of $\CC P^{n-1}$: for $k \in \{1, \dots, n\}$, let
+The complex Hopf bundle is obtained as the case $n=2$ of the family of $S^1$-principal bundles $S^1 \hookrightarrow S^{2n-1} \to \CC P^{n-1}$ that we will now define. $S^1 \subset \CC$ acts naturally on the right on $S^{2n-1} \subset \CC^n$ by coordinate-wise multiplication. For $n \in \ZZ_{\geq 1}$ let $\tilde \pi: S^{2n-1} \to \CC P^{n-1}$ be the restriction of the smooth quotient map $p: \CC^n \to \CC P^{n-1}$ to $S^{2n-1}$; by the definition of the projective spaces, for any $g \in S^1$ and $p \in S^{2n-1} \subset \CC^n$, the projection map $\pi$ satisfies $\tilde \pi(pg) = \tilde \pi(p)$. %Furthermore, for any $[z^1, \dots z^n] \in \CC P^{n-1}$, $\pi^{-1}([z^1, \dots, z^n]) = \{(z^1, \dots, z^n)g \st g \in S^1\}$
+To see that this is a principal bundle all we need to do is define smooth local sections of the projection map $\tilde \pi$ for all the neighborhoods of the previously defined atlas of $\CC P^{n-1}$. For $k \in \{1, \dots, n\}$, let
 \begin{eqnsplit}
     \sigma_k: U_k &\to S^{2n-1}\\
       [z^1, \dots, z^n] &\mapsto \frac{(z^1, \dots, z^n) |z^k|/z^k}{\sqrt{|z^1|^2 + \cdots + |z^n|^2}};
@@ -1273,15 +1283,15 @@ To see that these is a principal bundle all we need to do is define smooth local
 In the particular case when $n = 2$, define $\pi = F\circ \tilde \pi : S^{3} \to S^2$. Since $\CC P^1$ is diffeomorphic to $S^2$ through $F$, $\pi$ is the projection map of a principal bundle $S^3$ over $S^2$ with fiber $S^1$, called the \lbtext{complex Hopf bundle}. By plugging any point in $S^3$ using the special coordinates defined for $S^2$ and $S^3$, and using equation (\ref{diffProjFtoS}), we obtain the following nice formula for this projection map of the complex Hopf bundle:
 \begin{eqnsplit}
     \pi: S^3 &\to S^2\\
-        Tor(\phi, \xi_1, \xi_2) &\mapsto Esph(\phi, \xi_1 - \xi_2).
+        T(\phi, \xi_1, \xi_2) &\mapsto E(\phi, \xi_1 - \xi_2).
 \end{eqnsplit}
-The action of $e^{i \alpha} \in S^1$ on $Tor(\phi, \xi_1, \xi_2) = (\cos \left( \frac{\phi}{2}\right) e^{i \xi_1}, \sin\left( \frac{\phi}{2} \right) e^{i \xi_2})$ returns $Tor(\phi, \xi_1 + \alpha, \xi_2 + \alpha)$, which indeed leaves invariant the quantity $\xi_1 - \xi_2$, and this implies that 
+The action of $e^{i \alpha} \in S^1$ on $T(\phi, \xi_1, \xi_2) = (\cos \left( \frac{\phi}{2}\right) e^{i \xi_1}, \sin\left( \frac{\phi}{2} \right) e^{i \xi_2})$ returns $T(\phi, \xi_1 + \alpha, \xi_2 + \alpha)$, which indeed leaves invariant the quantity $\xi_1 - \xi_2$, and this implies that 
 \begin{equation*}
-    \pi^{-1}(Esph(\phi, \theta)) = \{Tor(\phi, \xi_1, \xi_2) \st \xi_1 - \xi_2 = \theta\}.
+    \pi^{-1}(E(\phi, \theta)) = \{T(\phi, \xi_1, \xi_2) \st \xi_1 - \xi_2 = \theta\}.
 \end{equation*} The induced local trivializations $\sigma_S := F^{-1} \circ \sigma_2$ and $\sigma_N := F^{-1} \circ \sigma_1$ have the formulas:
 \begin{align}
-    \sigma_S: U_S &\to S^3, &  Esph(\phi, \theta) &\mapsto Tor(\phi, \theta, 0)\\
-    \sigma_N: U_N &\to S^3, &  Esph(\phi, \theta) &\mapsto Tor(\phi, 0, -\theta).
+    \sigma_S: U_S &\to S^3, &  E(\phi, \theta) &\mapsto T(\phi, \theta, 0)\\
+    \sigma_N: U_N &\to S^3, &  E(\phi, \theta) &\mapsto T(\phi, 0, -\theta).
 \end{align} This principal bundle, due to the Reconstruction Theorem \ref{}, is completely determined by the transition function
 \begin{equation}
     \label{transFunHopfS3}
@@ -1290,8 +1300,7 @@ The action of $e^{i \alpha} \in S^1$ on $Tor(\phi, \xi_1, \xi_2) = (\cos \left( 
 
 \lin
 
-An identical procedure as the one follows for the principal bundles $S^1 \hookrightarrow S^{2n-1} \to \CC P^{n-1}$ for all integer $n \geq 1$ can be used to define a family of $S^3$-principal bundles $S^3 \hookrightarrow S^{4n-1} \to \HH P^{n-1}$, where the right action of the symplectic group $Sp(1)$ comes from \ptext{understanding $Sp(1)$ as the unit quaternions} through the map \ref{groupQuaternionicMorphism}
-and $S^{4n-1}$ as a subset of $\HH^n$, in which case the right action is once again given by coordinate-wise multiplication . The relevant ingredients of these principal bundles are its smooth projection map that respects the $Sp(1)$ action $\tilde \pi: S^{4n-1} \to \HH P^{n-1}$ equal to the resctriction of the quotient map $p: \HH^n \to \HH P^{n-1}$ to $S^{4n-1}$, the local sections
+An identical procedure as the one used for the principal bundles $S^1 \hookrightarrow S^{2n-1} \to \CC P^{n-1}$ can be used to define a family of $S^3$-principal bundles $S(\HH) \hookrightarrow S^{4n-1} \to \HH P^{n-1}$ for all $n \in \ZZ_{\geq 1}$, where $S^3$ is understood as the unit sphere in the quaternions, also denoted by $S(\HH)$ when the distinction is necessary, and it acts on the right by coordinate-wise multiplication on $S^{4n-1}$ seen a subset of $\HH^n$, in which case the right action is once again given by coordinate-wise multiplication. The relevant ingredients of these principal bundles are its smooth projection map that respects the $S(\HH)$ action $\tilde \pi: S^{4n-1} \to \HH P^{n-1}$ equal to the restriction of the quotient map $p: \HH^n \to \HH P^{n-1}$ to $S^{4n-1}$, the local sections
 \begin{eqnsplit}
     \sigma_k: U_k \subset \HH P^{n-1} &\to S^{4n-1}\\
       [q^1, \dots, q^n] &\mapsto \frac{(q^1, \dots, q^n) |q^k|/q^k}{\sqrt{|q^1|^2 + \cdots + |q^n|^2}}.
@@ -1301,19 +1310,18 @@ The transition functions $g_{ij}: U_i \inter U_j \to Sp(1)$ for $i, j \in \set{1
     g_{ji}([q^1, \dots, q^{n}]) = \frac{q^j / |q^j|}{q^i / |q^i|}.
 \end{equation}
 
-When $n = 2$ we recall from equation (\ref{diffProjFtoS}) that $\HH P^1 \cong S^4$, and since the Lie group $Sp(1)$ is diffeomorphic to $S^3$
-\footnote{The Lie algebras may give a straightforward proof}
-, the \lbtext{quaternionic Hopf bundle} is the induced $S^3$-principal bundle $S^3 \hookrightarrow S^7 \to S^4$ with projection map $\pi := F^{-1} \circ \tilde \pi: S^7 \to S^4$.
+When $n = 2$ we recall from equation (\ref{diffProjFtoS}) that $\HH P^1 \cong S^4$, and since the Lie group $S^3$ is diffeomorphic to $S^3$
+, as we'll see in \ref{}, the \lbtext{quaternionic Hopf bundle} is the induced $S^3$-principal bundle $S^3 \hookrightarrow S^7 \to S^4$ with projection map $\pi := F^{-1} \circ \tilde \pi: S^7 \to S^4$.
 
-\lin
+\linea
 
-Up to isomorphism of principal bundles, the $S^1$-principal bundles over $S^2$ are in bijective correspondence with $\ZZ$. Since we know an atlas of $S^2$ with only two neighborhooods, $U_S$ and $U_N$, each of these bundles is completely determined \ref{} by its transition function $g_{NS}: U_{SN} \to S^1$. More precisely, the non-homotopic equivalent functions indexed by $k \in ZZ$ 
+Yet another family of principal bundles which we will use throughout the document is the set of principal bundles over $S^2$ with fiber $S^1$; the complex Hopf bundle is also an element of this family. Up to isomorphism of principal bundles, the $S^1$-principal bundles over $S^2$ are in bijective correspondence with $\ZZ = \pi_1(S^1)$ \cite{Naber}, where $\pi_1$ denoted the fundamental group of the topological space $S^1$. Since we know an atlas of $S^2$ with only two neighborhooods, $U_S$ and $U_N$, each of these bundles is completely determined \cite{Naber} by its transition function $g_{NS}: U_{SN} \to S^1$. More precisely, the non-homotopic equivalent functions indexed by $k \in ZZ$ 
 \begin{eqnsplit}
     g^k_{NS}: U_{NS} &\subset S^2 \to S^1\\
     E(\phi, \theta) &\mapsto e^{i k \theta}
-\end{eqnsplit} determine a different $S^1$-principal bundle over $S^2$ \ref{}.
+\end{eqnsplit} determine each a different $S^1$-principal bundle over $S^2$.
 
-Let $P^k$ be the $S^1$-principal bundle over $S^2$ determined by the transition function $g^k_{NS}$; as implied by equation (\ref{transFunHopfS3}), the complex Hopf bundle corresponds to the index $k = 1$. A proof Reconstruction Theorem \ref{} shows that $P^k$ can be defined by
+Let $P^k$ be the $S^1$-principal bundle over $S^2$ determined by the transition function $g^k_{NS}$; as implied by equation (\ref{transFunHopfS3}), the complex Hopf bundle corresponds to the index $k = 1$. The Reconstruction Theorem of principal bundles \cite{Naber} shows that $P^k$ can be defined by
 \begin{align*}
     P^k := \left( \bigsqcup_{l \in {N, S}} U_i \times S^1 \right) \Bigg/ \sim \quad \ni [E(\phi, \theta), e^{i\theta}, l]
 \end{align*} where the equivalence relation $\sim$ is defined, for any $E(\phi, \theta) \in S^2$ and $e^{i\alpha_N}, e^{i\alpha_N} \in S^1$, by
@@ -1368,6 +1376,23 @@ which is $C^\infty(M)$-linear, a Lie algebra morphism, and such that
 This can be done due to the equivalence between vector bundle maps over $M$ and $C^\infty(M)$-linear maps between sections.
 \end{remark}
 
+\begin{example}[Lie algebroid morphisms between Trivial Lie algebroid over $M$]\label{exampleLieAlgebroidMorphismsBetweenTrivialLieAlgebroids}
+Let $TM \times V$ and $TM \times V'$ be trivial Lie algebroids, and suppose that $\psi$ is a Lie algebroid morphisms between them.
+
+Since $\phi$ is $C^\infty(M)$-linear and it respects the anchor, it must have the form
+\begin{equation}\label{equationFormOFGeneralMorphismTrivialLieAlgebroidsBetween}
+    \phi(X \oplus \eta) = X \oplus (B(X) + \phi_L(eta)),
+\end{equation}
+where $B: TM \to TM \times V'$ and $\phi_L: M \times V \to M \times V'$ are vector bundle morphisms.
+Furthermore, that $\phi$ respects the bracket when applied to vector fields implies that $B$ is a Maurer-Cartan form, i.e. it satisfies
+\begin{equation}
+    [\sect{X}, B(\sect Y)] - [\sect{Y}, B(\sect X)] - [B(\sect X), B(\sect Y)] = 0,
+\end{equation}
+for all $\sect X, \sect Y \in \Gamma(TM)$.
+
+The $\alpha^i_j = \psi_i^{-1} \comp \psi_j |_{U_{ij}\times \alg g}$'s, from a Lie algebroid atlas of a transitive Lie algebroid, are examples of $\phi^+$'s, and the $\chi^i_j$ are examples of $\omega$'s.
+\end{example}
+
 \begin{definition}
     Let $A$ be a Lie algebroid with anchor $a$.
     
@@ -1384,7 +1409,7 @@ This can be done due to the equivalence between vector bundle maps over $M$ and 
 \end{definition}
 
 \begin{remark}
-If $A$ is a regular Lie algebroid with anchor $a$, both $im(a)$ and $ker(a)$ are vector subbundles of $A$ and $TM$ respectively\footnote{A bundle map has subbundle kernel if and only if it has subbundle image if and only if it has locally constant rank.}. By Theorem \ref{theoFiberLie} $ker(a)$ is in fact a totally intransitive Lie algebroid. The image of the anchor is, then, an involutive distribution on $M$ and, in consequence, induces a foliation of the base manifold called \emph{the characteristic foliation of $A$}. Then, the restriction of $A$ to each leaf is a transitive Lie algebroid.
+If $A$ is a regular Lie algebroid with anchor $a$, both $im(a)$ and $ker(a)$ are vector subbundles of $A$ and $TM$ respectively\footnote{The kernel of a fiber bundle map is a subbundle if and only if the image is a subbundle if and only if it has locally constant rank.}. By Theorem \ref{theoFiberLie} $ker(a)$ is in fact a totally intransitive Lie algebroid. The image of the anchor is, then, an involutive distribution on $M$ and, in consequence, induces a foliation of the base manifold called \emph{the characteristic foliation of $A$}. Then, the restriction of $A$ to each leaf is a transitive Lie algebroid.
 
 Additionally, we can apply Theorem \ref{theoFiberLie} to see that, around any $m \in M$ there is a neighborhood $U \subset M$ such that a regular Lie algebroid is isomorphic to the vector bundle $U \times (V \oplus \alg g)$, where $V = a(A_m)$, although this local form of the Lie algebroid might not be consistent with the brackets.% Since V \oplus \alg g is nothing but one way to write the ``local'' vector space.
 \end{remark}
@@ -1393,7 +1418,9 @@ Additionally, we can apply Theorem \ref{theoFiberLie} to see that, around any $m
 Any $LAB$ is a totally intransitive Lie algebroid, but the converse is not true since there might not be an atlas adapted to the Lie brackets.
 \end{remark}
 
-Transitive Lie algebroids will be a main concern for us throughout this document. In this case, since the anchor is fiberwise surjective,\todo{is this a satisfactory reason?} it is a surjective submersion, and, in particular, it is locally constant rank implying that $ker(a)$ is a vector bundle, so Theorem \ref{theoFiberLie} may be applied to conclude that its kernel is a Lie algebroid. However, more is true, as shown below.
+Transitive Lie algebroids will be a main concern for us throughout this document. In this case, since the anchor is fiberwise surjective,
+%\todo{is this a satisfactory reason?} 
+ it is a surjective submersion, and, in particular, it is locally constant rank implying that $ker(a)$ is a vector bundle, so Theorem \ref{theoFiberLie} may be applied to conclude that its kernel is a Lie algebroid. However, more is true, as shown below.
 
 \begin{definition}\label{definitionTransitiveLieAlgebroidSequenceLiealgebroidsequenceofatransitiveliealgebroidA}
 Let $A$ be a transitive Lie algebroid on $M$ with anchor $a$. A \emph{Lie algebroid sequence of a transitive Lie algebroid $A$} is an exact sequence of Atiyah Lie algebroids
@@ -1414,12 +1441,12 @@ A sequence of a transitive Lie algebroid $A$ induces the exact sequence of $C^\i
 \end{remark}
 
 \begin{example}
-A trivial Lie algebroid induced the  sequence
+A trivial Lie algebroid induced the sequence
 \begin{equation}
      0 \to M \times \alg g \xrightarrow{j} TM \oplus M \times \alg g  \xrightarrow{p_1} TM \to 0
 \end{equation}
 where $j$ is simply the inclusion. The algebraic version of this sequence that we will work with is
-\begin{equation}
+\begin{equation}\label{equationALgebraicSectionAtiyahSequenceTrivialLieAlgebroid}
      0 \to C^\infty(M, \alg g) \xrightarrow{j} \Gamma(TM) \oplus C^\infty(M, \alg g)  \xrightarrow{p_1} \Gamma(TM) \to 0
 \end{equation}
 \end{example}
@@ -1429,33 +1456,36 @@ A principal bundle induces the sequence
 \begin{equation}
     0 \to P \times \alg g/G \xrightarrow{j} TP/G \xrightarrow{\pi_*^G} TM \to 0
 \end{equation}
-as shown in \ref{}.
+as shown in section 1.3.
 \end{example}
 
 \begin{example}
 A vector bundle $E$ over $M$ induces the Atiyah sequence
 \begin{equation}
-0 \to 0 \to End(E) \xrightarrow{j} \alg D(E)  \xrightarrow{a} TM \to 0
-\end{equation} \ref{}
+0 \to 0 \to End(E) \xrightarrow{j} \alg D(E)  \xrightarrow{a} TM \to 0,
+\end{equation}
+ as was proven leading to equation \ref{equationTransitiveLieAlgebroidSequenceDerivationsEndomorphism}.
 \end{example}
 
-\begin{theorem}\label{theoAdjointLAB} % Theorem 6.5.1
+The following theorem shows the structure of an adjoint Lie algebroid of a transitive Lie algebroid; its proof, however, requires knowledge beyond the scope of this document, so we refer to \cite{Mackenzie2005} for it.
+\begin{theorem}\label{theoAdjtructure of ointLAB} % Theorem 6.5.1
 Let $0 \to L \to A \to  TM \to 0$ be a transitive Lie algebroid sequence. Then $L$ is a Lie algebra bundle with respect to the bracket structure on $\Gamma(L)$ induced by that on $\Gamma(A)$.
 \end{theorem}
-Although a full proof requires knowledge on locally trivial groupoids, an almost complete proof will be possible once we develop the tools of connections on Lie algebroids in chapter \ref{chp:connections}. \todo{Move this proof to a more appropriate place  in Ch 3 and reference it once written}
-\begin{proof}
-Let $ad: A \to \alg D(L)$ be the adjoint representation of $A$ on $L$ and let $\gamma: TM \to A$ be a connection in $A$, which exists due to \ref{theoConnectionExists}. Denote by $\nabla = ad \circ \gamma : TM \to \alg D(L)$ the produced connection in $L$. This connection satisfies $\nabla_{\sect X}[\sect \mu, \sect \nu] = [\nabla_{\sect X} \sect \nu, \sect \mu] + [\sect \nu, \nabla_{\sect X} \sect \mu]$, and the existence of such connection is equivalent to $L$ being an LAB (this may be proved with tools of path connections).
-\end{proof}
+% Although a full proof requires knowledge on locally trivial groupoids, an almost complete proof will be possible once we develop the tools of connections on Lie algebroids in chapter \ref{chp:connections}. \todo{Move this proof to a more appropriate place  in Ch 3 and reference it once written}
+% \begin{proof}
+% Let $ad: A \to \alg D(L)$ be the adjoint representation of $A$ on $L$ and let $\gamma: TM \to A$ be a connection in $A$, which exists due to \ref{theoConnectionExists}. Denote by $\nabla = ad \circ \gamma : TM \to \alg D(L)$ the produced connection in $L$. This connection satisfies $\nabla_{\sect X}[\sect \mu, \sect \nu] = [\nabla_{\sect X} \sect \nu, \sect \mu] + [\sect \nu, \nabla_{\sect X} \sect \mu]$, and the existence of such connection is equivalent to $L$ being an LAB (this may be proved with tools of path connections).
+% \end{proof}
 
 \begin{example}
-A LAB trivialization of $End(E)$ is \dots, $\psi_i$
+A LAB trivialization of $End(E)$ when $E$ has the vector space $V$ as typical fiber is given by a family of bracket preserving maps $\psi_i: U_i \times End(V) \to \End(E)|_{U_i}$, where the bracket on $\End(V)$ is the commutator of operators, for $i$ in some index set $I$.
 \end{example}
 
 \begin{definition}\label{defnPhi+}
 Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ and $0 \to L' \xrightarrow{j'} A' \xrightarrow{a'} TM \to 0$ be transitive Lie algebroids sequences over $M$. Let $\psi: A \to A'$ be a morphism of Lie algebroids. Since, $a' \circ \psi = a$, $\psi$ induces a morphism between the adjoint Lie algebroids denoted by
 \begin{align*}
-    \psi^+: L \to L'
+    \psi_L: L \to L',
 \end{align*}
+called \emph{the vertical part of $\psi$}.
 \end{definition}
 
 \begin{proposition}
@@ -1476,24 +1506,24 @@ By the same property, only elements of $L$ can be mapped to $L'$, therefore $\ps
 % Let $A, A', A''$ be Lie algebroids over $M$. \emph{An extension of Lie algebroids over $M$} is a sequence of Lie algebroids over $M$ \[ 0 \to A' \to A \to A'' \to 0 \] which is exact as sequence of vector bundles over $M$.
 % \end{definition}
 
-% % \begin{definition}[Direct sum of Lie algebroids]
+% % \begin{definition}%[Direct sum of Lie algebroids]
 % % Let $A, A'$ be Lie algebroids over $M$. 
 % % \end{definition}
 
 
-% % \begin{definition}[General Morphism]
+% % \begin{definition}%[General Morphism]
 
 % % \end{definition}
 
-% % \begin{definition}[Direct products]
+% % \begin{definition}%[Direct products]
 
 % % \end{definition}
 
-% % \begin{definition}[Pullbacks]
+% % \begin{definition}%[Pullbacks]
 
 % % \end{definition}
 
-% % \begin{definition}[Quotients]
+% % \begin{definition}%[Quotients]
 
 % % \end{definition}
 
@@ -1501,10 +1531,10 @@ By the same property, only elements of $L$ can be mapped to $L'$, therefore $\ps
 \linea
 %Definitions comming from Lie algebra theory semisimple, nilpotent, abelian, reductive.
 
-The following concept generalizes that of associated vector bundles of a principal bundle $P(G, M)$. In the principal bundle theory, sections of an associated vector bundle with fiber $V$ are equivalent to $G$-equivariant functions $P \to V$ or, equivalently, to sections in $\Gamma(P \times V/G)$ as Proposition \ref{associatedExistsAndSections} shows, and $G$-equivariant vector fields in $\Gamma^G(TP)$ or, equivalently, sections $\Gamma(TP/G)$ act as derivations on the sections of $E$ \ref{somwhere in the Introduction}% (satisfying Leibniz for $G$-invariant functions of $P$ / to functions in $M$). 
+The following concept generalizes that of associated vector bundles of a principal bundle $G \to P \to M$. In the principal bundle theory, sections of an associated vector bundle with fiber $V$ are equivalent to $G$-equivariant functions $P \to V$ or, equivalently, to sections in $\Gamma(P \times V/G)$ as proposition \ref{associatedExistsAndSections} shows, and $G$-equivariant vector fields in $\Gamma^G(TP)$ or, equivalently sections $\Gamma(TP/G)$, act as derivations on the sections of $E$.% (satisfying Leibniz for $G$-invariant functions of $P$ / to functions in $M$). 
 Similarly, sections of a Lie algebroid $A$ act as derivations on representation vector bundles $E$. In particular, a (Lie algebroid connection) on $A$ will induce a vector bundle connection and covariant derivatives on a representation vector bundle $E$, just as principal bundle connections induce covariant derivatives in associated vector bundles.
 
-\begin{definition}[Representation of a Lie algebroid]\label{defnRepr}
+\begin{definition}%[Representation of a Lie algebroid]\label{defnRepr}
 Let $A$ be a Lie algebroid on $M$ and let $E$ be a vector bundle also on $M$. A \emph{representation of $A$ on $E$} is a Lie algebroid morphism over $M$,
 \begin{align}
     \rho: A \to \alg D(E).
@@ -1518,7 +1548,7 @@ Using an algebraic language, notice how a representation $\rho:A \to \alg D(E)$ 
 in a way that is compatible with the anchors and the brackets.
 
 \begin{example}
-For a principal bundle $P(M, G)$ and an associated vector bundle $E = P \times V / G$ over $M$ with fiber $V$ on which $G$ acts on the left, there is a natural representation
+For a principal bundle $G \to P \to M$ and an associated vector bundle $E = P \times V / G$ over $M$ with fiber $V$ on which $G$ acts on the left, there is a natural representation
 \begin{align*}
     \rho: TP/M \to \alg D(E),
 \end{align*}
@@ -1599,25 +1629,30 @@ Let $A$ be a Lie algebroid on $M$ and let $V$ be a vector space. \emph{The trivi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\subsection{General Theory}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 Recall that Lemma \ref{bracketIsLocal} allowed us to restrict a Lie algebroid to an open subset $U$ of the base manifold. We now study how a transitive Lie algebroid is a collection of locally defined trivial Lie algebroids correctly pasted together.
 
-\begin{definition}[Lie algebroid atlas]
-Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ be a transitive Lie algebroid sequence, and let $\alg g$ be a Lie algebra. Given an open cover $\set{U_i}_{i \in I}$ of $M$, a \emph{Lie algebroid atlas for $A$} is a collection $\{U_i, \psi_i:U_i \times \alg g \to L|_{U_i}, \Theta^i: TU_i \to A|_{U_i}\}_{i \in I}$ such that:
+\begin{definition}%[Lie algebroid atlas]
+Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ be a transitive Lie algebroid sequence, and let $\alg g$ be a Lie algebra. Given an open cover $\set{U_i}_{i \in I}$ of $M$, a \emph{Lie algebroid atlas for $A$} is a collection $\{U_i, \psi_i:U_i \times \alg g \to L|_{U_i}, \nabla^{0,i}: TU_i \to A|_{U_i}\}_{i \in I}$ such that:
     \begin{itemize}
     
-    \item each $\Theta^i: TU_i \to A_{u_i}$ is a Lie algebroid morphism,
+    \item each $\nabla^{0,i}: TU_i \to A_{u_i}$ is a Lie algebroid morphism,
     
     \item the family $\set{\psi_i:U_i \times \alg g \to L|_{U_i}}$ is a LAB atlas for the adjoint bundle 
     
     \item for all $\sect X \in \Gamma(TU_i)$, $\stilde \eta \in C^\infty(U_i, \alg g) \cong \Gamma(U_i \times \alg g)$
         \begin{align} \label{eqnCompLocal}
-            [\Theta^i(\sect X), j\psi_i(\sect \eta)] = j\psi_i([\sect X \oplus 0, 0 \oplus \sect \eta]) \equiv j\psi_i(\sect X(\sect \eta)) 
+            [\nabla^{0,i}(\sect X), j\psi_i(\sect \eta)] = j\psi_i([\sect X \oplus 0, 0 \oplus \sect \eta]) \equiv j\psi_i(\sect X(\sect \eta)) 
         \end{align}
     
     \end{itemize}
 \end{definition}
+In Chapter \ref{chp:connections} we will see that the $\nabla^{0,i}$ are flat connections in $A|_{U_i}$ and so their image gives a notion of horizontallity in $A|_{U_i}$ and $ \oid X \mapsto \nabla^{0,i}(a(\oid X)) \in A|_{U_i}$ is the horizontal projection of $\oid X$ induced by $\nabla^{0,i}$.
 
-
+The following theorem will be key to our our document, and will also enable the treatment of gauge theories on transitive Lie algebroids in the way familiar in the physics literature, since it will imply that locally every transitive Lie algebroid looks like the Atiyah Lie algebroid of a principal bundle; a proof may be found in \cite{Mackenzie2005}.
 \begin{theorem}
 Every transitive Lie algebroid has a Lie algebroid atlas.
 \end{theorem}
@@ -1625,14 +1660,14 @@ Every transitive Lie algebroid has a Lie algebroid atlas.
 % At least show that it follows from Theorem 8.2.1\todo{complement this} (TLA over contractible $M$ admits a flat connection; this theorem is analogous to ``every ppal bundle over a contractible space has a global section'', and so requires top. algebra: cohomology theory of Ch 7 in this case). The proof I mention I should do is, I think, in page 317
 % \end{proof}
 
-Throughout this chapter $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ will be a sequence of the transitive Lie algebroid $A$ with Lie algebroid atlas $\{U_i, \psi_i:U_i \times \alg g\to L|_{U_i}, \Theta^i:TU_i \to A|_{U_i}\}_{i \in I}$.
+Throughout this chapter $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ will be a sequence of the transitive Lie algebroid $A$ with Lie algebroid atlas $\{U_i, \psi_i:U_i \times \alg g\to L|_{U_i}, \nabla^{0,i}:TU_i \to A|_{U_i}\}_{i \in I}$.
 
-In Chapter \ref{chp:connections} we will see that the $\Theta^i$ are flat connections in $A|_{U_i}$ and so their image gives a notion of horizontallity in $A|_{U_i}$ and $ \oid X \mapsto \Theta^i(a(\oid X)) \in A|_{U_i}$ is the horizontal projection of $\oid X$ induced by $\Theta^i$.
+Let
 \begin{align}\label{defnLocalIsom}
     S_i:&& TU_i &\oplus (U_i \times \alg g) &&\to&& A|_{U_i}\\
-        && X &\oplus \eta && \mapsto && \Theta^i(X) + j\psi_i(\eta).
+        && X &\oplus \eta && \mapsto && \nabla^{0,i}(X) + j\psi_i(\eta);
 \end{align}
-This vector bundle morphisms inherit the compatibility with the anchors from the respective property of the Lie algebroid morphisms $\Theta^i$, and are compatible with the bracket due to the compatibility equation (\ref{eqnCompLocal}) which is equivalent to the equation
+this vector bundle morphisms inherits the compatibility with the anchors from the respective property of the Lie algebroid morphisms $\nabla^{0,i}$, and are compatible with the bracket due to the compatibility equation (\ref{eqnCompLocal}) which is equivalent to the equation
 \begin{align*}
     S_i[\sect X \oplus 0, 0 \oplus \sect \eta] = [S_i(X \oplus 0), S_i(0 \oplus \eta)],
 \end{align*} thus we proved the following:
@@ -1645,7 +1680,7 @@ Furthermore for each $i \in I$
     \psi_i = S_i^+: U_i \times \alg g \to L|_{U_i}
 \end{align*} and 
 \begin{align*}
-    \Theta^i(X) = S_i(X \oplus 0)
+    \nabla^{0,i}(X) = S_i(X \oplus 0)
 \end{align*}
 for all $X \in TU_i$.
 \end{theorem}
@@ -1654,11 +1689,14 @@ This means that for every $\oid X \in A|_{U_{i}}$, $X = a(\oid X) \in TM$ and so
 \begin{align}
     \oid X = S_i(X \oplus \eta^i).
 \end{align}
+
+\begin{definition}
 The set $\{X \oplus \eta^i \in TU_i \oplus (U_i \times \alg g)\}_{i \in I}$ will be called \emph{a family of trivializations of $\oid X \in A$}. Analogously, for $\sectoid X \in \Gamma(A)$, a \emph{family of trivializations of $\sectoid X$} will be a set $\{\sect X \oplus \stilde \eta^i \in \Gamma(TU_i) \oplus C^\infty(U_i, \alg g)\}_{i \in I}$.
+\end{definition}
 
 \linea
 
-Now, to understand the transition between charts of a Lie algebroid atlas,
+We now study the transition between charts of a Lie algebroid atlas.
 
 % \begin{proposition}
 % Structure of Lie algebroid morphisms between Trivial Lie algebroids: relevant for intersections.
@@ -1669,79 +1707,106 @@ Let
     \alpha^i_j:&& U_{ij} &= U_i \inter U_j &&\to&& Aut(\alg g)\\
                && &m && \mapsto && \alpha^i_{j, m} := \psi^{-1}_{i, m} \circ \psi_{j, m}
 \end{align*} 
-be the transition functions for $\set{\psi_i}$. Since any element $\eta \in U_i \times \alg g$ is of the form $\eta = (m, \eta_m)$ for some $m \in U_{ij}$ and $\eta_m \in \alg g$, denote also by $\alpha^i_j$ the maps
-\begin{align}
+be the transition functions of $L$ with respect to the trivializing maps $\set{\psi_i}$. Since any element $\eta \in U_i \times \alg g$ is of the form $\eta = (m, \eta_m)$ for some $m \in U_{ij}$ and $\eta_m \in \alg g$, denote also by $\alpha^i_j$ the maps
+\begin{align}\label{equationDefinitionOfAlphaGeneral}
     \alpha^i_j:&& U_{ij} \times \alg g &&\to&& U_{ij} \times \alg g\\
                && \eta = (m, \eta_m) && \mapsto && \alpha^i_j(\eta) := \psi^{-1}_{i} \circ \psi_{j}(\eta);
 \end{align}
 notice that $\alpha^i_j(\eta) = (m, \alpha^i_{j, m}(\eta_m))$.
 
-Notice, however, that for $\oid X = S_j(X \oplus \eta^j)$ in $A|_{U_{ij}}$, $\oid X \neq S_i(X \oplus \alpha^i_j(\eta^j))$ since $S_i(X \oplus \alpha^i_j(\eta^j)) = \Theta_i(X) + j\psi_i(\alpha^i_j(\eta^j)) = \Theta^i(X) + j\psi^j(\eta^j) = S_j(X \oplus \eta^j) + (\Theta^i(X) - \Theta^j(X))$. But $a(S_j(X \oplus \eta^j)) = a(S_i(X \oplus \alpha^i_j(\eta^j)))$ so $\Theta^i(X) - \Theta^j(X) \in ker(a)$ and we may define the $L|_{U_ij}$-valued $1$-form
+Notice, however, that for $\oid X = S_j(X \oplus \eta^j)$ in $A|_{U_{ij}}$, $\oid X \neq S_i(X \oplus \alpha^i_j(\eta^j))$ since $S_i(X \oplus \alpha^i_j(\eta^j)) = \nabla^{0,i}(X) + j\psi_i(\alpha^i_j(\eta^j)) = \nabla^{0,i}(X) + j\psi^j(\eta^j) = S_j(X \oplus \eta^j) + (\nabla^{0,i}(X) - \nabla^{0,j}(X))$. But $a(S_j(X \oplus \eta^j)) = a(S_i(X \oplus \alpha^i_j(\eta^j)))$ so $\nabla^{0,i}(X) - \nabla^{0,j}(X) \in ker(a)$ and we may define the $L|_{U_ij}$-valued $1$-form
 \begin{align}
     l^i_j: TU_{ij} & \to L|_{U_{ij}} \\
-            X & \mapsto j^{-1}(\Theta^j(X) - \Theta^i(X)),
+            X & \mapsto j^{-1}(\nabla^{0,j}(X) - \nabla^{0,i}(X)),
 \end{align} and the $\alg g$-valued $1$-forms
-\begin{eqnsplit}
+\begin{eqnsplit}\label{equationDefinitionOfChiGeneral}
     \chi^i_j:  TU_{ij} & \to  U_{ij} \times \alg g \\
                X & \mapsto  \psi_i^{-1} \circ l^i_j(X)
 \end{eqnsplit} called \emph{the transition forms for the Lie algebroid atlas}.
 
-With this maps, in $A|_{U_{ij}}$ the correct way to change from a local expression from another is given by
-\begin{align}
+With this maps, in $A|_{U_{ij}}$ the way to change from a local expression from another is given by
+\begin{align}\label{equationSiSjRelationBetweenTewoLieAlgebroidTrivializationsSAppearAlphaandChi}
     S_j(X \oplus \eta^j) = S_i(X \oplus [\alpha^i_j(\eta^j) + \chi^i_j(X)]).
 \end{align}
+
 In summary, for a Lie algebroid element that in the coordinate frame $j$ has formula $X \oplus \eta^j$ and formula $X \oplus \eta^i$ in the coordinate frame $j$, two corrections in the vertical components are needed when the coordinate change from $i$ to $j$ is applied:
 \begin{itemize}
     \item one for the distinct notions of horizontality induced by the $\Theta$'s: $\chi^i_j(X)$,
     
-    \item another for the distinct ways the adjoint Lie algebroid $L|_{U_{ij}}$ is trivialized as the bundle $U_{ij}\times \alg g$: $\alpha^i_j(\eta^j)$;
-\end{itemize} the addition of both corrections gives $\eta^i = \chi^i_j(X) + \alpha^i_j(\eta^j)$, i.e.
+    \item another for the distinct ways the adjoint Lie algebroid $L|_{U_{ij}}$ is trivialized as the bundle $U_{ij}\times \alg g$: $\alpha^i_j(\eta^j)$.
+\end{itemize} The addition of both corrections gives $\eta^i = \chi^i_j(X) + \alpha^i_j(\eta^j)$, i.e.
 \begin{eqnsplit}
-    \label{changeCoordinatesAlgebroid}
-    s^i_j:= S_i^{-1} \circ S_j :TU_{ij} \oplus (U_{ij} \times \alg g) &\to TU_{ij} \oplus (U_{ij} \times \alg g) \\
+    \label{equationCompleteChangeCoordinatesAlgebroid}
+    S^i_j:= S_i^{-1} \circ S_j :TU_{ij} \oplus (U_{ij} \times \alg g) &\to TU_{ij} \oplus (U_{ij} \times \alg g) \\
     X \oplus \eta &\mapsto X \oplus (\chi^i_j(X) + \alpha^i_j(\eta))
 \end{eqnsplit}
 
-We now present some useful formulas. Suppose $\oid X = S_i(X \oplus \eta^i) = S_j(X \oplus \eta^j) \in A|_{U_{ij}}$, then 
-\begin{eqnsplit}
-    l^i_j(X) &= -j^{-1}(\Theta^i(X) - \Theta^j(X)) \\
-             &= \phi_i(\eta^i) - \phi_j(\eta^j)
-\end{eqnsplit} and
-\begin{align}
-    \chi^i_j(X) = \eta^i - \alpha^i_j(\eta^j)
-\end{align}
+The following properties must be satisfied by the pasting maps of a transitive Lie algeboid atlas:
+\begin{proposition}
+For the transitive Lie algebroid $A$ with Lie algebroid atlas $\{(U_i, \psi_i: U_i \times \alg g \to L|_{U_i}, \nabla^{0, i}: TU_i \to A|_{U_i})\}_{i \in I}$. On every $U_{ij} \neq \empty$:
+\begin{itemize}
+    \item The map $\chi^i_j: U_{ij} \to U_{ij} \times \alg g$ defined in \eqref{equationDefinitionOfChiGeneral} is a Maurer-Cartan form, i.e. it satisfies the Maurer-Cartan equation:
+    \begin{align*}
+        d \chi^i_j(X, Y) + [\chi^i_j(X), \chi^i_j(Y)] = 0
+    \end{align*} for all $X, Y \in TU_{ij}$.
+
+    \item The map $\alpha^i_j: U_{ij} \times \alg g \to U_{ij}\times \alg g$ defined in \eqref{equationDefinitionOfAlphaGeneral} is a LAB morphism.
+    
+    \item $\alpha$ and $\chi$ are related by the following compatibility condition:
+    \begin{equation}
+        X(\alpha^i_j(\eta)) - \alpha^i_j(X(\eta)) + [\chi^i_j(X), \alpha^i_j(\eta)] = 0,
+    \end{equation}
+    for all $X \in TU_{ij}$ and $\eta \in U_{ij}\times \alg g$.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+This is nothing but the statement that the change of coordinate maps $S^i_j$ define in equation \eqref{equationCompleteChangeCoordinatesAlgebroid} are morphisms between trivial Lie algebroids, which is the case because both $S_i$ and $S_j$ are invertible Lie algebroid morphisms.
+\end{proof}
+
+% We now present some useful formulas. Suppose $\oid X = S_i(X \oplus \eta^i) = S_j(X \oplus \eta^j) \in A|_{U_{ij}}$, then 
+% \begin{eqnsplit}
+%     l^i_j(X) &= -j^{-1}(\nabla^{0,i}(X) - \nabla^{0,j}(X)) \\
+%              &= \phi_i(\eta^i) - \phi_j(\eta^j)
+% \end{eqnsplit} and
+% \begin{align}
+%     \chi^i_j(X) = \eta^i - \alpha^i_j(\eta^j)
+% \end{align}
 
 The diagram \ref{fig:localMaps} illustrates at $m \in M$ the relation between some of the local maps introduced above.
 
 \begin{figure}[t]
     \centering
     \includegraphics[width = \textwidth/2]{images/DiagramaMapasLocalesAlgebroide.jpg}
-    \caption{Representation of the local maps introduced to study a transitive Lie algebroid $A$. The whole space represents, roughly, the vector space $A_m$ for $m \in M$, and $\oid X$ such that $a(\oid X) = X$ is an arbitrary element in $A_m$. Understanding $j$ as an inclusion, the vertical axis represents the adjoint Lie algebroid fiber $L_m$. The horizontal axis represents the tangent space $T_m M$, but it is not part of $A_m$, since there is no canonical horizontal direction in $A_m$. The images of $\Theta^i$ and $\Theta^j$ give two distinct notions of horizontality in $A_m$.}
+    \caption{Representation of the local maps introduced to study a transitive Lie algebroid $A$. The whole space represents, roughly, the vector space $A_m$ for $m \in M$, and $\oid X$ such that $a(\oid X) = X$ is an arbitrary element in $A_m$. Understanding $j$ as an inclusion, the vertical axis represents the adjoint Lie algebroid fiber $L_m$. The horizontal axis represents the tangent space $T_m M$, but it is not part of $A_m$, since there is no canonical horizontal direction in $A_m$. The images of $\nabla^{0,i}$ and $\nabla^{0,j}$ give two distinct notions of horizontality in $A_m$.}
     \label{fig:localMaps}
 \end{figure}
 
-\begin{theorem}
-$\chi^i_j: U_{ij} \to U_{ij} \times \alg g$ is a Maurer-Cartan form, i.e. it satisfies the Maurer-Cartan equation:
-\begin{align*}
-    d \chi^i_j(X, Y) + [\chi^i_j(X), \chi^i_j(Y)] = 0
-\end{align*} for all $X, Y \in TU_{ij}$.
-\end{theorem}
+\lin
 
-\begin{proof}
-Add proof is this theorem is indeed left in the document. This reduces to the fact that the standard flat connection in $U_i \times \alg g$ is mapped through $\psi^i$ to the adjoint connection $\nabla^{\Theta^i}$ in $L|_{U_i}$ induced by the flat connection $\Theta^i$ in $A|_{U_i}$. 
-\end{proof}
+When making practical calculations with transitive Lie algebroids, the algebraic perspective of Lie algebroids is usually simpler to work with and more useful. Based on the fact that that the space of section $\Gamma(TU\times \alg g)$ of a transitive Lie algebroid over a manifold $U$ is canonically isomorphic to $\Gamma(TU) \oplus C^\infty(U, \alg g)$, the following are the algebraic versions of the vector bundle maps defined in this section:
+\begin{align}
+    &\psi_i:& C^\infty(U_i, \alg g) &\to \Gamma_{U_i}(L)\\
+    &\nabla^{0, i}:& \Gamma(TU_i) &\to \Gamma_{U_i}(A)\\
+    &S_i:& \Gamma(TU_i)\oplus C^\infty(U_i, \alg g) &\to \Gamma_{U_i}(A)\\
+    &\alpha^i_j:& C^\infty(U_{ij}, \alg g) &\to C^\infty(U_{ij}, \alg g) \\
+    \text{or   } &\alpha^i_j& \in C^\infty(U_{ij}, \alg{gl}(V)) \\
+    &l^i_j:& \Gamma(TU_i) &\to \Gamma_{U_i}(L)\\
+    &\chi^i_j:& \Gamma(TU_i) &\to C^\infty(U_{ij}, \alg g) \\
+    &S^i_j:& \Gamma(TU_i)\oplus C^\infty(U_{ij}, \alg g) &\to \Gamma(TU_i)\oplus C^\infty(U_{ij}, \alg g).
+\end{align}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Local Description of the Atiyah Lie algebroid}
 
-Let $P(M, G)$ be a (smooth) principal bundle, and let $\alg g$ be the Lie algebra of the Lie group $G$. Since this is the family of examples that appear in regular Gauge theories, some time will be devoted to its understanding.
+Let $G \to P \to M$ be a (smooth) principal bundle, and let $\alg g$ be the Lie algebra of the Lie group $G$. Since this is the family of examples that appear in traditional gauge theories, some time will be devoted to its understanding.
 
-Throught this section, let $\{(U_i, \rho_i: U_i \times G \to P|_{U_i})\}_{i \in I}$ be a principal bundle atlas, let $\mathcal U_i = P|_{U_i} = \pi^{-1}(U_i)$ and let $\sigma_i: U_i \to \mathcal U_i$ be the corresponding trivializing local sections, which satisfy
+Throughout this section, let $\{(U_i, \rho_i: U_i \times G \to P|_{U_i})\}_{i \in I}$ be a principal bundle atlas, let $\mathcal U_i = P|_{U_i} = \pi^{-1}(U_i)$ and let $\sigma_i: U_i \to \mathcal U_i$ be the corresponding trivializing local sections, which satisfy
 \begin{eqnsplit*}
     \rho_i: U_i \times G &\to \mathcal U_i\\
             (m, g) &\mapsto \sigma_i(m) g.
-\end{eqnsplit*} Finally, let $g_{ij}: U_{ij} = U_i \inter U_j \to G$, be the transition functions of the atlas. They satisfy, for any $m \in U_{ij}$,
+\end{eqnsplit*} Finally, let $g_{ij}: U_{ij} = U_i \inter U_j \to G$, be the transition functions of the atlas satisfying, for any $m \in U_{ij}$,
 \begin{eqnsplit}
     \label{transitionFunctionDefn}
     \sigma_i(m) &= \sigma_j(m) g_{ji}(m)\\
@@ -1750,8 +1815,10 @@ Throught this section, let $\{(U_i, \rho_i: U_i \times G \to P|_{U_i})\}_{i \in 
 
 From this principal bundle atlas, we will now build a Lie algebroid atlas for the Atiyah Lie algebroid $TP/G$. Since we are identifying the spaces of sections of the Atiyah sequence with some other $C^\infty(M)$-modules, we will also understand the relevant maps in terms of this spaces.
 
-For the sake of completeness, we recall the map $j$ of the Atiyah sequence.
-\begin{definition}
+We will now build a Lie algebroid atlas on $TP/G$ based on a trivialization of the principal bundle $P$. For the rest of this section suppose that the open cover $\{U_i\}_{i \in I}$ of $M$ is associated to a manifold trivialization of $M$ and to a principal bundle trivialization of $P$ with local sections $\sigma_i: U_i \to P|_{U_i}$.
+
+Recall the map $j$ of the Atiyah sequence.
+
 For any $p \in P$ and $\eta \in \alg g$, the immersion and injective Lie algebroid morphism $j$ is defined by equation (\ref{formulaJ}):
 \begin{eqnsplit*}
     j: P \times \alg g/G &\to T^\pi P/G \subset TP/G\\
@@ -1762,18 +1829,14 @@ It induces the $C^\infty(M)$-module and Lie algebra morphism of equation (\ref{f
     \up{j} : C^\infty_G(P, \alg g) &\to \Gamma^G(TP)\\
     \up{j}(\stilde \eta)(p) &= \der{t}[t = 0] p \exp(-t \stilde \eta(p))
 \end{eqnsplit*}
-\end{definition}
 
-\begin{theorem}\label{algebroidAtlasAtiyah}
-An open cover of $M$ that corresponds to both a principal bundle atlas induces on $P(M, G)$ and to a manifold atlas of $M$ induce a Lie algebroid atlas, through the constructions below, on $0 \to P \times \alg g/G \xrightarrow{j} TP/G \xrightarrow{a} TM \to 0$.
-\end{theorem}
 
-\begin{definition}
-Let $\set{(U_i, \rho_i)}$ be a principal bundle atlas. For each $i \in I$, define the LAB morphism, i.e. vector bundle morphism that respects the fiberwise Lie brackets,
+\begin{definition}\label{definitionPsiAtiyah}
+For each $i \in I$, define the LAB morphism, i.e. vector bundle morphism that respects the fiberwise Lie brackets,
 \begin{eqnsplit}
     \psi_i: U_i \times \alg g  \to &\mathcal U_i \times \alg g/G \\
     (m, \eta) \mapsto &\cl{\sigma_i(m), \eta} \\
-                   &\equiv \cl{\sigma(m)g, Ad_{g^{-1}} \eta}  \quad \textrm{for any $g \in G$}.
+                   &= \cl{\sigma_i(m)g, Ad_{g^{-1}} \eta}  \quad \textrm{for any $g \in G$}.
 \end{eqnsplit}
 It induces $C^\infty(M)$-module and Lie algebra morphism
 \begin{eqnsplit}
@@ -1782,122 +1845,158 @@ It induces $C^\infty(M)$-module and Lie algebra morphism
 \end{eqnsplit}
 \end{definition}
 
-\ptext{From now on suppose that the open cover $\{U_i\}_{i \in I}$ of $M$ is associated to a manifold trivialization of $M$ and to a principal bundle trivialization of $P$ with local sections $\sigma_i: U_i \to P|_{U_i}$ }.
 
-\begin{definition}
+\begin{definition}\label{definitionNabla0iAtiyah}
 For each $i \in I$, define the Lie algebroid morphism
 \begin{eqnsplit}
-    \Theta_i: TU_i \to & T\mathcal U_i/G \\
+    \nabla^{0,i}: TU_i \to & T\mathcal U_i/G \\
              X \mapsto &\cl{\sigma_{i*}(X)}.
 \end{eqnsplit}
 It induces $C^\infty(M)$-module and Lie algebra morphism
 \begin{eqnsplit}
-    \up \Theta_i: \Gamma(TU_i) &\to \Gamma^G(T\mathcal U_i) \\
-    \sect X &\mapsto (\sigma_i(m)g \mapsto R_{g*}\sigma_{i*}(X))  \quad \textrm{for any $m \in M$, $g \in G$}.
+    \up \nabla^{0,i}: \Gamma(TU_i) &\to \Gamma^G(T\mathcal U_i) \\
+    \sect X &\mapsto (\sigma_i(m)g \mapsto R_{g*}\sigma_{i*}(X)),
 \end{eqnsplit}
+for all $m \in M$, $g \in G$.
 \end{definition}
 
-\begin{proof}[Proof of Theorem \ref{algebroidAtlasAtiyah}]\todo{hacer}
-$\psi_i$ is LAB morphism. That is what is induced.
+\begin{theorem}\label{algebroidAtlasAtiyah}
+An open cover of $M$ that corresponds to trivializes both the principal bundle $G \to P \to M$ and the manifold atlas of $M$ produce a Lie algebroid atlas on $0 \to P \times \alg g/G \xrightarrow{j} TP/G \xrightarrow{a} TM \to 0$ through the maps $\psi_i:U_i\times \alg g \to P\times \alg g/G|_{U_i}$ defined in \ref{definitionPsiAtiyah}, and the maps $\nabla^{0,i}: TU_i \to TP/G|_{U_i}$ defined in \ref{definitionNabla0iAtiyah}.
+\end{theorem}
+\begin{proof}
+For any $m \in M$ and $\eta,\theta \in \alg g$, $\psi_i(m, [\eta, \theta]) = \cl{\sigma_i(m), [\eta, \theta]} = [\cl{\sigma_i(m), \eta}, \cl{\sigma_i(m), \theta}]$, hence $\psi$ is indeed a LAB morphism.
 
-$\Theta_i$ is Lie algebroid morphism. That's what it induces
+Since $\sigma_i$ is a local section of the projection $\pi: P \to M$, $\pi_*(\sigma_{i*}(X)) = X$, hence $\nabla^{0,i}$ respects the anchor. is Lie algebroid morphism. That's what it induces
 
-Compatibility condition $[\up{\Theta}_i(X), \up{j \psi(\eta)}] = \up j(\tilde \psi_i(\sect X(\stilde \eta)))$
+Compatibility condition $[\up{\Theta}_i(X), \up{j \psi(\eta)}] = \up j(\tilde \psi_i(\sect X(\stilde \eta)))$ \todo{HACER}
 \end{proof}
 
+The components of a Lie algebroid atlas combine to give the trivialization morphism:
 \begin{definition}
 For any $i \in I$, define the Lie algebroid morphism
 \begin{eqnsplit}
-    S_i: TU_i \oplus (U_i \times \alg g) &\to T\mathcal U_i/G \\
-    X \oplus \eta &\mapsto \Theta_i(X) + j \psi_i(\eta) = \cl{\sigma_{i*}(X) + \der{t}[t = 0]\sigma_i(m) \exp{(-t \eta)}}.
+    S_i: TU_i \oplus (U_i \times \alg g) \to& T\mathcal U_i/G \\
+    X \oplus \eta &\mapsto \nabla^{0,i}(X) + j \psi_i(\eta)\\
+    &= \cl{\sigma_{i*}(X) + \der{t}[t = 0]\sigma_i(m) \exp{(-t \eta)}}.
 \end{eqnsplit}
 This map induces the $C^\infty(M)$-linear and Lie algebra morphism:
 \begin{eqnsplit}
     \up{S_i}: \Gamma(TU_i)\oplus C^\infty(U_i, \alg g) &\to  \Gamma^G(T \mathcal U_i)\\
     \sect X \oplus \stilde \eta &\mapsto \left(\sigma_i(m) g \mapsto R_{g*}\sigma_{i*}(X) + \der{t}[t=0] \sigma_i(m)\exp{(-t \stilde \eta(m))} g\right)
 \end{eqnsplit} for any $m \in U_i$ and $g \in G$.
+This is called the \emph{trivializing Lie algebroid morphism of $TP/G$ over $U_i$}.
 \end{definition}
 
-\linea
-Show what is necessary for the following formulas to make sense.
+\lin
 
-\begin{definition}
-For any $i, j \in I$ such that $U_i \inter U_j \neq \empty$, the change of coordinate maps for the LAB atlas ${\psi_i: U_i \times \alg g \to \mathcal U_i \times \alg g/G}$ is the vector bundle morphism that respects the fiberwise bracket given by
+We now study the pasting maps between trivializations of the Atiyah Lie algebroid associated to the Lie algebroid atlas previously defined.
+
+\begin{proposition}
+For any $i, j \in I$ such that $U_i \inter U_j \neq \empty$, the change of coordinate maps for the LAB atlas $\{\psi_i: U_i \times \alg g \to \mathcal U_i \times \alg g/G\}$ are
 \begin{eqnsplit}
-    \alpha^i_j: U_{ij} \to \alg g &\to U_{ij} \to \alg g\\
-    (m, \eta) &\mapsto (m, Ad_{g_{ij}(m)} \eta)
-\end{eqnsplit}. It induces $C^\infty(M)$-linear and Lie algebra morphism 
+    \alpha^i_j: U_{ij} \times \alg g &\to U_{ij} \times \alg g\\
+    (m, \eta) &\mapsto (m, Ad_{g_{ij}(m)} \eta).
+\end{eqnsplit} On sections it can induces the map,
 \begin{eqnsplit}
     \alpha^i_j:C^\infty(U_{ij}, \alg g) & \to C^\infty(U_{ij}, \alg g)\\
-    \stilde \eta &\mapsto (m \mapsto Ad_{g_{ij}(m)} (\stilde \eta (m))).
-\end{eqnsplit} If $G$ is matrix Lie group, this may be written as:
+    \stilde \eta &\mapsto Ad_{g_{ij}} (\stilde \eta).
+\end{eqnsplit} 
+for all $\stilde \eta \in C^\infty(U_{ij}, \alg g)$.
+If $G$ is matrix Lie group, this can also be written as:
 \begin{align}
-    \alpha^i_j(\stilde \eta) = g_{ij} \stilde \eta {g_{ij}}^{-1}
+    \alpha^i_j(\stilde \eta) = g_{ij} \stilde \eta {g_{ij}}^{-1}.
+\end{align} 
+
+\end{proposition}
+\begin{proof}
+For any $m \in U_{ij}$ and $\eta \in \alg g$,
+\begin{align*}
+    \alpha^i_j(m, \eta) &= \psi_i^{-1}(\cl{\sigma_j(m), \eta})\\
+      &= \psi_i^{-1}(\cl{\sigma_i(m)g_{ij}(m), \eta})\\
+      &= \psi_i^{-1}(\cl{\sigma_i(m), Ad_{g_{ij}(m)} \eta})\\
+      &= (m, Ad_{g_{ij}(m)} \eta),
+\end{align*}
+as desired.
+\end{proof}
+
+\begin{proposition}
+For any $i, j \in I$ such that $U_{ij} \neq \empty$, define the $\mathcal U_{ij} \times \alg g/G$-valued forms on $U_{ij}$
+\begin{eqnsplit}
+    l^i_j: TU_{ij} \to& \mathcal U_{ij} \times \alg g/G \\
+        X &\mapsto j^{-1}(\nabla^{0,j}(X) - \nabla^{0,i}(X))\\
+        &= \cl{\sigma_i(m), L_{g_{ij}(m)*}(g^{-1}_{ij*} (X))}
+\end{eqnsplit} for $m = \pi(X)$. If $G$ is a matrix Lie group, it is then true that:
+\begin{align}
+    l^i_j(X) = \cl{\sigma_i(m), g_{ij}(m) dg^{-1}_{ij}(X)},
 \end{align}
-\end{definition}
+where $dg^{-1}_{ij}$ denotes the $1$-form-valued matrix that results from applying on each entry the differential $d$ of differential forms on $U_{ij}$.
+\end{proposition}
+\begin{proof}
+Let $X \in T_m U_{ij}$ be tangent to the path $\gamma$ on $U_{ij}$ such that $\gamma'(0) = m \in TU_{ij}$. Then
+\begin{align*}
+    \sigma_{i*}(X) &= \der{t}[t=0]{\sigma_i(\gamma(t))}\\
+       &= \der{t}[t=0]{\sigma_j(\gamma(t))g_{ij}^{-1}(\gamma(t))}\\
+       &= \der{t}[t=0]{\sigma_j(m)\gamma_{ij}^{-1}(\gamma(t))} 
+       + \der{t}[t=0]{\sigma_j(\gamma(t))g^{-1}_{ij}(m)}\\
+       &= \der{t}[t=0]{\sigma_i(m)\gamma_{ij}(m)\gamma_{ij}^{-1}(\gamma(t))}
+       + \der{t}[t=0]{\sigma_j(\gamma(t))g^{-1}_{ij}(m)} \\
+       &= \left[ L_{g_{ij}(m)*}(g_{ij*}^{-1}(X)) \right]^*_{\sigma_i(m)} + \der{t}[t=0]{\sigma_j(\gamma(t))g^{-1}_{ij}(m)};
+\end{align*}
+recall that the notation $[\eta]^*_p$ denotes the left invariant vector field on $TP$ generated by $\eta \in \alg g$ at $p \in P$. Now,
+\begin{align*}
+    \nabla^{0,j}_X - \nabla^{0,i}_X &= \cl{\sigma_{j*}(X)} - \cl{\sigma_{i*}(X)} \\
+    &= \cl{\sigma_{j*}(X) g_{ij}^{-1}(X) - \sigma_{i*}(X)}\\
+    &= \cl{- [L_{g_{ij}(m)*}(g_{ij*}^{-1}(X))]^*_{\sigma_i(m)}}.
+\end{align*}
+Hence
+\begin{align*}
+    l^i_j(X) &= j^{-1}(\nabla^{0,j}_X - \nabla^{0,i}_X)\\
+      &= \cl{\sigma_i(m), L_{g_{ij}(m)*}(g_{ij*}^{-1}(X))}.
+\end{align*}
+Recall that $L_{g_{ij}(m)*}(g_{ij*}^{-1}(X)) = \der{t}[t=0]{g_{ij}(m) g^{-1}_{ij}(\gamma(t))}$. If $G$ is a matrix Lie group, we can take $g_{ij}(m)$ outside the derivative and apply the derivative entry-wise, hence the last result follows.
+\end{proof}
 
-\begin{definition}
-For any $i, j \in I$ such that $U_i \inter U_j \neq \empty$, define the $\mathcal U_{ij} \times \alg g/G$ valued forms on $U_{ij}$ \todo{what other properties does it have?}
+Having a formula for the maps $l^i_j$ the pasting $1$-forms of the local trivialization are now clear:
+\begin{proposition}\label{propositionChisForAtiyah}
+For any $i, j \in I$ such that $U_i \inter U_j \neq \empty$, define the $\alg g$-valued forms Maurer-Cartan forms over $U_{ij}$
 \begin{eqnsplit}
-    l^i_j: TU_{ij} &\to \mathcal U_{ij} \times \alg g/G \\
-        X &\mapsto j^{-1}(\Theta^j(X) - \Theta^i(X)) = \cl{\sigma_i(m), L_{g_{ij}(m)*}(g^{-1}_{ij*} X)}
-\end{eqnsplit} for $m = \pi(X)$. If $G$ is a matrix Lie group, this becomes:
+    \chi^i_j: TU_{ij} \to& U_{ij} \times \alg g \\
+        X &\mapsto \psi_i^{-1} \circ l^i_j(X)\\
+        &= \left(\sigma_i(m), L_{g_{ij}(m)*}(g^{-1}_{ij*} (X))\right)
+\end{eqnsplit} where $m = \pi(X)$ and $L$ is the left multiplication map in $G$. If $G$ is a matrix Lie group, on a vector field $\sect{X} \in \Gamma(TU_{ij})$ this becomes:
 \begin{align}
-    l^i_j(X) = \cl{\sigma_i(m), g_{ij}(m) dg^{-1}_{ij}(X)}
-\end{align}. It induces $C^\infty(M)$-linear map
-\begin{eqnsplit}
-    llenar
-\end{eqnsplit} and
-\begin{eqnsplit}
-    llenar, matrix valued
-\end{eqnsplit}.
-\end{definition}
+    \chi^i_j(X) = \left(m, g_{ij}(m) dg^{-1}_{ij}(X)\right).
+\end{align}
+\end{proposition}
 
-\begin{definition}
-For any $i, j \in I$ such that $U_i \inter U_j \neq \empty$, define the $\alg g$-valued forms on $U_{ij}$ \todo{what other properties does it have? Maurer-Cartan, ...}
-\begin{eqnsplit}
-    \chi^i_j: TU_{ij} &\to U_{ij} \times \alg g \\
-        X &\mapsto \psi_i^{-1} \circ j^{-1}(\Theta^j(X) - \Theta^i(X)) = \left(\sigma_i(m), L_{g_{ij}(m)*}(g^{-1}_{ij*} X)\right)
-\end{eqnsplit} for $m = \pi(X)$. If $G$ is a matrix Lie group, this becomes:
-\begin{align}
-    \chi^i_j(X) = \left(m, g_{ij}(m) dg^{-1}_{ij}(X)\right)
-\end{align}. It induces $C^\infty(M)$-linear map
-\begin{eqnsplit}
-    llenar
-\end{eqnsplit} and
-\begin{eqnsplit}
-    \chi^i_j(\sect X) = g_{ij} dg_{ij}^{-1}(\sect X)
-\end{eqnsplit}.
-\end{definition}
-
-If $\{\sect X \oplus \stilde \eta^i\}$ is a family of local trivializations of $\oid X \in \Gamma(TP/G)$, then
-\begin{align}
-    \stilde \eta^i &= g_{ij} \stilde \eta^j g_{ij}^{-1} + g_{ij} dg^{-1}_{ij}(\sect X)
+If $\{\sect X \oplus \stilde \eta^i\}$ is a family of local trivializations of $\oid X \in \Gamma(TP/G)$, and supposing that $G$ is a matrix Lie group, we may combine the previous propositions to find the following relation between local trivializations over open sets $U_{ij} \neq \empty$:
+\begin{align}\label{equationCHangeOfCoordinatesAtiyahSectionsMatrixGroup}
+    \sect{X} \oplus \stilde \eta^i &= \sect{X} \oplus (g_{ij} \stilde \eta^j g_{ij}^{-1} + g_{ij} dg^{-1}_{ij}(\sect X))
 \end{align}
 
-TODO: general form of a section of $TP/G$ as section of $TP$
+%TODO: general form of a section of $TP/G$ as section of $TP$
 
 \subsection{Examples}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We saw in \ref{} that to every principal bundle $G \hookrightarrow P \to M$ there is an associated Atiyah sequence of transitive Lie algebroids $0 \to P \times \alg g / G \to TP/G \to TM \to 0$. Furthermore, Theorem \ref{} states that local trivializations of $P$ and $M$ induce local trivializations of the Lie algebroids $P \times \alg g/G$ and $TP/G$. Hence, we may give a full description of the Atiyah sequence associated to the principal bundles
-    \begin{itemize}
+ We have seen that to every principal bundle $G \hookrightarrow P \to M$ there is an associated Atiyah sequence of transitive Lie algebroids $0 \to P \times \alg g / G \to TP/G \to TM \to 0$. Furthermore, theorem \ref{algebroidAtlasAtiyah} states that local trivializations of $P$ and $M$ induce local trivializations of the Lie algebroids $P \times \alg g/G$ and $TP/G$. We will now give a description of some principal bundles over projective spaces isomorphic to spheres which will have a trivializations with only $2$ charts for both the manifold and the principal bundle. From this it follows that we only require a single pair of maps $\alpha$ and $\chi$ to determine completely the structure of the Lie algebroids from its local trivializations.
+%     \begin{itemize}
     
-    \item Complex Hopf bundle, as $S^1 \hookrightarrow S^3 \to S^2$ and as $S^1 \hookrightarrow S^3 \to \CC P^1$
+%     \item Complex Hopf bundle, as $S^1 \hookrightarrow S^3 \to S^2$ and as $S^1 \hookrightarrow S^3 \to \CC P^1$
     
-    \item One generalization: the principal bundles $S^1 \hookrightarrow S^{2n - 1} \to \CC P^{n-1}$
+%     \item One generalization: the principal bundles $S^1 \hookrightarrow S^{2n - 1} \to \CC P^{n-1}$
     
-    \item Another generalization: the principal bundles $S^1 \hookrightarrow P^k \to S^2$
+%     \item Another generalization: the principal bundles $S^1 \hookrightarrow P^k \to S^2$
     
-    \item Quaternionic Hopf bundle, as $Sp(1) \hookrightarrow S^7 \to S^4$ and as $Sp(1) \hookrightarrow S^7 \to \HH P^1$
+%     \item Quaternionic Hopf bundle, as $Sp(1) \hookrightarrow S^7 \to S^4$ and as $Sp(1) \hookrightarrow S^7 \to \HH P^1$
     
-    \item One generalization (which I'll probably ignore): the principal bundles $Sp(1) \hookrightarrow S^{4n - 1} \to \HH P^{n-1}$
+%     \item One generalization (which I'll probably ignore): the principal bundles $Sp(1) \hookrightarrow S^{4n - 1} \to \HH P^{n-1}$
     
-    \item Another generalization: the principal bundles $Sp(1) \hookrightarrow P^k \to S^4$
+%     \item Another generalization: the principal bundles $Sp(1) \hookrightarrow P^k \to S^4$
     
-    \end{itemize} 
-by studying the local trivializations induced by the principal bundle trivialization. In the case of the complex Hopf bundle we can give a partial global description thanks to the local frames $\set{\partial_\phi, \partial_\theta}$ of $TS^2$ and $\set{\partial_\phi, \partial_{\xi^1}, \partial_{\xi^2}}$ of $TS^3$.
+%     \end{itemize} 
+One of the example, the complex Hopf bundle, has a simple structure that allows it to be pictured without using local trivializations, allowing a somewhat intuitive view of the different manipulations.% by studying the local trivializations induced by the principal bundle trivialization. In the case of the complex Hopf bundle we can give a partial global description thanks to the local frames $\set{\partial_\phi, \partial_\theta}$ of $TS^2$ and $\set{\partial_\phi, \partial_{\xi^1}, \partial_{\xi^2}}$ of $TS^3$.
 
 \subsubsection{The Adjoint Algebroids}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1975,9 +2074,9 @@ is the rotation operation in $\RR^3$ with respect to the axis $\hat x$ of $|\vec
 
 
 \begin{remark}
-{For any transitive Lie algebroid sequence $0 \to L \xrightarrow{j} A \xrightarrow{a} \to TM \to 0 $, a complete description of the Lie algebroid is achieved only with knowledge of an open cover $\set{I_i}_{i \in I}$ from a transitive Lie algebroid atlas %$\{U_i, \psi_i:U_i \times \alg g \to L|_{U_i}, \Theta^i: TU_i \to A|_{U_i}\}_{i \in I}$, 
+{For any transitive Lie algebroid sequence $0 \to L \xrightarrow{j} A \xrightarrow{a} \to TM \to 0 $, a complete description of the Lie algebroid is achieved only with knowledge of an open cover $\set{I_i}_{i \in I}$ from a transitive Lie algebroid atlas %$\{U_i, \psi_i:U_i \times \alg g \to L|_{U_i}, \nabla^{0,i}: TU_i \to A|_{U_i}\}_{i \in I}$, 
 and from knowledge of the local version of maps that allow a change of local trivialization $\alpha^i_j$ and $\chi^i_j$} since in each trivializing neighborhood the transitive Lie algebroid can be studied as a trivial Lie algebroid%, and so only pasting information, for both the vertical and horizontal parts, is necessary.
- and so the change of coordinate formula \ref{changeCoordinatesAlgebroid} allows the transition between trivializations.
+ and so the change of coordinate formula \ref{equationCompleteChangeCoordinatesAlgebroid} allows the transition between trivializations.
  \end{remark}
 
 \begin{remark}{For the principal bundles we have been working with, the open cover $\set{U_S, U_N}$ trivializes both the base space $S^n$ and the principal bundles, so we get a full description of the transitive Lie algebroids by describing exactly two maps: $\alpha^N_S$ and $\chi^N_S$}.
@@ -2074,9 +2173,9 @@ considering $i$ as a function $C^\infty(S^2)$ which restricts to $C^\infty(U_S) 
 
 \linea 
 
-Notice that the local frame \rtext{$\{\partial_\phi, \partial_{\xi^1}, \partial_{\xi^2}\} \in \Gamma_{\mathcal U_C}(TS^3)$ is made of $S^1$-invariant vector fields, making up a local frame of $TS^3/S^1$: 
+Notice that the local frame \rtext{$\{\partial_\phi, \partial_{\xi^1}, \partial_{\xi^2}\} \in \Gamma_{\mathcal U_{SN}}(TS^3)$ is made of $S^1$-invariant vector fields, making up a local frame of $TS^3/S^1$: 
 \[
-    \{\underline{\partial_\phi}, \underline{\partial_{\xi^1}}, \underline{\partial_{\xi^2}}\} \in \Gamma_{U_C}(TS^3/S^1)
+    \{\underline{\partial_\phi}, \underline{\partial_{\xi^1}}, \underline{\partial_{\xi^2}}\} \in \Gamma_{U_{SN}}(TS^3/S^1)
 \] }
 
 Having the local frame allows to express a section with functions of $S^2$ as components. \rtext{ A \dbtext{global} section may be expressed as:
@@ -2086,7 +2185,7 @@ Having the local frame allows to express a section with functions of $S^2$ as co
 for $\oid X^\phi, \oid X^{\xi^1}, \oid X^{\xi^2} \in C^\infty(S^2)$ ALL OF $S^2$} \dbtext{using all of $S^2$ should guarantee that }
 
 
-Although in general the adjoing bundle will be studied as $C^\infty_{G}(P)$ for a general principal bundle, since in our case the adjoint bundle is \dbtext{paralelizable} with global frame $i \in C^\infty(S^2, i\RR) \cong \Gamma_{U_C}(S^3 \times i\RR / S^1)$, \rtext{a global section of the adjoint bundle $S^3 \times i\RR / S^1$ may be expressed as
+Although in general the adjoing bundle will be studied as $C^\infty_{G}(P)$ for a general principal bundle, since in our case the adjoint bundle is \dbtext{paralelizable} with global frame $i \in C^\infty(S^2, i\RR) \cong \Gamma_{U_{SN}}(S^3 \times i\RR / S^1)$, \rtext{a global section of the adjoint bundle $S^3 \times i\RR / S^1$ may be expressed as
 \begin{align}
     r(\phi, \theta)i
 \end{align} 
@@ -2098,23 +2197,23 @@ Although in general the adjoing bundle will be studied as $C^\infty_{G}(P)$ for 
 
 \linea
 
-The following is a intuitive, global description of the Atiyah Lie algebroid $TS^3/S^1$ associated to the complex Hopf bundle, which can only be applied to $U_C = U_S \inter U_N = S^2 - \set{(0, 0, -1), (0, 0, 1)}$. \ptext{We will ignore adding to each map an indication that it is the restriction of the original map to $U_C$}.
+The following is a intuitive, global description of the Atiyah Lie algebroid $TS^3/S^1$ associated to the complex Hopf bundle, which can only be applied to $U_{SN} = U_S \inter U_N = S^2 - \set{(0, 0, -1), (0, 0, 1)}$. \ptext{We will ignore adding to each map an indication that it is the restriction of the original map to $U_{SN}$}.
 
 \begin{align*}
-    \sigma_S : U_C &\to S^3 &       E(\phi, \theta) &\mapsto Tor(\phi, \theta, 0) = (\cos \frac{\phi}{2} e^{i \theta}, \sin \frac{\phi}{2} )\\
-    \sigma_N : U_C &\to S^3 &       E(\phi, \theta) &\mapsto Tor(\phi, 0, -\theta) = (\cos \frac{\phi}{2} , \sin \frac{\phi}{2} e^{-i \theta})
+    \sigma_S : U_{SN} &\to S^3 &       E(\phi, \theta) &\mapsto T(\phi, \theta, 0) = (\cos \frac{\phi}{2} e^{i \theta}, \sin \frac{\phi}{2} )\\
+    \sigma_N : U_{SN} &\to S^3 &       E(\phi, \theta) &\mapsto T(\phi, 0, -\theta) = (\cos \frac{\phi}{2} , \sin \frac{\phi}{2} e^{-i \theta})
 \end{align*}
 
 Straightforward to calculate the pushforwards:
 \begin{align*}
-    \sigma_{S*} : \Gamma_{U_C}(TS^2) &\to \Gamma_{\mathcal U_C}(TS^3) & \partial_\phi &\mapsto \partial_\phi & \partial_\theta &\mapsto \partial_{\xi^1}   \\
-    \sigma_{N*} : \Gamma_{U_C}(TS^2) &\to \Gamma(TS^3)_{\mathcal U_C} & \partial_\phi &\mapsto \partial_\phi & \partial_\theta &\mapsto -\partial_{\xi^2}      
+    \sigma_{S*} : \Gamma_{U_{SN}}(TS^2) &\to \Gamma_{\mathcal U_{SN}}(TS^3) & \partial_\phi &\mapsto \partial_\phi & \partial_\theta &\mapsto \partial_{\xi^1}   \\
+    \sigma_{N*} : \Gamma_{U_{SN}}(TS^2) &\to \Gamma(TS^3)_{\mathcal U_{SN}} & \partial_\phi &\mapsto \partial_\phi & \partial_\theta &\mapsto -\partial_{\xi^2}      
 \end{align*}
 
-which means that through the map \ref{} they correspond to sections $\Gamma_{U_C}(TS^3/S^1)$, therefore the local flat connections are:
+which means that through the map \ref{} they correspond to sections $\Gamma_{U_{SN}}(TS^3/S^1)$, therefore the local flat connections are:
 \begin{align}
-    \nabla_{S} : \Gamma_{U_C}(TS^2) &\to \Gamma_{U_C}(TS^3/S^1) & \partial_\phi &\mapsto \underline{\partial_\phi} & \partial_\theta &\mapsto \underline{\partial_{\xi^1}}   \\
-    \nabla_{N} : \Gamma_{U_C}(TS^2) &\to \Gamma_{U_C}(TS^3/S^1) & \partial_\phi &\mapsto \underline{\partial_\phi} & \partial_\theta &\mapsto -\underline{\partial_{\xi^2}}
+    \nabla_{S} : \Gamma_{U_{SN}}(TS^2) &\to \Gamma_{U_{SN}}(TS^3/S^1) & \partial_\phi &\mapsto \underline{\partial_\phi} & \partial_\theta &\mapsto \underline{\partial_{\xi^1}}   \\
+    \nabla_{N} : \Gamma_{U_{SN}}(TS^2) &\to \Gamma_{U_{SN}}(TS^3/S^1) & \partial_\phi &\mapsto \underline{\partial_\phi} & \partial_\theta &\mapsto -\underline{\partial_{\xi^2}}
 \end{align}
 
 Useful when we change ford of local trivialization
@@ -2128,7 +2227,7 @@ For the vertical maps:
 
 First. Pointwise:
 \begin{align*}
-    j(i) &= \cl{\der{t}[t = 0] Tor(\phi, \xi^1, \xi^2) e^{-it} }\\
+    j(i) &= \cl{\der{t}[t = 0] T(\phi, \xi^1, \xi^2) e^{-it} }\\
         &= \cl{\der{t}[t=0] T(\phi, \xi^1 - t, \xi^2 - t)} \\
         &= \cl{T_{*, (\phi, \xi^1, \xi^2)}(0, -1, -1)} \\
         &= \cl{T_{*, (\phi, \xi^1, \xi^2)}(0, -1, 0) + T_{*, (\phi, \xi^1, \xi^2)}(0, 0, -1)} \\
@@ -2137,33 +2236,33 @@ First. Pointwise:
         &= - \underline{\partial_{\xi^1}}_{|E(\phi, \theta)} - \underline{\partial_{\xi^2}}_{|E(\phi, \theta)}
 \end{align*}
 
-So the Lie algebra and $C^\infty(S^2)$ $j$, when restricted to $U_C$
+So the Lie algebra and $C^\infty(S^2)$ $j$, when restricted to $U_{SN}$
 \begin{align}
-    j: C^\infty(U_C, i\RR) &\to \Gamma_{U_C}(TS^3/S^1) & i &\mapsto -(\underline{\partial_{\xi^1}} + \underline{\partial_{\xi^2}}) \\ 
+    j: C^\infty(U_{SN}, i\RR) &\to \Gamma_{U_{SN}}(TS^3/S^1) & i &\mapsto -(\underline{\partial_{\xi^1}} + \underline{\partial_{\xi^2}}) \\ 
     && if(\phi, \theta) &\mapsto -f(\phi, \theta)(\underline{\partial_{\xi^1}} + \underline{\partial_{\xi^2}})
 \end{align}
 
 \begin{align*}
-    \psi_S &: C^\infty(U_C, i\RR) \to \Gamma_U(S^3 \times i\RR / S^1) \cong C^\infty(U_C, i\RR)\\
+    \psi_S &: C^\infty(U_{SN}, i\RR) \to \Gamma_U(S^3 \times i\RR / S^1) \cong C^\infty(U_{SN}, i\RR)\\
         &= Id \\
     \psi_N &= 
 \end{align*}
 
 \begin{eqnsplit}
-    j \psi_S = j \psi_N : C^\infty({U_C}, i\RR) &\to \Gamma_{U_C}(TS^3/S^1) \\
+    j \psi_S = j \psi_N : C^\infty({U_{SN}}, i\RR) &\to \Gamma_{U_{SN}}(TS^3/S^1) \\
     if &\mapsto -f (\underline{\partial_{\xi^1}} + \underline{\partial_{\xi^2}})
 \end{eqnsplit}
 
 
 All of this summarizes into
 \begin{eqnsplit}
-    S_S: \Gamma_{U_C}(TS^2) \oplus C^\infty(U_C, i\RR) &\to \Gamma(TS^3/S^1) \\
+    S_S: \Gamma_{U_{SN}}(TS^2) \oplus C^\infty(U_{SN}, i\RR) &\to \Gamma(TS^3/S^1) \\
          X^\phi(\phi, \theta) \partial_\phi + X^{\theta}(\phi, \theta) \partial_{\theta} + if(\phi, \theta) 
          &\to X^\phi \underline{\partial_{\phi}} + X^\theta \underline{\partial_{\xi^1}} - f(\underline{\partial_{\xi^1}} + \underline{\partial_{\xi^2}})
 \end{eqnsplit}
 
 \begin{eqnsplit}
-    S_N: \Gamma_{U_C}(TS^2) \oplus C^\infty(U_C, i\RR) &\to \Gamma(TS^3/S^1) \\
+    S_N: \Gamma_{U_{SN}}(TS^2) \oplus C^\infty(U_{SN}, i\RR) &\to \Gamma(TS^3/S^1) \\
          X^\phi(\phi, \theta) \partial_\phi + X^{\theta}(\phi, \theta) \partial_{\theta} + if(\phi, \theta) 
          &\to X^\phi \underline{\partial_{\phi}} - X^\theta \underline{\partial_{\xi^2}} - f(\underline{\partial_{\xi^1}} + \underline{\partial_{\xi^2}})
 \end{eqnsplit}
