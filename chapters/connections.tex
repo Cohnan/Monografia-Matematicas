@@ -1072,63 +1072,10 @@ Let $\hat \nabla^E$ be an $A$-connection on $E$ ($A$ with Lie algebroid atlas), 
 
 
 
-\begin{example}[All representations of a TLA on a T.v.b.]
-\label{exampleAllRepresentationsofTLAoverTrivialVectorbundle}
-$\alpha_i: \Gamma(TU_i) \to C^\infty(U_i, \alg{gl}(V)$ Maurer Cartan, $\phi_{L, i} \in C^\infty(U_i, \Hom(\alg g, \alg{gl}(V)))$ LAB morphis, plus compatibility condition between them.
-\end{example}
 
 
-\begin{example}[Group induced representation]\todo{Change of place}
-\label{definitionExampleGroupInducedRepresentationTrivialLieAlgebroidTLAOnTrivialVectorBundle}
-Particular case: $\phi_L$ constant $\pi: \alg g \to \alg{gl}(V)$, and with $\alpha_i = 0$.
-
-Let $G$ be a group with $\alg g$ as its Lie algebra, and let it act on the vector space $V$. Then, the map $\phi: TM \times \alg g \to \alg D(M \times V)$ such that, for all $X \oplus \eta \in TM \times \alg g$ and $f \in C^\infty(M, V)$:
-\begin{eqnsplit}
-    \phi(X \oplus \eta)(f) := X(f) + \eta \cdot f
-\end{eqnsplit}
-where $\eta \cdot f(m) := \der{t}[t=0]{\exp[t \eta] \cdot f(m)}$ is the action of $\eta \in \alg g$ on $V$ by the group action. This is called \emph{the $G$-induced representation of the trivial Lie algebroid on a trivial vector bundle}.
-\end{example}
 
 
-\begin{example}[Local trivialization of representation of $TP/G$ on $E = P \times V/G$]\label{localTrivializationOfRepresentationOfAtiyahTPGonAssociated}\todo{Change of place}
-\label{exampleLocalTrivializationOfGroupInducedRepresentationOfAtiyahLieAlgebroidAction}
-$U_i$ trivializes $E$ as $\beta_i: U_i \times V\to E|_{U_i}$
-
-$\eta \in C^\infty(U_i, \alg g)$, $f \in C^\infty(U_i, V)$
-
-$(\upsect{S_i(X \oplus \eta)})_{\sigma_i(m)} = \sigma_{i, *}(X) + \der{t}[t=0]{\sigma_i(m) \cdot \exp[-t \eta(m)]} \in T_{\sigma_i(m)} P$
-
-
-$\upsect{\beta_i(f)}: \sigma_i(m)g \mapsto g^{-1} f(m)) \in C^\infty_G(P, V)$.
-
-
-\begin{align*}
-    \beta_i^{-1}[\phi\comp S_i(X \oplus \eta)(\beta_i(f))] (m)
-        &= \upsect{\phi \comp S_i(X \oplus \eta)}_{\sigma_i(m)} (\upsect{\beta_i(f)})\\
-        %&= \sout{\upsect{\phi\cl{\sigma_{i, *}(X)}}_{\sigma_i(m)} (\upsect{\beta_i(f)}) + \upsect{\phi( j\psi_i(\eta))}_{\sigma_i(m)} (\upsect{\beta_i(f)})}\\
-        &= \sigma_{i, *}(X_m)(\upsect{\beta_i(f)}) 
-        + \der{t}[t = 0]{\upsect{\beta_i(f)}(\sigma_i(m) \cdot \exp[-t \eta(m)])}\\
-        &= \der{t}[t = 0]{\sigma_i(\gamma(t))} (\upsect{\beta_i(f)}) + \der{t}[t=0]{\exp[t \eta(m)] f(m)}\\
-        &= \der{t}[t=0]{f(\gamma(t))} + (\eta \cdot f)(m)\\
-        &= X_m(f) + (\eta \cdot f)(m),
-\end{align*}
-where $\gamma: I \to U_i$ is a path on $M$ such that $\gamma'(0) = X_m$. In conclusion, the local trivialization $\phi_i: TU_i \times \alg g \to \alg D(U_i \times V)$ of the representation $\phi: TP/G \to P \times V/G$ is
-\begin{equation}\label{equationLocalRepresentationAtiyahLieAlgebroidOnAssociatedVectorBundleExpectedTrivialALgebroidRepresentationActionOfGroup}
-    \phi_i(X \oplus \eta)(f) = X(f) + \eta \cdot f.
-\end{equation}
-\end{example}
-
-
-\begin{example}[Family of Local trivializations of all representations Transitive Lie algebroids]
-\label{transformationLawFamilyLocalTrivializationsRepresentationsOfTransitiveLieAlgebroid}
-i.e. Find transformation law of $\alpha_i$ and $\phi_{L, i}$.
-\end{example}
-
-\begin{theorem}
-A representation can be determined from a family of local trivializations of Maurer-Cartan $\alpha$'s and LAB $\phi_{L, i}$'s with the above transformation laws.
-
-In particular, from a $V$ on which $G$ acts, the transitions functions of a vector bundle $E$ over $M$ with typical fiber $V$ is determined by stating that locally the representation is the group induced representation. \todo{I would think}
-\end{theorem}
 
 \linea
 

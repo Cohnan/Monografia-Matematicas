@@ -429,7 +429,7 @@ for all $D, D' \in \Gamma \alg D(E), f \in C^\infty(M)$ which allow us to conclu
 
 \begin{example}[The derivations Lie algebroid of a trivial vector bundle]
 \label{exampleDerivationsLieAlgebroidOfATrivialVectorBundleglV}
-Let $E$ be a trivial vector bundle $M \times V$. Then $\End(E) \cong M, \alg{gl}(V)$. On such an $E$. The standard Lie derivative with respect to $\sect{X}$ on vector $V$-valued functions is a derivation for any a vector field $\sect{X} \in \Gamma(TM)$; since this mapping is $C^\infty(M)$-linear it defines a vector bundle section of the anchor in \ref{equationTransitiveLieAlgebroidSequenceDerivationsEndomorphism} that respects the Lie bracket. This section acts as an injection of $TM$ in $\alg D(E)$ that defines an isomorphism
+Let $E$ be a trivial vector bundle $M \times V$. Then $\End(E) \cong M, \alg{gl}(V)$. On such an $E$. The standard derivative with respect to $\sect{X}$ on vector $V$-valued functions is a derivation for any a vector field $\sect{X} \in \Gamma(TM)$; since this mapping is $C^\infty(M)$-linear it defines a vector bundle section of the anchor in \ref{equationTransitiveLieAlgebroidSequenceDerivationsEndomorphism} that respects the Lie bracket. This section acts as an injection of $TM$ in $\alg D(E)$ that defines an isomorphism
 \begin{equation}
     \alg D(M \times V) \cong TU_i \oplus (U_i \times \alg{gl}(V)).
 \end{equation}
@@ -1357,7 +1357,7 @@ Given two algebroids over the manifold $M$, $A$ with anchor $a$ and $A'$ with an
 \[\psi: A \to A'\]
 is a vector bundle morphism over $M$ such that 
 \begin{align}
-    a' \comp \psi = a, & : A \to TM,
+    a' \comp \psi = a & : A \to TM,
 \end{align}
 i.e. it is compatible with the anchors, and such that 
 \[\psi[\sect{\oid X}, \sect{\oid Y}] = [\psi(\sectoid X), \psi(\sectoid Y)]\] 
@@ -1377,20 +1377,56 @@ This can be done due to the equivalence between vector bundle maps over $M$ and 
 \end{remark}
 
 \begin{example}[Lie algebroid morphisms between Trivial Lie algebroid over $M$]\label{exampleLieAlgebroidMorphismsBetweenTrivialLieAlgebroids}
-Let $TM \times V$ and $TM \times V'$ be trivial Lie algebroids, and suppose that $\psi$ is a Lie algebroid morphisms between them.
+Let $TM \times \alg g$ and $TM \times \alg g'$ be trivial Lie algebroids, and suppose that $\psi$ is a Lie algebroid morphisms between them.
 
-Since $\phi$ is $C^\infty(M)$-linear and it respects the anchor, it must have the form
+Since $\psi$ is $C^\infty(M)$-linear and it respects the anchor, it must have the form
 \begin{equation}\label{equationFormOFGeneralMorphismTrivialLieAlgebroidsBetween}
-    \phi(X \oplus \eta) = X \oplus (B(X) + \phi_L(eta)),
+    \psi(X \oplus \eta) = X \oplus (\omega(X) + \psi_+(\eta)),
 \end{equation}
-where $B: TM \to TM \times V'$ and $\phi_L: M \times V \to M \times V'$ are vector bundle morphisms.
-Furthermore, that $\phi$ respects the bracket when applied to vector fields implies that $B$ is a Maurer-Cartan form, i.e. it satisfies
-\begin{equation}
-    [\sect{X}, B(\sect Y)] - [\sect{Y}, B(\sect X)] - [B(\sect X), B(\sect Y)] = 0,
-\end{equation}
-for all $\sect X, \sect Y \in \Gamma(TM)$.
+where $\omega: TM \to TM \times \alg g'$ and $\phi_L: M \times \alg g \to M \times \alg g'$ are vector bundle morphisms.
+Applying the fact that $\phi$ respects the Lie brackets give us further properties of $\omega$ and $\psi_+$:
+\begin{itemize}
+    
+    \item When applied to $\sect X, \sect Y \in \Gamma(TM)$ arbitrary, we conclude that $\omega$ is a \textit{Maurer-Cartan form}, i.e. 
+        \begin{equation}
+            [\sect X, \omega(\sect Y)] - [\sect Y , \omega(\sect X)] - \omega[\sect X, \sect Y] = 0.
+        \end{equation}
+    
+    \item When applied to $\eta, \theta \in M \times \alg g$ arbitrary we conclude that $\psi_+$ is a LAB bundle.
+    
+    \item When applied to arbitrary $X \in TM$ and $\eta \in M \times \alg g$ we conclude that $\omega$ and $\psi_+$ satisfy the following compatibility condition:
+    \begin{equation}
+        X(\psi_+(\eta)) - \psi_+(X(\eta)) + [\omega(X), \psi_+(\eta)] = 0.
+    \end{equation}
+    
+\end{itemize}
 
-The $\alpha^i_j = \psi_i^{-1} \comp \psi_j |_{U_{ij}\times \alg g}$'s, from a Lie algebroid atlas of a transitive Lie algebroid, are examples of $\phi^+$'s, and the $\chi^i_j$ are examples of $\omega$'s.
+% The transition maps $\alpha^i_j = \psi_i^{-1} \comp \psi_j |_{U_{ij}\times \alg g}$'s from a Lie algebroid atlas of a transitive Lie algebroid, are examples of $\phi^+$'s, and the $\chi^i_j$ are examples of $\omega$'s.
+\end{example}
+
+\begin{example}[All representations of a TLA on a Trivial Vector Bundle]
+\label{exampleAllRepresentationsofTLAoverTrivialVectorbundle}
+Let $TM \times \alg g$ be a trivial vector bundle and let $E = M \times V$ be a trivial vector bundle. We saw in example \ref{exampleDerivationsLieAlgebroidOfATrivialVectorBundleglV} that $\alg D(E)$ is the trivial vector bundle $TM \times \alg (gl)(V)$, so a representation of $TM \times \alg g$ on $M \times V$, as illustrated by \ref{exampleLieAlgebroidMorphismsBetweenTrivialLieAlgebroids}, has the form
+\begin{equation}
+    \phi(X \oplus \eta) = X \oplus(B(X) + \phi_L(\eta)),
+\end{equation}
+where $B: TM \to M\times \alg{gl}(V)$ is a Maurer-Cartan form, $\phi_L: M \times \alg g \to M \times \alg{gl}(V)$ is a LAB morphism, and $B$ and $\phi_L$ satisfies the compatibility condition indicated in \ref{exampleLieAlgebroidMorphismsBetweenTrivialLieAlgebroids}.
+
+$\alpha_i: \Gamma(TU_i) \to C^\infty(U_i, \alg{gl}(V)$ Maurer Cartan, $\phi_{L, i} \in C^\infty(U_i, \Hom(\alg g, \alg{gl}(V)))$ LAB morphis, plus compatibility condition between them.
+\end{example}
+
+
+\begin{example}[Group induced representation]\todo{Change of place}
+\label{definitionExampleGroupInducedRepresentationTrivialLieAlgebroidTLAOnTrivialVectorBundle}
+Let $TM \times \alg g$ be a trivial Lie algebroid and $E = M \times V$ a trivial vector bundle. Furthermore, suppose that $G$ is a Lie group with Lie algebra $\alg g$, and that $\pi: G \to Aut(V)$ is a representation of $G$. This allows us to define a Lie algebroid representation $\phi$ with vertical part $\phi_L$ being constantly equal to the induced Lie representation $\pi: \alg g \to \alg{gl}(V)$. Explicitly, for all $X \oplus \eta \in TM \times \alg g$ and $f \in C^\infty(M, V)$:
+\begin{eqnsplit}\label{equationGroupInducedRepresentationInTrivialAlgebroids}
+    \phi(X \oplus \eta)(f) := X(f) + \pi(\eta)f;
+\end{eqnsplit}
+when the representation is clear from the context, we will usually rewrite the previous equation as
+\begin{eqnsplit}\label{equationGroupInducedRepresentationInTrivialAlgebroids}
+    \phi(X \oplus \eta)(f) := X(f) + \eta \cdot f.
+\end{eqnsplit}
+This is called \emph{the $G$-induced representation of the trivial Lie algebroid on the trivial vector bundle $M\times V$}.
 \end{example}
 
 \begin{definition}
@@ -1441,7 +1477,7 @@ A sequence of a transitive Lie algebroid $A$ induces the exact sequence of $C^\i
 \end{remark}
 
 \begin{example}
-A trivial Lie algebroid induced the sequence
+A trivial Lie algebroid induces the sequence
 \begin{equation}
      0 \to M \times \alg g \xrightarrow{j} TM \oplus M \times \alg g  \xrightarrow{p_1} TM \to 0
 \end{equation}
@@ -1745,10 +1781,7 @@ The following properties must be satisfied by the pasting maps of a transitive L
 \begin{proposition}
 For the transitive Lie algebroid $A$ with Lie algebroid atlas $\{(U_i, \psi_i: U_i \times \alg g \to L|_{U_i}, \nabla^{0, i}: TU_i \to A|_{U_i})\}_{i \in I}$. On every $U_{ij} \neq \empty$:
 \begin{itemize}
-    \item The map $\chi^i_j: U_{ij} \to U_{ij} \times \alg g$ defined in \eqref{equationDefinitionOfChiGeneral} is a Maurer-Cartan form, i.e. it satisfies the Maurer-Cartan equation:
-    \begin{align*}
-        d \chi^i_j(X, Y) + [\chi^i_j(X), \chi^i_j(Y)] = 0
-    \end{align*} for all $X, Y \in TU_{ij}$.
+    \item The map $\chi^i_j: U_{ij} \to U_{ij} \times \alg g$ defined in \eqref{equationDefinitionOfChiGeneral} is a Maurer-Cartan form.
 
     \item The map $\alpha^i_j: U_{ij} \times \alg g \to U_{ij}\times \alg g$ defined in \eqref{equationDefinitionOfAlphaGeneral} is a LAB morphism.
     
@@ -1761,7 +1794,7 @@ For the transitive Lie algebroid $A$ with Lie algebroid atlas $\{(U_i, \psi_i: U
 \end{proposition}
 
 \begin{proof}
-This is nothing but the statement that the change of coordinate maps $S^i_j$ define in equation \eqref{equationCompleteChangeCoordinatesAlgebroid} are morphisms between trivial Lie algebroids, which is the case because both $S_i$ and $S_j$ are invertible Lie algebroid morphisms.
+This is nothing but the statement that the change of coordinate maps $S^i_j$ defined in equation \eqref{equationCompleteChangeCoordinatesAlgebroid} are morphisms between trivial Lie algebroids, which is the case because both $S_i$ and $S_j$ are invertible Lie algebroid morphisms.
 \end{proof}
 
 % We now present some useful formulas. Suppose $\oid X = S_i(X \oplus \eta^i) = S_j(X \oplus \eta^j) \in A|_{U_{ij}}$, then 
@@ -1795,6 +1828,57 @@ When making practical calculations with transitive Lie algebroids, the algebraic
     &\chi^i_j:& \Gamma(TU_i) &\to C^\infty(U_{ij}, \alg g) \\
     &S^i_j:& \Gamma(TU_i)\oplus C^\infty(U_{ij}, \alg g) &\to \Gamma(TU_i)\oplus C^\infty(U_{ij}, \alg g).
 \end{align}
+
+\linea
+
+Let us now see the local version of some important concepts.
+
+% \begin{remark}
+% \label{remarkFamilyLocalTrivializationsMorphismOfTransitiveLieAlgebroid}
+Let $\psi: A \to A'$ be a morphism between transitive Lie algebroids. Once trivializing neighborhoods $\{U_i\}_{i \in I}$ for both $A$ and $A'$ have been chosen, $\psi$ can be encoded as a family $\{(\omega_i, \psi_{+, i})\}_{i\in I}$ of representations $\psi_i = a \oplus (\omega_i + \psi_{+,i})$ between trivial Lie algebroids as in example \ref{exampleAllRepresentationsofTLAoverTrivialVectorbundle}.
+% \end{remark}
+
+\lin
+
+% \begin{remark}
+% \label{remarkFamilyLocalTrivializationsRepresentationsOfTransitiveLieAlgebroid}
+Similarly, let $\phi: A \to \alg D(E)$ be a representation for the transitive Lie algebroid $A$. Based on example \ref{exampleAllRepresentationsofTLAoverTrivialVectorbundle}, once trivializing neighborhoods $\{U_i\}_{i \in I}$ for both $A$ and the vector bundle $E$ have been chosen, $\phi$ can be encoded as a family $\{(B_i, \phi_{L, i})\}_{i\in I}$ of representations $\phi_i = a \oplus (B_i + \phi_{L,i})$ of trivial Lie algebroids $TU_i \times \alg g$ on trivial vector bundles $U_i \times V$, where $\alg g$ is the typical fiber of the vertical part of $A$, and $V$ is the typical fiber of $E$.
+% \end{remark}
+
+\begin{example}\label{exampleTrivializationOfTrivialRepresentationIsTrivialRepresentation}
+Let $A$ be acting on the trivial vector bundle $E = M \times V$ by the trivial representation $\phi = a$. On a trivializing neighborhood $U_i$ of $A$ the trivialization of $\phi$ is once again a trivial representation:
+\begin{align*}
+    \phi_i(X \oplus \eta) &= \phi(S(X \oplus \eta))\\
+        &= a(S(X \oplus \eta))\\
+        &= a(X \oplus \eta);
+\end{align*}
+to pass to the second line we used the fact that $S$ respects the anchor. This, in particular, means that every $B_i$ and $\phi_{L, i}$ are $0$.
+\end{example}
+
+\begin{example}\label{exampleTrivializationOfAdjointRepresentationIsAdjoint}
+Let $A$ act on $L$ through the adjoint representation $\phi = ad$. Then the local trivialization of $\phi$ over a neighborhood that trivializes $A$ is again an adjoint representation. Assume for simplicity that the injection $j$ is an inclusion:
+\begin{align*}
+    \phi_i(X \oplus \eta)\theta &= \psi_i^{-1} \comp \phi(S_i(X \oplus \eta)) \comp \psi_i(\theta)\\
+       &= \psi_i^{-1} ( [S_i(X \oplus \eta), \psi_i(\theta)] )\\
+       &= \psi_i^{-1} ( [\nabla^{0,i}_X \oplus \psi_i(\eta), \psi_i(\theta)] )\\
+       &= \psi_i^{-1}[\nabla^{0, i}_X, \psi(\theta)] + \psi^{-1}[\psi_i(\eta), \psi_i(\theta)]\\
+       &= X(\theta) + [\eta, \theta]\\
+       &= [X \oplus \eta, \theta]\\
+       &= ad(X \oplus \eta, \theta).
+\end{align*}
+\end{example}
+
+Let $G$ be a group with Lie algebra $\alg g$, and the vector space $V$ be a representation space of $G$. Suppose that $A$ is a transitive Lie algebroid with $\alg g$ as the typical fiber of its vertical part, and let $V$ be a vector space on which $G$ acts. Let $U_i$ and $U_j$, $U_{ij} \neq \empty$ be open subsets of $M$ that trivialize $A$. If we allow $TU_i \times \alg g$ and $TU_j \times \alg g$ to be represented in $U_i \times V$ and $U_j \times V$, respectively, via the group representation \eqref{equationGroupInducedRepresentationInTrivialAlgebroids}, we can ask ourselves what conditions need to be satisfied for those representations to be the trivializations of a global representation of $A$ on a vector bundle $E$ that trivializes on $U_i$ and $U_j$. Letting $\beta^i_j = \beta_i^{-1} \comp \beta_j : U_{ij} \times V \to U_{ij} \times V$ be the transition function of $E$ from $U_j$ to $U_i$, a quick analysis shows some conditions are imposed on them: let $\mu$ be a section on $E$ such that $f \in C^\infty(U_{j}, V)$ is its trivialization over $U_i$, i.e. $\beta_i(f) $ be the trivialization of a section $\mu \in \Gamma(E)$, hence $\beta_j(f) = \mu|_{U_j}$, then the compatibility condition 
+\begin{equation}
+    \beta_j^i[(X \oplus \eta) f] = X \oplus (\chi^i_j(X) + \alpha^i_j(\eta))\beta^i_j(f)
+\end{equation}
+must be satisfied for any $X \oplus \eta \in \Gamma(TU_i) \oplus C^\infty(U_{ij}, \alg g)$, where $\chi^i_j$ and $\alpha^i_j$ are the pasting maps \eqref{equationDefinitionOfChiGeneral} and \eqref{equationDefinitionOfAlphaGeneral} for $A$ over $U_{ij}$. The previous equation decomposes in the following equations restricting the values of $\beta^i_j$:
+\begin{align}
+    \chi^i_j(X) \cdot \beta^i_j(f) &= X(\beta^i_j)f\\
+    \alpha^i_j(\eta)(\beta^i_j(f)) &= \beta^i_j(\eta \cdot f).
+\end{align}
+The fact that $\chi^i_j$ is a Maurer-Cartan form, that $\alpha^i_j$ is a LAB morphism, and the compatibility conditions between $\chi^i_j$ and $\alpha^i_j$ should impose further restrictions on what the transition function $\beta^i_j$ can be, perhaps even characterizing them; however, on the literature that was reviewed no further analysis was found. We will see in example \ref{exampleLocalTrivializationOfGroupInducedRepresentationOfAtiyahLieAlgebroidAction} that in the case of the case of the standard representation of a principal bundle on an associated vector bundle these conditions are satisfied.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1975,6 +2059,37 @@ If $\{\sect X \oplus \stilde \eta^i\}$ is a family of local trivializations of $
 \end{align}
 
 %TODO: general form of a section of $TP/G$ as section of $TP$
+
+\begin{example}[Local trivialization of representation of $TP/G$ on $E = P \times V/G$]\label{localTrivializationOfRepresentationOfAtiyahTPGonAssociated}\todo{Change of place}
+\label{exampleLocalTrivializationOfGroupInducedRepresentationOfAtiyahLieAlgebroidAction}
+$U_i$ trivializes $E$ as $\beta_i: U_i \times V\to E|_{U_i}$
+
+$\eta \in C^\infty(U_i, \alg g)$, $f \in C^\infty(U_i, V)$
+
+$(\upsect{S_i(X \oplus \eta)})_{\sigma_i(m)} = \sigma_{i, *}(X) + \der{t}[t=0]{\sigma_i(m) \cdot \exp[-t \eta(m)]} \in T_{\sigma_i(m)} P$
+
+
+$\upsect{\beta_i(f)}: \sigma_i(m)g \mapsto g^{-1} f(m)) \in C^\infty_G(P, V)$.
+
+
+\begin{align*}
+    \beta_i^{-1}[\phi\comp S_i(X \oplus \eta)(\beta_i(f))] (m)
+        &= \upsect{\phi \comp S_i(X \oplus \eta)}_{\sigma_i(m)} (\upsect{\beta_i(f)})\\
+        %&= \sout{\upsect{\phi\cl{\sigma_{i, *}(X)}}_{\sigma_i(m)} (\upsect{\beta_i(f)}) + \upsect{\phi( j\psi_i(\eta))}_{\sigma_i(m)} (\upsect{\beta_i(f)})}\\
+        &= \sigma_{i, *}(X_m)(\upsect{\beta_i(f)}) 
+        + \der{t}[t = 0]{\upsect{\beta_i(f)}(\sigma_i(m) \cdot \exp[-t \eta(m)])}\\
+        &= \der{t}[t = 0]{\sigma_i(\gamma(t))} (\upsect{\beta_i(f)}) + \der{t}[t=0]{\exp[t \eta(m)] f(m)}\\
+        &= \der{t}[t=0]{f(\gamma(t))} + (\eta \cdot f)(m)\\
+        &= X_m(f) + (\eta \cdot f)(m),
+\end{align*}
+where $\gamma: I \to U_i$ is a path on $M$ such that $\gamma'(0) = X_m$. In conclusion, the local trivialization $\phi_i: TU_i \times \alg g \to \alg D(U_i \times V)$ of the representation $\phi: TP/G \to P \times V/G$ is
+\begin{equation}\label{equationLocalRepresentationAtiyahLieAlgebroidOnAssociatedVectorBundleExpectedTrivialALgebroidRepresentationActionOfGroup}
+    \phi_i(X \oplus \eta)(f) = X(f) + \eta \cdot f.
+\end{equation}
+\end{example}
+
+
+
 
 \subsection{Examples}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
