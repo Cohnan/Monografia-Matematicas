@@ -8,7 +8,15 @@
 \usepackage{hyperref} % Para poder tener hyperlinks
 \usepackage{enumerate}
 \usepackage{calligra} % Para dedicacion
-\usepackage{biblatex} \addbibresource{bibliografia.bib}
+\usepackage[backend=bibtex,
+%style=abbrv,
+%style=numeric,
+%style=alphabetic,
+%style=reading,
+sorting=nty,
+firstinits=true
+]{biblatex}
+\addbibresource{bibliografia}
 \usepackage{csquotes}
 
 
@@ -157,29 +165,29 @@
 \maketitle
 
 \begin{dedication}
-{\LARGE\calligra Hola}
+{\LARGE\calligra A mi Mamá}
 \end{dedication}
 
-\begin{abstract}
-Hello
-\end{abstract}
+% \begin{abstract}
+% Hello
+% \end{abstract}
 
-\begin{otherlanguage}{spanish}
-\begin{abstract}
-Hola
-\end{abstract}
-\end{otherlanguage}
+% \begin{otherlanguage}{spanish}
+% \begin{abstract}
+% Hola
+% \end{abstract}
+% \end{otherlanguage}
 
 \newpage
 
-\chapter*{Acknowledgements}
+% \chapter*{Acknowledgements}
 
-\section*{English}
-Hello
-\begin{otherlanguage}{spanish}
-\section*{Español}
-Hola
-\end{otherlanguage}
+% \section*{English}
+% Hello
+% \begin{otherlanguage}{spanish}
+% \section*{Español}
+% Hola
+% \end{otherlanguage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -231,6 +239,8 @@ Hola
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\normalem
+
 \printbibliography
 
 \end{document}

@@ -1,35 +1,53 @@
 %INTRODUCTION \complete{ Hacer la introducción. Quizá ver pequeños comentrios de Mackenzie y de Lazzarini} 
-In chapter \ref{chp:intro} we saw how the basic elements in a gauge theory are:
+The basic elements of a gauge theory under the traditional formalism are:
     \begin{itemize}
         
-    \item a principal bundle $P$, a fibration over spacetime $M$ whose fibers encode inner degrees of freedom associated to a smooth symmetry $G$,
+    \item A principal bundle $G \to P \to M$, a fibration over spacetime $M$ whose fibers encode inner degrees of freedom associated to a smooth symmetry $G$.
     
-    \item their associated vector bundles, whose sections are matter fields which have certain symmetry with respect to the group action, and which can be interpreted as equivariant vector valued functions on $P$,
+    \item Their associated vector bundles, whose sections are called \emph{matter fields}, which can be interpreted as $G$-equivariant vector valued functions on the bigger space $P$.
     
-    \item and connections on the principal bundle $P$, that allow a formalization of the statement that $T_m M$ is the horizontal part of $T_p P$ for each $p \in \pi^{-1}(m)$, making possible to talk about covariant derivatives of matter fields in the tangent direction of the base manifold $M$ as directional derivatives of the equivariant functions in the corresponding horizontal direction(s) of $P$;
+    \item Connections on the principal bundle $P$, also called \emph{gauge potentials}, that allow a formalization of the statement that $T_m M$ is the horizontal part of $T_p P$ for each $p \in \pi^{-1}(m)$, hence making possible to talk about covariant derivatives of matter fields in directions tangent to the base manifold $M$ as directional derivatives of the equivariant functions in the corresponding horizontal direction on $P$.
     
     \end{itemize}
-it is this notion of covariant derivative for matter fields which encodes the ``principle of gauge invariance'' that characterizes gauge theories.
+It is precisely the principal connection-induced notion of covariant derivative for matter fields which encodes the \emph{principle of gauge invariance} of the equations of motion that characterizes gauge theories. 
 
-%However, at the end of chapter \ref{chp:intro} it was remarked that 
-A natural language to talk about principal bundle connections is that of the Atiyah Lie algebroid $TP/G$ of $P$, since:
-    \begin{itemize}
+In an informal manner, we might say that the matter fields are defined $G$-equivariantly on the total space $P$, but the equations of motion involve spacial derivatives over the base manifold $M$; the connection on $P$ is equivalent to a determination of a $G$-invariant notion of horizontallity on $P$, and this horizontal directions are then equated with directions on the base manifold. We may thus say, informally, that the core of a gauge theory consists on:
+\begin{enumerate}
+    \item a space of generalized directions, bigger than the directions tangent to the base manifold, along which 
+    
+    \item a matter field may vary, and where 
+    
+    \item a connection on the space of generalized directions determines a way to associate to associate some of the generalized directions with the base manifold directions.
+\end{enumerate} 
 
-    %\item the two defining properties of a principal connections $\omega: TP \to P \times \alg g$ are naturally as a section of the anchor $TP/G \xrightarrow{a} TM$,
+As we will see throughout this document, \textit{the language of Lie algebroids provide a possible formalization of the previous notions} through the following concepts:
+\begin{enumerate}
+    \item A Lie algebroid $A$ over a base manifold $M$.
     
-    \item As we will see in \ref{}, the vector bundle $TP/G$ over $M$ is, locally, the internal direct sum of the vector bundles $TM$ and $M\times \alg g$. Due to the Lie bracket structure on $TP/G$, this can be interpreted as saying that $TP/G$ at $m \in M$ is a set of ``generalized directions at $m$'': the set of tangent directions $T_m M \cong \RR^n$ plus a set of vertical directions $\alg g$ encoding the smooth symmetry $G$.
+    \item A Lie algebroid representation of $A$ on a vector bundle $E$ over $M$.
     
-    \item The notion of horizontallity induced in $TP$  %this is a space where the fiber of each point $m$ of the base manifold $M$ is a set of directions over $m$ some of which are vertical to $TM$, removing the redundancy present in $TP$ where an arbitrary point $p$ in the fiber in $P$ of $m$ had to be chosen first to see $T_p P$ as the set of generalized directions over $m$ where paths could be lifted.
-    possesses a redundancy given by the action of $G$, meaning that knowing the horizontal subspace of $T_p P$ at $p$ is enough to determine the induced horizontal spaces in all of the fiber of $\pi(p)$. This redundancy is removed if the notion of horizontallity is defined instead on $TP/G$ and this, locally, means indicating for each $X \in TM$ which ``generalized direction'' $X \oplus \eta \in TM \oplus (M \times \alg g)$ is the horizontal direction that corresponds to the tangent direction $X$.
+    \item A Lie algebroid connection on $A$ (when $A$ is transitive \ref{definitionTransitiveRegularALgebroids}).
+\end{enumerate}
+
+% %However, at the end of chapter \ref{chp:intro} it was remarked that 
+% A natural language to talk about principal bundle connections is that of the Atiyah Lie algebroid $TP/G$ of $P$, since:
+%     \begin{itemize}
+
+%     %\item the two defining properties of a principal connections $\omega: TP \to P \times \alg g$ are naturally as a section of the anchor $TP/G \xrightarrow{a} TM$,
+    
+%     \item The notion of horizontallity induced in $TP$  %this is a space where the fiber of each point $m$ of the base manifold $M$ is a set of directions over $m$ some of which are vertical to $TM$, removing the redundancy present in $TP$ where an arbitrary point $p$ in the fiber in $P$ of $m$ had to be chosen first to see $T_p P$ as the set of generalized directions over $m$ where paths could be lifted.
+%     possesses a redundancy given by the action of $G$, meaning that knowing the horizontal subspace of $T_p P$ at $p$ is enough to determine the induced horizontal spaces in all of the fiber of $\pi(p)$. This redundancy is removed if the notion of horizontallity is defined instead on $TP/G$ and this, locally, means indicating for each $X \in TM$ which ``generalized direction'' $X \oplus \eta \in TM \oplus (M \times \alg g)$ is the horizontal direction that corresponds to the tangent direction $X$.
         
-    \end{itemize}
-The vector bundle $TP/G$ over $M$ is an example of a transitive Lie algebroid over $M$, a whole class of vector bundles with a Lie bracket structure on its sections that are, locally, described by $TM \oplus (M \times \alg g)$, suggesting that we may interpret them as spaces of generalized directions on $M$. 
-% Notice that I can get away with not mentioning the anchor, since the ``tangent projection'' is clear
-A main component of a Lie algebroid $A$ over $M$ is the anchor map $a : A \to TM$ which projects the elements of $A$ onto a tangent direction on $M$, and therefore non-transitive Lie algebroids, those with non-fiberwise-surjective anchor, allow the flexibility of not having all tangent direction on $M$ be ``represented'' in the Lie algebroid. Once this language is adopted, the core concepts of gauge theories mentioned above may be abstracted in the concepts of Lie algebroids, Lie algebroid connections, and representations of Lie algebroids in an ``associated'' vector bundle, concepts that will be developed, and slightly generalized, throughout this document.
+%     \end{itemize}
+% The vector bundle $TP/G$ over $M$ is an example of a transitive Lie algebroid over $M$, a whole class of vector bundles with a Lie bracket structure on its sections that are, locally, described by $TM \oplus (M \times \alg g)$, suggesting that we may interpret them as spaces of generalized directions on $M$. 
+% % Notice that I can get away with not mentioning the anchor, since the ``tangent projection'' is clear
+% A main component of a Lie algebroid $A$ over $M$ is the anchor map $a : A \to TM$ which projects the elements of $A$ onto a tangent direction on $M$, and therefore non-transitive Lie algebroids, those with non-fiberwise-surjective anchor, allow the flexibility of not having all tangent direction on $M$ be ``represented'' in the Lie algebroid. Once this language is adopted, the core concepts of gauge theories mentioned above may be abstracted in the concepts of Lie algebroids, Lie algebroid connections, and representations of Lie algebroids in an ``associated'' vector bundle, concepts that will be developed, and slightly generalized, throughout this document.
 
-%Anchor may be seen as a tangent or horizontal projection; Leibniz allows us to think of $[\sect{\oid X}, \cdot]$ as a derivative; Lie bracket allow us to think of the elements as directions at a point, and so (it is a kind of a Poisson bracket) we can think of $[\sect{\oid X}, \cdot]$ as a \emph{directional} derivative; The vertical directions at each point are (always?\todo{es cierto?}) a Lie algebra (this question requires to see first if the bracket, when restricted to the kernel, can be defined fiberwise instead of requiring a neighborhood... Update: I think this is the case, as Ch 7 of Tu says something about the equivalence between $C^\infty$ linearity and pointwise definition, and, by Leibniz restricted to the kernel, the bracket is $C^infty(M)$ linear in both entries).
+% %Anchor may be seen as a tangent or horizontal projection; Leibniz allows us to think of $[\sect{\oid X}, \cdot]$ as a derivative; Lie bracket allow us to think of the elements as directions at a point, and so (it is a kind of a Poisson bracket) we can think of $[\sect{\oid X}, \cdot]$ as a \emph{directional} derivative; The vertical directions at each point are (always?\todo{es cierto?}) a Lie algebra (this question requires to see first if the bracket, when restricted to the kernel, can be defined fiberwise instead of requiring a neighborhood... Update: I think this is the case, as Ch 7 of Tu says something about the equivalence between $C^\infty$ linearity and pointwise definition, and, by Leibniz restricted to the kernel, the bracket is $C^infty(M)$ linear in both entries).
 
-\ptext{Throughout this document every construction will occur over the category of smooth manifolds, so all vector bundles, sections of vector bundles and any other function will be smooth.} \textbf{y son de rango finito}
+
+
+\ptext{Throughout this document every construction will occur over the category of smooth manifolds, so all vector bundles, sections of vector bundles, and any other function will be smooth; furthermore, a vector bundle will only be considered to be of finite rank}.
 
 \section{Basic Definitions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1429,7 +1447,7 @@ when the representation is clear from the context, we will usually rewrite the p
 This is called \emph{the $G$-induced representation of the trivial Lie algebroid on the trivial vector bundle $M\times V$}.
 \end{example}
 
-\begin{definition}
+\begin{definition}\label{definitionTransitiveRegularALgebroids}
     Let $A$ be a Lie algebroid with anchor $a$.
     
     \begin{itemize}
@@ -1689,7 +1707,7 @@ Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ be a transitive Lie alg
 In Chapter \ref{chp:connections} we will see that the $\nabla^{0,i}$ are flat connections in $A|_{U_i}$ and so their image gives a notion of horizontallity in $A|_{U_i}$ and $ \oid X \mapsto \nabla^{0,i}(a(\oid X)) \in A|_{U_i}$ is the horizontal projection of $\oid X$ induced by $\nabla^{0,i}$.
 
 The following theorem will be key to our our document, and will also enable the treatment of gauge theories on transitive Lie algebroids in the way familiar in the physics literature, since it will imply that locally every transitive Lie algebroid looks like the Atiyah Lie algebroid of a principal bundle; a proof may be found in \cite{Mackenzie2005}.
-\begin{theorem}
+\begin{theorem}\label{theoremTransitiveHasAtlasLocallyTrivial}
 Every transitive Lie algebroid has a Lie algebroid atlas.
 \end{theorem}
 % \begin{proof}
