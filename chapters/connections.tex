@@ -643,9 +643,9 @@ Using the notation of the previous definition, the curvature form of the connect
 \end{equation}
 This is called the \emph{decomposition of the curvature form of $\hat \omega$ with respect to the background connection $\tilde \omega$}.
 \end{theorem}
-\begin{proof}
-TODO \todo{}.
-\end{proof}
+% \begin{proof}
+% TODO \todo{}.
+% \end{proof}
 
 \section{Local Trivialization of Generalized Connection Forms}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1062,11 +1062,6 @@ Let $\hat \nabla^E$ be an $A$-connection on $E$ ($A$ with Lie algebroid atlas), 
 % \end{eqnsplit}
 \end{definition}
 
-\linea
-
-{\color{gray} Change the following ``examples'' of place and complete them being mindful of the context}\todo{DO}
-
-
 
 
 
@@ -1139,64 +1134,26 @@ The group induced $TP^k/S^1$-connections are
 
 \section{Examples}
 
-\subsection{$P^k$ over $S^2$}
+\subsection{$TP^k/S^1$ over $S^2$}\label{subsectionConnectionsOnTPkS1}
+
+
 
 
 \linea
 
-We can combine the multiple coordinates that we have defined on $U_{SN} \subset S^2$ to see that every point there might be written as
-\begin{equation}
-    \frac{(2x^1, 2x^2, ||\vec x||^2 - 1)}{|| \vec x||^2 + 1} = (\sin \phi \cos \theta, \sin \phi \sin \theta, \cos \phi) = \frac{(2y^1, 2y^2, 1- ||\vec y||^2)}{|| \vec x||^2 + 1}.
-\end{equation}
-Then, the polar coordinates in terms of the $x$ and $y$ coordinates satisfy:
-\begin{align}
-    \tan \theta & = \frac{x_2}{x_1} 
-    & \cot\frac{\phi}{2} = ||\vec x|| \\
-    \tan \theta & = \frac{y_2}{y_1} 
-    & \tan\frac{\phi}{2} = ||\vec y||;
-\end{align}
-on the other hand
-\begin{align}
-    x^1 &= \cos \theta \cot \frac{\phi}{2} 
-    & y^1 &= \cos \theta \tan \frac{\phi}{2}\\
-    x^2 &= \sin \theta \cot \frac{\phi}{2} 
-    & y^2 &= \sin \theta \tan \frac{\phi}{2}.
-\end{align}
-
-From the first set of equation we conclude that 
-\begin{eqnsplit}\label{equationdThetaInTermsOfXAndYS2ComplexHopf}
-    d\theta &= \frac{-x^2 dx^1 + x^1 dx^2}{(x^1)^2 + (x^2)^2}\\
-        &= \frac{-y^2 dy^1 + y^1 dy^2}{(y^1)^2 + (y^2)^2};
-\end{eqnsplit}
-from the second set we deduce that
-\begin{eqnsplit}\label{equationdxsInTermsOfDThetasS2COmplexHopf}
-    dx^1 &= - \sin \theta \cot \frac{\phi}{2} d\theta + - \cos \theta \csc^2\frac{\phi}{2} d\phi \\
-    dx^2 &= \cos \theta \cot \frac{\phi}{2}d\theta  - \sin \theta  \csc^2\frac{\phi}{2} d\phi.
-\end{eqnsplit}
-
-\linea
-
-The most general connection form on $TP^k/S^1$ has the local trivialization over $U_S$:
-\begin{equation}
-    \hat \omega_S = (\omega^\epsilon_{S})_{1,}(\phi, \theta) dx^1 + (\omega^\epsilon_{S})_{2,}(\phi, \theta) dx^2 + (\omega^\epsilon_{S})_{,1}(\phi, \theta) Im
-\end{equation}
-where $ \in C^\infty(S^2)$; recall from \ref{} that this suffices to determine completely the form over all of $S^2$ since this $U_S$ covers all but one point of $S^2$. We will rewrite this form, for simplicity, as
-\begin{equation}
+In example \ref{exampleFormsTPkBuildingBLocksandMostGeneral1FormOn} we saw that the most general form, and hence the most general connection form on $TP^k/S^1$, has the local trivialization over $U_S$:
+\begin{equation*}
     \hat \omega_S = i\omega^\epsilon_{S; 1}(\phi, \theta) dx^1 + i\omega^\epsilon_{S; 2}(\phi, \theta) dx^2 + i\omega^\epsilon_{S; i}(\phi, \theta) Im.
-\end{equation}
+\end{equation*}
+where $ \in C^\infty(S^2)$; recall from example \ref{exampleTransitionALphaFormsPk} that this suffices to determine completely the form over all of $S^2$ since $U_S$ covers all but one point of $S^2$.
+
 Due to the fact that $\alpha^N_S(Im) = Im - k d\theta$, its local trivialization over $U_N$ is
 \begin{eqnsplit}
-     \hat \omega_N &= \hat \omega^\epsilon_S + kd\theta\\
+     \hat \omega_N &= \hat \omega_S + kd\theta\\
          &= i\left[\omega^\epsilon_{S; 1} - \frac{x^2}{(x^1)^2 + (s^2)^2}\right] dx^1 + i\left[\omega^\epsilon_{S; 2} + \frac{x^1}{(x^1)^2 + (s^2)^2}\right] dx^2 + i\omega^\epsilon_{S; i} Im
 \end{eqnsplit}
 
-Using equations \ref{equationdxsInTermsOfDThetasS2COmplexHopf}, over $U_{SN}$ we may rewrite the local trivialization of the most general $1$-form on $TP^k/S$ as:
-\begin{eqnsplit}
-    \hat \omega_S &= if(\phi, \theta) d\phi + ig(\phi, \theta) d\theta + ih(\phi, \theta) Im\\
-    \text{where  }f(\phi, \theta) &= - \cos \theta \csc^2 \frac{\phi}{2} \omega^\epsilon_{S; 1}(\phi, \theta) - \sin \theta \csc^2 \frac{\phi}{2} \omega^\epsilon_{S; 2}(\phi, \theta) \\
-    g(\phi, \theta) &= \sin \theta \cot \frac{\phi}{2} \omega^\epsilon_{S; 1}(\phi, \theta) + \cos \theta \cot \frac{\phi}{2} \omega^\epsilon_{S; 2}(\phi, \theta) \\
-    h(\phi, \theta) &= \omega^\epsilon_{S; i}(\phi, \theta).
-\end{eqnsplit}
+
 
 Since $i$ is a global section of $TP^k/S^1$, the reduced kernel endomorphism $\tau \in \End(S)$ is determined from a single function $\tilde \tau = \in C^\infty(S^2)$ such that $\tau = i \tilde \tau$, and so the local components of $\tau$ are:
 \begin{align}
@@ -1231,7 +1188,7 @@ This connection on $TP^k/S^1$ is associated to the
 
 
 
-\subsection{$P^k$ over $S^4$}
+\subsection{$TP^k/S^3$ over $S^4$}\label{subsectionConnectionsTPkS3}
 
 Thanks to all what we have proved, we know that the most general connection $\hat \omega \in \Omega^2(TP^k/S^3, P^k \times Im \HH/S^3)$ on $TP^k/S^4$ has the local trivialization over $U_S$
 \begin{equation}
