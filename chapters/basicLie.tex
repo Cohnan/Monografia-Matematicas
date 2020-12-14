@@ -2009,8 +2009,13 @@ must be satisfied for any $X \oplus \eta \in \Gamma(TU_i) \oplus C^\infty(U_{ij}
     \chi^i_j(X) \cdot \beta^i_j(f) &= X(\beta^i_j)f\\
     \alpha^i_j(\eta)(\beta^i_j(f)) &= \beta^i_j(\eta \cdot f).
 \end{align}
-The fact that $\chi^i_j$ is a Maurer-Cartan form, that $\alpha^i_j$ is a LAB morphism, and the compatibility conditions between $\chi^i_j$ and $\alpha^i_j$ should impose further restrictions on what the transition function $\beta^i_j$ can be, perhaps even characterizing them; however, on the literature that was reviewed no further analysis was found. We will see in example \ref{exampleLocalTrivializationOfGroupInducedRepresentationOfAtiyahLieAlgebroidAction} that in the case of the standard representation of a principal bundle on an associated vector bundle these conditions are satisfied.
+The fact that $\chi^i_j$ is a Maurer-Cartan form, that $\alpha^i_j$ is a LAB morphism, and the compatibility conditions between $\chi^i_j$ and $\alpha^i_j$ should impose further restrictions on what the transition function $\beta^i_j$ can be, perhaps even characterizing them; however, on the literature that was reviewed no further analysis was found. 
 
+\begin{definition}\label{definitionGlobalGroupInducedRepresentation}
+Let $A$ be a transitive Lie algebroid with $\alg g$ the typical fiber of the vertical subalgebroid, and let $\phi:A \to \alg D(E)$ be a representation. We say that \emph{$\phi$ is the group induced representation on $E$} if there is a representation $\pi: G \to Aut(V)$ on $V$ of some Lie group whose Lie algebra is $\alg g$, and if there is some Lie algebroid atlas over an open cover $\{U_i\}_{i \in I}$ that also trivializes $E$ such that the local trivialization of $\phi$ over each $U_i$ is $\phi_i = a \oplus \pi$, i.e. $B_i = 0$ and $\phi_{L,i} = \pi$ in the notation of example \ref{exampleAllRepresentationsofTLAoverTrivialVectorbundle}.
+\end{definition}
+
+We will see in example \ref{exampleLocalTrivializationOfGroupInducedRepresentationOfAtiyahLieAlgebroidAction} that in the case of the standard representation of a principal bundle on an associated vector bundle the representation is the group induced one.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2439,8 +2444,7 @@ Having the local frame allows to express a section of $TS^3/S^1$ with functions 
     \oid X^\phi(\phi, \theta) \cl{\partial_{\phi}} +  \oid X^{\xi^1}(\phi, \theta) \cl{\partial_{\xi^1}} + \oid X^{\xi^2}(\phi, \theta) \cl{\partial_{\xi^2}} \in \Gamma_{U_{SN}}(TS^3/S^1)
 \end{align*}
 for $\oid X^\phi, \oid X^{\xi^1}, \oid X^{\xi^2} \in C^\infty(S^2)$; notice that this is a section of the Lie algebroid $TS^3/S^1$, and \textit{not} of the trivial Lie algebroid $TS^2 \times i\RR$ that we would have to use if we were to work with trivializations of the Lie algebroid.
-
-Although in general the adjoint bundle will be studied as $C^\infty_{G}(P)$ for a general principal bundle, since in our case the adjoint bundle is trivial with global frame $i \in C^\infty(S^2, i\RR) \cong \Gamma_{U_{SN}}(S^3 \times i\RR / S^1)$, \rtext{a global section of the adjoint bundle $S^3 \times i\RR / S^1$ may be expressed as
+Since in our case the adjoint bundle is trivial with global frame $i \in C^\infty(S^2, i\RR) \cong \Gamma_{U_{SN}}(S^3 \times i\RR / S^1)$, \rtext{a global section of the adjoint bundle $S^3 \times i\RR / S^1$ may be expressed as
 \begin{align}
     r(\phi, \theta)i
 \end{align} 

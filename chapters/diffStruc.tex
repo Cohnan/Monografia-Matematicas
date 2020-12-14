@@ -189,7 +189,7 @@ for any $p \in \ZZ_{\geq 0}$, $p$-form $\omega$, and any $\sectoid X_1, \dots, \
 \begin{proof}
 Notice that, although $C^\infty(M)$ is also a commutative unit ring, $\hat d_\phi$ isn't $C^\infty(M)$ linear since the maps $\phi(\sectoid X_i): \Gamma(E) \to \Gamma(E)$ may not be so; they are, however, $\bb K$-linear and this proves the $\bb K$-linearity of $\hat d_\phi$. That $\hat d_\phi$ raises the degree of the homogeneous elements is part of their definition. 
 
-\todo{Find source for this. I said this parting from calculations on $0$ and $1$ forms}All what's left to chceck is that $\hat d_\phi \circ \hat d_\phi = 0$. The formula used to define $\hat d_\phi$ guarantees this as long as: the bracket applied to sections on $A$ satisfies the Jacobi identity, and each $\phi(\sectoid X_i): \Gamma(E) \to \Gamma(E)$ is a Lie algebra morphism.
+All what's left to chceck is that $\hat d_\phi \circ \hat d_\phi = 0$. The formula used to define $\hat d_\phi$ guarantees this as long as: the bracket applied to sections on $A$ satisfies the Jacobi identity, and each $\phi(\sectoid X_i): \Gamma(E) \to \Gamma(E)$ is a Lie algebra morphism \cite{AriasAbad2011}.
 \end{proof}
 
 Suppose that $\omega \in \Omega^p(A, E)$ is the $0$ section on $\Gamma_U(\Alt^p(A, E))$, for $p \in \ZZ_{\geq 0}$ arbitrary. Then, equation \ref{equationDefinitionDifferentialRepresentationKoszulFormula} shows us that $(\hat d_\phi \omega)|_U = 0$ since every term on the left will be $0$. Hence, the $\bb K$-linear map $\hat d_\phi : \Gamma \Alt^\bullet(A, E) \to \Gamma \Alt^\bullet(A, E)$ is a \emph{local operator}. This fact implies that on every $U \subset M$ open, the differential $\hat d_\phi$ has a restriction $\hat d_\phi|_U: \Omega_U^\bullet(A, E) \to \Omega_U^\bullet(A, E)$ that satisfies, for every $\omega \in \Omega^\bullet(A, E)$, 
@@ -296,9 +296,9 @@ For this local frame of $A$, let the dual frame be $\{\alpha^1, \dots \alpha^N\}
      is an element of $\Omega_U^p(A, E)$, where the first $\wedge$ refers to the product between the scalar valued $p$-form $\alpha_{i_1} \wedge \cdots \wedge \alpha_{i_p}$ and the $L$-valued $0$-form $\mu$; we have used the convention of removing the $\wedge$ symbol if one of the factors is a $0$-form. In fact, any scalar valued $p$-form on $A$ is a linear combination of differential forms of this type.
     
     \item For $\mu \in \Omega_U^0(A, E)$,
-    \begin{equation*}
+    \begin{equation}\label{equationDifferential0FormwrtFrame}
         \hat d_\phi \mu = \sum_{i = 1}^N \phi(\sectoid X_i)\cdot \mu \, \alpha^i,
-    \end{equation*}
+    \end{equation}
     since
     \begin{align}\label{equationDifferentialESection0FormLocalFrame}
         \hat d_\phi \mu(\sectoid X) = \phi(\sectoid X)\cdot \mu.
@@ -466,7 +466,8 @@ Let $G \to P \to M$ be a principal bundle over $M$.
 \end{theorem}
 
 
-\begin{example}[Hopf $S^3$]
+\begin{example}[Complex Hopf Bundle]
+\label{exampleComplexHopfConnectionAndCurvature}
 Recall that $\{\cl{\partial_\phi}, \cl{\partial_{\xi^1}}, \cl{\partial_{\xi^2}}\}$ is a local frame of the Atiyah Lie algebroid associated to the complex Hopf principal bundle $S^1 \to S^3 \to S^2$. So, the building blocks of any local form over $U_{SN}$ will be the dual frame, which we will denote by $\{\cl{d\phi}, \cl{d\xi_1}, \cl{\xi_2}\} \in \Omega^1(TS^3/S^1)$. 
 
 \noindent Since $L = S^3 \times i\RR / S^1$ has the global frame $\{i\}$, any section of $L$ can be written as $f\,i$ for some $f \in C^\infty(S^2)$. Hence, \textit{any $S^3 \times i\RR/S^1$-valued local form on $TS^3/S^1$ can be written as a wedge product of the forms $\{\cl{d\phi}, \cl{d\xi_1}, \cl{\xi_2}\}$, with coefficients in $C^\infty(S^2, i\RR)$}.
@@ -640,8 +641,8 @@ Notice that the subalgebra $C^\infty(M, \bigwedge^\bullet \alg g^*)$ \textit{is 
 
 A formula that will be useful to use is the application of the differential to differential $1$-forms $C^\infty(M, \bigwedge^1 \alg g^*)$ when they are constant functions, e.g. taake constant values in elements of a basis $\{\epsilon^a\}_{a = 1, \dots, n}$ of $\alg g^*$ dual to a basis $\{E_a\}_{a = 1, \dots, n}$ of $\alg g$. Let $\epsilon$ be arbitrary in $C^\infty(M, \bigwedge^1 \alg g^*)$, then
 \begin{eqnsplit}\label{equationDifferentialOfFormDualToBasisLieAlgebra}
-    \hat d_{TM \times \alg g} \epsilon(X \oplus \eta, Y \oplus \theta) 
-      &= a(X \oplus \eta) \epsilon(Y \oplus \theta) - a(Y \oplus \theta) \epsilon(X \oplus \eta) - \epsilon[X \oplus \eta, Y \oplus \theta]\\
+    \hat d_{TM \times \alg g} \epsilon(X \oplus \eta,& Y \oplus \theta) 
+      = a(X \oplus \eta) \epsilon(Y \oplus \theta) - a(Y \oplus \theta) \epsilon(X \oplus \eta) - \epsilon[X \oplus \eta, Y \oplus \theta]\\
       &= X(\epsilon(\theta)) - Y(\epsilon(\eta)) - \epsilon(X(\theta) - Y(\eta) + [\eta, \theta])\\
       &= X(\epsilon)(\theta) - Y(\epsilon)(\eta) - \epsilon[\eta, \theta]\\
       &= - \epsilon[\eta, \theta],
@@ -1010,7 +1011,6 @@ notice that in the second to last line both the fact that the representation use
 
 In particular, in two of our main examples: the differential graded algebra of scalar-valued differential forms $(\Omega^\bullet(A), \wedge, \hat d_A)$, and $(\Omega^\bullet(A,L), \hat d, \hat d)$, a differential graded Lie algebra and a differential complex over the graded ring $(\Omega^\bullet(A), \wedge)$, their local trivializations as forms on trivial Lie algebroids are spaces of the same type for the same representation, since the local trivialization of the trivial and the adjoint representations are themselves.
 
-\lin
 
 \begin{example}[$TP^k/S^1$ over $S^2$]\label{exampleFormsTPkBuildingBLocksandMostGeneral1FormOn}
 In $P^k$ we had determined in \ref{} a Lie algebroid atlas for the Atiyah Lie algebroids associated to the principal bundles $S^1 \to P^k \to S^2$, coming from the local trivializations of the principal bundle $P^k$. The atlas was associated to the neighborhoods $U_S$ and $U_N$ that trivialize both $P^k$ and $S^2$, hence remark \ref{remarkLocalDecompositionOfFormsOnTransitiveLieAlgebroidsIfTrivializationOfM} implies that we may use the following scalar valued $1$-forms on the trivial vector bundles to build any (local) form on $TP^k/S^1$:
@@ -1040,6 +1040,24 @@ Recall that, although strictly speaking the spherical coordinates $(\phi, \theta
     \{d\phi, d\theta, Im\} \subset \Omega^1_{U_{SN}}(TP^k/S^1).
 \end{align*} 
 From now on we will replace every instance of $\Omega_{U_{S}}, \Omega_{U_{N}}$ and $\Omega_{U_{SN}}$ by $\Omega_{S}, \Omega_{N}$ and $\Omega_{SN}$, respectively.
+
+Thanks to theorem \ref{theoremLocalizationOfEVectorValuedFormsIsomorphismOfDifferentialRespectsD} even if we don't know explicitly the form $\hat \omega \in \Omega^1(TP^k/S^1, P^k \times i\RR/S^1)$, we can still find (the local trivializations of) $\hat d \hat \omega$. Furthermore, we may apply theorem \ref{theoFormsAreDiffGModule} to show that
+\begin{equation*}
+    \hat d \hat \omega_S = \hat d (i\omega^\epsilon_{S;\mu}) \wedge dx^\mu + i  \omega^\epsilon_{S;\mu} d(dx^\mu) + \hat d(i \hat \omega^\epsilon_{S;i}) \wedge Im + \omega^\epsilon_{S;i} dx^\mu \hat d_{TU_S \times i\RR} Im
+\end{equation*}
+We may then apply the calculation done in \eqref{equationDifferentialOfFormDualToBasisLieAlgebra} to $Im \in C^\infty(U_S, (i \RR)^*)$ to conclude that 
+$$\hat d_{TU_S \times i\RR} Im = 0$$
+because $i\RR$ is commutative; also, we can apply \eqref{equationDifferential0FormwrtFrame} to conclude that
+$$ \hat d (i \omega^\epsilon_{S;\cdot}) = i d\omega^\epsilon_{S;\cdot},$$
+again because $i\RR$ is commutative. Hence,
+\begin{equation*}
+    \hat d \hat \omega_S = i d\omega^\epsilon_{S;\mu}\wedge dx^\mu + 0 + i d\omega^\epsilon_{S;i} \wedge Im + 0\\
+\end{equation*}
+which equals
+\begin{equation}\label{equationCurvatureGeneralConnectionCh2S2}
+    \hat d \omega_S = i(\partial_1 \omega^\epsilon_{S;2} - \partial_2 \omega^\epsilon_{S;1}) dx^1 \wedge dx^2 + i \partial_1 \omega^\epsilon_{S;i} dx^1 \wedge Im + i \partial_2 \omega^\epsilon_{S;2} dx^2 \wedge Im.
+\end{equation}
+
 \end{example}
 
 \linea 
@@ -1235,7 +1253,7 @@ Thus, for $\hat \omega_N|_{U_{SN}}$ to be the restriction of a $1$-form $\hat \o
     
     \item The functions $\hat \omega_{S; 1}^\epsilon(y^1, y^2)$ and $\hat \omega_{S; 2}^\epsilon(y^1, y^2)$ have null $0$th, $1$st and $2$nd derivatives at $\vec y = \vec 0$;
     
-    \item The function $\hat \omega_{S; i}^\epsilon$ has null $0$th and $1$st derivatives at $\vec y = \vec 0$ as a function of $\vec y$, and similarly at $\vec x = \vec 0$ as a function of $\vec x$;
+    \item The function $\hat \omega_{S; i}^\epsilon(y^1, y^2)$ has null $0$th and $1$st derivatives at $\vec y = \vec 0$ as a function of $\vec y$;
     
     \end{itemize}
 notice, however, that these are not necessary conditions since there would be an assymmetry between the value of the form at the north and south pole, because the previous conditions imply the form is null at the former while its value at the latter point is arbitrary.
@@ -1245,7 +1263,7 @@ In general, \rtext{a complete family of local trivializations of a form on $TP^k
 \lin 
 
 Lastly, let us notice that using equations \eqref{equationdxsInTermsOfDThetasS2COmplexHopf}, over $U_{SN}$ we may also write the local trivialization of the most general $1$-form on $TP^k/S$ as:
-\begin{eqnsplit}
+\begin{eqnsplit}\label{equationPolarFormofGeneral1FormConnectionS2}
     \hat \omega_S &= if(\phi, \theta) d\phi + ig(\phi, \theta) d\theta + ih(\phi, \theta) Im,\\
     \text{where  }f(\phi, \theta) &= - \cos \theta \csc^2 \frac{\phi}{2} \omega^\epsilon_{S; 1}(\phi, \theta) - \sin \theta \csc^2 \frac{\phi}{2} \omega^\epsilon_{S; 2}(\phi, \theta), \\
     g(\phi, \theta) &= \sin \theta \cot \frac{\phi}{2} \omega^\epsilon_{S; 1}(\phi, \theta) + \cos \theta \cot \frac{\phi}{2} \omega^\epsilon_{S; 2}(\phi, \theta), \\
