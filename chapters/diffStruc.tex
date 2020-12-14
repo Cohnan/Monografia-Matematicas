@@ -118,7 +118,7 @@ Due to the bijective correspondence between $C^\infty(U)$-linear maps between lo
 
 
 \begin{example}
-On the trivial vector bundle $M \times \bb K$\todo{$A$ as a $\bb K$ vector bundle}, the associated space of differential forms on $A$ is denoted by $\lbtext{\lbtext{\Omega^\bullet(A)}}$, and it is called the \lbtext{space of scalar valued forms on $A$}. Notice that the module $\Omega^n(A) = \Gamma \bigwedge^n A^*$.
+On the trivial vector bundle $M \times \bb K$, the associated space of differential forms on $A$ is denoted by $\lbtext{\lbtext{\Omega^\bullet(A)}}$, and it is called the \lbtext{space of scalar valued forms on $A$}. Notice that the module $\Omega^n(A) = \Gamma \bigwedge^n A^*$.
 
 \noindent This is the fundamental example of differential forms on an algebroid $A$. It has been used to define a cohomology theory on Lie algebroids and \todo{complement}.
 \end{example}
@@ -465,42 +465,37 @@ Let $G \to P \to M$ be a principal bundle over $M$.
 \end{itemize} 
 \end{theorem}
 
-\linea
-
-
 
 \begin{example}[Hopf $S^3$]
-Recall that $\{\underline{\partial_\phi}, \underline{\partial_{\xi^1}}, \underline{\partial_{\xi^2}}\}$ is a local frame of the Atiyah Lie algebroid associated to the complex Hopf principal bundle $S^1 \to S^3 \to S^2$. 
+Recall that $\{\cl{\partial_\phi}, \cl{\partial_{\xi^1}}, \cl{\partial_{\xi^2}}\}$ is a local frame of the Atiyah Lie algebroid associated to the complex Hopf principal bundle $S^1 \to S^3 \to S^2$. So, the building blocks of any local form over $U_{SN}$ will be the dual frame, which we will denote by $\{\cl{d\phi}, \cl{d\xi_1}, \cl{\xi_2}\} \in \Omega^1(TS^3/S^1)$. 
 
-So, the building blocks of any local form over $U_{SN}$ will be the dual frame, which we will denote by $\{\underline{d\phi}, \underline{d\xi_1}, \underline{\xi_2}\} \in \Omega^1(TS^3/S^1)$. 
-
-Since $L = S^3 \times i\RR / S^1$ has the global frame $\{i\}$, \textit{any section of $L$ can be written as $f\,i$ for some $f \in C^\infty(S^2)$}. Hence, \textit{any $S^3 \times i\RR/S^1$-valued local form on $TS^3/S^1$ can be written as a multiplication via wedge product of the forms $\{\underline{d\phi}, \underline{d\xi_1}, \underline{\xi_2}\}$, with coefficients in $C^\infty(S^2, i\RR)$}.
+\noindent Since $L = S^3 \times i\RR / S^1$ has the global frame $\{i\}$, any section of $L$ can be written as $f\,i$ for some $f \in C^\infty(S^2)$. Hence, \textit{any $S^3 \times i\RR/S^1$-valued local form on $TS^3/S^1$ can be written as a wedge product of the forms $\{\cl{d\phi}, \cl{d\xi_1}, \cl{\xi_2}\}$, with coefficients in $C^\infty(S^2, i\RR)$}.
 
 % An important local $1$-form on $TS^3/S^1$ over $U_{SN}$ is
 % \begin{equation}
-%     \lbtext{\omega^{Monop}_{{SN}}} := \frac{i}{2} d\xi^1 (1 + \cos \phi) \underline{d \xi_1} + \frac{i}{2} (1- \cos\phi)\underline{d\xi_2} \in \Omega_{U_{SN}}^1(TS^3/S^1, S^3 \times i\RR/S^1).
+%     \lbtext{\omega^{Monop}_{{SN}}} := \frac{i}{2} d\xi^1 (1 + \cos \phi) \cl{d \xi_1} + \frac{i}{2} (1- \cos\phi)\cl{d\xi_2} \in \Omega_{U_{SN}}^1(TS^3/S^1, S^3 \times i\RR/S^1).
 % \end{equation} This $1$-form is associated to the presence of a magnetic monopole on $3$-dimensional space.
 
-% Due to theorem \ref{theoFormsPrincipalAtiyahSameGInvariantEquivariantSubspaces}, the differential $d$ of $G$-invariant forms on $P$ corresponds to the differential $\hat d_{TS^3/S^1}$ under the identification of $G$-invariant sections of $TS^3$ with sections of $TS^3/S^1$; for a one form $w \in T^*P$ we will use the notation $\underline{w}$. Hence, $\hat d_{TS^3/S^1} \underline{\xi_i} = \underline{d \xi_i}$, and, since $d^2 = 0$, 
+% Due to theorem \ref{theoFormsPrincipalAtiyahSameGInvariantEquivariantSubspaces}, the differential $d$ of $G$-invariant forms on $P$ corresponds to the differential $\hat d_{TS^3/S^1}$ under the identification of $G$-invariant sections of $TS^3$ with sections of $TS^3/S^1$; for a one form $w \in T^*P$ we will use the notation $\cl{w}$. Hence, $\hat d_{TS^3/S^1} \cl{\xi_i} = \cl{d \xi_i}$, and, since $d^2 = 0$, 
 % \begin{equation*}
-%     \hat d_{TS^3/S^1} {\underline{d\xi_i}} = 0
+%     \hat d_{TS^3/S^1} {\cl{d\xi_i}} = 0
 % \end{equation*} for $i = 1, 2$; similarly 
 % \begin{equation*}
-%      \hat d_{TS^3/S^1} \underline{d \phi} = 0.
+%      \hat d_{TS^3/S^1} \cl{d \phi} = 0.
 % \end{equation*}
 
 % Now, applying the graded Leibniz rule to the above $1$-form considerint it a sum of products of $S^3\times i\RR/S^1$-valued $0$-forms and scalar valued $1$-forms, we conclude that
 % \begin{equation}
 %     \lbtext{R^{MP}_{U_{SN}}} 
-%     := \hat d \omega^{Monop}_{U_{SN}} = -\frac{i}{4} \sin \phi \, \underline{d\phi} \wedge (\underline{d\xi_1} - \underline{d\xi_2}) 
+%     := \hat d \omega^{Monop}_{U_{SN}} = -\frac{i}{4} \sin \phi \, \cl{d\phi} \wedge (\cl{d\xi_1} - \cl{d\xi_2}) 
 %     \in \Omega^2(TS^3/S^1, S^3 \times i\RR / S^1).
 % \end{equation}
-An important local $1$-form on $TS^3/S^1$ over $U_{SN}$ is
+\noindent An important local $1$-form on $TS^3/S^1$ over $U_{SN}$ is
 \begin{equation}
     \lbtext{\omega^{MP}_{}} := \frac{i}{2} d\xi^1 (1 + \cos \phi) \cl{d \xi_1} + \frac{i}{2} (1- \cos\phi)\cl{d\xi_2} \in \Omega_{U_{SN}}^1(TS^3/S^1, S^3 \times i\RR/S^1).
 \end{equation} This $1$-form is associated to the presence of a magnetic monopole on $3$-dimensional space.
 
-Due to theorem \ref{theoFormsPrincipalAtiyahSameGInvariantEquivariantSubspaces}, the differential $d$ of $G$-invariant forms on $P$ corresponds to the differential $\hat d_{TS^3/S^1}$ under the identification of $G$-invariant sections of $TS^3$ with sections of $TS^3/S^1$ shown in proposition \ref{3.1.3}. Hence, $\hat d_{TS^3/S^1} \cl{\xi_i} = \cl{d \xi_i}$, and, since $d^2 = 0$, 
+\noindent Due to theorem \ref{theoFormsPrincipalAtiyahSameGInvariantEquivariantSubspaces}, the differential $d$ of $G$-invariant forms on $P$ corresponds to the differential $\hat d_{TS^3/S^1}$ under the identification of $G$-invariant sections of $TS^3$ with sections of $TS^3/S^1$ shown in proposition \ref{3.1.3}. Hence, $\hat d_{TS^3/S^1} \cl{\xi_i} = \cl{d \xi_i}$, and, since $d^2 = 0$, 
 \begin{equation*}
     \hat d_{TS^3/S^1} {\cl{d\xi_i}} = 0
 \end{equation*} for $i = 1, 2$; similarly 
@@ -508,7 +503,7 @@ Due to theorem \ref{theoFormsPrincipalAtiyahSameGInvariantEquivariantSubspaces},
      \hat d_{TS^3/S^1} \cl{d \phi} = 0.
 \end{equation*}
 
-Now, applying the graded Leibniz rule to the above $1$-form considerint it a sum of products of $S^3\times i\RR/S^1$-valued $0$-forms and scalar valued $1$-forms, we conclude that
+\noindent Now, applying the graded Leibniz rule to the above $1$-form considerint it a sum of products of $S^3\times i\RR/S^1$-valued $0$-forms and scalar valued $1$-forms, we conclude that
 \begin{equation}
     \lbtext{R^{MP}_{}} 
     := \hat d \omega^{MP}_{} = -\frac{i}{4} \sin \phi \, \cl{d\phi} \wedge (\cl{d\xi_1} - \cl{d\xi_2}) 
@@ -909,11 +904,10 @@ Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ be an Atiyah sequenece 
 Let $\omega \in \Omega^q(A)$.
     \begin{itemize}
     
-    \item For each $i \in I$ define the local $q$-form $\omega_i$, called the \emph{local trivialization of $\omega$ on $U_i$}, by
-    \begin{align}
-        \omega_i &:= \omega \circ S_i  & \in \Omega^q(TU_i\times \alg g)\\
-        &:\left( \Gamma_{U_i}(TM)\oplus C^\infty({U_i}, \alg g) \right) \times \cdots \times &\left( \Gamma_{U_i}(TM)\oplus C^\infty({U_i}, \alg g) \right) \to C^\infty({U_i})
-    \end{align}
+    \item For each $i \in I$ define the local $q$-form $\omega_i := \omega \circ S_i \in \Omega^q(TU_i\times \alg g)$, called the \emph{local trivialization of $\omega$ on $U_i$}, seen as a map
+   $$
+        \omega_i :\left( \Gamma_{U_i}(TM)\oplus C^\infty({U_i}, \alg g) \right) \times \cdots \times \left( \Gamma_{U_i}(TM)\oplus C^\infty({U_i}, \alg g) \right) \to C^\infty({U_i})
+    $$
     
     \item A \emph{family of trivializations of $\omega$} is a set $\{\omega_i \in \Omega^q(TU_i \times \alg g)\}_{i \in I}$.
     
@@ -927,11 +921,10 @@ From now on let $E$ be a vector bundle over $M$ with typical fiber $V$, and supp
 Let $\omega \in \Omega^q(A, E)$.
     \begin{itemize}
     
-    \item For each $i \in I$ define the local $q$-form $\omega_i$, called the \emph{local trivialization of $\omega$ on $U_i$}, by
-    \begin{align}
-        \omega_i &:= \beta_i^{-1} \circ \omega \circ S_i  & \in \Omega^q(TU_i\times \alg g, {U_i} \times V)\\
-        &:\left( \Gamma_{U_i}(TM)\oplus C^\infty({U_i}, \alg g) \right) \times \cdots \times &\left( \Gamma_{U_i}(TM)\oplus C^\infty({U_i}, \alg g) \right) \to C^\infty({U_i}, V)
-    \end{align}
+    \item For each $i \in I$ define the local $q$-form $\omega_i:= \beta_i^{-1} \circ \omega \circ S_i  \in \Omega^q(TU_i\times \alg g, {U_i} \times V)$, called the \emph{local trivialization of $\omega$ on $U_i$}, seen as a map
+    $$
+        \omega_i :\left( \Gamma_{U_i}(TM)\oplus C^\infty({U_i}, \alg g) \right) \times \cdots \times \left( \Gamma_{U_i}(TM)\oplus C^\infty({U_i}, \alg g) \right) \to C^\infty({U_i}, V).
+    $$
     
     \item The set $\{\omega_i \in \Omega^q(TU_i\times \alg g, U_i \times V)\}_{i \in I}$ is called a \emph{family of trivializations of $\omega$}.
     
@@ -1031,7 +1024,7 @@ where $Im$ is the restriction to the respective neighborhood of
 \end{equation} 
 dual to the global frame $i \in C^\infty(S^2, i\RR)$.
 
-For example, any $S^2 \times i\RR$ valued $1$-form $\hat \omega$ has the local trivialization on $U$
+For example, any $S^2 \times i\RR$ valued $1$-form $\hat \omega$ has the local trivialization on the open set $U_S$
 \begin{equation}\label{equationMostGeneral1FormTPkS1Full}
     \hat \omega_S = (\hat \omega^\epsilon_{S})_{1,}(\phi, \theta) dx^1 + (\hat \omega^\epsilon_{S})_{2,}(\phi, \theta) dx^2 + (\hat \omega^\epsilon_{S})_{,1}(\phi, \theta) Im
 \end{equation}
@@ -1042,18 +1035,11 @@ To simplify notation, the $1$-form \eqref{equationMostGeneral1FormTPkS1Full} wil
     \hat \omega_S = i\omega^\epsilon_{S; 1}(\phi, \theta) dx^1 + i\omega^\epsilon_{S; 2}(\phi, \theta) dx^2 + i\omega^\epsilon_{S; i}(\phi, \theta) Im.
 \end{equation}
 
-Recall that, although strictly speaking, the spherical coordinates $(\phi, \theta)$ are not manifold coordinates on the neighborhood $U_{SN}$, they are so on two different charts that cover $U_{SN}$, therefore $\{\partial_\phi, \partial_\theta\} \subset \Gamma_{U_{SN}}(S^2)$ is a local frame of $S^2$ associated to coordinate functions. Hence, on $U_{SN}$ we may once again apply remark \ref{remarkLocalDecompositionOfFormsOnTransitiveLieAlgebroidsIfTrivializationOfM} to write any form on $TP^k/S^1$ as the wedge product of the scalar valued local $1$-forms
-\begin{align}
+Recall that, although strictly speaking the spherical coordinates $(\phi, \theta)$ are not manifold coordinates on the neighborhood $U_{SN}$, they are so on two different charts that cover $U_{SN}$, therefore $\{\partial_\phi, \partial_\theta\} \subset \Gamma_{U_{SN}}(S^2)$ is a local frame of $S^2$ associated to coordinate functions. Hence, on $U_{SN}$ we may once again apply remark \ref{remarkLocalDecompositionOfFormsOnTransitiveLieAlgebroidsIfTrivializationOfM} to write any form on $TP^k/S^1$ as the wedge product of the scalar valued local $1$-forms
+\begin{align*}
     \{d\phi, d\theta, Im\} \subset \Omega^1_{U_{SN}}(TP^k/S^1).
-\end{align} From now on we will replace every instance of $\Omega_{U_{S}}, \Omega_{U_{N}}$ and $\Omega_{U_{SN}}$ by $\Omega_{S}, \Omega_{N}$ and $\Omega_{SN}$, respectively.
-\end{example}
-
-\begin{example}[$TP^k/S^3$ over $S^4$]\label{exampleFormsBuildingBlocksTPkS4}
-Every form on the Atiyah Lie algebroid $TP^k/S^3$ associated to the principal bundle $S^3 \to P^k \to S^4$, wether scalar or vector bundle-valued, will have a local trivialization into wedge products of the scalar-valued $1$-forms on the trivializing Lie algebroids
-\begin{align}
-    \{dx^\mu, Im, Jm, Km\}_{\mu = 1, \dots, 4} & \in \Omega^1(TU_S \times Im \HH), \\ \{dy^\mu, Im, Jm, Km\}_{\mu = 1, \dots, 4} & \in \Omega^1(TU_N \times Im \HH),
-\end{align}
-where $\{Im, Jm, Km \}$ are the restrictions to the respective neighborhood of the global forms $\{Im, Jm, Km\} \subset \Omega^1(S^4 \times Im \HH)$ dual to the global frame $\{i, j, k\} \in C^\infty(S^4, Im \HH)$.
+\end{align*} 
+From now on we will replace every instance of $\Omega_{U_{S}}, \Omega_{U_{N}}$ and $\Omega_{U_{SN}}$ by $\Omega_{S}, \Omega_{N}$ and $\Omega_{SN}$, respectively.
 \end{example}
 
 \linea 
@@ -1134,8 +1120,6 @@ since $\hat \alpha^i_j$ respects the wedge product. Notice, however, that denoti
 this follows from finding the decomposition of $\hat \alpha^i_j(dx^\mu)$ into the $1$-forms by evaluating $\hat \alpha^i_j(dx^\mu)(X \oplus \eta) = dx^\mu(s^j_i(X \oplus \eta)) = dx^\mu(X \oplus \cdots) = dx^\mu(X) = X^\mu$, meaning that $\hat \alpha^i_j (dx^\mu) = dx^\mu$.
 \end{remark}
 
-\linea 
-
 \section{Examples}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1148,11 +1132,8 @@ this follows from finding the decomposition of $\hat \alpha^i_j(dx^\mu)$ into th
 
 We already saw in example \ref{exampleFormsTPkBuildingBLocksandMostGeneral1FormOn}, the $1$-form $Im \in \Omega^1(S^2 \times i\RR)$ of equation \eqref{equationDefinitionImS2TPkAsForm} can be used as a building block for all local forms over $U_S$ or $U_N$ together with the differentials of the coordinates on $S^2$. 
 
-Following remark \ref{remarkSufficesEnoughNeedOnlyHatAlphaFor1FormsToTranslateLocalTrivializations}, since $S^2$ is covered by the two neighborhoods $U_S$ and $U_N$, the relation between the relation between the trivializations of any global form over these open sets may be deduced completely only from knowledge of,
-\begin{align*}
-    \hat \alpha^N_S(Im).
-\end{align*}
-To find this, recall from \eqref{equationChangeOfCoordinateOfAlgebroidElementTPkS2} that $s^S_N(X \oplus \eta) = X \oplus (\eta + ik d\theta(X))$ for any $X \oplus \eta \in \Gamma(TU_{SN}\times i\RR)$, and so $s^S_N(\partial_\phi) = \partial_\phi$, $s^S_N(\partial_\theta) = \partial_\theta + ik$ and $s^S_N(i) = i$. Hence,
+Following remark \ref{remarkSufficesEnoughNeedOnlyHatAlphaFor1FormsToTranslateLocalTrivializations}, since $S^2$ is covered by the two neighborhoods $U_S$ and $U_N$, the relation between the relation between the trivializations of any global form over these open sets may be deduced completely only from knowledge of $\hat \alpha^N_S(Im)$.
+To find this, recall from \eqref{equationChangeOfCoordinateOfAlgebroidElementTPkS2} that $S^S_N(X \oplus \eta) = X \oplus (\eta + ik d\theta(X))$ for any $X \oplus \eta \in \Gamma(TU_{SN}\times i\RR)$, and so $S^S_N(\partial_\phi) = \partial_\phi$, $S^S_N(\partial_\theta) = \partial_\theta + ik$ and $S^S_N(i) = i$. Hence,
 \begin{align*}
     \hat \alpha^N_S(Im)(\partial_\phi) &= 0 \\
     \hat \alpha^N_S(Im)(\partial_\theta) &= k \\
@@ -1168,7 +1149,7 @@ so
 
 \lin 
 
-Since we want to work with the coordinates $\vec x$ and $\vec y$ on $S^2$ defined in \eqref{equationvecxCoordinatesS2} and \eqref{equationvecyCoordinatesS2}, we will now find $d\theta$ in terms of them, and viceversa. We can combine the multiple coordinates that we have defined on $U_{SN} \subset S^2$ to conclude that every point might be written as
+To be able to work with the coordinates $\vec x$ and $\vec y$ on $S^2$ defined in \eqref{equationvecxCoordinatesS2} and \eqref{equationvecyCoordinatesS2}, we will now find $d\theta$ in terms of them, and viceversa. We can combine the multiple coordinates that we have defined on $U_{SN} \subset S^2$ to conclude that every point might be written as
 \begin{equation}
     \frac{(2x^1, 2x^2, ||\vec x||^2 - 1)}{|| \vec x||^2 + 1} = (\sin \phi \cos \theta, \sin \phi \sin \theta, \cos \phi) = \frac{(2y^1, 2y^2, 1- ||\vec y||^2)}{|| \vec y||^2 + 1}.
 \end{equation}
@@ -1259,11 +1240,11 @@ Thus, for $\hat \omega_N|_{U_{SN}}$ to be the restriction of a $1$-form $\hat \o
     \end{itemize}
 notice, however, that these are not necessary conditions since there would be an assymmetry between the value of the form at the north and south pole, because the previous conditions imply the form is null at the former while its value at the latter point is arbitrary.
 
-In general, \rtext{a complete family of local trivializations of a form on $TP^k/S^1$, and hence the global form, may be found only from knowledge of one of its local trivializations, either over $U_S$ or $U_N$}. To see this, notice that each of $U_S$ and $U_N$ covers all of $S^2$ except for one point, implying that once we know the local trivialization of a form $\omega$ on $TP^k/S^1$ over, say, $U_S$, we can translate its restriction over $U_{SN}$ into the restriction over $U_{SN}$ of the trivialization of $\omega$ over $U_N$, which can then be extended by continuity to the complete trivialization of $\omega$ over $U_N$. 
+In general, \rtext{a complete family of local trivializations of a form on $TP^k/S^1$, and hence the global form, may be found only from knowledge of one of its local trivializations over either of $U_S$ or $U_N$}. To see this, notice that each of $U_S$ and $U_N$ covers all of $S^2$ except for one point, implying that once we know the local trivialization of a form $\omega$ on $TP^k/S^1$ over, say, $U_S$, we can translate its restriction over $U_{SN}$ into the restriction over $U_{SN}$ of the trivialization of $\omega$ over $U_N$, which can then be extended by continuity to the complete trivialization of $\omega$ over $U_N$. 
 
 \lin 
 
-Lastly, let us notice that using equations \ref{equationdxsInTermsOfDThetasS2COmplexHopf}, over $U_{SN}$ we may also write the local trivialization of the most general $1$-form on $TP^k/S$ as:
+Lastly, let us notice that using equations \eqref{equationdxsInTermsOfDThetasS2COmplexHopf}, over $U_{SN}$ we may also write the local trivialization of the most general $1$-form on $TP^k/S$ as:
 \begin{eqnsplit}
     \hat \omega_S &= if(\phi, \theta) d\phi + ig(\phi, \theta) d\theta + ih(\phi, \theta) Im,\\
     \text{where  }f(\phi, \theta) &= - \cos \theta \csc^2 \frac{\phi}{2} \omega^\epsilon_{S; 1}(\phi, \theta) - \sin \theta \csc^2 \frac{\phi}{2} \omega^\epsilon_{S; 2}(\phi, \theta), \\
@@ -1271,11 +1252,36 @@ Lastly, let us notice that using equations \ref{equationdxsInTermsOfDThetasS2COm
     h(\phi, \theta) &= \omega^\epsilon_{S; i}(\phi, \theta).
 \end{eqnsplit}
 
-\subsection{$TP^k/S^3$ over $S^4$} \label{exampleTransitionALphaFormsPkS4}
+\subsection{$TP^k/S^3$ over $S^4$}
+\label{exampleFormsBuildingBlocksTPkS4}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Every form can be determined from its local trivialization over $U_S$ or $U_N$
+Every form on the Atiyah Lie algebroid $TP^k/S^3$ associated to the principal bundle $S^3 \to P^k \to S^4$, whether scalar or vector bundle-valued, will have a local trivialization into wedge products of the scalar-valued $1$-forms on the trivializing Lie algebroids
+\begin{align}
+    \{dx^\mu, Im, Jm, Km\}_{\mu = 1, \dots, 4} & \in \Omega^1(TU_S \times Im \HH), \\ \{dy^\mu, Im, Jm, Km\}_{\mu = 1, \dots, 4} & \in \Omega^1(TU_N \times Im \HH),
+\end{align}
+where $\{Im, Jm, Km \}$ are the restrictions to the respective neighborhood of the global forms $\{Im, Jm, Km\} \subset \Omega^1(S^4 \times Im \HH)$ dual to the global frame $\{i, j, k\} \in C^\infty(S^4, Im \HH)$.
+
+Furthermore, every form can be determined from its local trivialization over $U_S$ or $U_N$ once, over $U_{SN}$ the forms
+\begin{align}
+    \hat \alpha^N_S(Im), && \hat \alpha^N_S(Jm), && \hat \alpha^N_S(Km)
+\end{align}
+are determined.
+
+% the most general connection $\hat \omega \in \Omega^1
+% (TP^k/S^3, P^k \times Im \HH/S^3)$ on $TP^k/S^4$ has the local trivialization over $U_S$
+% \begin{equation}
+%     \hat \omega_S = i \hat \omega_{S}^1 + j \omega_{S}^2 + k \hat \omega_{S}^3 + \hat \omega_{S;i}Im + \hat \omega_{S;j}Jm + \hat \omega_{S;k}Km,
+% \end{equation}
+% where $\omega_S^i = (\omega_S)^i_\mu dx^\mu$ are restrictions to $U_S$ of $1$-forms in $\Omega^1(TS^7)$, hence the components of $\hat \omega$ over $U_S$ with respect to the basis $i, j, k$ of $Im \HH$ are actually functions $(\omega_S)^i_\mu \in C^\infty(S^2)$ defined over all of $S^2$; on the contrary, $\hat \omega_{S;k}$ are functions $C^\infty(U_{S}, End(Im \HH))$.
+
+% If we use the matrix algebra $\alg{su}(2)$ as the representation of the Lie algebra,\todo{check isomorphism between $Im \HH$ and $su(2)$} then:
+% \begin{eqnsplit}
+%     \hat \omega_S 
+%     &= \begin{pmatrix} i\omega_S^3 & \omega_S^2 + i \omega_S^1 \\ \omega_S^2 - i \omega_S^1 & -i\omega_S^3  \end{pmatrix} - Im - Jm - Km
+% \end{eqnsplit}
+
 
 
 

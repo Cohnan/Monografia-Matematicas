@@ -13,15 +13,15 @@
         
 %         \item The action of $G$ on $V$ determines uniquely the associated vector bundle
         
-%         \item ``Conversely'', at least up to what I did by hand, having a single section of a vector bundle, and having a representation of $G$ on the fiber determines the cocycles, which in turns determines the principal bundle, so: ``the vector bundle $E$ with fiber $V$ + the representation of a group $\Longrightarrow$ determines the Principal Bundle''... so, \textbf{even if I start simply with a vector bundle and a group that acts in the fiber, I obtain a principal bundle}, and so I may see a seciton as an equivariant function $:P \to V$.
+%         \item ``Conversely'', at least up to what I did by hand, having a single section of a vector bundle, and having a representation of $G$ on the fiber determines the cocycles, which in turns determines the principal bundle, so: ``the vector bundle $E$ with fiber $V$ + the representation of a group $\Longrightarrow$ determines the Principal Bundle''... so, \rtext{even if I start simply with a vector bundle and a group that acts in the fiber, I obtain a principal bundle}, and so I may see a seciton as an equivariant function $:P \to V$.
         
 %         \item This is interpreted as locally choosing a ``frame'' or local trivialization, so that I may, locally, consider the section as simply $:U \subset M \to V$, as it is perceived ``physically''.
             
 %         \end{itemize}
     
-%     \item \textbf{I want a ``covariant'' derivative of sections of $E$ to be something that sends $G$-equivariant funtions $:P \to V$ to $G$-equivariant functions},  given only $X \in TM$, because it is the manifold we see, on which $E$ is based. (In GR covariant means sending a tensor field to a tensor field)
+%     \item \rtext{I want a ``covariant'' derivative of sections of $E$ to be something that sends $G$-equivariant funtions $:P \to V$ to $G$-equivariant functions},  given only $X \in TM$, because it is the manifold we see, on which $E$ is based. (In GR covariant means sending a tensor field to a tensor field)
     
-%     \item \textbf{This last point explains the $G$-equivariance of the principal connections!!} (see my example).
+%     \item \rtext{This last point explains the $G$-equivariance of the principal connections!!} (see my example).
     
 %     \end{itemize}
 
@@ -243,7 +243,7 @@
                 
 %             \end{itemize}
         
-%         \item \textbf{Mixed local basis}
+%         \item \rtext{Mixed local basis}
         
 %         \item Local trivialization of curvature given background connection.
             
@@ -406,7 +406,7 @@ as vector bundles, where $\nabla: TM \to A$ is then an embedding and $\omega: A 
 \end{proof}
 
 \begin{example}\label{example}
-The following example shows how \textbf{the generalized notion of an ordinary connection on a transitive Lie algebroid coincides with that of connection on a principal bundle, when the transitive Lie algebroid in question is the Atiyah Lie algebroid associated to the principal bundle}. Let $G \to P \xrightarrow{\pi} M$ be a principal bundle over the manifold $M$ with structure Lie group $G$, with $\alg g = Lie(G)$. On a principal bundle the notion of connection has multiple equivalent definitions, including:
+The following example shows how \rtext{the generalized notion of an ordinary connection on a transitive Lie algebroid coincides with that of connection on a principal bundle, when the transitive Lie algebroid in question is the Atiyah Lie algebroid associated to the principal bundle}. Let $G \to P \xrightarrow{\pi} M$ be a principal bundle over the manifold $M$ with structure Lie group $G$, with $\alg g = Lie(G)$. On a principal bundle the notion of connection has multiple equivalent definitions, including:
     \begin{itemize}
     
     \item A $G$-invariant subbundle $HP$ of $TP$ (under the pushforward of the right action $R$ of $G$ on $P$), called the \textit{horizontal subbundle}, such that $TP = HP \oplus VP$ where $VP = ker(\pi_*)$. 
@@ -470,7 +470,7 @@ $\nabla$ as a vector bundle morphism
     \nabla^E : TM &\to \alg D(E)\\
         X &\mapsto \nabla_X,
 \end{eqnsplit}
-since the Leibniz rule is what defines the elements of $\Gamma(\alg D(E))$ within the $\bb K$-linear maps $\Gamma(E) \to \Gamma(E)$; furthermore, this Leibniz rule shows that $a(\nabla_X) = X$, where $a$ is the anchor of $\alg D(E)$. The same arguments show that such an anchor preserving vector bundle morphism $:TM \to \alg D(E)$ defines a vector bundle connection of $E$. Hence, \textbf{ordinary connections of the transitive Lie algebroid $\alg D(E)$ and vector bundle connections of $E$ are the same notion}.
+since the Leibniz rule is what defines the elements of $\Gamma(\alg D(E))$ within the $\bb K$-linear maps $\Gamma(E) \to \Gamma(E)$; furthermore, this Leibniz rule shows that $a(\nabla_X) = X$, where $a$ is the anchor of $\alg D(E)$. The same arguments show that such an anchor preserving vector bundle morphism $:TM \to \alg D(E)$ defines a vector bundle connection of $E$. Hence, \rtext{ordinary connections of the transitive Lie algebroid $\alg D(E)$ and vector bundle connections of $E$ are the same notion}.
 
 Now, let $G \to P \to M$ be a principal bundle, and let us use the notation of the previous example. Suppose that $E$ is associated to $P$ and that it has the vector space $V$ as typical fiber. A connection on the principal bundle $P$ induces a connection on $E = P \times V / G$ as follows: let $X \in T_pM$ and let $\tilde \mu \in C_G^\infty(P, V)$ be the $G$-equivariant function associated to the section $\mu \in \Gamma(E)$; then define the connection $\nabla^E$ by
 \begin{eqnsplit}
@@ -491,7 +491,7 @@ is the Lie algebroid representation of $TP/G$ in $E$ defined in \ref{example...}
 \begin{align}
     \nabla^E : TM \xrightarrow{\nabla} A \xrightarrow{\phi} \alg D(E) && \nabla_X^E = \phi(\nabla_X)
 \end{align}
-since $\cl{H(\ppal X)} \equiv \nabla_{\pi^*_G\cl{\ppal X}}$. Notice, however, that other covariant derivatives on $E$ may be induced by an ordinary connection on $TP/G$ is another Lie algebroid representation $\phi$ is used. \textbf{In conclusion, the covariant derivative on vector bundles associated to principal bundles induced by principal bundle connections is an example of a $\alg D(E)$ ordinary connection induced by a Lie algebroid representation of $TP/G$ on $E$ and an ordinary connection on $TP/G$}.
+since $\cl{H(\ppal X)} \equiv \nabla_{\pi^*_G\cl{\ppal X}}$. Notice, however, that other covariant derivatives on $E$ may be induced by an ordinary connection on $TP/G$ is another Lie algebroid representation $\phi$ is used. \rtext{In conclusion, the covariant derivative on vector bundles associated to principal bundles induced by principal bundle connections is an example of a $\alg D(E)$ ordinary connection induced by a Lie algebroid representation of $TP/G$ on $E$ and an ordinary connection on $TP/G$}.
 \end{example}
 
 \begin{definition}
@@ -506,9 +506,8 @@ for any $\oid X \in TP/G$ such that $\pi_*^G(\oid X) = X$. Then,
 \begin{equation}
     \phi_L \circ \omega \in \Omega^1(A, \End(E))
 \end{equation} 
-is a $1$-form associated to the ordinary connection $\nabla^E$; notice that the equation \eqref{equationInducedProducedConnectionByNormalizedOrdinaryLieAlgebroidConnectionInTermsOfFormAssociatedRepresentationVector} is well defined for $X$ precisely because $\omega$ is normalized, since then the right hand sides vanishes when $\oid X \in Im(j)$. We will now relax the normalization condition on transitive Lie algebroids when defining connections, in which case the ``covariant derivatives'' that will be induced on vector bundles will be taken in any direction $\oid X \in A$; these are called $A$-connections on $E$ and will be defined in chapter \ref{}.
+is a $1$-form associated to the ordinary connection $\nabla^E$; notice that the equation \eqref{equationInducedProducedConnectionByNormalizedOrdinaryLieAlgebroidConnectionInTermsOfFormAssociatedRepresentationVector} is well defined for $X$ precisely because $\omega$ is normalized, since then the right hand sides vanishes when $\oid X \in Im(j)$. We will now relax the normalization condition on transitive Lie algebroids when defining connections, in which case the ``covariant derivatives'' that will be induced on vector bundles will be taken in any direction $\oid X \in A$; these are called $A$-connections on $E$ and will be defined in section \ref{ChConenctionsectionAConnections}.
 
-\linea
 
 \subsection{Generalized Connections}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -567,8 +566,6 @@ We see that $\omega$ is normalized from:
 the second line follows from the definition of $\tau$ and the normalization of $\tilde \omega$.
 \end{proof}
 
-\linea
-
 \subsection{Curvature}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -600,7 +597,9 @@ for all $\oid X, \oid Y \in \Gamma(A)$.
 From the previous proposition we see that the connection induced by $\hat \omega$ is flat, i.e. has $0$ curvature, if and only if the endomorphism $\hat \nabla: A \to A$ is a Lie algebra bundle morphism, i.e. $\hat \nabla$ is a Lie algebroid morphism. Similarly, $\tau$ is flat, i.e. its algebraic curvature is $0$ if and only if the endomorphism $\tau: L \to L$ is a Lie algebra bundle morphism. 
 \end{remark}
 
-If $\hat \omega$ is an ordinary connection form, then $j^* \hat R = 0$ since $hat \nabla \comp j = 0$, and so it the curvature $2$-form $\hat R$ defines an element $R \in \Omega^2(TM, L)$ called \emph{the curvature of the ordinary connection on $A$}. When $\hat \omega$ is an ordinary connection on $A = TP/G$ for some $G \to P \to M$ principal bundle, then $R \in \Omega^2(TM, P \times \alg g/G)$ is the form that corresponds to the basic\footnote{} $2$-form that is usually defined to be the curvature of the connection on $P$; when $\hat \omega$ is an ordinary connection on $A = \alg D(E)$ for some vector bundle $E$ over $M$, $R \in \Omega^2(TM, End(E))$ is precisely what is called the curvature of the corresponding connection on $E$.
+If $\hat \omega$ is an ordinary connection form, then $j^* \hat R = 0$ since $\hat \nabla \comp j = 0$, and so it the curvature $2$-form $\hat R$ defines an element $R \in \Omega^2(TM, L)$ called \emph{the curvature of the ordinary connection on $A$}. When $\hat \omega$ is an ordinary connection on $A = TP/G$ for some $G \to P \to M$ principal bundle, then $R \in \Omega^2(TM, P \times \alg g/G)$ is the form that corresponds to the basic
+\footnote{A $G$-equivariant and Horizontal form on $P$. The $G$-equivariance allows to quotient both the initial and target space by $G$, the horizontality allows to replace $TP/G$ by $TM$.  Recall that vector fields of associated vector bundles are basic $0$-forms on $P$.} 
+$2$-form on $P$ that is usually defined to be the curvature of the connection on $P$; when $\hat \omega$ is an ordinary connection on $A = \alg D(E)$ for some vector bundle $E$ over $M$, $R \in \Omega^2(TM, End(E))$ is precisely what is called the curvature of the corresponding connection on $E$.
 
 \begin{proposition}
 Let $\hat \omega$ be a connection form on $A$. Then the curvature form $\hat R \in \Omega^2(A, L)$ satisfies the Bianchi identity:
@@ -609,7 +608,7 @@ Let $\hat \omega$ be a connection form on $A$. Then the curvature form $\hat R \
 \end{equation}
 \end{proposition}
 \begin{proof}
-Recall from proposition \ref{} that $(\Omega^\bullet(A, L), \wedge^{[,]}, \hat d)$ is a differential graded Lie algebra, hence:
+Recall from example \ref{exampleOmegaALIsDIfferentialGradedLieAlgebra} that $(\Omega^\bullet(A, L), \wedge^{[,]}, \hat d)$ is a differential graded Lie algebra, hence:
 \begin{align*}
     \hat d \hat  R + \hat \omega \wedge^{[,]} \hat R 
         &= \hat d(\hat d \hat \omega + \frac{1}{2}\hat \omega \wedge^{[,]} \hat \omega) + \hat \omega \wedge^{[,]} (\hat d \hat \omega + \frac{1}{2} \hat \omega \wedge^{[,]} \hat \omega) \\
@@ -617,7 +616,7 @@ Recall from proposition \ref{} that $(\Omega^\bullet(A, L), \wedge^{[,]}, \hat d
         &= (- \hat \omega \wedge^{[,]} \hat d \hat \omega) + (\hat \omega \wedge^{[,]} \hat d \hat \omega + 0) \\
         &= 0.
 \end{align*}
-The second line follows from applying the graded Leibniz rule \eqref{} satisfies by $\hat d$; the third line follows from applying the anticommutativity \eqref{} in the first parenthesis, and the graded Jacobi identity \ref{} to the second parenthesis.
+The second line follows from applying the graded Leibniz rule \eqref{equationDefinitionGradedLeibnizInDifferentialGradedAlgebra} satisfies by $\hat d$; the third line follows from applying the anticommutativity \eqref{equationGradedCommutativeMinusGeneral} in the first parenthesis, and the graded Jacobi identity \ref{gradedJacobiIdentityGeneralizedAssociativity} to the second parenthesis.
 \end{proof}
 
 \begin{definition}\label{definitionIngredientsCurvatureDecompositionConnection}
@@ -631,7 +630,10 @@ Let $\hat \omega$ be an connection form on $A$ with reduced kernel endomorphism 
         \begin{equation}
             (\mathcal D_X \tau)(\eta) := [\nabla_X, \tau(\eta)] - \tau[\tilde \nabla_X, \eta].
         \end{equation}
-        Now, define $[a^* \mathcal D \tau, \tilde \omega] (\oid X, \oid Y) := (\mathcal D_{a(\oid X)})(\tilde \omega \oid Y) - (\mathcal D_{a(\oid Y)})(\tilde \omega \oid X)$. This is an element of $\Omega^2(A, L)$.
+        Now, define 
+        \begin{equation}
+            [a^* \mathcal D \tau, \tilde \omega] (\oid X, \oid Y) := (\mathcal D_{a(\oid X)})(\tilde \omega \oid Y) - (\mathcal D_{a(\oid Y)})(\tilde \omega \oid X).
+        \end{equation} This is an element of $\Omega^2(A, L)$.
         
     \end{itemize}
 \end{definition}
@@ -714,7 +716,7 @@ Let $\hat \omega$ be a connection form on $A$ with local trivialization $\hat \o
     \end{itemize}
 \end{proposition}
 
-Notice that if $\hat \omega$ is an ordinary connection form, a family of local trivializations $\{\omega_i \in \Omega^1(TU_i \times \alg g, U_i \times \alg g)\}_{i \in I} $ of $\hat \omega$ is completely specified by its associated local tangent connection forms $\{A_i \in \Omega^1(TU_i, U_i \times \alg g)\}$, since then $\hat \omega_i = A_i - \epsilon$. Furthermore, notice that if $A$ is an Atiyah Lie algebroid associated to a principal bundle, the transformation law of the $A_i$'s is precisely that of the local connection $1$-forms of a principal connection \ref{}, hence the family $\{A_i\}_{i \in I}$ where the $A_i$'s transform as indicated in the previous proposition does specify a principal connection of $P$. In general, \textbf{a family $\{A_i, \tau_i\}_{i \in I}$ with the transformation laws indicated above define a connection form on the transitive Lie algebroid $A$}.
+Notice that if $\hat \omega$ is an ordinary connection form, a family of local trivializations $\{\omega_i \in \Omega^1(TU_i \times \alg g, U_i \times \alg g)\}_{i \in I} $ of $\hat \omega$ is completely specified by its associated local tangent connection forms $\{A_i \in \Omega^1(TU_i, U_i \times \alg g)\}$, since then $\hat \omega_i = A_i - \epsilon$. Furthermore, notice that if $A$ is an Atiyah Lie algebroid associated to a principal bundle, the transformation law of the $A_i$'s is precisely that of the local connection $1$-forms of a principal connection \ref{}, hence the family $\{A_i\}_{i \in I}$ where the $A_i$'s transform as indicated in the previous proposition does specify a principal connection of $P$. In general, \rtext{a family $\{A_i, \tau_i\}_{i \in I}$ with the transformation laws indicated above define a connection form on the transitive Lie algebroid $A$}.
 
 \begin{definition}\label{definitionLocalTrivializationOfHatNablaEndormorphismAnchorPreservingGeneralizedConnection}
 Let $\hat \nabla \in End(A)$ be the anchor preserving endomorphism associated to the connection form $\hat \omega$. \emph{The local trivialization $\hat \nabla^i$ of $\hat \nabla$ over $U_i$} is the map
@@ -791,7 +793,7 @@ Let $\{E_a\}_{a=1, \dots, n}$ be a basis for $\alg g$ with dual basis $\{\epsilo
 \end{definition}
 
 For the rest of the section suppose that in $U_i$ the tangent bundle is trivialized with coordinates $x^\mu: U_i \to \RR$, $\mu = 1, \dots, m$, with associated local vector fields $\partial_\mu \equiv \partial_{x^\mu}$. Denote by $\nabla_{\mu} := \nabla_{\partial_{x^\mu}} \in \Gamma(TU_i \times \alg g)$. Notice that, from the trivialization of $\nabla$ equation \eqref{equationLocalTrivializationOfOrdinaryConnectionNablaVersion} it follows that
-\begin{eqnsplit}
+\begin{eqnsplit}\label{equationLocalDerivationOfConnection}
     \nabla^i_\mu = \partial_\mu \oplus A_i(\partial_\mu). 
 \end{eqnsplit}
 
@@ -865,11 +867,11 @@ Since $\alg a_i = \alg a_i^a E_a$ and $\alg a_j$ are local trivializations of th
 \end{align*}
 applying $\hat \alpha^j_i = (\hat \alpha^i_j)^{-1}$ on both sides gives the desired equation.
 \end{proof}
-\begin{remark}
-Notice that a single coordinate map of $U_{ij} \subset M$ is used in the theorem, explaining wh
-\end{remark}
+% \begin{remark}
+% Notice that a single coordinate map of $U_{ij} \subset M$ is used in the theorem, explaining wh
+% \end{remark}
 
-\subsection{Curvature Forms}
+\subsection{Curvature Form}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -920,7 +922,7 @@ To see that $(a^* \mathcal D \comp \tilde \omega)_i = (\mathcal D \tau_i)^b_{\mu
 \begin{align*}
     (a^* \mathcal D \comp \tilde \omega)_i(\tilde \nabla^i_\mu, \tilde \nabla^i_\nu) 
         &= (\mathcal D_{\partial_\mu} \tau_i) (\tilde \omega_i(\tilde \nabla^i_\mu)) - (\mathcal D_{\partial_\nu} \tau_i) (\tilde \omega_i(\tilde \nabla^i_\nu))\\
-        &= (\mathcal D_{\partial_\mu} \tau_i) (0) - (\mathcal D_{\partial_\nu} \tau_i)(0);
+        &= (\mathcal D_{\partial_\mu} \tau_i) (0) - (\mathcal D_{\partial_\nu} \tau_i)(0) = 0;
 \end{align*}
 \begin{align*}
     (a^* \mathcal D \comp \tilde \omega)_i(\tilde \nabla^i_\mu, -E_a) 
@@ -929,22 +931,19 @@ To see that $(a^* \mathcal D \comp \tilde \omega)_i = (\mathcal D \tau_i)^b_{\mu
 \end{align*}
 \begin{align*}
     (a^* \mathcal D \comp \tilde \omega)_i(-E_a, -E_b) 
-        &= (\mathcal D_{0} \tau_i) (\tilde \omega_i(-E_b)) - (\mathcal D_{0} \tau_i) (\tilde \omega_i(-E_a))\\
-        &= 0.
+        &= (\mathcal D_{0} \tau_i) (\tilde \omega_i(-E_b)) - (\mathcal D_{0} \tau_i) (\tilde \omega_i(-E_a)) = 0.
 \end{align*}
 
 Finally, that $(\tilde \omega^* R_\tau)_i = (W_i)^c_{ab} E_c (\alg a_i)^a \wedge (\alg a_i)^b$ follows from:
 \begin{align*}
     (\tilde \omega^* R_\tau)_i(\tilde \nabla^i_\mu, \tilde \nabla^i_\nu) 
         &= (R_\tau)_i(\tilde \omega_i(\tilde \nabla^i_\mu), \tilde \omega_i(\tilde \nabla^i_\nu)) \\
-        &= (R_\tau)_i(0, 0) \\
-        &= 0;
+        &= (R_\tau)_i(0, 0) = 0;
 \end{align*}
 \begin{align*}
     (\tilde \omega^* R_\tau)_i(\tilde \nabla^i_\mu, -E_a) 
         &= (R_\tau)_i(\tilde \omega_i(\tilde \nabla^i_\mu), \tilde \omega_i(-E_a)) \\
-        &= (R_\tau)_i(0, E_a) \\
-        &= 0;
+        &= (R_\tau)_i(0, E_a) = 0;
 \end{align*}
 \begin{align*}
     (\tilde \omega^* R_\tau)_i(-E_a, -E_b) 
@@ -969,12 +968,11 @@ Similarly, from the definition of $\mathcal D \tau$ if follows that
 \end{eqnsplit}
 
 \section{$A$-connections}
+\label{ChConenctionsectionAConnections}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\todo{Do ``trivial'' example of representation of trivial Lie algebroid on trivial vector bundle on which $G$ acts: to this case reduces locally the representation of $TP/G$ on an associated vector bundle!}
 
 In this section, let $A$ be any Lie algebroid over a manifold $M$, not necessarily transitive. $A$-connections will be yet another generalizations of connections, in this case of vector bundle connections or covariant derivatives, on which the directions in which we take the derivatives are not only the tangent directions of $TM$, but the ``generalized directions'' of $A$. Additionally, let $E$ be a vector bundle over $M$.
 
@@ -993,15 +991,25 @@ In this section, let $A$ be any Lie algebroid over a manifold $M$, not necessari
 On any vector bundle $E$ over $M$, an $TM$-connection is simply an ordinary connection on $E$, which also coincides with a connection on the vector bundle $E$ as seen in example \ref{}.
 \end{example}
 
+\begin{example}[All TLA-connections on a trivial vector bundle]
+\label{exampleAllTLATrivialLieAlgebroidConnectionsOnTrivialVectorBundle}
+Let $A = TM \times \alg g$ be a trivial Lie algebroid and $E = M \times V$ a vector bundle. An $A$-connection $\hat \nabla^E: A \to \alg D(E)$ is an anchor preserving vector bundle morphisms, therefore it has the decomposition
+\begin{equation}
+    \hat \nabla^E_{X \oplus \eta} = X \oplus (B(X) + \nu(\eta)),
+\end{equation}
+for all $X \oplus \eta \in TM \times \alg g$, where
+$B: TM \to M \times \alg{gl}(V))$ and and $\nu M \times \alg g \to M \times \alg{gl}(V)$ are vector bundle morphisms. In their algebraic versions, i.e. seen as maps between the modules of sections, $B : \Gamma(TM) \to C^\infty(M, \alg g)$ and $\nu: C^\infty(M, \alg g) \to C^\infty(M, \alg{gl}(V))$ are $C^\infty(M)$-linear maps, or $\nu$ can also be seen as a function $\nu \in C^\infty(U_i, \Hom(\alg g. \alg{gl}(V)))$.
+\end{example}
+
 \begin{example}
-Let $A$ be a transitive Lie algebroid, and suppose that $\hat \nabla^E$ is an $A$-connection on $E$. If $\hat \nabla:A \to A$ is the vector bundle endomorphism associated to a connection $\hat \omega$ on $A$, then, the composition:
+Let $A$ be a transitive Lie algebroid, and suppose that $\hat \nabla^E$ is an $A$-connection on $E$. If $\hat \nabla:A \to A$ is the anchor preserving vector bundle endomorphism associated to a connection $\hat \omega$ on $A$, then, the composition:
 \begin{equation}
     \hat \nabla^{E, \hat \omega} : A \xrightarrow{\hat \nabla} A \xrightarrow{\hat \nabla^E} \alg D(E)
 \end{equation}
 is an anchor preserving vector bundle morphism, i.e. it is an $A$-connection on $E$.
 \end{example}
 
-\textbf{An important subfamily of examples that sits at the core of this document} is the following. From now on we will assume that $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ is a transitive Lie algebroid sequence.
+\rtext{An important subfamily of examples that sits at the core of this document} is the following. From now on we will assume that $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ is a transitive Lie algebroid sequence.
 
 \begin{definition}
 Let $\hat \omega$ be a connection $1$-form on $A$ with associated vector bundle endomorphism $\hat \nabla:A \to A$. Let $\phi: A \to \alg D(E)$ be a representation of $A$ on $E$. Then, \emph{the $A$-connection on $E$ produced by the connection $\hat \omega$} is the composition
@@ -1011,11 +1019,11 @@ Let $\hat \omega$ be a connection $1$-form on $A$ with associated vector bundle 
 \end{definition}
 
 \begin{theorem}
-Let $\phi:A \to \alg D(E)$ be a representation. Then there is a bijective correspondence between $A$-connections $\hat \nabla^E$ on $E$ and $1$-forms $\hat \omega^E \in \Omega^1(A, \End(E))$ given by the relation:
+Let $\phi:A \to \alg D(E)$ be a representation. Then there is a bijective correspondence between $A$-connections $\hat \nabla^E$ on $E$ and $1$-forms $\hat \omega^E \in \Omega^1(A, \End(E))$, using the representation of example \ref{exampleOmegaAEndEIsDifferentialGradedLieAlgebra}, given by the relation:
 \begin{equation}
     \hat \nabla^E_{\oid X} = \phi(\oid X) + j \comp \hat \omega^E(\oid X).
 \end{equation}
-Furthermore, the curvature of $\hat \nabla^E$ has the formula:\todo{have to define $\hat d_E$ from induced representation of $A$ on $End(E)$}
+Furthermore, the curvature of $\hat \nabla^E$ has the formula:
 \begin{equation}
     \hat R^E = \hat d_E \hat \omega^E + \frac{1}{2} \hat \omega^E \wedge^{[,]} \hat \omega^E,
 \end{equation}
@@ -1040,7 +1048,7 @@ Now, let $\oid X, \oid Y \in A$ be arbitrary:
         &= j \comp (\hat d_E \hat \omega^E + \frac{1}{2} \hat \omega^E \wedge^{[,]} \hat \omega^E).
 \end{align*}
 
-That the curvature $2$-form satisfies the Bianchi identity follows from the previous formula for $\hat R^E$ and from the fact that $(\Omega^\bullet(A, \End(E)), \wedge^{[,]}, \hat d_E)$ is a differential graded Lie algebra\todo{prove this}, so a calculation identical to that followed for the curvature $2$-form of a connection on a transitive Lie algebroid, in the proof of \ref{}, can be applied.
+That the curvature $2$-form satisfies the Bianchi identity follows from the previous formula for $\hat R^E$ and from the fact that $(\Omega^\bullet(A, \End(E)), \wedge^{[,]}, \hat d_E)$ is a differential graded Lie algebra that follows from theorem \ref{theoremLABImpliesDIfferentialGradedLieAlgebra}, so a calculation identical to that followed for the curvature $2$-form of a connection on a transitive Lie algebroid, in the proof of \ref{}, can be applied.
 \end{proof}
 
 For an $A$-connection $\hat \nabla^{E, \, \hat \omega}$ produced by the connection $1$-form $\hat \omega \in \Omega^1(A, L)$, 
@@ -1049,46 +1057,26 @@ For an $A$-connection $\hat \nabla^{E, \, \hat \omega}$ produced by the connecti
         &= \phi(\oid X + j \comp \hat \omega(\oid X)) \\
         &= \phi(\oid X) + j \comp \phi_L \comp \hat \omega (\oid X)
 \end{eqnsplit}
-for all $\oid X \in A$. This means that \textbf{the $End(E)$-valued $1$-form associated to the $A$-connection produced by $\hat \omega$ is $\phi_L \comp \hat \omega$}.
+for all $\oid X \in A$. This means that \rtext{the $End(E)$-valued $1$-form associated to the $A$-connection produced by $\hat \omega$ is $\phi_L \comp \hat \omega$}.
 
 \begin{definition}\label{definitionLocalTrivializationOfACOnnectionTransitiveLieAlgebroidComponents}
 Let $\hat \nabla^E$ be an $A$-connection on $E$ ($A$ with Lie algebroid atlas), and let $E$ have local trivialization $\beta_i: U_i \times V\to E|_{U_i}$ over $U_i$. \emph{The local trivialization over $U_i$ of the $A$-connection $\hat \nabla^E$} is the $TU_i \times \alg g$-connection on $U_i \times V$ defined by 
 \begin{equation}
-    \hat \nabla^{E, i}_{X \oplus \eta} f := \beta_i^{-1}(\hat \nabla_{S_i(X \oplus \eta)}^E \beta_i(f)).
+    \hat \nabla^{E, i}_{X \oplus \eta} f := \beta_i^{-1}(\hat \nabla_{S_i(X \oplus \eta)}^E \beta_i(f))
 \end{equation}
+for all $f \in C^\infty(U_i, V)$.
 % If $x^\mu: U_i \to \RR$ are coordinates on $U_i$, $\mu = 1, \dots, m$, \emph{the components of $\hat \nabla^{E}$} over $U_i$ with respect to the coordiates $x^\mu$ and basis $\{E_a\}_{a = 1, \dots, n}$ are the functions
 % \begin{eqnsplit}
 %     (\hat \nabla^{E, i})^b_{\mu, a} := \epsilon^b(\hat \nabla^{E, i}_{\partial_\mu \oplus E_a}) \in C^\infty()
 % \end{eqnsplit}
 \end{definition}
 
-
-
-
-
-
-
-
-
-
-
-\linea
-
-\begin{example}[All TLA-connections on T.v.b.]
-\label{exampleAllTLATrivialLieAlgebroidConnectionsOnTrivialVectorBundle}
-$B: TU_i \to C^\infty(U_i, \alg{gl}(V))$ $C^\infty(U_i)$-linear, and $\nu \in C^\infty(U_i, \Hom(\alg g. \alg{gl}(V)))$.
-\end{example}
-
-\lin
-
-\begin{example}[Local trivialization of arbitrary $A$-connection produced by connection on $A$]
-$B_i = \alpha_i + \phi_L \comp A_i$, $\nu_i = - \phi_{L, i} \comp \tau_i$
-
+Following example \ref{exampleAllTLATrivialLieAlgebroidConnectionsOnTrivialVectorBundle}, the local trivialization of the $A$-connection has a family of trivializations given by $\{(B_i, \nu_i)\}_{i \in I}$ where $B_i = \alpha_i + \phi_L \comp A_i$, and $\nu_i = - \phi_{L, i} \comp \tau_i$ therefore the trivialziation of the $A$-connections has the following formula:\todo{}
 \begin{equation} \label{equationLocalTrivializationOfGeneralProducedAConnectionArbitraryGeneralRepresentation}
     \hat \nabla^{E, i}_{X \oplus \eta} = X \oplus [\alpha_i(X) + \phi_{L, i} \comp A_i(X) - \phi_{L, i}\comp \tau_i(\eta)].
 \end{equation}
 
-Given basis $\{E_a\}_a$ with ${a, b = 1, \dots, n}$ of $\alg g$ dual to $\{\epsilon^a\}_a$, $\{e_u\}_{u}$ with $u, v = 1, \dots h$ of $V$ dual to $\{\tilde e^u\}$, and coordinates $\{x^\mu: U_i \to \RR\}_{\mu}$ with $\mu, \nu  = 1, \dots m$ of $M$:
+Given a basis $\{E_a\}_a$ with ${a, b = 1, \dots, n}$ of $\alg g$ dual to $\{\epsilon^a\}_a$, $\{e_u\}_{u}$ with $u, v = 1, \dots h$ of $V$ dual to $\{\tilde e^u\}$, and coordinates $\{x^\mu: U_i \to \RR\}_{\mu}$ with $\mu, \nu  = 1, \dots m$ of $M$:
 \begin{eqnsplit}
     \hat \nabla^{E, i}_\mu := \hat \nabla^{E_i}_{\partial_\mu \oplus 0} 
     &= \partial_\mu + (\alpha_i)_\mu + A^b_\mu \phi_L(E_b) \\
@@ -1101,13 +1089,13 @@ Given basis $\{E_a\}_a$ with ${a, b = 1, \dots, n}$ of $\alg g$ dual to $\{\epsi
     &= - (\phi_{L, i})_{b, v}^u \tau^b_a e_u \tilde e^v
 \end{eqnsplit}
 
-\end{example}
+% \end{example}
 
 
 \begin{example}[Trivialization of $A$-connection produced by connection on $A$ and gropu induced representation]
 Let $U_i$ be a neighborhood on which the representation $\phi:A \to \alg D(E)$ trivializes as the $G$-induced representation of $TU_i\times \alg g$ on $U_i \times V$, where $G$ is a Lie group with $\alg g$ as Lie algebra, and $V$ is the typical fiber of $E$ over $U_i$.
 
-Let $\hat \omega$ be a connection form on the transitive Lie algebroid $A$. The $A$-connection $\hat \nabla^E$ on $E$ produced by $\hat \omega$ trivializes \todo{define the local trivialization of a representation and of an $A$-connection} over $U_i$ as:
+Let $\hat \omega$ be a connection form on the transitive Lie algebroid $A$. The $A$-connection $\hat \nabla^E$ on $E$ produced by $\hat \omega$ trivializes over $U_i$ as:
 \begin{align*}
     \hat \nabla^{E, i}_{X \oplus \eta} f
         &= \phi_i(\hat \nabla^i_{X \oplus \eta}) f\\
@@ -1138,21 +1126,11 @@ The group induced $TP^k/S^1$-connections are
 
 
 
-
-\linea
-
 In example \ref{exampleFormsTPkBuildingBLocksandMostGeneral1FormOn} we saw that the most general form, and hence the most general connection form on $TP^k/S^1$, has the local trivialization over $U_S$:
 \begin{equation*}
-    \hat \omega_S = i\omega^\epsilon_{S; 1}(\phi, \theta) dx^1 + i\omega^\epsilon_{S; 2}(\phi, \theta) dx^2 + i\omega^\epsilon_{S; i}(\phi, \theta) Im.
+    \hat \omega_S = i\omega^\epsilon_{S; 1}(\phi, \theta) dx^1 + i\omega^\epsilon_{S; 2}(\phi, \theta) dx^2 + i\omega^\epsilon_{S; i}(\phi, \theta) Im
 \end{equation*}
-where $ \in C^\infty(S^2)$; recall from example \ref{exampleTransitionALphaFormsPk} that this suffices to determine completely the form over all of $S^2$ since $U_S$ covers all but one point of $S^2$.
-
-Due to the fact that $\alpha^N_S(Im) = Im - k d\theta$, its local trivialization over $U_N$ is
-\begin{eqnsplit}
-     \hat \omega_N &= \hat \omega_S + kd\theta\\
-         &= i\left[\omega^\epsilon_{S; 1} - \frac{x^2}{(x^1)^2 + (s^2)^2}\right] dx^1 + i\left[\omega^\epsilon_{S; 2} + \frac{x^1}{(x^1)^2 + (s^2)^2}\right] dx^2 + i\omega^\epsilon_{S; i} Im
-\end{eqnsplit}
-
+where $\hat \omega^\epsilon_{S; \cdot} \in C^\infty(S^2)$; recall from example \ref{exampleTransitionALphaFormsPk} that this suffices to determine completely the form over all of $S^2$ since $U_S$ covers all but one point of $S^2$.
 
 
 Since $i$ is a global section of $TP^k/S^1$, the reduced kernel endomorphism $\tau \in \End(S)$ is determined from a single function $\tilde \tau = \in C^\infty(S^2)$ such that $\tau = i \tilde \tau$, and so the local components of $\tau$ are:
@@ -1166,8 +1144,9 @@ Decomposing $\omega_S$ as $A_S - Im + \tau_S$ and $\omega_N = A_N - Im - \tau_N$
 
 The Lie algebra $i\RR$ is commutative, so the curvature of the connection form $\hat \omega$ is simply 
 \begin{align}
-    \hat R &= \hat d\hat \omega
-\end{align}, which we calculated in example \ref{} to be local trivialized as
+    \hat R &= \hat d\hat \omega,
+\end{align}
+which we computed in example \ref{exampleFormsTPkBuildingBLocksandMostGeneral1FormOn} to be local trivialized as
 \begin{eqnsplit}
     \hat R_S &= \hat d \omega_S \\
         &= i(\partial_{x^1} \omega^\epsilon_{S;2} - \partial_{x^2} \omega^\epsilon_{S; 1}) dx^1 \wedge dx^2 + i \partial_{x^1} \tilde \tau dx^1 \wedge Im +  i \partial_{x^2} \tilde \tau dx^2 \wedge Im;
@@ -1179,29 +1158,29 @@ on $U_{SN}$ with polar coordinates we also have
 \end{eqnsplit}
 notice that if $\tau = 0$, then $\hat \omega$ is an ordinary connection on $TP^k/S^1$ and the last $2$ terms of the trivialiations of the curvature form disappear, making it possible to define an equivalent $2$-form $R \in \Omega^2(TS^2, P^k\times i\RR/S^1)$.
 
-This connection on $TP^k/S^1$ is associated to the 
-\begin{align}
+According to equation \eqref{equationLocalDerivationOfConnection}, this connection on $TP^k/S^1$ is associated to the following derivations on $U_i \times V$:\
+\begin{eqnsplit}
     \hat \nabla_{\mu} &= \partial_\mu \oplus i(\omega^\epsilon_{S; \mu})\\
-    \hat \nabla_{i} &= -i \tilde \tau.
-\end{align}
-
-
+    \hat \nabla_{i} &= -i \tilde \tau,
+\end{eqnsplit}
+for $\mu = 1, 2$.
 
 
 \subsection{$TP^k/S^3$ over $S^4$}\label{subsectionConnectionsTPkS3}
 
-Thanks to all what we have proved, we know that the most general connection $\hat \omega \in \Omega^2(TP^k/S^3, P^k \times Im \HH/S^3)$ on $TP^k/S^4$ has the local trivialization over $U_S$
+Thanks to all what we have proved, we know that the most general connection $\hat \omega \in \Omega^1
+(TP^k/S^3, P^k \times Im \HH/S^3)$ on $TP^k/S^4$ has the local trivialization over $U_S$
 \begin{equation}
     \hat \omega_S = i \omega_S^1 + j \omega_S^2 + k \omega_S^3 - Im - Jm - Km + \tau_S,
 \end{equation}
 where $\omega_S^i = (\omega_S)^i_\mu dx^\mu$ are restrictions to $U_S$ of $1$-forms in $\Omega^(TS^7)$, hence the components of $\hat \omega$ over $U_S$ with respect to the basis $i, j, k$ of $Im \HH$ are actually functions $(\omega_S)^i_\mu \in C^\infty(S^2)$ defined over all of $S^2$; similarly, $\tau_S$ is any function $C^\infty(S^2, End(Im \HH))$.
 
-If we use the matrix algebra $\alg{su}(2)$ as the representation of the Lie algebra,\todo{check isomorphism between $Im \HH$ and $su(2)$} then:
+If we use the matrix algebra $\alg{su}(2)$ as the representation of the Lie algebra, then:
 \begin{eqnsplit}
     \hat \omega_S 
     &= \begin{pmatrix} i\omega_S^3 & \omega_S^2 + i \omega_S^1 \\ \omega_S^2 - i \omega_S^1 & -i\omega_S^3  \end{pmatrix} - Im - Jm - Km
-    + %\begin{pmatrix} i\tau^3 & \tau_S^2 + i \tau_S^1 \\ \tau_S^2 - i \tau_S^1 & -i\tau_S^3 \end{pmatrix} \\
+    + \tau_S %\begin{pmatrix} i\tau^3 & \tau_S^2 + i \tau_S^1 \\ \tau_S^2 - i \tau_S^1 & -i\tau_S^3 \end{pmatrix} \\
     %&= \omega_S^i \cdot i\sigma_i - \epsilon + \tau_S^i \cdot i\sigma_i,
-\end{eqnsplit}\todo{forma de expresar cualquier endomorfismo de $su(2)$ con matrices $2\times 2$}
-$\hat \omega_S \in \Omega^1(TU_S \times Im \HH, U_S \times Im \HH)$
+\end{eqnsplit}
+where $\hat \omega_S^\mu \in \Omega^1(TU_S)\otimes \alg{su}(2)$, for $\mu = 1, 2, 3$ and $\tau_S$.
 

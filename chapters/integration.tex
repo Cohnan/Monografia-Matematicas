@@ -171,26 +171,26 @@
 
 % }
 
-The formulation of a gauge theory on a transitive Lie algebroid $A$ will be made through the action functional $S[\mu, \hat \omega]$ of the theory, which will be the ``spacetime'' integral of the Lagrangian density, which is, in turn, the inner integral (definition \ref{definitionInnerIntegral}) of a scalar valued form on $A$, a form found as the a product of vector valued forms induced by a metric on the representation vector bundle.
+The formulation of a gauge theory on a transitive Lie algebroid $A$ will be made through the action functional $S[\mu, \hat \omega]$ of the theory, which will be the ``spacetime'' integral of the Lagrangian density, which is, in turn, the inner integral (definition \ref{definitionInner}) of a scalar valued form on $A$, a form found as the a product of vector valued forms induced by a metric on the representation vector bundle.
 
 %Let every vector space, and hence every vector bundle, be over the field $\bb K$, where $\bb K$ is one of $\RR$ or $\CC$. 
 Throughout this chapter let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM$ be a transitive Lie algebroid for the transitive Lie algebroid $A$ over the manifold $M$.
 
-Let $\{\}$ be a Lie algebroid atlas for $A$, where $\alg g$ is a Lie algebra\todo{I'm not sure I have been careful with the single typical fiber thing.} with basis $\{E_a\}_{a = 1, \dots, n}$ and associated dual basis $\{\epsilon^a\}_{a = 1, \dots, n}$.
+Let $\{(U_i, \psi_i: U_i \times \alg g \to L|_{U_i}, \nabla^{0, i}: TU_i \to A|_{U_i})\}_{i \in I}$ be a Lie algebroid atlas for $A$, where $\alg g$ is a Lie algebra with basis $\{E_a\}_{a = 1, \dots, n}$ and associated dual basis $\{\epsilon^a\}_{a = 1, \dots, n}$.
 
-Also, let $E$ be a vector bundle over $M$ on which $A$ is represented by $\phi: A \to \alg D(E)$, with vertical component $\phi_L: L \to \End(E)$. Suppose that $E$ is trivialized over each $U_i$, $i \in I$, by the vector bundle isomorphisms $\beta_i: U_i \times V \to E|_U$, where $V$ is a vector space with basis $\{e_u\}_{u = 1, \dots, t}$ and associated dual basis $\{\tilde e_u\}_{u = 1, \dots, t}$.\todo{Take this as example for all previous instances of this concepts and their labels}.
+Also, let $E$ be a vector bundle over $M$ on which $A$ is represented by $\phi: A \to \alg D(E)$, with vertical component $\phi_L: L \to \End(E)$. Suppose that $E$ is trivialized over each $U_i$, $i \in I$, by the vector bundle isomorphisms $\beta_i: U_i \times V \to E|_U$, where $V$ is a vector space with basis $\{e_u\}_{u = 1, \dots, t}$ and associated dual basis $\{\tilde e_u\}_{u = 1, \dots, t}$.
 
 \section{Degenerate Metrics on Representation Vector Bundles and Inner Metrics}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{definition}
-    Let $E$ be any vector bundle over $M$. \emph{A degenerate metric on $E$} on $E$ is a symmetric vector bundle map $h^E: E \otimes E \to \bb R$\todo{I'm not actually sure we want $\RR$: on one side, a metric is defined to be real valued; but they do not say so in the paper and we eventually use this to define the natural ``scalar product'' of single degree forms}. If $h^E$ is non-degenerate, i.e. if $h^E(\mu, \mu) = 0$, only if $\mu = 0$, then $h^E$ is called \emph{a metric on $E$}.
+    Let $E$ be any vector bundle over $M$. \emph{A degenerate metric on $E$} on $E$ is a symmetric vector bundle map $h^E: E \otimes E \to \bb R$. If $h^E$ is non-degenerate, i.e. if $h^E(\mu, \mu) = 0$, only if $\mu = 0$, then $h^E$ is called \emph{a metric on $E$}.
     
     In the case that $E = L$ the adjoint Lie algebroid of $A$, we also use the names \emph{degenerate inner metric on $A$} and \emph{inner metric on $A$}, respectively.
 \end{definition}
 
-Notice that a (degenerate) metric on $E$ is equivalent to a $C^\infty(M)$-linear map $h^E: \Gamma(E) \otimes \Gamma(E) \to C^\infty(M)$ which is a field of symmetric bilinear forms if $h^E$ is degenerate, and a field of metrics in the non-degenerate case. We now return to consider $E$ as a representation vector bundle of $A$.
+In contrast to the notations in \cite{Fournel2011, Fournel2013}, we have called ``nondegenerate metric'' what they call ``metric'' to distinguish the degenerate and nondegenerate cases. Notice that a (degenerate) metric on $E$ is equivalent to a $C^\infty(M)$-linear map $h^E: \Gamma(E) \otimes \Gamma(E) \to C^\infty(M)$ which is a field of symmetric bilinear forms if $h^E$ is degenerate, and a field of metrics in the non-degenerate case. We now return to consider $E$ as a representation vector bundle of $A$.
 
 For the rest of the chapter, let $h^E$ be a degenerate metric on $E$ and let $h$ be a degenerate inner metric on $A$.
 
@@ -200,7 +200,7 @@ For the rest of the chapter, let $h^E$ be a degenerate metric on $E$ and let $h$
 
 In particular, $h_{ab}$ are the components of $h$ with respect to the basis $\{E_a\}$, $a, b = 1, \dots, n$. Notice that, in contrast to the components of forms, the components of a (degenerate) metric are symmetric on the indices.
 
-\begin{proposition}
+\begin{proposition}\label{propositionTransformationLawMetricHGeneralBUndleRepresentation}
 Let ${H^i_j}^u_v = \tilde e^u(\beta^i_j(e_v))$, for $i, j \in I$ and $u, v \in \{1, \dots, t\}$ be the matrix representation of the transition function of $E$ from $U_j$ to $U_i$. Then,
 \begin{equation}
     h^{E, j}_{u_1 u_2} = {H^i_j}^{v_1}_{u_1}{H^i_j}^{v_2}_{u_2} h^{E, i}_{v_1 v_2}
@@ -212,27 +212,27 @@ for $u_1, u_2, v_1, v_2 \in \{1, \dots, t\}$.
     h^{E, j}_{u_1 u_2} 
         &= h^E(\beta_j(e_{u_1}),\beta_j(e_{u_2})) \\
         &= h^E(\beta_i \comp \beta^i_j(e_{u_1}), \beta_i \comp \beta^i_j(e_{u_2})\\
-        &= h^E({H^i_j}^{v_1}_{u_1} \beta_i(e_{u_2}), {H^i_j}^{v_1}_{u_1} \beta_i(e_{u_2}))
-        &= {H^i_j}^{v_1}_{u_1}{H^i_j}^{v_2}_{u_2} h^{E, i}_{v_1 v_2}
+        &= h^E({H^i_j}^{v_1}_{u_1} \beta_i(e_{u_2}), {H^i_j}^{v_1}_{u_1} \beta_i(e_{u_2}))\\
+        &= {H^i_j}^{v_1}_{u_1}{H^i_j}^{v_2}_{u_2} h^{E, i}_{v_1 v_2}.
 \end{align*}
 \end{proof}
 Recall that the transition functions of $L$ are denoted by $\alpha^i_j$ and its matrix representation with respect to $\{E_a\}_{a = 1, \dots, n}$ is denoted by ${G^i_j}^a_b$.
 
-\begin{definition}\todo{Not sure if this map is non-degenerate IFF the vanilla $h^E$ is so}
-    Given a degenerate metric on the representation vector bundle $E$ of $A$, let
+\begin{definition}
+    Given a degenerate metric $h^E$ on the representation vector bundle $E$ of $A$, let us induce the map (also denoted by $h^E$):
     \begin{equation}
         h^E: \Omega^p(A, E) \otimes \Omega^q(A, E) \to \Omega^{p+q}(A)
     \end{equation}
-    for all $p, q \in \ZZ_{\geq 0}$ be the skew-symmetric $C^\infty(M)$-linear (family of) map defined by
-    \begin{eqnsplit}
-        h^E(\omega, \eta)(\oid X_1, \dots, \oid X_{p+q}) := \frac{1}{p!q!} \sum_{\sigma \in Sym_{p+q}} 
+    for all $p, q \in \ZZ_{\geq 0}$, to be the skew-symmetric $C^\infty(M)$-linear map defined by
+    \begin{multline}
+        h^E(\omega, \eta)(\oid X_1, \dots, \oid X_{p+q}) :=\\ \frac{1}{p!q!} \sum_{\sigma \in Sym_{p+q}} 
         h^E\left( \omega(\oid X_{\sigma(1)}, \dots, \oid X_{\sigma(p)}),  \eta(\oid X_{\sigma(p+1)}, \dots, \oid X_{\sigma_{p+q}}) \right),
-    \end{eqnsplit}
+    \end{multline}
     for all $\omega \in \Omega^p(A, E)$, $\eta \in \Omega^q(A, E)$, and $\oid X_1, \dots, \oid X_{p+q} \in A$.
 \end{definition}
 
 \begin{proposition}
-Let $\alpha, \beta \in \Omega_{U_i}^\bullet(A)$, and let $\mu_1, \nu \in \Gamma_{U_i}(E) = \Omega^0_{U_i}(A, E)$. Then
+Let $\alpha, \beta \in \Omega_{U_i}^\bullet(A)$, and let $\mu, \nu \in \Gamma_{U_i}(E) = \Omega^0_{U_i}(A, E)$. Then
 \begin{equation}
     h^E(\mu \alpha, \nu \beta) = h^E(\mu, \nu) \, \alpha \wedge \beta.
 \end{equation}
@@ -318,7 +318,7 @@ For a given triple $(g, h, \nabla)$, the corresponding degenerate metric is prec
 For the converse, let $\hat g$ be an inner non-degenerate metric on $A$. Then, let $h$ be the inner part of $\hat g$. We now need to see that an inner non-degenerate metric induces an ordinary connection $\nabla$ for which the vertical bundle of $A$ and the horizontal bundle induced by the connection are orthogonal, i.e. a connection such that
 \begin{align}
     \hat g(\nabla_X, j(\eta)) &= 0,& \text{for all $X \in TM$ and $\eta \in L$};
-\end{align} then, $g$ will simply be the tangent degenerate metric induced by $\hat g$. To prove this we follow an adapted version of Riesz representation theorem \todo{}.
+\end{align} then, $g$ will simply be the tangent degenerate metric induced by $\hat g$. To prove this an argument adapted from the proof of Riesz representation theorem can be followed \cite{Fournel2013}.
 \end{proof}
 
 
@@ -346,20 +346,21 @@ and so its \emph{local matrix representation} with respect to the same elements,
 The transitive Lie algebroid \emph{$A$ is inner orientable} if the adjoint Lie algebroid $L$ is an orientable vector bundle.
 \end{definition}
 
-Since the matrices ${G^i_j}^a_b$ represent the transition functions of $L$, where $a, b \in \{1, \dots, n\}$ and $i, j \in I$ such that $U_{ij \neq \empty}$ , $A$ is inner orientable if and only if $det({G^i_j}) \geq 0$.
+Since the matrices ${G^i_j}^a_b$ represent the transition functions of $L$, where $a, b \in \{1, \dots, n\}$ and $i, j \in I$ such that $U_{ij \neq \emptyset}$ , $A$ is inner orientable if and only if $det({G^i_j}) \geq 0$.
 
-For the rest of the section, let $A$ be inner orientable, and let $\hat g$ be an inner non-degenerate metric on $A$ with $(g, h, \nabla)$ its associated triple.
+For the rest of the section, let $A$ be inner orientable, and let $\hat g$ be an inner non-degenerate metric on $A$ with $(g, h, \nabla)$ its associated triple. In \cite{Fournel2013} it has been checked that:
 
 \begin{proposition}\label{propositionInnerVolumeFormIntegrationFOrmGloballyDefinedWell}
-For $i, j \in I$ such that $U_{ij \neq \empty}$,
+For $i, j \in I$ such that $U_{ij \neq \emptyset}$,
 \begin{equation*}
     \hat \alpha^i_j(\sqrt{|h^j|} \alg a_j^1 \wedge \cdots \wedge \alg a_j^n) = \sqrt{|h^i|} \alg a_i^1 \wedge \cdots \wedge \alg a_i^n \in \Omega^n(TU_{ij} \times \alg g),
 \end{equation*}
 where $\alg a = \alg a_i^a E_a$ is the connection form associated to $\nabla$, and $|h^i| \in C^\infty(U_i)$ denotes the absolute value of the determinant of $h$ over $U_i$, which is simply the absolute value of the determinant of the matrix $(h_{ab})$.
 \end{proposition}
-\begin{proof}
+% \begin{proof}
+
+% \end{proof}
 \todo{}
-\end{proof}
 
 Thanks to the previous proposition, the following form is well defined globally:
 \begin{definition}
@@ -382,7 +383,7 @@ Furthermore, $\beta_i^M$ is also the term of the decomposition of $\beta$ over $
 \end{theorem}
 
 \begin{proof}
-Thanks to the homogeneous transformation rules \ref{}, for all $j \in I$ such that $U_{ij} \neq \empty$, $\hat \alpha^i_j(\beta^R)$ does not have any term with $\alg a_j^1 \wedge \cdots \wedge \alg a_j^n$ as factor, and so, since $\hat \alpha^i_j$ respects the wedge product, proposition \ref{propositionInnerVolumeFormIntegrationFOrmGloballyDefinedWell} implies that
+Thanks to the homogeneous transformation rules \ref{}, for all $j \in I$ such that $U_{ij} \neq \emptyset$, $\hat \alpha^i_j(\beta^R)$ does not have any term with $\alg a_j^1 \wedge \cdots \wedge \alg a_j^n$ as factor, and so, since $\hat \alpha^i_j$ respects the wedge product, proposition \ref{propositionInnerVolumeFormIntegrationFOrmGloballyDefinedWell} implies that
 \begin{equation}
     \hat \alpha^j_i(\beta^{M}_i) = \beta^{M}_j.
 \end{equation}
@@ -401,10 +402,8 @@ where we used the notation of proposition \ref{theoremIntegratedFormFactorInnerV
 \end{definition}
 The previous definition can be extended with the same formula to integration of $E$-valued forms, but we only state this definition since it suffices for our purposes of defining the action functional of a gauge theory.
 
-\linea
-
 \begin{definition}
-The transitive Lie algebroid $A$ is called \emph{orientable} if it is inner orientable and the base manifold $M$ is orientable.\todo{This coincides with the $A = TM \oplus L$ being orientable as a vector bundle, right? or is this weaker?}
+The transitive Lie algebroid $A$ is called \emph{orientable} if it is inner orientable and the base manifold $M$ is orientable.
 \end{definition}
 
 \begin{definition}
@@ -429,7 +428,7 @@ However, to define an action functional we will require one more ingredient: the
 \section{Horizontal Metrics and Hodge-$*$ Operator}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The Hodge-$*$ operator enables the definition of the norm of a homogeneous $E$-valued form on $A$ of any degree, of which the gauge action functional \ref{} and the matter action functional \ref{}, which determine a gauge theory, will be examples.
+The Hodge-$*$ operator enables the definition of the norm of a homogeneous $E$-valued form on $A$ of any degree, of which the gauge action functional and the matter action functional We will see in next chapter, which determine a gauge theory, will be examples.
 
 For the rest of this chapter, let the transitive Lie algebroid $A$ be orientable and let $\hat g$ be a metric on $A$ (in particular, non-degenerate) associated to the triple $(g, h, \nabla)$, where $g$ and $h$ are (non-degenerate) metrics and $\nabla$ is an ordinary connection associated to the connection form $\alg a \in \Omega^1(A, L)$. Additionally, let $h^E$ be a metric on the representation vector bundle $E$. Finally, suppose that on each $U_i$ there are local coordinates $x^\mu: U_i \to \RR$, where $\mu = 1, \dots, m$.
 
@@ -466,7 +465,7 @@ Using the notation
 \begin{equation}
     \beta^{\mu_1 \dots \mu_r a_1 \dots a_s} := g_i^{\mu_1 \nu_1} \cdots g^{\mu_r \nu_r} h^{a_1 b_1} \cdots h_i^{a_s b_s} \beta_{\nu_1 \dots \nu_r b_1 \dots  b_s},
 \end{equation}
-which defines an element of $\beta^\#$ in the dual module of $\Omega^p(A)$, we may also write, then,
+which defines an element $\beta^\#$ in the dual module of $\Omega^p(A)$, we may also write, then,
 \begin{equation}
     \hat g_i^{-1}(\alpha, \beta) = \sum_{r+s = p} \frac{1}{p!} \alpha_{\mu_1 \dots \mu_r a_1 \dots a_s} \beta^{\mu_1 \dots \mu_r a_1 \dots  a_s}.
 \end{equation}
@@ -476,7 +475,7 @@ That the inverse metric is a well defined global element follows from the transf
 \begin{equation}
     h_i^{a_1 b_1} = {G^i_j}^{a_1}_{a_1'} {G^i_j}^{b_1}_{b_1'} h_j^{a_1' b_1'}
 \end{equation}
-that follows from \ref{              }, which is inverse to that of the components; concretely, for $\omega, \eta \in \Omega^p(A)$, over $U_{ij} \neq \empty$ it is satisfies that
+that follows from \ref{propositionTransformationLawMetricHGeneralBUndleRepresentation}, which is inverse to that of the components; concretely, for $\omega, \eta \in \Omega^p(A)$, over $U_{ij} \neq \emptyset$ it is satisfies that
 \begin{align*}
     \hat g_j^{-1}(\omega_i, \eta_i) 
         &= \sum_{r+s = p} \frac{1}{p!} g_i^{\mu_1 \nu_1} \cdots g_i^{\mu_r \nu_r} h_i^{a_1 b_1} \cdots h_i^{a_s b_s} (\omega_i)_{\mu_1 \dots \mu_r a_1 \dots a_s} (\eta_i)_{\nu_1 \dots \nu_r b_1 \dots  b_s}\\
@@ -493,11 +492,11 @@ Similarly, letting $h^E$ be a metric on the representation vector bundle $E$, wi
 \begin{definition}
 \emph{The inverse metric $\hat g_{h^E}^{-1}$ on $E$-valued forms induced by $h^E$} is the symmetric, \dbtext{non-degenerate}, $C^\infty(M)$-linear map
 \begin{equation}
-    \hat g^{-1}_{h^E}: \Omega^p(A) \otimes \Omega^p(A) \to C^\infty(M, \RR),
+    \hat g^{-1}_{h^E}: \Omega^p(A, E) \otimes \Omega^p(A, E) \to C^\infty(M, \RR),
 \end{equation}
-with local trivialization $g^{-1}_{i, h^E}$ defined by
+with local trivialization $g^{-1}_{i, h^E}$ over $U_i$ defined by
 \begin{equation}
-    \hat g_{h^E, i}^{-1}(\alpha, \beta) := \hat g_{h^E, i}^{-1}(\alpha^u, \beta^v) h^E_{uv}
+    \hat g_{h^E, i}^{-1}(\alpha_i, \beta_i) := \hat g_{i}^{-1}(\alpha_i^u, \beta_i^v) h^E_{uv}.
 \end{equation}
 Using the notation
 \begin{equation}
@@ -528,7 +527,7 @@ for all $p \in \ZZ_{\geq 0}$, where the element \emph{$* \alpha \in \Omega^{m+n-
 where $\vepsilon$ are the totally antisymmetric Levi-Civita symbols.
 \end{definition}
 
-That the previous local trivializations do define a global form $*\alpha$ follows easily from the multiplication of the inverse $(G^i_j)$ matrices that appear when applying $\hat \alpha^i_j$, for $U_{ij} \neq \empty$, due to the transformations of $\sqrt{|h_i|}$, of the components of the inverse inner metric, of the components of $\alpha$ and of the subfactors of the inner volume element. Notice that $(*\alpha)_i = *(\alpha_i)$ by definition, so we may simply write $*\alpha_i$; also, notice that with respect to the basis $\{e_u\}$ of the typical fiber $V$ of $E$, $*\alpha_i = (*\alpha_i^u)e_u$.
+That the previous local trivializations do define a global form $*\alpha$ follows easily from the multiplication of the inverse $(G^i_j)$ matrices that appear when applying $\hat \alpha^i_j$, for $U_{ij} \neq \emptyset$, due to the transformations of $\sqrt{|h_i|}$, of the components of the inverse inner metric, of the components of $\alpha$ and of the subfactors of the inner volume element. Notice that $(*\alpha)_i = *(\alpha_i)$ by definition, so we may simply write $*\alpha_i$; also, notice that with respect to the basis $\{e_u\}$ of the typical fiber $V$ of $E$, $*\alpha_i = (*\alpha_i^u)e_u$.
 
 \begin{proposition}\label{propositionRelationHodgeStarAndInverseMetricVolume}
 The Hodge-$*$ operator is such that the following identity is satisfied:
@@ -539,11 +538,13 @@ for all $\alpha, \beta \in \Omega^p(A, E)$ and all $p \in \ZZ_{\geq 0}$.
 \end{proposition}
 
 \begin{proof}
-We prove this a combinatorial argument, once we expand $\alpha_i^u = \sum_{r+s} \alpha_{\nu_1 \dots b_s} e_u dx^{\nu_1} \wedge \cdots \wedge \alg a^{b_s}$ and $*\beta_i$ as in the second equation of definition \ref{definitionHodgeStarFOrmula}, replace these formulas in $h^i_E(\alpha_i, *\beta_i) = (h^E_i)_{uv} \alpha_i^u \wedge * \beta_i^v$, expanding the wedge product and reordering the $dx$'s and $\alg a$'s in order to isolate $\omega^{Vol}$.
+This can be proved through a combinatorial argument once we expand $$\alpha_i^u = \sum_{r+s} \alpha_{\nu_1 \dots b_s} e_u dx^{\nu_1} \wedge \cdots \wedge \alg a^{b_s}$$ and $*\beta_i$ as in the second equation of definition \ref{definitionHodgeStarFOrmula}, replace these formulas in $h^i_E(\alpha_i, *\beta_i) = (h^E_i)_{uv} \alpha_i^u \wedge * \beta_i^v$, expanding the wedge product and reordering the $dx$'s and $\alg a$'s in order to isolate $\omega^{Vol}$.
 \end{proof}
 
 \begin{definition}
-\emph{The scalar product on each $\Omega^p(A, E)$ induced by the metrics $\hat g$ on $A$ and $h^E$ on $E$}\todo{is it an actual scalar product? Is it non-degenrate? Do we want it to be able to be complex valued? In that case metric might not be the best term} in the orientable transitive Lie algebroid $A$, for all $p \in \ZZ_{\geq 0},$ is defined by
+\emph{The scalar product on each $\Omega^p(A, E)$ induced by the metrics $\hat g$ on $A$ and $h^E$ on $E$} 
+%\todo{is it an actual scalar product? Is it non-degenrate? Do we want it to be able to be complex valued? In that case metric might not be the best term} 
+in the orientable transitive Lie algebroid $A$, for all $p \in \ZZ_{\geq 0},$ is defined by
 \begin{equation*}
     (\alpha, \beta) := \int_A h^E(\alpha, *\beta).
 \end{equation*}
@@ -557,3 +558,5 @@ When $E = L$, $h^E$ is assumed to be $h$, the inner part of $\hat g$.
 %     \int_M \alpha^u_{\mu_1 \dots a_s} \beta_u^{\mu_1 \dots a_s} \sqrt{|g|} dx^1 \wedge \cdots \wedge dx^m. 
 % \end{multline*}
 % \end{theorem}
+
+We now have all the necessary ingredients to define the action functional of a gauge theory, which will be studied in next chapter.

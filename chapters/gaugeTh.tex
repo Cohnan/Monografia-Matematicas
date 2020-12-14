@@ -1,6 +1,12 @@
+We have finally introduced all the necessary ingredients to define gauge theories. The traditional gauge theories arise from imposing that the dynamics of a matter field, i.e. sections of a vector bundle, be left invariant under space dependent changes of ``internal reference frame'' associated to the action of a structure group $G$, i.e. under gauge transformations, and this is achieved by the introduction of a connection on an associated principal bundle, also called a \emph{gauge potential}, with certain dynamics. Fournel, et al. in \cite{Fournel2013} propose the formulation of gauge theories on transitive Lie algebroids from a lagrangian approach through the action functional $\mathcal S$ of the theory, which decompomposes into the matter action $\mathcal S_{matter}$ and the gauge action $\mathcal S_{matter}$. 
+
+The complete framework for the formulation is made up of an orientable transitive Lie algebroid $A$, over a base manifold $M$, equipped with a metric $\hat g \equiv (g, h, \tilde \nabla)$ with adjoint Lie algebroid $L$ on which $h$ is a Killing metric, and a vector bundle $E$ on which there is a representation $\phi: A \to \alg D(E)$ and a metric $h^E$ compatible with $\phi$.
+
 \section{Traditional Gauge Transformations}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 % In this chapter we will finally formulate a gauge theory on a transitive Lie algebroid, by means of defining gauge invariant action functionals.
 
@@ -32,7 +38,6 @@
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % }
 
-We have finally introduced all the necessary ingredients to define gauge theories. The traditional gauge theories arise from imposing that the dynamics of a matter field, i.e. sections of a vector bundle, be left invariant under space dependent changes of ``internal reference frame'' associated to the action of a structure group $G$, i.e. under gauge transformations, and this is achieved by the introduction of a connection on an associated principal bundle, also called a \emph{gauge potential}, with certain dynamics. Fournel, et al. in \cite{Fournel2013} propose the formulation of gauge theories on transitive Lie algebroids from a lagrangian approach through the action functional $\mathcal S$ of the theory, which decompomposes into the matter action $\mathcal S_{matter}$ and the gauge action $\mathcal S_{matter}$. The complete framework for the formulation is composed of an orientable transitive Lie algebroid $A$, over a base manifold $M$, equipped with a metric $\hat g \equiv (g, h, \tilde \nabla)$ with adjoint Lie algebroid $L$ on which $h$ is a Killing metric, and a vector bundle $E$ on which there is a representation $\phi: A \to \alg D(E)$ and a metric $h^E$ compatible with $\phi$.
 
 Traditional gauge theories start with a principal bundle $P$  over a manifold $M$ with structure group $G$, where $\alg g$ is its Lie algebra, and an associated vector bundle $E$ with typical fiber $V$. \emph{The gauge group} $\mathcal G(P) \ni f$ of $P$ is the group of (vertical) automorphisms of $P$, that respect the group action; the group $C^\infty_G(P, G) \ni g$ of $G$-invariant functions, where $G$ acts on itself through the adjoint action, is (anti)isomorphic to the $\mathcal G(P)$, via the relation $f(p) = R_{g(p)}$. $f\in \mathcal G(P)$ acts on vector valued forms on $P$ through the pullback, this is called a (finite) gauge transformation; in particular, it acts on $G$-invariant forms of $\Omega^0(TP, P \times V)$, i.e. on $\Gamma(E)$, the space of \emph{matter fields}; on the subset of $\Omega^1(TP, P \times \alg g)$ made of principal connection forms $w$, producing once again a connection; and on their curvatures, basic forms in $\Omega^2(TP, O \times \alg g)$, where the curvature of $f^*w$ is $f^*R$ where $R$ is the curvature of $w$.
 
@@ -117,7 +122,6 @@ For this framework of gauge theories on transitive Lie algebroids, Lazzarini, et
 % This is the connection between the ``traditional'' definitions, and the infinitesimal definitions given below for gauge transformations, so I would like to put the prove at least for the $A = TM$ case, i.e. ordinary vector bundle connections.
 % }
 % }
-\linea
 
 Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ be a Lie algebroid sequence for the transitive Lie algebroid $A$.
 
@@ -144,7 +148,13 @@ and its \emph{infinitesimal gauge transformation} is
 \end{equation}
 \end{definition}
 
-The curvature of $\hat \omega^\eta$ is $\hat R + \hat d \hat \omega \wedge \eta + \frac{1}{2} (\hat \omega \wedge \hat \omega) \wedge \eta + [\frac{1}{2} \hat d \eta \wedge \hat d \eta + \hat d \eta \wedge (\hat \omega \wedge \eta) + \frac{1}{2} (\hat \omega \wedge \eta) \wedge (\hat \omega \wedge \eta)]$, meaning that \emph{it is equal to $\hat R^\eta$ plus second order terms in $\eta$}: for arbitrary $\oid X, \oid Y \in A$, and ignoring the immersion $j$, $[\frac{1}{2} \hat d \eta \wedge \hat d \eta + \hat d \eta \wedge (\hat \omega \wedge \eta) + \frac{1}{2} (\hat \omega \wedge \eta) \wedge (\hat \omega \wedge \eta)](\oid X, \oid Y) = [[\oid X, \eta], [\oid Y, \eta]] + [[\oid X, \eta], [\tilde \omega(\oid Y), \eta]] + [[\oid Y, \eta], [\tilde \omega(\oid X), \eta]] + [[\tilde \omega(X), \eta], [\tilde \omega(Y), \eta]]$; these are all terms that involve twice the product with $\eta$, hence we call them second order terms in $\eta$.
+The curvature of $\hat \omega^\eta$ is 
+$$\hat R + \hat d \hat \omega \wedge \eta + \frac{1}{2} (\hat \omega \wedge \hat \omega) \wedge \eta + [\frac{1}{2} \hat d \eta \wedge \hat d \eta + \hat d \eta \wedge (\hat \omega \wedge \eta) + \frac{1}{2} (\hat \omega \wedge \eta) \wedge (\hat \omega \wedge \eta)],$$ 
+meaning that \textit{it is equal to $\hat R^\eta$ plus second order terms in $\eta$}: for arbitrary $\oid X, \oid Y \in A$, and ignoring the immersion $j$, 
+\begin{multline}\frac{1}{2} \hat d \eta \wedge \hat d \eta + \hat d \eta \wedge (\hat \omega \wedge \eta) + \frac{1}{2} (\hat \omega \wedge \eta) \wedge (\hat \omega \wedge \eta)](\oid X, \oid Y) 
+\\= [[\oid X, \eta], [\oid Y, \eta]] + [[\oid X, \eta], [\tilde \omega(\oid Y), \eta]] + [[\oid Y, \eta], [\tilde \omega(\oid X), \eta]] + [[\tilde \omega(X), \eta], [\tilde \omega(Y), \eta]];
+\end{multline}
+these are all terms that involve twice the product with $\eta$, hence we call them second order terms in $\eta$.
 
 \begin{proposition}\label{propositionInfinitesimalGaugeTransformationOfAlgebroidEndomorphismOfConnection}
 The algebroid morphism corresponding to the infinitesimal gauge transformation $\hat \omega^\eta$ of a connection form $\hat \omega$ with respect to $\eta \in \Gamma(L)$ is 
@@ -361,7 +371,7 @@ This decomposition is induced by the ordinary connection $\omega = \hat \omega +
 \end{align*}
 \end{proof}
 
-Let $\{\}$ be a Lie algebroid atlas for $A$, where $\alg g$ is a Lie algebra with basis $\{E_a\}_{a=1, \dots, n}$ and associated dual basis $\{\epsilon^a\}$. Assume that $\{e_u\}_{u = 1, \dots, t}$ is a basis of the fiber $V$ of $E$, and that the matter field $\mu \in \Gamma(E)$ is locally realized as $(\mu_i)^u e_u$ with $\mu_i \in C^\infty(U_i, V)$ for each $i \in I$; also suppose that there are coordinates $\{x^\mu: U_i \to \RR\}$over $U_i \subset M$. Recall the decomposition \eqref{equationTrivializationProducedAConnection} of a produced $A$-connection; then it can be easily seen that the decomposition of $\hat \nabla^E \mu$ of proposition \ref{propositionDecompositionFormActionMatterAConnection} is such that the local trivializations over $U_i$ of each term are:
+Let $\{(U_i, \psi_i: U_i \times \alg g \to L|_{U_i}, \nabla^{0, i}: TU_i \to A|_{U_i})\}_{i \in I}$ be a Lie algebroid atlas for $A$, where $\alg g$ is a Lie algebra with basis $\{E_a\}_{a=1, \dots, n}$ and associated dual basis $\{\epsilon^a\}$. Assume that $\{e_u\}_{u = 1, \dots, t}$ is a basis of the fiber $V$ of $E$, and that the matter field $\mu \in \Gamma(E)$ is locally realized as $(\mu_i)^u e_u$ with $\mu_i \in C^\infty(U_i, V)$ for each $i \in I$; also suppose that there are coordinates $\{x^\mu: U_i \to \RR\}$over $U_i \subset M$. Recall the decomposition \eqref{} of a produced $A$-connection; then it can be easily seen that the decomposition of $\hat \nabla^E \mu$ of proposition \ref{propositionDecompositionFormActionMatterAConnection} is such that the local trivializations over $U_i$ of each term are:
 \begin{align}\label{equationExplicitTrivializationsOfDecompositionOfTermsOfMatterGaugeTermsAConnection}
     a^* \phi(\nabla)\mu_i &= [\partial_\nu (\mu_i)^u + (B_i)^u_{\nu, v} (\mu_i)^v + (\phi_{L, i})^u_{b, v} (\hat A_i)_\mu^b (\mu_i)^v ]e_u dx^\nu\\
     (\phi_L(\tau) \mu)\comp \tilde \omega_i &= [(\phi_{L, i})_{b, v}^u \tau^b_a \,(\mu_i)^v] e_u \alg a_i^a,

@@ -1338,8 +1338,7 @@ The transition functions $g_{ij}: U_i \inter U_j \to Sp(1)$ for $i, j \in \set{1
     g_{ji}([q^1, \dots, q^{n}]) = \frac{q^j / |q^j|}{q^i / |q^i|}.
 \end{equation}
 
-When $n = 2$ we recall from equation (\ref{diffProjFtoS}) that $\HH P^1 \cong S^4$, and since the Lie group $S^3$ is diffeomorphic to $S^3$
-, as we'll see in \ref{}, the \lbtext{quaternionic Hopf bundle} is the induced $S^3$-principal bundle $S^3 \hookrightarrow S^7 \to S^4$ with projection map $\pi := F^{-1} \circ \tilde \pi: S^7 \to S^4$.
+When $n = 2$ we recall from equation (\ref{diffProjFtoS}) that $\HH P^1 \cong S^4$, and since the Lie group $S^3$ is diffeomorphic to $S^3$, as we'll see in \ref{}, the \lbtext{quaternionic Hopf bundle} is the induced $S^3$-principal bundle $S^3 \hookrightarrow S^7 \to S^4$ with projection map $\pi := F^{-1} \circ \tilde \pi: S^7 \to S^4$.
 
 \linea
 
@@ -1374,6 +1373,14 @@ Let $P^k$ be the $S^1$-principal bundle over $S^2$ determined by the transition 
 \begin{align*}
     \sigma^k_N(E(\phi, \theta)) g^k_{NS}(E(\phi, \theta)) = \sigma^k_S(E(\phi, \theta)).
 \end{align*}
+
+\lin
+
+An analogous family of principal bundles $S^3 \to P^k \to S^4$ also exists, since the $S^3$-principal bundles on $S^4$ are in a bijective correspondence with $\pi_3(S^3) \cong \ZZ$. The distinct vector bundles are characterized by the following transition functions over $U_{12} \subset \HH P^1$:
+\begin{eqnsplit}
+    g^k_{NS}: U_{12} \subset \HH P^1 &\to S^3\\
+    [q^1, \dots, q^{n}] &\mapsto \left(\frac{q^j / |q^j|}{q^i / |q^i|}\right)^k.
+\end{eqnsplit}
 
 \section{Other Basic Definitions about Lie Algebroids}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1640,7 +1647,7 @@ All of these combined mean that $\rho: \Gamma(TP/G) \to \Gamma(\alg D(E))$ is in
 \begin{example}
 Let $\nabla: \Gamma(E) \to \Gamma(T^*M \otimes E)$ be a connection on a a vector bundle $E$. That statement is equivalent to: given any $\sect X \in \Gamma(TM)$,
 \begin{align*}
-    \Gamma(TM) \to \Gamma\alg D(E) &&
+    \Gamma(TM) \to \Gamma(\alg D(E)) &&
     \sect X \mapsto \nabla_{\sect X}
 \end{align*}
 is a $C^\infty(M)$-linear mapping from the vector fields on $M$ to the derivations on $E$. The Leibniz identity of the derivation $\nabla_{\sect X}$ implies that $a(\nabla_{\sect X}) = \sect X$. This means that a connection on $E$ is only missing the compatibility with the brackets to be a representation, but this compatibility is equivalent to the property of the connection being flat. Therefore \emph{flat} connections on the vector bundle $E$ give us a representation of $TM$ on $E$.
@@ -1691,7 +1698,7 @@ Let $A$ be a Lie algebroid on $M$ and let $V$ be a vector space. \emph{The trivi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{General Theory}
+\subsection{Lie Algebroid Atlas}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1855,8 +1862,8 @@ When making practical calculations with transitive Lie algebroids, the algebraic
     &S^i_j:& \Gamma(TU_i)\oplus C^\infty(U_{ij}, \alg g) &\to \Gamma(TU_i)\oplus C^\infty(U_{ij}, \alg g).
 \end{align}
 
-\linea
-
+\subsection{Local version of some concepts} \label{chBasicsubsectionLocalVersion}
+\improvement{Agregue este titulo}
 Let us now see the local version of some important concepts.
 
 % \begin{remark}
@@ -1868,7 +1875,7 @@ Let $\psi: A \to A'$ be a morphism between transitive Lie algebroids. Once trivi
 
 % \begin{remark}
 % \label{remarkFamilyLocalTrivializationsRepresentationsOfTransitiveLieAlgebroid}
-Similarly, let $\phi: A \to \alg D(E)$ be a representation for the transitive Lie algebroid $A$. Based on example \ref{exampleAllRepresentationsofTLAoverTrivialVectorbundle}, once trivializing neighborhoods $\{U_i\}_{i \in I}$ for both $A$ and the vector bundle $E$ have been chosen, $\phi$ can be encoded as a family $\{(B_i, \phi_{L, i})\}_{i\in I}$ of representations $\phi_i = a \oplus (B_i + \phi_{L,i})$ of trivial Lie algebroids $TU_i \times \alg g$ on trivial vector bundles $U_i \times V$, where $\alg g$ is the typical fiber of the vertical part of $A$, and $V$ is the typical fiber of $E$.
+Similarly, let $\phi: A \to \alg D(E)$ be a representation for the transitive Lie algebroid $A$. Based on example \ref{exampleAllRepresentationsofTLAoverTrivialVectorbundle}, once trivializing neighborhoods $\{U_i\}_{i \in I}$ for both $A$ and the vector bundle $E$ have been chosen, $\phi$ can be encoded as a family $\{(B_i, \phi_{L, i})\}_{i\in I}$ of representations $\phi_i = a \oplus (B_i + \phi_{L,i})$ of trivial Lie algebroids $TU_i \times \alg g$ on trivial vector bundles $U_i \times V$, where $\alg g$ is the typical fiber of the vertical part of $A$, and $V$ is the typical fiber of $E$. The following examples show that the representations of the trivializing Lie algebroids of an algebroid that locally trivialize the trivial and adjoint representations are already known representations.
 % \end{remark}
 
 \begin{example}\label{exampleTrivializationOfTrivialRepresentationIsTrivialRepresentation}
@@ -1882,7 +1889,7 @@ to pass to the second line we used the fact that $S$ respects the anchor. This, 
 \end{example}
 
 \begin{example}\label{exampleTrivializationOfAdjointRepresentationIsAdjoint}
-Let $A$ act on $L$ through the adjoint representation $\phi = ad$. Then the local trivialization of $\phi$ over a neighborhood that trivializes $A$ is again an adjoint representation. Assume for simplicity that the injection $j$ is an inclusion:
+Let $A$ act on $L$ through the adjoint representation $\phi = ad$. Then the local trivialization of $\phi$ over a neighborhood that trivializes $A$ is again an adjoint representation. Assume without lose of generality that the injection $j$ is an inclusion:
 \begin{align*}
     \phi_i(X \oplus \eta)\theta &= \psi_i^{-1} \comp \phi(S_i(X \oplus \eta)) \comp \psi_i(\theta)\\
        &= \psi_i^{-1} ( [S_i(X \oplus \eta), \psi_i(\theta)] )\\
@@ -1894,7 +1901,7 @@ Let $A$ act on $L$ through the adjoint representation $\phi = ad$. Then the loca
 \end{align*}
 \end{example}
 
-Let $G$ be a group with Lie algebra $\alg g$, and the vector space $V$ be a representation space of $G$. Suppose that $A$ is a transitive Lie algebroid with $\alg g$ as the typical fiber of its vertical part, and let $V$ be a vector space on which $G$ acts. Let $U_i$ and $U_j$, $U_{ij} \neq \emptyset$ be open subsets of $M$ that trivialize $A$. If we allow $TU_i \times \alg g$ and $TU_j \times \alg g$ to be represented in $U_i \times V$ and $U_j \times V$, respectively, via the group representation \eqref{equationGroupInducedRepresentationInTrivialAlgebroids}, we can ask ourselves what conditions need to be satisfied for those representations to be the trivializations of a global representation of $A$ on a vector bundle $E$ that trivializes on $U_i$ and $U_j$. Letting $\beta^i_j = \beta_i^{-1} \comp \beta_j : U_{ij} \times V \to U_{ij} \times V$ be the transition function of $E$ from $U_j$ to $U_i$, a quick analysis shows some conditions are imposed on them: let $\mu$ be a section on $E$ such that $f \in C^\infty(U_{j}, V)$ is its trivialization over $U_i$, i.e. $\beta_i(f) $ be the trivialization of a section $\mu \in \Gamma(E)$, hence $\beta_j(f) = \mu|_{U_j}$, then the compatibility condition 
+An important family of representations are associated to the representation of a Lie group as seen in example \ref{equationGroupInducedRepresentationInTrivialAlgebroids}. Let $G$ be a group with Lie algebra $\alg g$, and the vector space $V$ be a representation space of $G$. Suppose that $A$ is a transitive Lie algebroid with $\alg g$ as the typical fiber of its vertical part, and let $V$ be a vector space on which $G$ acts. Let $U_i$ and $U_j$, $U_{ij} \neq \emptyset$ be open subsets of $M$ that trivialize $A$. If we allow $TU_i \times \alg g$ and $TU_j \times \alg g$ to be represented in $U_i \times V$ and $U_j \times V$, respectively, via the group representation \eqref{equationGroupInducedRepresentationInTrivialAlgebroids}, we can ask ourselves \rtext{¿what conditions need to be satisfied for those representations to be the trivializations of a global representation of $A$ on a vector bundle $E$ that trivializes over $U_i$ and $U_j$?} Letting $\beta^i_j = \beta_i^{-1} \comp \beta_j : U_{ij} \times V \to U_{ij} \times V$ be the transition function of $E$ from $U_j$ to $U_i$, a quick analysis shows some conditions are imposed on them: let $\mu$ be a section on $E$ such that $f \in C^\infty(U_{j}, V)$ is its trivialization over $U_i$, i.e. $\beta_i(f) $ be the trivialization of a section $\mu \in \Gamma(E)$, hence $\beta_j(f) = \mu|_{U_j}$, then the compatibility condition 
 \begin{equation}
     \beta_j^i[(X \oplus \eta) f] = X \oplus (\chi^i_j(X) + \alpha^i_j(\eta))\beta^i_j(f)
 \end{equation}
@@ -1978,7 +1985,7 @@ For any $m \in M$ and $\eta,\theta \in \alg g$
 
 Since $\sigma_i$ is a local section of the projection $\pi: P \to M$, $\pi_*(\sigma_{i*}(X)) = X$, hence $\nabla^{0,i}$ respects the anchor. is Lie algebroid morphism. That's what it induces
 
-The compatibility condition $[\up{\Theta}_i(X), \up{j \psi(\eta)}] = \up j(\tilde \psi_i(\sect X(\stilde \eta)))$  \todo{HACER}
+Given the definitions we have studied throught this chapter of the Atiyah Lie algebroid and its bracket, the compatibility condition of the suggested atlas reduces to verifying that $[\up{\nabla^{0,i}}(\sect X), \up{j \psi(\sect \eta)}] = \up j(\tilde \psi_i(\sect X(\stilde \eta))) \in C^\infty_G(P)$ for all $\sect X \oplus \sect \eta \in \Gamma(TU_i) \oplus C^\infty(U_i, \alg g)$. This is done using the flow of $\up{\nabla^{0,i}}(\sect X)$ and the definition of the Lie derivative of vector fields on $P$.\improvement{Agregue esto}
 \end{proof}
 
 The components of a Lie algebroid atlas combine to give the trivialization morphism:
@@ -2089,7 +2096,7 @@ If $\{\sect X \oplus \stilde \eta^i\}$ is a family of local trivializations of $
 
 %TODO: general form of a section of $TP/G$ as section of $TP$
 
-\begin{example}[Local trivialization of representation of $TP/G$ on $E = P \times V/G$]\label{localTrivializationOfRepresentationOfAtiyahTPGonAssociated}\todo{Change of place}
+\begin{example}[Local trivialization of representation of $TP/G$ on $E = P \times V/G$]\label{localTrivializationOfRepresentationOfAtiyahTPGonAssociated}
 \label{exampleLocalTrivializationOfGroupInducedRepresentationOfAtiyahLieAlgebroidAction}
 The open $U_i$ trivializes $E$ as $\beta_i: U_i \times V\to E|_{U_i}$
 
@@ -2124,7 +2131,7 @@ where $\gamma: I \to U_i$ is a path on $M$ such that $\gamma'(0) = X_m$. In conc
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
- We have seen that to every principal bundle $G \hookrightarrow P \to M$ there is an associated Atiyah sequence of transitive Lie algebroids $0 \to P \times \alg g / G \to TP/G \to TM \to 0$. Furthermore, theorem \ref{algebroidAtlasAtiyah} states that local trivializations of $P$ and $M$ induce local trivializations of the Lie algebroids $P \times \alg g/G$ and $TP/G$. We will now give a description of some principal bundles over projective spaces isomorphic to spheres which will have a trivializations with only $2$ charts for both the manifold and the principal bundle. From this it follows that we only require a single pair of maps $\alpha$ and $\chi$ to determine completely the structure of the Lie algebroids from its local trivializations.
+ We have seen that to every principal bundle $G \to P \to M$ there is an associated Atiyah sequence of transitive Lie algebroids $0 \to P \times \alg g / G \to TP/G \to TM \to 0$. Furthermore, theorem \ref{algebroidAtlasAtiyah} states that local trivializations of $P$ and $M$ induce local trivializations of the Lie algebroids $P \times \alg g/G$ and $TP/G$. We will now give a description of some principal bundles over projective spaces isomorphic to spheres which will have a trivializations with only $2$ charts for both the manifold and the principal bundle. From this, and remark  it follows that we only require a single pair of maps $\alpha$ and $\chi$ to determine completely the structure of the Lie algebroids from its local trivializations.
 %     \begin{itemize}
     
 %     \item Complex Hopf bundle, as $S^1 \hookrightarrow S^3 \to S^2$ and as $S^1 \hookrightarrow S^3 \to \CC P^1$
