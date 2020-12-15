@@ -704,7 +704,7 @@ That $A_i - \epsilon$ is an ordinary connection follows simply from the fact tha
 \end{proof}
 
 \begin{proposition}\label{propositionTransformationLawsOfAandTau}
-Let $\hat \omega$ be a connection form on $A$ with local trivialization $\hat \omega = A_i - \epsilon + \tau_i$, decomposed as proposed in theorem \ref{theoremLocalTrivializationDecompositionGenralizedConnectionForm}, on each $U_i$, $i \in I$. Then, for all $X \in \Gamma(TM)$ and all $U_i, U_j$ such that $U_{ij} = U_i \inter U_j \neq \empty$,
+Let $\hat \omega$ be a connection form on $A$ with local trivialization $\hat \omega = A_i - \epsilon + \tau_i$, decomposed as proposed in theorem \ref{theoremLocalTrivializationDecompositionGenralizedConnectionForm}, on each $U_i$, $i \in I$. Then, for all $X \in \Gamma(TM)$ and all $U_i, U_j$ such that $U_{ij} = U_i \inter U_j \neq \emptyset$,
 
     \begin{itemize}
     
@@ -729,7 +729,7 @@ Let $\hat \nabla \in End(A)$ be the anchor preserving endomorphism associated to
     \hat \nabla^i = S_i^{-1} \comp \hat \nabla \comp  S_i \quad \in \, End(TU_i \times \alg g).
 \end{eqnsplit}
 
-If $\hat \omega$ is normalized, \emph{the local trivialization $\nabla^i$ over $U_i$} of the associated map $\nabla: TM \to A$ is
+\noindent If $\hat \omega$ is normalized, \emph{the local trivialization $\nabla^i$ over $U_i$} of the associated map $\nabla: TM \to A$ is
 \begin{eqnsplit}
     \nabla^i = S_i^{-1} \comp \nabla  \quad : TU_i \to TU_i \times \alg g.
 \end{eqnsplit}
@@ -758,24 +758,24 @@ Let $\{E_a\}_{a = 1, \dots, n}$ be a basis for $\alg g$. Let us also denote by $
         \begin{itemize}
         
         \item $(A_i)^a \in \Omega^1(TU_i)$ be such that
-            \begin{equation}
+            \begin{equation*}
                 A_i = \sum_{a = 1}^n (A_i)^a E_a,
-            \end{equation}
+            \end{equation*}
         and if a set of coordinates $x^\mu: U_i \to \RR$ on $M$, $\mu = 1, \dots, m$, is clear from the context, we will denote by
         \begin{equation}
             (A_i)^a_\mu \equiv (A_i)^a(\partial_{x^\mu}) \in C^\infty(U_i);
         \end{equation}
         
         \item $\epsilon^a \in \Omega^1(U_i \times \alg g)$ such that
-            \begin{equation}
+            \begin{equation*}
                 \epsilon = \sum_{a = 1}^n \epsilon^a E_a,
-            \end{equation}
+            \end{equation*}
         i.e. each $\epsilon^a$ can be seen as the constant function in $C^\infty(U_i, \alg g^*)$ used in theorem \ref{TheoremDecompOfVectorValuedFormsTLAEpsilonsDxs}, taking the constant value $\epsilon^a \in \alg g^*$ that satisfies $\epsilon^a(E_b) = \delta^a_b$;
         
         \item $(\tau_i)^a_b \in C^\infty(U_i)$ such that
-            \begin{equation}
+            \begin{equation*}
                 \tau_i = \sum_{a, b = 1}^n (\tau_i)^a_b E_b \epsilon^b,
-            \end{equation}
+            \end{equation*}
         i.e. $\tau_i(E_b) = \sum_{a = 1}^n (\tau_i)^a_b E_a$.
         \end{itemize}
 \end{definition}
@@ -831,7 +831,7 @@ Since $\{dx^\mu, \alg a^a\}$ is dual to the global frame $\{\nabla^i_\mu, -E_a\}
 The following proposition now follows, giving an alternative decomposition of forms to the one given in theorem \ref{remarkLocalDecompositionOfFormsOnTransitiveLieAlgebroidsIfTrivializationOfM}:
 
 \begin{proposition}\label{TheoremDecompOfVectorValuedFormsTLAMixedLocalBasisDxs}
-Let $E$ be a vector bundle over $M$ that trivializes over $U_i$ as $U_i \times V$, and let $\{e_u\}_{r = 1, \dots, h}$ be a basis of the vector space $V$, and let $A$ be represented on $E$. Let $\beta$ be an $E$-valued $p$-form on $A$, $p \in \ZZ_{\geq 0}$. Viewing each $e_u$ as a constant section of $E$, i.e. $e_u \in \Omega^0(TM \times \alg g, E)$, each local trivialization of $\beta$ may be decomposed as follows
+Let $E$ be a vector bundle over $M$ that trivializes over $U_i$ as $U_i \times V$, and let $\{e_u\}_{r = 1, \dots, t}$ be a basis of the vector space $V$, and let $A$ be represented on $E$. Let $\beta$ be an $E$-valued $p$-form on $A$, $p \in \ZZ_{\geq 0}$. Viewing each $e_u$ as a constant section of $E$, i.e. $e_u \in \Omega^0(TM \times \alg g, E)$, each local trivialization of $\beta$ may be decomposed as follows
 \begin{equation}
     \beta_i = \sum_{r + s = p} \left(\beta_i \right)^u_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}\, e_u \, dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \alg a_i^{a_1} \wedge \cdots \wedge \alg a_i^{a_s}.
 \end{equation} 
@@ -839,21 +839,21 @@ with each $\left(\beta_i\right)^a_{\mu_1 \cdots \mu_r, a_1 \cdots a_s} \in C^\in
 The convention of ignoring the $\wedge$ symbol when one of the factors is a $0$-form has been used.
 \end{proposition}
 
-Let the matrix valued function $G^i_j$ on $U_{ij} \neq \empty$
+Let the matrix valued function $G^i_j$ on $U_{ij} \neq \emptyset$
     \begin{equation}
         {G_j^i}_a^b = \epsilon^b \circ \alpha^i_j(E_a)
     \end{equation}
-be {the matrix representation of the transition function $\alpha^i_j$ from $U_j$ to $U_i$ of $L$ with respect to the basis $\{E_a\}_{a= 1,\ dots, n}$} of $\alg g$.
+be {the matrix representation of the transition function $\alpha^i_j$ from $U_j$ to $U_i$ of $L$ with respect to the basis $\{E_a\}_{a= 1,\dots, n}$} of $\alg g$.
 
 \begin{theorem}\label{theoremTransformationLawOfFormsComponentsFOrMixedLocalBasisDecomposition}
-Let $\mu_1, \dots, \mu_r \in \{1, \dots, m\}$ and $\{a_1, \dots, a_s\} \in \{1, \dots n\}$. Then the following homogeneous transformation law under change of trivializations is satisfied:
-\begin{eqnsplit}
+Let $\mu_1, \dots, \mu_r \in \{1, \dots, m\}$ and $a_1, \dots, a_s \in \{1, \dots n\}$. Then the following homogeneous transformation law under change of trivializations is satisfied:
+\begin{eqnsplit*}
     \hat \alpha^i_j(dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \alg a_j^{a_1} \wedge \cdots \wedge \alg a_j^{a_s}) &=\\
     %\sum_{b_1, \dots, b_s \in \{1, \dots, n\}}
     {G_i^j}_{b_1}^{a_1} \cdots {G_i^j}_{b_1}^{a_1} &dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \alg a_i^{b_1} \wedge \cdots \wedge \alg a_i^{b_s};
-\end{eqnsplit}
+\end{eqnsplit*}
 where Einstein's summation convention has been used.
-In particular, let $E$ be a vector bundle over $M$ that trivializes over $U_i$ and $U_j$ as $U_i \times V$ and $U_j \times V$, $U_{ij} \neq \empty$ and with transition function from $U_j$ to $U_i$ $\alpha^i_j:U_{ij} \to End(V)$; let $\beta$ be an $E$-valued $p$-form on $A$, $p \in \ZZ_{\geq 0}$; for $E$-valued forms on $A$, its components with respect to the mixed local basis transform as follows
+In particular, let $E$ be a vector bundle over $M$ that trivializes over $U_i$ and $U_j$ as $U_i \times V$ and $U_j \times V$, $U_{ij} \neq \emptyset$ and with transition function from $U_j$ to $U_i$ $\alpha^i_j:U_{ij} \to End(V)$; let $\beta$ be an $E$-valued $p$-form on $A$, $p \in \ZZ_{\geq 0}$; for $E$-valued forms on $A$, its components with respect to the mixed local basis transform as follows
 \begin{align}
     (\beta_i)_{\mu_1 \cdots \mu_r a_1 \dots a_s} = {G^j_i}^{b_1}_{a_1} \cdots {G^j_i}^{b_s}_{a_s} \alpha^i_j((\beta_j)_{\mu_1 \cdots \mu_r b_1 \dots b_s})
 \end{align}
@@ -887,20 +887,20 @@ Let $\hat R \in \Omega^2(A, L)$ be the curvature form of the connection form $\h
     \begin{itemize}
     
     \item Over $U_i$, \emph{the local trivialization of the algebraic curvature of $\tau$}, the reduced kernel endomorphism of $\hat \omega$, is $C^\infty(U_i)$-multilinear antisymmetric map
-    \begin{equation}
+    \begin{equation*}
         (R_\tau)_i = \psi_i^{-1} \comp \psi_i^*R_\tau : C^\infty(U_i, \alg g) \times C^\infty(U_i, \alg g) \to C^\infty(U_i, \alg g).
-    \end{equation}
+    \end{equation*}
     Denote by $(W_i)_{ab}^c \in C^\infty(U_i)$ the functions that satisfy
-    \begin{equation}
+    \begin{equation*}
         (R_\tau)_i(E_a, E_b) = (W_i)_{ab}^c E_c;
-    \end{equation}
+    \end{equation*}
     call them \emph{the components of $R_\tau$ over $U_i$ with respect to the basis $\{E_a\}_{a = 1, \dots n}$}.
     
     \item Over $U_i$, \emph{the local trivialization of $\mathcal D\tau$} is the element 
-    \begin{eqnsplit}
+    \begin{eqnsplit*}
         (\mathcal D \tau_i) : \Gamma(TU_i) &\to C^\infty(U_i, End(\alg g^*))\\
         X &\mapsto \mathcal \psi_i^{-1} \comp \,\psi_i^*(\mathcal D_{\nabla^{0, i}_X} \tau)
-    \end{eqnsplit}
+    \end{eqnsplit*}
     induced by the local trivialization of $A$ over $U_i$. 
     Let $x^\mu:U_i \to \RR$, $\mu = 1, \dots, m$ be coordinates on $U_i$ and denote by $(\mathcal D \tau_i)_{\mu, a}^b \in C^\infty(U_i)$ the functions that satisfy
     \begin{equation}
@@ -1160,7 +1160,7 @@ Decomposing $\omega_S$ as $A_S - Im + \tau_S$ and $\omega_N = A_N - Im - \tau_N$
 \begin{equation}
     \tilde \tau = \hat h + 1 =\hat \omega_{S;i} + 1.
 \end{equation}
-Finally, according to equation \eqref{equationLocalDerivationOfConnection}, this connection on $TP^k/S^1$ is associated to the following $TU_S \times i\RR$ elements:\
+Finally, the local trivializations of the anchor preserving vector bundle morphisms associated to the connections forms (see \ref{definitionLocalTrivializationOfHatNablaEndormorphismAnchorPreservingGeneralizedConnection}) are associated, according to equation \eqref{equationLocalDerivationOfConnection} to the following  $TU_S \times i\RR$ elements:
 \begin{eqnsplit}
     \hat \nabla_{\mu} &= \partial_\mu \oplus i\omega^\epsilon_{S; \mu}\\
     \hat \nabla_{i} &= -i \tilde \tau,
@@ -1193,7 +1193,7 @@ then the ordinary connection $\omega = \hat \omega + \tau \comp \tilde \omega$ i
     \omega_S &= i(\hat \omega^\epsilon_{S; 1}  + \tilde \tau \tilde \omega^\epsilon_{S; 1})dx^1 + i(\hat \omega^\epsilon_{S; 2}  + \tilde \tau \tilde \omega^\epsilon_{S; 2}) dx^2 - i Im\\
         &=i (\hat f + \tilde \tau \tilde f) d\phi + i (\hat g + \tilde \tau \tilde g) d\theta - i Im,
 \end{eqnsplit}
-and this connection form on $TU_S \times i\RR$ is associated to the ordinary connection $\nabla : TU_S \to TU_S \times i\RR$ determined by the Lie algebroid elements determined by local frame $\{\partial_{x^\mu} \equiv \partial_\mu\} \subset \Gamma_{U_S}(TS^2)$:
+and this connection form on $TU_S \times i\RR$ is associated to the ordinary connection $\nabla : TU_S \to TU_S \times i\RR$ (see \ref{definitionLocalTrivializationOfHatNablaEndormorphismAnchorPreservingGeneralizedConnection}) determined by the Lie algebroid elements determined by local frame $\{\partial_{x^\mu} \equiv \partial_\mu\} \subset \Gamma_{U_S}(TS^2)$:
 \begin{eqnsplit}
     \nabla_{\mu} = \partial_\mu \oplus i(\hat \omega^\epsilon_{S; \mu}  + \tilde \tau \tilde \omega^\epsilon_{S;\mu});
 \end{eqnsplit}
@@ -1219,12 +1219,12 @@ we can readily check that the decomposition of the curvature given in theorem \r
 
 \subsection{$TP^k/S^3$ over $S^4$}\label{subsectionConnectionsTPkS3}
 
-For reason entirely analogous to those of the Atiyah Lie algebroids $TP^k/S^1$ studied in examples \ref{exampleFormsBuildingBlocksTPkS4}, we know that the most general connection $\hat \omega \in \Omega^1
+For reason entirely analogous to those use for the Atiyah Lie algebroids $TP^k/S^1$, and continuing the example in section \ref{exampleFormsBuildingBlocksTPkS4}, we know that the most general connection $\hat \omega \in \Omega^1
 (TP^k/S^3, P^k \times Im \HH/S^3)$ on $TP^k/S^4$ has the local trivialization over $U_S$
 \begin{equation}
     \hat \omega_S = i \omega_S^1 + j \omega_S^2 + k \omega_S^3 - Im - Jm - Km + \tau_S,
 \end{equation}
-where $\omega_S^a = (\omega_S)^a_\mu dx^\mu$, $a = 1, 2, 3$, are restrictions to $U_S$ of $1$-forms in $\Omega^1(TS^7)$, hence the components of $\hat \omega$ over $U_S$ with respect to the basis $i, j, k$ of $Im \HH$ are actually functions $(\omega_S)^i_\mu \in C^\infty(S^2)$ defined over all of $S^2$ with some restrictions that allow its extension to a global section on $TP^k/S^4$; similarly, $\tau_S$ is any function $C^\infty(S^2, End(Im \HH))$, made up of $9$ different matrix $\tau^a_b$ elements, or it can also be seen as a collection of $3$ different Lie algebra valued fields $\tau_b$, for $b = 1, 2, 3$.
+where $\omega_S^a = (\omega_S)^a_\mu dx^\mu$, $a = 1, 2, 3$, are restrictions to $U_S$ of $1$-forms in $\Omega^1(TS^7)$, hence the components of $\hat \omega$ over $U_S$ with respect to the basis $i, j, k$ of $Im \HH$ are actually functions $(\omega_S)^i_\mu \in C^\infty(S^2)$ defined over all of $S^2$ with some restrictions that allow its extension to a global section on $TP^k/S^4$; similarly, $\tau_S$ is any function $C^\infty(S^2, \alg{gl}(Im \HH))$, made up of $9$ different matrix $(\tau_S)^a_b$ elements, or it can also be seen as a collection of $3$ different Lie algebra valued fields $$(\tau_S)_b = \tau_S(E_b) \in C^\infty(S^2, Im \HH),$$ for $\{E_b\}_{b = 1, 2, 3} = \{i, j, k\}$ basis of the Lie algebra.
 
 If we use the matrix algebra $\alg{su}(2)$ as the representation of the Lie algebra, then:
 \begin{eqnsplit}
@@ -1233,5 +1233,5 @@ If we use the matrix algebra $\alg{su}(2)$ as the representation of the Lie alge
     + \tau_S %\begin{pmatrix} i\tau^3 & \tau_S^2 + i \tau_S^1 \\ \tau_S^2 - i \tau_S^1 & -i\tau_S^3 \end{pmatrix} \\
     %&= \omega_S^i \cdot i\sigma_i - \epsilon + \tau_S^i \cdot i\sigma_i,
 \end{eqnsplit}
-where $\hat \omega_S^\mu \in \Omega^1(TU_S)\otimes \alg{su}(2)$, for $\mu = 1, 2, 3$ and $\tau_S$.
+where $\hat \omega_S^\mu \in \Omega^1(TU_S)$, for $\mu = 1, 2, 3$ and $\tau_S \in C^\infty(S^2, \alg{gl}(\alg{su}(2)))$.
 
