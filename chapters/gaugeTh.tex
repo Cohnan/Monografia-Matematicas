@@ -1,4 +1,4 @@
-We have finally introduced all the necessary ingredients to define gauge theories. The traditional gauge theories arise from imposing that the dynamics of a matter field, i.e. sections of a vector bundle, be left invariant under space dependent changes of ``internal reference frame'' associated to the action of a structure group $G$, i.e. under gauge transformations, and this is achieved by the introduction of a connection on an associated principal bundle, also called a \emph{gauge potential}, with certain dynamics. Fournel, et al. in \cite{Fournel2013} propose the formulation of gauge theories on transitive Lie algebroids from a lagrangian approach through the action functional $\mathcal S$ of the theory, which decompomposes into the matter action $\mathcal S_{matter}$ and the gauge action $\mathcal S_{matter}$, and where the gauge invariance of the theory is the one induced by the definitions on gauge transformations in \cite{Lazzarini2012}. Bleecker, combination, emphasis on $A$-connections.
+We have finally introduced all the necessary ingredients to define gauge theories. The traditional gauge theories arise from imposing that the dynamics of a matter field, i.e. sections of a vector bundle, be left invariant under space dependent changes of ``internal reference frame'' associated to the action of a structure group $G$, i.e. under gauge transformations, and this is achieved by the introduction of a connection on an associated principal bundle, also called a \emph{gauge potential}, with certain dynamics. Fournel, et al. in \cite{Fournel2013} propose the formulation of gauge theories on transitive Lie algebroids from a lagrangian approach through the action functional $\mathcal S$ of the theory, which decompomposes into the matter action $\mathcal S_{matter}$ and the gauge action $\mathcal S_{matter}$, and where the gauge invariance of the theory is the one induced by the definitions on gauge transformations in \cite{Lazzarini2012}. In section \ref{chGaugeSectionTraditional} we briefly review the notion of gauge transformation from traditional gauge theories, which motivates the generalized definition of (infinitesimal) gauge transformation introduced in \cite{Lazzarini2012} that is reviewed and clearly defined in section \ref{chGaugeSectionGaugeTransformations}. In section \ref{chGaugeSectionGaugeAction} the gauge invariant gauge action and Lagrangian given a transitive Lie algebroid with a metric is defined. The matter gauge action is then defined in section \ref{chGaugeSectionMatterAction} and the local point of view of $A$-connections that was studied by us in this document is then used to give a formula for the Lagrangian analogous to equation \eqref{equationGaugeLagrangianDecompositionLocallyInverseMetric} introduced in \cite{Fournel2013} for the gauge action.
 
 The complete framework for the formulation is made up of an orientable transitive Lie algebroid $A$, over a base manifold $M$, equipped with a metric $\hat g \equiv (g, h, \tilde \nabla)$ with adjoint Lie algebroid $L$ on which $h$ is a Killing metric, and a vector bundle $E$ on which there is a representation $\phi: A \to \alg D(E)$ and a metric $h^E$ compatible with $\phi$.
 
@@ -151,10 +151,10 @@ and its \emph{infinitesimal gauge transformation} is
 
 The curvature of $\hat \omega^\eta$ is 
 $$\hat R + \hat d \hat \omega \wedge \eta + \frac{1}{2} (\hat \omega \wedge \hat \omega) \wedge \eta + [\frac{1}{2} \hat d \eta \wedge \hat d \eta + \hat d \eta \wedge (\hat \omega \wedge \eta) + \frac{1}{2} (\hat \omega \wedge \eta) \wedge (\hat \omega \wedge \eta)],$$ 
-meaning that \textit{it is equal to $\hat R^\eta$ plus second order terms in $\eta$}: for arbitrary $\oid X, \oid Y \in A$, and ignoring the immersion $j$, 
-\begin{multline}\frac{1}{2} \hat d \eta \wedge \hat d \eta + \hat d \eta \wedge (\hat \omega \wedge \eta) + \frac{1}{2} (\hat \omega \wedge \eta) \wedge (\hat \omega \wedge \eta)](\oid X, \oid Y) 
+meaning that it is equal to $\hat R^\eta$ plus \emph{second order terms in $\eta$}: for arbitrary $\oid X, \oid Y \in A$, and ignoring the immersion $j$, 
+\begin{multline*}\frac{1}{2} \hat d \eta \wedge \hat d \eta + \hat d \eta \wedge (\hat \omega \wedge \eta) + \frac{1}{2} (\hat \omega \wedge \eta) \wedge (\hat \omega \wedge \eta)](\oid X, \oid Y) 
 \\= [[\oid X, \eta], [\oid Y, \eta]] + [[\oid X, \eta], [\tilde \omega(\oid Y), \eta]] + [[\oid Y, \eta], [\tilde \omega(\oid X), \eta]] + [[\tilde \omega(X), \eta], [\tilde \omega(Y), \eta]];
-\end{multline}
+\end{multline*}
 these are all terms that involve twice the product with $\eta$, hence we call them second order terms in $\eta$.
 
 \begin{proposition}\label{propositionInfinitesimalGaugeTransformationOfAlgebroidEndomorphismOfConnection}
@@ -287,29 +287,29 @@ This shows that the gauge action itself can be decomposed as
 
 In case that $\hat \omega$ is an ordinary connection form on $A$, $a^* \hat F = \hat R$ and so $\hat F \in \Omega^2(TM, L)$ is the traditional curvature of the ordinary connection, also called the \emph{field strength}; since $\tau = 0$, the second and third term of the action functional annihilate and the left term coincides, in the case that $A$ is an Atiyah Lie algebroid associated to a principal bundle, with the traditional action functional of the gauge potential.
 
-Recall that in a trivializing neighborhood $U_i$ of $A$ on which there are coordinates $\{x^\mu\}_{\mu = 1, \dots, m}$, with respect to a basis $\{E_a\}_{a = 1, \dots, n}$ of $\alg g$ dual $\{e^a\}_a$, with structure constants $C^a_{bc} E_a = [E_b, E_c]$. 
+Recall that in a trivializing neighborhood $U_i$ of $A$ on which there are coordinates $\{x^\mu\}_{\mu = 1, \dots, m}$, with respect to a basis $\{E_a\}_{a = 1, \dots, n}$ of $\alg g$ dual $\{e^a\}_a$, with structure constants $C^a_{bc} E_a = [E_b, E_c]$, we have formulas \eqref{equationFormulaHatFLocal}, \eqref{equationFormulaWLocal} and \eqref{equationFormulaDtauLocal}:
 % Then, 
 % \begin{align*}
 %     \hat (R_i)_{\mu \nu} &= (R_i)(\partial_\mu, \partial_\nu \\
 %         &= (dA + )
 % \end{align*}
-\begin{align}
+\begin{eqnsplit*}
     (\hat F_i)^a_{\mu \nu} &= R^a_{\mu \nu} - \tau^a_b \tilde R^b_{\mu \nu}\\
-    (\mathcal D \tau_i)^b_{\mu, a} &= \partial_\mu \tau^b_a + (A_i)^c_\mu (\tau_i)^d_c C^b_{cd} - (\tilde A_i)_\mu^d C^c_{da} \tau^b_c\\
-    (W_i)^c_{ab} &= \tau^b_a \tau^e_b C^c_{de} - C^d_{ab}\tau^c_d.
-\end{align}
+    (\mathcal D \tau_i)^b_{\mu, a} &= \partial_\mu (\tau_i)^b_a + (A_i)^c_\mu (\tau_i)^d_c C^b_{cd} - (\tilde A_i)_\mu^d C^c_{da} (\tau_i)^b_c\\
+    (W_i)^c_{ab} &= (\tau_i)^b_a (\tau_i)^e_b C^c_{de} - C^d_{ab}(\tau_i)^c_d.
+\end{eqnsplit*}
 
-So far no method to extramize the action to extract the equations of motion of the system has been stated, but from its resemblance to the traditional Yang-Mills gauge theories, specially when looking at a local trivialization of the lagrangian density, we might expect the following very rough interpretation of the decomposition \eqref{equationDecompositionOfGaugeActionFunctionalGlobal} of the action functional:
+So far no method to extremize the action to extract the equations of motion of the system has been studied in this document, but from its resemblance to the traditional Yang-Mills gauge theories, specially when looking at a local trivialization of the lagrangian density, we might expect the following very rough interpretation of the decomposition \eqref{equationDecompositionOfGaugeActionFunctionalGlobal} of the action functional:
 \begin{enumerate}
     \item The first term describes the dynamics of the connection. 
     %We we might call the globally defined object $\tilde A$ the gauge potential; as seen in \eqref{}, when the Lie algebroid is the one associated to a principal bundle, between local trivializations this $A$ object transforms as a principal connection form.
     
-    \item The second term contains both the Kinetic energy of the tau fields, and A coupling of the $A$ fields with the $\tau$ fields in terms quadratic in $\hat A$, which give rise to mass terms for the $A$ fields in the Lagrangian.
+    \item The second term contains both the Kinetic energy of the tau fields, and coupling of the $A$ and $\tilde A$ fields with the $\tau$ fields in terms quadratic in the $A$ fields, which give rise to mass terms for these $A$ fields in the Lagrangian.
     
     \item The third term is the potential term for the $\tau$ fields.
 \end{enumerate}
 
-However, notice that new $\tilde A_i$ fields appear in the first and second term (which annihilates when $\tau = 0$) due to the background ordinary connection that emerges as a consequence of a choice of metric on the algebroid, and their contribution to the action disappears whenever $\hat \omega$ is an ordinary connection. Also, the contribution of $\tau$ to the first term disappears if the background connection is flat, leaving the first term devoid of contributions by $\tau$, only as a term that resembles the kinetic term of the ``gauge fields'' $A$ in the traditional gauge theories. Also notice that $\hat F$ is not the ``curvature'' of the global object defined by the trivializations $\hat A_i$, nor do the $\tau$ contribution to the first term disappear when expanded, meaning that there is no clear choice for what the ``gauge fields'' should be; however, the full contribution of $\tau$ does disappear in some cases on the first term, leaving again a kinetic term for the ``gauge fields'' $\hat A$.
+However, notice that new $\tilde A_i$ fields appear in the first and second term due to the background ordinary connection that emerges as a consequence of a choice of metric on the algebroid, and their contribution to the action disappears whenever $\hat \omega$ is an ordinary connection. Also, the contribution of $\tau$ to the first term disappears if the background connection is flat, leaving the first term devoid of contributions by $\tau$, only as a term that resembles the kinetic term of the ``gauge fields'' $A$ in the traditional gauge theories. Also notice that $\hat F$ is not the ``curvature'' of the global object defined by the trivializations $\hat A_i$, nor do the $\tau$ contribution to the first term disappear when expanded, meaning that there is no clear choice for what the ``gauge fields'' should be; however, the full contribution of $\tau$ does disappear in some cases on the first term, leaving again a kinetic term for the ``gauge fields'' $\hat A$.
 
 \section{Matter Action Functional}
 \label{chGaugeSectionMatterAction}
@@ -370,20 +370,20 @@ This decomposition is induced by the ordinary connection $\omega = \hat \omega +
     \hat \nabla^E_{\oid X} 
       &= \phi(\oid X) + \phi_L \comp \hat \omega(\oid X)\\
       &= \phi(\nabla_{a(\oid X)}) - \phi_L \comp \omega(\oid X) + \phi_L \comp (\omega - \tau \comp \tilde \omega)(\oid X)\\
-      &= \phi(\hat \nabla_{a(\oid X)}) - \phi_L \comp \tau \comp \tilde \omega(\oid X).
+      &= \phi(\nabla_{a(\oid X)}) - \phi_L \comp \tau \comp \tilde \omega(\oid X).
 \end{align*}
 \end{proof}
 
-Let $\{(U_i, \psi_i: U_i \times \alg g \to L|_{U_i}, \nabla^{0, i}: TU_i \to A|_{U_i})\}_{i \in I}$ be a Lie algebroid atlas for $A$, where $\alg g$ is a Lie algebra with basis $\{E_a\}_{a=1, \dots, n}$ and associated dual basis $\{\epsilon^a\}$. Assume that $\{e_u\}_{u = 1, \dots, t}$ is a basis of the fiber $V$ of $E$, and that the matter field $\mu \in \Gamma(E)$ is locally realized as $(\mu_i)^u e_u$ with $\mu_i \in C^\infty(U_i, V)$ for each $i \in I$; also suppose that there are coordinates $\{x^\mu: U_i \to \RR\}$over $U_i \subset M$. Recall the decomposition \eqref{} of a produced $A$-connection; then it can be easily seen that the decomposition of $\hat \nabla^E \mu$ of proposition \ref{propositionDecompositionFormActionMatterAConnection} is such that the local trivializations over $U_i$ of each term are:
-\begin{align}\label{equationExplicitTrivializationsOfDecompositionOfTermsOfMatterGaugeTermsAConnection}
-    a^* \phi(\nabla)\mu_i &= [\partial_\nu (\mu_i)^u + (B_i)^u_{\nu, v} (\mu_i)^v + (\phi_{L, i})^u_{b, v} (\hat A_i)_\mu^b (\mu_i)^v ]e_u dx^\nu\\
+Let $\{(U_i, \psi_i: U_i \times \alg g \to L|_{U_i}, \nabla^{0, i}: TU_i \to A|_{U_i})\}_{i \in I}$ be a Lie algebroid atlas for $A$, where $\alg g$ is a Lie algebra with basis $\{E_a\}_{a=1, \dots, n}$ and associated dual basis $\{\epsilon^a\}$. Assume that $\{e_u\}_{u = 1, \dots, t}$ is a basis of the fiber $V$ of $E$, and that the matter field $\mu \in \Gamma(E)$ is locally realized as $(\mu_i)^u e_u$ with $\mu_i \in C^\infty(U_i, V)$ for each $i \in I$; also suppose that there are coordinates $\{x^\mu: U_i \to \RR\}$over $U_i \subset M$. Recall the decomposition \eqref{equationLocalTrivializationOfGeneralProducedAConnectionArbitraryGeneralRepresentation} of a produced $A$-connection; then it can be easily seen that the decomposition of $\hat \nabla^E \mu$ of proposition \ref{propositionDecompositionFormActionMatterAConnection} is such that the local trivializations over $U_i$ of each term are:
+\begin{eqnsplit}\label{equationExplicitTrivializationsOfDecompositionOfTermsOfMatterGaugeTermsAConnection}
+    a^* \phi(\nabla)\mu_i &= [\partial_\nu (\mu_i)^u + (B_i)^u_{\nu, v} (\mu_i)^v + (\phi_{L, i})^u_{b, v} (A_i)_\nu^b (\mu_i)^v ]e_u dx^\nu\\
     (\phi_L(\tau) \mu)\comp \tilde \omega_i &= [(\phi_{L, i})_{b, v}^u \tau^b_a \,(\mu_i)^v] e_u \alg a_i^a,
-\end{align}
+\end{eqnsplit}
 where $B_i \in \Omega^1(TU_i, U_i \times \End(V))$ is the Maurer-Cartan form that, together with $\phi_{L, i} \in C^\infty(U_i, End(V))$, trivializes the representation $\phi$ (recall that $B_i = 0$ and $\phi_{L, i} = \pi$ is the group representation on $V$ for the group induced representations of example \ref{exampleLocalTrivializationOfGroupInducedRepresentationOfAtiyahLieAlgebroidAction}); and $\alg a_i^a$ is the component with respect to $E_a \in \alg g$ of the background connection $\tilde \omega$. Thus, thanks to proposition \ref{propositionRelationHodgeStarAndInverseMetricVolume} about the Hodge-* operator, the matter lagrangian density has the formula
 \begin{eqnsplit}\label{equationTrivializationMatterLagrangian}
     \mathcal L_{matter}
-      &= g^{\nu_1 \nu_2} h^E_{u_1 u_2}  (a^* \phi(\nabla)\mu_i)_{\nu_2}^{u_2}
-      + h^{a_1 a_2} h^E_{u_1 u_2} ((\phi_L(\tau) \mu)\comp \tilde \omega_i)_{a_1}^{u_1} ((\phi_L(\tau) \mu)\comp \tilde \omega_i)_{a_2}^{u_2}\\
+      &= g^{\nu_1 \nu_2} h^E_{u_1 u_2}  (a^* \phi(\nabla)\mu_i)_{\nu_1}^{u_1}(a^* \phi(\nabla)\mu_i)_{\nu_2}^{u_2}\\
+      &\quad \quad \quad \quad \quad \quad + h^{a_1 a_2} h^E_{u_1 u_2} ((\phi_L(\tau) \mu)\comp \tilde \omega_i)_{a_1}^{u_1} ((\phi_L(\tau) \mu)\comp \tilde \omega_i)_{a_2}^{u_2}\\
       &= (a^*\phi(\nabla)\mu_i)_{\nu}^{u} (a^*\phi(\nabla)\mu_i)^{\nu}_{u} 
       + ((\phi_L(\tau) \mu)\comp \tilde \omega_i)_{a}^{u} ((\phi_L(\tau) \mu)\comp \tilde \omega_i)^{a}_{u}, 
 \end{eqnsplit}
@@ -393,4 +393,4 @@ and the matter gauge functional has the decomposition
     + ((\phi_L(\tau) \mu)\comp \tilde \omega, (\phi_L(\tau) \mu)\comp \tilde \omega).
 \end{equation}
 
-When $A$ is the Atiyah Lie algebroid associated to a principal bundle, when the representation is the group induced representation, and when the connection $\hat \omega$ is ordinary, we are left only with the first term, which then coincides with the matter action of a Yang-Mills gauge theory, containing the Kinetic term of the matter fields and the interaction term from the coupling of the gauge fields $A = \hat A$ with the matter field. In general, the second term of the action functional comes from the extra dimensions in which the $A$-connection allows ``covariant derivatives'' to be taken, and in the lagrangian density it becomes a quadratic term for the matter field, i.e. a ``mass term''.
+When $A$ is the Atiyah Lie algebroid associated to a principal bundle, if the representation is the group induced representation and the connection $\hat \omega$ is ordinary, we are left only with the first term, which then coincides with the matter action of a Yang-Mills gauge theory, containing the Kinetic term of the matter fields and the interaction term from the coupling of the gauge fields $A = \hat A$ with the matter field. In general, if the representation is the group induced one the first term represents a minimal coupling of the matter fields with the ``gauge fields'' $A$ associated to the ordinary connection $\omega = \hat \omega + \tau \comp \tilde \omega$, and the second term of the action functional comes from the extra dimensions in which the $A$-connection allows ``covariant derivatives'' to be taken, and in the lagrangian density it becomes a quadratic term for the matter field, i.e. a ``mass terms''.

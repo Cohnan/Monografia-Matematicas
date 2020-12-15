@@ -964,7 +964,7 @@ Denoting by $C^c_{ab} = \epsilon^c([E_a, E_b])$ the structure constants of $\alg
 \end{equation}
 and
 \begin{equation}\label{equationFormulaWLocal}
-    (W_i)^c_{ab} = \tau^b_a \tau^e_b C^c_{de} - C^d_{ab}\tau^c_d.
+    (W_i)^c_{ab} = (\tau_i)^b_a (\tau_i)^e_b C^c_{de} - C^d_{ab}(\tau_i)^c_d.
 \end{equation}
 Similarly, from the definition of $\mathcal D \tau$ if follows that
 \begin{eqnsplit}\label{equationFormulaDtauLocal}
@@ -972,7 +972,7 @@ Similarly, from the definition of $\mathcal D \tau$ if follows that
         &= \epsilon^b (  [\partial_\mu + A_i(\partial_\mu), \tau_i(E_a)] - \tau_i[\partial_\mu + \tilde A_i(\partial_\mu), E_a]  )\\
         &= \epsilon^b (  [\partial_\mu + (A_i)^c_\mu E_c, (\tau_i)^d_a E_d] - \tau_i[\partial_\mu + (\tilde A_i)_\mu^d E_d, E_a ]  ) \\
         &= \epsilon^b (  \partial_\mu((\tau_i)^b_a E_b) + (A_i)^c_\mu   \tau^d_a [E_c, E_d] - (\tilde A_i)_\mu^d \tau_i[E_d, E_a])\\
-        &= \partial_\mu \tau^b_a + (A_i)^c_\mu (\tau_i)^d_c C^b_{cd} - (\tilde A_i)_\mu^d (\tau_i)^b_c C^c_{da} .
+        &= \partial_\mu (\tau_i)^b_a + (A_i)^c_\mu (\tau_i)^d_c C^b_{cd} - (\tilde A_i)_\mu^d (\tau_i)^b_c C^c_{da} .
 \end{eqnsplit}
 
 \section{$A$-connections}
@@ -1093,13 +1093,13 @@ In the case that the $A$-connection is produced by a connection $\hat \omega$ lo
 \end{align*}
  therefore \rtext{the trivializiation of an $A$-connection on $E$ produced by a connection on $A$ has the following formula}:
 \begin{equation} \label{equationLocalTrivializationOfGeneralProducedAConnectionArbitraryGeneralRepresentation}
-    \hat \nabla^{E, i}_{X \oplus \eta} = X \oplus [\alpha_i(X) + \phi_{L, i} \comp A_i(X) - \phi_{L, i}\comp \tau_i(\eta)].
+    \hat \nabla^{E, i}_{X \oplus \eta} = X \oplus [B_i(X) + \phi_{L, i} \comp A_i(X) - \phi_{L, i}\comp \tau_i(\eta)].
 \end{equation}
 We can be even more explicit. If we have a basis $\{E_a\}_a$ with ${a, b = 1, \dots, n}$ of $\alg g$ dual to $\{\epsilon^a\}_a$, $\{e_u\}_{u}$ with $u, v = 1, \dots h$ of $V$ dual to $\{\tilde e^u\}$, and coordinates $\{x^\mu: U_i \to \RR\}_{\mu}$ with $\mu, \nu  = 1, \dots m$ of $M$ we can define the following derivations over $U_i \times V$:
 \begin{eqnsplit}
     \hat \nabla^{E, i}_\mu := \hat \nabla^{E_i}_{\partial_\mu \oplus 0} 
-    &= \partial_\mu + (\alpha_i)_\mu + A^b_\mu \phi_L(E_b) \\
-    &= \partial_\mu \oplus (\alpha_i)_{\mu, v}^u e_u \tilde e^v + (\phi_{L, i})^u_{b, v} (A_i)_{\mu}^b e_u \tilde e^v
+    &= \partial_\mu + (B_i)_\mu + A^b_\mu \phi_L(E_b) \\
+    &= \partial_\mu \oplus (B_i)_{\mu, v}^u e_u \tilde e^v + (\phi_{L, i})^u_{b, v} (A_i)_{\mu}^b e_u \tilde e^v
 \end{eqnsplit}
 and
 \begin{eqnsplit}
@@ -1122,17 +1122,17 @@ Let $\hat \omega$ be a connection form on the transitive Lie algebroid $A$ with 
 \end{align*}
 \end{example}
 
-The group induced $TP^k/S^1$-connections are associated to the following derivations:
+The group induced $A$-connections given a representation $\pi$ are associated to the following derivations:
 \begin{eqnsplit}
     \hat \nabla^{E, i}_\mu 
-    &= \partial_\mu + \omega^\epsilon_{S; \mu} \pi_V(E_b) \\
-    &= \partial_\mu \oplus  + (\phi_{L, i})^u_{b, v} (A_i)_{\mu}^b e_u \tilde e^v,
+    &= \partial_\mu \oplus (A_i)_\mu^b \pi_V(E_b) \\
+    &= \partial_\mu \oplus  + \pi(E_b)^u_{v} (A_i)_{\mu}^b e_u \tilde e^v,
 \end{eqnsplit}
 and
 \begin{eqnsplit}
     \hat \nabla^{E, i}_a := \hat \nabla^{E_i}_{0 \oplus E_a} 
-    &=  - \tau^b_a \phi_{L, i} (E_b) \\
-    &= - (\phi_{L, i})_{b, v}^u \tau^b_a e_u \tilde e^v.
+    &=  - \tau^b_a \pi(E_b) \\
+    &= - \pi(E_b)_{v}^u \tau^b_a e_u \tilde e^v.
 \end{eqnsplit}
 
 
