@@ -71,7 +71,7 @@
         
 %             \begin{itemize}
                 
-%             \item Defn: Inner nondegenerate metric on $A$
+%             \item Defn: Inner non-degenerate metric on $A$
                 
 %             \end{itemize}
         
@@ -83,7 +83,7 @@
         
 %         \item $\hat g \to g$
             
-%         \item Theorem: Inner nondegenerate bilsymform iff $(g, h, \nabla)$ with $h$ nondeg. (i.e. actual metric) and $\nabla$ ordinary connection. Proof: Adaptation of Riesz representatio theorem (of Hilbert spaces, say).
+%         \item Theorem: Inner non-degenerate bilsymform iff $(g, h, \nabla)$ with $h$ nondeg. (i.e. actual metric) and $\nabla$ ordinary connection. Proof: Adaptation of Riesz representatio theorem (of Hilbert spaces, say).
         
 %         Such $\hat g \equiv (g, h, \nabla)$ assumed from now on.
         
@@ -131,7 +131,7 @@
     
 %     \item Horizontal Metrics and Hodge-$*$ Operator
     
-%     From now on $\hat g \equiv (g, h, \nabla)$ and orientable and nondegenerate i.e. $\hat g$ a metric on $A$ and $A$ orientable.
+%     From now on $\hat g \equiv (g, h, \nabla)$ and orientable and non-degenerate i.e. $\hat g$ a metric on $A$ and $A$ orientable.
     
 %         \begin{itemize}
             
@@ -171,16 +171,17 @@
 
 % }
 
-The formulation of a gauge theory on a transitive Lie algebroid $A$ will be made through the action functional $S[\mu, \hat \omega]$ of the theory, which will be the ``spacetime'' integral of the Lagrangian density, which is, in turn, the inner integral (definition \ref{definitionInner}) of a scalar valued form on $A$, a form found as the a product of vector valued forms induced by a metric on the representation vector bundle.
+The formulation of a gauge theory on a transitive Lie algebroid $A$ will be made through the action functional $S[\cdot, \cdot]$ of the theory, which will be the %``spacetime'' integral of the Lagrangian density, which is, in turn, the inner integral of a scalar valued form on $A$, a form found as the wedge product of vector bundle-valued forms induced by a metrics on the adjoint Lie algebroid and a representation vector bundle. 
+integral over $A$ of a certain form, found by the application of the product of forms induced by metrics on both the adjoint Lie algebroid of $A$ and on an arbitrary representation vector bundle.
+This chapter is essentially a rewriting of the exposition found on these topics on \cite{Fournel2011} and \cite{Fournel2013}. Metrics on representation vector bundles and the product they induce on vector bundle-valued differential forms is studied in section \ref{chIntegrationSectionMetricsRepresentationAssociated}. Then, metrics on transitive Lie algebroids and their equivalence with metrics on both the base space and the adjoint algebroid together with a horizontal subbundle as studied in section \ref{chIntegrationSectionMetricAlgebroid}. In section \ref{chIntegrationSectionIntegration} the concepts of inner integration and integration over $A$ are studied. Finally, in section \ref{chIntegrationSectionHodgeInnerProduct} metrics on $A$ are seen to induce inverse metrics and Hodge-$*$ operators on differential forms, which combine with the integration on $A$ to define an inner product of homogeneous forms on $A$.
 
 %Let every vector space, and hence every vector bundle, be over the field $\bb K$, where $\bb K$ is one of $\RR$ or $\CC$. 
 Throughout this chapter let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM$ be a transitive Lie algebroid for the transitive Lie algebroid $A$ over the manifold $M$.
-
 Let $\{(U_i, \psi_i: U_i \times \alg g \to L|_{U_i}, \nabla^{0, i}: TU_i \to A|_{U_i})\}_{i \in I}$ be a Lie algebroid atlas for $A$, where $\alg g$ is a Lie algebra with basis $\{E_a\}_{a = 1, \dots, n}$ and associated dual basis $\{\epsilon^a\}_{a = 1, \dots, n}$.
-
 Also, let $E$ be a vector bundle over $M$ on which $A$ is represented by $\phi: A \to \alg D(E)$, with vertical component $\phi_L: L \to \End(E)$. Suppose that $E$ is trivialized over each $U_i$, $i \in I$, by the vector bundle isomorphisms $\beta_i: U_i \times V \to E|_U$, where $V$ is a vector space with basis $\{e_u\}_{u = 1, \dots, t}$ and associated dual basis $\{\tilde e_u\}_{u = 1, \dots, t}$.
 
-\section{Degenerate Metrics on Representation Vector Bundles and Inner Metrics}
+\section{Degenerate Metrics on Representation Vector Bundles}
+\label{chIntegrationSectionMetricsRepresentationAssociated}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -190,9 +191,9 @@ Also, let $E$ be a vector bundle over $M$ on which $A$ is represented by $\phi: 
     In the case that $E = L$ the adjoint Lie algebroid of $A$, we also use the names \emph{degenerate inner metric on $A$} and \emph{inner metric on $A$}, respectively.
 \end{definition}
 
-In contrast to the notations in \cite{Fournel2011, Fournel2013}, we have called ``nondegenerate metric'' what they call ``metric'' to distinguish the degenerate and nondegenerate cases. Notice that a (degenerate) metric on $E$ is equivalent to a $C^\infty(M)$-linear map $h^E: \Gamma(E) \otimes \Gamma(E) \to C^\infty(M)$ which is a field of symmetric bilinear forms if $h^E$ is degenerate, and a field of metrics in the non-degenerate case. We now return to consider $E$ as a representation vector bundle of $A$.
+In contrast to the notations in \cite{Fournel2011, Fournel2013}, we have called ``degenerate metric'' what they call ``metric'' to distinguish the possibly degenerate and non-degenerate cases. Notice that a (degenerate) metric on $E$ is equivalent to a $C^\infty(M)$-linear map $h^E: \Gamma(E) \otimes \Gamma(E) \to C^\infty(M)$ which is a field of symmetric bilinear forms if $h^E$ is degenerate, and a field of metrics in the non-degenerate case. We now return to consider $E$ as a representation vector bundle of $A$.
 
-For the rest of the chapter, let $h^E$ be a degenerate metric on $E$ and let $h$ be a degenerate inner metric on $A$.
+For the rest of the chapter  $h^E$ will be a degenerate metric on $E$ and $h$ will denote a degenerate inner metric on $A$.
 
 \begin{definition}
     Over the trivializing neighborhood $U_i$, \emph{the components of $h^E$ with respect to the basis $\{e_u\}$}, with $u, v = 1, \dots$, are the functions $h^{E, i}_{u, v}:= h^E|_{U_i}(\beta_i(e_u),\beta_i(e_v)) \in C^\infty(U_i)$, where $e_u$ and $e_v$ are the corresponding constant $V$-valued functions on $U_i$.
@@ -271,12 +272,13 @@ Since the representation of $A$ on $L$ is is the adjoint representation, a Killi
     h([\eta, \theta], \gamma) = h(\theta, [\eta, \gamma]) = 0.
 \end{equation}
 
-\section{Degenerate Metrics}
+\section{Degenerate Metrics on Transitive Lie Algebroids}
+\label{chIntegrationSectionMetricAlgebroid}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{definition}
-\emph{The inner part of $\hat g$} is the degenerate inner metric \begin{equation}
+Let $\hat g$ be a degenerate metric on $A$. \emph{The inner part of $\hat g$} is the degenerate inner metric \begin{equation}
     h := j^*g.
 \end{equation} If $h$ is non-degenerate, $\hat g$ is called \emph{an inner non-degenerate metric on $A$}.
 \end{definition}
@@ -305,9 +307,9 @@ Let $\nabla: TM \to A$ be an ordinary connection on $A$ with induced connection 
     \end{itemize}
 \end{definition}
 
-\begin{theorem}
+\begin{theorem}\label{theoremEquivalenceMetricOnAlgebroidToTriple}
 An inner non-degenerate metric $\hat g$ on $A$ is equivalent to a triple $(g, h, \nabla)$ through the equation
-\begin{equation}
+\begin{equation}\label{equationRelationMetricAWithTriple}
     \hat g(\oid X, \oid Y) = g(a(\oid X), a(\oid Y)) + h(\alg a(\oid X), \alg a(\oid Y));
 \end{equation}
 where $g$ is a degenerate metric on $TM$, $h$ is an inner non-degenerate metric on $A$ and $\nabla$ is an ordinary connection on $A$ with associated connection $1$-form $\alg a$. In particular, $h$ is the inner part of $\hat g$ and $g$ is the tangent degenerate metric on $TM$ induced by the connection.
@@ -339,6 +341,7 @@ and so its \emph{local matrix representation} with respect to the same elements,
 
 
 \section{Inner Integration and Integration}
+\label{chIntegrationSectionIntegration}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -346,9 +349,9 @@ and so its \emph{local matrix representation} with respect to the same elements,
 The transitive Lie algebroid \emph{$A$ is inner orientable} if the adjoint Lie algebroid $L$ is an orientable vector bundle.
 \end{definition}
 
-Since the matrices ${G^i_j}^a_b$ represent the transition functions of $L$, where $a, b \in \{1, \dots, n\}$ and $i, j \in I$ such that $U_{ij \neq \emptyset}$ , $A$ is inner orientable if and only if $det({G^i_j}) \geq 0$.
+Since the matrices ${G^i_j}^a_b$ represent the transition functions of $L$, where $a, b \in \{1, \dots, n\}$ and $i, j \in I$ such that $U_{ij }\neq \emptyset$ , $A$ is inner orientable if and only if $det({G^i_j}) \geq 0$.
 
-For the rest of the section, let $A$ be inner orientable, and let $\hat g$ be an inner non-degenerate metric on $A$ with $(g, h, \nabla)$ its associated triple. In \cite{Fournel2013} it has been checked that:
+For the rest of the section, let $A$ be inner orientable, and let $\hat g$ be an inner non-degenerate metric on $A$ with $(g, h, \nabla)$ its associated triple. In \cite{Fournel2011} it has been checked that:
 
 \begin{proposition}\label{propositionInnerVolumeFormIntegrationFOrmGloballyDefinedWell}
 For $i, j \in I$ such that $U_{ij \neq \emptyset}$,
@@ -392,7 +395,7 @@ The last part of the theorem is follows simply from decomposing each $\alg a_i^a
 \end{proof}
 
 
-\begin{definition}
+\begin{definition}\label{definitionInnerIntegration}
 On the inner orientable transitive Lie algebroid $A$ with inner non-degenerate metric $\hat g$, define \emph{the inner integration of forms on $A$} as the operation:
 \begin{align}
     \int_{inner} &: \Omega^\bullet(A) \to \Omega^\bullet(TM)
@@ -425,10 +428,11 @@ However, to define an action functional we will require one more ingredient: the
 % Let $h^E$ be a metric on $E$. Then 
 % \end{definition}
 
-\section{Horizontal Metrics and Hodge-$*$ Operator}
+\section{Inverse Metrics and Hodge-$*$ Operator}
+\label{chIntegrationSectionHodgeInnerProduct}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The Hodge-$*$ operator enables the definition of the norm of a homogeneous $E$-valued form on $A$ of any degree, of which the gauge action functional and the matter action functional We will see in next chapter, which determine a gauge theory, will be examples.
+A metric on $A$ enables, through the inverse metrics and Hodge-$*$ operator, the definition of the norm of a homogeneous $E$-valued form on $A$ of any degree, of which the gauge action functional and the matter action functional will be examples. 
 
 For the rest of this chapter, let the transitive Lie algebroid $A$ be orientable and let $\hat g$ be a metric on $A$ (in particular, non-degenerate) associated to the triple $(g, h, \nabla)$, where $g$ and $h$ are (non-degenerate) metrics and $\nabla$ is an ordinary connection associated to the connection form $\alg a \in \Omega^1(A, L)$. Additionally, let $h^E$ be a metric on the representation vector bundle $E$. Finally, suppose that on each $U_i$ there are local coordinates $x^\mu: U_i \to \RR$, where $\mu = 1, \dots, m$.
 
@@ -436,9 +440,10 @@ For the rest of this chapter, let the transitive Lie algebroid $A$ be orientable
 \emph{The volume form $\omega^{Vol}$ on $A$ with respect to the metric $\hat g$} is the never zero top form $\Omega^{m+n}(A)$ with local trivialization over each $U_i$:
 \begin{eqnsplit}
     \omega^{Vol}_i &= (-1)^n \sqrt{|g_i|} \sqrt{|h_i|} dx^1 \wedge \cdots \wedge dx^m \wedge \alg a^1 \wedge \cdots \wedge \alg a^n\\
-    &= \sqrt{|g_i|} \sqrt{|h_i|} dx^1 \wedge \cdots \wedge dx^m \wedge \omega_{h, \alg a}.
+    &= \sqrt{|g_i|} dx^1 \wedge \cdots \wedge dx^m \wedge \omega_{h, \alg a}.
 \end{eqnsplit}
 \end{definition}
+Notice that $\omega^{Vol}$ is well defined because it transforms correctly between local trivializations of $A$ and $M$, since both $\sqrt{|g_i|}dx^1 \wedge \cdots \wedge dx^m$ and $\omega_{h, \alg a}$ transform well.
 
 \subsubsection{Inverse Metrics}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -560,3 +565,9 @@ When $E = L$, $h^E$ is assumed to be $h$, the inner part of $\hat g$.
 % \end{theorem}
 
 We now have all the necessary ingredients to define the action functional of a gauge theory, which will be studied in next chapter.
+
+\section{Examples}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+An inner metric $h$ on a transitive Lie algebroid $A$ defines an inner integration, which in turn defines an integration over $A$. A inner non-degenerate metric $\hat g$ on $A$ determines an inner product on homogeneous forms on $A$, and it is equivalent to an inner metric $h$, a degenerate metric $g$ on the base manifold $M$, and an ordinary connection $\tilde \nabla: TM \to A$ on $A$ that determines a subbundle that we may call the horizontal subbundle of $A$. When formulating a gauge theory we will think of $g$ as being given by the nature of the space or spacetime that the base manifold $M$ is. Hence, Hence, the freedom will appear
