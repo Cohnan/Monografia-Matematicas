@@ -1013,7 +1013,7 @@ In particular, in two of our main examples: the differential graded algebra of s
 
 
 \begin{example}[$TP^k/S^1$ over $S^2$]\label{exampleFormsTPkBuildingBLocksandMostGeneral1FormOn}
-In $P^k$ we had determined in \ref{} a Lie algebroid atlas for the Atiyah Lie algebroids associated to the principal bundles $S^1 \to P^k \to S^2$, coming from the local trivializations of the principal bundle $P^k$. The atlas was associated to the neighborhoods $U_S$ and $U_N$ that trivialize both $P^k$ and $S^2$, hence remark \ref{remarkLocalDecompositionOfFormsOnTransitiveLieAlgebroidsIfTrivializationOfM} implies that we may use the following scalar valued $1$-forms on the trivial vector bundles to build any (local) form on $TP^k/S^1$:
+Based on section \ref{chBasicsubsectionLocalDescriptionAtiyah}, for $TP^k/S^1$ we had determined in section \ref{chBasicSubsectionLocalDescriptionExamples} a Lie algebroid atlas for the Atiyah Lie algebroids associated to the principal bundles $S^1 \to P^k \to S^2$, coming from the local trivializations of the principal bundle $P^k$. The atlas was associated to the neighborhoods $U_S$ and $U_N$ that trivialize both $P^k$ and $S^2$, hence remark \ref{remarkLocalDecompositionOfFormsOnTransitiveLieAlgebroidsIfTrivializationOfM} implies that we may use the following scalar valued $1$-forms on the trivial vector bundles to build any (local) form on $TP^k/S^1$:
 \begin{align}
     \{dx^1, dx^2, Im\} &\in \Omega^1(TU_S \times i\RR), &
     \{dy^1, dy^2, Im\} &\in \Omega^1(TU_N \times i\RR),
@@ -1059,15 +1059,15 @@ which equals
 
 \end{example}
 
-\linea 
+\subsubsection{Change between local trivialization of forms}
 
-For the rest of the section, let $E$ be a vector bundle over $M$ on which $A$ is represented via $\phi$; suppose that there are vector bundle trivializations $\rho_i:U_i \times V$ and $\rho_j: U_j \times V$ on the neighborhoods $U_i$ and $U_j$, $U_{ij} = U_i \inter U_j \neq \empty$, that trivialize $A$, and denote by $\alpha^i_j: U_{ij} \to Gl(V)$, $m \mapsto \rho_{i, m} \circ \rho_{j, m}^{-1}$ the transition map from the trivialization of $E$ over $U_j$ to the trivialization over $U_i$; notice that, for $E = L$, this definition of $\alpha^i_j$ coincides with the one given in \ref{}. Let $\omega \in \Omega^q(A, E)$ and let $\{\sectoid X_k\} \subset \Gamma(A)$ for $k = 1, \dots, q$. Let each $\sectoid X_k$ have a family of trivializations $\{\sect X_k \oplus \stilde \eta_k^i \in \Gamma(TU_i) \oplus C^\infty(U_i, \alg g)\}$, then, in $U_{ij} = U_i \inter U_j \neq \empty$, 
+For the rest of the section, let $E$ be a vector bundle over $M$ on which $A$ is represented via $\phi$; suppose that there are vector bundle trivializations $\beta_i:U_i \times V \to E|_{U_i}$ and $\beta_j:U_j \times V \to E|_{U_j}$ over the neighborhoods $U_i$ and $U_j$, $U_{ij} = U_i \inter U_j \neq \emptyset$, that trivialize $A$, and denote by $\beta^i_j: U_{ij} \to Gl(V)$, $m \mapsto \beta_{i, m} \circ \beta_{j, m}^{-1}$ the transition map from the trivialization of $E$ over $U_j$ to the trivialization over $U_i$; notice that, for $E = L$, the transition functions $\beta^i_j$ coincide with $\alpha^i_j$ coincides with the one given in section \ref{chBasicSubsectionAtlas}. Let $\omega \in \Omega^q(A, E)$ and let $\{\sectoid X_k\} \subset \Gamma(A)$ for $k = 1, \dots, q$. Let each $\sectoid X_k$ have a family of trivializations $\{\sect X_k \oplus \stilde \eta_k^i \in \Gamma(TU_i) \oplus C^\infty(U_i, \alg g)\}$, then, in $U_{ij} = U_i \inter U_j \neq \emptyset$, 
 \begin{align*}
     \omega_i(X_1 \oplus \stilde \eta_1^i, \cdots, X_q \oplus \stilde \eta_q^i) = \alpha^i_j \circ \omega_j(X_1 \oplus \stilde \eta_1^j, \cdots, X_q \oplus \stilde \eta_q^j),
 \end{align*}
-where we are denoting by $\alpha^i_j$ the induced map on functions $:C^\infty(U_{ij}, V) \to C^\infty(U_{ij}, V)$, $\alpha^i_j(f)(m) := \alpha^i_{j, m}(f(m))$ for any $f \in C^\infty(U_{ij}, V)$, which can be expressed as
+where we are denoting by $\beta^i_j$ the map induced by the transition functions on functions, $\beta^i_j:C^\infty(U_{ij}, V) \to C^\infty(U_{ij}, V)$, $\beta^i_j(f)(m) := \beta^i_{j, m}(f(m))$ for any $f \in C^\infty(U_{ij}, V)$, which can be expressed as
 \begin{align}
-    \omega_i = \alpha^i_j \circ \omega_j \circ s^j_i.
+    \omega_i = \beta^i_j \circ \omega_j \circ S^j_i.
 \end{align}
 
 \begin{definition}\label{definitionhatalphaforEVectorandScalarValuedForms}
@@ -1076,48 +1076,48 @@ where we are denoting by $\alpha^i_j$ the induced map on functions $:C^\infty(U_
     
     \item Let $\omega \in \Omega^q(A, E)$. Define
     \begin{eqnsplit}
-    \hat \alpha^i_j: \Omega_{U_{ij}}^q(TU_{ij}\times \alg g, U_{ij}\times V) &\to \Omega_{U_{ij}}^q(TU_{ij}\times \alg g, U_{ij}\times V)\\
-                    \omega_j &\mapsto \omega_i = \alpha^i_j \circ \omega_j \circ s^j_i
+    \hat \beta^i_j: \Omega_{U_{ij}}^q(TU_{ij}\times \alg g, U_{ij}\times V) &\to \Omega_{U_{ij}}^q(TU_{ij}\times \alg g, U_{ij}\times V)\\
+                    \omega_j &\mapsto \omega_i = \beta^i_j \circ \omega_j \circ S^j_i
     \end{eqnsplit}
     
     \item Let $\omega \in \Omega^q(A)$. Define
     \begin{eqnsplit}
     \hat \alpha^i_j: \Omega^q(TU_{ij}\times \alg g) &\to \Omega^q(TU_{ij}\times \alg g)\\
-                    \omega_j &\mapsto \omega_i = \omega_j \circ s^j_i
+                    \omega_j &\mapsto \omega_i = \omega_j \circ S^j_i
     \end{eqnsplit}
     
 \end{itemize}
-Notice that $\hat \alpha^i_j$ is a morphism between $C^\infty(U_{ij})$-modules.
+Notice that $\hat \beta^i_j$ and $\hat \alpha^i_j$ are morphisms between $C^\infty(U_{ij})$-modules.
 
 
 \end{definition}
 
 \begin{theorem}\label{theoremHatAlphaRespectsDifferentialAndWedgeIsomorphismOfModulesAndAlgebra}
-$\alpha^i_j: \Omega_{U_{ij}}^q(TU_{ij}\times \alg g, U_{ij}\times V) \to \Omega_{U_{ij}}^q(TU_{ij}\times \alg g, U_{ij}\times V)$ is an isomorphism of differential graded modules. Furthermore, $\alpha^i_j: \Omega^q(TU_{ij}\times \alg g) \to \Omega^q(TU_{ij}\times \alg g)$ is an isomorphism of differential graded algebras.
+$\hat \beta^i_j: \Omega_{U_{ij}}^q(TU_{ij}\times \alg g, U_{ij}\times V) \to \Omega_{U_{ij}}^q(TU_{ij}\times \alg g, U_{ij}\times V)$ is an isomorphism of differential graded modules. Furthermore, $\hat \alpha^i_j: \Omega^q(TU_{ij}\times \alg g) \to \Omega^q(TU_{ij}\times \alg g)$ is an isomorphism of differential graded algebras.
 \end{theorem}
 \begin{proof}
-Recall that, since a differential $d$ in a differential graded module is a local operator, a local version $\hat d|_U$ exists for all $U$ open in $M$, and it is such that $(d\omega)|_U = d|_U \omega|_U$; we will omit the $|_U$ besides the differentials for ease of reading.
+First notice that $\hat \alpha^i_j$ is a special case of $\beta^i_j$, so we may only prove everything for general $E$-valued forms. Recall that, since a differential $d$ in a differential graded module is a local operator, a local version $\hat d|_U$ exists for all $U$ open in $M$, and it is such that $(d\omega)|_U = d|_U \omega|_U$; we will omit the $|_U$ besides the differentials for ease of reading.
 
-That the $\hat \alpha^i_j$ commutes with the differential, follows from the following calculation, where we have temporarily denoted by $\hat d_{TLA}$ the differential on the trivial Lie algebroids, to distinguish it from the differential $\hat d$ on $A$; notice that the fact that this distinction is unnecessary is what this result shows:
+That the $\hat \beta^i_j$ commutes with the differential, follows from the following calculation, where we have temporarily denoted by $\hat d_{TLA}$ the differential on the trivial Lie algebroids, to distinguish it from the differential $\hat d$ on $A$; notice that the fact that this distinction is unnecessary is what this result shows:
 \begin{equation*}
-    \hat d_{TLA} \hat \alpha^i_j(\omega_j|_{U_{ij}}) = \hat \alpha^i_j(\hat d_{TLA} (\omega_i|_{U_{ij}})),
+    \hat d_{TLA} \hat \beta^i_j(\omega_j|_{U_{ij}}) = \hat \beta^i_j(\hat d_{TLA} (\omega_i|_{U_{ij}})),
 \end{equation*} which follows from the following calculation:
 \begin{align*}
-    \hat d_{TLA} \hat \alpha^i_j(\omega_j|_{U_{ij}})
+    \hat d_{TLA} \hat \beta^i_j(\omega_j|_{U_{ij}})
     &= \hat d_{TLA} (\omega_i|_{U_{ij}}) \\
     &= (\hat d \omega)_i|_{U_{ij}} & \text{since $\cdot_{i}$ is isomorphism of diff. algebras}\\
-    &= \hat \alpha^i_j((\hat d \omega)_j|_{U_{ij}}) \\
-    &= \hat \alpha^i_j(\hat d_{TLA} (\omega_j|_{U_{ij}})).
+    &= \hat \beta^i_j((\hat d \omega)_j|_{U_{ij}}) \\
+    &= \hat \beta^i_j(\hat d_{TLA} (\omega_j|_{U_{ij}})).
 \end{align*}
 
-The theorem will now be proven once we check that $\hat \alpha^i_j$ respects the wedge product between scalar and $E$ valued forms, since $E = M \times \RR$ covers the second part of the theorem. Let $\beta \in \Omega^p_U(TU_{ij}\times \alg g)$ and $\gamma \in \Omega^q_U(TU_{ij}\times \alg g, U_{ij} \times V)$, for some $p, q \in \ZZ_{\geq 0}$, then:
+The theorem will now be proven once we check that $\hat \beta^i_j$ respects the wedge product between scalar and $E$ valued forms, since $E = M \times \RR$ covers the second part of the theorem. Let $\theta \in \Omega^p_U(TU_{ij}\times \alg g)$ and $\gamma \in \Omega^q_U(TU_{ij}\times \alg g, U_{ij} \times V)$, for some $p, q \in \ZZ_{\geq 0}$, then:
 \begin{align*}
-    \hat \alpha^i_j&(\beta \wedge \gamma)(\sectoid X_1, \dots, \sectoid X_{p+q}) 
-    = \alpha^i_j\left( (\beta \wedge \gamma)(s^j_i(\sectoid X_1), \dots, s^j_i(\sectoid X_{p+q})) \right) \\
-    &= \alpha^i_j\left( \sum_{\sigma}(-1)^\sigma \beta(s^j_i(\sectoid X_{\sigma(1)}), \dots, s^j_i(\sectoid X_{\sigma(p)})) \cdot \gamma(s^j_i(\sectoid X_{\sigma(p+1)}), \dots, s^j_i(\sectoid X_{\sigma(p+q)})) \right) \\
-    &=  \sum_{\sigma}(-1)^\sigma \beta(s^j_i(\sectoid X_{\sigma(1)}), \dots, s^j_i(\sectoid X_{\sigma(p)})) \cdot \alpha^i_j\left(\gamma(s^j_i(\sectoid X_{\sigma(p+1)}), \dots, s^j_i(\sectoid X_{\sigma(p+q)}))\right) \\
-    &= \sum_{\sigma}(-1)^\sigma \hat \alpha^i_j(\beta)(\sectoid X_1, \dots, \sectoid X_{p+q})) \cdot \hat \alpha^i_j(\gamma)(\sectoid X_{p+1}, \dots, \sectoid X_{p+q}))\\
-    &= (\hat \alpha^i_j(\beta) \wedge \hat \alpha^i_j(\gamma))(\sectoid X_1, \dots, \sectoid X_{p+q}).
+    \hat \beta^i_j&(\theta \wedge \gamma)(\sectoid X_1, \dots, \sectoid X_{p+q}) 
+    = \beta^i_j\left( (\theta \wedge \gamma)(S^j_i(\sectoid X_1), \dots, S^j_i(\sectoid X_{p+q})) \right) \\
+    &= \beta^i_j\left( \sum_{\sigma}(-1)^\sigma \beta(S^j_i(\sectoid X_{\sigma(1)}), \dots, S^j_i(\sectoid X_{\sigma(p)})) \cdot \gamma(S^j_i(\sectoid X_{\sigma(p+1)}), \dots, S^j_i(\sectoid X_{\sigma(p+q)})) \right) \\
+    &=  \sum_{\sigma}(-1)^\sigma \theta(S^j_i(\sectoid X_{\sigma(1)}), \dots, S^j_i(\sectoid X_{\sigma(p)})) \cdot \beta^i_j\left(\gamma(S^j_i(\sectoid X_{\sigma(p+1)}), \dots, S^j_i(\sectoid X_{\sigma(p+q)}))\right) \\
+    &= \sum_{\sigma}(-1)^\sigma \hat \beta^i_j(\theta)(\sectoid X_1, \dots, \sectoid X_{p+q})) \cdot \hat \beta^i_j(\gamma)(\sectoid X_{p+1}, \dots, \sectoid X_{p+q}))\\
+    &= (\hat \beta^i_j(\theta) \wedge \hat \beta^i_j(\gamma))(\sectoid X_1, \dots, \sectoid X_{p+q}).
 \end{align*}
 
 \end{proof}
@@ -1134,7 +1134,7 @@ since $\hat \alpha^i_j$ respects the wedge product. Notice, however, that denoti
     \hat \alpha^i_j(dx^\mu) &= dx^\mu \\
     &= \left(\frac{\partial \vec x}{\partial \vec y}\right)^\mu_\nu dy^\nu;
 \end{align}
-this follows from finding the decomposition of $\hat \alpha^i_j(dx^\mu)$ into the $1$-forms by evaluating $\hat \alpha^i_j(dx^\mu)(X \oplus \eta) = dx^\mu(s^j_i(X \oplus \eta)) = dx^\mu(X \oplus \cdots) = dx^\mu(X) = X^\mu$, meaning that $\hat \alpha^i_j (dx^\mu) = dx^\mu$.
+this follows from finding the decomposition of $\hat \alpha^i_j(dx^\mu)$ into the $1$-forms by evaluating $\hat \alpha^i_j(dx^\mu)(X \oplus \eta) = dx^\mu(S^j_i(X \oplus \eta)) = dx^\mu(X \oplus \cdots) = dx^\mu(X) = X^\mu$, meaning that $\hat \alpha^i_j (dx^\mu) = dx^\mu$.
 \end{remark}
 
 \section{Examples}
@@ -1274,7 +1274,7 @@ Lastly, let us notice that using equations \eqref{equationdxsInTermsOfDThetasS2C
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Every form on the Atiyah Lie algebroid $TP^k/S^3$ associated to the principal bundle $S^3 \to P^k \to S^4$, whether scalar or vector bundle-valued, will have a local trivialization into wedge products of the scalar-valued $1$-forms on the trivializing Lie algebroids
+Again, remark \ref{remarkSufficesEnoughNeedOnlyHatAlphaFor1FormsToTranslateLocalTrivializations} implies that every form on the Atiyah Lie algebroid $TP^k/S^3$ associated to the principal bundle $S^3 \to P^k \to S^4$, whether scalar or vector bundle-valued, will have a local trivialization into wedge products of the scalar-valued $1$-forms on the trivializing Lie algebroids
 \begin{align}
     \{dx^\mu, Im, Jm, Km\}_{\mu = 1, \dots, 4} & \in \Omega^1(TU_S \times Im \HH), \\ \{dy^\mu, Im, Jm, Km\}_{\mu = 1, \dots, 4} & \in \Omega^1(TU_N \times Im \HH),
 \end{align}
