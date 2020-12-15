@@ -173,7 +173,7 @@
 
 The formulation of a gauge theory on a transitive Lie algebroid $A$ will be made through the action functional $S[\cdot, \cdot]$ of the theory, which will be the %``spacetime'' integral of the Lagrangian density, which is, in turn, the inner integral of a scalar valued form on $A$, a form found as the wedge product of vector bundle-valued forms induced by a metrics on the adjoint Lie algebroid and a representation vector bundle. 
 integral over $A$ of a certain form, found by the application of the product of forms induced by metrics on both the adjoint Lie algebroid of $A$ and on an arbitrary representation vector bundle.
-This chapter is essentially a rewriting of the exposition found on these topics on \cite{Fournel2011} and \cite{Fournel2013}. Metrics on representation vector bundles and the product they induce on vector bundle-valued differential forms is studied in section \ref{chIntegrationSectionMetricsRepresentationAssociated}. Then, metrics on transitive Lie algebroids and their equivalence with metrics on both the base space and the adjoint algebroid together with a horizontal subbundle as studied in section \ref{chIntegrationSectionMetricAlgebroid}. In section \ref{chIntegrationSectionIntegration} the concepts of inner integration and integration over $A$ are studied. Finally, in section \ref{chIntegrationSectionHodgeInnerProduct} metrics on $A$ are seen to induce inverse metrics and Hodge-$*$ operators on differential forms, which combine with the integration on $A$ to define an inner product of homogeneous forms on $A$.
+This chapter is essentially a rewriting of the exposition found on these topics on \cite{Fournel2011} and \cite{Fournel2013}. Metrics on representation vector bundles and the product they induce on vector bundle-valued differential forms is studied in section \ref{chIntegrationSectionMetricsRepresentationAssociated}. Then, metrics on transitive Lie algebroids and their equivalence with metrics on both the base space and the adjoint algebroid together with a horizontal subbundle as studied in section \ref{chIntegrationSectionMetricAlgebroid}. In section \ref{chIntegrationSectionIntegration} the concepts of inner integration and integration over $A$ are studied. Finally, in section \ref{chIntegrationSectionHodgeInnerProduct} metrics on $A$ are seen to induce inverse metrics and Hodge-$*$ operators on differential forms, which combine with the integration on $A$ to define an inner product of homogeneous forms on $A$. The content of section \ref{chIntegrationSectionExamples} was developed by us to continue progressing the examples developed throughout the document.
 
 %Let every vector space, and hence every vector bundle, be over the field $\bb K$, where $\bb K$ is one of $\RR$ or $\CC$. 
 Throughout this chapter let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM$ be a transitive Lie algebroid for the transitive Lie algebroid $A$ over the manifold $M$.
@@ -185,10 +185,10 @@ Also, let $E$ be a vector bundle over $M$ on which $A$ is represented by $\phi: 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{definition}
+\begin{definition}\label{definitionDegenerateMetricGeneralEInner}
     Let $E$ be any vector bundle over $M$. \emph{A degenerate metric on $E$} on $E$ is a symmetric vector bundle map $h^E: E \otimes E \to \bb R$. If $h^E$ is non-degenerate, i.e. if $h^E(\mu, \mu) = 0$, only if $\mu = 0$, then $h^E$ is called \emph{a metric on $E$}.
     
-    In the case that $E = L$ the adjoint Lie algebroid of $A$, we also use the names \emph{degenerate inner metric on $A$} and \emph{inner metric on $A$}, respectively.
+    \noindent In the case that $E = L$ is an adjoint Lie algebroid of $A$, we also use the names \emph{degenerate inner metric on $A$} and \emph{inner metric on $A$}, respectively.
 \end{definition}
 
 In contrast to the notations in \cite{Fournel2011, Fournel2013}, we have called ``degenerate metric'' what they call ``metric'' to distinguish the possibly degenerate and non-degenerate cases. Notice that a (degenerate) metric on $E$ is equivalent to a $C^\infty(M)$-linear map $h^E: \Gamma(E) \otimes \Gamma(E) \to C^\infty(M)$ which is a field of symmetric bilinear forms if $h^E$ is degenerate, and a field of metrics in the non-degenerate case. We now return to consider $E$ as a representation vector bundle of $A$.
@@ -219,7 +219,7 @@ for $u_1, u_2, v_1, v_2 \in \{1, \dots, t\}$.
 \end{proof}
 Recall that the transition functions of $L$ are denoted by $\alpha^i_j$ and its matrix representation with respect to $\{E_a\}_{a = 1, \dots, n}$ is denoted by ${G^i_j}^a_b$.
 
-\begin{definition}
+\begin{definition}\label{definitionMetricINducedProductOfEValuedForms}
     Given a degenerate metric $h^E$ on the representation vector bundle $E$ of $A$, let us induce the map (also denoted by $h^E$):
     \begin{equation}
         h^E: \Omega^p(A, E) \otimes \Omega^q(A, E) \to \Omega^{p+q}(A)
@@ -257,14 +257,14 @@ The previous proposition may be applied to the components of $E$-valued forms on
 
 The following definition will be important for the important property of a gauge theory: the ```gauge invariance'' of the action functional.
 
-\begin{definition}
+\begin{definition}\label{definitionMetricCompatibleRepresentationKilling}
 A degenerate metric $h^E$ on $E$ is called \emph{compatible with the representation} if
 \begin{equation*}
     h^E(\phi_L(\eta) \mu_1, \mu_2) + h^E(\mu_1, \phi_L(\eta)\mu_2) = 0,
 \end{equation*}
 for all $\eta \in L_m$ and $\mu_1, \mu_2 \in E_m$ for all $m \in M$.
 
-In the case that $E$ is the adjoint Lie algebroid $L$, we also say that \emph{$h$ is a Killing degenerate metric}.
+\noindent In the case that $E$ is the adjoint Lie algebroid $L$, we also say that \emph{$h$ is a Killing degenerate metric}.
 \end{definition}
 
 Since the representation of $A$ on $L$ is is the adjoint representation, a Killing inner (degenerate) metric $h$ satisfies, for all $m \in M$, $\eta, \theta, \gamma \in L_m$:
@@ -567,7 +567,130 @@ When $E = L$, $h^E$ is assumed to be $h$, the inner part of $\hat g$.
 We now have all the necessary ingredients to define the action functional of a gauge theory, which will be studied in next chapter.
 
 \section{Examples}
+\label{chIntegrationSectionExamples}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-An inner metric $h$ on a transitive Lie algebroid $A$ defines an inner integration, which in turn defines an integration over $A$. A inner non-degenerate metric $\hat g$ on $A$ determines an inner product on homogeneous forms on $A$, and it is equivalent to an inner metric $h$, a degenerate metric $g$ on the base manifold $M$, and an ordinary connection $\tilde \nabla: TM \to A$ on $A$ that determines a subbundle that we may call the horizontal subbundle of $A$. When formulating a gauge theory we will think of $g$ as being given by the nature of the space or spacetime that the base manifold $M$ is. Hence, Hence, the freedom will appear
+An inner metric $h$ on a transitive Lie algebroid $A$ defines an inner integration, which in turn defines an integration over $A$. An inner non-degenerate metric $\hat g$ on $A$ determines an inner product on homogeneous forms on $A$, and it is equivalent to an inner metric $h$, a degenerate metric $g$ on the base manifold $M$, and an ordinary connection $\tilde \nabla: TM \to A$ on $A$ that determines a subbundle that we may call the horizontal subbundle of $A$. When formulating a gauge theory we will think of $g$ as being given by the nature of the space or spacetime that the base manifold $M$ is. Hence, the freedom to define the inner product and norm of differential forms on $A$ comes from the freedom on the choice of inner metric $h$, and of the connection $\tilde \nabla$ which will be called the ``background connection'' in next chapter.
+
+For the inner metric $h$, in next chapter we will see that we need $h$ to be Killing, and since the typical fiber of the adjoint Lie algebroids is a Lie algebra, the natural symmetric form on them, called the Killing form, deserves some consideration. Given a Lie algebra $\alg g$ over the field $\bb K$, the adjoint operator $ad: \alg g \to \alg g$ is defined by $ad(\eta)(\theta) := [\eta, \theta]$, and it induces the \emph{Killing form} $K: \alg g \times \alg g \to \bb K$ defined as
+\begin{equation}
+    K(\eta, \theta) := trace(ad(\eta) \comp ad(\theta)),
+\end{equation}
+for all $\eta, \theta \in \alg g$. Let $G$ be a group with Lie algebra $\alg g$, then the Killing form has the following properties:
+\begin{itemize}
+    
+    \item It is symmetric and bilinear.
+    
+    \item It is invariant under automorphisms of $\alg g$, i.e. if $A \in Aut(\alg g)$, then:
+    \begin{equation*}
+        K(A(\eta), A(\theta)) = K(\eta, \theta);
+    \end{equation*}
+    in particular, the adjoint operator for any Lie algebra element is a Lie algebra isomorphism.
+    
+    \item It is an \emph{invariant form}, i.e.
+    \begin{equation*}
+        K(ad(\gamma)(\eta), \theta) + K(\eta, ad(\gamma)(\theta) = 0,
+    \end{equation*}
+    for all $\gamma, \eta, \theta \in \alg g$.
+    
+    \item If $G$ is compact, then $\alg g$ is negative semi-definite.
+    
+    \item The Lie algebra $\alg g$ is semisimple
+    \footnote{A semisimple Lie algebra is a direct sum of simple Lie algebras. A simple Lie algebra is a nonabelian Lie algebra with no nonzero proper ideals.} if and only if $K$ is non-degenerate.
+    
+    \item If $\alg g$ is a simple Lie algebra, then the only invariant symmetric bilinear forms on $\alg g$ are the scalar multiples of $K$.
+    
+\end{itemize}
+The previous properties of the Killing form can be used to establish all the Killing metrics in $P \times \alg g/G$ when $G$ is a compact group and $\alg g$ is simple, and $P$ is a principal bundle with structure group $G$.
+\begin{definition}
+Let $G \to P \to M$ be a principal bundle. Let the Killing form $K$ on $\alg g$ induce the degenerate metric on $P \times \alg g/G$ defined by:
+\begin{equation*}
+    K(\cl{p, \eta}, \cl{p, \theta}):= K(\eta, \theta),
+\end{equation*} 
+for all $\eta, \theta \in \alg g$ and $p \in P$. In addition, for any $c \in C^\infty(M)$ define the degenerate metric $cK$ on $P \times \alg g/G$ by 
+\begin{equation*}
+    cK(\cl{p, \eta}, \cl{p, \theta}):= c(m) K(\cl{p, \eta}, \cl{p, \theta}),
+\end{equation*}
+where $m \in M$ is the projection of $p \in P$.
+\end{definition}
+Notice that the degenerate inner metric $K$ on $P\times \alg g/G$ is well defined thanks to the automorphism invariance of the Killing form. Recall that $P \times \alg g/G$ is a LAB (definition \ref{defnLAB}), and notice that if $\psi_i: U_i \times \alg g \to P \times \alg g/G|_{U_i}$ is a LAB trivialization map, the degenerate metric $cK$ on $P \times \alg g/G$ is locally trivialized by:
+\begin{eqnsplit*}
+    cK_i: (U_i \times \alg g) \otimes (U_i \times \alg g) &\to \RR\\
+    ((m, \eta), (m, \theta)) &\mapsto f(m)K(\eta, \theta).
+\end{eqnsplit*}
+
+If $\alg g$ is semisimple, $K$ is then a Killing inner metric on $TP/G$, (definitions \ref{definitionDegenerateMetricGeneralEInner} and \ref{definitionMetricCompatibleRepresentationKilling}), and if $c \in C^\infty(M)$ is either positive or negative, then $cK$ are also Killing inner metrics on $TP/G$. Finally, if $\alg g$ is, furthermore, a simple, then the uniqueness property of the invariant symmetric forms on $\alg g$ and the comment on the trivializations of the metrics imply that
+\begin{proposition}\label{propositionKillingMetricGeneralSimpleCompact}
+Let $G \to P \to M$ be a principal bundle, and suppose that $\alg g$ is a simple Lie algebra. Then the only Killing inner metrics on the transitive Lie algebroid $TP/G$ are of the form $cK$ for $c \in C^\infty(M)$ either always positive or always negative.
+\end{proposition}
+
+
+We will now define inner metrics and background connections on the Atiyah Lie algebroids we have been using so far.
+
+\subsection{$TP^k/S^1$ over $S^2$}
+\label{chIntegrationSubsectionS2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+On the base manifold $S^2$ a natural metric is the round metric $g^R$ which, in spherical coordinates, is given by:
+\begin{equation*}
+    g^R = d\phi^2 + \sin^2 \phi d\theta^2.
+\end{equation*}
+
+The Lie algebra $i\RR$ is not simple since it is commutative, but the fact that it is $1$-dimensional allows us to see that the only symmetric bilinear forms on it are constant multiples of the multiplication in $i\RR$. Thus, every degenerate metric $h$ on $P^k \times i\RR/S^1$ is determined by a function $c \in C^\infty(S^2)$ by:
+\begin{equation}\label{equationKIllingMetricTPkS2}
+    h^c(\cl{m, ia}, \cl{m, ib}) := c(m)ab;
+\end{equation}
+this amounts to saying that $$h^c(i,i) = c,$$ where $i$ is the global section $i \in \Gamma(P^k \times i\RR/S^1)$.
+
+The fact that the degenerate inner metric $h$ is Killing is trivial since $i\RR$ is commutative. Hence
+\begin{proposition}
+All Killing inner metrics on $TP^k/S^1$ are of the form $h^c$ \eqref{equationKIllingMetricTPkS2} for $c$ either always positive of always negative.
+\end{proposition}
+
+The last freedom in the choice of a metric on $TP^k/S^1$ comes from the background (ordinary) connection $\tilde \nabla$, associated to a connection form $\tilde \omega$, also denoted by $\alg a$. In section \ref{subsectionConnectionsOnTPkS1} we say that such a background connection must have the following local trivialization over $U_S$ and over $U_{SN}$, respectively:
+\begin{eqnsplit*}
+    \tilde \omega_S &= i\tilde \omega^\epsilon_{S; 1} dx^1 + i\tilde \omega^\epsilon_{S; 2} dx^2 - iIm\\
+        &=i \tilde f d\phi + i \tilde g d\theta - i Im
+\end{eqnsplit*}
+where $\tilde \omega^\epsilon_{S; \mu}, \tilde f, \tilde g$ are functions over $S^2$ with some restrictions along the lines as those specified in section \ref{exampleTransitionALphaFormsPk}.
+
+With this definitions, over $U_S$ the inner volume form has the local trivialization
+\begin{equation}
+    \omega_{h^c, \alg a} = -\sqrt{|c|} (\tilde \omega^\epsilon_{S; 1} + \tilde \omega^\epsilon_{S; 1} - Im);
+\end{equation}
+and the volume form is
+\begin{equation}
+    \omega^{Vol} = - \sqrt{|c|} \sin \phi \, dx^1 \wedge dx^2 \wedge (\tilde \omega^\epsilon_{S; 1} + \tilde \omega^\epsilon_{S; 1} - Im),
+\end{equation}
+where $\sin \phi = \frac{2 ||\vec x||^2}{1 + ||\vec x||^2}$.
+The local trivializations over $U_N$ may be determined with the results of section \ref{exampleTransitionALphaFormsPk}.
+
+\subsection{$TP^k/S^3$ over $S^4$}
+\label{chIntegrationSubsectionS2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+This example has not been fully studied, so we will make only the following observations:
+\begin{itemize}
+    \item If we were working only over $U_S \cong \RR^4$, we could use the Minkowski metric $g = -(dx^1)^2 -(dx^2)^2-(dx^1)^3+(dx^4)^2$ for the base manifold, but it can not be extended as is into a metric of $S^4$, as can be seen evaluating at $\vec y = \vec 0$ the equations \eqref{equationdyInTermsOfdyJacobianS2}, that are very much analogous to the equations that we have on $S^4$ when changing coordinates from $\vec x$ to $\vec y$.
+    
+    \item Sice $S^3$ is a compact Lie group and $Im\HH$ is simple, the Killing form of $Im\HH$ is unique and proportional to 
+    \begin{equation*}
+        h(\vec x, \vec y) = \vec x \cdot \vec y,
+    \end{equation*} where $\vec x \in Im \HH$ and $\cdot$ denotes the dot product of the corresponding vectors in $\RR^3$. This means, by proposition \ref{propositionKillingMetricGeneralSimpleCompact} that the most general Killing inner metric on $TP^k/S^3$ (and also on the Atiyah Lie algebroids associated to the principal bundles over $\RR^4 \cong U_S$ with fiber $S^3$) has the form:
+    \begin{equation}\label{equationKIllingMetricTPkS2}
+        h^c(\cl{m, \vec x}, \cl{m, \vec y}) := c(m)\,\vec x \cdot \vec y,
+    \end{equation}
+    where $c \in C^\infty(S^4)$ (or over $\RR^4$) is either always positive or always negative.
+    
+    \item A background connection $\tilde \nabla$ has is associated to a connection form $\tilde \omega$ with local trivialization over $U_S$ given by the formulas
+        \begin{equation}
+        \tilde \omega_S = i \tilde \omega_S^1 + j \tilde \omega_S^2 + k \tilde \omega_S^3 - iIm - jJm - kKm,
+        \end{equation}
+    if the Lie algebra is taken to be $Im\HH$, with $\omega_S^a = (\omega_S)^a_\mu dx^\mu$, $a = 1, 2, 3$ restrictions to $U_S$ of $1$-forms in $\Omega^1(TS^7)$; alternatively 
+        \begin{equation}
+         \tilde \omega_S =   \begin{pmatrix} i\tilde \omega_S^3 & \tilde \omega_S^2 + i \tilde \omega_S^1 \\ \tilde \omega_S^2 - i \tilde \omega_S^1 & -i\tilde \omega_S^3  \end{pmatrix} - i \sigma_1 Im - i \sigma_2 Jm - i \sigma_3 Km,
+        \end{equation}
+        where $\hat \omega_S^\mu \in \Omega^1(S^2)$.
+        
+\end{itemize}

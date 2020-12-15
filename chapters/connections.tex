@@ -1184,10 +1184,10 @@ on $U_{SN}$ with polar coordinates we also have
 notice that if $\tau = 0$, then $\hat \omega$ is an ordinary connection on $TP^k/S^1$ and the last $2$ terms of the trivialiations of the curvature form disappear, making it possible to define an equivalent $2$-form $R \in \Omega^2(TS^2, P^k\times i\RR/S^1)$.
 
 Suppose we are given a background (ordinary) connection (in the next chapter we'll see how they come to be) with local trivialization:
-\begin{eqnsplit*}
-    \tilde \omega_S &= i\tilde \omega^\epsilon_{S; 1} dx^1 + i\tilde \omega^\epsilon_{S; 2} dx^2 - i\\
+\begin{eqnsplit}\label{equationBackgroundConnectionTPkS2}
+    \tilde \omega_S &= i\tilde \omega^\epsilon_{S; 1} dx^1 + i\tilde \omega^\epsilon_{S; 2} dx^2 - iIm\\
         &=i \tilde f d\phi + i \tilde g d\theta - i Im
-\end{eqnsplit*}
+\end{eqnsplit}
 then the ordinary connection $\omega = \hat \omega + \tau \comp \tilde \omega$ induced by $\tilde \omega$ (see \ref{propositionOrdinaryConnectionInducedByBackground}) is
 \begin{eqnsplit}
     \omega_S &= i(\hat \omega^\epsilon_{S; 1}  + \tilde \tau \tilde \omega^\epsilon_{S; 1})dx^1 + i(\hat \omega^\epsilon_{S; 2}  + \tilde \tau \tilde \omega^\epsilon_{S; 2}) dx^2 - i Im\\
@@ -1222,16 +1222,16 @@ we can readily check that the decomposition of the curvature given in theorem \r
 For reason entirely analogous to those use for the Atiyah Lie algebroids $TP^k/S^1$, and continuing the example in section \ref{exampleFormsBuildingBlocksTPkS4}, we know that the most general connection $\hat \omega \in \Omega^1
 (TP^k/S^3, P^k \times Im \HH/S^3)$ on $TP^k/S^4$ has the local trivialization over $U_S$
 \begin{equation}
-    \hat \omega_S = i \omega_S^1 + j \omega_S^2 + k \omega_S^3 - Im - Jm - Km + \tau_S,
+    \hat \omega_S = i \omega_S^1 + j \omega_S^2 + k \omega_S^3 - iIm - jJm - kKm + \tau_S,
 \end{equation}
-where $\omega_S^a = (\omega_S)^a_\mu dx^\mu$, $a = 1, 2, 3$, are restrictions to $U_S$ of $1$-forms in $\Omega^1(TS^7)$, hence the components of $\hat \omega$ over $U_S$ with respect to the basis $i, j, k$ of $Im \HH$ are actually functions $(\omega_S)^i_\mu \in C^\infty(S^2)$ defined over all of $S^2$ with some restrictions that allow its extension to a global section on $TP^k/S^4$; similarly, $\tau_S$ is any function $C^\infty(S^2, \alg{gl}(Im \HH))$, made up of $9$ different matrix $(\tau_S)^a_b$ elements, or it can also be seen as a collection of $3$ different Lie algebra valued fields $$(\tau_S)_b = \tau_S(E_b) \in C^\infty(S^2, Im \HH),$$ for $\{E_b\}_{b = 1, 2, 3} = \{i, j, k\}$ basis of the Lie algebra.
+where $\omega_S^a = (\omega_S)^a_\mu dx^\mu$, $a = 1, 2, 3$, are restrictions to $U_S$ of scalar valued $1$-forms in $\Omega^1(TS^7)$, hence the components of $\hat \omega$ over $U_S$ with respect to the basis $i, j, k$ of $Im \HH$ are actually functions $(\omega_S)^i_\mu \in C^\infty(S^2)$ defined over all of $S^2$ with some restrictions (analogous to those of section \ref{exampleTransitionALphaFormsPk} that allow its extension to a global section on $TP^k/S^4$; similarly, $\tau_S$ is any function $C^\infty(S^2, \alg{gl}(Im \HH))$, made up of $9$ different matrix $(\tau_S)^a_b$ elements, or it can also be seen as a collection of $3$ different Lie algebra valued fields $$(\tau_S)_b = \tau_S(E_b) \in C^\infty(S^2, Im \HH),$$ for $\{E_b\}_{b = 1, 2, 3} = \{i, j, k\}$ basis of the Lie algebra.
 
 If we use the matrix algebra $\alg{su}(2)$ as the representation of the Lie algebra, then:
 \begin{eqnsplit}
     \hat \omega_S 
-    &= \begin{pmatrix} i\omega_S^3 & \omega_S^2 + i \omega_S^1 \\ \omega_S^2 - i \omega_S^1 & -i\omega_S^3  \end{pmatrix} - Im - Jm - Km
+    &= \begin{pmatrix} i\hat \omega_S^3 & \hat \omega_S^2 + i \hat \omega_S^1 \\ \hat \omega_S^2 - i \hat \omega_S^1 & -i\hat \omega_S^3  \end{pmatrix} - i \sigma_1 Im - i \sigma_2 Jm - i \sigma_3 Km
     + \tau_S %\begin{pmatrix} i\tau^3 & \tau_S^2 + i \tau_S^1 \\ \tau_S^2 - i \tau_S^1 & -i\tau_S^3 \end{pmatrix} \\
     %&= \omega_S^i \cdot i\sigma_i - \epsilon + \tau_S^i \cdot i\sigma_i,
 \end{eqnsplit}
-where $\hat \omega_S^\mu \in \Omega^1(TU_S)$, for $\mu = 1, 2, 3$ and $\tau_S \in C^\infty(S^2, \alg{gl}(\alg{su}(2)))$.
+where $\hat \omega_S^\mu \in \Omega^1(S^2)$, for $\mu = 1, 2, 3$ and $\tau_S \in C^\infty(S^2, \alg{gl}(\alg{su}(2)))$ and $\{Im, Jm, Km\}$ is now the basis of $\alg{su}(2)^*$ dual to $\{i\sigma_1, i\sigma_2, i\sigma_3\}$.
 
