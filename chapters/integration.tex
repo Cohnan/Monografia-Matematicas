@@ -186,7 +186,7 @@ Also, let $E$ be a vector bundle over $M$ on which $A$ is represented by $\phi: 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{definition}\label{definitionDegenerateMetricGeneralEInner}
-    Let $E$ be any vector bundle over $M$. \emph{A degenerate metric on $E$} on $E$ is a symmetric vector bundle map $h^E: E \otimes E \to \bb R$. If $h^E$ is non-degenerate, i.e. if $h^E(\mu, \mu) = 0$, only if $\mu = 0$, then $h^E$ is called \emph{a metric on $E$}.
+    Let $E$ be any vector bundle over $M$. \emph{A degenerate metric on $E$} on $E$ is a symmetric vector bundle map $h^E: E \otimes E \to M \times \bb R$. If $h^E$ is non-degenerate, i.e. if $h^E(\mu, \mu) = 0$, only if $\mu = 0$, then $h^E$ is called \emph{a metric on $E$}.
     
     \noindent In the case that $E = L$ is an adjoint Lie algebroid of $A$, we also use the names \emph{degenerate inner metric on $A$} and \emph{inner metric on $A$}, respectively.
 \end{definition}
@@ -661,10 +661,33 @@ With this definitions, over $U_S$ the inner volume form has the local trivializa
 \end{equation}
 and the volume form is
 \begin{equation}
-    \omega^{Vol} = - \sqrt{|c|} \sin \phi \, dx^1 \wedge dx^2 \wedge (\tilde \omega^\epsilon_{S; 1} + \tilde \omega^\epsilon_{S; 1} - Im),
+    \omega^{Vol} = - \sqrt{|c|} \sin \phi \, dx^1 \wedge dx^2 \wedge (\tilde \omega^\epsilon_{S; 1} + \tilde \omega^\epsilon_{S; 2} - Im),
 \end{equation}
 where $\sin \phi = \frac{2 ||\vec x||^2}{1 + ||\vec x||^2}$.
 The local trivializations over $U_N$ may be determined with the results of section \ref{exampleTransitionALphaFormsPk}.
+
+Let us now examine the metrics for representation vector bundles. The irreducible complex representations of $S^1$ are all on $\CC$ and are indexed by $h \in \ZZ$:
+\begin{equation*}
+    \pi^h(e^{ir})(z) := e^{ihr}z,
+\end{equation*}
+for all $z \in \CC$. Then, the group representation $\pi^h$ induces the Lie algebra representation $\pi^h$ of $i\RR$:
+\begin{equation}
+    \pi^h(ir)(z) = ir\,z.
+\end{equation}
+Each of these group representations scales up to Lie algebroid a representation $\phi^{k, h}: TP^k/S^1 \to E^k$, for $k \in ZZ$, on the vector bundle $E^k$ locally trivial on $U = U_S$ and $U_N$ as $U\times \RR^2$ with transition function $\beta^N_S = e^{ik\theta}$, producing the a group induced representation (definition \ref{definitionGlobalGroupInducedRepresentation}); notice that $TP^k/S^1$ is represented on $E^{k'}$ if $k = k'$, since that's when $E^k$ is a vector bundle associated to $P^k$. By operating with direct sums and tensor products of these vector bundles we get new representation vector bundles of $TP^k/S^1$
+
+The typical fiber of $E^k$ is $\RR^2$ and on it we have the natural metric of $\RR^2$, which can be made in to a metric on $U_S \times \RR^2$ and of $U_N \times \RR^2$. Since the transition functions $e^{ik}$ of $E^k$ are in fact rotations of the fiber $\RR^2$, hence respect this metric, the metrics on $U_S \times \RR^2$ and $U_N \times \RR^2$ extend to a metric $h^E$ of $E^k$. A more general metric on $E$ can be multiplying $h^E$ by a function $c^E \in C^\infty(S^2)$ everywhere positive or everywhere negative. Let us call this metric
+\begin{equation}
+    c^E h^E : E^k \otimes E^k \to S^2 \times \RR.
+\end{equation}
+The metric $c^E h^E$ is in fact compatible with the representation. To see this, let $\vec x, \vec y \in \RR^2$ be arbitrary, let $R$ denote the counterclockwise rotation by $\pi/2$, and let $ia \in i\RR$ be arbitrary, then:
+\begin{align*}
+    h^E(\pi^h(ia) \vec x, \vec y) + h^E(\vec x, \pi^h(ia) \vec y) &= ah[h^E(R \vec x, \vec y) + h^E(\vec x, R \vec y)]\\
+        &= ah[h^E(\vec x, -R \vec y) + h^E(\vec x, R \vec y)]\\
+        &= ah[h^E(\vec x, 0)]\\
+        &= 0.
+\end{align*}
+
 
 \subsection{$TP^k/S^3$ over $S^4$}
 \label{chIntegrationSubsectionS2}
