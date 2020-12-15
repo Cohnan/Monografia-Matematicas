@@ -935,7 +935,7 @@ To see that $[a^* \mathcal D, \tilde \omega]_i = (\mathcal D \tau_i)^b_{\mu, a} 
         &= (\mathcal D \tau_i)^b_{\mu, a} E_b;
 \end{align*}
 \begin{align*}
-    (a^* \mathcal D \comp \tilde \omega)_i(-E_a, -E_b) 
+    [a^* \mathcal D, \tilde \omega]_i(-E_a, -E_b) 
         &= (\mathcal D_{0} \tau_i) (\tilde \omega_i(-E_b)) - (\mathcal D_{0} \tau_i) (\tilde \omega_i(-E_a)) = 0.
 \end{align*}
 
@@ -1183,9 +1183,9 @@ on $U_{SN}$ with polar coordinates we also have
 \end{eqnsplit}
 notice that if $\tau = 0$, then $\hat \omega$ is an ordinary connection on $TP^k/S^1$ and the last $2$ terms of the trivialiations of the curvature form disappear, making it possible to define an equivalent $2$-form $R \in \Omega^2(TS^2, P^k\times i\RR/S^1)$.
 
-Suppose we are given a background (ordinary) connection (in the next chapter we'll see how they come to be):
+Suppose we are given a background (ordinary) connection (in the next chapter we'll see how they come to be) with local trivialization:
 \begin{eqnsplit*}
-    \tilde \omega_S &= i\tilde \omega^\epsilon_{S; 1} dx^1 + i\tilde \omega^\epsilon_{S; 2} dx^2 + i\hat \omega^\epsilon_{S; i} Im\\
+    \tilde \omega_S &= i\tilde \omega^\epsilon_{S; 1} dx^1 + i\tilde \omega^\epsilon_{S; 2} dx^2 - i\\
         &=i \tilde f d\phi + i \tilde g d\theta - i Im
 \end{eqnsplit*}
 then the ordinary connection $\omega = \hat \omega + \tau \comp \tilde \omega$ induced by $\tilde \omega$ (see \ref{propositionOrdinaryConnectionInducedByBackground}) is
@@ -1214,12 +1214,12 @@ Now let's understand the decomposition of the curvature form $\hat R$. Using equ
     F^1_{12} &= - \tilde F^1_{21} = \partial_{1} [\hat \omega^\epsilon_{S;2} + \tilde \tau \tilde \omega^\epsilon_{S;2}] - \partial_{2} [\hat \omega^\epsilon_{S;1} + \tilde \tau \tilde \omega^\epsilon_{S;1}],\\
     \hat F^1_{12} &= - \hat F^1_{21} = \partial_{1} \hat \omega^\epsilon_{S;2} - \partial_{2} \hat \omega^\epsilon_{S;1};
 \end{align*}
-we can readily check that the decomposition of the curvature given in theorem \ref{theoremDecompositionOfAlgebroidFormIntoNice2Forms} using the above components does indeed produce the formula \eqref{equationCurvatureLocalUSS2} that we previously obtained.
+we can readily check that the decomposition of the curvature given in theorem \ref{theoremDecompositionOfAlgebroidFormIntoNice2Forms} using the above components does indeed produce the formula \eqref{equationCurvatureLocalUSS2} that we previously obtained. Over $U_{SN}$ analogous formulas are satisfied with respect to the polar coordinates $(\phi, \theta)$.
 
 
 \subsection{$TP^k/S^3$ over $S^4$}\label{subsectionConnectionsTPkS3}
 
-Thanks to all what we have proved, we know that the most general connection $\hat \omega \in \Omega^1
+For reason entirely analogous to those of the Atiyah Lie algebroids $TP^k/S^1$ studied in examples \ref{exampleFormsBuildingBlocksTPkS4}, we know that the most general connection $\hat \omega \in \Omega^1
 (TP^k/S^3, P^k \times Im \HH/S^3)$ on $TP^k/S^4$ has the local trivialization over $U_S$
 \begin{equation}
     \hat \omega_S = i \omega_S^1 + j \omega_S^2 + k \omega_S^3 - Im - Jm - Km + \tau_S,

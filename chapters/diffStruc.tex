@@ -612,13 +612,13 @@ The graded vector spaces $\Omega^\bullet(TM)$ and $C^\infty(M, \bigwedge^\bullet
     (X_1 \oplus \tilde \eta_1, \dots, X_s \oplus \tilde \eta_s) &\mapsto \beta(\tilde \eta_1, \dots, \tilde \eta_s).
 \end{eqnsplit}
 From now on the tilde notation used above to denote the image inside of $\Omega^\bullet(TM \times \alg g)$ of forms $\alpha$ and $\beta$ as above will be omitted, unless clarity is necessary. Under this identifications, more can be said:
-\begin{proposition}
+\begin{proposition}\label{propositionTLAFormsGradedSubalgebraAndTMDifferentialGradedSubalgebra}
 \hfill
 \begin{itemize}
     
     \item $(C^\infty(M, \bigwedge^\bullet \alg g^*), \wedge)$ is a graded sugalgebra of the space of scalar-valued forms on $TM \times \alg g$.
     
-    \item $(\Omega^\bullet(TM), \wedge, \hat d_{TM \times \alg g})$ is a differential graded subalgebra of $(\Omega^\bullet(TM\times \alg g), \wedge, \hat d_{TM \times \alg g})$. Furthermore, the restriction of the differential $d_{TM \times \alg g}$ to $(\Omega^\bullet(TM)$ coincides with the traditional differential $d$ of forms on the manifold $M$.
+    \item $(\Omega^\bullet(TM), \wedge, d)$ is a differential graded subalgebra of $(\Omega^\bullet(TM\times \alg g), \wedge, \hat d_{TM \times \alg g})$. Furthermore, the restriction of the differential $d_{TM \times \alg g}$ to $(\Omega^\bullet(TM)$ coincides with the traditional differential $d$ of forms on the manifold $M$.
 \end{itemize}
 
 \end{proposition}
@@ -649,7 +649,7 @@ A formula that will be useful to use is the application of the differential to d
 \end{eqnsplit}
 for arbitrary $X \oplus \eta, Y \oplus \theta \in \Gamma(TM \times \alg g)$; our assumption that $\epsilon: C^\infty(M, \alg g) \to C^\infty(M)$ is constant is only used to write the last equation (notice that the second to last equation shows, again, that the subalgebra $C^\infty(M, \bigwedge^\bullet \alg g^*)$ is not closed under the differential). The last equation is $s(\epsilon)(\eta, \theta)$, where $s$ is the Chevalley-Eilenbert differential on $\bigwedge^\bullet \alg g^*$, extended naturally to functions taking values in this last space.
 
-Suppose, in addition to previous assumptions, that on $M$ there are $m \in \ZZ_{\geq 0}$ global coordinates $\{x^i: M \to \RR^m\}_{i = 1, \dots, m}$. Let $\{E_a\}_{a = 1, \dots, n}$ be a basis of $\alg g$, with dual basis $\{\epsilon^a\}_{a = 1, \dots, n} \subset \alg g^*$; also denote by $E_a$ and $\epsilon^a$ the corresponding constant functions in $C^\infty(U_i, \alg g) = \Omega^0(TU_i \times \alg g, U_i \times \alg g)$ and $C^\infty(U_i, \alg g^*) = \Omega^1(U_i \times \alg g)$.
+Suppose, in addition to previous assumptions, that on $M$ there are $m \in \ZZ_{\geq 0}$ global coordinates $\{x^\mu: M \to \RR^m\}_{\mu = 1, \dots, m}$. Let $\{E_a\}_{a = 1, \dots, n}$ be a basis of $\alg g$, with dual basis $\{\epsilon^a\}_{a = 1, \dots, n} \subset \alg g^*$; also denote by $E_a$ and $\epsilon^a$ the corresponding constant functions in $C^\infty(U_i, \alg g) = \Omega^0(TU_i \times \alg g, U_i \times \alg g)$ and $C^\infty(U_i, \alg g^*) = \Omega^1(U_i \times \alg g)$. Then:
 
 \begin{proposition}\label{propositionDecompOfScalarValuedFormsTLA}
 Let $\omega$ be a scalar valued $p$-form on $TM \times \alg g$, $p \in \ZZ_{\geq 0}$. Then, $\omega$ can be written as
@@ -878,7 +878,7 @@ The previous equation further shows that under no representation $\phi$ is $C^\i
 % \end{theorem}
 
 
-Now, suppose that on $M$ there are $m \in \ZZ_{\geq 0}$ global coordinates $\{x^i: M \to \RR\}_{i = 1, \dots, m}$. Let $\{E_a\}_{a = 1, \dots, n}$ be a basis of $\alg g$, with dual basis $\{\epsilon^a\}_{a = 1, \dots, n} \subset \alg g^*$; also denote by $E_a$ and $\epsilon^a$ the corresponding constant functions in $C^\infty(U_i, \alg g) = \Omega^0(TU_i \times \alg g, U_i \times \alg g)$ and $C^\infty(U_i, \alg g^*) = \Omega^1(U_i \times \alg g)$. Additionally, suppose that $\{e_u\}_{u = 1, \dots, t}$ is a basis of $V$. The following in a straighforward generalization of proposition \ref{propositionDecompOfScalarValuedFormsTLA}:
+Now, suppose that on $M$ there are $m \in \ZZ_{\geq 0}$ global coordinates $\{x^\mu: M \to \RR\}_{\mu = 1, \dots, m}$. Let $\{E_a\}_{a = 1, \dots, n}$ be a basis of $\alg g$, with dual basis $\{\epsilon^a\}_{a = 1, \dots, n} \subset \alg g^*$; also denote by $E_a$ and $\epsilon^a$ the corresponding constant functions in $C^\infty(U_i, \alg g) = \Omega^0(TU_i \times \alg g, U_i \times \alg g)$ and $C^\infty(U_i, \alg g^*) = \Omega^1(U_i \times \alg g)$. Additionally, suppose that $\{e_u\}_{u = 1, \dots, t}$ is a basis of $V$. The following in a straighforward generalization of proposition \ref{propositionDecompOfScalarValuedFormsTLA}:
 
 \begin{proposition}\label{TheoremDecompOfVectorValuedFormsTLAEpsilonsDxs}
 Let $\omega$ be an $E$-valued $p$-form on $TM \times \alg g$, $p \in \ZZ_{\geq 0}$. Then, $\omega$ can be written as
@@ -887,9 +887,9 @@ Let $\omega$ be an $E$-valued $p$-form on $TM \times \alg g$, $p \in \ZZ_{\geq 0
 \end{equation}
 where each $\omega^\epsilon_{\mu_1 \cdots \mu_r, a_1 \cdots a_s} \in C^\infty(M, V)$, for $\mu_1 \cdots \mu_r = 1, \dots, m$, $, a_1 \cdots a_s = 1, \dots, n$. Viewing each $e_c$ as a constant section of $E$, i.e. $e_c \in \Omega^0(TM \times \alg g, E)$, we may also write
 \begin{equation}
-    \omega = \sum_{r + s = p} \left(\omega^\epsilon\right)^c_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}\, e_c \, dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \epsilon^{a_1} \wedge \cdots \wedge \epsilon^{a_s}.
+    \omega = \sum_{r + s = p} \left(\omega^\epsilon\right)^u_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}\, e_u \, dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \epsilon^{a_1} \wedge \cdots \wedge \epsilon^{a_s}.
 \end{equation} 
-with each $\left(\omega^\epsilon\right)^a_{\mu_1 \cdots \mu_r, a_1 \cdots a_s} \in C^\infty(M, V)$, $a = 1, \dots, n$.
+with each $\left(\omega^\epsilon\right)^u_{\mu_1 \cdots \mu_r, a_1 \cdots a_s} \in C^\infty(M, V)$, $u = 1, \dots, t$.
 The convention of ignoring the $\wedge$ symbol when one of the factors is a $0$-form has been used in both formulas.
 \end{proposition}
 
@@ -905,7 +905,7 @@ Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ be an Atiyah sequenece 
 Let $\omega \in \Omega^q(A)$.
     \begin{itemize}
     
-    \item For each $i \in I$ define the local $q$-form $\omega_i := \omega \circ S_i \in \Omega^q(TU_i\times \alg g)$, called the \emph{local trivialization of $\omega$ on $U_i$}, seen as a map
+    \item For each $i \in I$ define the local $q$-form $\omega_i := \omega \circ S_i \in \Omega^q(TU_i\times \alg g)$, called the \emph{local trivialization of $\omega$ over $U_i$}, seen as a map
    $$
         \omega_i :\left( \Gamma_{U_i}(TM)\oplus C^\infty({U_i}, \alg g) \right) \times \cdots \times \left( \Gamma_{U_i}(TM)\oplus C^\infty({U_i}, \alg g) \right) \to C^\infty({U_i})
     $$
@@ -922,7 +922,7 @@ From now on let $E$ be a vector bundle over $M$ with typical fiber $V$, and supp
 Let $\omega \in \Omega^q(A, E)$.
     \begin{itemize}
     
-    \item For each $i \in I$ define the local $q$-form $\omega_i:= \beta_i^{-1} \circ \omega \circ S_i  \in \Omega^q(TU_i\times \alg g, {U_i} \times V)$, called the \emph{local trivialization of $\omega$ on $U_i$}, seen as a map
+    \item For each $i \in I$ define the local $q$-form $\omega_i:= \beta_i^{-1} \circ \omega \circ S_i  \in \Omega^q(TU_i\times \alg g, {U_i} \times V)$, called the \emph{local trivialization of $\omega$ over $U_i$}, seen as a map
     $$
         \omega_i :\left( \Gamma_{U_i}(TM)\oplus C^\infty({U_i}, \alg g) \right) \times \cdots \times \left( \Gamma_{U_i}(TM)\oplus C^\infty({U_i}, \alg g) \right) \to C^\infty({U_i}, V).
     $$
@@ -1028,24 +1028,23 @@ For example, any $S^2 \times i\RR$ valued $1$-form $\hat \omega$ has the local t
 \begin{equation}\label{equationMostGeneral1FormTPkS1Full}
     \hat \omega_S = (\hat \omega^\epsilon_{S})_{1,}(\phi, \theta) dx^1 + (\hat \omega^\epsilon_{S})_{2,}(\phi, \theta) dx^2 + (\hat \omega^\epsilon_{S})_{,1}(\phi, \theta) Im
 \end{equation}
-where $(\hat \omega^{\epsilon}_{S})_{\mu,  a} \in C^\infty(S^2)$, and $(\phi, \theta)$ is a shortcut notation for $E(\phi, \theta) \in S^2$, where $\phi$ is the azimuthal angle and $\theta$ the polar angle in $S^2$; that the component \dbtext{functions are defined on all of $S^2$ guarantee that this local form can be extended to a global form on $TP^k/S^1$}, as we will in example \ref{exampleTransitionALphaFormsPk}.
-
+where $(\hat \omega^{\epsilon}_{S})_{\mu,  a} \in C^\infty(S^2)$, and $(\phi, \theta)$ is a shortcut notation for $E(\phi, \theta) \in S^2$, where $\phi$ is the azimuthal angle and $\theta$ the polar angle in $S^2$; that the component \dbtext{functions are defined on all of $S^2$ guarantee that this local form can be extended to a global form on $TP^k/S^1$}, as we will in example \ref{exampleTransitionALphaFormsPk}. 
 To simplify notation, the $1$-form \eqref{equationMostGeneral1FormTPkS1Full} will usually be written instead as
 \begin{equation}\label{equationMostGeneral1FormTPkS1Simplified}
     \hat \omega_S = i\omega^\epsilon_{S; 1}(\phi, \theta) dx^1 + i\omega^\epsilon_{S; 2}(\phi, \theta) dx^2 + i\omega^\epsilon_{S; i}(\phi, \theta) Im.
 \end{equation}
 
-Recall that, although strictly speaking the spherical coordinates $(\phi, \theta)$ are not manifold coordinates on the neighborhood $U_{SN}$, they are so on two different charts that cover $U_{SN}$, therefore $\{\partial_\phi, \partial_\theta\} \subset \Gamma_{U_{SN}}(S^2)$ is a local frame of $S^2$ associated to coordinate functions. Hence, on $U_{SN}$ we may once again apply remark \ref{remarkLocalDecompositionOfFormsOnTransitiveLieAlgebroidsIfTrivializationOfM} to write any form on $TP^k/S^1$ as the wedge product of the scalar valued local $1$-forms
+Recall that, although strictly speaking the spherical coordinates $(\phi, \theta)$ are not manifold coordinates on the neighborhood $U_{SN}$, they are so on two different charts that cover $U_{SN}$, therefore $\{\partial_\phi, \partial_\theta\} \subset \Gamma_{U_{SN}}(S^2)$ is a local frame of $S^2$ associated to coordinate functions. Hence, over $U_{SN}$ we may once again apply remark \ref{remarkLocalDecompositionOfFormsOnTransitiveLieAlgebroidsIfTrivializationOfM} to write any form on $TP^k/S^1$ as the wedge product of the scalar valued local $1$-forms
 \begin{align*}
     \{d\phi, d\theta, Im\} \subset \Omega^1_{U_{SN}}(TP^k/S^1).
 \end{align*} 
 From now on we will replace every instance of $\Omega_{U_{S}}, \Omega_{U_{N}}$ and $\Omega_{U_{SN}}$ by $\Omega_{S}, \Omega_{N}$ and $\Omega_{SN}$, respectively.
 
-Thanks to theorem \ref{theoremLocalizationOfEVectorValuedFormsIsomorphismOfDifferentialRespectsD} even if we don't know explicitly the form $\hat \omega \in \Omega^1(TP^k/S^1, P^k \times i\RR/S^1)$, we can still find (the local trivializations of) $\hat d \hat \omega$. Furthermore, we may apply theorem \ref{theoFormsAreDiffGModule} to show that
+Thanks to theorem \ref{theoremLocalizationOfEVectorValuedFormsIsomorphismOfDifferentialRespectsD} even if we don't know explicitly the form $\hat \omega \in \Omega^1(TP^k/S^1, P^k \times i\RR/S^1)$, we can still find (the local trivializations of) $\hat d \hat \omega$. Furthermore, we may apply theorem \ref{theoFormsAreDiffGModule} along with the second part or proposition \ref{propositionTLAFormsGradedSubalgebraAndTMDifferentialGradedSubalgebra} to show that
 \begin{equation*}
-    \hat d \hat \omega_S = \hat d (i\omega^\epsilon_{S;\mu}) \wedge dx^\mu + i  \omega^\epsilon_{S;\mu} d(dx^\mu) + \hat d(i \hat \omega^\epsilon_{S;i}) \wedge Im + \omega^\epsilon_{S;i} dx^\mu \hat d_{TU_S \times i\RR} Im
+    \hat d \hat \omega_S = \hat d (i\omega^\epsilon_{S;\mu}) \wedge dx^\mu + i  \omega^\epsilon_{S;\mu} d(dx^\mu) + \hat d(i \hat \omega^\epsilon_{S;i}) \wedge Im + \omega^\epsilon_{S;i} dx^\mu \hat d_{TU_S \times i\RR} Im;
 \end{equation*}
-We may then apply the calculation done in \eqref{equationDifferentialOfFormDualToBasisLieAlgebra} to $Im \in C^\infty(U_S, (i \RR)^*)$ to conclude that 
+notice that three distinct differentials are used in the previous equation. We may then apply the result obtained in \eqref{equationDifferentialOfFormDualToBasisLieAlgebra} to $Im \in C^\infty(U_S, (i \RR)^*)$ to conclude that 
 $$\hat d_{TU_S \times i\RR} Im = 0$$
 because $i\RR$ is commutative; also, we can apply \eqref{equationDifferential0FormwrtFrame} to conclude that
 $$ \hat d (i \omega^\epsilon_{S;\cdot}) = i d\omega^\epsilon_{S;\cdot},$$
@@ -1062,7 +1061,7 @@ which equals
 
 \linea 
 
-For the rest of the section, let $E$ be a vector bundle over $M$ on which $A$ is represented via $\phi$; suppose that there are vector bundle trivializations $\rho_i:U_i \times V$ and $\rho_j: U_j \times V$ on the neighborhoods $U_i$ and $U_j$, $U_{ij} = U_i \inter U_j \neq \empty$, that trivialize $A$, and denote by $\alpha^i_j: U_{ij} \to Gl(V)$, $m \mapsto \rho_{i, m} \circ \rho_{j, m}^{-1}$ the transition map from the trivialization of $E$ on $U_j$ to the trivialization on $U_i$; notice that, for $E = L$, this definition of $\alpha^i_j$ coincides with the one given in \ref{}. Let $\omega \in \Omega^q(A, E)$ and let $\{\sectoid X_k\} \subset \Gamma(A)$ for $k = 1, \dots, q$. Let each $\sectoid X_k$ have a family of trivializations $\{\sect X_k \oplus \stilde \eta_k^i \in \Gamma(TU_i) \oplus C^\infty(U_i, \alg g)\}$, then, in $U_{ij} = U_i \inter U_j \neq \empty$, 
+For the rest of the section, let $E$ be a vector bundle over $M$ on which $A$ is represented via $\phi$; suppose that there are vector bundle trivializations $\rho_i:U_i \times V$ and $\rho_j: U_j \times V$ on the neighborhoods $U_i$ and $U_j$, $U_{ij} = U_i \inter U_j \neq \empty$, that trivialize $A$, and denote by $\alpha^i_j: U_{ij} \to Gl(V)$, $m \mapsto \rho_{i, m} \circ \rho_{j, m}^{-1}$ the transition map from the trivialization of $E$ over $U_j$ to the trivialization over $U_i$; notice that, for $E = L$, this definition of $\alpha^i_j$ coincides with the one given in \ref{}. Let $\omega \in \Omega^q(A, E)$ and let $\{\sectoid X_k\} \subset \Gamma(A)$ for $k = 1, \dots, q$. Let each $\sectoid X_k$ have a family of trivializations $\{\sect X_k \oplus \stilde \eta_k^i \in \Gamma(TU_i) \oplus C^\infty(U_i, \alg g)\}$, then, in $U_{ij} = U_i \inter U_j \neq \empty$, 
 \begin{align*}
     \omega_i(X_1 \oplus \stilde \eta_1^i, \cdots, X_q \oplus \stilde \eta_q^i) = \alpha^i_j \circ \omega_j(X_1 \oplus \stilde \eta_1^j, \cdots, X_q \oplus \stilde \eta_q^j),
 \end{align*}
@@ -1167,7 +1166,7 @@ so
 
 \lin 
 
-To be able to work with the coordinates $\vec x$ and $\vec y$ on $S^2$ defined in \eqref{equationvecxCoordinatesS2} and \eqref{equationvecyCoordinatesS2}, we will now find $d\theta$ in terms of them, and viceversa. We can combine the multiple coordinates that we have defined on $U_{SN} \subset S^2$ to conclude that every point might be written as
+To be able to work with the coordinates $\vec x$ and $\vec y$ on $S^2$ defined in \eqref{equationvecxCoordinatesS2} and \eqref{equationvecyCoordinatesS2}, we will now find $d\theta$ in terms of them, and viceversa. We can combine the multiple coordinates that we have defined over $U_{SN} \subset S^2$ to conclude that every point might be written as
 \begin{equation}
     \frac{(2x^1, 2x^2, ||\vec x||^2 - 1)}{|| \vec x||^2 + 1} = (\sin \phi \cos \theta, \sin \phi \sin \theta, \cos \phi) = \frac{(2y^1, 2y^2, 1- ||\vec y||^2)}{|| \vec y||^2 + 1}.
 \end{equation}
@@ -1258,7 +1257,7 @@ Thus, for $\hat \omega_N|_{U_{SN}}$ to be the restriction of a $1$-form $\hat \o
     \end{itemize}
 notice, however, that these are not necessary conditions since there would be an assymmetry between the value of the form at the north and south pole, because the previous conditions imply the form is null at the former while its value at the latter point is arbitrary.
 
-In general, \rtext{a complete family of local trivializations of a form on $TP^k/S^1$, and hence the global form, may be found only from knowledge of one of its local trivializations over either of $U_S$ or $U_N$}. To see this, notice that each of $U_S$ and $U_N$ covers all of $S^2$ except for one point, implying that once we know the local trivialization of a form $\omega$ on $TP^k/S^1$ over, say, $U_S$, we can translate its restriction over $U_{SN}$ into the restriction over $U_{SN}$ of the trivialization of $\omega$ over $U_N$, which can then be extended by continuity to the complete trivialization of $\omega$ over $U_N$. 
+In general, \rtext{a complete family of local trivializations of a form on $TP^k/S^1$, and hence the global form, may be found only from knowledge of one of its local trivializations over either of $U_S$ or $U_N$}. To see this, notice that each of $U_S$ and $U_N$ covers all of $S^2$ except for one point, implying that once we know the local trivialization of a form $\omega$ on $TP^k/S^1$ over, say, $U_S$, we can translate its restriction over $U_{SN}$ into the restriction over $U_{SN}$ of the trivialization of $\omega$ over $U_N$ using the $\hat \alpha^N_S$ map, which can then be extended by continuity to the complete trivialization of $\omega$ over $U_N$. 
 
 \lin 
 
