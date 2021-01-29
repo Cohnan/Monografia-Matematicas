@@ -173,7 +173,7 @@
 
 The formulation of a gauge theory on a transitive Lie algebroid $A$ will be made through the action functional $S[\cdot, \cdot]$ of the theory, which will be the %``spacetime'' integral of the Lagrangian density, which is, in turn, the inner integral of a scalar valued form on $A$, a form found as the wedge product of vector bundle-valued forms induced by a metrics on the adjoint Lie algebroid and a representation vector bundle. 
 integral over $A$ of a certain form, found by the application of the product of forms induced by metrics on both the adjoint Lie algebroid of $A$ and on an arbitrary representation vector bundle.
-This chapter is essentially a rewriting of the exposition found on these topics on \cite{Fournel2011} and \cite{Fournel2013}. Metrics on representation vector bundles and the product they induce on vector bundle-valued differential forms is studied in section \ref{chIntegrationSectionMetricsRepresentationAssociated}. Then, metrics on transitive Lie algebroids and their equivalence with metrics on both the base space and the adjoint algebroid together with a horizontal subbundle as studied in section \ref{chIntegrationSectionMetricAlgebroid}. In section \ref{chIntegrationSectionIntegration} the concepts of inner integration and integration over $A$ are studied. Finally, in section \ref{chIntegrationSectionHodgeInnerProduct} metrics on $A$ are seen to induce inverse metrics and Hodge-$*$ operators on differential forms, which combine with the integration on $A$ to define an inner product of homogeneous forms on $A$. The content of section \ref{chIntegrationSectionExamples} was developed by us to continue progressing the examples developed throughout the document.
+This chapter is essentially a rewriting of the exposition found on these topics on \cite{Fournel2011} and \cite{Fournel2013}. Metrics on representation vector bundles and the product they induce on vector bundle-valued differential forms is studied in Section \ref{chIntegrationSectionMetricsRepresentationAssociated}. Then, metrics on transitive Lie algebroids and their equivalence with metrics on both the base space and the adjoint algebroid together with a horizontal subbundle as studied in Section \ref{chIntegrationSectionMetricAlgebroid}. In Section \ref{chIntegrationSectionIntegration} the concepts of inner integration and integration over $A$ are studied. Finally, in Section \ref{chIntegrationSectionHodgeInnerProduct} metrics on $A$ are seen to induce inverse metrics and Hodge-$*$ operators on differential forms, which combine with the integration on $A$ to define an inner product of homogeneous forms on $A$. The content of Section \ref{chIntegrationSectionExamples} was developed by us to continue progressing the examples developed throughout the document.
 
 %Let every vector space, and hence every vector bundle, be over the field $\bb K$, where $\bb K$ is one of $\RR$ or $\CC$. 
 Throughout this chapter let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM$ be a transitive Lie algebroid for the transitive Lie algebroid $A$ over the manifold $M$.
@@ -326,9 +326,9 @@ For the converse, let $\hat g$ be an inner non-degenerate metric on $A$. Then, l
 
 Suppose that on $U_i$ there is are coordinates $x^\mu: U_i \to \RR$ for $M$, with $\mu, \nu \in \{1, \dots, m\}$. Let $\hat g$ be an inner non-degenerate metric on $A$ associated to the triple $(g, h, \nabla)$. Then, with respect to the local frame $\{\nabla_\mu, -E_a\}$ of $TU_i \times \alg g$, dual to $\{dx^\mu, \alg a^a\}$, the following is true for the following scalar valued functions, called \emph{the local components of $\hat g$ with respect to the coordinates $x^\mu$ and the basis $\{E_a\}$} of $\alg g$, where $\mu, \nu = 1, \dots, m$ and $a, b = 1, \dots, n$:
 \begin{align*}
-    \hat g^i_{\mu \nu,}& := \hat g^i(\nabla_\mu, \nabla_\nu) = \delta_{\mu \nu}\\
-    \hat g^i_{\mu, a} &:= \hat g^i(\nabla_\mu, -E_a)=0\\
-    \hat g^i_{,ab} &:= \hat g^i(-E_a, -E_b) = \delta_{ab}
+    \hat g^i_{\mu \nu,}& := \hat g^i(\nabla_\mu, \nabla_\nu) = g_{\mu \nu},\\
+    \hat g^i_{\mu, a} &:= \hat g^i(\nabla_\mu, -E_a)=0,\\
+    \hat g^i_{,ab} &:= \hat g^i(-E_a, -E_b) = h_{ab},
 \end{align*}
 where $g^i := S^{i*}\hat g|_{U_i}$ is \emph{the local trivialization of $\hat g$ over $U_i$}, i.e.
 \begin{equation}
@@ -336,7 +336,7 @@ where $g^i := S^{i*}\hat g|_{U_i}$ is \emph{the local trivialization of $\hat g$
 \end{equation}
 and so its \emph{local matrix representation} with respect to the same elements, i.e. with respect to $\{\nabla_\mu, -E_a\}$, is the following symmetric matrix:
 \begin{equation}
-    (\hat g^i) = \begin{pmatrix}  (g_{\mu \nu})_{\mu, \nu = 1, \dots, m} & 0 \\ 0 & (h_{a b})_{a, b = 1, \dots, n} \end{pmatrix}.
+    (\hat g^i) = \begin{pmatrix}  (g^i_{\mu \nu})_{\mu, \nu = 1, \dots, m} & 0 \\ 0 & (h^i_{a b})_{a, b = 1, \dots, n} \end{pmatrix}.
 \end{equation}
 
 
@@ -386,7 +386,7 @@ Furthermore, $\beta_i^M$ is also the term of the decomposition of $\beta$ over $
 \end{theorem}
 
 \begin{proof}
-Thanks to the homogeneous transformation rules \ref{propositionInnerVolumeFormIntegrationFOrmGloballyDefinedWell}, for all $j \in I$ such that $U_{ij} \neq \emptyset$, $\hat \alpha^i_j(\beta^R)$ does not have any term with $\alg a_j^1 \wedge \cdots \wedge \alg a_j^n$ as factor, and so, since $\hat \alpha^i_j$ respects the wedge product, proposition \ref{propositionInnerVolumeFormIntegrationFOrmGloballyDefinedWell} implies that
+Thanks to the homogeneous transformation rules \ref{propositionInnerVolumeFormIntegrationFOrmGloballyDefinedWell}, for all $j \in I$ such that $U_{ij} \neq \emptyset$, $\hat \alpha^i_j(\beta^R)$ does not have any term with $\alg a_j^1 \wedge \cdots \wedge \alg a_j^n$ as factor, and so, since $\hat \alpha^i_j$ respects the wedge product, Proposition \ref{propositionInnerVolumeFormIntegrationFOrmGloballyDefinedWell} implies that
 \begin{equation}
     \hat \alpha^j_i(\beta^{M}_i) = \beta^{M}_j.
 \end{equation}
@@ -401,7 +401,7 @@ On the inner orientable transitive Lie algebroid $A$ with inner non-degenerate m
     \int_{inner} &: \Omega^\bullet(A) \to \Omega^\bullet(TM)
     & \beta &\mapsto \beta^M,
 \end{align}
-where we used the notation of proposition \ref{theoremIntegratedFormFactorInnerVolumeFOrmWellGloballyDefined}.
+where we used the notation of Proposition \ref{theoremIntegratedFormFactorInnerVolumeFOrmWellGloballyDefined}.
 \end{definition}
 The previous definition can be extended with the same formula to integration of $E$-valued forms, but we only state this definition since it suffices for our purposes of defining the action functional of a gauge theory.
 
@@ -439,7 +439,7 @@ For the rest of this chapter, let the transitive Lie algebroid $A$ be orientable
 \begin{definition}
 \emph{The volume form $\omega^{Vol}$ on $A$ with respect to the metric $\hat g$} is the never zero top form $\Omega^{m+n}(A)$ with local trivialization over each $U_i$:
 \begin{eqnsplit}
-    \omega^{Vol}_i &= (-1)^n \sqrt{|g_i|} \sqrt{|h_i|} dx^1 \wedge \cdots \wedge dx^m \wedge \alg a^1 \wedge \cdots \wedge \alg a^n\\
+    \omega^{Vol}_i &= (-1)^n \sqrt{|g_i|} \sqrt{|h_i|} dx^1 \wedge \cdots \wedge dx^m \wedge \alg a_i^1 \wedge \cdots \wedge \alg a_i^n\\
     &= \sqrt{|g_i|} dx^1 \wedge \cdots \wedge dx^m \wedge \omega_{h, \alg a}.
 \end{eqnsplit}
 \end{definition}
@@ -452,7 +452,7 @@ The non-degeneracy of $\hat g$ implies that, over each $U_i$, the matrix represe
 \begin{equation}
     (\hat g_i^{-1}) = \begin{pmatrix} (g_i^{\mu \nu})_{\mu, \nu = 1, \dots, m} & 0 \\ 0 & (h_i^{a b})_{a, b = 1, \dots, n} \end{pmatrix},
 \end{equation}
-where the matrix $(g_i^{\mu \nu})_{\mu, \nu = 1, \dots, m}$ is the inverse of the matrix of the matrix representation $((g_i)_{\mu \nu})_{\mu, \nu = 1, \dots, m}$ of the induced metric on $TU_i$ and similarly for $(h_i^{a b})_{a, b = 1, \dots, n}$. We can use this to define a metric on the spaces of homogeneous forms of a given degree just as in the traditional $A = TM$ case.
+where the matrix $(g_i^{\mu \nu})_{\mu, \nu = 1, \dots, m}$ is the inverse of the matrix of the matrix representation $(g^i_{\mu \nu})_{\mu, \nu = 1, \dots, m}$ of the induced metric on $TU_i$ and similarly for $(h_i^{a b})_{a, b = 1, \dots, n}$. We can use this to define a metric on the spaces of homogeneous forms of a given degree just as in the traditional $A = TM$ case.
 
 \begin{definition}
 \emph{The inverse metric of $\hat g$} is the symmetric, \dbtext{non-degenerate}, $C^\infty(M)$-linear (family of) map
@@ -524,7 +524,8 @@ The Hodge-$*$ operator is the $C^\infty(M)$-linear (family of) operator
 \end{eqnsplit*}
 for all $p \in \ZZ_{\geq 0}$, where the element \emph{$* \alpha \in \Omega^{m+n-p}(A, E)$} is defined to be $*\alpha := \alpha \omega^{Vol}$ if $p = 0$, or, otherwise, by the local trivializations:
 \begin{eqnsplit}
-    (*\alpha)_i &= \sum_{r+s = p} (-1)^{s(m-r)+n} \frac{1}{r!s!(m+n-p)!} \sqrt{|h_i|} \sqrt{|g_i|} (\alpha_i)_{\mu_1 \dots \mu_r a_1 \dots a_s} \vepsilon_{\nu_1 \dots \nu_m}  \vepsilon_{b_1 \dots b_n}\\
+    (*&\alpha)_i 
+    \\&= \sum_{r+s = p} (-1)^{s(m-r)+n} \frac{1}{r!s!(m+n-p)!} \sqrt{|h_i|} \sqrt{|g_i|} (\alpha_i)_{\mu_1 \dots \mu_r a_1 \dots a_s} \vepsilon_{\nu_1 \dots \nu_m}  \vepsilon_{b_1 \dots b_n}\\
     &\quad \times g^{\mu_1 \nu_1} \cdots g^{\mu_r \nu_r} h^{a_1 b_1} \cdots h^{a_s b_s} dx^{\nu_{r+1}} \wedge \cdots \wedge dx^{\nu_{m}} \wedge \alg a^{b_{s+1}} \wedge \cdots \wedge \alg a^{b_n} \\
     &= \sum_{r+s = p} (-1)^{s(m-r)+n} \frac{1}{r!s!(m+n-p)!} \sqrt{|h_i|} \sqrt{|g_i|} (\alpha_i)^{\nu_1 \dots \nu_r b_1 \dots b_s} \vepsilon_{\nu_1 \dots \nu_m}  \vepsilon_{b_1 \dots b_n} \\
     &\quad \times dx^{\nu_{r+1}} \wedge \cdots \wedge dx^{\nu_{m}} \wedge \alg a^{b_{s+1}} \wedge \cdots \wedge \alg a^{b_n}
@@ -543,7 +544,7 @@ for all $\alpha, \beta \in \Omega^p(A, E)$ and all $p \in \ZZ_{\geq 0}$.
 \end{proposition}
 
 \begin{proof}
-This can be proved through a combinatorial argument once we expand $$\alpha_i^u = \sum_{r+s} \alpha_{\nu_1 \dots b_s} e_u dx^{\nu_1} \wedge \cdots \wedge \alg a^{b_s}$$ and $*\beta_i$ as in the second equation of definition \ref{definitionHodgeStarFOrmula}, replace these formulas in $h^i_E(\alpha_i, *\beta_i) = (h^E_i)_{uv} \alpha_i^u \wedge * \beta_i^v$, expanding the wedge product and reordering the $dx$'s and $\alg a$'s in order to isolate $\omega^{Vol}$.
+This can be proven through a combinatorial argument once we expand $$\alpha_i^u = \sum_{r+s} \alpha_{\nu_1 \dots b_s} e_u dx^{\nu_1} \wedge \cdots \wedge \alg a_i^{b_s}$$ and $*\beta_i$ as in the second equation of Definition \ref{definitionHodgeStarFOrmula}, replace these formulas in $h^i_E(\alpha_i, *\beta_i) = (h^E_i)_{uv} \alpha_i^u \wedge * \beta_i^v$, expanding the wedge product and reordering the $dx$'s and $\alg a$'s in order to isolate $\omega^{Vol}$.
 \end{proof}
 
 \begin{definition}
@@ -614,13 +615,13 @@ for all $\eta, \theta \in \alg g$ and $p \in P$. In addition, for any $c \in C^\
 \end{equation*}
 where $m \in M$ is the projection of $p \in P$.
 \end{definition}
-Notice that the degenerate inner metric $K$ on $P\times \alg g/G$ is well defined thanks to the automorphism invariance of the Killing form. Recall that $P \times \alg g/G$ is a LAB (definition \ref{defnLAB}), and notice that if $\psi_i: U_i \times \alg g \to P \times \alg g/G|_{U_i}$ is a LAB trivialization map, the degenerate metric $cK$ on $P \times \alg g/G$ is locally trivialized by:
+Notice that the degenerate inner metric $K$ on $P\times \alg g/G$ is well defined thanks to the automorphism invariance of the Killing form. Recall that $P \times \alg g/G$ is a LAB (Definition \ref{defnLAB}), and notice that if $\psi_i: U_i \times \alg g \to P \times \alg g/G|_{U_i}$ is a LAB trivialization map, the degenerate metric $cK$ on $P \times \alg g/G$ is locally trivialized by:
 \begin{eqnsplit*}
     cK_i: (U_i \times \alg g) \otimes (U_i \times \alg g) &\to \RR\\
     ((m, \eta), (m, \theta)) &\mapsto f(m)K(\eta, \theta).
 \end{eqnsplit*}
 
-If $\alg g$ is semisimple, $K$ is then a Killing inner metric on $TP/G$, (definitions \ref{definitionDegenerateMetricGeneralEInner} and \ref{definitionMetricCompatibleRepresentationKilling}), and if $c \in C^\infty(M)$ is either positive or negative, then $cK$ are also Killing inner metrics on $TP/G$. Finally, if $\alg g$ is, furthermore, a simple, then the uniqueness property of the invariant symmetric forms on $\alg g$ and the comment on the trivializations of the metrics imply that
+If $\alg g$ is semisimple, $K$ is then a Killing inner metric on $TP/G$, (Definitions \ref{definitionDegenerateMetricGeneralEInner} and \ref{definitionMetricCompatibleRepresentationKilling}), and if $c \in C^\infty(M)$ is either positive or negative, then $cK$ are also Killing inner metrics on $TP/G$. Finally, if $\alg g$ is, furthermore, a simple, then the uniqueness property of the invariant symmetric forms on $\alg g$ and the comment on the trivializations of the metrics imply that
 \begin{proposition}\label{propositionKillingMetricGeneralSimpleCompact}
 Let $G \to P \to M$ be a principal bundle, and suppose that $\alg g$ is a simple Lie algebra. Then the only Killing inner metrics on the transitive Lie algebroid $TP/G$ are of the form $cK$ for $c \in C^\infty(M)$ either always positive or always negative.
 \end{proposition}
@@ -648,12 +649,12 @@ The fact that the degenerate inner metric $h$ is Killing is trivial since $i\RR$
 All Killing inner metrics on $TP^k/S^1$ are of the form $h^c$ \eqref{equationKIllingMetricTPkS2} for $c$ either always positive of always negative.
 \end{proposition}
 
-The last freedom in the choice of a metric on $TP^k/S^1$ comes from the background (ordinary) connection $\tilde \nabla$, associated to a connection form $\tilde \omega$, also denoted by $\alg a$. In section \ref{subsectionConnectionsOnTPkS1} we say that such a background connection must have the following local trivialization over $U_S$ and over $U_{SN}$, respectively:
+The last freedom in the choice of a metric on $TP^k/S^1$ comes from the background (ordinary) connection $\tilde \nabla$, associated to a connection form $\tilde \omega$, also denoted by $\alg a$. In Section \ref{subsectionConnectionsOnTPkS1} we say that such a background connection must have the following local trivialization over $U_S$ and over $U_{SN}$, respectively:
 \begin{eqnsplit*}
     \tilde \omega_S &= i\tilde \omega^\epsilon_{S; 1} dx^1 + i\tilde \omega^\epsilon_{S; 2} dx^2 - iIm\\
         &=i \tilde f d\phi + i \tilde g d\theta - i Im
 \end{eqnsplit*}
-where $\tilde \omega^\epsilon_{S; \mu}, \tilde f, \tilde g$ are functions over $S^2$ with some restrictions along the lines as those specified in section \ref{exampleTransitionALphaFormsPk}.
+where $\tilde \omega^\epsilon_{S; \mu}, \tilde f, \tilde g$ are functions over $S^2$ with some restrictions along the lines as those specified in Section \ref{exampleTransitionALphaFormsPk}.
 
 With this definitions, over $U_S$ the inner volume form has the local trivialization
 \begin{equation}
@@ -664,7 +665,7 @@ and the volume form is
     \omega^{Vol} = \sqrt{|c|} \sin \phi \, dx^1 \wedge dx^2 \wedge Im,
 \end{equation}
 where $\sin \phi = \frac{2 ||\vec x||^2}{1 + ||\vec x||^2}$.
-The local trivializations over $U_N$ may be determined with the results of section \ref{exampleTransitionALphaFormsPk}.
+The local trivializations over $U_N$ may be determined with the results of Section \ref{exampleTransitionALphaFormsPk}.
 
 Let us now examine the metrics for representation vector bundles. The irreducible complex representations of $S^1$ are all on $\CC$ and are indexed by $h \in \ZZ$:
 \begin{equation*}
@@ -674,7 +675,7 @@ for all $z \in \CC$. Then, the group representation $\pi^h$ induces the Lie alge
 \begin{equation}\label{equationRepresentationS1Ch}
     \pi^h(ir)(z) = irh\,z.
 \end{equation}
-Each of these group representations scales up to Lie algebroid a representation $\phi^{k, h}: TP^k/S^1 \to E^k$, for $k \in \ZZ$, on the vector bundle $E^k$ locally trivial on $U = U_S$ and $U_N$ as $U\times \RR^2$ with transition function $\beta^N_S = e^{ik\theta}$, producing the a group induced representation (definition \ref{definitionGlobalGroupInducedRepresentation}); notice that $TP^k/S^1$ is represented on $E^{k'}$ if $k = k'$, since that's when $E^k$ is a vector bundle associated to $P^k$. By operating with direct sums and tensor products of these vector bundles we get new representation vector bundles of $TP^k/S^1$
+Each of these group representations scales up to Lie algebroid a representation $\phi^{k, h}: TP^k/S^1 \to E^k$, for $k \in \ZZ$, on the vector bundle $E^k$ locally trivial on $U = U_S$ and $U_N$ as $U\times \RR^2$ with transition function $\beta^N_S = e^{ik\theta}$, producing the a group induced representation (Definition \ref{definitionGlobalGroupInducedRepresentation}); notice that $TP^k/S^1$ is represented on $E^{k'}$ if $k = k'$, since that's when $E^k$ is a vector bundle associated to $P^k$. By operating with direct sums and tensor products of these vector bundles we get new representation vector bundles of $TP^k/S^1$
 
 The typical fiber of $E^k$ is $\RR^2$ and on it we have the natural metric of $\RR^2$, which can be made in to a metric on $U_S \times \RR^2$ and of $U_N \times \RR^2$. Since the transition functions $e^{ik}$ of $E^k$ are in fact rotations of the fiber $\RR^2$, hence respect this metric, the metrics on $U_S \times \RR^2$ and $U_N \times \RR^2$ extend to a metric $h^E$ of $E^k$. A more general metric on $E$ can be multiplying $h^E$ by a function $c^E \in C^\infty(S^2)$ everywhere positive or everywhere negative. Let us call this metric
 \begin{equation}\label{equationMetricEkRepresentationcEhES2}
@@ -700,7 +701,7 @@ This example has not been fully studied, so we will make only the following obse
     \item Sice $S^3$ is a compact Lie group and $Im\HH$ is simple, the Killing form of $Im\HH$ is unique and proportional to 
     \begin{equation*}
         h(\vec x, \vec y) = \vec x \cdot \vec y,
-    \end{equation*} where $\vec x \in Im \HH$ and $\cdot$ denotes the dot product of the corresponding vectors in $\RR^3$. This means, by proposition \ref{propositionKillingMetricGeneralSimpleCompact} that the most general Killing inner metric on $TP^k/S^3$ (and also on the Atiyah Lie algebroids associated to the principal bundles over $\RR^4 \cong U_S$ with fiber $S^3$) has the form:
+    \end{equation*} where $\vec x \in Im \HH$ and $\cdot$ denotes the dot product of the corresponding vectors in $\RR^3$. This means, by Proposition \ref{propositionKillingMetricGeneralSimpleCompact} that the most general Killing inner metric on $TP^k/S^3$ (and also on the Atiyah Lie algebroids associated to the principal bundles over $\RR^4 \cong U_S$ with fiber $S^3$) has the form:
     \begin{equation}\label{equationKIllingMetricTPkS2}
         h^c(\cl{m, \vec x}, \cl{m, \vec y}) := c(m)\,\vec x \cdot \vec y,
     \end{equation}
