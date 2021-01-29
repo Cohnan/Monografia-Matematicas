@@ -386,7 +386,7 @@ Furthermore, $\beta_i^M$ is also the term of the decomposition of $\beta$ over $
 \end{theorem}
 
 \begin{proof}
-Thanks to the homogeneous transformation rules \ref{}, for all $j \in I$ such that $U_{ij} \neq \emptyset$, $\hat \alpha^i_j(\beta^R)$ does not have any term with $\alg a_j^1 \wedge \cdots \wedge \alg a_j^n$ as factor, and so, since $\hat \alpha^i_j$ respects the wedge product, proposition \ref{propositionInnerVolumeFormIntegrationFOrmGloballyDefinedWell} implies that
+Thanks to the homogeneous transformation rules \ref{propositionInnerVolumeFormIntegrationFOrmGloballyDefinedWell}, for all $j \in I$ such that $U_{ij} \neq \emptyset$, $\hat \alpha^i_j(\beta^R)$ does not have any term with $\alg a_j^1 \wedge \cdots \wedge \alg a_j^n$ as factor, and so, since $\hat \alpha^i_j$ respects the wedge product, proposition \ref{propositionInnerVolumeFormIntegrationFOrmGloballyDefinedWell} implies that
 \begin{equation}
     \hat \alpha^j_i(\beta^{M}_i) = \beta^{M}_j.
 \end{equation}
@@ -450,9 +450,9 @@ Notice that $\omega^{Vol}$ is well defined because it transforms correctly betwe
 
 The non-degeneracy of $\hat g$ implies that, over each $U_i$, the matrix representation of $\hat g^i$ with respect to the local frame $\{\nabla^i_\mu, -E_a\}_{\mu = 1, \dots, m;\, a = 1, \dots, n}$ is invertible, with inverse:
 \begin{equation}
-    (\hat g_i^{-1}) = \begin{pmatrix} (g^{\mu \nu})_{\mu, \nu = 1, \dots, m} & 0 \\ 0 & (h^{a b})_{a, b = 1, \dots, n} \end{pmatrix},
+    (\hat g_i^{-1}) = \begin{pmatrix} (g_i^{\mu \nu})_{\mu, \nu = 1, \dots, m} & 0 \\ 0 & (h_i^{a b})_{a, b = 1, \dots, n} \end{pmatrix},
 \end{equation}
-where the matrix $(g^{\mu \nu})_{\mu, \nu = 1, \dots, m}$ is the inverse of the matrix of the matrix representation $(g_{\mu \nu})_{\mu, \nu = 1, \dots, m}$ of the induced metric on $TU_i$ and similarly for $(h^{a b})_{a, b = 1, \dots, n}$. We can use this to define a metric on the spaces of homogeneous forms of a given degree just as in the traditional $A = TM$ case.
+where the matrix $(g_i^{\mu \nu})_{\mu, \nu = 1, \dots, m}$ is the inverse of the matrix of the matrix representation $((g_i)_{\mu \nu})_{\mu, \nu = 1, \dots, m}$ of the induced metric on $TU_i$ and similarly for $(h_i^{a b})_{a, b = 1, \dots, n}$. We can use this to define a metric on the spaces of homogeneous forms of a given degree just as in the traditional $A = TM$ case.
 
 \begin{definition}
 \emph{The inverse metric of $\hat g$} is the symmetric, \dbtext{non-degenerate}, $C^\infty(M)$-linear (family of) map
@@ -462,12 +462,12 @@ where the matrix $(g^{\mu \nu})_{\mu, \nu = 1, \dots, m}$ is the inverse of the 
 for all $p, q \in \ZZ_{\geq 0}$, such that its \emph{local trivialization $\hat g_i^{-1}$ over $U_i$}, i.e. the metric of $TU_i \times \alg g$ defined by $\hat g^{-1}|_{U_i}(\omega, \eta) = \hat g_i^{-1} (\omega_i, \eta_i)$ for all $\omega, \eta \in \Omega^p(A)$, satisfies:
 \begin{equation*}
     \hat g_i^{-1} (\alpha, \beta) 
-    = \sum_{r+s = p} \frac{1}{p!}  g^{\mu_1 \nu_1} \cdots g^{\mu_r \nu_r} h^{a_1 b_1} \cdots h^{a_s b_s} \alpha_{\mu_1 \dots \mu_r a_1 \dots a_s} \beta_{\nu_1 \dots \nu_r b_1 \dots  b_s},
+    = \sum_{r+s = p} \frac{1}{p!}  g_i^{\mu_1 \nu_1} \cdots g_i^{\mu_r \nu_r} h_i^{a_1 b_1} \cdots h_i^{a_s b_s} \alpha_{\mu_1 \dots \mu_r a_1 \dots a_s} \beta_{\nu_1 \dots \nu_r b_1 \dots  b_s},
 \end{equation*}
 for all $\alpha, \beta \in \Omega^p(TU_i \times \alg g)$ and using their decomposition with respect to the local mixed basis induced by the connection $\nabla$. 
 
 Using the notation
-\begin{equation}
+\begin{equation}\label{equationNotationRaisingIndices}
     \beta^{\mu_1 \dots \mu_r a_1 \dots a_s} := g_i^{\mu_1 \nu_1} \cdots g^{\mu_r \nu_r} h^{a_1 b_1} \cdots h_i^{a_s b_s} \beta_{\nu_1 \dots \nu_r b_1 \dots  b_s},
 \end{equation}
 which defines an element $\beta^\#$ in the dual module of $\Omega^p(A)$, we may also write, then,
@@ -504,7 +504,7 @@ with local trivialization $g^{-1}_{i, h^E}$ over $U_i$ defined by
     \hat g_{h^E, i}^{-1}(\alpha_i, \beta_i) := \hat g_{i}^{-1}(\alpha_i^u, \beta_i^v) h^E_{uv}.
 \end{equation}
 Using the notation
-\begin{equation}
+\begin{equation}\label{equationNotationRaisingIndicesWithAlgebra}
     \beta_v^{\mu_1 \dots \mu_r a_1 \dots a_s} := h^E_{uv} g_i^{\mu_1 \nu_1} \cdots g^{\mu_r \nu_r} h^{a_1 b_1} \cdots h_i^{a_s b_s} \beta^u_{\nu_1 \dots \nu_r b_1 \dots  b_s},
 \end{equation}
 we may also write, then,
@@ -657,11 +657,11 @@ where $\tilde \omega^\epsilon_{S; \mu}, \tilde f, \tilde g$ are functions over $
 
 With this definitions, over $U_S$ the inner volume form has the local trivialization
 \begin{equation}
-    \omega_{h^c, \alg a} = -\sqrt{|c|} (\tilde \omega^\epsilon_{S; 1} + \tilde \omega^\epsilon_{S; 1} - Im);
+    \omega^S_{h^c, \alg a} = -\sqrt{|c|} (\tilde \omega^\epsilon_{S; 1}dx^1 + \tilde \omega^\epsilon_{S; 2}dx^2 - Im);
 \end{equation}
 and the volume form is
 \begin{equation}
-    \omega^{Vol} = - \sqrt{|c|} \sin \phi \, dx^1 \wedge dx^2 \wedge (\tilde \omega^\epsilon_{S; 1} + \tilde \omega^\epsilon_{S; 2} - Im),
+    \omega^{Vol} = \sqrt{|c|} \sin \phi \, dx^1 \wedge dx^2 \wedge Im,
 \end{equation}
 where $\sin \phi = \frac{2 ||\vec x||^2}{1 + ||\vec x||^2}$.
 The local trivializations over $U_N$ may be determined with the results of section \ref{exampleTransitionALphaFormsPk}.
@@ -671,23 +671,23 @@ Let us now examine the metrics for representation vector bundles. The irreducibl
     \pi^h(e^{ir})(z) := e^{ihr}z,
 \end{equation*}
 for all $z \in \CC$. Then, the group representation $\pi^h$ induces the Lie algebra representation $\pi^h$ of $i\RR$:
-\begin{equation}
-    \pi^h(ir)(z) = ir\,z.
+\begin{equation}\label{equationRepresentationS1Ch}
+    \pi^h(ir)(z) = irh\,z.
 \end{equation}
-Each of these group representations scales up to Lie algebroid a representation $\phi^{k, h}: TP^k/S^1 \to E^k$, for $k \in ZZ$, on the vector bundle $E^k$ locally trivial on $U = U_S$ and $U_N$ as $U\times \RR^2$ with transition function $\beta^N_S = e^{ik\theta}$, producing the a group induced representation (definition \ref{definitionGlobalGroupInducedRepresentation}); notice that $TP^k/S^1$ is represented on $E^{k'}$ if $k = k'$, since that's when $E^k$ is a vector bundle associated to $P^k$. By operating with direct sums and tensor products of these vector bundles we get new representation vector bundles of $TP^k/S^1$
+Each of these group representations scales up to Lie algebroid a representation $\phi^{k, h}: TP^k/S^1 \to E^k$, for $k \in \ZZ$, on the vector bundle $E^k$ locally trivial on $U = U_S$ and $U_N$ as $U\times \RR^2$ with transition function $\beta^N_S = e^{ik\theta}$, producing the a group induced representation (definition \ref{definitionGlobalGroupInducedRepresentation}); notice that $TP^k/S^1$ is represented on $E^{k'}$ if $k = k'$, since that's when $E^k$ is a vector bundle associated to $P^k$. By operating with direct sums and tensor products of these vector bundles we get new representation vector bundles of $TP^k/S^1$
 
 The typical fiber of $E^k$ is $\RR^2$ and on it we have the natural metric of $\RR^2$, which can be made in to a metric on $U_S \times \RR^2$ and of $U_N \times \RR^2$. Since the transition functions $e^{ik}$ of $E^k$ are in fact rotations of the fiber $\RR^2$, hence respect this metric, the metrics on $U_S \times \RR^2$ and $U_N \times \RR^2$ extend to a metric $h^E$ of $E^k$. A more general metric on $E$ can be multiplying $h^E$ by a function $c^E \in C^\infty(S^2)$ everywhere positive or everywhere negative. Let us call this metric
-\begin{equation}
+\begin{equation}\label{equationMetricEkRepresentationcEhES2}
     c^E h^E : E^k \otimes E^k \to S^2 \times \RR.
 \end{equation}
 The metric $c^E h^E$ is in fact compatible with the representation. To see this, let $\vec x, \vec y \in \RR^2$ be arbitrary, let $R$ denote the counterclockwise rotation by $\pi/2$, and let $ia \in i\RR$ be arbitrary, then:
 \begin{align*}
-    h^E(\pi^h(ia) \vec x, \vec y) + h^E(\vec x, \pi^h(ia) \vec y) &= ah[h^E(R \vec x, \vec y) + h^E(\vec x, R \vec y)]\\
-        &= ah[h^E(\vec x, -R \vec y) + h^E(\vec x, R \vec y)]\\
-        &= ah[h^E(\vec x, 0)]\\
-        &= 0.
+    h^E_S(\pi^h(ia) \vec x, \vec y) + h^E_S(\vec x, \pi^h(ia) \vec y) &= ah[h^E_S(R \vec x, \vec y) + h^E(\vec x, R \vec y)]\\
+        &= ah[h^E_S(\vec x, -R \vec y) + h^E(\vec x, R \vec y)]\\
+        &= ah[h^E_S(\vec x, 0)]\\
+        &= 0;
 \end{align*}
-
+the previous calculation done for the trivialization of the metric $h^E$ over $U_S$, since is being done pointwise, extends to show the compatibility of the metric $c^E h^E$ with the representations $\phi^{k, h}: TP^k/S^1 \to E^k$. This compatibility with the metric, is an important property that must be satisfied in order to define gauge invariant matter actions, as we will see in next chapter.
 
 \subsection{$TP^k/S^3$ over $S^4$}
 \label{chIntegrationSubsectionS2}

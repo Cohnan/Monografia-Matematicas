@@ -490,7 +490,7 @@ This connection on $E$ has a simple rewriting in the language of Lie algebroids.
 \begin{equation}
     \phi: TP/G \to \alg D(E)
 \end{equation} 
-is the Lie algebroid representation of $TP/G$ in $E$ defined in \ref{example...}. Hence, we may rewrite the first equation in \eqref{equationsInducedConnectionCovariantDerivativeOnAssociatedVectorBundleByPrincipal} as the composition
+is the Lie algebroid representation of $TP/G$ in $E$ defined in \ref{exampleRepresentationAtiyah}. Hence, we may rewrite the first equation in \eqref{equationsInducedConnectionCovariantDerivativeOnAssociatedVectorBundleByPrincipal} as the composition
 \begin{align}
     \nabla^E : TM \xrightarrow{\nabla} A \xrightarrow{\phi} \alg D(E) && \nabla_X^E = \phi(\nabla_X)
 \end{align}
@@ -541,7 +541,7 @@ If $\hat \omega$ is an ordinary connection form, then $\hat \omega \comp j = -1_
 \end{proof}
 
 \begin{remark}
-Just as in the case of an Atiyah Lie algebroid shown in example \ref{}, an ordinary connection $\nabla$ on $A$ is equivalent to the definition of a subbundle $Im(\nabla)$ on $A$, called \emph{the horizontal subbundle}, that is isomorphic to $TM$ and that defines an isomorphism $A \cong TM \oplus L$; in that case the associated $\hat \nabla: A \to A$ is the projection onto this subbundle and $\hat \nabla^2 = \hat \nabla$. With the generalized connections on $A$ such an equivalent definition in terms of a horizontal subbundle is lost. However, a formula analogous to \eqref{equationInducedProducedConnectionByNormalizedOrdinaryLieAlgebroidConnectionInTermsOfFormAssociatedRepresentationVector} will still allow the definition of ``covariant derivatives'' on representation vector bundles $E$ as we will see in section \ref{}; furthermore, the additional directions will give rise to a coupling of the matter fields, i.e. sections of $E$, with new fields that enable the appearance of new mass terms in the Lagrangian of a gauge theory based on transitive Lie algebroids.
+Just as in the case of an Atiyah Lie algebroid shown in example \ref{exampleOrdinaryConnectionIsPrincipalBundleConnection}, an ordinary connection $\nabla$ on $A$ is equivalent to the definition of a subbundle $Im(\nabla)$ on $A$, called \emph{the horizontal subbundle}, that is isomorphic to $TM$ and that defines an isomorphism $A \cong TM \oplus L$; in that case the associated $\hat \nabla: A \to A$ is the projection onto this subbundle and $\hat \nabla^2 = \hat \nabla$. With the generalized connections on $A$ such an equivalent definition in terms of a horizontal subbundle is lost. However, a formula analogous to \eqref{equationInducedProducedConnectionByNormalizedOrdinaryLieAlgebroidConnectionInTermsOfFormAssociatedRepresentationVector} will still allow the definition of ``covariant derivatives'' on representation vector bundles $E$ as we will see in section \ref{ChConenctionsectionAConnections}; furthermore, the additional directions will give rise to a coupling of the matter fields, i.e. sections of $E$, with new fields that enable the appearance of new mass terms in the Lagrangian of a gauge theory based on transitive Lie algebroids.
 
 If we were to desire for $\hat \nabla$ to be a projection onto a subbundle, i.e. that $\hat \nabla^2 = \hat \nabla$, from equation \eqref{equationInducedProducedConnectionByNormalizedOrdinaryLieAlgebroidConnectionInTermsOfFormAssociatedRepresentationVector} it follows that a necessary and sufficient condition is 
 \begin{equation}\label{equationEquivalentNecessarySufficientGeneralizedConnectionBeDefineHorizontalProjectionSubbundle}
@@ -721,7 +721,7 @@ Let $\hat \omega$ be a connection form on $A$ with local trivialization $\hat \o
     \end{itemize}
 \end{proposition}
 
-Notice that if $\hat \omega$ is an ordinary connection form, a family of local trivializations $\{\omega_i \in \Omega^1(TU_i \times \alg g, U_i \times \alg g)\}_{i \in I} $ of $\hat \omega$ is completely specified by its associated local tangent connection forms $\{A_i \in \Omega^1(TU_i, U_i \times \alg g)\}$, since then $\hat \omega_i = A_i - \epsilon$. Furthermore, notice that if $A$ is an Atiyah Lie algebroid associated to a principal bundle, the transformation law of the $A_i$'s is precisely that of the local connection $1$-forms of a principal connection \ref{}, hence the family $\{A_i\}_{i \in I}$ where the $A_i$'s transform as indicated in the previous proposition does specify a principal connection of $P$. In general, \rtext{a family $\{A_i, \tau_i\}_{i \in I}$ with the transformation laws indicated above define a connection form on the transitive Lie algebroid $A$}.
+Notice that if $\hat \omega$ is an ordinary connection form, a family of local trivializations $\{\omega_i \in \Omega^1(TU_i \times \alg g, U_i \times \alg g)\}_{i \in I} $ of $\hat \omega$ is completely specified by its associated local tangent connection forms $\{A_i \in \Omega^1(TU_i, U_i \times \alg g)\}$, since then $\hat \omega_i = A_i - \epsilon$. Furthermore, notice that if $A$ is an Atiyah Lie algebroid associated to a principal bundle, the transformation law of the $A_i$'s is precisely that of the local connection $1$-forms of a principal connection, hence the family $\{A_i\}_{i \in I}$ where the $A_i$'s transform as indicated in the previous proposition does specify a principal connection of $P$. In general, \rtext{a family $\{A_i, \tau_i\}_{i \in I}$ with the transformation laws indicated above define a connection form on the transitive Lie algebroid $A$}.
 
 \begin{definition}\label{definitionLocalTrivializationOfHatNablaEndormorphismAnchorPreservingGeneralizedConnection}
 Let $\hat \nabla \in End(A)$ be the anchor preserving endomorphism associated to the connection form $\hat \omega$. \emph{The local trivialization $\hat \nabla^i$ of $\hat \nabla$ over $U_i$} is the map
@@ -919,7 +919,7 @@ Let $U_i \subset M$ be an open on which $x^\mu: U_i \to \RR$ are coordinates and
 where $a, b, c \in \{1, \dots a\}$, $\mu, \nu \in \{1, \dots, m\}$ and where Einstein's summation convention for the sum over repeated super- and sub-indices is used.
 \end{theorem}
 \begin{proof}
-What we want to see is that the local trivialization over $U_i$ of each of the terms on the decomposition \ref{theoremDecompositionCurvatureGeneralizedConnection3Terms} coincides with each of the stated terms.
+What we want to see is that the local trivialization over $U_i$ of each of the terms on the decomposition \ref{theoremGlobalDecompositionOfCurvatureFormWithRespectToBackgroundConnection} coincides with each of the stated terms.
 
 That $a^*F_i = \hat F^a_{\mu \nu} E_a dx^\mu \wedge dx^\nu$ is clear since $\hat F$ is a $2$-form on $TM$ and $a$ is the anchor.
 
@@ -1189,7 +1189,7 @@ Suppose we are given a background (ordinary) connection (in the next chapter we'
         &=i \tilde f d\phi + i \tilde g d\theta - i Im
 \end{eqnsplit}
 then the ordinary connection $\omega = \hat \omega + \tau \comp \tilde \omega$ induced by $\tilde \omega$ (see \ref{propositionOrdinaryConnectionInducedByBackground}) is
-\begin{eqnsplit}
+\begin{eqnsplit}\label{equationOrdinaryConnectionTPkTrivialization}
     \omega_S &= i(\hat \omega^\epsilon_{S; 1}  + \tilde \tau \tilde \omega^\epsilon_{S; 1})dx^1 + i(\hat \omega^\epsilon_{S; 2}  + \tilde \tau \tilde \omega^\epsilon_{S; 2}) dx^2 - i Im\\
         &=i (\hat f + \tilde \tau \tilde f) d\phi + i (\hat g + \tilde \tau \tilde g) d\theta - i Im,
 \end{eqnsplit}
@@ -1204,7 +1204,7 @@ over $U_{SN}$ in polar coordinates we may also write
 \end{eqnsplit}
 
 Now let's understand the decomposition of the curvature form $\hat R$. Using equations \eqref{equationFormulaHatFLocal}, \eqref{equationFormulaDtauLocal} and \eqref{equationFormulaWLocal} we can quickly conclude that, with respect to the basis $\{i\}_{a = 1}$ of $i\RR$ and with respect to the $\vec x$ coordinates over $U_S$, the following relations hold:
-\begin{align*}
+\begin{eqnsplit}\label{equationCurvatureExplicitTPkS2Us}
     C^c_{ab} &= \epsilon^c[E_a, E_b] = 0,\\
     \tau^1_1 &= \tilde \tau,\\
     W_{ab}^c &= 0,\\
@@ -1212,8 +1212,8 @@ Now let's understand the decomposition of the curvature form $\hat R$. Using equ
     (\mathcal D \tau)^1_{2,1} &= \partial_2 \tilde \tau,\\
     \tilde F^1_{12} &= - \tilde F^1_{21} = \partial_{1} \tilde \omega^\epsilon_{S;2} - \partial_{2} \tilde \omega^\epsilon_{S;1},\\
     F^1_{12} &= - \tilde F^1_{21} = \partial_{1} [\hat \omega^\epsilon_{S;2} + \tilde \tau \tilde \omega^\epsilon_{S;2}] - \partial_{2} [\hat \omega^\epsilon_{S;1} + \tilde \tau \tilde \omega^\epsilon_{S;1}],\\
-    \hat F^1_{12} &= - \hat F^1_{21} = \partial_{1} \hat \omega^\epsilon_{S;2} - \partial_{2} \hat \omega^\epsilon_{S;1};
-\end{align*}
+    \hat F^1_{12} &= - \hat F^1_{21} = \partial_{1} \hat \omega^\epsilon_{S;2} - \partial_{2} \hat \omega^\epsilon_{S;1} + (\partial_1 \tilde \tau) \tilde \omega^\epsilon_{S;2} - (\partial_2 \tilde \tau) \tilde \omega^\epsilon_{S;1};
+\end{eqnsplit}
 we can readily check that the decomposition of the curvature given in theorem \ref{theoremDecompositionOfAlgebroidFormIntoNice2Forms} using the above components does indeed produce the formula \eqref{equationCurvatureLocalUSS2} that we previously obtained. Over $U_{SN}$ analogous formulas are satisfied with respect to the polar coordinates $(\phi, \theta)$.
 
 

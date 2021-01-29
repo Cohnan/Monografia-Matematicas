@@ -29,7 +29,7 @@ As we will see throughout this document, \textit{the language of Lie algebroids 
     \item A Lie algebroid connection on $A$ (when $A$ is transitive \ref{definitionTransitiveRegularALgebroids}).
 \end{enumerate}
 
-Having given some motivation for the use of Lie algebroids to formulate gauge theories, we embrace this possibility and start this document by introducing in this chapter the basic theory of Lie algebroid that is required to build gauge theories on top of them.
+Having given some motivation for the use of Lie algebroids to formulate gauge theories, we embrace this possibility and start this document by introducing in this chapter the basic theory of Lie algebroid that is required to build gauge theories on top of them. The contents of this chapter were taken mainly from \cite{Mackenzie2005}. In sections 1.1 and 1.4 we study some fundamental concepts on Lie algebroids that provide the minimal basis to carry out a formulation of gauge theories on Lie algebroids. In section 1.2 some examples are studied to make more concrete the concept of a Lie algebroid. In section 1.3 we carefully build the Atiyah sequence associated to any principal bundle, since these represent the base case on which the formulation of gauge theories on transitive Lie algebroids is based. In order to have concrete ways to manipulate transitive Lie algebroids, based on \cite{Fournel2011} we study the trivialization of transitive Lie algebroids and of some of its concepts in section 1.5; particularly, we take some time developing some basic understanding of the local versions of Lie algebroid representations, since this will enable in Chapter \ref{chp:gaugeTh} the concrete study of examples once a simple set of maps are established.
 
 % %However, at the end of chapter \ref{chp:intro} it was remarked that 
 % A natural language to talk about principal bundle connections is that of the Atiyah Lie algebroid $TP/G$ of $P$, since:
@@ -52,9 +52,9 @@ Let us fist introduce some notation. \ptext{Throughout this document every const
 %$\bb R$ where $\bb R$ is either $\RR$ or $\CC$ unless otherwise stated}; recall that a real vector bundle naturally induces a complex vector bundle by tensoring each of its fibers with $\CC$, and this complex vector bundle is called \emph{the complexification of the vector bundle} or the \emph{the complexified vector bundle
 }. \improvement{Cambié esto}
 
-\begin{notation}\label{notationTMindistinctively}
-If $M$ is a smooth manifold, $TM$ will denote the tangent bundle if the context is that of real vector bundles, and in the context of complex vector bundle it will refer to the complexification of the tangent bundle. Indistinctively of the context we will call $TM$ the tangent bundle of $M$, its elements as tangent vectors and its sections as vector fields. \improvement{Agregue esto}
-\end{notation}
+% % \begin{notation}\label{notationTMindistinctively}
+% If $M$ is a smooth manifold, $TM$ will denote the tangent bundle if the context is that of real vector bundles, and in the context of complex vector bundle it will refer to the complexification of the tangent bundle. Indistinctively of the context we will call $TM$ the tangent bundle of $M$, its elements as tangent vectors and its sections as vector fields. \improvement{Agregue esto}
+% \end{notation}
 
 \ptext{A vector bundle $E$ over a manifold $M$ will usually be denoted by its projection map $p^E:E \to M$ or by the triple $p^E: E \to M$. A vector-bundle chart, or simply a chart, will make reference to a pair $(U \subset M, \psi: U \times V \to E|_U)$, where $U$ is an open subset of $M$ and $\psi$ is a local trivialization which is $C^\infty$-differentiable (and a vector bundle isomorphism, by definition of local trivialization). Additionally, throuhout this document boldface letters will be used to denote sections of the vector bundle when clarity is desired, specially throughout this chapter. In addition, for a section $\sect \mu \in \Gamma(E)$ its value in the fiber $m \in M$ will be denoted both by $\sect \mu(m)$ and by $\sect \mu_m$.}\improvement{Cambié esto de lugar}
 
@@ -1465,12 +1465,14 @@ Let $P^k$ be the $S^1$-principal bundle over $S^2$ determined by the transition 
 
 \lin
 
-An analogous family of principal bundles $S^3 \to P^k \to S^4$ also exists in the quaternionic case, since the $S^3$-principal bundles on $S^4$ are in a bijective correspondence with $\pi_3(S^3) \cong \ZZ$. The distinct vector bundles are characterized by the following transition functions over $U_{12} \subset \HH P^1 \cong S^4$:
+An analogous family of principal bundles $S^3 \to P^k \to S^4$ also exists in the quaternionic case, since the $S^3$-principal bundles on $S^4$ are in a bijective correspondence with $\pi_3(S^3) \cong \ZZ$ \cite{Naber}. The distinct vector bundles are characterized by the following transition functions over $U_{12} \subset \HH P^1 \cong S^4$:
 \begin{eqnsplit}
     g^k_{NS}: U_{12} \subset \HH P^1 &\to S^3\\
     [q^1, \dots, q^{n}] &\mapsto \left(\frac{q^j / |q^j|}{q^i / |q^i|}\right)^k;
 \end{eqnsplit}
 just as in the complex case, the (quaternionic) Hopf bundle is obtained as the special case $k = 1$. 
+
+We leave here our task of constructing the Atiyah Lie algebroids associated to the principal bundles studied in this section. We will continue in section \ref{chBasicSubsectionLocalDescriptionExamples}, since the way that will be practical to us to understand a transitive Lie algebroid will be through its local trivializations studied in \ref{algebroidAtlasAtiyah}.
 
 \section{Other Basic Definitions about Lie Algebroids}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1529,28 +1531,6 @@ Applying the fact that $\phi$ respects the Lie brackets give us further properti
 % The transition maps $\alpha^i_j = \psi_i^{-1} \comp \psi_j |_{U_{ij}\times \alg g}$'s from a Lie algebroid atlas of a transitive Lie algebroid, are examples of $\phi^+$'s, and the $\chi^i_j$ are examples of $\omega$'s.
 \end{example}
 
-\begin{example}[All representations of a TLA on a Trivial Vector Bundle]
-\label{exampleAllRepresentationsofTLAoverTrivialVectorbundle}
-Let $TM \times \alg g$ be a trivial vector bundle and let $E = M \times V$ be a trivial vector bundle. We saw in example \ref{exampleDerivationsLieAlgebroidOfATrivialVectorBundleglV} that $\alg D(E)$ is the trivial vector bundle $TM \times \alg (gl)(V)$, so a representation of $TM \times \alg g$ on $M \times V$, as illustrated by \ref{exampleLieAlgebroidMorphismsBetweenTrivialLieAlgebroids}, has the form
-\begin{equation}
-    \phi(X \oplus \eta) = X \oplus(B(X) + \phi_L(\eta)),
-\end{equation}
-where $B: TM \to M\times \alg{gl}(V)$ is a Maurer-Cartan form, $\phi_L: M \times \alg g \to M \times \alg{gl}(V)$ is a LAB morphism, and $B$ and $\phi_L$ satisfies the compatibility condition indicated in \ref{exampleLieAlgebroidMorphismsBetweenTrivialLieAlgebroids}.
-\end{example}
-
-
-\begin{example}[Group induced representation]
-\label{definitionExampleGroupInducedRepresentationTrivialLieAlgebroidTLAOnTrivialVectorBundle}
-Let $TM \times \alg g$ be a trivial Lie algebroid and $E = M \times V$ a trivial vector bundle. Furthermore, suppose that $G$ is a Lie group with Lie algebra $\alg g$, and that $\pi: G \to Aut(V)$ is a representation of $G$. This allows us to define a Lie algebroid representation $\phi$ with vertical part $\phi_L$ being constantly equal to the induced Lie representation $\pi: \alg g \to \alg{gl}(V)$. Explicitly, for all $X \oplus \eta \in TM \times \alg g$ and $f \in C^\infty(M, V)$:
-\begin{eqnsplit}\label{equationGroupInducedRepresentationInTrivialAlgebroids}
-    \phi(X \oplus \eta)(f) := X(f) + \pi(\eta)f;
-\end{eqnsplit}
-when the representation is clear from the context, we will usually rewrite the previous equation as
-\begin{eqnsplit}\label{equationGroupInducedRepresentationInTrivialAlgebroids}
-    \phi(X \oplus \eta)(f) := X(f) + \eta \cdot f.
-\end{eqnsplit}
-This is called \emph{the $G$-induced representation of the trivial Lie algebroid on the trivial vector bundle $M\times V$}.
-\end{example}
 
 \begin{definition}\label{definitionTransitiveRegularALgebroids}
     Let $A$ be a Lie algebroid with anchor $a$.
@@ -1706,7 +1686,65 @@ Using an algebraic language, notice how a representation $\rho:A \to \alg D(E)$ 
 \end{align}
 in a way that is compatible with the anchors and the brackets.
 
-\begin{example}
+\begin{definition}(Adjoint representation of a transitive Lie algebroid)\label{defnAdjointAct}
+Let $A$ be a transitive Lie algebroid on $M$ with adjoint bundle $L$. \emph{The adjoint representation of $A$} is the representation on $L$
+\begin{align*}
+    ad: A \to \alg D(L), 
+\end{align*}
+such that
+\begin{align*}
+     ad(\sectoid X)(\sect \mu) = j^{-1}[\sectoid X, j(\sect \mu)]
+\end{align*}
+for all $\sectoid X \in \Gamma(A)$, $\sect \mu \in \Gamma(L)$.
+\end{definition}
+The adjoint action is well defined since the anchor commutes with the bracket.
+
+% PERHAPS\todo{complement of remove according to necessity}, if needed later: metric: representations of $\alg D(E)$ induced by the frame groupoid action
+%     \begin{itemize}
+    
+%     \item On $Hom^n(E; M \times \RR)$, $Alt^n$, $Sum^n$
+    
+%     \item On $Hom^n(E; E)$, $Alt^n$, $Sum^n$
+    
+%     \item Of $\alg D(E)\oplus_{TM} \alg D(E')$ on $\Hom(E; E')$
+    
+%     \end{itemize}
+
+%Equivariant 1 Equivariant 2
+
+\begin{definition}\label{definitionTrivialRepresentation}
+Let $A$ be a Lie algebroid on $M$ and let $V$ be a vector space. \emph{The trivial representation of $A$ on $M \times V$} is defined by identifying $\Gamma(M \times V)$ with $C^\infty(M, V)$:
+\begin{align*}
+%\rho : A &\to \alg D(M \times V)\\
+%       \oid X \mapsto a(\oid X)
+    \rho^0(\sectoid X)(f) := a(\sectoid X)(f), && f: \Gamma(M \times V) \cong C^\infty(M, V),\, \sectoid X \in \Gamma(A).
+\end{align*}
+\end{definition}
+
+\begin{example}[All representations of a TLA on a Trivial Vector Bundle]
+\label{exampleAllRepresentationsofTLAoverTrivialVectorbundle}
+Let $TM \times \alg g$ be a trivial vector bundle and let $E = M \times V$ be a trivial vector bundle. We saw in example \ref{exampleDerivationsLieAlgebroidOfATrivialVectorBundleglV} that $\alg D(E)$ is the trivial vector bundle $TM \times \alg (gl)(V)$, so a representation of $TM \times \alg g$ on $M \times V$, as illustrated by \ref{exampleLieAlgebroidMorphismsBetweenTrivialLieAlgebroids}, has the form
+\begin{equation}
+    \phi(X \oplus \eta) = X \oplus(B(X) + \phi_L(\eta)),
+\end{equation}
+where $B: TM \to M\times \alg{gl}(V)$ is a Maurer-Cartan form, $\phi_L: M \times \alg g \to M \times \alg{gl}(V)$ is a LAB morphism, and $B$ and $\phi_L$ satisfies the compatibility condition indicated in \ref{exampleLieAlgebroidMorphismsBetweenTrivialLieAlgebroids}.
+\end{example}
+
+
+\begin{example}[Group induced representation]
+\label{definitionExampleGroupInducedRepresentationTrivialLieAlgebroidTLAOnTrivialVectorBundle}
+Let $TM \times \alg g$ be a trivial Lie algebroid and $E = M \times V$ a trivial vector bundle. Furthermore, suppose that $G$ is a Lie group with Lie algebra $\alg g$, and that $\pi: G \to Aut(V)$ is a representation of $G$. This allows us to define a Lie algebroid representation $\phi$ with vertical part $\phi_L$ being constantly equal to the induced Lie representation $\pi: \alg g \to \alg{gl}(V)$. Explicitly, for all $X \oplus \eta \in TM \times \alg g$ and $f \in C^\infty(M, V)$:
+\begin{eqnsplit}\label{equationGroupInducedRepresentationInTrivialAlgebroids}
+    \phi(X \oplus \eta)(f) := X(f) + \pi(\eta)f;
+\end{eqnsplit}
+when the representation is clear from the context, we will usually rewrite the previous equation as
+\begin{eqnsplit}\label{equationGroupInducedRepresentationInTrivialAlgebroids}
+    \phi(X \oplus \eta)(f) := X(f) + \eta \cdot f.
+\end{eqnsplit}
+This is called \emph{the $G$-induced representation of the trivial Lie algebroid on the trivial vector bundle $M\times V$}.
+\end{example}
+
+\begin{example}\label{exampleRepresentationAtiyah}
 For a principal bundle $G \to P \to M$ and an associated vector bundle $E = P \times V / G$ over $M$ with fiber $V$ on which $G$ acts on the left, there is a natural representation
 \begin{align*}
     \phi: TP/M \to \alg D(E),
@@ -1743,40 +1781,6 @@ Let $\nabla: \Gamma(E) \to \Gamma(T^*M \otimes E)$ be a connection on a a vector
 is a $C^\infty(M)$-linear mapping from the vector fields on $M$ to the derivations on $E$. The Leibniz identity of the derivation $\nabla_{\sect X}$ implies that $a(\nabla_{\sect X}) = \sect X$. This means that a connection on $E$ is only missing the compatibility with the brackets to be a representation, but this compatibility is equivalent to the property of the connection being flat. Therefore \emph{flat} connections on the vector bundle $E$ give us a representation of $TM$ on $E$.
 \end{example}
 
-\begin{definition}(Adjoint representation of a transitive Lie algebroid)\label{defnAdjointAct}
-Let $A$ be a transitive Lie algebroid on $M$ with adjoint bundle $L$. \emph{The adjoint representation of $A$} is the representation on $L$
-\begin{align*}
-    ad: A \to \alg D(L), 
-\end{align*}
-such that
-\begin{align*}
-     ad(\sectoid X)(\sect \mu) = j^{-1}[\sectoid X, j(\sect \mu)]
-\end{align*}
-for all $\sectoid X \in \Gamma(A)$, $\sect \mu \in \Gamma(L)$.
-\end{definition}
-The adjoint action is well defined since the anchor commutes with the bracket.
-
-% PERHAPS\todo{complement of remove according to necessity}, if needed later: metric: representations of $\alg D(E)$ induced by the frame groupoid action
-%     \begin{itemize}
-    
-%     \item On $Hom^n(E; M \times \RR)$, $Alt^n$, $Sum^n$
-    
-%     \item On $Hom^n(E; E)$, $Alt^n$, $Sum^n$
-    
-%     \item Of $\alg D(E)\oplus_{TM} \alg D(E')$ on $\Hom(E; E')$
-    
-%     \end{itemize}
-
-%Equivariant 1 Equivariant 2
-
-\begin{definition}
-Let $A$ be a Lie algebroid on $M$ and let $V$ be a vector space. \emph{The trivial representation of $A$ on $M \times V$} is defined by identifying $\Gamma(M \times V)$ with $C^\infty(M, V)$:
-\begin{align*}
-%\rho : A &\to \alg D(M \times V)\\
-%       \oid X \mapsto a(\oid X)
-    \rho^0(\sectoid X)(f) := a(\sectoid X)(f), && f: \Gamma(M \times V) \cong C^\infty(M, V),\, \sectoid X \in \Gamma(A).
-\end{align*}
-\end{definition}
 
 % \begin{definition}
 % Induced representation.\complete{Induced representation}
@@ -2282,7 +2286,7 @@ We now wish to see what is the (unique) simply connected Lie group $G \subset \H
 \begin{align}
     \sigma_1 = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} && \sigma_2 = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix} && \sigma_1 = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix},
 \end{align} where this basis satisfy the bracket in $\alg{su}(2)$ is determined by the relations
-\begin{align}
+\begin{align}\label{equationLieAlgebrasu2}
     [u_1, u_2] = 2u_3 && [u_2, u_3] = 2u_1 && [u_3, u_1] = 2u_2. 
 \end{align} 
 hence the following is an isomorphism of real Lie algebras

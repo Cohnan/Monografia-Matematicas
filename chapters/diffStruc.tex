@@ -42,13 +42,16 @@
 % TODO\todo{check this}: the third ``important example'' introduced in Lazzarini is important to me? $A$ connections on $E$ are used to define finite gauge transformations, which somehow induce the infinitesimal gauge transformation definition on generalized connections? If not for this, $A$-connections, and so this examples, are of no relevance to me. EDIT: actually, $A$-connections are important to us theoretically  since it this kind of connection/covariant derivative that our generalized Liea algebroid connections induce on its representation vector bundles (removing the normalization property removes the property of the covariant derivative to take horizontal forms to horizontal forms, so we can't restrict covariant derivatives of vector bundles to take directions only in $TM$, but instead all of $A$ needs to be taken as argument), and, hence, the forms $\Omega^\bullet(A, End(E))$ are involved in the theory since they the form version of the $A$-connections Summary: $A$-connections on $E$ are the generalized version of covariant derivative that we obtain, and they are in correspondence with forms $\Omega^1(A, End(E))$; furthermore, the notion of (infinitesimal) gauge transformation that we define on our generalized connections and curvature is such that it is compatible with the notion of gauge transformation in the theory of $A$-connections.
 % }
 
-In this chapter we define differential forms on general Lie algebroids, and study their structure. Their role in our goal to define gauge theories on a transitive Lie algebroid $A$ will be two-fold: definition of various notions of connections on $A$, and definition of integration on $A$. Firstly, in Chapter \ref{chp:connections} we define connections on $A$, $A$-connections on representation vector bundles $E$, and their curvatures, and all will have a formulation as forms on $A$ with values in different representation vector bundles. Secondly, in Chapter \ref{chp:integration} we define two notions of integration of differential forms on $A$, each one associated to a volume form on $A$. The combination of these concepts will give rise to the action function defining a gauge theory on $A$, as the integral of a sum of differential forms on $A$.
+In this chapter we define differential forms on general Lie algebroids, and study their structure. Their role in our goal to define gauge theories on a transitive Lie algebroid $A$ will be two-fold: definition of various notions of connections on $A$, and definition of integration on $A$. Firstly, in Chapter \ref{chp:connections} we define connections on $A$, $A$-connections on representation vector bundles $E$, and their curvatures, and all will have a formulation as forms on $A$ with values in different representation vector bundles. Secondly, in Chapter \ref{chp:integration} we define two notions of integration of differential forms on $A$, each one associated to a volume form on $A$. The combination of these concepts will give rise to the action function defining a gauge theory on $A$, as the integral of a sum of differential forms on $A$. 
+
+The theory for this chapter came mostly from \cite{Lazzarini2012} and \cite{Fournel2011}. In section 2.1, we complement this exposition with a clear framework to which the various differential forms observed in these articles are part of in order to correctly understand its properties and possible manipulations. Then, on section 2.2 some time is invested into acquiring a firm understanding of the spaces of forms on trivial Lie algebroids, since this enables a concrete study of the differential forms on transitive Lie algebroids from their trivializations. Finally, we apply the theory of this chapter to the two families of examples of transitive Lie algebroids developed throughout this book.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Spaces of differential forms and their Structure}
+\label{ChFormsSectionTheory}
 
 Throughout this section, let $A$ be a Lie algebroid over the manifold $M$ with anchor $a$, not necessarily transitive.
 
@@ -357,7 +360,7 @@ Let $\mathcal A = \oplus_{n = 0}^\infty \mathcal A^n$ be a graded (not necessari
     
     \item An \emph{antiderivation on $\mathcal A$} is an $\bb R$-linear map $d: \mathcal A \to \mathcal A$ such that, if $\omega$ is homogeneous, 
     \begin{align}\label{equationDefinitionGradedLeibnizInDifferentialGradedAlgebra}
-        d(\omega \bullet \eta) = (d\omega)\bullet\tau + (-1)^{|\omega|} \omega \bullet (d\tau)
+        d(\omega \bullet \eta) = (d\omega)\bullet\eta + (-1)^{|\omega|} \omega \bullet (d\eta)
     \end{align}
     
     \item An antiderivation $d: \mathcal A \to \mathcal A$ is \emph{of degree $m \in \ZZ$} if, for all homogeneous elements $\omega \in \mathcal A$,
@@ -402,7 +405,7 @@ as the linear extension of the maps, for any $p, q \in \ZZ_{\geq 0}$
 \wedge^\bullet : \Omega^p(A, E) \times \Omega^q(A, E) &\to \Omega^{p+q}(A, E)
 \end{eqnsplit*}
 \begin{eqnsplit}\label{equationDefinitionWedgeEValuedEValuedAlgebraForms}
-(\omega \wedge \eta)(\sectoid X_1, \dots, \sectoid X_{p+q}) &:= \\
+(\omega \wedge^\bullet \eta)(\sectoid X_1, \dots, \sectoid X_{p+q}) &:= \\
 \frac{1}{p!q!} \sum_{\sigma \in S_{p+q}} &(-1)^{\sigma} \omega(\oid X_{\sigma(1)}, \cdots, \oid X_{\sigma(p)}) \bullet \eta(\oid X_{\sigma(p+1)}, \cdots, \oid X_{\sigma(p+q)}).
 \end{eqnsplit}
 for any $p$-form $\omega$, $q$-form $\eta$ and any $\sectoid X_1, \dots, \sectoid X_{p+q} \in \Gamma(A)$.%, where $\bullet$ is the algebra multiplication induced on $\Gamma(E)$ by the fiberwise algebra multiplication in $E$.
@@ -420,9 +423,9 @@ Let $E$ be an algebra bundle over $M$ on which there is a representation $\phi: 
 \end{theorem}
 
 \begin{proof}
-Graded Leibniz is the only missing piece, and this can be proved in an almost identical manner as the graded Leibniz of theorem \ref{isDiferentialcomplexOverOmegaA}; however, the compatibility condition between the representation and the product plays a role, as we can see from the calculation of $\hat d_\phi \mu$, when $\mu \in \Gamma(E)$ may be written as $\mu = \mu_1 \bullet \mu_2$ for some arbitrary $\mu_1, \mu_2 \in \Gamma(E)$, since then $\bullet$ coincides with $\wedge^\bullet$; let $\sectoid X \in \Gamma(A)$ be arbitrary, then:
+The only missing piece is the graded Leibniz rule, and this can be proved using again the local formulas stated in section 2.1.2. It is important to notice that the compatibility condition between the representation and the product plays a role, as we can see from the calculation of $\hat d_\phi \mu$, when $\mu \in \Gamma(E)$ may be written as $\mu = \mu_1 \bullet \mu_2$ for some arbitrary $\mu_1, \mu_2 \in \Gamma(E)$, since then $\bullet$ coincides with $\wedge^\bullet$; let $\sectoid X \in \Gamma(A)$ be arbitrary, then:
 \begin{align*}
-    \phi(X) \cdot \mu &= \hat d_\phi \mu(\sectoid X)\\
+    \phi(\oid X) \cdot \mu &= \hat d_\phi \mu(\sectoid X)\\
         &= \hat d_\phi (\mu_1 \bullet \mu_2)(\sectoid X) \\
         &= \hat d_\phi (\mu_1 \wedge^\bullet \mu_2)(\sectoid X)\\
         &= \hat d_\phi(\mu_1)(\sectoid X) \wedge^\bullet \mu_2 + \mu_1 \wedge^\bullet \hat d_\phi(\mu_2)(\sectoid X)\\
@@ -432,7 +435,7 @@ Graded Leibniz is the only missing piece, and this can be proved in an almost id
 \end{proof}
 
 \begin{example}
-The scalar valued forms on $A$ are not only a differential complex over $\bb R$ and a graded algebra, but, in fact, \textit{$(\Omega^\bullet(A), \wedge, \hat d_A)$ is a differential graded algebra}. This follows from noticing that the wedge product associated to the algebra multiplication of $\bb R$ coincides with the already defined wedge product of scalar and vector valued forms, and so the statement \ref{isDifferentialCOmplexOverOmegaA} that $(\Omega^\bullet(A), \hat d_A)$ was a differential complex over $(\Omega^\bullet(A), \wedge)$, together with the graded Leibniz that accompanies it, is precisely the statement that $\Omega^\bullet(A)$ is a differential graded algebra; the compatibility condition on the representation is simply the traditional Lebniz rule of vector fields acting on functions of $M$.
+The scalar valued forms on $A$ are not only a differential complex over $\bb R$ and a graded algebra, but, in fact, \textit{$(\Omega^\bullet(A), \wedge, \hat d_A)$ is a differential graded algebra}. This follows from noticing that the wedge product associated to the algebra multiplication of $\bb R$ coincides with the already defined wedge product of scalar and vector valued forms, and so the statement that $(\Omega^\bullet(A), \hat d_A)$ was a differential complex over $(\Omega^\bullet(A), \wedge)$, together with the graded Leibniz that accompanies it, is precisely the statement that $\Omega^\bullet(A)$ is a differential graded algebra; the compatibility condition on the representation is simply the traditional Lebniz rule of vector fields acting on functions of $M$.
 
 In fact, $(\Omega^\bullet(A), \wedge, \hat d_A)$ is a differential graded-commutative algebra. The additional conditions is simply that $\alpha \wedge \beta = (-1)^{|\alpha||\beta|}\beta \wedge \alpha$ for all homogeneous forms $\alpha, \beta$; this follows easily from $\bb R$ being commutative and the formula \eqref{equationDefinitionWedgeScalarandEvaluedForms}.
 \end{example}
@@ -576,6 +579,7 @@ Recall that $\{\cl{\partial_\phi}, \cl{\partial_{\xi^1}}, \cl{\partial_{\xi^2}}\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Trivial Lie Algebroid}
+\label{ChFormsSectionTrivial}
 
 % {\color{gray}
 % \begin{itemize}
@@ -616,7 +620,7 @@ From now on the tilde notation used above to denote the image inside of $\Omega^
 \hfill
 \begin{itemize}
     
-    \item $(C^\infty(M, \bigwedge^\bullet \alg g^*), \wedge)$ is a graded sugalgebra of the space of scalar-valued forms on $TM \times \alg g$.
+    \item $(C^\infty(M, \bigwedge^\bullet \alg g^*), \wedge)$ is a graded subalgebra of the space of scalar-valued forms on $TM \times \alg g$.
     
     \item $(\Omega^\bullet(TM), \wedge, d)$ is a differential graded subalgebra of $(\Omega^\bullet(TM\times \alg g), \wedge, \hat d_{TM \times \alg g})$. Furthermore, the restriction of the differential $d_{TM \times \alg g}$ to $(\Omega^\bullet(TM)$ coincides with the traditional differential $d$ of forms on the manifold $M$.
 \end{itemize}
@@ -898,6 +902,7 @@ The convention of ignoring the $\wedge$ symbol when one of the factors is a $0$-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Local Description of differential forms on Transitive Lie Algebroids}
+\label{ChFormsSectionLocaltransitive}
 
 Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ be an Atiyah sequenece of the transitive Lie algebroid $A$ over $M$. Let $\{(U_i, \psi_i: U_i \times \alg g \to L|_{U_i}, \nabla^{0, i}: TU_i \to A|_{U_i})\}_{i \in I}$ be a Lie algebroid atlas for $A$ and call $S_i: TU_i \times \alg g \to A|_{U_i}$ the local trivialization over $U_i$.
 
@@ -947,7 +952,7 @@ with each $\lbtext{\left(\omega_i^\epsilon\right)^a_{\mu_1 \cdots \mu_r, a_1 \cd
 \end{remark}
 
 \begin{definition}
-Over each $U_i$ use the local trivialization of the representation $\phi_i: TU_i\times \alg g \to TU_i \times \End(V)$ to define the differential $\hat d_\phi$ on $\Omega^\bullet(TU_i\times \alg g, {U_i} \times V)$. Recall from examples \ref{exampleTrivializationTrivialRepresentation} and \ref{exmpleTrivializationTrivialRepresentation} that the local trivialization of the trivial representation is again the trivial representation, and of the adjoint representation is again the adjoint representation on the trivial Lie algebroid.
+Over each $U_i$ use the local trivialization of the representation $\phi_i: TU_i\times \alg g \to TU_i \times \End(V)$ to define the differential $\hat d_\phi$ on $\Omega^\bullet(TU_i\times \alg g, {U_i} \times V)$. Recall from section \ref{chBasicsubsectionLocalVersion} that the local trivialization of the trivial representation is again the trivial representation, and of the adjoint representation is again the adjoint representation on the trivial Lie algebroid.
 \end{definition}
 
 
@@ -1041,9 +1046,9 @@ Recall that, although strictly speaking the spherical coordinates $(\phi, \theta
 From now on we will replace every instance of $\Omega_{U_{S}}, \Omega_{U_{N}}$ and $\Omega_{U_{SN}}$ by $\Omega_{S}, \Omega_{N}$ and $\Omega_{SN}$, respectively.
 
 Thanks to theorem \ref{theoremLocalizationOfEVectorValuedFormsIsomorphismOfDifferentialRespectsD} even if we don't know explicitly the form $\hat \omega \in \Omega^1(TP^k/S^1, P^k \times i\RR/S^1)$, we can still find (the local trivializations of) $\hat d \hat \omega$. Furthermore, we may apply theorem \ref{theoFormsAreDiffGModule} along with the second part or proposition \ref{propositionTLAFormsGradedSubalgebraAndTMDifferentialGradedSubalgebra} to show that
-\begin{equation*}
-    \hat d \hat \omega_S = \hat d (i\omega^\epsilon_{S;\mu}) \wedge dx^\mu + i  \omega^\epsilon_{S;\mu} d(dx^\mu) + \hat d(i \hat \omega^\epsilon_{S;i}) \wedge Im + \omega^\epsilon_{S;i} dx^\mu \hat d_{TU_S \times i\RR} Im;
-\end{equation*}
+    \begin{equation*}
+        \hat d \hat \omega_S = \hat d (i\omega^\epsilon_{S;\mu}) \wedge dx^\mu + i  \omega^\epsilon_{S;\mu} d(dx^\mu) + \hat d(i \hat \omega^\epsilon_{S;i}) \wedge Im + \omega^\epsilon_{S;i} dx^\mu \hat d_{TU_S \times i\RR} Im;
+    \end{equation*}
 notice that three distinct differentials are used in the previous equation. We may then apply the result obtained in \eqref{equationDifferentialOfFormDualToBasisLieAlgebra} to $Im \in C^\infty(U_S, (i \RR)^*)$ to conclude that 
 $$\hat d_{TU_S \times i\RR} Im = 0$$
 because $i\RR$ is commutative; also, we can apply \eqref{equationDifferential0FormwrtFrame} to conclude that
@@ -1138,6 +1143,7 @@ this follows from finding the decomposition of $\hat \alpha^i_j(dx^\mu)$ into th
 \end{remark}
 
 \section{Examples}
+\label{ChFormsSectionExamples}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
