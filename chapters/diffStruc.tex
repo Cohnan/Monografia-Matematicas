@@ -116,7 +116,7 @@ Due to the bijective correspondence between $C^\infty(U)$-linear maps between lo
     
 \end{remark}
 
-\lin
+
 
 
 
@@ -131,7 +131,7 @@ Let $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ be a transitive Lie alg
 The space $\lbtext{\Omega^\bullet(A, L)}$ of $L$-valued forms on $A$ will be an important example since (generalized) algebroid connections and their curvatures are particular cases of this type of differential forms on $A$.
 \end{example}
 
-\lin
+
 
 \begin{proposition}\label{propositionIsomorphOmegas}
 Let $U\subset M$ be open:
@@ -209,7 +209,7 @@ $(\Omega_U^\bullet(A, E), \hat d_\phi|_U)  = (\Omega^\bullet(A|_U, E|_U), \hat d
 Thanks to this theorem, every result and definition that is stated for global forms can and will be extended to local forms over every $U \subset M$ open, since $(\Omega_U^\bullet(A, E), \hat d_\phi|_U)$ is simply the differential complex where the underlying manifold is $U$. \ptext{ Every local differential $\hat d_\phi|_U$ will usually be denoted simply by $\hat d_\phi$}.
 \end{remark}
 
-\lin
+
 
 \begin{example}\label{exampleTraditionalCaseTangentBundleUpToDifferential}
 Let $A = TM$ given a manifold $M$. Then $(\Omega^\bullet (TM), \wedge, \hat d_{TM})$ is precisely the usual differential graded algebra and module $(\Omega^\bullet (M), \wedge, d)$ of differential forms on $M$.
@@ -220,7 +220,7 @@ Let $A = TM$ given a manifold $M$. Then $(\Omega^\bullet (TM), \wedge, \hat d_{T
 \end{example}
 
 \begin{example}\label{exampleScalarValuedFormsOnAUpToDifferential}
-Let $A$ act by the trivial action $\phi^0: A \to \alg D(M \times \bb R)$, i.e. considering $\Gamma(M \times \RR)$ as $C^\infty(M)$ and letting the representation be the anchor. The associated differential on $\Omega^\bullet(A)$ will be denoted by $\hat d_A$, making of \lbtext{$(\Omega^\bullet(A), \hat d_A)$} a differential complex. This space of differential forms will be a basic building block for other space of differential forms.
+Let $A$ act by the trivial action $\phi^0: A \to \alg D(M \times \bb R)$, i.e. considering $\Gamma(M \times \RR)$ as $C^\infty(M)$ and letting the representation be the anchor. The associated differential on $\Omega^\bullet(A)$ will be denoted by $\hat d_A$, making of \lbtext{$(\Omega^\bullet(A), \hat d_A)$} a differential complex. This space of differential forms will be a basic building block for other similar spaces.
 \end{example}
 
 \begin{example}\label{exampleLValuedFormsonTransitiveAUpToDifferential}
@@ -235,7 +235,7 @@ If $\phi: A \to \alg D(E)$ is an arbitrary representation on $E$, then on $\End(
 The resulting differential graded complex is $(\Omega^\bullet(A, \End(E)), \hat d_{\tilde \phi})$. This differential complex will arise when we define a generalized notion of covariant derivatives on $E$ called $A$-connection.
 \end{example}
 
-\linea
+ea
 
 So far we have seen that $(\Omega^\bullet(A, E), \hat d_\phi)$ is a differential complex over $\bb R$, but it will be so over the graded ring of scalar valued forms with the product defined below.
 
@@ -350,7 +350,7 @@ These results can be used to prove the graded Leibniz rule stated in the followi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-When the fiber of the representation vector bundle $E$ have an algebra structure, the differential complex $(\Omega^\bullet(A, E), \wedge, \hat d_\phi)$ will also be, under some circumstances, a multiplication called the wedge product of $E$-valued forms \ref{definitionWedgeProductEvaluedEValued}. The additional structure gained by the differential complex will make it a differential graded algebra, as we will see in this subsection. When $E$ is, furthermore, a LAB the differential graded algebra will have some additional properties that give rise to familiar properties of the different notions of connection and their curvatures.
+When the fiber of the representation vector bundle $E$ have an algebra structure, the differential complex $(\Omega^\bullet(A, E), \wedge, \hat d_\phi)$ will also be, under some circumstances, a multiplication called the wedge product of $E$-valued forms \ref{definitionWedgeProductEvaluedEValued}. The additional structure gained by the differential complex will make it a differential graded algebra, as we will see in this subsection. When $E$ is, furthermore, a LAB the differential graded algebra will have some additional properties that give rise to familiar properties for the different notions of connection and their curvatures soon to be defined.
 
 \begin{definition} \label{defnDiffGAlgebraLieALgebraMorphism}
 Let $\mathcal A = \oplus_{n = 0}^\infty \mathcal A^n$ be a graded (not necessarily associative) algebra over the field $\bb R$, and let $\cdot$ denote the product.
@@ -391,12 +391,12 @@ Let $\mathcal A = \oplus_{n = 0}^\infty \mathcal A^n$ be a graded (not necessari
 
 
 \begin{definition}\label{definitionWedgeProductEvaluedEValued}
-Let $E$ be an algebra bundle over $M$ with fiberwise multiplication $\bullet$, i.e. a vector bundle such that each fiber is an algebra and such that there exists an atlas compatible with the algebra multiplication .Suppose that $\phi$ is a Lie algebroid representation of $A$ on $E$, which, additionally, is compatible with the algebra product, i.e. it satisfies
+Let $E$ be an algebra bundle over $M$ with fiberwise multiplication $\bullet$, i.e. a vector bundle such that each fiber is an algebra and such that there exists an atlas compatible with the algebra multiplication. Suppose that $\phi$ is a Lie algebroid representation of $A$ on $E$, which, additionally, is compatible with the algebra product, i.e. it satisfies
 \begin{equation}
     \phi(\sectoid X)(\mu_1 \bullet \mu_2) = \phi(\sectoid X)(\mu_1) \bullet \mu_2 + \mu_1 \bullet \phi(\sectoid X)(\mu_2),
 \end{equation}
-for all $\sectoid in \Gamma(A)$ and all $\mu_1, \mu_2 \in \Gamma(E)$.
-Define on $\Omega^\bullet(A, E)$ the $C^\infty(M)$-bilinear operation operation, called \emph{the wedge product of algebra bundle-valued forms on $A$}
+for all $\sectoid X in \Gamma(A)$ and all $\mu_1, \mu_2 \in \Gamma(E)$.
+Define on $\Omega^\bullet(A, E)$ the $C^\infty(M)$-bilinear operation, called \emph{the wedge product of algebra bundle-valued forms on $A$}
 \begin{eqnsplit*}
 \wedge^\bullet : \Omega^\bullet(A, E) &\times \Omega^\bullet(A, E) \to \Omega^\bullet(A, E)
 \end{eqnsplit*}
@@ -414,12 +414,12 @@ for any $p$-form $\omega$, $q$-form $\eta$ and any $\sectoid X_1, \dots, \sectoi
 \begin{remark}\label{remarkWedgeofEVectorValuedFOrmsRestrictedLocal}
 Just as remarked in \ref{remarkTheModuleWedgeWOrksWellLocally} for the wedge product of scalar and $E$-valued forms, the $C^\infty(M)$-bilinearity of $\wedge^\bullet$ implies that it is a point operator, and so it has a restriction, also denoted by $\wedge$, to local forms in such a way that, for all $\omega$ and $\eta$ $E$-valued forms,
 \begin{equation}
-    (\omega \wedge^\bullet \eta)|_U = \omega|_U \wedge^\bullet \eta|_U
+    (\omega \wedge^\bullet \eta)|_U = \omega|_U \wedge^\bullet \eta|_U.
 \end{equation}
 \end{remark}
 
 \begin{theorem} \label{theoFormsAreDiffGAlgebebra}
-Let $E$ be an algebra bundle over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$. \textit{Then $(\Omega^\bullet(A, E), \wedge^\bullet, \hat d_\phi)$ is a differential graded algebra over $\Omega^\bullet(A)$}.
+Let $E$ be an algebra bundle over $M$ on which there is a representation $\phi: A \to \alg D(E)$ of $A$ which is compatible with the algebra product. \textit{Then, $(\Omega^\bullet(A, E), \wedge^\bullet, \hat d_\phi)$ is a differential graded algebra over $\RR$}.
 \end{theorem}
 
 \begin{proof}
@@ -441,7 +441,7 @@ In fact, $(\Omega^\bullet(A), \wedge, \hat d_A)$ is a differential graded-commut
 \end{example}
 
 \begin{theorem}\label{theoremLABImpliesDIfferentialGradedLieAlgebra}
-Let the representation space $E$ be a LAB. Then $(\Omega^\bullet(A, E),$ $\wedge^\bullet, \hat d_\phi)$ is a differential graded Lie algebra.
+Let the representation space $E$ be a LAB, with a representation compatible with the Lie algebra bracket. Then $(\Omega^\bullet(A, E),$ $\wedge^\bullet, \hat d_\phi)$ is a differential graded Lie algebra.
 \end{theorem}
 \begin{proof}
 All we need to see is that $(\Omega^\bullet(A, E), \wedge^\bullet)$ is a Lie graded superalgebra. The generalized anticommutativity of $(\Omega^\bullet(A, E), \wedge^\bullet)$ is easily seen from the definition of the $\wedge^\bullet$ in equation \eqref{definitionWedgeProductEvaluedEValued}; similarly, the graded Jacobi property can be verified through a manipulation of permutations in the same equation, applying the Jacobi rule of the field of Lie algebras on $E$. 
@@ -455,16 +455,16 @@ Recall the differential complex $(\Omega^\bullet(A, L), \hat d)$ of example \ref
 Recall the differential complex $(\Omega^\bullet(A, \End(E), \hat d_{\tilde \phi})$ of example \ref{exampleLValuedFormsonTransitiveAUpToDifferential} given a representation $\phi: A \to \alg D(E)$ that induces the representation $\tilde \phi:A \to \alg D(\End(E))$. Recall that $\End(E)$ is the kernel of the anchor of the transitive Lie algebroid $\alg D(E)$, meaning that $\End(E)$ is a LAB, where the Lie bracket on the space of sections is nothing but the commutator of vector bundle endomorphisms of $E$. Hence, given $\oid X \in A_m$ and $S, T \in \End(E_m)$, the compatibilitiy condition $\tilde \phi(\oid X)[S, T] = [\tilde \phi(\oid X)(S), T] + [S, \tilde \phi(\oid X)(T)]$ is simply the Jacobi identity of the commutator on $\End(E_m)$. Thus, theorem \ref{theoremLABImpliesDIfferentialGradedLieAlgebra} implies that $(\Omega^\bullet(A, \End(E)), \wedge^{[,]}, \hat d)$ is a differential graded Lie algebra.
 \end{example}
 
-\linea
+ea
 
 The following important theorem relates the notions of vector valued connections on principal bundles, that give rise to principal connections and their curvatures, and the theory of differential forms on the Atiyah Lie algebroid associated to the principal bundle. For the proofs refer to \cite{Mackenzie2005}; this follows essentially from the equivalence between $G$-invariant sections of $TP$ and sections of $TP/G$ stated in theorem \ref{theoSectTPG}, and of the $G$-invariant sections of $P \times \alg g$ with the sections of $P \times \alg g/G$ shown in theorem \ref{associatedExistsAndSections}.
 
 \begin{theorem}\label{theoFormsPrincipalAtiyahSameGInvariantEquivariantSubspaces}
 Let $G \to P \to M$ be a principal bundle over $M$. 
 \begin{itemize}
-    \item The differential graded module and algebra \textit{$(\Omega^\bullet(TP/G), \wedge, \hat d_{TP/G})$ is isomorphic to the subspace of $(\Omega^\bullet(TP), d)$ associated to the $R_*$-invariant  forms on $P$}.
+    \item The differential graded module and algebra \textit{$(\Omega^\bullet(TP/G), \wedge, \hat d_{TP/G})$ is isomorphic to the subspace of $(\Omega^\bullet(TP), \wedge, d)$ associated to the $R_*$-invariant  forms on $P$}.
     
-    \item Similarly, the differential graded module and algebra \textit{$(\Omega^\bullet(TP/G, P \times \alg g/G), \hat d)$ is isomorphic to the subspace of $(\Omega^\bullet(TP) \otimes \alg g, d)$ associated to the $(R_*, Ad)$-equivariant $\alg g$-valued forms on $P$}.
+    \item Similarly, the differential graded module and algebra \textit{$(\Omega^\bullet(TP/G, P \times \alg g/G), \hat d)$ is isomorphic to the subspace of $(\Omega^\bullet(TP) \otimes \alg g, \wedge, d)$ associated to the $(R_*, Ad)$-equivariant $\alg g$-valued forms on $P$}.
 \end{itemize} 
 \end{theorem}
 
@@ -473,7 +473,7 @@ Let $G \to P \to M$ be a principal bundle over $M$.
 \label{exampleComplexHopfConnectionAndCurvature}
 Recall that $\{\cl{\partial_\phi}, \cl{\partial_{\xi^1}}, \cl{\partial_{\xi^2}}\}$ is a local frame of the Atiyah Lie algebroid associated to the complex Hopf principal bundle $S^1 \to S^3 \to S^2$. So, the building blocks of any local form over $U_{SN}$ will be the dual frame, which we will denote by $\{\cl{d\phi}, \cl{d\xi_1}, \cl{\xi_2}\} \in \Omega^1(TS^3/S^1)$. 
 
-\noindent Since $L = S^3 \times i\RR / S^1$ has the global frame $\{i\}$, any section of $L$ can be written as $f\,i$ for some $f \in C^\infty(S^2)$. Hence, \textit{any $S^3 \times i\RR/S^1$-valued local form on $TS^3/S^1$ can be written as a wedge product of the forms $\{\cl{d\phi}, \cl{d\xi_1}, \cl{\xi_2}\}$, with coefficients in $C^\infty(S^2, i\RR)$}.
+\noindent Since $L = S^3 \times i\RR / S^1$ has the global frame $\{i\}$, any section of $L$ can be written as $f\,i$ for some $f \in C^\infty(S^2)$. Hence, \textit{any $S^3 \times i\RR/S^1$-valued local form of $TS^3/S^1$ over $U_{SN}$ can be written as a wedge product of the forms $\{\cl{d\phi}, \cl{d\xi_1}, \cl{\xi_2}\}$, with coefficients in $C^\infty(S^2, i\RR)$}.
 
 % An important local $1$-form on $TS^3/S^1$ over $U_{SN}$ is
 % \begin{equation}
@@ -496,7 +496,7 @@ Recall that $\{\cl{\partial_\phi}, \cl{\partial_{\xi^1}}, \cl{\partial_{\xi^2}}\
 % \end{equation}
 \noindent An important local $1$-form on $TS^3/S^1$ over $U_{SN}$ is
 \begin{equation}
-    \lbtext{\omega^{MP}_{}} := \frac{i}{2} d\xi^1 (1 + \cos \phi) \cl{d \xi_1} + \frac{i}{2} (1- \cos\phi)\cl{d\xi_2} \in \Omega_{U_{SN}}^1(TS^3/S^1, S^3 \times i\RR/S^1).
+    \lbtext{\omega^{MP}_{}} := \frac{i}{2} (1 + \cos \phi) \cl{d \xi_1} + \frac{i}{2} (1- \cos\phi)\cl{d\xi_2} \in \Omega_{U_{SN}}^1(TS^3/S^1, S^3 \times i\RR/S^1).
 \end{equation} This $1$-form is associated to the presence of a magnetic monopole on $3$-dimensional space.
 
 \noindent Due to theorem \ref{theoFormsPrincipalAtiyahSameGInvariantEquivariantSubspaces}, the differential $d$ of $G$-invariant forms on $P$ corresponds to the differential $\hat d_{TS^3/S^1}$ under the identification of $G$-invariant sections of $TS^3$ with sections of $TS^3/S^1$ shown in proposition \ref{3.1.3}. Hence, $\hat d_{TS^3/S^1} \cl{\xi_i} = \cl{d \xi_i}$, and, since $d^2 = 0$, 
@@ -595,7 +595,7 @@ Recall that $\{\cl{\partial_\phi}, \cl{\partial_{\xi^1}}, \cl{\partial_{\xi^2}}\
     
 % \end{itemize}
 % }
-% \linea
+% ea
 
 Our focus on this document is on transitive Lie algebroids, all of which are locally isomorphic to trivial Lie algebroids. This will allow us to think of global objects, in particular forms, as families of simple local objects. In this section we study the forms on trivial Lie algebroids, which will enable in the next section the study of differential forms on transitive Lie algebroids.
 
@@ -622,7 +622,7 @@ From now on the tilde notation used above to denote the image inside of $\Omega^
     
     \item $(C^\infty(M, \bigwedge^\bullet \alg g^*), \wedge)$ is a graded subalgebra of the space of scalar-valued forms on $TM \times \alg g$.
     
-    \item $(\Omega^\bullet(TM), \wedge, d)$ is a differential graded subalgebra of $(\Omega^\bullet(TM\times \alg g), \wedge, \hat d_{TM \times \alg g})$. Furthermore, the restriction of the differential $d_{TM \times \alg g}$ to $(\Omega^\bullet(TM)$ coincides with the traditional differential $d$ of forms on the manifold $M$.
+    \item $(\Omega^\bullet(TM), \wedge, d)$ is a differential graded subalgebra of $(\Omega^\bullet(TM\times \alg g), \wedge, \hat d_{TM \times \alg g})$. Furthermore, the restriction of the differential $d_{TM \times \alg g}$ to $\Omega^\bullet(TM)$ coincides with the traditional differential $d$ of forms on the manifold $M$.
 \end{itemize}
 
 \end{proposition}
@@ -640,7 +640,7 @@ where, for $i = 1, \dots, p+1$, $X_i \in \Gamma(TM)$ and $\eta_i \in C^\infty(M,
 \end{proof}
 
 \begin{remark}
-Notice that the subalgebra $C^\infty(M, \bigwedge^\bullet \alg g^*)$ \textit{is not closed under the application of the differential}. We can see this, for example, taking any function $f \in C^\infty(M)$ which is an element of $C^\infty(M, \bigwedge^0 \alg g^*)$ as well as of $\Omega^0(TM)$, but $\hat d_{TM \times \alg g} = df \in \Omega^1(TM) \not\subset C^\infty(M, \bigwedge^\bullet \alg g^*)$.
+Notice that the subalgebra $C^\infty(M, \bigwedge^\bullet \alg g^*)$ \textit{is not closed under the application of the differential}. We can see this, for example, taking any function $f \in C^\infty(M)$ which is an element of $C^\infty(M, \bigwedge^0 \alg g^*)$ as well as of $\Omega^0(TM)$, but $\hat d_{TM \times \alg g} = df \in \Omega^1(TM) \not\subset C^\infty(M, \bigwedge^\bullet \alg g^*)$, contrasting what is said in the guiding articles \cite{Lazzarini2012, Fournel2011, Fournel2013}.
 \end{remark}
 
 A formula that will be useful to use is the application of the differential to differential $1$-forms $C^\infty(M, \bigwedge^1 \alg g^*)$ when they are constant functions, e.g. taake constant values in elements of a basis $\{\epsilon^a\}_{a = 1, \dots, n}$ of $\alg g^*$ dual to a basis $\{E_a\}_{a = 1, \dots, n}$ of $\alg g$. Let $\epsilon$ be arbitrary in $C^\infty(M, \bigwedge^1 \alg g^*)$, then
@@ -786,7 +786,7 @@ On the fiber over $m \in M$ of $TM \times \alg g$ it is clear that the set of fo
 
 % \ptext{Due to this isomorphism, we will call $(\Omega^\bullet(TM) \otimes \bigwedge^\bullet \alg g^*, \wedge, \hat d_{triv})$ the space of scalar valued forms on the trivial Lie algebroid $TM \times \alg g$, and $\Omega^\bullet(TM)$ and $C^\infty(M, \bigwedge^\bullet \alg g^*)$ as subspaces.}
 % }
-% % \linea
+% % ea
 
 % % We now apply a similar result to the $L$-valued forms on the trivial Lie algebroid $A = TM \times \alg g$.\todo{Due to the next subsubsection, this section is redundant. Perhaps only an aclaration saying that $\hat d_\phi$ applied to the second factor is also denoted by $s'$ and is called the Cheva... of $\alg g$-valued forms}
 
@@ -833,7 +833,7 @@ On the fiber over $m \in M$ of $TM \times \alg g$ it is clear that the set of fo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-Similar results to those obtained for scalar-valued forms on Lie algebroids can be applied to the spaces of vector valued forms to build an alternative and useful description. Let $E = M \times V$ be a trivial vector bundle over $M$ with the vector space $V$ as the fiber, and let $A = TM \times \alg g$ be represented on $E$ through $\phi: TM \times \alg g \to \alg D(M \times V)$; denote by $B \in \Omega^1(TM, M \times \End(V))$ and $\phi_L \in C^\infty(M, \End(V))$ be the Maurer-Cartan form and Lie algebra endomorphism that trivialize the representation $\phi$. One important example if the case $E = L = M \times \alg g$, with the adjoint representation $\phi = ad$. Another example comes from taking $V$ a representation space of $G$, hence $V$ is also a representation space for $\alg g$, and this induces naturally a representation $\phi$. Notice that if $E$ is not a trivial vector bundle, on each trivializing neighborhood $U$ of $E$ we fall under the case we are presently studying.
+Similar results to those obtained for scalar-valued forms on Lie algebroids can be applied to the spaces of vector valued forms to build an alternative and useful description. Let $E = M \times V$ be a trivial vector bundle over $M$ with the vector space $V$ as the fiber, and let $A = TM \times \alg g$ be represented on $E$ through $\phi: TM \times \alg g \to \alg D(M \times V)$; denote by $B \in \Omega^1(TM, M \times \End(V))$ and let $\phi_L \in C^\infty(M, \End(V))$ be the Maurer-Cartan form and Lie algebra endomorphism that trivialize the representation $\phi$. One important example is the case $E = L = M \times \alg g$, with the adjoint representation $\phi = ad$. Another example comes from taking $V$ a representation vector space of $G$, hence $V$ is also a representation space for $\alg g$, and this induces naturally a representation $\phi$. Notice that if $E$ is not a trivial vector bundle, on each trivializing neighborhood $U$ of $E$ we fall under the case we are presently studying.
 
 The graded vector subspaces $\Omega^\bullet(TM, M \times V) = \Omega^\bullet(TM)\otimes V$ and $C^\infty(M,$ $ \bigwedge^\bullet \alg g^* \otimes V)$ may be seen as subspaces of the space $\Omega^\bullet(TM \times \alg g, M \times V)$; this is done in a way entirely analogous to what was done for scalar-valued forms in equations \eqref{equationInclusionAlgebraFormsInScalarValuedForms} and \eqref{equationInclusionTMFormsInScalarValuedForms}. Furthermore:
 \begin{proposition}
@@ -846,11 +846,11 @@ The graded vector subspaces $\Omega^\bullet(TM, M \times V) = \Omega^\bullet(TM)
 \end{proposition}
 
 \begin{remark}
-Neither $\Omega^\bullet(TM) \otimes V$ nor $C^\infty(M, \bigwedge^\bullet \alg g^* \otimes V)$ are closed under the differential $\hat d_\phi$. We can see this by taking a vector valued function $\mu$, which can be seen both as an element of $\Omega^0(TM)\otimes V$ and of $C^\infty(M, \bigwedge^0 \alg g^* \otimes V)$; then, as implied by equation \ref{equationDifferentialESection0FormLocalFrame},
+Neither $\Omega^\bullet(TM) \otimes V$ nor $C^\infty(M, \bigwedge^\bullet \alg g^* \otimes V)$ are closed under the differential $\hat d_\phi$. We can see this by taking a vector valued function $\mu$, which can be seen both as an element of $\Omega^0(TM)\otimes V$ and of $C^\infty(M, \bigwedge^0 \alg g^* \otimes V)$; then, as implied by equation \eqref{equationDifferentialESection0FormLocalFrame},
 \begin{eqnsplit}\label{equationDifferentialOfSection0FormInTrivialization}
     \hat d \mu(X \oplus \eta) &= X(\mu) \oplus (B(X)\mu + \phi_L(\eta)\mu).
 \end{eqnsplit}
-The previous equation further shows that under no representation $\phi$ is $C^\infty(M,$ $\bigwedge^\bullet \alg g^* \otimes V)$ closed under the differential, due to the first part of the left hand side, and that $\Omega^\bullet(TM)\otimes V$ is closed under $\hat d$ if and only if $B$ and $\phi_L$ are $0$, i.e. $\phi = a$ is the trivial representation. 
+The previous equation further shows that under no representation $\phi$ is $C^\infty(M,$ $\bigwedge^\bullet \alg g^* \otimes V)$ closed under the differential, due to the first part of the left hand side, and that $\Omega^\bullet(TM)\otimes V$ is closed under $\hat d$ if and only if $B$ and $\phi_L$ are $0$, i.e. $\phi = a$ is the trivial representation. This contrasts what is said in the guiding articles \cite{Lazzarini2012, Fournel2011, Fournel2013}.
 \end{remark}
 
 % \begin{theorem}\label{theoremTrivialFormsEValuedLValuedIsDifferentialModuleDefinitions}
@@ -992,7 +992,7 @@ Let $U$ be a trivializing neighborhood of $A$. The map
 \begin{eqnsplit}
 \cdot_{i} : (\Omega^\bullet_U(A, E), \wedge, \hat d_{\phi_i}) &\to (\Omega^\bullet(TU \oplus (U \times \alg g), U \times V), \wedge, \hat d_{\phi})
 \end{eqnsplit}
-is an isomorphism of differential graded modules. In particular
+is an isomorphism of differential complexes, over the isomorphism of the graded rings $\Omega^\bullet_U(A)$ and $\Omega^\bullet(TU \oplus (U \times \alg g))$. In particular
 \begin{equation}
     (\hat d \omega)_{i} = \hat d \omega_{i}.
 \end{equation}
@@ -1003,10 +1003,10 @@ Let $U$ be an arbitrary $U_i$. Since $\Omega^\bullet_U(A) = \Omega^\bullet(A|_U)
 All what's left to see is that the trivialization map respects the differential. Let $\omega \in \Omega^p(A, E)$, for some $p \in \ZZ_{\geq 0}$ and let $X_i \oplus \eta_i$, for $i = 1, \dots, p+1$ be arbitrary elements in $\Gamma(TU_i) \oplus C^\infty(U_i, \alg g)$, then:
 
 \begin{align*}
-    (\hat d_\phi \omega)_i&(X_1 \oplus \eta_1, \dots,  X_{p+1}\oplus \eta_{p+1}) \\ 
+    (\hat d_\phi &\omega)_i(X_1 \oplus \eta_1, \dots,  X_{p+1}\oplus \eta_{p+1}) \\ 
       &= \beta_i^{-1}[(\hat d_\phi \omega)_i(S_i(X_1 \oplus \eta_1), \dots,  S_i(X_{p+1}\oplus \eta_{p+1}))]\\
       &= \sum_{k=1}^{p+1} (-1)^{k+1} \beta^{-1} \comp \phi(S_i(X_k \oplus \eta_k))\cdot \omega( S_i(X_1\oplus \eta_1), \cdots,  S_i(X_{p+1}\oplus \eta_{p+1})) \\
-      &+ \sum_{1 \leq k < j \leq p+1} (-1)^{k+j}\beta_i^{-1}\comp\omega(S_i[ X_k \oplus \eta_k, X_j \oplus \eta_j], S_i(X_1 \oplus \eta_1), \cdots, S_i(X_{p+1} \oplus \eta_{p+1}))\\
+      &+ \sum_{1 \leq k < j \leq p+1} (-1)^{k+j}\beta_i^{-1}\comp\omega(S_i[ X_k \oplus \eta_k, X_j \oplus \eta_j], \cdots, S_i(X_{p+1} \oplus \eta_{p+1}))\\
       &= \sum_{k=1}^{p+1} (-1)^{k+1} \phi_i (X_k \oplus \eta_k)\cdot \omega_i( X_1\oplus \eta_1, \cdots,  X_{p+1}\oplus \eta_{p+1}) \\
       &+ \sum_{1 \leq k < j \leq p+1} (-1)^{k+j}\omega_i([ X_k \oplus \eta_k, X_j \oplus \eta_j], X_1 \oplus \eta_1, \cdots, X_{p+1} \oplus \eta_{p+1})\\
       &= \hat d_{\phi} \omega_i(X_1 \oplus \eta_1, \dots, X_{p+1} \oplus \eta_{p+1});
@@ -1014,7 +1014,7 @@ All what's left to see is that the trivialization map respects the differential.
 notice that in the second to last line both the fact that the representation used on each trivial Lie algebroid is the trivialization of the representation on $E$, and that the trivialization $S_i$ respects the Lie bracket of the algebroid.
 \end{proof}
 
-In particular, in two of our main examples: the differential graded algebra of scalar-valued differential forms $(\Omega^\bullet(A), \wedge, \hat d_A)$, and $(\Omega^\bullet(A,L), \hat d, \hat d)$, a differential graded Lie algebra and a differential complex over the graded ring $(\Omega^\bullet(A), \wedge)$, their local trivializations as forms on trivial Lie algebroids are spaces of the same type for the same representation, since the local trivialization of the trivial and the adjoint representations are themselves.
+In particular, in two of our main examples: the differential graded algebra of scalar-valued differential forms $(\Omega^\bullet(A), \wedge, \hat d_A)$, and $(\Omega^\bullet(A,L), \wedge^{[,]}, \hat d)$, a differential graded Lie algebra and a differential complex over the graded ring $(\Omega^\bullet(A), \wedge)$, their local trivializations as forms on trivial Lie algebroids are spaces of the same type for the same representation, since the local trivialization of the trivial and the adjoint representations are themselves.
 
 
 \begin{example}[$TP^k/S^1$ over $S^2$]\label{exampleFormsTPkBuildingBLocksandMostGeneral1FormOn}
@@ -1047,7 +1047,7 @@ From now on we will replace every instance of $\Omega_{U_{S}}, \Omega_{U_{N}}$ a
 
 Thanks to theorem \ref{theoremLocalizationOfEVectorValuedFormsIsomorphismOfDifferentialRespectsD} even if we don't know explicitly the form $\hat \omega \in \Omega^1(TP^k/S^1, P^k \times i\RR/S^1)$, we can still find (the local trivializations of) $\hat d \hat \omega$. Furthermore, we may apply theorem \ref{theoFormsAreDiffGModule} along with the second part or proposition \ref{propositionTLAFormsGradedSubalgebraAndTMDifferentialGradedSubalgebra} to show that
     \begin{equation*}
-        \hat d \hat \omega_S = \hat d (i\omega^\epsilon_{S;\mu}) \wedge dx^\mu + i  \omega^\epsilon_{S;\mu} d(dx^\mu) + \hat d(i \hat \omega^\epsilon_{S;i}) \wedge Im + \omega^\epsilon_{S;i} dx^\mu \hat d_{TU_S \times i\RR} Im;
+        \hat d \hat \omega_S = \hat d (i\omega^\epsilon_{S;\mu}) \wedge dx^\mu + i  \omega^\epsilon_{S;\mu} d(dx^\mu) + \hat d(i \hat \omega^\epsilon_{S;i}) \wedge Im + i\omega^\epsilon_{S;i} dx^\mu \wedge\hat d_{TU_S \times i\RR} Im;
     \end{equation*}
 notice that three distinct differentials are used in the previous equation. We may then apply the result obtained in \eqref{equationDifferentialOfFormDualToBasisLieAlgebra} to $Im \in C^\infty(U_S, (i \RR)^*)$ to conclude that 
 $$\hat d_{TU_S \times i\RR} Im = 0$$
@@ -1098,7 +1098,7 @@ Notice that $\hat \beta^i_j$ and $\hat \alpha^i_j$ are morphisms between $C^\inf
 \end{definition}
 
 \begin{theorem}\label{theoremHatAlphaRespectsDifferentialAndWedgeIsomorphismOfModulesAndAlgebra}
-$\hat \beta^i_j: \Omega_{U_{ij}}^q(TU_{ij}\times \alg g, U_{ij}\times V) \to \Omega_{U_{ij}}^q(TU_{ij}\times \alg g, U_{ij}\times V)$ is an isomorphism of differential graded modules. Furthermore, $\hat \alpha^i_j: \Omega^q(TU_{ij}\times \alg g) \to \Omega^q(TU_{ij}\times \alg g)$ is an isomorphism of differential graded algebras.
+$\hat \beta^i_j: \Omega_{U_{ij}}^q(TU_{ij}\times \alg g, U_{ij}\times V) \to \Omega_{U_{ij}}^q(TU_{ij}\times \alg g, U_{ij}\times V)$ is an isomorphism of differential graded complex. Furthermore, $\hat \alpha^i_j: \Omega^q(TU_{ij}\times \alg g) \to \Omega^q(TU_{ij}\times \alg g)$ is an isomorphism of differential graded algebras.
 \end{theorem}
 \begin{proof}
 First notice that $\hat \alpha^i_j$ is a special case of $\beta^i_j$, so we may only prove everything for general $E$-valued forms. Recall that, since a differential $d$ in a differential graded module is a local operator, a local version $\hat d|_U$ exists for all $U$ open in $M$, and it is such that $(d\omega)|_U = d|_U \omega|_U$; we will omit the $|_U$ besides the differentials for ease of reading.
@@ -1170,7 +1170,7 @@ so
 
 %Every global form on $TP^k/S^1$ has a local trivialization over $U_S = S^2 \setminus \{(0,0,-1)\}$ and, as we already saw in example \ref{exampleFormsTPkBuildingBLocksandMostGeneral1FormOn}, $Im \in \Omega^1(S^2 \times i\RR)$ can be used as a building block for all forms together with the differentials of the coordinates on $S^2$. Since $U_S$ covers all but one points of the base manifold $S^2$, the local trivialization of a global form $\hat \omega$ over $U_S$ determines completely the global form. However, not all local forms over $U_S$ can be extended to a global form. We will now 
 
-\lin 
+ 
 
 To be able to work with the coordinates $\vec x$ and $\vec y$ on $S^2$ defined in \eqref{equationvecxCoordinatesS2} and \eqref{equationvecyCoordinatesS2}, we will now find $d\theta$ in terms of them, and viceversa. We can combine the multiple coordinates that we have defined over $U_{SN} \subset S^2$ to conclude that every point might be written as
 \begin{equation}
@@ -1222,7 +1222,7 @@ and
     dy^2 &= \frac{ -2 x^1 x^2dx^1 + [(x^1)^2 - (x^2)^2] dx^2}{[(x^1)^2 + (x^2)^2]^2}.
 \end{eqnsplit}
 
-\lin 
+ 
 
 Using the notation of example \ref{exampleFormsTPkBuildingBLocksandMostGeneral1FormOn}, let 
 \begin{equation*}
@@ -1265,7 +1265,7 @@ notice, however, that these are not necessary conditions since there would be an
 
 In general, \rtext{a complete family of local trivializations of a form on $TP^k/S^1$, and hence the global form, may be found only from knowledge of one of its local trivializations over either of $U_S$ or $U_N$}. To see this, notice that each of $U_S$ and $U_N$ covers all of $S^2$ except for one point, implying that once we know the local trivialization of a form $\omega$ on $TP^k/S^1$ over, say, $U_S$, we can translate its restriction over $U_{SN}$ into the restriction over $U_{SN}$ of the trivialization of $\omega$ over $U_N$ using the $\hat \alpha^N_S$ map, which can then be extended by continuity to the complete trivialization of $\omega$ over $U_N$. 
 
-\lin 
+ 
 
 Lastly, let us notice that using equations \eqref{equationdxsInTermsOfDThetasS2COmplexHopf}, over $U_{SN}$ we may also write the local trivialization of the most general $1$-form on $TP^k/S$ as:
 \begin{eqnsplit}\label{equationPolarFormofGeneral1FormConnectionS2}
