@@ -1,0 +1,106 @@
+\section{Lie Algebroid Theory}
+
+\begin{frame}{Lie algebroid}
+
+   - Lie algebroid\cite{Mackenzie2005} $A$: vector bundle over $M$, with \emph{anchor} $a:A \to TM$ and \emph{bracket} $[\cdot, \cdot]_A: \Gamma(A) \times \Gamma(A) \to \Gamma(A)$.
+    \begin{equation}
+    \begin{tikzcd}[ampersand replacement=\&, column sep=small]
+    (A, [\cdot, \cdot]_A) \arrow{r}{a} \arrow{dr}{q} \& (TM, [\cdot, \cdot]) \arrow{d}{\pi}\\
+    \& M.
+    \end{tikzcd}
+    \end{equation}
+    - \textit{Examples}: $TM$, Lie Algebra Bun. (LAB), Involutive Distributions.
+    
+    - \emph{Transitive Lie algebroid}: $a$ is fiberwise surjective. Then $L \cong ker(a)$ is LAB, and induces:
+    \begin{equation*}
+        0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0.
+    \end{equation*}
+    \\
+    - \emph{Trivial Lie Algebroid} (TLA): Given Lie algebra $\alg g$, $TM \oplus (M \times \alg g)$. Bracket: $[X, \eta] := X(\eta)$, for $X \in \Gamma(M)$, $\eta \in C^\infty(M, \alg g)$.
+    % \begin{equation}
+    % \begin{tikzcd}[ampersand replacement=\&, column sep=small]
+    % (TM \oplus (M \times \alg g), [\cdot, \cdot]) \arrow{r}{pr_1} \arrow{dr}{\pi \oplus p_1} \& (TM, [\cdot, \cdot]) \arrow{d}{\pi}\\
+    % \& M.
+    % \end{tikzcd}
+    % \end{equation}
+    
+\end{frame}
+
+
+
+\begin{frame}{Examples}
+    \begin{equation*}
+        0 \to M \times \alg g \to TM \times \alg g \to TM \to 0
+    \end{equation*}
+    
+    - \emph{Atiyah Lie algebroid} of principal bundle $G \to P \to M$. Notice the short exact sequence of Lie algebras and $C^\infty(M)$-modules:
+    \begin{equation*}
+        0 \to C^\infty_G(P, \alg g) \xrightarrow{\overline{j}} \Gamma^G(TP) \xrightarrow{\pi_*} \Gamma(TM) \to 0,
+    \end{equation*}
+    induces the sequence of Lie algebroids:
+    \begin{equation*}
+        0 \to P \times \alg g/G \xrightarrow{j} TP/G \xrightarrow{\pi_*^G} TM \to 0,
+    \end{equation*}
+    
+    - \emph{Derivations Lie algebroid}: A \emph{derivation} $D: \Gamma(E) \to \Gamma(E)$ is such that:
+    $%\[
+        D(f \mu) - f D( \mu) = a(D)(f) \mu
+    $%\] 
+    , for some $a(D) \in \Gamma(TM)$. Then
+    \begin{equation*}
+        0 \rightarrow \End(E) \rightarrow \alg D(E) \xrightarrow{a} TM \rightarrow 0.
+    \end{equation*}
+    If $E = M \times V$ trivial v.b., then $\alg D(E) = TM \times \alg{gl}(V)$.
+    
+\end{frame}
+
+
+
+\begin{frame}{Lie Algebroid Atlas of transitive L.A.}
+    
+    - \emph{Morphism} $\phi$. Between TLAs is $\phi(X \oplus \eta) = X \oplus (\omega(X) + \phi_L(\eta))$.
+    
+    - \emph{Representation on E}: morphism $\phi: A \to \alg D(E)$.
+    Of $TP/G$ on associated v.b. $E = P \times V / G$: $\tilde{\phi(X)( \mu)}:= \overline{X}(\tilde{ \mu}) \in C^\infty_G(P, V).$
+    
+    - \emph{Algebroid Atlas}: $\{(U_i, \psi_i: U_i \times \alg g \to L|_{U_i}, \nabla^{0, i}: TU_i \to A|_{U_i})\}_{i \in I}$ such that the following is isomorphism of Lie algebroids
+    \begin{align}
+        S_i: TU_i \times \alg g &\to A|_{U_i} & X \oplus \eta &\mapsto \nabla^{0,i}_X \oplus j \psi_i(\eta).
+    \end{align}
+    Change of coordinates:
+    \begin{align}
+        S_j(X \oplus \eta) = S_i(X \oplus [\alpha^i_j(\eta) + \chi^i_j(X)])
+    \end{align}
+    - For $TP/G$, if $\sigma_i$ is local section and $g_{ij}$ transition map for $P$:
+    \begin{align*}
+        S_i(X \oplus \eta)&= \cl{\sigma_{i*}(X) + \der{t}[t = 0]\sigma_i(m) \exp{(-t \eta)}},\\
+         \alpha^i_j(\eta) &= g_{ij} \eta {g_{ij}}^{-1},&
+         \chi^i_j(X) &= g_{ij} dg^{-1}_{ij}.
+    \end{align*}
+    
+\end{frame}
+
+
+
+
+\begin{frame}{Examples}
+    - \emph{Group induced representation}: representation $\phi:TP/G \to $ $\alg D(P \times V/G)$ locally looks like:
+    \begin{equation}
+        \phi_i(X \oplus \eta) \psi = X(\psi) + \eta \cdot \psi.
+    \end{equation}
+    
+    \textit{Examples}:
+    $U_S = S^n \setminus NP$, $U_N = S^n \setminus SP$ atlas of spheres $S^n$. $S^1$-bundles over $S^2$ characterized by transition functions:
+    \begin{align*}
+        g^k_{NS}: U_{NS} &\subset S^2 \to S^1,&
+    E(\phi, \theta) &\mapsto e^{i k \theta}, \text{   then}
+    \end{align*}
+    \begin{align*}
+        \alpha^N_S &= Id = \alpha^S_N, & \chi^N_S &= -ikd\theta,&
+     \chi^S_N &= +ik d\theta.
+    \end{align*}
+    Hence, the following change of local trivialization holds:
+\begin{align*}
+    S^S_N(\partial_\phi) &= \partial_\phi, &  S^S_N(\partial_\theta), &= \partial_\theta \oplus ik, & S^S_N(i) &= i.
+\end{align*}
+\end{frame}

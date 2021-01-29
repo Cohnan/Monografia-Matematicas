@@ -1,0 +1,110 @@
+\section{Gauge Theory}
+
+\begin{frame}{Gauge Transformations}
+    Traditional infinitesimal gauge action of $\eta  \in \Gamma(P \times \alg g/G)$:
+    \begin{align*}
+        -\eta \cdot & \mu, &
+        d\eta &+ w \wedge \eta, &
+        - \eta \wedge  R;
+    \end{align*}
+    
+    - \emph{Gauge algebra of $A$}: $\Gamma(L)$.
+    
+    - Gauge action of $\eta \in \Gamma(L)$ on $A$:
+    \begin{align}
+        \hat d \eta + \hat \omega \wedge \eta && 
+        \hat R \wedge \eta; &&
+        \hat \nabla^\eta := \hat \nabla + [\hat \nabla, j\eta]&&
+        \tau^\eta := \tau + [\tau, \eta]
+    \end{align}
+    
+    - Gauge action of $\eta \in \Gamma(L)$ on $E$:
+    \begin{align}
+        \mu^\eta := \mu - \phi_L(\eta)\mu, && \hat \nabla^{E, \eta} := \hat \nabla^E + [\hat \nabla^E, j\phi_L(\eta)] && \hat R^E \wedge \eta
+    \end{align}
+    $
+        \hat \omega^{E, \eta} := \hat \omega^E + \hat d_E(\phi_L(\eta)) + \hat \omega^E \wedge \phi_L(\eta))
+    $
+    
+\end{frame}
+
+
+
+\begin{frame}{Gauge Action}
+    - \emph{Gauge Lagrangian density:} $\mathcal L_{gauge}[\hat \omega] := \int_{inner} h(\hat R, *\hat R)$,
+    
+    - \emph{Gauge action}: $\mathcal S_{gauge}[\hat \omega] := (\hat R, \hat R)$; invariant under infinitesimal gauge transformations of $\hat \omega$ if $h$ is Killing.
+    
+    New induced ordinary connection: $\omega := \hat \omega + \tau \comp \tilde {\alg a}$.
+    
+    - $\hat F := R - \tau \comp \tilde R \in \Omega^2(TM, L)$\\
+    - $(\mathcal D_X \tau)(\eta) := [\nabla_X, \tau(\eta)] - \tau[\tilde \nabla_X, \eta]\in \Omega^1(TM, End(L))$\\
+    - $[a^* \mathcal D \tau, \tilde \omega] (\oid X, \oid Y) := (\mathcal D_{a(\oid X)})(\tilde \omega \oid Y) - (\mathcal D_{a(\oid Y)})(\tilde \omega \oid X)$
+    
+    -$(\hat F_i)^a_{\mu \nu} = R^a_{\mu \nu} - \tau^a_b \tilde R^b_{\mu \nu}$
+    -$(\mathcal D \tau_i)^b_{\mu, a} = \partial_\mu (\tau_i)^b_a + (A_i)^c_\mu (\tau_i)^d_c C^b_{cd} - (\tilde A_i)_\mu^d C^c_{da} (\tau_i)^b_c$
+    - $(W_i)^c_{ab} = (\tau_i)^b_a (\tau_i)^e_b C^c_{de} - C^d_{ab}(\tau_i)^c_d$.
+
+    
+    
+
+%\textbf{Proposition}: The gauge Lagrangian density $\mathcal L_{gauge}$ is invariant under infinitesimal gauge transformations of the connection $\hat \omega$.% with respect to any $\eta \in \Gamma(L)$, up to first order terms in $\eta$.
+\end{frame}
+
+
+\begin{frame}
+    \begin{multline*}
+        \to \hat R = a^* \hat F - [a^* \mathcal D \tau, \tilde \omega] + \tilde \omega ^* R_\tau\\
+        = (\hat F_i)_{\mu \nu}^a E_a dx^\mu \wedge dx^\nu + 
+                    (\mathcal D \tau_i)^b_{\mu, a} E_b  dx^\mu \wedge (\alg a_i)^a +
+                    (W_i)^c_{ab} E_c (\alg a_i)^a \wedge (\alg a_i)^b
+    \end{multline*}
+    \begin{eqnsplit*}
+        \mathcal L_{gauge}& = 
+        [g_i^{\mu_1 \nu_1} g^{\mu_2 \nu_2} h_{cd} (\hat F_i)^c_{\mu_1 \mu_2} (\hat F_i)^d_{\nu_1 \nu_2} 
+        +  
+        g^{\mu \nu} h^{a b} h_{cd} (\mathcal D \tau_i)^c_{\mu, a} (\mathcal D \tau_i)^d_{\nu, b} \\
+        &\hfill 
+        + h^{a_1 b_1} g^{a_2 b_2} h_{cd} (W_i)^c_{a_1 a_2} (W_i)^d_{b_1 b_2}] \sqrt{|g_i|}dx^1 \wedge \cdots \wedge dx^m \\
+        &= \left[(\hat F_i)^c_{\mu \nu} (\hat F_i)_c^{\mu \nu} 
+        + (\mathcal D \tau)^c_{\mu, a} (\mathcal D \tau)_c^{\mu, a} 
+        + (W_i)^c_{ab} (W_i)_c^{ab}\right] vol_M.
+\end{eqnsplit*}
+\end{frame}
+
+\begin{frame}{Matter Action}
+    - \emph{Matter Lagrangian density:} $\mathcal L_{matter}[\mu, \hat \omega] := \int_{inner} h^E(\hat \nabla^E \mu, *\hat \nabla^E \mu)$,
+    
+    - \emph{Matter action}: $\mathcal S_{gauge}[\hat \omega] := (\hat \nabla^E \mu, \hat \nabla^E \mu)$; invariant under infinitesimal gauge transformations of $\hat \omega$ if $h^E$ is compatible with $\phi$.
+    
+    - $\hat \nabla^E \mu = a^* \phi(\nabla)\mu - (\phi_L(\tau) \mu)\comp \tilde \omega,$
+    \begin{eqnsplit*}
+        a^* \phi(\nabla)\mu_i &= [\partial_\nu (\mu_i)^u + (B_i)^u_{\nu, v} (\mu_i)^v + (\phi_{L, i})^u_{b, v} (A_i)_\nu^b (\mu_i)^v ]e_u dx^\nu\\
+        (\phi_L(\tau) \mu)\comp \tilde \omega_i &= [(\phi_{L, i})_{b, v}^u \tau^b_a \,(\mu_i)^v] e_u \alg a_i^a,
+    \end{eqnsplit*}
+    \begin{multline*}
+         \mathcal S_{matter} = (a^* \phi(\nabla)\mu, a^* \phi(\nabla)\mu) 
+        + ((\phi_L(\tau) \mu)\comp \tilde \omega, (\phi_L(\tau) \mu)\comp \tilde \omega)\\
+        = [g^{\nu_1 \nu_2} h^E_{u_1 u_2}  (a^* \phi(\nabla)\mu_i)_{\nu_1}^{u_1}(a^* \phi(\nabla)\mu_i)_{\nu_2}^{u_2}\\
+           + h^{a_1 a_2} h^E_{u_1 u_2} ((\phi_L(\tau) \mu)\comp \tilde \omega_i)_{a_1}^{u_1} ((\phi_L(\tau) \mu)\comp \tilde \omega_i)_{a_2}^{u_2}] \sqrt{|g_i|}dx^1 \wedge \cdots \wedge dx^m
+    \end{multline*}
+\end{frame}
+
+
+\begin{frame}{Example}
+    $\hat R_S = i(\partial_{1} \hat \omega^\epsilon_{S;2} - \partial_{2} \hat \omega^\epsilon_{S; 1} + i \partial_1 \tilde \tau \tilde \omega_{S; 2} - i \partial_2 \tilde \tau \tilde \omega_{S; 1}) dx^1 \wedge dx^2 
+    - i \partial_{1} \tilde \tau dx^1 \wedge \alg a^1 
+    -  i \partial_{2} \tilde \tau dx^2 \wedge \alg a^2.$
+    
+    \begin{multline}
+    \mathcal L_{gauge}[\hat \omega_S, \tilde \tau] = [-4(g_S^{12})^2 c (\partial_{1} \hat \omega^\epsilon_{S;2} - \partial_{2} \hat \omega^\epsilon_{S;1} + i \partial_1 \tilde \tau \tilde \omega_{S; 2} - i \partial_2 \tilde \tau \tilde \omega_{S; 1})^2 \\ + 
+        g_S^{11} c^2 (\partial_1 \tilde \tau)^2 + 2g_S^{12} c^2 (\partial_1 \tilde \tau)(\partial_2 \tilde \tau) \\ + g_S^{22} c^2 (\partial_2 \tilde \tau)^2
+        +0] \sqrt{|g_S|}dx^1 \wedge dx^2.
+\end{multline}
+
+\begin{multline}
+    \mathcal L_{matter}[\hat \omega_S, \tilde \tau, \psi_i] =
+    [g_S^{\mu \nu} c^E (\partial_\mu \psi_S + h \omega_{S; \mu}  \psi_S)\cdot(\partial_\nu \psi_S + h \omega_{S; \nu}  \psi_S) \\
+    \\+ c(i \tilde \tau h \psi_S)^2] \sqrt{|g_i|}dx^1 \wedge  dx^2,
+\end{multline}
+\end{frame}

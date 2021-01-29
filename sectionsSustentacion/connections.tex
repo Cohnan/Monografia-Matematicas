@@ -1,0 +1,48 @@
+\section{Connections and $A$-Connections}
+
+\begin{frame}{Connections on $A$}
+    %In traditional gauge theories, connections are introduced on the principal bundle, also called gauge potentials, to induce covariant derivatives on the representation vector bundles. It is this kind of covariant derivative what guarantees that the equations of motion of matter fields, i.e. sections, are preserved under a change of gauge (local).
+    In traditional gauge theories, gauge potentials are introduced to induce covariant derivatives on matter fields.
+    The same will happen here: connections on $A$ will induce a generalized version of covariant derivatives on representation vector bundles, called $A$-connections.
+    
+    - \emph{Ordinary connection on $A$}: $\nabla: TM \to A$ section of $a$. Equiv. to $\omega \in \Omega^1(A, L)$ such that $\omega \comp j = -1_L$. \todo{horizontality, lift} E.g. connections on $P$ and $E$.
+    
+    - \emph{Connection form on $A$} $\hat \omega \in \Omega^1(A, L)$. $\tau = \hat \omega \comp j + 1_L \in End(L)$.
+    
+    Equivalent to anchor preserving v.b. map: $\hat \nabla_{\oid X} = \oid X + j \comp \hat \omega(\oid X)$.
+    
+    - \emph{Curvature Form}\todo{measure Lie morphism}: $\hat R := \hat d \hat \omega + \frac{1}{2} \hat \omega \wedge^{[,]} \hat \omega \in \Omega^2(A, L)$. \\Bianchi Identity: $\hat d \hat R + \hat \omega \wedge^{[,]} \hat R = 0$.\\ - \emph{Algebraic curvature of $\tau$}: $R_\tau(\eta, \theta) := [\tau(\eta), \tau(\theta)] - \tau[\eta, \theta]$. 
+\end{frame}
+
+
+
+\begin{frame}{A-Connection and Local Trivializations}
+    - \emph{$A$-Connection on $E$}: $\hat \nabla^E: A \to \alg D(E)$ anchor preserving v.b. map. E.g. covariant derivatives on $E$.
+    
+    - Given $\phi$, equivalent to $\hat \omega^E \in \Omega^1(A, End(E))$, with representation $\tilde \phi$, $\tilde \phi(\oid X) = [\phi(\oid X), \cdot] \in End(E)$: $\hat \nabla^E_{\oid X} = \phi(\oid X) + j\comp \hat \omega^E(\oid X)$.
+    
+    - \emph{Curvature}\todo{measure Lie}: $\hat R^E = \hat d_{E} \hat \omega^E + \frac{1}{2} \hat \omega^E \wedge^{[,]} \hat \omega^E$. Satisfies Bianchi.
+    
+    - \emph{Produced $A$-connection}: given $\hat \omega$, $\hat \nabla^{E, \hat \omega} := \phi \comp \hat \nabla$, $\hat \omega^E = \phi_L \comp \hat \omega$
+    
+    \textit{Local Trivializations:}
+    
+    - $\hat \omega_i = A_i \oplus (-\epsilon + \tau_i)$ and $\hat \nabla^i_{X \oplus \eta} = X \oplus (A_i(X) - \tau_i(\eta))$.
+    
+    - $\hat \nabla^{E, \hat \omega}_{X \oplus \eta} = X \oplus (B_i(X) + \phi_L \comp A_i(X) - \phi_L \comp \tau(\eta))$. \todo{$2$ extra terms}
+    
+\end{frame}
+
+
+
+\begin{frame}{Examples}
+    - Group produced $A$-connection: $\{E_a\}$ basis of $\alg g$. $\hat \nabla^{E, \hat \omega, i}_{X \oplus \eta} \psi = X(\psi) + i A_i^b(X) E_b \cdot \psi - \tau^b_a \eta^a E_b \cdot \psi$.
+    
+    Example $TP^k/S^2$ over $U_S$:
+    
+    $$\hat \omega_S = i\hat \omega^\epsilon_{S; 1} dx^1 + i\hat \omega^\epsilon_{S; 2} dx^2 - Im + i \tilde \tau Im,$$ where $\tilde \tau = \hat \omega^\epsilon_{S; i} + 1$.
+    
+    Curvature:
+    $$\hat R_S = \hat d \hat \omega_S 
+        = i(\partial_{1} \hat \omega^\epsilon_{S;2} - \partial_{2} \hat \omega^\epsilon_{S; 1}) dx^1 \wedge dx^2 + i \partial_{1} \tilde \tau dx^1 \wedge Im +  i \partial_{2} \tilde \tau dx^2 \wedge Im$$
+\end{frame}

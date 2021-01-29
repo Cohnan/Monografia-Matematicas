@@ -1,0 +1,256 @@
+\documentclass{beamer}
+
+%%% Packages
+\usepackage{amssymb, amsmath, amsthm}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{biblatex} \addbibresource{bibliografia.bib}
+
+% TODO notes package
+\usepackage{xargs}                  % Use more than one optional parameter in a new command
+%\usepackage[pdftex,dvipsnames]{xcolor}
+\input{tools/todoCode}
+
+% Colored text and boxes with my color conventions for highlighting
+%\usepackage[dvipsnames]{xcolor}
+\input{tools/colorCode}
+
+% Math symbols
+\usepackage{xparse}
+\input{tools/common_math_symbols}
+
+% Physics symbols (vectors, units)
+%\usepackage{tikz}
+%\input{tools/physics_macros}
+
+% Theorem environments
+%\input{tools/theorem_definitions}
+
+\usepackage{tikz-cd} %To do Commutative Diagrams
+
+% Extras
+\newcommand{\linea}{\rule{10cm}{1mm}}
+\newcommand{\lin}{\rule{5cm}{0.4mm}}
+\usepackage{ulem}
+%\renewcommand{\theequation}{\thechapter.\arabic{equation}} % To label Ch 0 equations as 0.1, 0.2, etc
+
+% %%%%%%%
+% \newenvironment{dedication}
+%   {\clearpage           % we want a new page
+%   \thispagestyle{empty}% no header and footer
+%   \vspace*{\stretch{1}}% some space at the top 
+%   \raggedleft          % flush to the right margin
+%   }
+%   {\par % end the paragraph
+%   \vspace{\stretch{3}} % space at bottom is three times that at the top
+%   \clearpage           % finish off the page
+%   }
+
+%%%%%%%
+\graphicspath{ {images/} }
+
+%%%%%%%
+% \theoremstyle{definition}
+% \newtheorem{example}{Example}[section]
+% \newtheorem{definition}[example]{Definition}
+% \newtheorem{theorem}[example]{Theorem}
+% \newtheorem{proposition}[example]{Proposition}
+% \newtheorem{lemma}[example]{Lemma}
+% \newtheorem{corollary}[example]{Corollary}
+% \newtheorem{notation}[example]{Notation}
+% \newtheorem{remark}[example]{Remark}
+
+\usepackage{environ}
+
+\NewEnviron{eqnsplit}{%
+  \begin{equation}
+  \begin{split}
+    \BODY
+  \end{split}
+  \end{equation}
+}
+
+\NewEnviron{eqnsplit*}{%
+  \begin{equation*}
+  \begin{split}
+    \BODY
+  \end{split}
+  \end{equation*}
+}
+
+% Compile document without proofs
+\usepackage{comment}
+
+%\excludecomment{proof}
+%%%%%%%
+
+\newcommand{\vphi}{\varphi}
+\newcommand{\vepsilon}{\varepsilon}
+\newcommand{\conj}[1]{\overline{#1}}
+
+\DeclareMathOperator{\HH}{\bb H}
+\DeclareMathOperator{\FF}{\bb F}
+\DeclareMathOperator{\diffeo}{\cong}
+\DeclareMathOperator{\tr}{tr}
+
+\DeclareMathOperator{\Diff}{\textit{Diff}}
+\DeclareMathOperator{\Hom}{\textit{Hom}}
+\DeclareMathOperator{\End}{\textit{End}}
+\DeclareMathOperator{\Alt}{\textit{Alt}}
+\DeclareMathOperator{\Sym}{\textit{Sym}}
+
+
+\newcommand{\algeb}[1]{\mathfrak{#1}}
+\newcommand{\alg}[1]{\mathfrak{#1}}
+\newcommand{\oid}[1]{\ensuremath{\mathfrak{#1}}}
+\newcommand{\ppal}[1]{\ensuremath{\mathcal{#1}}}
+
+\newcommand{\sect}[1]{\ensuremath{\bm{#1}}} % Boldface that affects greek letters
+\newcommand{\sectalg}[1]{\sect{\alg{#1}}}
+\newcommand{\sectoid}[1]{\sect{\oid{#1}}}
+\newcommand{\sectppal}[1]{\sect{\ppal{#1}}}
+
+\newcommand{\cl}[1]{\ensuremath{\left\langle #1 \right\rangle}}
+\newcommand{\upsect}[1]{\overline{\sect{#1}}}
+\newcommand{\up}[1]{\overline{#1}}
+\newcommand{\downsect}[1]{\cl{\sect{#1}}}
+\newcommand{\down}[1]{\cl{#1}}
+
+\let\oldtilde\tilde
+\renewcommand{\tilde}{\widetilde}
+\newcommand{\stilde}[1]{\tilde{\sect{#1}}}
+
+\DeclareMathOperator{\comp}{\circ}
+
+%%%%%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{Darmstadt}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{beaver}%seagull} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+% Show number of slides at the bottom
+\addtobeamertemplate{navigation symbols}{}{%
+    \usebeamerfont{footline}%
+    \usebeamercolor[fg]{footline}%
+    \hspace{1em}%
+    \insertframenumber/\inserttotalframenumber
+}
+
+%%%%%% Show TOC before a new Section
+\AtBeginSection[]
+{
+    \begin{frame}[noframenumbering]{Table of Contents}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+
+% Show TOC before a new SubSection
+\AtBeginSubsection[]
+{
+    \begin{frame}[noframenumbering]{Table of Contents}
+        \tableofcontents[currentsection,currentsubsection]
+    \end{frame}
+}
+% Reduce size of TOC
+\AtBeginDocument{
+  %\addtocontents{toc}{\tiny}
+  %\addtocontents{subsection in toc}{\tiny}
+}
+
+%\setbeamerfont{subsection in toc}{size=\tiny}
+
+%%%%%% Make paragraphs start with no indentation and leave spaces between paragraphs
+% \setlength{\parindent}{0em}
+ \setlength{\parskip}{1em}
+
+% \renewcommand\englishhyphenmins{22}
+% \usepackage{microtype}
+
+%%%%%% Document Information
+\title[l]{Gauge Theories on Transitive Lie Algebroids}
+\author{Sebastian Puerto}
+\institute{Universidad de los Andes\\ Proyecto de Grado}
+\date{December 18, 2020}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{frame}[noframenumbering]
+  \titlepage
+\end{frame}
+
+\begin{frame}{The Complete Framework} % % % % % % % % % % % % % % % % % % %
+An \emph{orientable} \emph{transitive Lie algebroid} $A$, over a base manifold $M$, equipped with a \emph{metric} $\hat g \equiv (g, h, \tilde \nabla)$, with an \emph{adjoint Lie algebroid} $L$ on which $h$ is a \emph{Killing metric}, and a vector bundle $E$ on which there is a \emph{representation} $\phi: A \to \alg D(E)$ and a metric $h^E$ \emph{compatible with $\phi$}.
+
+Then, the gauge theory is determined by its action functional: given a \emph{connection form} $\hat \omega$ on $A$ with \emph{curvature} $\hat R$, and a \emph{matter field} $\mu \in \Gamma(E)$, the \emph{action} is:
+\begin{eqnsplit*}
+\mathcal S[\hat \omega, \hat \mu] &= \int_A h(\hat R, *\hat R) + \int_A h^E(\hat \nabla^E \mu, \hat \nabla^E\mu)\\
+    &= \int_M [ \mathcal L_{gauge}[\hat \omega] + \mathcal L_{matter}[\hat \omega, \mu]] ,
+\end{eqnsplit*}
+where $\hat \nabla^E$ is the \emph{$A$-connection on $E$ produced by the connection} $\hat \omega$ given the representation $\phi$ \cite{Fournel2013}.
+
+\end{frame}
+
+% Uncomment these lines for an automatically generated outline.
+\begin{frame}[noframenumbering]{Outline}
+  \tableofcontents
+\end{frame}
+
+
+
+\begin{frame}{Conventions}
+
+    - $A$ is Lie algebroid with anchor $a$ and bracket $[\cdot, \cdot]$
+    \\- $p:E \to M$ is a vector bundle with typical fiber $V$. Let $\{e_u\}_{u = 1, \dots, t}$ denote a basis of $E$, dual to $\{\tilde e^u\}$.
+    \\- $\alg g$ denotes a Lie algebra. Let $\{E_a\}_{a, \dots }$ be a basis, dual to $\{\epsilon^a\}$.
+    \\- $G \to P \to M$ denotes a principal bundle, and $\text{Lie}(G) = \alg g$.
+    \\- $X \in TM$ or $X \in \Gamma(TM)$, depending on context.
+    \\- $\eta, \theta$ either in $\alg g$ or in $C^\infty(M, \alg g)$, or in a LAB, or in a section of a LAB.
+    \\- $0 \rightarrow L \rightarrow A \xrightarrow{a} TM \rightarrow 0$ is transitive Lie algebroid sequence.
+    \\- $\phi: A \to \alg D(E)$ is a representation, with vertical part $\phi_L$.
+    
+    \end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{sectionsSustentacion/algebroids}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{sectionsSustentacion/forms}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{sectionsSustentacion/connections}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{sectionsSustentacion/integrals}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{sectionsSustentacion/gauge}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{sectionsSustentacion/conclusionsFurther}
+
+\printbibliography[title=References]
+
+\end{document}

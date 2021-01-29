@@ -1,0 +1,73 @@
+\section{Differential Forms}
+
+\begin{frame}
+    \textit{Why?}\cite{Fournel2011, Lazzarini2012} \textbf{Connection form} formulation of principal bundle connection will be generalized. Moreover, forms are what can be \textbf{integrated}, so to define the Lagrangian and action functional.
+    
+    - \emph{$E$-valued differential forms on $A$}: $\omega \in \Omega_U^p(A, E)$ is an alternating v.b. map $\omega : A|_U \otimes \cdots \otimes A|_U \to E|_U$. $\Omega^\bullet(A, E)$ is $C^\infty(M)$-module.\\
+    \textit{E.g.:} $\Omega^\bullet(TM)$, $\Omega^\bullet(TP, P \times \alg g)$, $\Omega^\bullet(A)$, $\Omega^\bullet(A, L)$, $\Omega^\bullet(A, \End(E))$.
+    
+    - We need: \\
+    1. \emph{Local trivializations}: forms on $\Omega^\bullet(TU_i \times \alg g, U_i \times V)$, $\omega_i = \sum_{r + s = p} (\omega_i^\epsilon)_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}\wedge dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \epsilon^{a_1} \wedge \cdots \wedge \epsilon^{a_s}$.\\
+    2. A \emph{connection form on $A$}: $\hat \omega \in \Omega^1(A,L)$ with \emph{curvature form} $\hat R = \hat d \hat \omega + \frac{1}{2} \hat \omega \wedge^{[,]} \hat \omega$.
+    
+    - To define $\hat d_\phi$: representation $\phi$ needed $\to$ Lie bracket $\to \hat d_\phi^2 = 0$: 
+    $\hat d_\phi \omega(\oid X_1, \dots, \oid X_{p+1}) = \sum_{i=1}^{p+1} (-1)^{i+1} \phi(\oid X_i)\cdot \omega(\oid X_1, \cdots, \overset{\vee}{i}, \cdots, \oid X_{p+1})$ \\
+    $+ \sum_{1 \leq i < j \leq p+1} (-1)^{i+j}\omega([\oid X_i, \oid X_j], \oid X_1, \cdots, \overset{\vee}{i}, \cdots, \overset{\vee}{j}, \cdots, \oid X_{p+1})
+    $.
+
+\end{frame}
+
+\begin{frame}{Background}
+    
+    - \emph{Wedge product}: For $\Omega^\bullet(A)$ with $\Omega^\bullet(A)$ $|$ $\Omega^\bullet(A)$ with $\Omega^\bullet(A,E)$ $|$ \& $\Omega^\bullet(A,E)$ with $\Omega^\bullet(A,E)$ if $(E, \bullet)$ is AB and \emph{$\phi$ compatible with $\bullet$}: \quad $(\omega \wedge \eta)(\oid X_1, \dots, \oid X_{p+q}) :=$ 
+    $\frac{1}{p!q!} \sum_{\sigma \in S_{p+q}} (-1)^{\sigma} \omega(\oid X_{\sigma(1)}, \cdots, \oid X_{\sigma(p)}) \bullet \eta(\oid X_{\sigma(p+1)}, \cdots, \oid X_{\sigma(p+q)}).$
+    
+    Compatibility: $\hat d_\phi(\omega \wedge \eta) = (\hat d_\phi\omega)\wedge \eta + (-1)^{|\omega|} \omega \wedge (\hat d_\phi\eta)$.
+        
+    - \textbf{Theorem}: 
+    \begin{itemize}
+        \item $(\Omega^\bullet(A), \wedge, \hat d_A)$ is differential graded commutative algebra;
+        
+        \item $(\Omega^\bullet(A, E), \hat d_\phi)$ is differential complex over $(\Omega^\bullet(A), \wedge)$ and satisfies graded Leibniz;
+        
+        \item $(\Omega^\bullet(A, E), \wedge, \hat d_{\phi})$ is differential graded Lie algebra if $(E, [\cdot, \cdot])$ is LAB and $\phi$ is compatible with $[\cdot, \cdot]$. 
+        
+    \end{itemize}
+    
+    - TP/G
+    \end{frame}
+
+\begin{frame}{Local Trivialization}
+    Local trivialization of forms:
+    
+   $\omega_i : (TU_i \times \alg g)^p \xrightarrow{S_i} (A|_{U_i})^p \xrightarrow{\omega} E|_{U_i} \xrightarrow{\beta_i^{-1}} U_i \times V$
+    
+    - \textbf{Theorem}: The trivializing map $\cdot_i$ is an isomorphism of differential complexes. If $\Omega(A, E)$ is DGA, it also respects the wedge product.
+    
+%     - \begin{theorem}\label{theoremHatAlphaRespectsDifferentialAndWedgeIsomorphismOfModulesAndAlgebra}
+% $\hat \beta^i_j: \Omega_{U_{ij}}^q(TU_{ij}\times \alg g, U_{ij}\times V) \to \Omega_{U_{ij}}^q(TU_{ij}\times \alg g, U_{ij}\times V)$ is an isomorphism of differential graded modules. Furthermore, if they are DGAs, it is also isomorphism of DGAs.
+% \end{theorem}
+
+- Change of trivialization: if $\beta_i$ is trivialization of $E$, $\hat \beta^i_j(\omega_j) = \omega_i = \beta^i_j \comp \omega_j \comp S_i^j$. For $\Omega^\bullet (A)$ and $\Omega^\bullet(A, L)$ we call it $\alpha^i_j$.
+
+\end{frame}
+
+\begin{frame}{Examples}
+
+Local triv. of an element in $\Omega^1(TP^k/S^1, P^k \times i\RR/S^1)$ over $U_S$
+\begin{equation}
+    \hat \omega_S = i\hat \omega^\epsilon_{S; 1}(\phi, \theta) dx^1 + i\hat \omega^\epsilon_{S; 2}(\phi, \theta) dx^2 + i\hat \omega^\epsilon_{S; i}(\phi, \theta) Im;
+\end{equation}
+Since $U_S$ covers all but one point, we can evaluate $\hat \alpha^N_S(\hat \omega|_{U_{SN}})$ to find the complete family of triv., if $\Omega \in \Omega^1(TP^k/S^1, P^k \times i\RR/S^1)$ exists.  $\hat \omega_S$ is the local trivialization of a global form. For example: derivatives $\hat \omega_{S; 1}^\epsilon(\vec y = 0)^{(n)}=0$, $n = 0,1,2$ and $\hat \omega_{S; i}^\epsilon(\vec y)^{(m)} = 0$, $m= 0,1$.
+
+Differential: $(\hat d \omega)_S = \hat d \omega_S$:
+\begin{equation*}
+    \hat d \hat \omega_S = \hat d (i\omega^\epsilon_{S;\mu}) \wedge dx^\mu + i  \omega^\epsilon_{S;\mu} d(dx^\mu) + \hat d(i \hat \omega^\epsilon_{S;i}) \wedge Im + \omega^\epsilon_{S;i} \hat d_{TU_S \times i\RR} Im;
+\end{equation*}
+using that $i\RR$ is commutative: $\hat d_{TU_S \times i\RR} Im = 0$ and $\hat d (i \omega^\epsilon_{S;\cdot}) = i d\omega^\epsilon_{S;\cdot}$, hence
+\begin{equation}
+    \hat d \omega_S = i(\partial_1 \omega^\epsilon_{S;2} - \partial_2 \omega^\epsilon_{S;1}) dx^1 \wedge dx^2 + i \partial_1 \omega^\epsilon_{S;i} dx^1 \wedge Im + i \partial_2 \omega^\epsilon_{S;2} dx^2 \wedge Im
+\end{equation}
+
+
+\end{frame}

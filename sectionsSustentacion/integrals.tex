@@ -1,0 +1,72 @@
+\section{Metrics and Integration}
+
+\begin{frame}{Metric on Representation Vector Bundles}
+    
+    Yang-Mills-Higgs Action: $ S[\omega, \psi]=\int_M ||R||^2 + ||\hat \nabla^{E, \omega} \psi||^2$
+    
+    - \emph{(Degenerate) metric on $E$}: $h^E: E \otimes E \to M \times \RR$ symmetric.
+    
+    $h^E: \Omega^p(A, E) \otimes \Omega^q(A, E) \to \Omega^{p+q}(A)$ by
+    \begin{multline*}
+        h^E(\omega, \eta)(\oid X_1, \dots, \oid X_{p+q}) :=\\ \frac{1}{p!q!} \sum_{\sigma \in Sym_{p+q}} 
+        h^E\left( \omega(\oid X_{\sigma(1)}, \dots, \oid X_{\sigma(p)}),  \eta(\oid X_{\sigma(p+1)}, \dots, \oid X_{\sigma_{p+q}}) \right);
+    \end{multline*}
+    in trivialization: $h^E|_{U_i}(\omega, \eta) = h^{E,i}_{uv}\,\omega^u \wedge \eta^v$.
+    
+    - \emph{$h^E$ compatible with $\phi$}: $h^E(\phi_L(\eta) \mu_1, \mu_2) + h^E(\mu_1, \phi_L(\eta)\mu_2) = 0$.
+    
+    If $E = L$, it is called \emph{a Killing inner metric on $A$}.
+\end{frame}
+
+
+
+\begin{frame}{Metric on $A$}
+    - Metric $\hat g$ on $A$: equivalent to $(g, h, \tilde \nabla)$ by $$\hat g(\oid X, \oid Y) = g(a(\oid X), a(\oid Y)) + h(\alg a(\oid X), \alg a(\oid Y)).$$
+    
+    - Then subbundles $\{\tilde \nabla_X\} =: \mathcal H A$ and $jL$ are orthogonal. Locally $\{\tilde \nabla^i_{\mu}\}_\mu$ with $\{-E_a\}_a$ are basis, hance a local frame of $A$.
+    
+    It is dual to $\{dx^\mu, \alg a^a\}$, where $\alg a =  E_a \alg a^a$ is form associated to $\tilde \nabla$.
+    
+    Then $\hat g^i = g^i_{\mu \nu} dx^\mu \otimes dx^\nu + h^i_{ab} \alg a^a \wedge \alg a^b$, and any form $\beta \in \Omega^p(A, E)$ has decomposition:
+    $
+    \beta_i = \sum_{r + s = p} \emph{\left(\beta_i \right)_{\mu_1 \cdots \mu_r, a_1 \cdots a_s}} \, dx^{\mu_1} \wedge \cdots \wedge dx^{\mu_r} \wedge \alg a_i^{a_1} \wedge \cdots \wedge \alg a_i^{a_s}.
+    $
+    
+\end{frame}
+
+
+
+\begin{frame}{Integration of scalar valued forms}
+    
+    - $L$ orientable, then $\omega_{h, \alg a}^i := (-1)^n \sqrt{|h^i|} \alg a_i^{1} \wedge \cdots \wedge \alg a_i^{n} $ is the trivialization of the \emph{inner volume form of $A$}.
+    
+    \emph{Inner integration}: write arbitrary form $\beta_i = \beta^{M}_i \wedge \omega_{h, \alg a} + \beta_i^R$. Then $\int_{inner} \beta := \beta^M$.
+    
+    - $A$ orientable, \emph{volume form of $A$} $\omega^{Vol}= \sqrt{|g^i|} dx^1 \wedge \cdots \wedge dx^m \omega_{h, a}$.
+    \\\emph{Integration over $A$}: 
+    $\int_A \beta := \int_M \int_{inner} \beta$.
+    
+    - $g^{-1}_{h^E}: \Omega^p(A, E) \otimes \Omega^p(A, E) \to C^\infty(M)$ defined by
+    $\emph{\hat g^i_{h}{}^{-1} (\alpha_i, \beta_i)} 
+    := \sum_{r+s = p} \frac{1}{p!}  \boxed{g^{\mu_1 \nu_1} \cdots g^{\mu_r \nu_r} h^{a_1 b_1} \cdots h^{a_s b_s} h^E_{uv} \alpha^u_{\mu_1 \dots \mu_r a_1 \dots a_s}} \beta^v_{\nu_1 \dots \nu_r b_1 \dots  b_s}$
+    
+    - Hodge-$*$:$\Omega^p(A, E) \to \Omega^{m+n-p}(A, E)$: $h_E(\alpha, \emph{*\beta}) = g^{-1}_{h^E}(\alpha, \beta) \omega^{Vol}$
+    
+     - $\emph{(\alpha, \beta)} := \int_A h^E(\alpha, *\beta)$.
+\end{frame}
+
+
+
+\begin{frame}{Example}
+    - If $K$ is the Killing form of semisimple $\alg g$, given $c \in C^\infty(M)$ never $0$: $\emph{h^c(\cl{p, \eta}, \cl{p, \theta})}:= c(m) K(\cl{p, \eta}, \cl{p, \theta})$ is Killing metric on $P \times \alg g/G$.
+    
+    On $P^k \times i\RR/S^1$ all Killing m. are $h^c(\cl{m, ia}, \cl{m, ib}) := c(m)ab$.
+    
+    Inner volume form: $\omega^S_{h^c, \alg a} = -\sqrt{|c|} (\tilde \omega^\epsilon_{S; 1}dx^1 + \tilde \omega^\epsilon_{S; 2}dx^2 - Im)$.
+    
+    - All c. irreps. of $S^1$ induce reps. of $i\RR$ $\pi^h(ir)(z) = irh\,z$, $h \in \ZZ$.
+    
+    Each of these induces representation $\phi^{k, h}: TP^k/S^1 \to E^k$.
+    
+    They are compatible with well defined metrics $c^E h^E : E^k \otimes E^k \to S^2 \times \RR$, where $c^E \in C^\infty(M)$ never $0$ and $h^E$ is standard $\RR^2$ metric.
+\end{frame}
