@@ -112,7 +112,7 @@
 % A family of local $1$-forms with the above transformation rules $\equiv$ a (generalized) Lie algebroid connection on $A$
 % \end{proposition}
 
-% \linea
+% ea
 
 % \section*{Mixed Local Basis of Forms given a Connection and $G^i_j$ Matrices}
 
@@ -340,9 +340,9 @@
 % }
 
 
-In standard gauge theories \cite{Bleecker1982, Naber, NaberInteractions}, \textit{matter fields} are sections of vector bundles $E$ over spacetime $M$ that have certain dynamics, determined by differential equations, and on which a structure group $G$ acts fiberwise; these include the electron field, the neutrino fields and the quark fields, among others. These fields can be understood as $G$-equivariant functions taking value over the principal bundle $P$ with structure group $G$ to which $E$ is associated due to the group action. The notion of a connection in standard gauge theories, also called a gauge potential, arises as a means to guarantee that the matter fields satisfy the same differential equations for its dynamics after a spacetime-varying action of the structure group is applied, under the justification that such a change of ``inner'' reference frame should not affect the dynamics. A connection form $w$ on the principal bundle is then introduced and it is ``minimally coupled'' with the matter field, namely by changing the spacetime derivatives $\partial_\mu$ associated to spacetime coordinates $x^\mu$, inducing covariant derivatives on $E$ locally of the form $\partial_\mu + it_bA_\mu^b$, where $\{it_b\}$ is a basis of the Lie algebra of $G$ and $A^a$ real valued forms, called \textit{gauge fields}, such that $it_bA^b$ is the local pullback to spacetime of the Lie algebra-valued form $w$ on $P$. The gauge fields include the electromagnetic $4$-potential, the $W$ and $Z$ boson fields and the gluon fields.
+In standard gauge theories \cite{Bleecker1982, Naber, NaberInteractions}, \textit{matter fields} are sections of vector bundles $E$ over spacetime $M$ that have certain dynamics, determined by differential equations, and on which a structure group $G$ acts fiberwise; these include the electron field, the neutrino fields and the quark fields, among others. These fields can be understood as $G$-equivariant functions taking value over the principal bundle $P$ with structure group $G$ to which $E$ is associated due to the group action. The notion of a connection in standard gauge theories, also called a gauge potential, arises as a means to guarantee that the matter fields satisfy the same differential equations for its dynamics after a spacetime-varying action of the structure group is applied, under the justification that such a change of ``inner'' reference frame should not affect the dynamics. A connection form $w$ on the principal bundle is then introduced and it is ``minimally coupled'' with the matter field, namely by changing the spacetime derivatives $\partial_\mu$ associated to spacetime coordinates $x^\mu$, inducing covariant derivatives on $E$ locally of the form $\partial_\mu + iE_bA_\mu^b$, where $\{iE_b\}$ is a basis of the Lie algebra of $G$ and $A^a$ real valued forms, called \emph{gauge fields}, such that $iE_bA^b$ is the local pullback to spacetime of the Lie algebra-valued form $w$ on $P$. The gauge fields include the electromagnetic $4$-potential, the $W$ and $Z$ boson fields and the gluon fields.
 
-In this chapter we introduce two notions of connection. In section \ref{chConnsectConnectionsA} we present the generalized notion of connection proposed in \cite{Lazzarini2012} and used in \cite{Fournel2013} to generalize connections on a principal bundle $P$ to any transitive Lie algebroid $A$. In section \ref{ChConenctionsectionAConnections} we take the generalization of covariant derivatives on vector bundles $E$ exposed in \cite{Lazzarini2012}, called $A$-connections, and introduce them in a way that makes clear their analogy with traditional covariant derivatives, specially by introducing the concept of an \textit{$A$-connection on $E$ produced by a connection on $A$} (definition \ref{definitionProducedAConnection}) which is analogous to that of covariant derivative on induced by a principal connection; the notion of $A$-connections is implicitly used in the article that postulates the formulation of gauge theories \cite{Fournel2013}, but it is not mentioned throughout the document. The study of the local trivializations of representations and $A$-connections were introduced by us in order to have enough tools to study the examples seen throughout the document.
+In this chapter we introduce two notions of connection. In Section \ref{chConnsectConnectionsA} we present the generalized notion of connection proposed in \cite{Lazzarini2012} and used in \cite{Fournel2013} to generalize connections on a principal bundle $P$ to any transitive Lie algebroid $A$. In Section \ref{ChConenctionsectionAConnections} we take the generalization of covariant derivatives on vector bundles $E$ exposed in \cite{Lazzarini2012}, called $A$-connections, and introduce them in a way that makes clear their analogy with traditional covariant derivatives, specially by introducing the concept of an $A$-connection on $E$ produced by a connection on $A$ (Definition \ref{definitionProducedAConnection}) which is analogous to that of covariant derivative on a vector bundle induced by a connection on the corresponding principal bundle; the notion of $A$-connections is implicitly used in the article that postulates the formulation of gauge theories \cite{Fournel2013}, but it is not mentioned throughout the document. The study of the local trivializations of representations and $A$-connections were introduced by us in order to have enough tools to study the examples seen throughout the document.
 
 
 \section{Connections on Transitive Lie Algebroids}
@@ -351,7 +351,7 @@ In this chapter we introduce two notions of connection. In section \ref{chConnse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Throughout this section consider $A$ to be a transitive Lie algebroid over the manifold $M$, and $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ be a Lie algebroid sequence of $A$; suppose all the vector bundles on this section have vector spaces over $\bb K$ as typical fibers, where $\bb K$ is one of $\RR$ or $\CC$.
+Throughout this section consider $A$ to be a transitive Lie algebroid over the manifold $M$, and $0 \to L \xrightarrow{j} A \xrightarrow{a} TM \to 0$ be a Lie algebroid sequence of $A$.
 
 \subsection{Ordinary Transitive Lie Algebroid Connections}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -409,7 +409,7 @@ This is simply a restatement of the (standard) fact that the short exact sequenc
 \end{equation}
 as vector bundles, where $\nabla: TM \to A$ is then an embedding and $\omega: A \to L$ a projection. To prove the last equation we follow a standard partition of unity argument: let $\{U_\alpha\}$ be an open cover that trivializes $TM$, $L$ and $A$ simultaneously; then, on each $U \in \{U_\alpha\}$, there is a vector bundle isomorphism $f_\alpha: A|_U \to TM|_U \oplus L|U$. Now take a partition of unity $\{\rho_\alpha:U_\alpha \to [0,1]\}$ subordinate to it; then $\sum_\alpha \rho_\alpha f_\alpha : A \to TM \oplus L$ is a vector bundle isomorphism.
 
-%Although we may now see this to be true thanks to the existence of a Lie algebroid atlas for $0 \to L \to A \to a \to a$ stated in theorem \ref{algebroidAtlasExists}, recall that the proof of that statement was not within the scope of this text. 
+%Although we may now see this to be true thanks to the existence of a Lie algebroid atlas for $0 \to L \to A \to a \to a$ stated in Theorem \ref{algebroidAtlasExists}, recall that the proof of that statement was not within the scope of this text. 
 \end{proof}
 
 \begin{example}\label{exampleOrdinaryConnectionIsPrincipalBundleConnection}
@@ -453,7 +453,7 @@ the normalization condition of $\omega$ is then simply a restatement of the cond
         &= \cl{ \tilde \nabla^p_X + w(\ppal X)^*_p}\\
         &= \cl{\ppal X} & \text{decomposition  \eqref{equationDecompositionTangentElementOfTPVerticalHorizontalDirectSumSubbundles}};
 \end{align*}
-hence, the ordinary connection $\nabla$ on $TP/G$ is associated, as specified by theorem \ref{theoremOrdinaryConnectionEquialenceRelatoinNablasandNormalizedForms}, to the normalized $1$-form $\omega$.
+hence, the ordinary connection $\nabla$ on $TP/G$ is associated, as specified by Theorem \ref{theoremOrdinaryConnectionEquialenceRelatoinNablasandNormalizedForms}, to the normalized $1$-form $\omega$.
 \end{example}
 
 \begin{example}\label{exampleOrdinaryConnectionIsCovariantDerivative}
@@ -509,7 +509,7 @@ for any $\oid X \in TP/G$ such that $\pi_*^G(\oid X) = X$. Then,
 \begin{equation}
     \phi_L \circ \omega \in \Omega^1(A, \End(E))
 \end{equation} 
-is a $1$-form associated to the ordinary connection $\nabla^E$; notice that the equation \eqref{equationInducedProducedConnectionByNormalizedOrdinaryLieAlgebroidConnectionInTermsOfFormAssociatedRepresentationVector} is well defined for $X$ precisely because $\omega$ is normalized, since then the right hand sides vanishes when $\oid X \in Im(j)$. We will now relax the normalization condition on transitive Lie algebroids when defining connections, in which case the ``covariant derivatives'' that will be induced on vector bundles will be taken in any direction $\oid X \in A$; these are called $A$-connections on $E$ and will be defined in section \ref{ChConenctionsectionAConnections}.
+is a $1$-form associated to the ordinary connection $\nabla^E$; notice that the equation \eqref{equationInducedProducedConnectionByNormalizedOrdinaryLieAlgebroidConnectionInTermsOfFormAssociatedRepresentationVector} is well defined for $X$ precisely because $\omega$ is normalized, since then the right hand sides vanishes when $\oid X \in Im(j)$. We will now relax the normalization condition on transitive Lie algebroids when defining connections, in which case the ``covariant derivatives'' that will be induced on vector bundles will be taken in any direction $\oid X \in A$; these are called $A$-connections on $E$ and will be defined in Section \ref{ChConenctionsectionAConnections}.
 
 
 \subsection{Generalized Connections}
@@ -541,7 +541,7 @@ If $\hat \omega$ is an ordinary connection form, then $\hat \omega \comp j = -1_
 \end{proof}
 
 \begin{remark}
-Just as in the case of an Atiyah Lie algebroid shown in example \ref{exampleOrdinaryConnectionIsPrincipalBundleConnection}, an ordinary connection $\nabla$ on $A$ is equivalent to the definition of a subbundle $Im(\nabla)$ on $A$, called \emph{the horizontal subbundle}, that is isomorphic to $TM$ and that defines an isomorphism $A \cong TM \oplus L$; in that case the associated $\hat \nabla: A \to A$ is the projection onto this subbundle and $\hat \nabla^2 = \hat \nabla$. With the generalized connections on $A$ such an equivalent definition in terms of a horizontal subbundle is lost. However, a formula analogous to \eqref{equationInducedProducedConnectionByNormalizedOrdinaryLieAlgebroidConnectionInTermsOfFormAssociatedRepresentationVector} will still allow the definition of ``covariant derivatives'' on representation vector bundles $E$ as we will see in section \ref{ChConenctionsectionAConnections}; furthermore, the additional directions will give rise to a coupling of the matter fields, i.e. sections of $E$, with new fields that enable the appearance of new mass terms in the Lagrangian of a gauge theory based on transitive Lie algebroids.
+Just as in the case of an Atiyah Lie algebroid shown in Example \ref{exampleOrdinaryConnectionIsPrincipalBundleConnection}, an ordinary connection $\nabla$ on $A$ is equivalent to the definition of a subbundle $Im(\nabla)$ on $A$, called \emph{the horizontal subbundle}, that is isomorphic to $TM$ and that defines an isomorphism $A \cong TM \oplus L$; in that case the associated $\hat \nabla: A \to A$ is the projection onto this subbundle and $\hat \nabla^2 = \hat \nabla$. With the generalized connections on $A$ such an equivalent definition in terms of a horizontal subbundle is lost. However, a formula analogous to \eqref{equationInducedProducedConnectionByNormalizedOrdinaryLieAlgebroidConnectionInTermsOfFormAssociatedRepresentationVector} will still allow the definition of ``covariant derivatives'' on representation vector bundles $E$ as we will see in Section \ref{ChConenctionsectionAConnections}; furthermore, the additional directions will give rise to a coupling of the matter fields, i.e. sections of $E$, with new fields that enable the appearance of new mass terms in the Lagrangian of a gauge theory based on transitive Lie algebroids.
 
 If we were to desire for $\hat \nabla$ to be a projection onto a subbundle, i.e. that $\hat \nabla^2 = \hat \nabla$, from equation \eqref{equationInducedProducedConnectionByNormalizedOrdinaryLieAlgebroidConnectionInTermsOfFormAssociatedRepresentationVector} it follows that a necessary and sufficient condition is 
 \begin{equation}\label{equationEquivalentNecessarySufficientGeneralizedConnectionBeDefineHorizontalProjectionSubbundle}
@@ -611,7 +611,7 @@ Let $\hat \omega$ be a connection form on $A$. Then the curvature form $\hat R \
 \end{equation}
 \end{proposition}
 \begin{proof}
-Recall from example \ref{exampleOmegaALIsDIfferentialGradedLieAlgebra} that $(\Omega^\bullet(A, L), \wedge^{[,]}, \hat d)$ is a differential graded Lie algebra, hence:
+Recall from Example \ref{exampleOmegaALIsDIfferentialGradedLieAlgebra} that $(\Omega^\bullet(A, L), \wedge^{[,]}, \hat d)$ is a differential graded Lie algebra, hence:
 \begin{align*}
     \hat d \hat  R + \hat \omega \wedge^{[,]} \hat R 
         &= \hat d(\hat d \hat \omega + \frac{1}{2}\hat \omega \wedge^{[,]} \hat \omega) + \hat \omega \wedge^{[,]} (\hat d \hat \omega + \frac{1}{2} \hat \omega \wedge^{[,]} \hat \omega) \\
@@ -704,7 +704,7 @@ That $A_i - \epsilon$ is an ordinary connection follows simply from the fact tha
 \end{proof}
 
 \begin{proposition}\label{propositionTransformationLawsOfAandTau}
-Let $\hat \omega$ be a connection form on $A$ with local trivialization $\hat \omega = A_i - \epsilon + \tau_i$, decomposed as proposed in theorem \ref{theoremLocalTrivializationDecompositionGenralizedConnectionForm}, on each $U_i$, $i \in I$. Then, for all $X \in \Gamma(TM)$ and all $U_i, U_j$ such that $U_{ij} = U_i \inter U_j \neq \emptyset$,
+Let $\hat \omega$ be a connection form on $A$ with local trivialization $\hat \omega = A_i - \epsilon + \tau_i$, decomposed as proposed in Theorem \ref{theoremLocalTrivializationDecompositionGenralizedConnectionForm}, on each $U_i$, $i \in I$. Then, for all $X \in \Gamma(TM)$ and all $U_i, U_j$ such that $U_{ij} = U_i \inter U_j \neq \emptyset$,
 
     \begin{itemize}
     
@@ -748,7 +748,7 @@ If $\hat \omega$ were an ordinary connection form, then $\tau = 0$ and the local
 \end{eqnsplit}
 for all $\eta \in C^\infty(U_i, \alg g)$.
 
-\lin
+
 
 Let $\{E_a\}_{a = 1, \dots, n}$ be a basis for $\alg g$. Let us also denote by $E_a$, $a = 1, \dots, n$, the corresponding constant functions in $C^\infty(U_i, \alg g) = \Omega^0(TU_i \times \alg g, U_i \times \alg g)$ for all $i \in I$. Recall our convention of not writing the wedge product symbol if one of the factors is a a $0$-form, like $E_a$.
 
@@ -770,7 +770,7 @@ Let $\{E_a\}_{a = 1, \dots, n}$ be a basis for $\alg g$. Let us also denote by $
             \begin{equation*}
                 \epsilon = \sum_{a = 1}^n \epsilon^a E_a,
             \end{equation*}
-        i.e. each $\epsilon^a$ can be seen as the constant function in $C^\infty(U_i, \alg g^*)$ used in theorem \ref{TheoremDecompOfVectorValuedFormsTLAEpsilonsDxs}, taking the constant value $\epsilon^a \in \alg g^*$ that satisfies $\epsilon^a(E_b) = \delta^a_b$;
+        i.e. each $\epsilon^a$ can be seen as the constant function in $C^\infty(U_i, \alg g^*)$ used in Theorem \ref{TheoremDecompOfVectorValuedFormsTLAEpsilonsDxs}, taking the constant value $\epsilon^a \in \alg g^*$ that satisfies $\epsilon^a(E_b) = \delta^a_b$;
         
         \item $(\tau_i)^a_b \in C^\infty(U_i)$ such that
             \begin{equation*}
@@ -828,7 +828,7 @@ Now to see that they are indeed dual to each other. Let $\mu = 1, \dots, m$, $a 
 Since $\{dx^\mu, \alg a^a\}$ is dual to the global frame $\{\nabla^i_\mu, -E_a\}$, then it must be a global frame of the dual bundle.
 \end{proof}
 
-The following proposition now follows, giving an alternative decomposition of forms to the one given in theorem \ref{remarkLocalDecompositionOfFormsOnTransitiveLieAlgebroidsIfTrivializationOfM}:
+The following proposition now follows, giving an alternative decomposition of forms to the one given in Theorem \ref{remarkLocalDecompositionOfFormsOnTransitiveLieAlgebroidsIfTrivializationOfM}:
 
 \begin{proposition}\label{TheoremDecompOfVectorValuedFormsTLAMixedLocalBasisDxs}
 Let $E$ be a vector bundle over $M$ that trivializes over $U_i$ as $U_i \times V$, and let $\{e_u\}_{r = 1, \dots, t}$ be a basis of the vector space $V$, and let $A$ be represented on $E$. Let $\beta$ be an $E$-valued $p$-form on $A$, $p \in \ZZ_{\geq 0}$. Viewing each $e_u$ as a constant section of $E$, i.e. $e_u \in \Omega^0(TM \times \alg g, E)$, each local trivialization of $\beta$ may be decomposed as follows
@@ -910,7 +910,7 @@ Let $\hat R \in \Omega^2(A, L)$ be the curvature form of the connection form $\h
 \end{definition}
 
 \begin{theorem}\label{theoremDecompositionOfAlgebroidFormIntoNice2Forms}
-Let $U_i \subset M$ be an open on which $x^\mu: U_i \to \RR$ are coordinates and the transitive Lie algebroid $A$ trivializes. Let $\tilde \omega\in \Omega^1(A, L)$ be an ordinary connection form on $A$ with local trivialization $\alg a_i$ over $U_i$, and call it a background connection on $A$. Finally, for a (generalized) connection form $\hat \omega$ on $A$ with reduced kernel endomorphism $\tau$, let $\omega = \hat \omega + \tau \comp \tilde \omega$ be the ordinary connection induced by $\hat \omega$ with respect to the background connection $\tilde \omega$, let $\hat R \in \Omega^2(A, L)$ be its curvature $2$-form, and $\hat F \in \Omega^2(TM, L)$, $\mathcal D \tau \in \Omega^1(TM, End(L))$ and $R_\tau \in \Omega^2(L, L)$ be defined as in definition \ref{definitionIngredientsCurvatureDecompositionConnection}. Then, the local trivialization of $\hat R$ has the following decomposition in terms of the mixed local basis of the inner part of $\Omega^1(TU_i \times \alg g)$ with respect to the basis $\{E_a\}_{a = 1, \dots, n}$ of $\alg g$:
+Let $U_i \subset M$ be an open on which $x^\mu: U_i \to \RR$ are coordinates and the transitive Lie algebroid $A$ trivializes. Let $\tilde \omega\in \Omega^1(A, L)$ be an ordinary connection form on $A$ with local trivialization $\alg a_i$ over $U_i$, and call it a background connection on $A$. Finally, for a (generalized) connection form $\hat \omega$ on $A$ with reduced kernel endomorphism $\tau$, let $\omega = \hat \omega + \tau \comp \tilde \omega$ be the ordinary connection induced by $\hat \omega$ with respect to the background connection $\tilde \omega$, let $\hat R \in \Omega^2(A, L)$ be its curvature $2$-form, and $\hat F \in \Omega^2(TM, L)$, $\mathcal D \tau \in \Omega^1(TM, End(L))$ and $R_\tau \in \Omega^2(L, L)$ be defined as in Definition \ref{definitionIngredientsCurvatureDecompositionConnection}. Then, the local trivialization of $\hat R$ has the following decomposition in terms of the mixed local basis of the inner part of $\Omega^1(TU_i \times \alg g)$ with respect to the basis $\{E_a\}_{a = 1, \dots, n}$ of $\alg g$:
 \begin{equation*}
     \hat R_i = (\hat F_i)_{\mu \nu}^a E_a dx^\mu \wedge dx^\nu + 
                 (\mathcal D \tau_i)^b_{\mu, a} E_b  dx^\mu \wedge (\alg a_i)^a +
@@ -996,7 +996,7 @@ In this section, let $A$ be any Lie algebroid over a manifold $M$, not necessari
 \end{definition}
 
 \begin{example}
-On any vector bundle $E$ over $M$, an $TM$-connection is simply an ordinary connection on $E$, which also coincides with a connection on the vector bundle $E$ as seen in example \ref{exampleOrdinaryConnectionIsPrincipalBundleConnection}.
+On any vector bundle $E$ over $M$, an $TM$-connection is simply an ordinary connection on $E$, which also coincides with a connection on the vector bundle $E$ as seen in Example \ref{exampleOrdinaryConnectionIsPrincipalBundleConnection}.
 \end{example}
 
 \begin{example}[All TLA-connections on a trivial vector bundle]
@@ -1027,7 +1027,7 @@ Let $\hat \omega$ be a connection $1$-form on $A$ with associated vector bundle 
 \end{definition}
 
 \begin{theorem}
-Let $\phi:A \to \alg D(E)$ be a representation. Then there is a bijective correspondence between $A$-connections $\hat \nabla^E$ on $E$ and $1$-forms $\hat \omega^E \in \Omega^1(A, \End(E))$, using the representation of example \ref{exampleOmegaAEndEIsDifferentialGradedLieAlgebra}, given by the relation:
+Let $\phi:A \to \alg D(E)$ be a representation. Then there is a bijective correspondence between $A$-connections $\hat \nabla^E$ on $E$ and $1$-forms $\hat \omega^E \in \Omega^1(A, \End(E))$, using the representation of Example \ref{exampleOmegaAEndEIsDifferentialGradedLieAlgebra}, given by the relation:
 \begin{equation}
     \hat \nabla^E_{\oid X} = \phi(\oid X) + j \comp \hat \omega^E(\oid X).
 \end{equation}
@@ -1056,7 +1056,7 @@ Now, let $\oid X, \oid Y \in A$ be arbitrary:
         &= j \comp (\hat d_E \hat \omega^E + \frac{1}{2} \hat \omega^E \wedge^{[,]} \hat \omega^E).
 \end{align*}
 
-That the curvature $2$-form satisfies the Bianchi identity follows from the previous formula for $\hat R^E$ and from the fact that $(\Omega^\bullet(A, \End(E)), \wedge^{[,]}, \hat d_E)$ is a differential graded Lie algebra that follows from theorem \ref{theoremLABImpliesDIfferentialGradedLieAlgebra}, so a calculation identical to that followed for the curvature $2$-form of a connection on a transitive Lie algebroid, in the proof of \ref{propositionCurvatureSatisfiesBianchi}, can be applied.
+That the curvature $2$-form satisfies the Bianchi identity follows from the previous formula for $\hat R^E$ and from the fact that $(\Omega^\bullet(A, \End(E)), \wedge^{[,]}, \hat d_E)$ is a differential graded Lie algebra that follows from Theorem \ref{theoremLABImpliesDIfferentialGradedLieAlgebra}, so a calculation identical to that followed for the curvature $2$-form of a connection on a transitive Lie algebroid, in the proof of \ref{propositionCurvatureSatisfiesBianchi}, can be applied.
 \end{proof}
 
 For an $A$-connection $\hat \nabla^{E, \, \hat \omega}$ produced by the connection $1$-form $\hat \omega \in \Omega^1(A, L)$, 
@@ -1079,7 +1079,7 @@ for all $f \in C^\infty(U_i, V)$.
 % \end{eqnsplit}
 \end{definition}
 
-Following example \ref{exampleAllTLATrivialLieAlgebroidConnectionsOnTrivialVectorBundle}, the local trivialization of an $A$-connection over a set $U_i$ that trivializes both $A$ and $E$ has a decomposition 
+Following Example \ref{exampleAllTLATrivialLieAlgebroidConnectionsOnTrivialVectorBundle}, the local trivialization of an $A$-connection over a set $U_i$ that trivializes both $A$ and $E$ has a decomposition 
 \begin{equation}
     \hat \nabla_{X \oplus \eta}^{E, i} = X \oplus (C_i(X) + \nu_i(\eta)),
 \end{equation}
@@ -1144,12 +1144,12 @@ and
 
 
 
-In example \ref{exampleFormsTPkBuildingBLocksandMostGeneral1FormOn} we saw that the most general form, and hence the most general connection form on $TP^k/S^1$, has the local trivialization over $U_S$:
+In Example \ref{exampleFormsTPkBuildingBLocksandMostGeneral1FormOn} we saw that the most general form, and hence the most general connection form on $TP^k/S^1$, has the local trivialization over $U_S$:
 \begin{eqnsplit*}
     \hat \omega_S &= i\hat \omega^\epsilon_{S; 1}(\phi, \theta) dx^1 + i\hat \omega^\epsilon_{S; 2}(\phi, \theta) dx^2 + i\hat \omega^\epsilon_{S; i}(\phi, \theta) Im\\
         &=i \hat  f(\phi, \theta) d\phi + i \hat  \hat g(\phi, \theta) d\theta + i \hat h(\phi, \theta) Im
 \end{eqnsplit*}
-where $\hat \omega^\epsilon_{S; \cdot}, \hat f, \hat g, \hat h \in C^\infty(S^2)$ with some restrictions, as explained in that example; recall from example \ref{exampleTransitionALphaFormsPk} that this suffices to determine completely the form over all of $S^2$ since $U_S$ covers all but one point of $S^2$.
+where $\hat \omega^\epsilon_{S; \cdot}, \hat f, \hat g, \hat h \in C^\infty(S^2)$ with some restrictions, as explained in that example; recall from Example \ref{exampleTransitionALphaFormsPk} that this suffices to determine completely the form over all of $S^2$ since $U_S$ covers all but one point of $S^2$.
 
 
 Since $i$ is a global section of $TP^k/S^1$, the reduced kernel endomorphism $\tau \in \End(S)$ is determined from a single function $\tilde \tau \in C^\infty(S^2)$ such that $\tau = i \tilde \tau$, and so the local components of $\tau$ are:
@@ -1171,7 +1171,7 @@ The Lie algebra $i\RR$ is commutative, so the curvature of the connection form $
 \begin{align}
     \hat R &= \hat d\hat \omega,
 \end{align}
-which we computed in example \ref{exampleFormsTPkBuildingBLocksandMostGeneral1FormOn}, in equation \eqref{equationCurvatureGeneralConnectionCh2S2}, and that can be easily seen to be equal to to be local trivialized as
+which we computed in Example \ref{exampleFormsTPkBuildingBLocksandMostGeneral1FormOn}, in equation \eqref{equationCurvatureGeneralConnectionCh2S2}, and that can be easily seen to be equal to to be local trivialized as
 \begin{eqnsplit}
     \hat R_S &= \hat d \hat \omega_S \\
         &= i(\partial_{1} \hat \omega^\epsilon_{S;2} - \partial_{2} \hat \omega^\epsilon_{S; 1}) dx^1 \wedge dx^2 + i \partial_{1} \tilde \tau dx^1 \wedge Im +  i \partial_{2} \tilde \tau dx^2 \wedge Im;
@@ -1214,17 +1214,17 @@ Now let's understand the decomposition of the curvature form $\hat R$. Using equ
     F^1_{12} &= - \tilde F^1_{21} = \partial_{1} [\hat \omega^\epsilon_{S;2} + \tilde \tau \tilde \omega^\epsilon_{S;2}] - \partial_{2} [\hat \omega^\epsilon_{S;1} + \tilde \tau \tilde \omega^\epsilon_{S;1}],\\
     \hat F^1_{12} &= - \hat F^1_{21} = \partial_{1} \hat \omega^\epsilon_{S;2} - \partial_{2} \hat \omega^\epsilon_{S;1} + (\partial_1 \tilde \tau) \tilde \omega^\epsilon_{S;2} - (\partial_2 \tilde \tau) \tilde \omega^\epsilon_{S;1};
 \end{eqnsplit}
-we can readily check that the decomposition of the curvature given in theorem \ref{theoremDecompositionOfAlgebroidFormIntoNice2Forms} using the above components does indeed produce the formula \eqref{equationCurvatureLocalUSS2} that we previously obtained. Over $U_{SN}$ analogous formulas are satisfied with respect to the polar coordinates $(\phi, \theta)$.
+we can readily check that the decomposition of the curvature given in Theorem \ref{theoremDecompositionOfAlgebroidFormIntoNice2Forms} using the above components does indeed produce the formula \eqref{equationCurvatureLocalUSS2} that we previously obtained. Over $U_{SN}$ analogous formulas are satisfied with respect to the polar coordinates $(\phi, \theta)$.
 
 
 \subsection{$TP^k/S^3$ over $S^4$}\label{subsectionConnectionsTPkS3}
 
-For reason entirely analogous to those use for the Atiyah Lie algebroids $TP^k/S^1$, and continuing the example in section \ref{exampleFormsBuildingBlocksTPkS4}, we know that the most general connection $\hat \omega \in \Omega^1
+For reason entirely analogous to those use for the Atiyah Lie algebroids $TP^k/S^1$, and continuing the example in Section \ref{exampleFormsBuildingBlocksTPkS4}, we know that the most general connection $\hat \omega \in \Omega^1
 (TP^k/S^3, P^k \times Im \HH/S^3)$ on $TP^k/S^4$ has the local trivialization over $U_S$
 \begin{equation}
     \hat \omega_S = i \omega_S^1 + j \omega_S^2 + k \omega_S^3 - iIm - jJm - kKm + \tau_S,
 \end{equation}
-where $\omega_S^a = (\omega_S)^a_\mu dx^\mu$, $a = 1, 2, 3$, are restrictions to $U_S$ of scalar valued $1$-forms in $\Omega^1(TS^7)$, hence the components of $\hat \omega$ over $U_S$ with respect to the basis $i, j, k$ of $Im \HH$ are actually functions $(\omega_S)^i_\mu \in C^\infty(S^2)$ defined over all of $S^2$ with some restrictions (analogous to those of section \ref{exampleTransitionALphaFormsPk} that allow its extension to a global section on $TP^k/S^4$; similarly, $\tau_S$ is any function $C^\infty(S^2, \alg{gl}(Im \HH))$, made up of $9$ different matrix $(\tau_S)^a_b$ elements, or it can also be seen as a collection of $3$ different Lie algebra valued fields $$(\tau_S)_b = \tau_S(E_b) \in C^\infty(S^2, Im \HH),$$ for $\{E_b\}_{b = 1, 2, 3} = \{i, j, k\}$ basis of the Lie algebra.
+where $\omega_S^a = (\omega_S)^a_\mu dx^\mu$, $a = 1, 2, 3$, are restrictions to $U_S$ of scalar valued $1$-forms in $\Omega^1(TS^7)$, hence the components of $\hat \omega$ over $U_S$ with respect to the basis $i, j, k$ of $Im \HH$ are actually functions $(\omega_S)^i_\mu \in C^\infty(S^2)$ defined over all of $S^2$ with some restrictions (analogous to those of Section \ref{exampleTransitionALphaFormsPk} that allow its extension to a global section on $TP^k/S^4$; similarly, $\tau_S$ is any function $C^\infty(S^2, \alg{gl}(Im \HH))$, made up of $9$ different matrix $(\tau_S)^a_b$ elements, or it can also be seen as a collection of $3$ different Lie algebra valued fields $$(\tau_S)_b = \tau_S(E_b) \in C^\infty(S^2, Im \HH),$$ for $\{E_b\}_{b = 1, 2, 3} = \{i, j, k\}$ basis of the Lie algebra.
 
 If we use the matrix algebra $\alg{su}(2)$ as the representation of the Lie algebra, then:
 \begin{eqnsplit}
@@ -1233,5 +1233,5 @@ If we use the matrix algebra $\alg{su}(2)$ as the representation of the Lie alge
     + \tau_S %\begin{pmatrix} i\tau^3 & \tau_S^2 + i \tau_S^1 \\ \tau_S^2 - i \tau_S^1 & -i\tau_S^3 \end{pmatrix} \\
     %&= \omega_S^i \cdot i\sigma_i - \epsilon + \tau_S^i \cdot i\sigma_i,
 \end{eqnsplit}
-where $\hat \omega_S^\mu \in \Omega^1(S^2)$, for $\mu = 1, 2, 3$ and $\tau_S \in C^\infty(S^2, \alg{gl}(\alg{su}(2)))$ and $\{Im, Jm, Km\}$ is now the basis of $\alg{su}(2)^*$ dual to $\{i\sigma_1, i\sigma_2, i\sigma_3\}$.
+where $\hat \omega_S^\mu \in \Omega^1(S^2)$, for $\mu = 1, 2, 3$ and $\tau_S \in C^\infty(S^2, \alg{gl}(\alg{su}(2)))$ and the set $\{Im, Jm, Km\}$ is now the ordered basis of $\alg{su}(2)^*$ dual to $\{i\sigma_1, i\sigma_2, i\sigma_3\}$.
 
