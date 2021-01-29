@@ -108,7 +108,7 @@ Let $E$ be a vector bundle over $M$ on which there is a representation $\phi: A 
 \begin{remark}\label{remarkFOrmsHave2Ways2FormsALternativeVersion}
 Due to the bijective correspondence between $C^\infty(U)$-linear maps between local sections over $U$ of vector bundles and vector bundle morphisms of the bundles restricted to $U$, $\Omega_U^n(A, E)$ may be considered the space of $C^\infty(U)$-multilinear antisymmetric maps from $\Gamma_U(A)^n$ to $\Gamma_U(E) = \Omega_U^0(A, E)$. We will refer as \ptext{(local) $E$-valued $n$-forms on $A$} to both
 \begin{align}
-    \omega &: \underbrace{A|_U \otimes \cdots \otimes A|_U}_{\text{$n$ times}} \to E|_U, & \text{alternating, $\RR$-vector bundle morphism and}\\
+    \omega &: \underbrace{A|_U \otimes \cdots \otimes A|_U}_{\text{$n$ times}} \to E|_U, & \text{alternating, $\RR$-vector bundle map and}\\
     \omega &: \underbrace{\Gamma_U(A) \times \cdots \times \Gamma_U(A)}_{\text{$n$ times}} \to \Gamma_U(E), & \text{alternating, $C^\infty(U)$-multilinear map}.
 \end{align}
     
@@ -448,21 +448,21 @@ All we need to see is that $(\Omega^\bullet(A, E), \wedge^\bullet)$ is a Lie gra
 \end{proof}
 
 \begin{example}\label{exampleOmegaALIsDIfferentialGradedLieAlgebra}
-Recall the differential complex $(\Omega^\bullet(A, L), \hat d)$ of example \ref{exampleLValuedFormsonTransitiveAUpToDifferential} given a transitive Lie algebroid $A$. For any $\oid X \in A_m$ and $\eta, \theta \in L_m$, $ad(\oid X)([\eta, \theta]) = [X, [j\eta, j\theta]]$ which, by the Jacobi identity of the Lie algebroid bracket, is equal to $ad(X)([\eta, \theta]) = [ad(\oid X)(\eta), \theta] + [\eta, ad(\oid X) \theta]$; we have thus proved that the representation $ad$ is compatible with the product in the fibers of $L$. Therefore we may apply theorem \ref{theoremLABImpliesDIfferentialGradedLieAlgebra} to conclude that $(\Omega^\bullet(A, L), \wedge^{[,]}, \hat d)$ is a differential graded Lie algebra.
+Recall the differential complex $(\Omega^\bullet(A, L), \hat d)$ of example \ref{exampleLValuedFormsonTransitiveAUpToDifferential} given a transitive Lie algebroid $A$. For any $\oid X \in A_m$ and $\eta, \theta \in L_m$, $ad(\oid X)([\eta, \theta]) = [X, [j\eta, j\theta]]$ which, by the Jacobi identity of the Lie algebroid bracket, is equal to $ad(X)([\eta, \theta]) = [ad(\oid X)(\eta), \theta] + [\eta, ad(\oid X) \theta]$; we have thus proved that the representation $ad$ is compatible with the product in the fibers of $L$. Therefore we may apply Theorem \ref{theoremLABImpliesDIfferentialGradedLieAlgebra} to conclude that $(\Omega^\bullet(A, L), \wedge^{[,]}, \hat d)$ is a differential graded Lie algebra.
 \end{example}
 
 \begin{example}\label{exampleOmegaAEndEIsDifferentialGradedLieAlgebra}
-Recall the differential complex $(\Omega^\bullet(A, \End(E), \hat d_{\tilde \phi})$ of example \ref{exampleLValuedFormsonTransitiveAUpToDifferential} given a representation $\phi: A \to \alg D(E)$ that induces the representation $\tilde \phi:A \to \alg D(\End(E))$. Recall that $\End(E)$ is the kernel of the anchor of the transitive Lie algebroid $\alg D(E)$, meaning that $\End(E)$ is a LAB, where the Lie bracket on the space of sections is nothing but the commutator of vector bundle endomorphisms of $E$. Hence, given $\oid X \in A_m$ and $S, T \in \End(E_m)$, the compatibilitiy condition $\tilde \phi(\oid X)[S, T] = [\tilde \phi(\oid X)(S), T] + [S, \tilde \phi(\oid X)(T)]$ is simply the Jacobi identity of the commutator on $\End(E_m)$. Thus, theorem \ref{theoremLABImpliesDIfferentialGradedLieAlgebra} implies that $(\Omega^\bullet(A, \End(E)), \wedge^{[,]}, \hat d)$ is a differential graded Lie algebra.
+Recall the differential complex $(\Omega^\bullet(A, \End(E), \hat d_{\tilde \phi})$ of example \ref{exampleLValuedFormsonTransitiveAUpToDifferential} given a representation $\phi: A \to \alg D(E)$ that induces the representation $\tilde \phi:A \to \alg D(\End(E))$. Recall that $\End(E)$ is the kernel of the anchor of the transitive Lie algebroid $\alg D(E)$, meaning that $\End(E)$ is a LAB, where the Lie bracket on the space of sections is nothing but the commutator of vector bundle endomorphisms of $E$. Hence, given $\oid X \in A_m$ and $S, T \in \End(E_m)$, the compatibilitiy condition $\tilde \phi(\oid X)[S, T] = [\tilde \phi(\oid X)(S), T] + [S, \tilde \phi(\oid X)(T)]$ is simply the Jacobi identity of the commutator on $\End(E_m)$. Thus, Theorem \ref{theoremLABImpliesDIfferentialGradedLieAlgebra} implies that $(\Omega^\bullet(A, \End(E)), \wedge^{[,]}, \hat d)$ is a differential graded Lie algebra.
 \end{example}
 
 ea
 
-The following important theorem relates the notions of vector valued connections on principal bundles, that give rise to principal connections and their curvatures, and the theory of differential forms on the Atiyah Lie algebroid associated to the principal bundle. For the proofs refer to \cite{Mackenzie2005}; this follows essentially from the equivalence between $G$-invariant sections of $TP$ and sections of $TP/G$ stated in theorem \ref{theoSectTPG}, and of the $G$-invariant sections of $P \times \alg g$ with the sections of $P \times \alg g/G$ shown in theorem \ref{associatedExistsAndSections}.
+The following important theorem relates the notions of vector valued connections on principal bundles, that give rise to principal connections and their curvatures, and the theory of differential forms on the Atiyah Lie algebroid associated to the principal bundle. For the proofs refer to \cite{Mackenzie2005}; this follows essentially from the equivalence between $G$-invariant sections of $TP$ and sections of $TP/G$ stated in Theorem \ref{theoSectTPG}, and of the $G$-invariant sections of $P \times \alg g$ with the sections of $P \times \alg g/G$ shown in Theorem \ref{associatedExistsAndSections}.
 
 \begin{theorem}\label{theoFormsPrincipalAtiyahSameGInvariantEquivariantSubspaces}
 Let $G \to P \to M$ be a principal bundle over $M$. 
 \begin{itemize}
-    \item The differential graded module and algebra \textit{$(\Omega^\bullet(TP/G), \wedge, \hat d_{TP/G})$ is isomorphic to the subspace of $(\Omega^\bullet(TP), \wedge, d)$ associated to the $R_*$-invariant  forms on $P$}.
+    \item The differential graded module and algebra \textit{$(\Omega^\bullet(TP/G), \wedge, \hat d_{TP/G})$ is isomorphic to the subspace of $(\Omega^\bullet(TP), \wedge, d)$ associated to the $R_*$-inva- riant  forms on $P$}.
     
     \item Similarly, the differential graded module and algebra \textit{$(\Omega^\bullet(TP/G, P \times \alg g/G), \hat d)$ is isomorphic to the subspace of $(\Omega^\bullet(TP) \otimes \alg g, \wedge, d)$ associated to the $(R_*, Ad)$-equivariant $\alg g$-valued forms on $P$}.
 \end{itemize} 
@@ -480,7 +480,7 @@ Recall that $\{\cl{\partial_\phi}, \cl{\partial_{\xi^1}}, \cl{\partial_{\xi^2}}\
 %     \lbtext{\omega^{Monop}_{{SN}}} := \frac{i}{2} d\xi^1 (1 + \cos \phi) \cl{d \xi_1} + \frac{i}{2} (1- \cos\phi)\cl{d\xi_2} \in \Omega_{U_{SN}}^1(TS^3/S^1, S^3 \times i\RR/S^1).
 % \end{equation} This $1$-form is associated to the presence of a magnetic monopole on $3$-dimensional space.
 
-% Due to theorem \ref{theoFormsPrincipalAtiyahSameGInvariantEquivariantSubspaces}, the differential $d$ of $G$-invariant forms on $P$ corresponds to the differential $\hat d_{TS^3/S^1}$ under the identification of $G$-invariant sections of $TS^3$ with sections of $TS^3/S^1$; for a one form $w \in T^*P$ we will use the notation $\cl{w}$. Hence, $\hat d_{TS^3/S^1} \cl{\xi_i} = \cl{d \xi_i}$, and, since $d^2 = 0$, 
+% Due to Theorem \ref{theoFormsPrincipalAtiyahSameGInvariantEquivariantSubspaces}, the differential $d$ of $G$-invariant forms on $P$ corresponds to the differential $\hat d_{TS^3/S^1}$ under the identification of $G$-invariant sections of $TS^3$ with sections of $TS^3/S^1$; for a one form $w \in T^*P$ we will use the notation $\cl{w}$. Hence, $\hat d_{TS^3/S^1} \cl{\xi_i} = \cl{d \xi_i}$, and, since $d^2 = 0$, 
 % \begin{equation*}
 %     \hat d_{TS^3/S^1} {\cl{d\xi_i}} = 0
 % \end{equation*} for $i = 1, 2$; similarly 
@@ -499,7 +499,7 @@ Recall that $\{\cl{\partial_\phi}, \cl{\partial_{\xi^1}}, \cl{\partial_{\xi^2}}\
     \lbtext{\omega^{MP}_{}} := \frac{i}{2} (1 + \cos \phi) \cl{d \xi_1} + \frac{i}{2} (1- \cos\phi)\cl{d\xi_2} \in \Omega_{U_{SN}}^1(TS^3/S^1, S^3 \times i\RR/S^1).
 \end{equation} This $1$-form is associated to the presence of a magnetic monopole on $3$-dimensional space.
 
-\noindent Due to theorem \ref{theoFormsPrincipalAtiyahSameGInvariantEquivariantSubspaces}, the differential $d$ of $G$-invariant forms on $P$ corresponds to the differential $\hat d_{TS^3/S^1}$ under the identification of $G$-invariant sections of $TS^3$ with sections of $TS^3/S^1$ shown in proposition \ref{3.1.3}. Hence, $\hat d_{TS^3/S^1} \cl{\xi_i} = \cl{d \xi_i}$, and, since $d^2 = 0$, 
+\noindent Due to Theorem \ref{theoFormsPrincipalAtiyahSameGInvariantEquivariantSubspaces}, the differential $d$ of $G$-invariant forms on $P$ corresponds to the differential $\hat d_{TS^3/S^1}$ under the identification of $G$-invariant sections of $TS^3$ with sections of $TS^3/S^1$ shown in proposition \ref{3.1.3}. Hence, $\hat d_{TS^3/S^1} \cl{\xi_i} = \cl{d \xi_i}$, and, since $d^2 = 0$, 
 \begin{equation*}
     \hat d_{TS^3/S^1} {\cl{d\xi_i}} = 0
 \end{equation*} for $i = 1, 2$; similarly 
@@ -629,7 +629,7 @@ From now on the tilde notation used above to denote the image inside of $\Omega^
 \begin{proof}
 The closure of this subspaces under the wedge product is clear from its formulaic definition \eqref{definitionWedgeProductEvaluedEValued}. For the second part, let $\alpha \in \Omega^p(TM)$, then:
 \begin{align*}
-d\alpha (X_1, \dots,& X_{p+1})
+d\alpha &(X_1, \dots, X_{p+1})
         = \sum_{i = 1}^{p+1} (-1)^{i+1}X_i(\alpha(X_1, \dots, \overset{\vee}{X_i}, \dots, X_{p+1}) \\
         &+ \sum_{1 \leq i \leq j \leq p+1} (-1)^{i+j} \alpha([X_i, X_j], X_1, \dots, \overset{\vee}{\sect X_i}, \dots, \overset{\vee}{X_j}, \dots, X_{p+1})\\
         &= \sum_{i = 1}^{p+1} (-1)^{i+1}a(X_i \oplus \eta_i)(\tilde \alpha(X_1 \oplus \eta_1, \dots, \overset{\vee}{X_i \oplus \eta_i}, \dots, X_{p+1} \oplus \eta_{p+1}) \\
@@ -646,7 +646,8 @@ Notice that the subalgebra $C^\infty(M, \bigwedge^\bullet \alg g^*)$ \textit{is 
 A formula that will be useful to use is the application of the differential to differential $1$-forms $C^\infty(M, \bigwedge^1 \alg g^*)$ when they are constant functions, e.g. taake constant values in elements of a basis $\{\epsilon^a\}_{a = 1, \dots, n}$ of $\alg g^*$ dual to a basis $\{E_a\}_{a = 1, \dots, n}$ of $\alg g$. Let $\epsilon$ be arbitrary in $C^\infty(M, \bigwedge^1 \alg g^*)$, then
 \begin{eqnsplit}\label{equationDifferentialOfFormDualToBasisLieAlgebra}
     \hat d_{TM \times \alg g} \epsilon(X \oplus \eta,& Y \oplus \theta) 
-      = a(X \oplus \eta) \epsilon(Y \oplus \theta) - a(Y \oplus \theta) \epsilon(X \oplus \eta) - \epsilon[X \oplus \eta, Y \oplus \theta]\\
+      \\
+      &= a(X \oplus \eta) \epsilon(Y \oplus \theta) - a(Y \oplus \theta) \epsilon(X \oplus \eta) - \epsilon[X \oplus \eta, Y \oplus \theta]\\
       &= X(\epsilon(\theta)) - Y(\epsilon(\eta)) - \epsilon(X(\theta) - Y(\eta) + [\eta, \theta])\\
       &= X(\epsilon)(\theta) - Y(\epsilon)(\eta) - \epsilon[\eta, \theta]\\
       &= - \epsilon[\eta, \theta],
@@ -929,7 +930,7 @@ Let $\omega \in \Omega^q(A, E)$.
     
     \item For each $i \in I$ define the local $q$-form $\omega_i:= \beta_i^{-1} \circ \omega \circ S_i  \in \Omega^q(TU_i\times \alg g, {U_i} \times V)$, called the \emph{local trivialization of $\omega$ over $U_i$}, seen as a map
     $$
-        \omega_i :\left( \Gamma_{U_i}(TM)\oplus C^\infty({U_i}, \alg g) \right) \times \cdots \times \left( \Gamma_{U_i}(TM)\oplus C^\infty({U_i}, \alg g) \right) \to C^\infty({U_i}, V).
+        \omega_i :\left( \Gamma_{U_i}(TM)\oplus C^\infty({U_i}, \alg g) \right) \times \cdots  \left( \Gamma_{U_i}(TM)\oplus C^\infty({U_i}, \alg g) \right) \to C^\infty({U_i}, V).
     $$
     
     \item The set $\{\omega_i \in \Omega^q(TU_i\times \alg g, U_i \times V)\}_{i \in I}$ is called a \emph{family of trivializations of $\omega$}.
@@ -1045,7 +1046,7 @@ Recall that, although strictly speaking the spherical coordinates $(\phi, \theta
 \end{align*} 
 From now on we will replace every instance of $\Omega_{U_{S}}, \Omega_{U_{N}}$ and $\Omega_{U_{SN}}$ by $\Omega_{S}, \Omega_{N}$ and $\Omega_{SN}$, respectively.
 
-Thanks to theorem \ref{theoremLocalizationOfEVectorValuedFormsIsomorphismOfDifferentialRespectsD} even if we don't know explicitly the form $\hat \omega \in \Omega^1(TP^k/S^1, P^k \times i\RR/S^1)$, we can still find (the local trivializations of) $\hat d \hat \omega$. Furthermore, we may apply theorem \ref{theoFormsAreDiffGModule} along with the second part or proposition \ref{propositionTLAFormsGradedSubalgebraAndTMDifferentialGradedSubalgebra} to show that
+Thanks to Theorem \ref{theoremLocalizationOfEVectorValuedFormsIsomorphismOfDifferentialRespectsD} even if we don't know explicitly the form $\hat \omega \in \Omega^1(TP^k/S^1, P^k \times i\RR/S^1)$, we can still find (the local trivializations of) $\hat d \hat \omega$. Furthermore, we may apply Theorem \ref{theoFormsAreDiffGModule} along with the second part or proposition \ref{propositionTLAFormsGradedSubalgebraAndTMDifferentialGradedSubalgebra} to show that
     \begin{equation*}
         \hat d \hat \omega_S = \hat d (i\omega^\epsilon_{S;\mu}) \wedge dx^\mu + i  \omega^\epsilon_{S;\mu} d(dx^\mu) + \hat d(i \hat \omega^\epsilon_{S;i}) \wedge Im + i\omega^\epsilon_{S;i} dx^\mu \wedge\hat d_{TU_S \times i\RR} Im;
     \end{equation*}
@@ -1117,7 +1118,7 @@ That the $\hat \beta^i_j$ commutes with the differential, follows from the follo
 
 The theorem will now be proven once we check that $\hat \beta^i_j$ respects the wedge product between scalar and $E$ valued forms, since $E = M \times \RR$ covers the second part of the theorem. Let $\theta \in \Omega^p_U(TU_{ij}\times \alg g)$ and $\gamma \in \Omega^q_U(TU_{ij}\times \alg g, U_{ij} \times V)$, for some $p, q \in \ZZ_{\geq 0}$, then:
 \begin{align*}
-    \hat \beta^i_j&(\theta \wedge \gamma)(\sectoid X_1, \dots, \sectoid X_{p+q}) 
+    &\hat \beta^i_j(\theta \wedge \gamma)(\sectoid X_1, \dots, \sectoid X_{p+q}) 
     = \beta^i_j\left( (\theta \wedge \gamma)(S^j_i(\sectoid X_1), \dots, S^j_i(\sectoid X_{p+q})) \right) \\
     &= \beta^i_j\left( \sum_{\sigma}(-1)^\sigma \beta(S^j_i(\sectoid X_{\sigma(1)}), \dots, S^j_i(\sectoid X_{\sigma(p)})) \cdot \gamma(S^j_i(\sectoid X_{\sigma(p+1)}), \dots, S^j_i(\sectoid X_{\sigma(p+q)})) \right) \\
     &=  \sum_{\sigma}(-1)^\sigma \theta(S^j_i(\sectoid X_{\sigma(1)}), \dots, S^j_i(\sectoid X_{\sigma(p)})) \cdot \beta^i_j\left(\gamma(S^j_i(\sectoid X_{\sigma(p+1)}), \dots, S^j_i(\sectoid X_{\sigma(p+q)}))\right) \\
@@ -1128,7 +1129,7 @@ The theorem will now be proven once we check that $\hat \beta^i_j$ respects the 
 \end{proof}
 
 \begin{remark}\label{remarkSufficesEnoughNeedOnlyHatAlphaFor1FormsToTranslateLocalTrivializations}
-If we have the local trivialization with respect to $i \in I$ of a form on $A$ written in terms of the decomposition into local $1$-forms from remark \ref{remarkLocalDecompositionOfFormsOnTransitiveLieAlgebroidsIfTrivializationOfM}, then we can use theorem \ref{theoremHatAlphaRespectsDifferentialAndWedgeIsomorphismOfModulesAndAlgebra} to conclude that \rtext{to find its relation with the trivialization with respect to} $j \in I$ within $U_{ij}$ if it isn't empty, \rtext{we need only know} 
+If we have the local trivialization with respect to $i \in I$ of a form on $A$ written in terms of the decomposition into local $1$-forms from remark \ref{remarkLocalDecompositionOfFormsOnTransitiveLieAlgebroidsIfTrivializationOfM}, then we can use Theorem \ref{theoremHatAlphaRespectsDifferentialAndWedgeIsomorphismOfModulesAndAlgebra} to conclude that \rtext{to find its relation with the trivialization with respect to} $j \in I$ within $U_{ij}$ if it isn't empty, \rtext{we need only know} 
 \begin{align}
     \hat \alpha^i_j(dx^\mu)& \quad \mu = 1, \dots, m \\ 
     \hat \alpha^i_j(\epsilon^a)& \quad a = 1, \dots, n \\

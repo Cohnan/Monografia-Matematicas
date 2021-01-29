@@ -350,7 +350,7 @@ Let's check that the compatibility conditions between the anchor and the bracket
     
     \item Lebniz identity: 
     \begin{align*}
-        [\sect X \oplus \stilde \eta, &f\, (\sect Y \oplus \stilde \theta)] =\\
+        [\sect X \oplus &\stilde \eta, f\, (\sect Y \oplus \stilde \theta)] =\\
         &= [\sect X \oplus \stilde \eta, f\sect Y \oplus f\stilde \theta] \\
         &=  [\sect X, f\sect Y] \oplus \{\sect X(f\stilde \theta) - f\sect Y(\stilde \eta) + [\stilde \eta, f\stilde \theta]\} \\
         &= (f[\sect X, \sect Y] + \sect X(f)\,\sect Y) \oplus \{\sect X(f)\,\stilde \theta + f\,\sect X(\stilde \theta) - f\sect Y(\stilde \eta) + f[\stilde \eta, \stilde \theta]\} \\
@@ -628,7 +628,7 @@ We now prove that the (surjective) quotient map $\natural : E \to E/G$ is also s
 
 The uniqueness assertions follow from the fact that there is at most one manifold structure in the image of a surjection which makes it a submersion, and at most one topological vector bundle structure in the image of a surjection which makes the map a topological vector bundle homomorphism.
 
-$E$ is clearly in a bijective correspondence with the pullback bundle $\pi^*E/G = \{(p, \cl{\mu}) \st \pi(p) = p^{E/G}(\cl{\mu})\}$. Furthermore, the pullback bundle can be characterized by the fact that it is locally isomorphic to the product bundle $p_1: \pi^{-1}(U) \times V \to \pi^{-1}(U)$ for some coordinate chart $U$ of $M$, precisely as the atlas of equivariant charts on $E$ show. Therefore, we see that $E$ is isomorphic to the pullback bundle.
+$E$ is clearly in a bijective correspondence with the pullback bundle $\pi^*E/G$ equal to $\{(p, \cl{\mu}) \st \pi(p) = p^{E/G}(\cl{\mu})\}$. Furthermore, the pullback bundle can be characterized by the fact that it is locally isomorphic to the product bundle $p_1: \pi^{-1}(U) \times V \to \pi^{-1}(U)$ for some coordinate chart $U$ of $M$, precisely as the atlas of equivariant charts on $E$ show. Therefore, we see that $E$ is isomorphic to the pullback bundle.
 \end{proof}
 
 \begin{theorem}\label{theoTPGexists}
@@ -1436,7 +1436,7 @@ Yet another family of principal bundles which we will use throughout the documen
 Let $P^k$ be the $S^1$-principal bundle over $S^2$ determined by the transition function $g^k_{NS}$; as implied by equation (\ref{transFunHopfS3}), the complex Hopf bundle corresponds to the index $k = 1$. The Reconstruction Theorem of principal bundles \cite{Naber} shows that $P^k$ can be defined by
 \begin{align*}
     P^k := \left( \bigsqcup_{l \in {N, S}} U_i \times S^1 \right) \Bigg/ \sim \quad \ni [E(\phi, \theta), e^{i\theta}, l]
-\end{align*} where the equivalence relation $\sim$ is defined, for any $E(\phi, \theta) \in S^2$ and $e^{i\alpha_N}, e^{i\alpha_N} \in S^1$, by
+\end{align*} where the equivalence relation $\sim$ is defined, for any $E(\phi, \theta) \in S^2$ and $e^{i\alpha_N}, e^{i\alpha_N}$ in $ S^1$, by
 \begin{align*}
     (E(\phi, \theta), e^{i \alpha_N}, N) \sim (E(\phi, \theta), e^{i \alpha_S}, S)
     &\Longleftrightarrow e^{i\alpha_N} = g^k_{NS}(E(\phi, \theta)) e^{i \alpha_S} \\
@@ -2201,7 +2201,7 @@ If $\{\sect X \oplus \stilde \eta^i\}$ is a family of local trivializations of $
 
 %TODO: general form of a section of $TP/G$ as section of $TP$
 
-\begin{example}[Local trivialization of representation of $TP/G$ on $E = P \times V/G$]\label{localTrivializationOfRepresentationOfAtiyahTPGonAssociated}
+\begin{example}[Local trivialization of representation of $TP/G$ on $E =$ $P \times V/G$]\label{localTrivializationOfRepresentationOfAtiyahTPGonAssociated}
 \label{exampleLocalTrivializationOfGroupInducedRepresentationOfAtiyahLieAlgebroidAction}
 Suppose that the open $U_i$ trivializes $E$ as $\beta_i: U_i \times V\to E|_{U_i}$. Let $\eta \in C^\infty(U_i, \alg g)$, $f \in C^\infty(U_i, V)$ be arbitrary. Then
 $$(\upsect{S_i(X \oplus \eta)})_{\sigma_i(m)} = \sigma_{i, *}(X) + \der{t}[t=0]{\sigma_i(m) \cdot \exp[-t \eta(m)]} \in T_{\sigma_i(m)} P$$
